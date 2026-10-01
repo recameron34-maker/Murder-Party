@@ -38,6 +38,12 @@ relationships:
     text: He's been trying to do a "deal" with you all night because you have a title. Possibly lucrative.
   - with: molly
     text: You asked her whether the bird on Arthur's desk was "worth anything." She looked at you like a forgery. Rich, coming from her.
+  - with: carlotta
+    text: Two years ago you swept into Carley's Berlin gallery opening as a Hungarian countess, drank the champagne and bought nothing. She knows exactly what you are. She hasn't said. Yet.
+  - with: morgan
+    text: Morgan has hired you twice to play minor nobility at Blackwood Legal client dinners. She knows exactly what you are, and she pays in cash.
+  - with: reggie
+    text: You've worked rooms with Reggie before. He's the only Blackwood who finds your act funny, and the only one who knows your real surname.
   - with: savanah
     if: savanah
     text: The "widow." You recognize a fellow performer. You've been turning the pages for her at the piano.
@@ -122,6 +128,10 @@ fallback: |
   (inside [[if:courtney]] blocks) disappear.
 
 host_notes: |
+  Real-life ties (Ross): Courtney knows Ross, Carley, Morgan and others. Her
+  character is wired to Carley (Berlin), Morgan (hired her before) and
+  Reggie (in on the act). Add more ties when Ross remembers who else.
+
   Flex (maybe RSVP), theatrical. Zero solution-critical clues. Red herring:
   fingerprints on the weapon, resolved by Molly (raven on the desk at 8:45) and
   her piano alibi. Whereabouts: drawing room, far from the study, 9:00 to 9:45.

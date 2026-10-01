@@ -1,0 +1,77 @@
+# On every push:
+#   1. run the consistency checker and all tests;
+#   2. optionally deploy the real party site to Cloudflare Workers, only if
+#      the Cloudflare secrets are set (main → production, others → preview).
+# The read-only GitHub Pages previews are built by pages.yml.
+name: Test and deploy
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Checker and tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Consistency checker
+        run: npm run check
+      - name: Spoiler-safety, auth and content tests
+        run: npm test
+
+  deploy:
+    name: Deploy to Cloudflare (optional)
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
+      url: ${{ steps.deploy.outputs.url }}
+    env:
+      READY: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' && secrets.HOST_PASSWORD != '' && secrets.SESSION_SECRET != '' }}
+      TARGET_ENV: ${{ github.ref == 'refs/heads/main' && '' || 'preview' }}
+    steps:
+      - name: Cloudflare not connected yet
+        if: env.READY != 'true'
+        run: echo "Cloudflare isn't connected, so nothing to deploy here (the GitHub Pages previews come from pages.yml). When you want the real party site (logins, rounds, texts), see README → Deploy the party site."
+      - uses: actions/checkout@v4
+        if: env.READY == 'true'
+      - uses: actions/setup-node@v4
+        if: env.READY == 'true'
+        with:
+          node-version: 22
+          cache: npm
+      - name: Build
+        if: env.READY == 'true'
+        run: npm ci && npm run build
+      - name: Deploy
+        id: deploy
+        if: env.READY == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          HOST_PASSWORD: ${{ secrets.HOST_PASSWORD }}
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
+        run: |
+          set -o pipefail
+          if [ ${#SESSION_SECRET} -lt 16 ]; then echo "::error::SESSION_SECRET must be at least 16 characters"; exit 1; fi
+          umask 077
+          node -e "require('fs').writeFileSync('.secrets.json', JSON.stringify({HOST_PASSWORD: process.env.HOST_PASSWORD, SESSION_SECRET: process.env.SESSION_SECRET}))"
+          npx wrangler deploy --env="$TARGET_ENV" --secrets-file .secrets.json 2>&1 | tee deploy.log
+          rm -f .secrets.json
+          url=$(grep -oE 'https://[a-zA-Z0-9.-]+\.workers\.dev' deploy.log | head -1)
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "::notice title=Live at::$url (host panel at $url/host)"

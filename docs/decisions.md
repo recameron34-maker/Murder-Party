@@ -19,6 +19,13 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
 | Savanah and Courtney | **Both theatrical.** |
 | Spice level | **Saucy.** Bolder innuendo and scandalous entanglements, nothing explicit. |
 | Public GitHub repo | Not a concern for now ("no one knows this site exists"). |
+| Noor and Joji | **Married**, and **Noor is pregnant** (in real life and in character). Arthur was to be godfather; Annie pours Noor an alcohol-free Reckoning. Her role stays seated and spoken. |
+| Lindsey and Malik | **Dating** (confirmed). |
+| Savanah's real-life ties | Knows **Jimmy, Kim, Ross and Carley**. Her character: James was best man at her 3 a.m. Vegas wedding to Arthur, Reggie helped bury the annulment (she calls him "nephew"), Kim is her old friend, Carley is her horrified "stepdaughter." *Assumed "Jimmy" = James Calloway's player.* |
+| Courtney's real-life ties | Knows **Ross, Carley, Morgan** and others. Her character: she crashed Carley's Berlin opening as a fake countess, Morgan has hired her for client dinners, Reggie is in on the act. |
+| Morgan breadcrumb | **Keep, but super subtle and disguised:** the old floor-plan prop carries a faded filing stamp, "RECEIVED · B.L.C. · 14 AUG". Joji only remembers "somebody's office stamp." Only a guest who matches it to the ledger's "AUTHORIZED: BLC" will realize Morgan's office had the plans. |
+| Deploy | **GitHub only, for now** (Ross). A **temporary landing page deployed from `main`** to GitHub Pages lists every branch and links to its static, read-only, spoiler-full preview, so he can watch progress. Pages Source: "GitHub Actions". Remove later by deleting `.github/workflows/pages.yml` and `.github/landing/`. The real party site (logins, rounds, texts) needs Cloudflare. That deploy job is already in the workflow and stays dormant until the secrets are added, before guests get links. |
+| Floor plan | Coming from Ross; it will map the game areas and the hiding spots. |
 | Website | **Per-player passphrase login**, with the site as a game companion: texts that arrive at set times or on cue, visible only to that player. Built as a server-rendered app (Cloudflare Workers + D1) instead of static pages. |
 
 ## Open issues from CLAUDE.md
@@ -101,10 +108,9 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
   **Wellington** of the **Wellington Foundation**, the planned charitable
   transfer. Monroe = Molly, Vale = Lindsey.
 - **How Morgan knew about the passage**: Joji's survey of the house,
-  including the 1891 plans, went to Blackwood Legal for a landmark
-  application in August. It sits in Joji's and Morgan's backstories. Joji
-  can say "Arthur and his lawyers have seen the plans" if asked. **NEW,
-  flagged: cut it if it makes Morgan too findable.**
+  including the 1891 plans, went through Blackwood Legal for a landmark
+  application in August. It sits in Morgan's backstory. Per Ross, the only
+  outward trace is the disguised "B.L.C." filing stamp on the floor-plan prop.
 
 ## Lore layer (spooky Saltburn), all additive
 
@@ -158,10 +164,8 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
 
 ## Still worth confirming with Ross
 
-- Are Noor and Joji a real couple? Is Lindsey dating Malik in real life (or
-  is anyone)? Real couples make the best character pairings.
-- Who do Savanah and Courtney know at the party? Their current ties are
-  guesses.
-- Physical hiding spots: `content/clues/*.yaml` suggests spots by game area.
-  Ross should set the real ones.
-- Optional: keep or cut Joji's "the lawyers have seen the plans" breadcrumb.
+- Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?
+- Who else does Courtney know? Add ties to `content/characters/courtney.yaml`.
+- The floor plan: map Ross's rooms to the game areas in `content/lore.yaml`
+  and set real hiding spots in `content/clues/*.yaml`.
+- Any other real couples in the cast? Real couples make the best pairings.

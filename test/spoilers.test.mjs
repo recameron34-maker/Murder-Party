@@ -81,8 +81,11 @@ test('pages carry no data bundles: no external scripts, no JSON, identical scrip
   assert.equal(scripts.size, 1, 'every guest gets byte-identical client code');
 });
 
-test('Morgan\'s page has exactly the same structure as everyone else\'s and isn\'t a length outlier', async () => {
-  const app = await makeApp();
+for (const [label, roster] of [
+  ['maybes not cast', {}],
+  ['maybes cast', { savanah: { player: 'Savanah', status: 'confirmed' }, courtney: { player: 'Courtney', status: 'confirmed' } }],
+]) test(`Morgan's page has exactly the same structure as everyone else's and isn't a length outlier (${label})`, async () => {
+  const app = await makeApp({ roster });
   const hostCookie = await app.loginHost();
   await app.setRound(hostCookie, 3);
   const shape = (html) => [...html.matchAll(/<(h[1-4]|section|nav|details|meta|title)\b[^>]*>/g)].map((m) => m[0].replace(/>[^<]*$/, '').replace(/content="[^"]*"|id="(?!character|envelopes|phone|supper)[^"]*"/g, '')).join('|');

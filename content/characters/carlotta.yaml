@@ -41,6 +41,12 @@ relationships:
     text: Your cousin, who stayed, sucked up, and expected the house. You'd laugh if it weren't your house.
   - with: maya
     text: Childhood friend from the kitchens. The only one who ever treated you like a person and not an heiress.
+  - with: savanah
+    if: savanah
+    text: Your father's Las Vegas wife of a fortnight, back in 2019. She insists on calling you her stepdaughter. You'd laugh if it weren't so exactly like him.
+  - with: courtney
+    if: courtney
+    text: '"Lady" Courtney swanned into your Berlin gallery opening as a Hungarian countess, drank the champagne and bought nothing. You know exactly what she is. She knows you know.'
   - with: alma
     text: The archivist is wearing a dress that looks very like one you owned at seventeen. You haven't worked out why yet.
 
