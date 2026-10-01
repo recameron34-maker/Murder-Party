@@ -69,6 +69,41 @@ jobs:
           owner="${GITHUB_REPOSITORY_OWNER,,}"
           echo "::notice title=Preview published::https://${owner}.github.io/${GITHUB_REPOSITORY#*/}/ (first time: Settings → Pages → Deploy from a branch → gh-pages / root)"
 
+  pages-actions:
+    # Covers the other GitHub Pages setting (Source: "GitHub Actions"), and tries
+    # to switch Pages on if it's off. Soft-fails if Pages is set to the
+    # gh-pages branch instead; the job above handles that case.
+    name: Publish preview via GitHub Pages (Actions source)
+    needs: test
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages-actions
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Build static preview
+        run: npm ci && npm run build:static
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
   deploy:
     name: Deploy to Cloudflare (optional)
     needs: test
