@@ -1,0 +1,17 @@
+id: black-thread
+title: The black thread
+kind: physical
+source: part-two
+round: 2
+timing: mid
+carrier: found
+delivery: Found caught on the raven (or in a small evidence bag "from the raven"). It should not match any one guest.
+hide: Tied around the raven prop's beak, or in a clear bag beside it in the "study."
+print: |
+  BLACKWOOD EVIDENCE: A few black threads, velvet, snagged on the bronze
+  raven's beak.
+truth: From Arthur's own black velvet smoking jacket. The cuff snagged as he fell. Shea confirms in Round Three.
+points_to: [carlotta, clara, shea, morgan]
+critical: false
+refs: [shea, arthur]
+prop_needed: A few strands of black velvet or black yarn.

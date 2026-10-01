@@ -1,0 +1,25 @@
+id: calendar
+title: Arthur's calendar
+kind: physical
+source: part-two
+round: 2
+timing: early
+carrier: found
+delivery: Found on (or near) the desk in Round Two.
+hide: On the "study" desk under a paperweight, or tucked in a book nearby.
+print: |
+  ARTHUR BLACKWOOD — SATURDAY
+
+  8:30 — Clara
+  8:50 — James
+  9:20 — Kevin
+  9:31 — Drink
+  9:35 — M.L.
+  10:00 — Lindsey
+  11:30 — Carlotta
+  12:00 — Announcement
+truth: M.L. is Morgan Leibold. She admits it. A scheduled meeting isn't murder.
+points_to: [morgan, lindsey, carlotta]
+critical: false
+refs: [clara, jimmy, kevin, annie, morgan, lindsey, carlotta]
+times: ["8:30 PM", "8:50 PM", "9:20 PM", "9:31 PM", "9:35 PM", "10:00 PM", "11:30 PM", "12:00 AM"]

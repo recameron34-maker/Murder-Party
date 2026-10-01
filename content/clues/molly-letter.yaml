@@ -1,0 +1,21 @@
+id: molly-letter
+title: Arthur's threatening letter to Molly
+kind: physical
+source: part-two
+round: 1
+timing: mid
+carrier: found
+delivery: Hidden behind a framed picture. Molly should read the word IF with emphasis.
+hide: Behind a framed picture in the "gallery" (any wall frame).
+print: |
+  Molly —
+
+  We need to discuss the Monroe acquisition tonight.
+  I know what happened.
+  If you knowingly deceived me, I will have no choice but to involve the authorities.
+
+  — A.B.
+truth: Arthur later concluded Molly was deceived too (see molly-cleared-note). The letter was written before he traced the forger, and never sent.
+points_to: [molly]
+critical: false
+refs: [molly, arthur]

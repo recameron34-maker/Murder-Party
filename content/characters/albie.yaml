@@ -1,0 +1,130 @@
+id: albie
+name: Aalvia "Albie"
+written_for: Albie / Aalvia (same guest)   # HOST
+tier: supporting                # HOST
+pronouns: confirm with Ross     # HOST
+role: Spirit medium engaged for the Midnight Supper
+tagline: "The dead talk to you. Mostly they repeat what Annie told you in the pantry."
+
+costume: |
+  Gothic mystic: velvet, lace, rings on every finger, a veil or headscarf,
+  tarot cards, a crystal (or a doorknob that looks like one), and eyes
+  rimmed in kohl. Speak slowly. Pause often.
+
+intro: |
+  Arthur engaged you to perform at the Midnight Supper. The tradition
+  says the founder, Silas Blackwood, speaks through a medium at the empty
+  chair. You are, it must be said, a fraud. A very good one.
+
+backstory: |
+  You read people, not spirits. Your "visions" come from Annie, the house
+  manager, who slips you gossip before every reading for half your fee.
+
+  Arthur knew you were a fraud. That's why he hired you. Last week, in the
+  library, he gave you a script for midnight. When the lights dimmed at the
+  empty chair, "Silas" was to say: ***"One among you has bled this house.
+  Tonight the raven names them."*** Then Arthur would make his announcement.
+  He never told you who. "Better you don't know, my dear. You have an honest
+  face, for a liar."
+
+  You and Arthur were secret allies. Nobody believes it.
+
+relationships:
+  - with: arthur
+    text: Your secret ally. He hired a fraud to tell the truth at midnight. You liked him enormously.
+  - with: annie
+    text: Your source and business partner. Fifty-fifty on everything the spirits "know."
+  - with: kim
+    text: The Keyhole's favorite target. Kim has called you "the Blackwood séance act" in print. Rude. Accurate.
+  - with: carlotta
+    text: Arthur's daughter. You "sensed her presence" at dinner. You'd simply seen her come in.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:00 PM"
+    where: drawing-room
+    text: Reading tarot for guests. Everyone draws the Tower. You stacked the deck.
+  - at: "9:00 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: Holding a "spirit circle" by the fire for anyone who'd sit, with half the room watching and laughing. Never left.
+  - at: "9:45 PM"
+    where: drawing-room
+    text: When the lights go out you scream, which is unprofessional but heartfelt.
+
+knows:
+  - Arthur hired you to "channel" Silas at midnight and announce that "one among you has bled this house."
+  - Arthur knew someone close to him had stolen from him. He never told you who.
+  - Your spirit messages come from Annie's gossip.
+  - You were in the drawing room in front of everyone from 9:00 until the blackout.
+
+secret: |
+  You're a **fraud** who gets "visions" from Annie, and you and Arthur were
+  **secret allies**: he scripted your midnight séance to expose a thief.
+
+blackmail:
+  - You're not really psychic. Annie feeds you information.
+  - Arthur scripted your midnight séance.
+  - The séance line was "One among you has bled this house."
+
+instructions:
+  - You may deliver one "message from the other side" per round. It must be mood, never evidence.
+  - In Round Three you'll ask the question that shifts the room. Ask it slowly.
+  - Never admit you're a fraud unless paid. Even then, haggle.
+  - You may lay hands on any guest and announce that they are "troubled."
+
+mission: |
+  Convince **one person that you and Arthur were secretly allies.** Report
+  the believer to Reggie.
+
+rounds:
+  1:
+    text: |
+      Announce, with a shiver, that you "felt Arthur leave" earlier than
+      anyone thinks: "Long before the dark, I felt a door close."
+
+      That's mood, not evidence. Let them argue about it.
+
+      Then start your mission: Arthur trusted you. Find someone who'll
+      believe it.
+    reveal:
+      - Share your "feeling" that Arthur's spirit left before the dark.
+  2:
+    text: |
+      Reveal what Arthur planned for midnight: **you were to "channel"
+      Silas Blackwood at the empty chair and say, "One among you has bled this
+      house. Tonight the raven names them."**
+
+      Arthur wanted to expose someone. He never told you who.
+    reveal:
+      - Arthur scripted a midnight séance to expose "one among you" who had "bled this house."
+  3:
+    text: |
+      After Reggie explains the blackout, ask the room, slowly, looking at
+      no one:
+
+      **"So if Arthur was already dead… who benefits from us believing he
+      died in the dark?"**
+    reveal:
+      - Ask "So if Arthur was already dead, who benefits from us believing he died in the dark?"
+
+texts:
+  - id: albie-arthur-history
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "Last week"
+    body: "Midnight. The empty chair. Say it exactly as written, my dear, and not a syllable more. Silas would approve."
+  - id: albie-annie-r1
+    from: Annie
+    trigger: { round: 1, after: 4 }
+    body: "Free tip for the spirits: Clara's lipstick at 8:44 was NOT the lipstick she arrived in."
+  - id: albie-unknown-r3
+    from: Unknown number
+    trigger: { round: 3, after: 1 }
+    body: "The dead don't care about the dark. Ask them who does."
+
+host_notes: |
+  Supporting. Albie and Aalvia are the same guest (Ross confirmed). Carries
+  Part One's Round Three cue ("who benefits?") and Part Two's "secretly
+  allies" mission. Optional: at midnight, if the party runs that long, let
+  Albie perform the séance anyway.

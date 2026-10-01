@@ -1,0 +1,145 @@
+id: shea
+name: Shea
+written_for: Shea               # HOST
+tier: supporting                # HOST
+pronouns: she/her               # HOST
+role: Arthur's live-in private nurse
+tagline: "You know the body in this house better than anyone. Tonight that's not a comfort."
+
+costume: |
+  Gothic nurse off-duty: a fitted black dress or uniform-inspired outfit, a
+  vintage nurse's watch pinned at the chest, dark lipstick, a small leather
+  case of "medication" (mints), and the calm of someone who has seen a lot.
+
+intro: |
+  For two years you've lived at Blackwood Manor as Arthur's private nurse. You
+  dressed him for dinner tonight, tied his tie and fastened the cuffs of his
+  black velvet smoking jacket. You know exactly how sick he was. He told you
+  things he told nobody else.
+
+backstory: |
+  Arthur's heart was failing. Only you and Dr. Noor Beaumont knew. Last week,
+  as you counted out his pills, he said something you haven't been able to
+  forget: **"If something happens to me, don't assume it was natural."**
+
+  He asked you to bring his evening medication "later, before supper."
+  Around 9:40 you went, but you heard voices around the corner and turned
+  back. His illness was a secret, and you weren't going to be seen carrying
+  his pills down the corridor.
+
+  Your other secret: a week ago, checking a noise in the east wing at
+  midnight, you found **a man living in the walls**. Louis. Charming, filthy,
+  apologetic. You should have told Arthur. Instead you've been meeting him at
+  midnight in a sealed-off maid's room. Saucy, dangerous, and not at all
+  professional.
+
+relationships:
+  - with: arthur
+    text: Your patient. Proud, scared, kind to you. You dressed him for his last evening.
+  - with: noor
+    text: Arthur's doctor. You two shared the secret of his heart.
+  - with: louis
+    text: The man in the walls. Your midnight secret. You've been covering for him all week.
+  - with: annie
+    text: The house manager. She's noticed the extra food you've been carrying upstairs. You've let her think it's for you.
+
+evening:
+  - at: "7:00 PM"
+    where: upstairs
+    text: You help Arthur dress for the Supper. Black velvet smoking jacket. You fasten the cuffs yourself.
+  - at: "8:00 PM"
+    until: "9:38 PM"
+    where: drawing-room
+    text: At the party, keeping an eye on Arthur's color whenever he passes. At 9:20 you hear Kevin shouting in the study.
+  - at: "9:38 PM"
+    until: "9:39 PM"
+    where: upstairs
+    text: Up the back stairs to fetch Arthur's evening pills.
+  - at: "9:40 PM"
+    where: east-corridor
+    text: You walk toward the study with the pills, but **before you reach it you hear voices** around the corner toward the Front Hall. You don't want to be seen with his medication. You turn back.
+  - at: "9:42 PM"
+    until: "9:47 PM"
+    where: drawing-room
+    text: Back at the party, pills still in your pocket. The lights go out at 9:45.
+
+knows:
+  - 'Arthur said last week: "If something happens to me, don''t assume it was natural."'
+  - Arthur had severe heart disease. It was a secret.
+  - At about **9:40** you walked toward the study and turned back before reaching it.
+  - Arthur was wearing a **black velvet smoking jacket** tonight. You fastened the cuffs.
+
+secret: |
+  You **walked toward the study at about 9:40** with Arthur's pills and turned
+  back, and you've been secretly meeting **Louis, the man in the walls**,
+  every midnight this week.
+
+blackmail:
+  - Arthur told you, "If something happens to me, don't assume it was natural."
+  - You walked toward the study around 9:40.
+  - You know who has been living in the walls.
+
+instructions:
+  - Round One, Arthur's ominous words. Round Two, your 9:40 walk. Round Three, the thread and your question about the blackout.
+  - Protect Louis. Never reveal you know him unless paid.
+  - You may take anyone's pulse at any moment and declare it "elevated."
+  - You were near the study, and you're a woman. Don't deny it; just don't help them.
+
+mission: |
+  Get someone to **voluntarily tell you their alibi**, without you asking
+  for it directly. Report it to Reggie.
+
+rounds:
+  1:
+    text: |
+      When the room is unsure whether this is murder, tell them what Arthur
+      said to you last week:
+
+      **"If something happens to me, don't assume it was natural."**
+
+      Reggie will turn to Dr. Beaumont from there.
+    reveal:
+      - 'Arthur told you: "If something happens to me, don''t assume it was natural."'
+  2:
+    text: |
+      Confess your walk: **at around 9:40 you were taking Arthur his
+      medication. Before you reached the study you heard voices and went back
+      to the party.**
+
+      You didn't see anyone. You didn't go in. Yes, you're one of the women who
+      were near that door.
+    reveal:
+      - Around 9:40 you walked toward the study with Arthur's medication, heard voices, and turned back.
+  3:
+    text: |
+      If the **black thread** found on the raven is still a mystery: it's
+      from **Arthur's own jacket.** Black velvet. You fastened his cuffs at 7.
+      It snagged when he fell.
+
+      Then ask the question that turns the room, out loud:
+
+      **"Then why did we all assume he died during the blackout?"**
+    reveal:
+      - The black thread is from Arthur's own velvet smoking jacket.
+      - Ask "Then why did we all assume he died during the blackout?"
+
+texts:
+  - id: shea-louis-history
+    from: L.
+    trigger: { history: true }
+    stamp: "Last night 12:04 AM"
+    body: "Same room tomorrow? Bring the good cheese. And a torch, the batteries in mine are dying. x"
+  - id: shea-arthur-history
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "6:58 PM"
+    body: "Come up and do these damned cuffs. And bring the pills down later, before supper. Discreetly."
+  - id: shea-louis-r2
+    from: L.
+    trigger: { round: 2, after: 10 }
+    body: "I swear I was nowhere near the study. I was stuck in the east wall in the dark. Don't tell them. Please."
+
+host_notes: |
+  Supporting. Part Two's third woman near the study (~9:40). Round Three:
+  resolves the black thread (Arthur's jacket; see docs/decisions.md) and
+  gives Reggie the blackout cue.

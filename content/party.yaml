@@ -1,0 +1,9 @@
+# Party-wide settings.
+title: Murder at Blackwood Manor
+host_name: Ross
+host_character: Reginald "Reggie" Blackwood
+# Party date (YYYY-MM-DD) and IANA time zone. Pre-party teaser texts
+# ({ day: -1, time: "18:00" }) are scheduled relative to this. Leave null
+# until the date is fixed; dated texts simply won't fire.
+date: null
+timezone: America/Chicago

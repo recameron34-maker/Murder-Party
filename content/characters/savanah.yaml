@@ -1,0 +1,127 @@
+id: savanah
+name: Savanah, "Mrs. Blackwood"
+written_for: Savanah (maybe RSVP)   # HOST
+tier: flex                      # HOST
+pronouns: she/her               # HOST
+role: Lounge singer, and (she insists) Arthur's widow
+tagline: "Married in Vegas, abandoned in a fortnight. You've come to collect."
+
+costume: |
+  Full Las Vegas widow: sequins or satin in black or blood red, a veil
+  (mourning, technically), enormous costume jewels, a feather boa, and an
+  oversized "wedding ring" you flash at every opportunity. Optional:
+  sunglasses at night.
+
+intro: |
+  In 2019, the week after Clara dumped him, Arthur Blackwood flew to Las
+  Vegas to "clear his head," walked into the Sapphire Room where you were
+  singing, and married you at 3 a.m. at the Little Chapel of the Raven
+  (genuinely its name). As far as you're concerned you are **Mrs. Arthur
+  Blackwood**, and as of tonight a very wealthy widow.
+
+backstory: |
+  Two weeks after the wedding Arthur's lawyers flew in, a sharp woman named
+  Morgan with a briefcase, and you signed some papers in a hotel suite while
+  very hungover. You know perfectly well they were **annulment papers**.
+  You've chosen not to remember that.
+
+  Arthur sent you a Supper invitation last month with a note: *"I owe you an
+  apology and a song. Come."* You came. You're broke, the Sapphire Room has
+  closed, and with Arthur dead and his will in pieces, a "widow" might do
+  very nicely out of the estate if nobody checks.
+
+relationships:
+  - with: arthur
+    text: Your husband of a fortnight, in 2019. He was sweet, drunk and sad. You liked him more than you meant to.
+  - with: clara
+    text: The ex-fiancée whose exit sent Arthur to Vegas. She looks at you like something on her shoe. Mutual.
+  - with: morgan
+    text: The lawyer who brought the papers in 2019. If anyone can contradict you, it's her. Watch her.
+  - with: kim
+    text: The Keyhole covered your wedding. You've always wondered who writes it.
+  - with: courtney
+    if: courtney
+    text: You recognize a performer when you see one. "Lady" Courtney is no lady. Takes one to know one.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:00 PM"
+    where: drawing-room
+    text: Introducing yourself as "the widow, darling, well, the wife, as of an hour ago."
+  - at: "9:00 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: At the piano, singing a medley of the songs Arthur requested in Vegas. Everyone in the room watched you the whole time; you made sure of it.
+
+knows:
+  - You married Arthur in Las Vegas in 2019.
+  - You signed something two weeks later. You've decided it doesn't count.
+  - Morgan Leibold was the lawyer who brought the papers.
+  - You were at the piano from 9:00 until the blackout, in full view.
+
+secret: |
+  **Your marriage to Arthur was annulled in 2019.** You know it. You're
+  bluffing about being his widow because you're broke.
+
+blackmail:
+  - You married Arthur in Las Vegas in 2019.
+  - You signed annulment papers two weeks later.
+  - You're broke and hoping for a payout.
+
+instructions:
+  - Introduce yourself to everyone as "Mrs. Blackwood." Commit.
+  - You may sing a few bars at any dramatic moment.
+  - Admit the annulment only if paid, or if someone produces proof.
+  - Your alibi (the piano, 9:00 to 9:45) is the best in the house. Mention it constantly.
+
+mission: |
+  Get **two different people to call you "Mrs. Blackwood"** without being
+  told to. Report them to Reggie.
+
+rounds:
+  1:
+    text: |
+      Arthur is dead and you're the grieving widow. Weep magnificently.
+      Then mention, delicately, that "as his wife" you suppose the estate is
+      now… a matter for you.
+
+      The room will now think you had the best motive of anyone. Enjoy it.
+      You have the best alibi too.
+    reveal:
+      - Announce you're Arthur's widow from a 2019 Las Vegas wedding.
+  2:
+    text: |
+      People will dig. Defend the marriage with documents (your "wedding
+      photo") and passion. If anyone mentions Morgan, insist "that woman made
+      me sign things while I was unwell."
+    reveal:
+      - Accuse Arthur's lawyer of making you sign papers in 2019.
+  3:
+    text: |
+      If the annulment comes out, concede with enormous dignity. Then point
+      out that a woman who was *singing at a piano in front of twenty people*
+      from 9:00 to 9:45 didn't kill anyone.
+    reveal:
+      - Concede the annulment if proven, and stand on your piano alibi.
+
+texts:
+  - id: savanah-arthur-history
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "Last month"
+    body: "I owe you an apology and a song. Come to the Supper. Bring the red dress. — A."
+  - id: savanah-unknown-r2
+    from: Unknown number
+    trigger: { round: 2, after: 8 }
+    body: "The Keyhole never forgets a wedding. Or an annulment."
+
+fallback: |
+  Nothing depends on Savanah. If she isn't cast, the widow red herring never
+  appears. Clara's and Kim's Savanah lines are inside [[if:savanah]] blocks
+  and disappear automatically.
+
+host_notes: |
+  Flex (maybe RSVP), theatrical. Carries zero solution-critical clues. Her
+  red herring ("the widow inherits") is resolved by Kim's 2019 Keyhole
+  clipping (Round Three) and by Clara. Whereabouts: the drawing-room piano,
+  far from the study.

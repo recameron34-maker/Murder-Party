@@ -1,0 +1,147 @@
+id: kevin
+name: Kevin Blackwood
+written_for: Kevin              # HOST
+tier: supporting                # HOST
+pronouns: he/him                # HOST
+role: Arthur's nephew, the heir who wasn't
+tagline: "You're the Blackwood who stayed. Apparently that counts for nothing."
+
+costume: |
+  Country-house heir: a dinner jacket worn with aggressive confidence, family
+  cufflinks (one is missing; you'll find out why), slicked hair, a signet
+  ring, and the air of a man who has never once paid for his own drink.
+
+intro: |
+  You're Arthur's nephew and Reggie's cousin, and for fifteen years you've
+  been the dutiful Blackwood: shooting weekends, board seats, sucking up.
+  Everyone, you especially, assumed you'd inherit the manor. At 9:20 tonight
+  Arthur told you: **"You're getting nothing."**
+
+backstory: |
+  You live, if you're honest, on Arthur's allowance. The flat, the car, the
+  club, all Arthur. "You're getting nothing" didn't only mean the house. It
+  meant the allowance stops at midnight.
+
+  You shouted. Half the East Corridor heard you say **"You're going to regret
+  this."** You meant he'd regret tearing the family apart. It sounds like a
+  murder threat. You know it does.
+
+  Then you grabbed the nearest coat off the hall hook (Arthur's, as it turns
+  out) and stormed onto the terrace to smoke and rage at the rain. You
+  were out there until the lights came back.
+
+  And there's Morgan. A week in Cannes last summer. She's been distant
+  since. You're sure it's just the job.
+
+relationships:
+  - with: arthur
+    text: Your uncle. You performed devotion for fifteen years and got "you're getting nothing" for your trouble.
+  - with: morgan
+    text: Your Cannes fling. You think it's still on. You'd do anything for her, and you'd defend her to anyone.
+  - with: reggie
+    text: Your cousin. You spent the afternoon helping him move furniture into the study. He owes you.
+  - with: carlotta
+    text: Your cousin, the real heir, who walked away from everything you wanted. You resent her with your whole chest.
+  - with: jimmy
+    text: The ward. He keeps telling people you had the bigger motive. You'd like to throw him in the lake.
+
+evening:
+  - at: "3:00 PM"
+    where: study
+    text: Helping Reggie haul furniture into the study for the Supper. Hot, heavy work; you rolled your sleeves up.
+  - at: "8:00 PM"
+    until: "9:19 PM"
+    where: drawing-room
+    text: Holding court as the heir apparent.
+  - at: "9:20 PM"
+    until: "9:21 PM"
+    where: study
+    text: 'Arthur says: **"You''re getting nothing."** You shout: **"You''re going to regret this."** The door is open. People hear.'
+  - at: "9:22 PM"
+    until: "9:47 PM"
+    where: terrace
+    text: You grab a coat (Arthur's, you realize later) and storm onto the terrace. Pacing, smoking, raging at the rain. You come in when the lights return.
+
+knows:
+  - Arthur told you at 9:20 you were getting nothing. The allowance stops at midnight.
+  - You were on the terrace from 9:22 until after the blackout.
+  - There's a security camera on the terrace. You forgot until just now.
+  - You're wearing Arthur's coat. You haven't checked the pockets.
+
+secret: |
+  You **threatened Arthur at 9:20** and you live entirely on his money, which
+  stops at midnight. But you were on the terrace, on camera, during the
+  murder.
+
+blackmail:
+  - You said "You're going to regret this" to Arthur.
+  - You live on an allowance from Arthur, which ends tonight.
+  - You had an affair with Morgan in Cannes.
+
+instructions:
+  - In Round One you **must admit you said "You're going to regret this."** Insist you meant the family, not murder.
+  - When a cufflink is found, **recognize it as yours** and panic. You don't know when you lost it.
+  - Defend Morgan if people accuse her. You can't help yourself.
+  - In Round Three, the coat will matter. Follow your envelope.
+
+mission: |
+  Get someone to **believe your argument with Arthur wasn't about money.**
+  (It was.) Report the believer to Reggie.
+
+rounds:
+  1:
+    text: |
+      People heard you at 9:20. Admit it before they do: **you told Arthur,
+      "You're going to regret this."** You meant he'd regret destroying the
+      family. Of course you did.
+
+      A cufflink may turn up near the study. **It's yours.** Recognize it out
+      loud and go pale. You have no idea when you lost it.
+    reveal:
+      - 'You told Arthur "You''re going to regret this" at 9:20.'
+      - The cufflink found near the study is yours.
+  2:
+    text: |
+      You've remembered two things:
+
+      1. **The cufflink**: you were moving furniture into the study with
+         Reggie this afternoon, sleeves rolled up. Ask Reggie to confirm it.
+      2. **The terrace has a security camera.** You were out there from 9:22
+         until the lights came back. Demand that Reggie check the footage.
+
+      Reggie may make you sweat first. Sweat.
+    reveal:
+      - You lost the cufflink helping Reggie move furniture this afternoon.
+      - Ask Reggie to check the terrace camera.
+  3:
+    text: |
+      You finally check the pockets of the coat you grabbed at 9:22, Arthur's
+      coat. There's a **folded bank statement** inside (prop in this
+      envelope).
+
+      Don't read it out. When Reggie calls for final evidence, **hand it to
+      him.** It's his to read.
+    reveal:
+      - Hand Arthur's folded bank statement (from his coat) to Reggie.
+
+texts:
+  - id: kevin-arthur-history
+    from: Uncle Arthur
+    trigger: { history: true }
+    stamp: "9:21 PM"
+    body: "Regret is a luxury, Kevin. You can't afford it either."
+  - id: kevin-morgan-r1
+    from: Morgan
+    trigger: { round: 1, after: 14 }
+    body: "Breathe. Say it was about family. Nobody can prove otherwise."
+  - id: kevin-terrace-r2
+    from: Blackwood Security (auto)
+    trigger: { round: 2, after: 8 }
+    body: "Motion recorded: TERRACE CAM 02, 21:22 to 21:47. Footage retained 24h."
+
+host_notes: |
+  Supporting. False suspect C. The terrace camera still (late Round Two)
+  clears him. In Round Three he hands Reggie the bank statement; the prop
+  must be in his Round Three envelope. If Kevin isn't cast, Reggie "finds" the
+  statement in Arthur's coat himself. Morgan's Round One text to Kevin
+  mirrors hers ("you believe me, right?").

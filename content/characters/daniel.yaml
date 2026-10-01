@@ -1,0 +1,124 @@
+id: daniel
+name: Daniel
+written_for: Daniel             # HOST
+tier: supporting                # HOST
+pronouns: he/him                # HOST
+role: Maddie's fiancé, Carlotta's ex
+tagline: "Two Blackwood women have broken your heart. Only one of them was born a Blackwood."
+
+costume: |
+  Handsome and slightly hunted: a well-cut dinner jacket, a white rose in
+  the lapel, a pocket square folded too carefully, and the expression of a
+  man standing between two women and a fortune.
+
+intro: |
+  Eight years ago you were two weeks from marrying Carlotta Blackwood. She
+  fled to Berlin. Now you're engaged to Maddie, who is wearing a necklace
+  that isn't hers, and Carlotta is standing by the fireplace in black,
+  looking at you.
+
+backstory: |
+  You're the decent one. Everyone says so, usually right before they hurt
+  you. You and Carlotta were young and wild in this house; you've never quite
+  stopped thinking about the conservatory.
+
+  You love Maddie, or you're committed to loving Maddie, but you can see
+  where the necklace is heading. You know it belongs to the family trust.
+  So this afternoon **you slid an anonymous note under her door: "Return what
+  isn't yours before midnight."** You thought it would scare her into doing
+  the right thing. Instead she's spent all night hunting the author.
+
+relationships:
+  - with: maddie
+    text: Your fiancée. You sent her the anonymous note. If she finds out, you're dead (figuratively, hopefully).
+  - with: carlotta
+    text: The one who left. You still know all her tells. You texted her one of them.
+  - with: jimmy-friedman
+    text: Your card host. He's tried twice tonight to lend you money for the wedding.
+  - with: martin
+    text: Card partner. You suspect he's cheating. He suspects you're too nice to say so.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:00 PM"
+    where: drawing-room
+    text: Standing next to Maddie, not looking at Carlotta, failing.
+  - at: "9:00 PM"
+    until: "9:45 PM"
+    where: billiard-room
+    text: At Jimmy Friedman's card table with Martin and James. You never left until the lights went out. Jimmy can vouch.
+  - at: "9:45 PM"
+    where: billiard-room
+    text: In the dark, someone's hand brushes the pot. It's gone when the lights return. You suspect Martin.
+
+knows:
+  - You sent the anonymous note telling Maddie to return the necklace.
+  - The Raven's Tears belong to the Blackwood family trust.
+  - You were at the card table from 9:00 to the blackout with Martin and Jimmy Friedman.
+  - Carlotta still does the thing with her lighter when she's lying.
+
+secret: |
+  **You sent Maddie the anonymous necklace note.** And you're not entirely
+  over Carlotta.
+
+blackmail:
+  - You sent the anonymous note about the necklace.
+  - You were once engaged to Carlotta Blackwood.
+  - You still have feelings for Carlotta.
+
+instructions:
+  - Start the necklace fight in Round Two. You're trying to save Maddie from herself.
+  - Never confess to sending the note unless paid, or unless Maddie corners you in Round Three.
+  - You can vouch for Martin and Jimmy Friedman at the card table.
+  - Be the most decent man in the room. It should be unbearable.
+
+mission: |
+  Convince **Madeleine that returning the necklace is probably wise.** If she
+  agrees (even grudgingly), report it to Reggie.
+
+rounds:
+  1:
+    text: |
+      Establish your alibi: **card table, billiard room, 9:00 until the
+      blackout**, with Martin and Jimmy Friedman.
+
+      Keep an eye on Maddie's necklace and on Carlotta. Mostly Carlotta.
+    reveal:
+      - You were at the billiard-room card table from 9:00 until the blackout.
+  2:
+    text: |
+      Bring it up, publicly: **the necklace belongs to the family trust**,
+      and with Arthur dead, people are going to notice it's around Maddie's
+      neck.
+
+      Have the fight. Lose it gracefully.
+    reveal:
+      - Publicly raise that Maddie's necklace belongs to the Blackwood family trust.
+  3:
+    text: |
+      If Maddie is still hunting the note's author, it's time. **Confess:
+      you sent it.** You did it because you love her and you didn't want her
+      to become one of *them*.
+
+      Then see who she throws her drink at.
+    reveal:
+      - Confess you sent Maddie the anonymous necklace note.
+
+texts:
+  - id: daniel-carlotta-history
+    from: Carley
+    trigger: { history: true }
+    stamp: "Eight years ago"
+    body: "I'm sorry. I can't. Don't come after me."
+  - id: daniel-carlotta-r1
+    from: Carley
+    trigger: { round: 1, after: 12 }
+    body: "Your fiancée is wearing my grandmother's necklace. Interesting choice for a decent man."
+  - id: daniel-unknown-r3
+    from: Unknown number
+    trigger: { round: 3, after: 3 }
+    body: "Notes under doors always find their way home, Daniel."
+
+host_notes: |
+  Supporting. Necklace subplot with Maddie. Card-table alibi with Martin and
+  Jimmy Friedman.

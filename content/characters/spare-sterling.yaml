@@ -1,0 +1,113 @@
+id: spare-sterling
+name: Sterling
+written_for: Spare, any late guest   # HOST
+tier: flex                      # HOST
+effort: high                    # HOST
+pronouns: any                   # HOST
+role: Arthur's "dear old friend from Monaco" (gatecrasher)
+tagline: "Nobody invited you. Nobody's going to ask you to leave. That's the whole trick."
+
+costume: |
+  Riviera excess: a white dinner jacket or a slinky sequined number,
+  sunglasses pushed up, a cigarette holder, a borrowed Rolex, and a tan that
+  is not from this country or this season. You're "[Name] Sterling."
+
+intro: |
+  You crash society parties for a living: weddings, galas, funerals with
+  open bars. Tonight you walked through the front door of Blackwood Manor
+  saying "Arthur, you old devil, I'm here!" and nobody stopped you. You've
+  claimed to be **Arthur's oldest friend from Monaco.** You've never met
+  him.
+
+backstory: |
+  You have no invitation. You're wanted, mildly, by a Monaco casino over a
+  tab. You fund your life by selling "investment opportunities" to rich
+  people at parties: yacht shares, vineyard plots, a racehorse that may not
+  exist.
+
+  Tonight was going beautifully until somebody killed your host. Now the
+  police are coming, the road's out, and you're trapped in a mansion full of
+  people who'll eventually ask who you actually are.
+
+relationships:
+  - with: jimmy-friedman
+    text: You sold him a share of a yacht in Saint-Tropez last summer. He's realizing tonight that the yacht doesn't exist.
+  - with: hannah
+    text: You've been dancing with her all night and pitching a "charity vineyard."
+  - with: reggie
+    text: You've told everyone Reggie personally invited you. You're hoping Reggie plays along.
+  - with: courtney
+    if: courtney
+    text: '"Lady" Courtney clocked you at the door and you clocked her. Professional courtesy: neither of you says a word.'
+
+evening:
+  - at: "7:50 PM"
+    where: front-hall
+    text: You sweep in behind a group of real guests, announcing yourself to nobody in particular.
+  - at: "8:00 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: Dancing with Hannah, pitching, refilling. You never left the drawing room; you can't risk anyone checking a list.
+
+knows:
+  - You were never invited and you never met Arthur.
+  - Jimmy Friedman bought a share of a yacht that doesn't exist.
+  - You were in the drawing room from 8:00 until the blackout.
+
+secret: |
+  **You're a gatecrasher and a con artist.** You've never met Arthur and you
+  owe a Monaco casino money.
+
+blackmail:
+  - You were never invited and never met Arthur.
+  - You sold Jimmy Friedman a share in a nonexistent yacht.
+  - You owe a Monaco casino a significant sum.
+
+instructions:
+  - High effort. Tell rich, specific, completely invented stories about "dear Arthur."
+  - Sell at least one "investment" for Blackmail Cash.
+  - If cornered, claim Reggie invited you. Make Reggie decide.
+  - Your alibi is the drawing room; you were never out of sight.
+
+mission: |
+  Get a guest to **give you Blackmail Cash for an "investment
+  opportunity"** (yacht, vineyard, horse). Report the sucker to Reggie.
+
+rounds:
+  1:
+    text: |
+      Grieve loudly for "dear Arthur." Share a vivid memory of the two of
+      you in Monaco. Make it specific. Make it a lie.
+    reveal:
+      - Share a (fictional) Monaco memory of you and Arthur.
+  2:
+    text: |
+      Someone will start asking questions. Double down: Reggie invited you.
+      Pitch an investment to whoever's asking.
+    reveal:
+      - Claim Reggie personally invited you.
+  3:
+    text: |
+      When the truth comes for you, confess with style: you never met
+      Arthur, you crashed his party, and frankly it was the best party you've
+      ever crashed. Then try to sell someone a vineyard.
+    reveal:
+      - Confess you're a gatecrasher who never met Arthur.
+
+texts:
+  - id: sterling-casino-history
+    from: Casino de Monte-Carlo
+    trigger: { history: true }
+    stamp: "Last week"
+    body: "FINAL NOTICE: Outstanding balance €41,200. Please contact the cashier's office."
+  - id: sterling-jimmyf-r2
+    from: Jimmy Friedman
+    trigger: { round: 2, after: 10 }
+    body: "Funny thing. Called the marina about OUR yacht. They've never heard of it. Let's talk."
+
+fallback: |
+  Nothing depends on Sterling. Pure flavor and scandal.
+
+host_notes: |
+  Spare, high effort, any gender or name. Flavor only. Ross may choose to "remember"
+  inviting Sterling, or not. Whereabouts: front hall, then drawing room.

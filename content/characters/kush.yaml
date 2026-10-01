@@ -1,0 +1,140 @@
+id: kush
+name: Kushington "Kush"
+written_for: Kush               # HOST
+tier: core                      # HOST
+pronouns: he/him                # HOST
+role: Forensic accountant
+tagline: "Money always leaves footprints. You follow them for a living, and for fun."
+
+costume: |
+  Overdressed for numbers: a three-piece suit, a pocket square, a fountain
+  pen behind the ear, half-moon spectacles, and a battered ledger or folder
+  you clutch like a holy relic.
+
+intro: |
+  Nobody at this party can explain what a forensic accountant does, and you
+  are thrilled to tell them, at length. Three weeks ago Arthur hired you,
+  very quietly, to find out where some of his money had gone.
+
+backstory: |
+  You've spent three weeks in a cold room off the kitchens with Arthur's
+  ledgers, a space heater and an increasingly personal relationship with
+  Blackwood Holdings' wire records. It's the happiest you've ever been.
+
+  You found it. **Six transfers over fourteen months, $2.4 million in
+  total.** And every one was authorized through **Blackwood Legal Counsel**.
+  You told Arthur two days ago, and this week you matched the user ID. He
+  told you to say nothing until midnight.
+
+  Your own secrets: your professional certification **lapsed in March** and
+  you haven't quite renewed it. And while doing due diligence on the
+  Wellington Foundation for Arthur, you and Hannah Wellington have been
+  "working late." Very late. On the ledgers. Mostly.
+
+relationships:
+  - with: arthur
+    text: Your client. He hired you because "nobody would ever suspect a man that boring." You chose to take it as a compliment.
+  - with: lindsey
+    text: Arthur's banker. She flagged the transfers before you were hired. You respect her enormously and suspect her a little, professionally.
+  - with: hannah
+    text: You audited her foundation for Arthur. It was clean. The two of you, less so.
+  - with: morgan
+    text: Arthur's lawyer. You've been very polite to her all evening and you haven't stopped watching her.
+  - with: reggie
+    text: Your host, who has publicly mocked your profession twice tonight. He'll regret it when you're a hero.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:15 PM"
+    where: drawing-room
+    text: Explaining forensic accounting to Noor, who diagnosed you with "enthusiasm."
+  - at: "9:15 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: Cornering Lexi and anyone else within reach about double-entry bookkeeping. Hannah kept catching your eye from across the room.
+  - at: "9:45 PM"
+    where: drawing-room
+    text: In the dark you clutched your folder to your chest. Priorities.
+
+knows:
+  - Arthur suspected theft and hired you three weeks ago.
+  - The total is **$2.4 million**, in six transfers over fourteen months.
+  - Every transfer was authorized through **Blackwood Legal Counsel**, user ID **ML-0427**.
+  - Lindsey Vale flagged the transfers before you were hired.
+
+secret: |
+  You know the full shape of the theft: **$2.4 million, authorized through
+  Blackwood Legal Counsel.** Your certification has lapsed, and you're having
+  a fling with Hannah Wellington.
+
+blackmail:
+  - Arthur hired you to trace missing money.
+  - The theft totals $2.4 million.
+  - Your professional certification lapsed in March.
+
+instructions:
+  - Round One, the suspicion only. Round Two, the amount. Round Three, Blackwood Legal Counsel. Refuse Blackmail offers that would jump ahead, whatever the price.
+  - When you finally reveal the $2.4 million, **perform**. This is your moment and Reggie will give it to you.
+  - You may explain any financial document Reggie produces, at whatever length the room will tolerate.
+  - Do not open future envelopes. Reggie will be watching you specifically.
+
+mission: |
+  Get someone to dramatically ask you, **"Kushington, what did you find?"**
+  *before* you reveal the $2.4 million.
+
+rounds:
+  1:
+    text: |
+      When Maya mentions money, Reggie will turn to you: *"Kushington. Arthur
+      hired you for something. What was it?"*
+
+      Reveal: **Arthur suspected someone was stealing from him** and hired
+      you to trace it. Do NOT give the amount. Be tantalizing about it.
+    reveal:
+      - Arthur suspected theft and hired you to trace it (no amount yet).
+  2:
+    text: |
+      When Malik says *"It's not about inheritance. Follow the money,"* Reggie
+      will turn to you. **Let it rip.**
+
+      **$2.4 MILLION.** Six transfers over fourteen months. Embezzled from
+      Blackwood Holdings by someone with access. Pause for gasps. Take your
+      time.
+
+      If a torn ledger turns up saying **AUTHORIZED: BLC**, you may say you
+      have a theory about BLC, but you need one more piece. (You need Round
+      Three.)
+    reveal:
+      - The stolen amount is $2.4 million, in six transfers.
+  3:
+    text: |
+      When Carlotta asks *"Who betrayed him?"* Reggie will look at you.
+
+      Reveal: **the transfers were authorized through Blackwood Legal
+      Counsel**, Morgan's office, using user ID **ML-0427**. Then look at
+      Lindsey, who can confirm it independently.
+
+      You have not proved who *typed* it. You've proved whose office it came
+      from.
+    reveal:
+      - The transfers were authorized through Blackwood Legal Counsel (Morgan's office), ID ML-0427.
+
+texts:
+  - id: kush-arthur-history
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "Thursday 10:40 PM"
+    body: "Not a word until midnight, Kushington. Not to anyone. Especially not anyone you like."
+  - id: kush-hannah-r1
+    from: H.
+    trigger: { round: 1, after: 7 }
+    body: "You look very serious in that waistcoat. Is it the numbers or is it me"
+  - id: kush-reggie-r2
+    from: Reggie
+    trigger: { cue: "Just before the Malik to Kush cue in Round Two" }
+    body: "Kushington. Your moment approaches. Try to be brief. (You won't.)"
+
+host_notes: |
+  Core. Round One: suspected theft. Round Two: $2.4M (the Malik to Kush
+  cue). Round Three: Blackwood Legal Counsel (with Lindsey). Rescue: "Kushington,
+  please stop teasing us and tell us what you found."

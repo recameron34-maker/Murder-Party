@@ -1,0 +1,22 @@
+id: malik-message
+title: Arthur's scheduled message to Malik
+kind: prop
+source: part-one
+round: 3
+timing: mid
+carrier: host
+delivery: After the financial reveal, Reggie hands Malik the printout (and can fire Malik's cue text). Malik reads it aloud.
+hide: Reggie keeps it on him.
+print: |
+  SCHEDULED: Sunday 12:00 AM
+  To: Malik
+
+  If you're reading this, the truth is public. The theft came from inside my
+  legal operation. I trusted the wrong person.
+
+  — A.B.
+truth: Arthur's planned midnight exposure, routed through Malik's podcast.
+points_to: [morgan]
+critical: true
+refs: [malik, arthur]
+times: ["12:00 AM"]

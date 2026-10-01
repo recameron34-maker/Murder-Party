@@ -1,0 +1,19 @@
+# Hint cards Reggie sells for $3,000 Blackmail Cash. They nudge; they never solve.
+# `from_round`: don't hand this card out before this round.
+hints:
+  - { id: time-1, category: TIME, from_round: 1, text: "The blackout may be distracting you." }
+  - { id: time-2, category: TIME, from_round: 1, text: "Who was the last person to see Arthur alive, and when?" }
+  - { id: time-3, category: TIME, from_round: 2, text: "A body keeps better time than a fuse box." }
+  - { id: time-4, category: TIME, from_round: 2, text: "Count the minutes between 9:31 and 9:45. Who had them?" }
+  - { id: money-1, category: MONEY, from_round: 1, text: "Ask who first noticed the transfers." }
+  - { id: money-2, category: MONEY, from_round: 2, text: "Three letters on a torn page. Ask the people who handle Arthur's paperwork what they stand for." }
+  - { id: money-3, category: MONEY, from_round: 2, text: "A banker's caution is not the same as a thief's." }
+  - { id: house-1, category: HOUSE, from_round: 1, text: "The library matters more than it appears." }
+  - { id: house-2, category: HOUSE, from_round: 1, text: "Silas didn't like to see his servants. Ask how they got around." }
+  - { id: house-3, category: HOUSE, from_round: 2, text: "Where would you come out if you couldn't use the study door?" }
+  - { id: house-4, category: HOUSE, from_round: 2, text: "Someone in this house has been living in the walls. That doesn't mean they used the right wall." }
+  - { id: motive-1, category: MOTIVE, from_round: 1, text: "Not every financial scandal is connected." }
+  - { id: motive-2, category: MOTIVE, from_round: 1, text: "Arthur said tonight wasn't about inheritance. Believe him." }
+  - { id: motive-3, category: MOTIVE, from_round: 2, text: "Who loses everything if Arthur speaks at midnight? Not who gains if he dies." }
+  - { id: people-1, category: PEOPLE, from_round: 2, text: "Several women were near that door. Ask each one exactly when." }
+  - { id: people-2, category: PEOPLE, from_round: 3, text: "Ask the house manager who she passed in the corridor." }

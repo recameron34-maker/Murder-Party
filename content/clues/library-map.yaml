@@ -1,0 +1,19 @@
+id: library-map
+title: The old floor plan
+kind: physical
+source: part-two
+round: 2
+timing: early
+carrier: joji
+delivery: Reggie gives it to Joji at the start of Round Two (or put it in Joji's Round Two envelope).
+hide: Joji's Round Two envelope.
+print: |
+  BLACKWOOD MANOR — GROUND FLOOR — S. BLACKWOOD, 1891
+
+  [old-looking plan; mark STUDY and LIBRARY on either side of one wall,
+  with a faint dotted line between them. Do NOT label it "secret passage".]
+truth: The faint line is the Raven's Walk passage, study to library.
+points_to: []
+critical: true
+refs: [joji]
+fallback: If Joji is somehow absent, Reggie produces it and asks Tim what he makes of it.

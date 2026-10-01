@@ -1,0 +1,116 @@
+id: spare-ellery
+name: Ellery
+written_for: Spare, any late guest   # HOST
+tier: flex                      # HOST
+effort: high                    # HOST
+pronouns: any                   # HOST
+role: Former child star of "The Raven's Heir"
+tagline: "At eleven you played young Arthur Blackwood on television. You never quite stopped."
+
+costume: |
+  Faded star: velvet everything, a cravat, dramatic eyeliner, a signed
+  headshot or two to hand out, and the posture of someone forever waiting for
+  their close-up. You're "[Name] Ellery."
+
+intro: |
+  In 2004 you played young Arthur in the TV miniseries **The Raven's Heir**,
+  a lurid, much-loved adaptation of the Blackwood family legend. Arthur
+  consulted on it, hated it, and kept a signed photo of you in his study
+  anyway. You've been invited to every Midnight Supper since.
+
+backstory: |
+  The series made you famous at eleven and unemployable at fifteen. You
+  still do conventions. You still do the voice.
+
+  The production designer told you, back then, that the sets were built from
+  "the real plans of the real house," including a famous scene in the
+  library where a **bookcase swings open into a secret corridor**. Everyone
+  thought it was invented for TV.
+
+  Your secret: you've been quietly negotiating to **play Arthur again** in a
+  reboot, and the producers asked you to "get close to the family" for
+  material. You've been taking notes all night.
+
+relationships:
+  - with: albie
+    text: A fellow performer. Your rival for the room's attention. Only one of you gets the dramatic death scene.
+  - with: joji
+    text: The Professor has publicly called The Raven's Heir "architecturally illiterate." You'd love to prove him wrong.
+  - with: kim
+    text: The Keyhole covered your teenage meltdown in unflattering detail. You've never forgiven whoever writes it. Kim always seems to know more than they let on.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:00 PM"
+    where: drawing-room
+    text: Signing headshots nobody asked for.
+  - at: "9:00 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: Performing your famous monologue from Episode 3 at Albie's spirit circle, to mixed reviews. You never left.
+
+knows:
+  - The Raven's Heir had a library bookcase that opened into a secret corridor, supposedly based on the real plans.
+  - You're in talks to play Arthur in a reboot and have been taking notes on everyone.
+  - You were in the drawing room from 8:00 until the blackout.
+
+secret: |
+  You're **gathering material on everyone here** for a TV reboot of the
+  Blackwood story.
+
+blackmail:
+  - You're secretly negotiating to play Arthur in a reboot.
+  - You've been taking notes on the guests for the producers.
+  - The production designer claimed the sets were based on the real plans.
+
+instructions:
+  - High effort. Perform at every opportunity. Quote "your" Episode 3 monologue.
+  - Only mention the TV library bookcase in **Round Two, after the Professor has spoken about passages.** It's a fun echo, not a reveal.
+  - You may cast anyone in your reboot, out loud.
+  - Never admit the reboot notes unless paid.
+
+mission: |
+  Perform a **30-second dramatic monologue to at least five people at once.**
+  Reggie must witness it.
+
+rounds:
+  1:
+    text: |
+      Arthur is dead. Treat it as the finale of a long-running series. Weep
+      in character as young Arthur. Offer your "insider" knowledge of the
+      legend.
+    reveal:
+      - Reveal you played young Arthur in The Raven's Heir.
+  2:
+    text: |
+      *After* the Professor has talked about the passage, gasp and say: **"In
+      Episode 3 there was a bookcase in the library that opened into a secret
+      corridor! The designer swore it was from the real plans!"**
+
+      Life imitating art imitating life. Bask.
+    reveal:
+      - After Joji's reveal, recall that the TV series' library bookcase opened into a secret corridor.
+  3:
+    text: |
+      Pitch your reboot to the room. Cast the murderer. (Wrongly, probably.)
+    reveal:
+      - Publicly cast the murderer in your imaginary reboot.
+
+texts:
+  - id: ellery-agent-history
+    from: Agent
+    trigger: { history: true }
+    stamp: "This afternoon"
+    body: "Producers want 'texture.' Names, scandals, who sleeps where. Get close to the family. Be subtle (I know)."
+  - id: ellery-agent-r1
+    from: Agent
+    trigger: { round: 1, after: 15 }
+    body: "A MURDER?? Stay there. Do NOT leave. This is the reboot. This is the whole reboot."
+
+fallback: |
+  Nothing depends on Ellery. The TV-bookcase line only corroborates Joji's
+  Round Two reveal, after Joji has made it.
+
+host_notes: |
+  Spare, high effort, any gender or name. Corroborates the passage only after
+  Joji's reveal (instructed). Whereabouts: drawing room.

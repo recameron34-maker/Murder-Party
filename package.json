@@ -1,0 +1,24 @@
+{
+  "name": "blackwood-manor",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Murder at Blackwood Manor: host planner and guest companion app",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test test/*.test.mjs",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "marked": "^15.0.0",
+    "yaml": "^2.6.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.146.0"
+  }
+}

@@ -1,0 +1,117 @@
+id: spare-hollis
+name: Hollis
+written_for: Spare, any late guest   # HOST
+tier: flex                      # HOST
+effort: medium                  # HOST
+pronouns: any                   # HOST
+role: '"Collector" (undercover insurance investigator)'
+tagline: "You're here to admire the art. You're here to find out who faked it."
+
+costume: |
+  Moneyed but forgettable: a well-cut dark suit or dress, an expensive
+  watch, a catalog of the Blackwood collection under one arm, and a small
+  notebook you think nobody sees. You're "[Name] Hollis."
+
+intro: |
+  You've introduced yourself as a private collector. You are in fact an
+  **investigator for Arthur's insurers**, here about the $750,000 Lady
+  Evangeline claim. You know far more about forgery than a collector should.
+
+backstory: |
+  Your firm has been chasing the forger **Lucien Vasse** across three
+  countries. Arthur came to you a month ago. You've concluded Molly Monroe
+  was probably a dupe, but "probably" doesn't close a claim.
+
+  At **9:05** in the Front Hall you took a call from your office and said,
+  a little too loudly: ***"It'll all be over by midnight. He won't be a
+  problem after tonight."*** You were talking about Vasse, whom the French
+  police were arresting in Marseille. Someone overheard. It sounded very
+  bad.
+
+relationships:
+  - with: molly
+    text: The dealer who sold the fake. You believe she was conned, but you haven't told her that yet.
+  - with: martin
+    text: Arthur's art expert. You've been comparing notes all month.
+  - with: jimmy-friedman
+    text: He's tried to sell you a "Monet" twice tonight.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:00 PM"
+    where: gallery
+    text: Examining Lady Evangeline at uncomfortable proximity.
+  - at: "9:05 PM"
+    where: front-hall
+    text: 'A phone call: "It''ll all be over by midnight. He won''t be a problem after tonight." You meant Vasse.'
+  - at: "9:10 PM"
+    until: "9:45 PM"
+    where: billiard-room
+    text: Watching the card game, refusing to play, taking notes on who cheats.
+
+knows:
+  - Molly was very likely deceived by the forger Lucien Vasse.
+  - Vasse was being arrested in Marseille tonight.
+  - Your 9:05 phone call sounded like a threat against Arthur. It wasn't.
+
+secret: |
+  You're an **insurance investigator**, not a collector, and your overheard
+  phone call ("He won't be a problem after tonight") was about arresting
+  the forger, not about Arthur.
+
+blackmail:
+  - You're an insurance investigator, not a collector.
+  - Your 9:05 phone call was about the forger Lucien Vasse.
+  - You believe Molly was conned.
+
+instructions:
+  - Stay undercover for Round One. Act like a bored collector.
+  - If your phone call is quoted at you, refuse to explain until Round Three (or until paid).
+  - You may examine any object and pronounce it "insured" or "uninsurable."
+  - Your alibi: the billiard room, 9:10 to the blackout.
+
+mission: |
+  Get Molly to **admit, in front of a witness, that she didn't know the
+  painting was fake.** Report it to Reggie.
+
+rounds:
+  1:
+    text: |
+      Be a collector. Be dull. Ask pointed questions about the Lady
+      Evangeline portrait and who sold it.
+    reveal:
+      - Show suspicious interest in the forged painting and who sold it.
+  2:
+    text: |
+      If anyone repeats your overheard phone call, **"He won't be a problem
+      after tonight"**, decline to explain. Let them think the worst.
+    reveal:
+      - Refuse to explain your overheard 9:05 phone call.
+  3:
+    text: |
+      Come clean: you're an **insurance investigator**. The call was about
+      **Lucien Vasse**, the forger, arrested in Marseille tonight. And yes,
+      you believe Molly was conned too.
+    reveal:
+      - Reveal you're an insurance investigator; the call was about the forger, Vasse.
+
+texts:
+  - id: hollis-office-history
+    from: Office
+    trigger: { history: true }
+    stamp: "9:04 PM"
+    body: "Gendarmerie moving on Vasse in Marseille tonight. Confirm when you can talk."
+  - id: hollis-office-r2
+    from: Office
+    trigger: { round: 2, after: 12 }
+    body: "Vasse in custody. He's singing. Says the Monroe woman never knew a thing."
+
+fallback: |
+  Nothing depends on Hollis. Molly is cleared by Martin's note (Round Three)
+  either way; Hollis only corroborates it and adds a resolvable red herring
+  (the 9:05 phone call).
+
+host_notes: |
+  Spare, medium effort, any gender or name. Red herring (the overheard call)
+  resolved by Hollis's own Round Three envelope and Martin's note about Vasse.
+  Whereabouts: gallery, front hall, billiard room. Never near the study.

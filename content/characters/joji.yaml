@@ -1,0 +1,141 @@
+id: joji
+name: Professor Joji Beaumont
+written_for: Joji               # HOST
+tier: core                      # HOST
+pronouns: he/him                # HOST
+role: Architectural historian
+tagline: "Every house is a confession, if you know how to read the walls."
+
+costume: |
+  Tweedy academic gone gothic: a velvet jacket or waistcoat, a scarf, ink
+  on your fingers, a rolled-up blueprint or a notebook stuffed with loose
+  sketches. Optional: a measuring tape you produce at inappropriate moments.
+
+intro: |
+  You've spent eight months studying Blackwood Manor for a book, *The Walls of
+  Blackwood*. You know this house better than the family does, and frankly
+  you like it better than the family too. You're married to Dr. Noor Beaumont,
+  who tolerates this.
+
+backstory: |
+  Arthur funds your research. In return you're writing the definitive history
+  of the manor and preparing its application for landmark status. That
+  paperwork went to his lawyers, Blackwood Legal, back in August: your full
+  survey, including copies of Silas Blackwood's original 1891 plans.
+
+  Those plans show what the family has forgotten. Silas hated seeing his
+  servants, so he built **passages** inside the walls so they could move
+  unseen. Most were bricked up in the 1950s. You are not certain all of them
+  were.
+
+  Your shameful secret: you have pocketed a small brass servants' bell from
+  the east wing, labeled *Study*. It's on your desk at home. You meant to
+  give it back. You won't.
+
+relationships:
+  - with: noor
+    text: Your wife, the doctor. She's the only person who can make you stop talking about cornices.
+  - with: arthur
+    text: Your patron. He loved the house's stories almost as much as you do, and he guarded some of them.
+  - with: tim
+    text: The photographer. He keeps asking good questions about the library. You like him.
+  - with: louis
+    text: He has been pestering you for weeks about the "Raven Room" and wants to see your plans. You have refused, on principle and because he smells faintly of dust.
+  - with: alma
+    text: The archivist. She leaves notes in library books for you. You suspect she has a crush. You are flattered and terrified.
+
+evening:
+  - at: "8:00 PM"
+    until: "8:40 PM"
+    where: gallery
+    text: Giving an unrequested tour of the portraits. Louis hung on every word about hidden rooms.
+  - at: "8:40 PM"
+    until: "9:15 PM"
+    where: drawing-room
+    text: Holding court on the manor's "architectural secrets." People pretended to listen.
+  - at: "9:15 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: By the fire with Noor and Hannah the whole time, explaining load-bearing walls with hand gestures.
+
+knows:
+  - Silas Blackwood built **servants' passages** inside the walls in 1891. Most were sealed in the 1950s.
+  - The 1891 plans show a faint line between the study and the library that you've never been able to explain.
+  - The family legend of a hidden "Raven Room" that appears on no plan.
+  - Your survey and the plans went to Blackwood Legal for the landmark application. So Arthur and his lawyers have seen them.
+
+secret: |
+  You suspect, though you've never proven it, that **a passage connects
+  Arthur's study to the library**. Arthur forbade you to investigate the
+  study wall. Also, you stole a servants' bell.
+
+blackmail:
+  - You suspected a passage between the study and the library before tonight.
+  - Arthur forbade you to investigate the study wall.
+  - You stole a brass servants' bell from the east wing.
+
+instructions:
+  - In Round One, establish that the house has hidden passages. Don't say where they lead yet.
+  - When Tim asks you about the strange library door in Round Two, **perform**. This is the moment you were born for.
+  - You may "examine" walls, bookcases and frames dramatically at any time.
+  - If someone asks who has seen the 1891 plans, answer honestly: you, Arthur, and his lawyers.
+
+mission: |
+  Find **someone willing to help you investigate the architecture**. Recruit
+  an assistant, give them a task, report the partnership to Reggie.
+
+rounds:
+  1:
+    text: |
+      When the talk turns to how a killer could get in or out, or when Reggie
+      asks whether the house has secrets, tell everyone: **Blackwood Manor
+      was built with servants' passages inside its walls.** Silas didn't
+      like seeing his staff. Most were sealed. *Most.*
+
+      Keep the study and library to yourself for now.
+    reveal:
+      - The house has hidden servants' passages, some possibly unsealed.
+  2:
+    text: |
+      Reggie will give you an old floor plan (prop). Study it. It marks the
+      **STUDY** and the **LIBRARY**, with a faint line between them.
+
+      When Tim asks whether the strange library door could be a passage,
+      perform the realization: **the passage connects Arthur's study directly
+      to the library.** Someone could enter the study, leave through the
+      wall, and come out among the books, never using the study door.
+    reveal:
+      - The hidden passage connects the study to the library.
+  3:
+    text: |
+      If asked where the passage ends: **behind a bookcase in the library**,
+      opened from that side by pressing the carved raven on the third shelf.
+      From the study it's a panel by the fireplace.
+
+      If anyone asks about the legendary "Raven Room": you now believe the
+      Raven Room *is* the passage, a narrow cold corridor with a bench, a
+      candle niche and Silas's initials in the brick. The family called it the
+      Raven's Walk.
+    reveal:
+      - The passage ends behind a bookcase in the library.
+
+texts:
+  - id: joji-arthur-history
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "Last week"
+    body: "The study wall stays as it is, Professor. Some of Silas's work should remain unpublished. Humor an old man."
+  - id: joji-noor-r1
+    from: Noor ❤️
+    trigger: { round: 1, after: 10 }
+    body: "Darling. If you know something about the walls, now is the time to be insufferable about it."
+  - id: joji-tim-r2
+    from: Tim
+    trigger: { round: 2, after: 5 }
+    body: "Professor, I need to ask you something about that library bookcase. Don't go anywhere."
+
+host_notes: |
+  Core. Round One: passages exist. Round Two: study to library (with the
+  library map prop and Tim's question). Round Three: where it ends. The "who
+  has seen the plans" answer is a NEW, optional breadcrumb toward Morgan; see
+  docs/decisions.md.

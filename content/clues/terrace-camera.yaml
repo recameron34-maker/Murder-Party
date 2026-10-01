@@ -1,0 +1,25 @@
+id: terrace-camera
+title: Terrace camera still
+kind: physical
+source: new
+round: 2
+timing: late
+carrier: host
+delivery: When Kevin demands the footage (his Round Two envelope), Reggie makes him sweat, then produces the printout.
+hide: Reggie keeps it on him.
+print: |
+  BLACKWOOD SECURITY: TERRACE CAM 02
+
+  21:22:14  Figure exits drawing-room doors (dark overcoat). Paces.
+  21:31:50  Figure smoking at balustrade.
+  21:38:03  Figure on phone? Pacing.
+  21:45:00  CAMERA POWER INTERRUPTED
+  21:46:41  CAMERA RESTORED. Figure at balustrade.
+  21:47:30  Figure re-enters drawing room.
+
+  [grainy still: a man in an overcoat at the balustrade, face clearly Kevin's]
+truth: Kevin was on the terrace from 9:22 to 9:47 in Arthur's coat. Clears him of the murder.
+points_to: []
+critical: false
+refs: [kevin]
+times: ["9:22 PM", "9:47 PM"]

@@ -1,0 +1,54 @@
+# Casting. Who plays whom.
+#
+# status:
+#   confirmed         cast and coming
+#   maybe             assigned to a guest who hasn't confirmed (can log in; their
+#                     [[if:...]] lines in other people's envelopes stay OFF until confirmed)
+#   declined          a maybe who isn't coming (fallbacks apply)
+#   spare-unassigned  a spare nobody is playing (no login, fallbacks apply)
+#   spare-assigned    a spare handed to a late guest
+#
+# Passphrases are NOT stored here (the repo may be public). The host panel
+# generates them and keeps them server-side. Changes made in the host panel
+# at the party override this file.
+
+cast:
+  # Core: carry solution-critical evidence. Must be cast.
+  annie:          { player: Annie,    status: confirmed }
+  noor:           { player: Noor,     status: confirmed }
+  joji:           { player: Joji,     status: confirmed }
+  tim:            { player: Tim,      status: confirmed }
+  alma:           { player: Alma,     status: confirmed }
+  jimmy:          { player: Jimmy,    status: confirmed }
+  kush:           { player: Kush,     status: confirmed }
+  lindsey:        { player: Lindsey,  status: confirmed }
+  maya:           { player: Maya,     status: confirmed }
+  malik:          { player: Malik,    status: confirmed }
+  morgan:         { player: Morgan,   status: confirmed }
+  carlotta:       { player: Carley,   status: confirmed }
+  # Supporting
+  clara:          { player: Clara,    status: confirmed }
+  lexi:           { player: Lexi,     status: confirmed }
+  kevin:          { player: Kevin,    status: confirmed }
+  jimmy-friedman: { player: Jimmy Friedman, status: confirmed }
+  molly:          { player: Molly,    status: confirmed }
+  martin:         { player: Martin,   status: confirmed }
+  hannah:         { player: Hannah,   status: confirmed }
+  shea:           { player: Shea,     status: confirmed }
+  maddie:         { player: Maddie,   status: confirmed }
+  daniel:         { player: Daniel,   status: confirmed }
+  kim:            { player: Kim,      status: confirmed }
+  louis:          { player: Louis,    status: confirmed }
+  albie:          { player: Albie,    status: confirmed }
+  # Flex: maybes
+  savanah:        { player: Savanah,  status: maybe }
+  courtney:       { player: Courtney, status: maybe }
+  # Flex: spares for late additions
+  spare-rook:     { player: null, status: spare-unassigned }
+  spare-quill:    { player: null, status: spare-unassigned }
+  spare-hollis:   { player: null, status: spare-unassigned }
+  spare-vesper:   { player: null, status: spare-unassigned }
+  spare-blake:    { player: null, status: spare-unassigned }
+  spare-wren:     { player: null, status: spare-unassigned }
+  spare-sterling: { player: null, status: spare-unassigned }
+  spare-ellery:   { player: null, status: spare-unassigned }

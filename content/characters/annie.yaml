@@ -1,0 +1,144 @@
+id: annie
+name: Antoinette "Annie"
+written_for: Annie              # HOST
+tier: core                      # HOST
+pronouns: she/her               # HOST
+role: House manager of Blackwood Manor
+tagline: "You've poured every drink in this house for eleven years. You know who needs one."
+
+costume: |
+  Impeccable and slightly old-fashioned: a black dress or waistcoat with a
+  crisp white collar, a ring of antique keys at your hip, and a silver tray
+  you are never seen without. Staff, but the kind who outranks most guests.
+
+intro: |
+  You run Blackwood Manor: the cellar keys, the guest lists, the seating plan,
+  the lies. Every Midnight Supper for eleven years you have carried Arthur
+  the Reckoning, his 9:30 Sazerac. Tonight you carried it for the last time.
+
+backstory: |
+  You arrived at nineteen to polish silver and never left. You know which
+  guest takes sugar, which takes a lover, and which takes the spoons home.
+  The family treats you like furniture, which is how you hear everything.
+
+  Your sideline is that for three years you have quietly sold Arthur's lesser
+  vintages to a London restaurateur and refilled the bottles with
+  supermarket claret. Arthur never noticed, which tells you everything you
+  need to know about rich men's palates. You also slip a little gossip to
+  Albie, the medium, before her "readings," for a cut.
+
+  And you owe Morgan. When your marriage went bad, she handled your divorce
+  for nothing and got you the flat. You don't forget kindness. It's rare
+  enough in this house.
+
+relationships:
+  - with: arthur
+    text: Your employer for eleven years. Gruff, generous, impossible. You'll miss bringing him that drink more than you'll say.
+  - with: morgan
+    text: She did your divorce for free. You'd walk into fire for her, or at least lie to Reggie.
+  - with: albie
+    text: You feed her gossip before her "readings." The spirits split the fee with you, fifty-fifty.
+  - with: shea
+    text: The nurse. You two run this house between you. You've noticed she's been taking extra food upstairs at night.
+  - with: kevin
+    text: You watched him grab Arthur's coat off the hall hook at 9:22 and storm outside. Typical.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:29 PM"
+    where: drawing-room
+    text: Champagne, canapés, seating-plan diplomacy. Clara and Arthur disappeared into the study at 8:30; you noted the time and her lipstick.
+  - at: "9:22 PM"
+    where: front-hall
+    text: Kevin storms past you, takes the nearest coat off the hook (Arthur's, as it happens) and goes out onto the terrace.
+  - at: "9:30 PM"
+    where: drawing-room
+    text: You mix the Reckoning at the bar, Arthur's Sazerac, as the Supper rules require.
+  - at: "9:31 PM"
+    where: study
+    text: You carry it in. Arthur is **alive and alone** at his desk, writing, a red leather folder open in front of him. He says, "Last one, Annie." You thought he meant the drink.
+  - at: "9:32 PM"
+    where: east-corridor
+    text: Walking back down the East Corridor you pass **Morgan** heading toward the study. She smiles. You smile. She has a meeting; it's none of your business.
+  - at: "9:33 PM"
+    until: "9:47 PM"
+    where: drawing-room
+    text: Back to champagne duty. The lights go out at 9:45 with a crash from somewhere downstairs. You're holding a full tray in the dark.
+
+knows:
+  - You were the last person to see Arthur alive, at **9:31**. He was alone.
+  - You passed Morgan in the East Corridor at 9:32, walking toward the study.
+  - Kevin left for the terrace at 9:22 wearing Arthur's coat.
+  - Someone has been raiding the larder at night. The staff say it's a ghost. You say it's Shea.
+
+secret: |
+  You saw **Morgan heading to the study at 9:32** and you haven't told
+  anyone, out of loyalty. Separately, you've been selling Arthur's wine and
+  refilling the bottles, and you feed Albie gossip for her "visions."
+
+blackmail:
+  - You saw Morgan in the East Corridor at 9:32.
+  - You've been selling Arthur's wine and refilling the bottles.
+  - Albie's "spirit messages" come from you.
+
+instructions:
+  - Until Round Three, refuse any Blackmail question about who you saw in the East Corridor, whatever the price.
+  - Reveal the 9:31 drink early and confidently. It's the most important time of the night.
+  - You may pour a drink for anyone who asks you a question. Watch who drinks it.
+  - Keep a straight face when people praise the wine.
+
+mission: |
+  Get someone to **reveal a scandal over champagne**. Pour, listen, report
+  the scandal to Reggie.
+
+rounds:
+  1:
+    text: |
+      Someone will ask who saw Arthur last. It was you. Say so: **9:31, the
+      Reckoning, alive and alone at his desk.**
+
+      Don't mention the corridor. Morgan had a meeting; you don't gossip about
+      the family's lawyer. (You gossip about everyone else.)
+    reveal:
+      - You delivered Arthur's drink at 9:31 and he was alive and alone.
+  2:
+    text: |
+      If anyone asks: Arthur had a **red leather folder** open on his desk at
+      9:31. And Kevin took Arthur's coat off the hook at 9:22 and went
+      outside.
+
+      You may start to feel uneasy. Morgan's name keeps coming up and you
+      know something nobody else does. Stay loyal one more round.
+    reveal:
+      - Arthur had the red leather folder open at 9:31.
+  3:
+    text: |
+      You can't carry this any longer. Tell the room: **at 9:32, walking
+      back from the study, you passed Morgan heading toward it.**
+
+      If pressed for why you waited: she was expected, it was on the
+      calendar, she's been kind to you, and you didn't think it mattered.
+      You're starting to think it mattered.
+    reveal:
+      - You passed Morgan heading toward the study at 9:32.
+
+texts:
+  - id: annie-albie-history
+    from: Albie
+    trigger: { history: true }
+    stamp: "6:12 PM"
+    body: "Anything juicy for tonight? The spirits are hungry 👻 usual split"
+  - id: annie-mrs-hale-r1
+    from: Mrs. Hale (Kitchens)
+    trigger: { round: 1, after: 8 }
+    body: "Is it true?? About Mr Arthur?? We heard the crash and then the lights. Something in this house wants us all in the dark"
+  - id: annie-unknown-r2
+    from: Unknown number
+    trigger: { round: 2, after: 12 }
+    body: "You were in that corridor. You saw. Loyalty is a lovely thing until it's an accessory."
+
+host_notes: |
+  Core. The 9:31 sighting (Round One) and the 9:32 Morgan sighting (Round
+  Three) are both solution-critical. Ross rescue lines: "Antoinette, weren't
+  you one of the last people to see Arthur?" (R1) and "Annie, who did you
+  pass?"

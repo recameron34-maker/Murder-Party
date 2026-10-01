@@ -1,0 +1,11 @@
+# Cloudflare Workers config for the guest companion app + host panel.
+# Setup (once): see README → "Deploy to Cloudflare".
+name = "blackwood-manor"
+main = "src/worker.mjs"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "blackwood-manor"
+database_id = "REPLACE-WITH-THE-ID-FROM-wrangler-d1-create"

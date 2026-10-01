@@ -1,0 +1,138 @@
+id: tim
+name: Timothy "Tim"
+written_for: Tim                # HOST
+tier: core                      # HOST
+pronouns: he/him                # HOST
+role: Photographer of the Midnight Supper
+tagline: "You've been everywhere tonight. The camera never blinks."
+
+costume: |
+  Dark, practical and a little louche: black shirt open at the collar, a
+  camera on a strap (a real one, a vintage one or a phone in a fancy case),
+  a pocketful of film canisters, and an air of having seen things.
+
+intro: |
+  Every year one photograph is taken at the stroke of midnight at the Supper
+  table. Tonight that's your job. You've spent the evening wandering the
+  house "getting atmosphere," which means you've been in rooms nobody else
+  bothered to visit.
+
+backstory: |
+  Arthur hired you for the Supper photograph and gave you the run of the
+  house. The house is a gift: candlelight, rot, beautiful people behaving
+  badly.
+
+  Your secret income comes from **The Keyhole**, the anonymous society
+  column. For two years you've sold it candid photos through an anonymous
+  email address. You have no idea who's behind it. Tonight's haul is
+  already spectacular: **Clara leaving Arthur's study at 8:44 with her
+  lipstick freshly redone**, and Maddie wearing a necklace that very much
+  belongs to the family trust.
+
+relationships:
+  - with: joji
+    text: The Professor. He's the only person who might explain what you saw in the library.
+  - with: kim
+    text: Always somewhere near the gossip. You've wondered whether Kim knows who runs The Keyhole.
+  - with: alma
+    text: You helped her with the Supper place cards in the dining room. She has beautiful handwriting and an unsettling devotion to this family.
+  - with: louis
+    text: You caught him in the library tapping on the walls like a woodpecker. He told you he was "listening for history."
+  - with: clara
+    text: You have a photograph of her that she would pay a lot of money for. Possibly more than The Keyhole would.
+
+evening:
+  - at: "8:30 PM"
+    until: "8:55 PM"
+    where: front-hall
+    text: Shooting the hall and the gallery. At 8:44 you catch Clara coming out of the study, glowing, lipstick freshly applied. Click.
+  - at: "9:00 PM"
+    until: "9:10 PM"
+    where: library
+    text: In the library for the bookcases. One bookcase doesn't sit flush with the wall, and there's a **cold draft** from behind it. Louis is in there tapping the paneling.
+  - at: "9:10 PM"
+    until: "9:30 PM"
+    where: billiard-room
+    text: Photographing Jimmy Friedman's card game. Very cinematic, very little honesty.
+  - at: "9:30 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: Setting up the midnight shot at the Supper table and helping Alma with place cards until she leaves around 9:39.
+  - at: "9:45 PM"
+    where: dining-room
+    text: The dining-room chandelier dies first. Then the whole house. A crash from the kitchens below. You go toward the noise in the dark.
+
+knows:
+  - At 9:00 the library had a bookcase that didn't sit flush and a cold draft behind it.
+  - Louis was in the library at 9:00 tapping on the walls.
+  - The blackout started in the dining room and the kitchens, with a crash from downstairs.
+  - You have photographs of Clara leaving the study at 8:44 and of Maddie in the trust's necklace.
+
+secret: |
+  You sell candid photos to **The Keyhole**, and tonight you have two that
+  could ruin people: Clara leaving the study, and Maddie in the trust's
+  necklace. You noticed the library door hours before anyone cared.
+
+blackmail:
+  - You sell photographs to The Keyhole.
+  - You photographed Clara leaving Arthur's study at 8:44.
+  - Louis was in the library tapping the walls at 9:00.
+
+instructions:
+  - In Round One, mention the strange library door. In Round Two, ask Joji about it directly.
+  - You may "take photographs" of anyone at any time and announce that you have.
+  - You may sell (in Blackmail Cash) a description of one of your photographs to anyone who asks.
+  - If someone accuses you of selling to The Keyhole, deny it with professional indignation.
+
+mission: |
+  Find **someone who knows something about the strange library door**.
+  Report who and what to Reggie.
+
+rounds:
+  1:
+    text: |
+      Reggie may ask whether you noticed anything unusual. You did: at about
+      9:00, in the library, **one bookcase didn't sit flush against the wall
+      and there was a cold draft behind it.** Like a door, almost.
+
+      You may also mention that Louis was in there tapping the walls.
+    reveal:
+      - You noticed a strange library bookcase/door with a cold draft at 9:00.
+  2:
+    text: |
+      Find Professor Joji Beaumont and ask him directly, in front of people:
+      **"Professor, could that library door be some kind of passage?"**
+
+      Then let him perform. Look amazed. You were right all along.
+    reveal:
+      - Ask Joji publicly whether the library door could be a passage.
+  3:
+    text: |
+      When the blackout comes up: you were in the dining room. **The
+      dining-room chandelier went first, then the house**, and you heard a
+      crash from the kitchens downstairs. It felt like it started below
+      stairs, not anywhere near the study.
+
+      Optional, if paid or if it's funny: produce your "photo" of Clara.
+    reveal:
+      - The blackout started in the dining room and kitchens, with a crash from downstairs.
+
+texts:
+  - id: tim-keyhole-history
+    from: The Keyhole (anon)
+    trigger: { history: true }
+    stamp: "5:40 PM"
+    body: "Usual rates. Faces, hands, who leaves which room with whom. Bonus for anything involving the family trust."
+  - id: tim-camera-r1
+    from: Camera roll
+    trigger: { round: 1, after: 5 }
+    body: "📷 IMG_0900, Library, 9:00 PM. A bookcase standing a finger's width proud of the wall. You remember the cold on your hand."
+  - id: tim-keyhole-r2
+    from: The Keyhole (anon)
+    trigger: { round: 2, after: 9 }
+    body: "Heard you had a VERY productive evening. Name your price for the 8:44."
+
+host_notes: |
+  Core. Round One: strange library door. Round Two: the Tim to Joji cue.
+  Round Three: blackout origin (supports Reggie's reveal). Rescue: "Timothy,
+  you've been wandering around this house all evening. Anything unusual?"

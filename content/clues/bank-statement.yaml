@@ -1,0 +1,23 @@
+id: bank-statement
+title: Arthur's folded bank statement (final evidence)
+kind: prop
+source: part-one
+round: 3
+timing: end
+carrier: kevin
+delivery: Kevin finds it in the pocket of Arthur's coat (which he grabbed at 9:22) and hands it to Reggie, who reads it as the final physical evidence. This merges Part One's bank statement with Part Two's Clue 10.
+hide: Kevin's Round Three envelope.
+print: |
+  BLACKWOOD HOLDINGS: TRANSFER AUTHORIZATIONS
+
+  Six transfers, totaling $2,400,000
+  Authorization origin: BLACKWOOD LEGAL COUNSEL
+  Authorized user ID: ML-0427
+
+  [across the top, in Arthur's handwriting:]
+  LEGAL. $2.4M. MIDNIGHT.
+truth: The money trail ends at Morgan's credentials. It still doesn't prove murder by itself; it needs Annie, Maya, Noor, Joji, Jimmy and Alma.
+points_to: [morgan]
+critical: true
+refs: [kevin, morgan]
+fallback: If Kevin isn't cast, Reggie "finds" it in Arthur's coat himself.

@@ -1,0 +1,116 @@
+id: spare-blake
+name: Blake
+written_for: Spare, any late guest   # HOST
+tier: flex                      # HOST
+effort: medium                  # HOST
+pronouns: any                   # HOST
+role: Fencing master to the Blackwoods
+tagline: "You've taught half this family to hold a blade. The other half you've taught other things."
+
+costume: |
+  Athletic elegance: fitted black, a fencing glove tucked in a pocket or a
+  foil (prop, blunted), excellent posture, and a fresh bandage across one
+  hand. You're "[Name] Blake."
+
+intro: |
+  You've been fencing master to Blackwood Manor for five years: Kevin
+  twice a week, Clara on Thursdays, and Arthur himself, gently, on doctor's
+  orders. You're strong, graceful and rumored to be involved with at least two
+  people in this room.
+
+backstory: |
+  The rumors are half true. You and **Hannah Wellington** had a fling last
+  winter that she would very much like forgotten now that she's "working
+  late" with the accountant. Clara, despite what The Keyhole implied, was
+  only ever on Thursdays for lessons.
+
+  The bandage on your hand comes from **sparring with Kevin at 6 PM**. He
+  caught you with a careless riposte. It looks, tonight, like exactly the
+  kind of injury someone gets swinging eight pounds of bronze.
+
+relationships:
+  - with: kevin
+    text: Your Tuesday and Friday pupil. Sloppy footwork, enormous temper. He cut your hand at 6 PM.
+  - with: hannah
+    text: Last winter's fling. She's pretending it never happened. You're letting her, for now.
+  - with: clara
+    text: Your Thursday pupil. Nothing more, whatever The Keyhole says.
+
+evening:
+  - at: "6:00 PM"
+    where: upstairs
+    text: Sparring with Kevin in the long gallery upstairs. He cuts your hand. You bandage it yourself.
+  - at: "8:00 PM"
+    until: "9:00 PM"
+    where: drawing-room
+    text: Avoiding Hannah's eyes.
+  - at: "9:00 PM"
+    until: "9:45 PM"
+    where: billiard-room
+    text: Leaning on the billiard table watching Jimmy Friedman's card game, the whole time. He'll vouch for you.
+
+knows:
+  - Kevin cut your hand while sparring at 6 PM.
+  - You watched the card game in the billiard room from 9:00 until the blackout.
+  - You and Hannah had an affair last winter.
+
+secret: |
+  You had an **affair with Hannah Wellington**, and your bandaged hand makes
+  you look like a killer.
+
+blackmail:
+  - You had an affair with Hannah Wellington.
+  - Your hand was cut sparring with Kevin at 6 PM.
+  - You're strong enough to swing the raven with one hand.
+
+instructions:
+  - Let people notice the bandage in Round One. Don't explain it.
+  - In Round Two, explain it (Kevin, 6 PM) and point to Jimmy Friedman for your alibi.
+  - You may challenge anyone to a (verbal) duel over an insult.
+  - Never admit Hannah unless paid.
+
+mission: |
+  Teach **three guests the fencing salute** ("en garde!") and get them to
+  perform it at Reggie. Report it.
+
+rounds:
+  1:
+    text: |
+      Flex the bandaged hand. Wince. If anyone asks what happened, say "an
+      old injury" and change the subject.
+    reveal:
+      - Show off a bandaged hand without explaining it.
+  2:
+    text: |
+      Explain: **Kevin cut you sparring at 6 PM.** And from 9:00 you were
+      watching the card game; **Jimmy Friedman can vouch.**
+    reveal:
+      - Kevin cut your hand sparring at 6 PM; you were watching the card game from 9:00.
+  3:
+    text: |
+      If Hannah is lying about anything, you may decide this is the moment
+      to remind her about last winter. Or not. Discretion is a kind of
+      fencing.
+    reveal:
+      - Expose, or protect, your affair with Hannah.
+
+texts:
+  - id: blake-kevin-history
+    from: Kevin B.
+    trigger: { history: true }
+    stamp: "6:20 PM"
+    body: "sorry about the hand mate. your fault for dropping your guard"
+  - id: blake-hannah-r1
+    from: H.W.
+    trigger: { round: 1, after: 8 }
+    body: "If you mention February to ANYONE I will have you fenced to death."
+
+fallback: |
+  Nothing depends on Blake. The bandage red herring is resolved by Blake's own
+  Round Two envelope and by Jimmy Friedman's alibi line (inside an
+  [[if:spare-blake]] block).
+
+host_notes: |
+  Spare, medium effort, any gender or name. Red herring (the bandaged hand)
+  resolved by Jimmy Friedman. Whereabouts: upstairs, drawing room, billiard
+  room.

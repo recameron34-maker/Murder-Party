@@ -1,0 +1,132 @@
+id: malik
+name: Malik
+written_for: Malik              # HOST
+tier: core                      # HOST
+pronouns: he/him                # HOST
+role: Investigative podcaster, host of "Old Money"
+tagline: "Rich people never think the help is listening. You are the help, with a microphone."
+
+costume: |
+  Journalist-chic with an edge: a dark jacket over a black roll-neck or open
+  collar, a notebook and pen, a press-pass lanyard tucked half out of
+  sight, and (optional) a tiny microphone clipped to your lapel.
+
+intro: |
+  You host **Old Money**, the investigative podcast about how the very rich
+  stay that way. For the last month Arthur Blackwood has been secretly
+  feeding you a story. Tonight, at midnight, he was going to hand you the
+  ending.
+
+backstory: |
+  It started with your girlfriend, **Lindsey Vale**, Arthur's banker, telling
+  you more than she should have about "one of the great families" being
+  robbed from inside. You followed the thread to Arthur. To your surprise he
+  wanted to talk. He said: *"At midnight I'm going to say it out loud, and
+  you're going to make sure nobody can bury it."*
+
+  He never told you who. He did tell you, with relish, that **the person he
+  planned to expose "isn't family."** And last week: **"It's not about
+  inheritance. Follow the money."**
+
+  Your secret: you've been **recording the party** on a lapel mic since you
+  arrived. Lindsey is furious. Your producer is thrilled.
+
+relationships:
+  - with: lindsey
+    text: Your girlfriend and, awkwardly, your original source. You fought in the conservatory at 9:15 about the mic.
+  - with: arthur
+    text: Your secret source. Grand, frightened, determined. He wanted his story told on his terms.
+  - with: kim
+    text: You've long suspected Kim knows who writes The Keyhole. A rival in gossip; a colleague in sin.
+  - with: kush
+    text: You've noticed the accountant watching the money people all night. You'd love him on the podcast.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:15 PM"
+    where: drawing-room
+    text: Working the room with a champagne glass and a recording running in your jacket.
+  - at: "9:15 PM"
+    until: "9:25 PM"
+    where: conservatory
+    text: Lindsey finds the mic and hisses at you among the orchids. You apologize. You don't turn it off.
+  - at: "9:25 PM"
+    until: "9:47 PM"
+    where: drawing-room
+    text: Back in the drawing room. Your recording catches forty minutes of piano, gossip and somebody's terrible laugh. Then the lights go out at 9:45.
+
+knows:
+  - Arthur was feeding you a story about theft from inside his circle.
+  - The person Arthur planned to expose **"isn't family."**
+  - '"It''s not about inheritance. Follow the money." (Arthur''s words to you last week.)'
+  - Arthur's big reveal was going to go public at midnight, through you.
+
+secret: |
+  Arthur was **secretly feeding you a story about theft from inside his
+  circle**, to go public at midnight. And you've been recording the whole
+  party on a hidden lapel mic.
+
+blackmail:
+  - Arthur was secretly feeding you a story for your podcast.
+  - Lindsey leaked banking information to you.
+  - You've been secretly recording the party.
+
+instructions:
+  - Round One, "isn't family." Round Two, "follow the money." Round Three, read Arthur's scheduled message.
+  - You may "interview" anyone at any time. Hold out a pen like a microphone.
+  - Protect Lindsey as your source. Never name her unless paid.
+  - You may play back "your recording" for laughs. It contains nothing useful.
+
+mission: |
+  Conduct **three mini "interviews"** with three different guests, on the
+  record. Report the juiciest quote to Reggie.
+
+rounds:
+  1:
+    text: |
+      When people speculate about family greed, drop this: **Arthur told you
+      the person he planned to expose "isn't family."**
+
+      Don't say how you know him. Not yet. You protect your sources.
+    reveal:
+      - The person Arthur planned to expose "isn't family."
+  2:
+    text: |
+      When the room is chasing the will and the inheritance, stop them:
+
+      **"It's not about inheritance. Follow the money."**
+
+      Then look at Kushington. Reggie will take it from there.
+    reveal:
+      - '"It''s not about inheritance. Follow the money."'
+  3:
+    text: |
+      After the financial reveal, Reggie will hand you a printout of a message
+      Arthur scheduled to send you at midnight. Read it to the room, slowly:
+
+      > **If you're reading this, the truth is public. The theft came from
+      > inside my legal operation. I trusted the wrong person.**
+
+      Then let the room react.
+    reveal:
+      - Read Arthur's scheduled message aloud.
+
+texts:
+  - id: malik-arthur-history
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "Last week"
+    body: "It's not about inheritance, Mr. Malik. Follow the money. Midnight Saturday. Bring your microphone and your nerve."
+  - id: malik-producer-r1
+    from: Producer
+    trigger: { round: 1, after: 6 }
+    body: "WAIT a MURDER?? keep recording. do NOT stop recording. this is season 2"
+  - id: malik-scheduled-r3
+    from: Arthur Blackwood (scheduled)
+    trigger: { cue: "When Reggie hands Malik the scheduled draft (Round Three)" }
+    body: "If you're reading this, the truth is public. The theft came from inside my legal operation. I trusted the wrong person."
+
+host_notes: |
+  Core. Round Three: Reggie hands him the printed scheduled draft (prop) or
+  sends the cue text. "Isn't family" (R1) and "Follow the money" (R2) set up
+  Kush.
