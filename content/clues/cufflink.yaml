@@ -1,0 +1,18 @@
+id: cufflink
+title: Kevin's cufflink
+kind: physical
+source: part-two
+round: 1
+timing: early
+carrier: found
+delivery: Players find it during the evidence hunt. Kevin must recognize it.
+hide: On the floor near the "study" area, half under a rug or chair leg.
+print: |
+  BLACKWOOD EVIDENCE: A gold cufflink, engraved with a raven and the
+  letter K, found on the study floor.
+truth: Kevin lost it at about 3 PM helping Reggie move furniture into the study. Reggie confirms in Round Two, after Kevin has panicked.
+points_to: [kevin]
+critical: false
+refs: [kevin, reggie]
+times: ["3:00 PM"]
+prop_needed: Any men's cufflink (ideally a raven or initial K).

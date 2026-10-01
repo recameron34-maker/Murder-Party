@@ -1,0 +1,18 @@
+id: carlotta-note
+title: Arthur's note to Carlotta
+kind: prop
+source: part-one
+round: 3
+timing: early
+carrier: carlotta
+delivery: In Carlotta's Round Three envelope. She reads it and asks, "Who betrayed him?"
+hide: Carlotta's Round Three envelope.
+print: |
+  Carlotta — you were right. Tonight I stop protecting the people who
+  betrayed my trust. Whatever happens, know that none of this was your
+  burden to carry. — Dad
+truth: Meant for their 11:30 meeting. "You were right" refers to her warning, years ago, that he trusted the wrong people.
+points_to: []
+critical: false
+refs: [carlotta, arthur]
+fallback: If Carlotta is somehow absent, Reggie reads it as "a note addressed to Carlotta."

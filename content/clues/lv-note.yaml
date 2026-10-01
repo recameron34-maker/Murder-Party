@@ -1,0 +1,18 @@
+id: lv-note
+title: The "L.V." note
+kind: physical
+source: part-two
+round: 2
+timing: mid
+carrier: found
+delivery: Let it breathe. Do NOT immediately clear Lindsey.
+hide: In a coat pocket on the coat rack, or inside a book on the bar.
+print: |
+  L.V.
+
+  We need to discuss the transfers before midnight.
+  Come prepared to explain everything.
+truth: Arthur was asking Lindsey to walk him through the banking evidence she'd found. She was helping him, not accused.
+points_to: [lindsey]
+critical: false
+refs: [lindsey, arthur]

@@ -1,0 +1,18 @@
+id: draft-letter
+title: Arthur's unfinished letter
+kind: physical
+source: part-two
+round: 3
+timing: early
+carrier: found
+delivery: Found in Round Three. Keep it ambiguous.
+hide: Folded inside the desk blotter or a book on the "study" desk.
+print: |
+  I trusted you because you were supposed to protect this family.
+  Instead, you used that trust to—
+
+  [the rest is missing]
+truth: Written to Morgan, the family's lawyer and "protector." It also fits Carlotta, Kevin, Lindsey and James on a first read.
+points_to: [carlotta, kevin, morgan, lindsey]
+critical: false
+refs: []

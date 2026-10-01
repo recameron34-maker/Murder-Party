@@ -1,0 +1,21 @@
+id: phone
+title: Arthur's phone
+kind: prop
+source: part-one
+round: 1
+timing: end
+carrier: host
+delivery: Reggie holds it up at the end of Round One and reads the last message.
+hide: Reggie keeps it on him.
+print: |
+  ARTHUR BLACKWOOD: iPhone (recovered beneath the desk)
+
+  Last outgoing message, 9:29 PM
+  To: Morgan Leibold
+
+  "MY STUDY. 9:35. WE SETTLE THIS TONIGHT."
+truth: Arthur summoned Morgan to confront her about the theft.
+points_to: [morgan]
+critical: true
+refs: [arthur, morgan]
+times: ["9:29 PM", "9:35 PM"]

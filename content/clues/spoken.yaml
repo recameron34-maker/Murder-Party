@@ -1,0 +1,46 @@
+# Facts that come out of players' mouths (their envelopes tell them to reveal
+# these). Listed here so the host checklist, timeline view and consistency
+# checker can track them alongside the physical evidence.
+spoken:
+  - { id: annie-931, title: "Arthur alive and alone at 9:31", round: 1, carrier: annie, critical: true, times: ["9:31 PM"], refs: [annie, arthur] }
+  - { id: carlotta-giving-away, title: "\"At midnight, I'm giving it all away\"", round: 1, carrier: carlotta, critical: false, times: ["8:10 PM"], refs: [carlotta] }
+  - { id: hannah-charity, title: "Arthur preparing an enormous charitable transfer", round: 1, carrier: hannah, critical: false, refs: [hannah] }
+  - { id: jimmy-will, title: "James removed from the will (8:50 confrontation)", round: 1, carrier: jimmy, critical: false, times: ["8:50 PM"], refs: [jimmy] }
+  - { id: molly-845, title: "Molly in the study at 8:45; raven on the desk", round: 1, carrier: molly, critical: false, times: ["8:45 PM"], refs: [molly] }
+  - { id: martin-fake, title: "The painting is a forgery", round: 1, carrier: martin, critical: false, refs: [martin, molly] }
+  - { id: kevin-regret, title: "\"You're going to regret this\" (9:20)", round: 1, carrier: kevin, critical: false, times: ["9:20 PM"], refs: [kevin] }
+  - { id: kush-theft, title: "Arthur suspected theft (no amount)", round: 1, carrier: kush, critical: true, refs: [kush] }
+  - { id: maya-argument, title: "Arthur arguing with a woman about money at 9:36", round: 1, carrier: maya, critical: true, times: ["9:36 PM"], refs: [maya] }
+  - { id: shea-comment, title: "\"If something happens to me, don't assume it was natural\"", round: 1, carrier: shea, critical: false, refs: [shea] }
+  - { id: noor-not-natural, title: "Illness didn't kill him; he was struck", round: 1, carrier: noor, critical: true, refs: [noor] }
+  - { id: joji-passages, title: "The house has hidden servants' passages", round: 1, carrier: joji, critical: true, refs: [joji] }
+  - { id: tim-door, title: "Strange library bookcase/door with a draft (9:00)", round: 1, carrier: tim, critical: true, times: ["9:00 PM"], refs: [tim, louis] }
+  - { id: malik-not-family, title: "Arthur's target \"isn't family\"", round: 1, carrier: malik, critical: false, refs: [malik] }
+  - { id: maddie-folder, title: "Red leather folder on the desk at 9:10", round: 1, carrier: maddie, critical: false, times: ["9:10 PM"], refs: [maddie] }
+
+  - { id: noor-tod, title: "Time of death 9:35 to 9:40, before the blackout", round: 2, carrier: noor, critical: true, times: ["9:35 PM", "9:40 PM", "9:45 PM"], refs: [noor] }
+  - { id: joji-passage, title: "The passage connects study to library", round: 2, carrier: joji, critical: true, refs: [joji, tim] }
+  - { id: jimmy-940, title: "James saw Morgan by the library at 9:40", round: 2, carrier: jimmy, critical: true, times: ["9:40 PM"], refs: [jimmy, morgan] }
+  - { id: alma-941, title: "Alma saw Morgan emerge near the library at 9:41 (\"restroom\")", round: 2, carrier: alma, critical: true, times: ["9:41 PM"], refs: [alma, morgan] }
+  - { id: maya-destroy, title: "The woman said \"You'll destroy me\"", round: 2, carrier: maya, critical: true, refs: [maya] }
+  - { id: malik-money, title: "\"It's not about inheritance. Follow the money.\"", round: 2, carrier: malik, critical: false, refs: [malik, kush] }
+  - { id: kush-amount, title: "$2.4 MILLION", round: 2, carrier: kush, critical: true, refs: [kush] }
+  - { id: clara-933, title: "Clara approached the study at 9:33, saw someone, turned back", round: 2, carrier: clara, critical: false, times: ["9:33 PM"], refs: [clara] }
+  - { id: shea-940, title: "Shea approached the study ~9:40 with medication, turned back", round: 2, carrier: shea, critical: false, times: ["9:40 PM"], refs: [shea] }
+  - { id: lexi-trust, title: "Lexi's $500K Vivienne Fund, never signed", round: 2, carrier: lexi, critical: false, refs: [lexi] }
+  - { id: kim-keyhole, title: "Kim is The Keyhole", round: 2, carrier: kim, critical: false, refs: [kim] }
+  - { id: louis-library, title: "Louis was snooping in the library at 9:00", round: 2, carrier: louis, critical: false, times: ["9:00 PM"], refs: [louis] }
+  - { id: albie-seance, title: "Arthur scripted a midnight séance to expose a thief", round: 2, carrier: albie, critical: false, refs: [albie] }
+  - { id: kevin-camera, title: "Kevin demands the terrace footage; cufflink explained", round: 2, carrier: kevin, critical: false, refs: [kevin] }
+
+  - { id: annie-932, title: "Annie passed Morgan heading to the study at 9:32", round: 3, carrier: annie, critical: true, times: ["9:32 PM"], refs: [annie, morgan] }
+  - { id: clara-will, title: "Arthur tore up the will himself", round: 3, carrier: clara, critical: false, refs: [clara] }
+  - { id: kush-blc, title: "Transfers authorized through Blackwood Legal Counsel", round: 3, carrier: kush, critical: true, refs: [kush, morgan] }
+  - { id: lindsey-credentials, title: "Lindsey independently confirms ML-0427 = BLC", round: 3, carrier: lindsey, critical: true, refs: [lindsey] }
+  - { id: shea-thread, title: "The black thread is Arthur's own jacket", round: 3, carrier: shea, critical: false, refs: [shea] }
+  - { id: shea-question, title: "\"Then why did we all assume he died during the blackout?\"", round: 3, carrier: shea, critical: false, refs: [shea] }
+  - { id: albie-question, title: "\"Who benefits from us believing he died in the dark?\"", round: 3, carrier: albie, critical: false, refs: [albie] }
+  - { id: kim-louis, title: "Kim saw Louis climb out of the dining-room wall at 9:46", round: 3, carrier: kim, critical: false, times: ["9:46 PM"], refs: [kim, louis] }
+  - { id: tim-blackout, title: "The blackout started in the dining room and kitchens", round: 3, carrier: tim, critical: false, times: ["9:45 PM"], refs: [tim] }
+  - { id: jimmy-loan, title: "Why James was cut: the $300K loan from Jimmy Friedman", round: 3, carrier: jimmy, critical: false, refs: [jimmy, jimmy-friedman] }
+  - { id: noor-close, title: "Single blow, close range, no struggle", round: 3, carrier: noor, critical: false, refs: [noor] }

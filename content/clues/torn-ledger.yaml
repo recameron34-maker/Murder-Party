@@ -1,0 +1,26 @@
+id: torn-ledger
+title: The torn financial ledger
+kind: physical
+source: part-two
+round: 2
+timing: late
+carrier: found
+delivery: Late Round Two. Let people argue about what BLC means.
+hide: Under a seat cushion or in a magazine rack in the main room.
+print: |
+  [torn page from a ledger]
+
+  $300,000
+  $450,000
+  $275,000
+  $600,000
+  $375,000
+  $400,000
+  ───────────
+  TOTAL  $2,400,000
+
+  AUTHORIZED: BLC
+truth: BLC is Blackwood Legal Counsel. Kush and Lindsey confirm in Round Three.
+points_to: [morgan, lindsey]
+critical: false
+refs: []
