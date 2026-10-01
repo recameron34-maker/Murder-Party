@@ -120,9 +120,14 @@ It has the host planner (run of show, timeline, evidence, checker, print
 views) and every guest's page at every round, so you can watch progress
 from any branch. The last push wins.
 
-- **One-time switch-on:** repo **Settings → Pages → Build and deployment →
-  Source: Deploy from a branch → Branch: `gh-pages` / `(root)` → Save.**
-  (The `gh-pages` branch is created by the first workflow run.)
+- **One-time switch-on (only the repo owner can do this):** repo
+  **Settings → Pages → Build and deployment → Source: "Deploy from a branch"
+  → Branch: `gh-pages`, folder `/ (root)` → Save.** About a minute later the
+  page at the top of Settings → Pages says "Your site is live at …".
+- **Getting a 404?** Pages isn't switched on yet, or Source is set to "GitHub
+  Actions" or to `main`. It must be **Deploy from a branch → `gh-pages`**.
+  The workflow can't flip this switch itself; GitHub only lets the repo
+  owner do it.
 - **It's a preview, not the party site.** GitHub Pages only serves the same
   static files to everyone, so it can't check passphrases, unlock rounds or
   deliver texts (buttons are inert). Everything on it, including the
