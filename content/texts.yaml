@@ -1,0 +1,20 @@
+# Phone texts sent to EVERY cast guest. Same trigger syntax as character texts:
+#   { history: true } | { round: N, after: M } | { cue: "..." } | { day: D, time: "HH:MM" }
+# day/time is relative to party.date in the party's time zone (day: -1 = the day before).
+texts:
+  - id: all-invite
+    from: Blackwood Manor
+    trigger: { day: -1, time: "18:00" }
+    body: "Your presence is requested at the Midnight Supper tomorrow. Dress for a reckoning. No one leaves before midnight."
+  - id: all-road
+    from: Blackwood Manor
+    trigger: { round: 1, after: 1 }
+    body: "NOTICE: The lower road has washed out in the storm. Police delayed. The house regrets that no one may leave before midnight."
+  - id: all-raven
+    from: Unknown number
+    trigger: { round: 2, after: 20 }
+    body: "The raven saw everything. The raven always does."
+  - id: all-final
+    from: Reggie
+    trigger: { round: 3, after: 0 }
+    body: "Final round. Trust nothing that was said in the dark."
