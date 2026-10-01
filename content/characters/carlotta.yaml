@@ -1,0 +1,136 @@
+id: carlotta
+name: Carlotta "Carley" Blackwood
+written_for: Carlotta / Carley  # HOST
+tier: core                      # HOST
+pronouns: she/her               # HOST
+role: Arthur's estranged daughter
+tagline: "You left at nineteen and swore you'd never come back. It's been nine years. Here you are."
+
+costume: |
+  Heiress in mourning before anyone died: black, dramatic and expensive,
+  with dark lipstick, sunglasses indoors if you can get away with it, and
+  one piece of family jewelry you claim to hate.
+
+intro: |
+  You're Arthur's only child and the rightful heir to Blackwood Manor, a
+  house you fled at nineteen and have described in three gallery
+  installations as "a mausoleum with central heating." This is your first
+  Midnight Supper in nine years. Your father wrote and asked you to come.
+
+backstory: |
+  Your mother, Helena, left when you were twelve and never came back. Your
+  father dealt with grief by acquiring things: paintings, people,
+  lawyers. At nineteen you told him the whole machine around him (the
+  advisers, the hangers-on, the people who smiled and took) was eating him
+  alive and that he trusted the wrong people. Then you left for Berlin.
+
+  Here's what nobody knows: **you're broke.** Your gallery in Berlin closed in
+  the spring. You came home half hoping he'd help. Instead, at **8:10 in
+  the Front Hall**, he kissed your cheek and said: **"At midnight, I'm giving
+  it all away."**
+
+  You also once left Daniel two weeks before your wedding. He's here,
+  engaged to someone else. Wonderful.
+
+relationships:
+  - with: arthur
+    text: Your father. You haven't forgiven him and now you never will. That's the part you can't stand.
+  - with: daniel
+    text: Your ex-fiancé. You left him two weeks before the wedding to run to Berlin. He's marrying Maddie now. She keeps looking at you.
+  - with: kevin
+    text: Your cousin, who stayed, sucked up, and expected the house. You'd laugh if it weren't your house.
+  - with: maya
+    text: Childhood friend from the kitchens. The only one who ever treated you like a person and not an heiress.
+  - with: alma
+    text: The archivist is wearing a dress that looks very like one you owned at seventeen. You haven't worked out why yet.
+
+evening:
+  - at: "8:10 PM"
+    where: front-hall
+    text: 'Arthur greets you, kisses your cheek, and says: **"At midnight, I''m giving it all away."** Then he walks off to his study.'
+  - at: "8:15 PM"
+    until: "9:25 PM"
+    where: drawing-room
+    text: Drinking quickly. Avoiding Daniel. Being charming to people you despise.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: conservatory
+    text: Alone among the orchids, smoking and furious, maybe crying. Nobody saw you. You have no alibi and you know it.
+
+knows:
+  - 'Arthur told you at 8:10: "At midnight, I''m giving it all away."'
+  - You were alone in the conservatory from 9:25 to 9:45. No alibi.
+  - Your father had booked a private meeting with you at 11:30, just before the announcement. You don't know why.
+  - Years ago you warned Arthur that he trusted the wrong people.
+
+secret: |
+  You're **broke**, you came home hoping your father would help, and he told
+  you he was giving everything away. You have no alibi for the murder.
+
+blackmail:
+  - Arthur told you he was giving it all away at midnight.
+  - Your Berlin gallery has closed and you have no money.
+  - You were alone and unseen from 9:25 to 9:45.
+
+instructions:
+  - Reveal "I'm giving it all away" in **Round One**. You look guilty. That's correct.
+  - Never admit you're broke unless paid.
+  - In Round Three, read Arthur's note aloud and ask the room the question that turns the whole night.
+  - Treat everyone as a social inferior, especially those who are.
+
+mission: |
+  Find out **who believes they're in Arthur's will.** Collect names and
+  report to Reggie.
+
+rounds:
+  1:
+    text: |
+      Tell the room what your father said to you at 8:10 in the Front Hall:
+      **"At midnight, I'm giving it all away."**
+
+      Yes, it means you were about to lose everything. Yes, that looks like a
+      motive. Make them prove it.
+    reveal:
+      - 'Arthur told you at 8:10: "At midnight, I''m giving it all away."'
+  2:
+    text: |
+      A destroyed will may have turned up. Everyone will look at you. You
+      didn't do it, and you don't know who did.
+
+      If Arthur's calendar surfaces showing **11:30 Carlotta**, admit you
+      didn't know about any meeting. Admit, if pressed, that you were alone
+      in the conservatory from 9:25 to 9:45.
+    reveal:
+      - You were alone in the conservatory from 9:25 to 9:45.
+  3:
+    text: |
+      This envelope contains a note in your father's handwriting. It was
+      meant for your 11:30 meeting. Read it aloud:
+
+      > **Carlotta — you were right. Tonight I stop protecting the people who
+      > betrayed my trust. Whatever happens, know that none of this was your
+      > burden to carry. — Dad**
+
+      Then ask the room, and mean it: **"Who betrayed him?"**
+    reveal:
+      - Read Arthur's note aloud and ask "Who betrayed him?"
+
+texts:
+  - id: carlotta-arthur-history
+    from: Dad
+    trigger: { history: true }
+    stamp: "Last month"
+    body: "Come to the Supper, Carley. One last one. I have something to say that you'll want to hear, for once."
+  - id: carlotta-daniel-r1
+    from: Daniel
+    trigger: { round: 1, after: 9 }
+    body: "You still do that thing with your lighter when you're lying. Just so you know."
+  - id: carlotta-unknown-r2
+    from: Unknown number
+    trigger: { round: 2, after: 10 }
+    body: "Every Blackwood who tried to give it away died before midnight. Ask them who believed in the curse."
+
+host_notes: |
+  Core (her Round Three note leads into the Kush and Lindsey financial
+  reveal). False suspect A. Clara clears the will theory in Round Three. The
+  note is a prop that must be in her Round Three envelope.

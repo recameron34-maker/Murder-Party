@@ -1,0 +1,134 @@
+id: kim
+name: Kim
+written_for: Kim                # HOST
+tier: supporting                # HOST
+pronouns: confirm with Ross     # HOST
+role: Society darling and secret author of The Keyhole
+tagline: "Everyone here has read The Keyhole. Nobody here knows they're talking to it."
+
+costume: |
+  Impossible to place and impossible to ignore: something black and
+  slinky with one outrageous accessory (a fan, opera gloves, a feathered
+  headpiece), a tiny notebook, and an expression of delighted complicity.
+
+intro: |
+  You are the most charming guest at every party and the reason half of them
+  end in tears. Since your aunt died you have secretly written **The
+  Keyhole**, the anonymous society column that has run since 1987 and has
+  ended four marriages, two engagements and one minor political career.
+
+backstory: |
+  Nobody knows you're The Keyhole. You buy candid photos from a freelancer
+  through an anonymous email address (it's Tim, the photographer; he has no
+  idea it's you). Last month you ran the blind item that's been haunting
+  this house: *"Which crumbling pile has a tenant nobody invited? Staff report
+  footsteps inside the walls and a larder that empties itself."*
+
+  Tonight you went looking for a scoop and found one. When the lights went
+  out you slipped toward the dining room to see the Supper table by
+  candlelight for your column. At **9:46**, by the light of your phone, you
+  watched a **panel beside the dining-room fireplace swing open and a
+  dust-covered Louis crawl out of the wall.**
+
+relationships:
+  - with: tim
+    text: Your anonymous photographer. Tonight he's sitting on something big; you've already made an offer.
+  - with: louis
+    text: You've just watched him climb out of a wall. You own him now.
+  - with: malik
+    text: The podcaster. A competitor, a gossip in a better suit. He suspects you know who The Keyhole is.
+  - with: jimmy
+    text: James Calloway used to sell you family stories when he was broke at university. He doesn't know it was you he was selling to.
+  - with: savanah
+    if: savanah
+    text: The Keyhole broke the story of Arthur's Vegas wedding in 2019, and of its annulment two weeks later. You have the clipping.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:15 PM"
+    where: drawing-room
+    text: Collecting secrets like canapés.
+  - at: "9:15 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: Near the piano, watching who watches whom, all the way to the blackout.
+  - at: "9:46 PM"
+    where: dining-room
+    text: In the dark, by your phone's light, a panel by the dining-room fireplace opens and **Louis crawls out of the wall**, filthy. He sees you see him.
+
+knows:
+  - You are The Keyhole.
+  - At **9:46**, just after the lights went out, you saw Louis climb out of a hidden panel in the dining room.
+  - Tim sells you photos without knowing it's you. Tonight he has one of Clara leaving the study at 8:44.
+  - Somebody has been living in the walls of this house. Now you know who.
+
+secret: |
+  **You are The Keyhole.** And you saw **Louis crawl out of the wall** in the
+  dining room at 9:46.
+
+blackmail:
+  - You are the anonymous author of The Keyhole.
+  - You saw Louis come out of a hidden panel at 9:46.
+  - You buy photos from Tim.
+
+instructions:
+  - In Round Two, **reveal that you're The Keyhole.** Make it an event.
+  - Hold the Louis sighting until Round Three, unless someone pays.
+  - You may write any guest's secret in your notebook and threaten to "run it."
+  - Never spend Blackmail Cash if you can get a secret for free.
+
+mission: |
+  Learn **one secret from three different guests without spending Blackmail
+  Cash.** Report all three to Reggie.
+
+rounds:
+  1:
+    text: |
+      Gossip. Flatter. Collect. Drop hints that The Keyhole "always finds out."
+
+      If someone mentions the rumor of a tenant in the walls, smile like a cat.
+    reveal:
+      - Mention The Keyhole's blind item about someone living in the walls.
+  2:
+    text: |
+      Now **reveal The Keyhole**. Pick your moment, raise your glass:
+      *"Darlings. I'm The Keyhole."* Watch the faces.
+
+      Then hint, deliciously, that the walls rumor is true and that you know
+      who.
+    reveal:
+      - Reveal that you are the secret author of The Keyhole.
+  3:
+    text: |
+      Tell them, or sell it: **at 9:46, after the lights went out, you watched
+      Louis crawl out of a hidden panel in the dining room.** He was coming
+      *out* of the wall during the blackout, on the opposite side of the house
+      from the study.
+
+      [[if:savanah]]
+      And if Savanah is still claiming to be Arthur's widow, produce The
+      Keyhole's 2019 clipping: **"BLACKWOOD'S VEGAS BRIDE: ANNULLED IN A
+      FORTNIGHT."**
+      [[/if]]
+    reveal:
+      - You saw Louis emerge from a dining-room panel at 9:46.
+
+texts:
+  - id: kim-tipline-history
+    from: Keyhole tip line
+    trigger: { history: true }
+    stamp: "Yesterday"
+    body: "Anonymous tip: 'Ask who's been taking cheese up to the east wing at midnight.'"
+  - id: kim-tim-r1
+    from: Freelancer (T.)
+    trigger: { round: 1, after: 10 }
+    body: "Got something good from 8:44. Clara + study + lipstick. Name your price."
+  - id: kim-tipline-r3
+    from: Keyhole tip line
+    trigger: { round: 3, after: 2 }
+    body: "Anonymous tip: 'Ask the kitchens what really happened at 9:45. Nobody ever asks the kitchens.'"
+
+host_notes: |
+  Supporting. Kim's pronouns are unknown, so other characters' texts refer
+  to "Kim" by name. Resolves the Louis/walls red herring (Round Three) and,
+  if Savanah is cast, her widow claim.

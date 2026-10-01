@@ -1,0 +1,127 @@
+id: courtney
+name: Lady Courtney
+written_for: Courtney (maybe RSVP)  # HOST
+tier: flex                      # HOST
+pronouns: she/her               # HOST
+role: Minor aristocrat (professional guest)
+tagline: "Your title is fake, your accent is fake, and you're the most convincing aristocrat in the room."
+
+costume: |
+  Aristocrat by way of a costume shop: a tiara (slightly too large), opera
+  gloves, a sash with a crest you designed yourself, pearls, and a cut-glass
+  accent that slips when you're drunk.
+
+intro: |
+  To the room you are **Lady Courtney Fane-Whitlow**, daughter of an Earl
+  nobody can quite place. In reality you're Courtney, and you're a
+  **professional guest**, paid to attend parties and make them look grander.
+  Tonight's booking came through Hannah Wellington.
+
+backstory: |
+  You've been a viscount's widow, a Hungarian countess and, once, briefly,
+  a minor Romanov. You're very good. Hannah pays you $500 a night to make
+  the Wellington galas look like they have titled supporters, and she
+  brought you along tonight as "an old family friend of the Blackwoods."
+
+  You've made one mistake already. At **8:05**, while Arthur was greeting
+  guests in the Front Hall, you slipped into his empty study and took a
+  **selfie posing with the bronze raven** "for the grid." Then you put it
+  back. You posted it. It has 214 likes. Your fingerprints are all over the
+  murder weapon.
+
+relationships:
+  - with: hannah
+    text: Your employer tonight. She's terrified you'll blow your cover. You're terrified she won't pay you.
+  - with: lexi
+    text: You've claimed you two were at school together. She keeps squinting at you.
+  - with: jimmy-friedman
+    text: He's been trying to do a "deal" with you all night because you have a title. Possibly lucrative.
+  - with: molly
+    text: You asked her whether the bird on Arthur's desk was "worth anything." She looked at you like a forgery. Rich, coming from her.
+  - with: savanah
+    if: savanah
+    text: The "widow." You recognize a fellow performer. You've been turning the pages for her at the piano.
+
+evening:
+  - at: "8:05 PM"
+    where: study
+    text: You slip into the empty study and take a selfie with the bronze raven. Then you put it back exactly where it was.
+  - at: "8:10 PM"
+    until: "9:00 PM"
+    where: drawing-room
+    text: Telling anecdotes about "Daddy's grouse moor."
+  - at: "9:00 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: At the piano the whole time, playing badly or turning pages for whoever sings. The whole room saw you.
+
+knows:
+  - You handled the bronze raven at 8:05. Your fingerprints are on it. There's a photo.
+  - You put it back on the desk exactly where you found it.
+  - You were at the piano from 9:00 until the blackout.
+  - Hannah Wellington hired you. You are not a lady.
+
+secret: |
+  You're **not a lady**, you're a hired professional guest. And you **posed
+  with the murder weapon at 8:05**, then posted it.
+
+blackmail:
+  - You held the bronze raven tonight and posted a photo.
+  - You're not an aristocrat; you're a hired professional guest.
+  - Hannah Wellington is paying you to be here.
+
+instructions:
+  - Never drop the accent unless paid, or very drunk.
+  - In Round Two, your raven selfie comes out. Panic beautifully.
+  - You may "recognize" any guest from "a hunt ball."
+  - Your piano alibi (9:00 to 9:45) is rock solid. Use it.
+
+mission: |
+  Get **someone to invite you to their country house** (any house, any
+  country). Report the invitation to Reggie.
+
+rounds:
+  1:
+    text: |
+      Be fabulous. Be devastated. Mention Daddy. Establish your alibi: the
+      piano, from 9:00 until the lights went out.
+    reveal:
+      - You were at the drawing-room piano from 9:00 until the blackout.
+  2:
+    text: |
+      Your post has been found. Show the room your phone ("delete nothing,
+      darling, it's evidence") with **you posing with the bronze raven,
+      posted at 8:05.**
+
+      Your fingerprints are on the murder weapon. Panic. Then remember
+      that Molly saw it back on the desk at 8:45, and that you were at the piano
+      while Arthur died.
+    reveal:
+      - You posed with the bronze raven in Arthur's study at 8:05 and posted the photo.
+  3:
+    text: |
+      If your cover is about to be blown, choose: confess you're a hired
+      professional guest (dramatic, freeing), or bribe Hannah not to tell.
+    reveal:
+      - Either confess you're a hired guest or bribe Hannah to keep quiet.
+
+texts:
+  - id: courtney-hannah-history
+    from: Hannah W.
+    trigger: { history: true }
+    stamp: "4:00 PM"
+    body: "Tonight you're 'an old family friend of the Blackwoods.' Do NOT do the Romanov thing again."
+  - id: courtney-instagram-r1
+    from: Instagram
+    trigger: { round: 1, after: 10 }
+    body: "Your post 'me and the bird 🖤🐦' has 214 likes. @thekeyhole commented: 'interesting choice of accessory'"
+
+fallback: |
+  Nothing depends on Courtney. If she isn't cast, the raven-selfie red
+  herring and the Molly, Hannah, Lexi and Jimmy Friedman lines about her
+  (inside [[if:courtney]] blocks) disappear.
+
+host_notes: |
+  Flex (maybe RSVP), theatrical. Zero solution-critical clues. Red herring:
+  fingerprints on the weapon, resolved by Molly (raven on the desk at 8:45) and
+  her piano alibi. Whereabouts: drawing room, far from the study, 9:00 to 9:45.

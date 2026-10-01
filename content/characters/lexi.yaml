@@ -1,0 +1,144 @@
+id: lexi
+name: Alexandra "Lexi" St. Clair
+written_for: Lexi               # HOST
+tier: supporting                # HOST
+pronouns: she/her               # HOST
+role: Birthday guest, Arthur's goddaughter
+tagline: "Born into the right family. Just not, you've always suspected, this one."
+
+costume: |
+  Birthday princess of old money: something pale, silk and expensive
+  (champagne, ivory, blush), diamonds that were your mother's, a birthday
+  sash worn ironically, and the posture of a girl who learned to ride before
+  she could read.
+
+intro: |
+  It's your birthday weekend, shared with Maya Rose, which you're being
+  extremely gracious about. Arthur is your godfather. Your late mother,
+  Vivienne St. Clair, was the great love of his life, before Clara and
+  before everyone.
+
+backstory: |
+  Everyone has always whispered that you might be Arthur's daughter. You've
+  heard it at boarding school, at weddings, at your mother's funeral. Last
+  year, privately, you took a DNA test with a hair from Arthur's brush. **You
+  are not his daughter.** You cried for a week. You wanted so badly to be a
+  Blackwood.
+
+  Arthur promised you a birthday surprise. On Wednesday Morgan's office
+  couriered you papers to "keep safe until midnight": a deed establishing
+  **the Vivienne Fund**, a trust of half a million dollars in your name, to
+  be signed at the announcement. With Arthur dead before midnight, it's
+  never been signed.
+
+  Also, Jimmy Friedman has been sending you flowers. Lovely, persistent
+  flowers.
+
+relationships:
+  - with: arthur
+    text: Your godfather. He looked at you as if he were seeing someone else. Now you know who.
+  - with: maya
+    text: Your birthday twin. You're fond of her. You'd be fonder if she stopped looking at your diamonds.
+  - with: jimmy-friedman
+    text: Sends you flowers every Friday. You suspect he likes your connections more than you. You haven't decided whether you mind.
+  - with: alma
+    text: The archivist hinted she's read your mother's letters to Arthur. You want them. Badly.
+  - with: courtney
+    if: courtney
+    text: '"Lady" Courtney claims you were at school together. You were not. You''d remember.'
+
+evening:
+  - at: "8:00 PM"
+    until: "9:00 PM"
+    where: drawing-room
+    text: Birthday toast, a hundred kisses on the cheek, three proposals (two jokes).
+  - at: "9:00 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: Pinned to the sofa by Kushington explaining double-entry bookkeeping. You were there the whole time; half the room can say so.
+  - at: "9:38 PM"
+    where: drawing-room
+    text: You notice Maya come back from somewhere looking white as a sheet.
+
+knows:
+  - Arthur had arranged a $500,000 trust for you, to be signed at midnight. It now never will be.
+  - Everyone thinks you might be Arthur's secret daughter. You're not. You have proof.
+  - Maya came back to the drawing room at about 9:38 looking shaken.
+  - You were in the drawing room from 9:00 to the blackout.
+
+secret: |
+  You **know you are not Arthur's daughter**, from a DNA test you took
+  secretly. And Arthur's death *cost* you $500,000: the Vivienne Fund was
+  never signed.
+
+blackmail:
+  - Morgan's office sent you trust papers for $500,000 from Arthur.
+  - You secretly took a DNA test. You are not Arthur's daughter.
+  - Jimmy Friedman has been courting you.
+
+instructions:
+  - Your surprise inheritance papers are a **red herring** about you. Reveal them in Round Two and enjoy the scandal.
+  - Let people believe you might be Arthur's daughter for as long as you like. Only admit the DNA test if paid.
+  - You may refer to anyone below the rank of baronet as "sweet."
+  - If you discover Jimmy Friedman is also courting Maya, you may throw a drink (water).
+
+mission: |
+  Find out **what Arthur intended to announce before midnight.** Piece it
+  together and tell Reggie.
+
+rounds:
+  1:
+    text: |
+      You're the birthday girl and the goddaughter. Be devastated, gracefully.
+      You were in the drawing room the whole time, so you're safe, and you
+      can be helpful: Maya came back around 9:38 looking like she'd seen a
+      ghost.
+
+      Start working on your mission. Somebody here knows what Arthur meant
+      by "everything changes."
+    reveal:
+      - Maya returned to the drawing room around 9:38 looking shaken.
+  2:
+    text: |
+      Produce your "surprise": **papers from Arthur establishing the Vivienne
+      Fund, $500,000 in trust for you, to be signed at midnight.**
+
+      The room will gasp. Is Lexi his secret daughter? Did she know? Let them
+      run with it. Then point out sweetly that Arthur's death *before*
+      midnight means you get nothing.
+    reveal:
+      - Reveal Arthur's $500,000 Vivienne Fund papers, unsigned because he died before midnight.
+  3:
+    text: |
+      If the "secret daughter" rumor is still alive, kill it, if you feel
+      like it, by admitting the DNA test. It's a better scene if you cry.
+
+      [[if:spare-wren]]
+      If Wren the heir hunter is still waving a baptismal record about you,
+      the DNA test settles it. Say so, loudly.
+      [[/if]]
+
+      Share whatever you've learned about Arthur's midnight announcement.
+      You've earned it.
+    reveal:
+      - Share what you've learned about Arthur's planned announcement.
+
+texts:
+  - id: lexi-arthur-history
+    from: Uncle Arthur
+    trigger: { history: true }
+    stamp: "This morning"
+    body: "Happy birthday, darling girl. Your mother would have hated this party and loved you in it. Midnight, something for you."
+  - id: lexi-jimmyf-r1
+    from: Jimmy F.
+    trigger: { round: 1, after: 3 }
+    body: "Whatever happens tonight, birthday girl, you're safe with me. Delete this."
+  - id: lexi-unknown-r2
+    from: Unknown number
+    trigger: { round: 2, after: 6 }
+    body: "Ask Maya who sent HER flowers this week."
+
+host_notes: |
+  Supporting. A red herring (inheritance papers, "secret daughter"). Jimmy
+  Friedman sends the identical text to Lexi and Maya at Round One +3
+  minutes. If they compare phones, chaos. That's intended.

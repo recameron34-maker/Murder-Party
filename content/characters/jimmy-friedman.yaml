@@ -1,0 +1,133 @@
+id: jimmy-friedman
+name: Jimmy Friedman
+written_for: Jimmy Friedman     # HOST
+tier: supporting                # HOST
+pronouns: he/him                # HOST
+role: Dealmaker, lender, aspiring member of the old-money set
+tagline: "You don't lend money. You invest in other people's futures. At twenty percent."
+
+costume: |
+  New money trying very hard: a velvet tuxedo jacket in a color God never
+  intended, a pinky ring, a cigar (unlit), slicked hair, a wad of Blackmail
+  Cash you flash at every opportunity.
+
+intro: |
+  You made your money fast and nobody here lets you forget it. You run the
+  card game in the billiard room, you know everybody's debts, and you've
+  spent five years trying to buy your way into rooms like this one.
+
+backstory: |
+  Your specialty is lending heirs money against what they're *going* to
+  inherit. Your best investment was **James Calloway: $300,000** against his
+  Blackwood expectations. Then Arthur cut James out of the will, and your
+  "investment" became a very expensive IOU.
+
+  Arthur dying doesn't help you. You needed him alive and James back in the
+  will. You are, if anything, the one man here who's poorer tonight. That
+  hasn't stopped people looking at you.
+
+  Romantically, you're running a two-front campaign: **Maya Rose** (secretly
+  dating, two months) and **Lexi St. Clair** (flowers every Friday). Same
+  florist. Same card. It seemed efficient at the time.
+
+relationships:
+  - with: jimmy
+    text: The other Jimmy. Owes you $300,000. You've been very warm to him all night. Warm like a hand on a throat.
+  - with: maya
+    text: Your secret girlfriend. Real feelings, possibly. Inconveniently.
+  - with: lexi
+    text: The St. Clair girl. Old name, old money, new flowers from you every Friday.
+  - with: kevin
+    text: Another heir. You've offered him a loan twice. He keeps almost saying yes.
+  - with: courtney
+    if: courtney
+    text: A real live aristocrat! You've been trying to do a deal with "Lady Courtney" all night.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:00 PM"
+    where: drawing-room
+    text: Shaking hands, remembering names, sending two identical texts to two birthday girls.
+  - at: "9:00 PM"
+    until: "9:45 PM"
+    where: billiard-room
+    text: Running the card game with Daniel, Martin and James. James left at about 9:38 to make a phone call. Daniel and Martin never left the table.
+  - at: "9:45 PM"
+    where: billiard-room
+    text: Lights out. Somebody grabbed the pot in the dark. You suspect Martin.
+
+knows:
+  - James Calloway owes you $300,000, which is why Arthur cut him out.
+  - Daniel and Martin were at your card table from 9:00 until the blackout. James left around 9:38.
+  - Kevin is desperate for money. You can smell it.
+  - You're dating Maya and courting Lexi, which is fine as long as they never compare phones.
+
+secret: |
+  You lent **James Calloway $300,000** against his inheritance, the reason
+  Arthur cut him out. And you're romancing **both birthday girls** at once.
+
+blackmail:
+  - James owes you $300,000 against his expected inheritance.
+  - You're secretly dating Maya Rose.
+  - You've been sending flowers to Lexi St. Clair too.
+
+instructions:
+  - You may offer "loans" of Blackmail Cash at outrageous interest. Keep a written tally.
+  - You can vouch for Daniel and Martin (card table, 9:00 to 9:45) and for James until about 9:38.
+  - Deny everything about the birthday girls until it's impossible.
+  - Talk about money constantly. It's the only language you're fluent in.
+
+mission: |
+  Make a **"business deal" with another guest** that trades information for
+  information. Get it in writing on a napkin. Report the deal to Reggie.
+
+rounds:
+  1:
+    text: |
+      Establish yourself as the man who knows everyone's price. Offer loans.
+      Mention, casually, that you were running cards in the billiard room
+      from 9:00 with Daniel, Martin and James.
+
+      When someone asks about James and the will, smile and say it was
+      "a private business matter."
+    reveal:
+      - You ran the card game in the billiard room from 9:00 with Daniel, Martin and James.
+  2:
+    text: |
+      People will want alibis. Give them: **Daniel and Martin never left your
+      table** until the blackout. **James left around 9:38** to make a call.
+
+      [[if:spare-blake]]
+      Blake was leaning on the billiard table watching the game the whole
+      time too. Vouch for Blake if anyone asks.
+      [[/if]]
+
+      If the two birthday girls compare phones, improvise. Badly.
+    reveal:
+      - Daniel and Martin never left the table; James left around 9:38.
+  3:
+    text: |
+      Confirm, if asked, that **James owes you $300,000** against his
+      inheritance, and that Arthur's death means you'll never see it. You
+      needed Arthur alive more than anyone here.
+    reveal:
+      - James owes you $300,000; Arthur's death ruined you, so you had no motive.
+
+texts:
+  - id: jimmyf-james-history
+    from: James C.
+    trigger: { history: true }
+    stamp: "4:22 PM"
+    body: "Please stop sending winking faces about my 'expectations.'"
+  - id: jimmyf-florist-r1
+    from: Petal & Thorn Florists
+    trigger: { round: 1, after: 2 }
+    body: "Reminder: your standing order (2 bouquets, identical cards: 'Whatever happens, you're safe with me') renews Friday."
+  - id: jimmyf-unknown-r2
+    from: Unknown number
+    trigger: { round: 2, after: 11 }
+    body: "Interest is accruing, Mr Friedman. Not just on your loans."
+
+host_notes: |
+  Supporting. Gives alibis for Daniel, Martin and James. A distinct character
+  from James "Jimmy" Calloway (Ross confirmed two guests).

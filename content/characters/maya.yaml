@@ -1,0 +1,133 @@
+id: maya
+name: Maya Rose
+written_for: Maya               # HOST
+tier: core                      # HOST
+pronouns: she/her               # HOST
+role: Birthday guest; granddaughter of the manor's old cook
+tagline: "You grew up below stairs. Tonight you're the birthday girl at the top of them."
+
+costume: |
+  Birthday glamour with a past: something red or gold and unapologetic,
+  a sash or tiara if you're brave, and one old-fashioned touch (a locket, a
+  brooch) that belonged to your grandmother.
+
+intro: |
+  It's your birthday weekend, shared with Lexi St. Clair, who has never had to
+  share anything. Your grandmother, Nana Rose, was Blackwood Manor's cook
+  for forty years. You learned to walk on the kitchen flagstones. Tonight
+  you came in through the front door.
+
+backstory: |
+  Arthur adored Nana Rose more than most of his relatives, and when she died
+  he paid for your schooling "because Rose would haunt me otherwise." You
+  have always been half family, half staff, all outsider.
+
+  At the toast Arthur caught your hand and murmured: *"Come to the study at
+  twenty to ten. I've found something of your grandmother's."* You went a
+  little early. You wish you hadn't.
+
+  Your romantic secret: for two months you've been seeing **Jimmy
+  Friedman**. Flowers, dinners, very good champagne. You do not know he has
+  also been sending flowers to Lexi.
+
+relationships:
+  - with: lexi
+    text: Your co-birthday girl. Raised in silk while you were raised in flour. You're fond of her, mostly.
+  - with: arthur
+    text: The man who paid for your education and loved your grandmother. He was going to give you something of hers tonight.
+  - with: jimmy-friedman
+    text: Your secret boyfriend of two months. Charming, rich-ish, and suspiciously good at keeping his phone face-down.
+  - with: carlotta
+    text: You played in this house together as children, the heiress and the cook's granddaughter. Then she left.
+  - with: alma
+    text: The archivist says she found Nana Rose's name in the family Bible. You haven't had a chance to see it.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:35 PM"
+    where: drawing-room
+    text: Birthday toasts, champagne, Jimmy Friedman's hand on the small of your back when nobody was looking.
+  - at: "9:36 PM"
+    until: "9:37 PM"
+    where: east-corridor
+    text: 'You arrive at the study door early. Through the oak you hear Arthur, furious: **"If the money isn''t back by midnight, I''m going public."** Then a woman''s voice, low and desperate: **"You''ll destroy me."** You back away and leave.'
+  - at: "9:38 PM"
+    until: "9:47 PM"
+    where: drawing-room
+    text: Back at the party, pale, pretending nothing happened. You planned to go back at twenty to ten. Then the lights went out.
+
+knows:
+  - At about **9:36** you heard Arthur arguing in the study about money.
+  - 'Arthur''s exact words: "If the money isn''t back by midnight, I''m going public."'
+  - 'The other voice was a **woman''s**. She said: "You''ll destroy me." You couldn''t tell whose voice it was through the door.'
+  - Arthur had a surprise for you, something of Nana Rose's.
+
+secret: |
+  You were **outside Arthur's study at 9:36** and heard him arguing with a
+  woman about missing money, minutes before he died. You're also secretly
+  dating Jimmy Friedman.
+
+blackmail:
+  - You were outside the study door at about 9:36.
+  - The voice arguing with Arthur was a woman's.
+  - You're secretly dating Jimmy Friedman.
+
+instructions:
+  - Reveal Arthur's line about the money in **Round One**. Keep the woman's exact words, "You'll destroy me", for **Round Two**.
+  - You honestly couldn't recognize the woman's voice. Never claim to.
+  - You may cry, once, beautifully. It's your birthday.
+  - If you learn about Jimmy Friedman and Lexi, you may cause a scene.
+
+mission: |
+  Find out **which women were near Arthur's study** tonight. Names and times,
+  then report to Reggie.
+
+rounds:
+  1:
+    text: |
+      Tell the room what you heard at the study door around 9:36. Arthur
+      said: **"If the money isn't back by midnight, I'm going public."** He
+      was arguing with **a woman**.
+
+      Reggie will take it from there. ("Money. Finally. Something this family
+      understands.")
+    reveal:
+      - 'Arthur said "If the money isn''t back by midnight, I''m going public," arguing with a woman, around 9:36.'
+  2:
+    text: |
+      Now give them the rest: the woman said **"You'll destroy me."**
+
+      You still can't say whose voice it was. Low, desperate, muffled by
+      the door. Several women here could have been in that corridor. Your
+      mission is to find out which.
+    reveal:
+      - 'The woman said "You''ll destroy me."'
+  3:
+    text: |
+      If anyone asks why you were at the study: Arthur invited you at the
+      toast, for twenty to ten. He'd found **a portrait of Nana Rose** that
+      he'd had restored for your birthday. You never got to see it.
+
+      Stand by your timeline: 9:36 to 9:37, the argument, the woman, gone.
+    reveal:
+      - Arthur had invited you to the study for a birthday gift, a portrait of your grandmother.
+
+texts:
+  - id: maya-arthur-history
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "7:55 PM"
+    body: "Happy birthday, Maya. Study, twenty to ten. I've found something of Rose's. Don't tell Lexi, she'll want one too."
+  - id: maya-jimmyf-r1
+    from: Jimmy F. 🌹
+    trigger: { round: 1, after: 3 }
+    body: "Whatever happens tonight, birthday girl, you're safe with me. Delete this."
+  - id: maya-unknown-r2
+    from: Unknown number
+    trigger: { round: 2, after: 2 }
+    body: "You heard her. You know you did. Say what she said."
+
+host_notes: |
+  Core. The overheard argument (Round One) and "You'll destroy me" (Round
+  Two) are solution-critical. Clara (9:33) and Shea (~9:40) exist to make
+  "a woman" ambiguous.

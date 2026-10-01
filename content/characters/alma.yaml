@@ -1,0 +1,139 @@
+id: alma
+name: Alma
+written_for: Alma               # HOST
+tier: core                      # HOST
+pronouns: she/her               # HOST
+role: Archivist of the Blackwood library
+tagline: "You've read every letter this family ever wrote. You wish one had been to you."
+
+costume: |
+  Vintage and slightly haunted: a high-necked dress thirty years out of
+  fashion (you found it in the attic; it was Carlotta's), cardigan, a pencil
+  in your hair, white cotton archivist's gloves, and a key on a ribbon.
+
+intro: |
+  For six months you've lived at Blackwood Manor cataloguing its library and
+  archives. You know the family's history better than the family does. You
+  dress in their cast-offs, sleep under their roof and dream of belonging.
+  Nobody's noticed. Or everyone has.
+
+backstory: |
+  You came from nowhere, a council flat and a library card, and the
+  Blackwoods are the most beautiful thing you've ever seen. You've read
+  Arthur's love letters to Vivienne St. Clair, his furious letters to
+  Carlotta, and his apology letters to Clara. You've worn Carlotta's old
+  dresses from the attic trunks. She hasn't recognized them yet.
+
+  You are also, very quietly, **sleeping with James Calloway**. Two outsiders
+  in a house that never quite let either of you in. Nobody knows. Arthur
+  would have found it "touching," which is worse than disapproving.
+
+relationships:
+  - with: jimmy
+    text: Your secret lover, James. In public you barely look at each other. It's thrilling and exhausting.
+  - with: carlotta
+    text: You're wearing her old dress. You've read her childhood diaries. You're a little in love with the idea of her.
+  - with: joji
+    text: The Professor. You leave him notes in library books about the house's history. He's started answering.
+  - with: maya
+    text: You found her grandmother's name in the family Bible. You wanted to show her tonight.
+  - with: tim
+    text: He helped you with the place cards. He keeps photographing you when he thinks you aren't looking.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:15 PM"
+    where: drawing-room
+    text: Drifting around the edges of the party, listening, in Carlotta's old silk.
+  - at: "9:15 PM"
+    until: "9:39 PM"
+    where: dining-room
+    text: Writing Supper place cards in calligraphy with Tim. Thirteen at the table, one empty chair.
+  - at: "9:39 PM"
+    where: front-hall
+    text: You set off for the library to fetch the family Bible to show Maya the page with her grandmother's name.
+  - at: "9:41 PM"
+    where: library-corridor
+    text: 'At the library door you nearly collide with **Morgan** coming out. She says she was **"looking for the restroom."** The restroom is the other way, off the Front Hall. You walk her there yourself.'
+  - at: "9:42 PM"
+    until: "9:47 PM"
+    where: front-hall
+    text: Back toward the party. The lights go out at 9:45 and you stand very still in the Front Hall, listening to the house breathe.
+
+knows:
+  - At about **9:41** you saw Morgan come out of the library. She said she was looking for the restroom.
+  - The restroom is nowhere near the library. Anyone who's been here an hour knows that.
+  - Morgan looked flushed and was holding her folio tightly against her.
+  - Arthur's private letters, including some to Vivienne St. Clair that Lexi has never seen.
+
+secret: |
+  You saw **Morgan come out of the library at 9:41**, and you're having a
+  secret affair with James Calloway. You've also been wearing Carlotta's old
+  clothes from the attic.
+
+blackmail:
+  - You saw Morgan coming out of the library at about 9:41.
+  - You're sleeping with James Calloway.
+  - The dress you're wearing belonged to Carlotta.
+
+instructions:
+  - Reveal the Morgan sighting in **Round Two**. In Round One, if paid and asked "did you see anyone near the library?", you must answer truthfully.
+  - Never confirm the affair with James unless paid. You may blush.
+  - You may quote from Blackwood family letters at dramatic moments.
+  - Be quiet until you aren't. When you speak, people should lean in.
+
+mission: |
+  Find **someone who saw Morgan before you did** tonight. Learn where and
+  when, then report to Reggie.
+
+rounds:
+  1:
+    text: |
+      Stay quiet and watchful. If asked where you were, say: the dining room
+      with Tim doing place cards, then off to the library for the family
+      Bible.
+
+      You know something about Morgan but you aren't sure it means anything
+      yet. Not yet.
+    reveal:
+      - You were doing place cards in the dining room until about 9:39, then went toward the library.
+  2:
+    text: |
+      Now tell the room: **at about 9:41, near the library, you saw Morgan
+      come out. She said she was looking for the restroom.**
+
+      Then add, precisely: *"The restroom is the other way."*
+
+      Let Morgan respond. Don't argue with her. Just look at her.
+    reveal:
+      - Morgan emerged near the library at about 9:41, claiming to look for the restroom.
+  3:
+    text: |
+      If asked for detail: Morgan was **flushed**, a little out of breath,
+      and holding her folio tightly against her chest. You walked her to the
+      powder room yourself.
+
+      If James has also said he saw Morgan near the library, back him up
+      (without looking at him too fondly).
+    reveal:
+      - Morgan was flushed and out of breath when you met her.
+
+texts:
+  - id: alma-james-history
+    from: J.
+    trigger: { history: true }
+    stamp: "8:57 PM"
+    body: "Billiard room till half past. Then I'm escaping. Wear the green one tomorrow. Delete this."
+  - id: alma-unknown-r1
+    from: Unknown number
+    trigger: { round: 1, after: 12 }
+    body: "That dress suits you. It suited her better."
+  - id: alma-james-r2
+    from: J.
+    trigger: { round: 2, after: 4 }
+    body: "I saw her too. By the library. Say it first, you're braver than me."
+
+host_notes: |
+  Core. The 9:41 library sighting and the restroom excuse (Round Two) are
+  solution-critical. Ross: "Alma. You've become very quiet. Weren't you near
+  the library?"

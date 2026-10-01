@@ -1,0 +1,162 @@
+# Fields marked HOST are never rendered on guest pages.
+id: morgan
+name: Morgan Leibold
+written_for: Morgan            # HOST
+tier: core                     # HOST
+pronouns: she/her              # HOST
+role: Arthur's attorney, Blackwood Legal Counsel
+tagline: "Everybody's secrets cross your desk eventually. You file them alphabetically."
+
+costume: |
+  Sharp and expensive: a tailored black suit or severe column dress, pearls,
+  a good watch, and a leather document folio you never put down. Look like you
+  bill for breathing.
+
+intro: |
+  You are the Blackwoods' lawyer: you draft the wills, bury the scandals, and
+  know where every body in this family is buried, figuratively. Arthur trusts
+  you with everything. Tonight that is a problem.
+
+backstory: |
+  You grew up in a mill town several social classes below Blackwood Manor.
+  Arthur met you at nineteen, waiting tables at one of his dinners, and paid
+  for law school "because you looked at the silver like you were pricing it."
+  Now you have a Chelsea townhouse, a horse named Precedent, and a wardrobe
+  none of which was ever quite paid for.
+
+  Fourteen months ago a property gamble collapsed under you. You "borrowed"
+  **$2.4 million** from Blackwood Holdings in six transfers, authorized
+  through your own firm and parked in a shell company you named **Corvid
+  Holdings** because you thought it was funny. You always meant to pay it
+  back.
+
+  This week Arthur kept asking helpful little questions about "some odd
+  transfers." You helped him investigate. You were very helpful.
+
+relationships:
+  - with: arthur
+    text: Your patron, your client, your maker. You'd have said you loved him.
+  - with: kevin
+    text: A week in Cannes last summer that Kevin thinks is still going on. Useful man to have in your corner.
+  - with: annie
+    text: You handled her divorce for free. She has been fiercely loyal ever since.
+  - with: lindsey
+    text: Arthur's banker. Far too interested in transfer patterns. Keep her talking about confidentiality.
+  - with: joji
+    text: Your office filed his landmark application in August. You've read his whole survey, including the 1891 plans.
+  - with: savanah
+    if: savanah
+    text: You flew to Las Vegas in 2019 with her annulment papers. Let her play the widow. It muddies the water.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:31 PM"
+    where: drawing-room
+    text: 'Charming everyone. At 9:29 Arthur texts: **"My study. 9:35. We settle this tonight."**'
+  - at: "9:32 PM"
+    where: east-corridor
+    text: You pass Annie coming back from the study with an empty tray. You smile. She smiles.
+  - at: "9:34 PM"
+    until: "9:38 PM"
+    where: study
+    text: '"If the money isn''t back by midnight, I''m going public." You say, "You''ll destroy me." He turns away. The raven is right there. You strike once.'
+  - at: "9:39 PM"
+    until: "9:41 PM"
+    where: library
+    text: With his red folder, through the panel by the fireplace and Silas's passage into the library. You keep the **CONFIDENTIAL LEGAL** page and hide the folder behind the books.
+  - at: "9:41 PM"
+    where: library-corridor
+    text: 'You nearly walk into Alma. "Looking for the restroom," you say. She walks you there herself.'
+  - at: "9:42 PM"
+    until: "9:47 PM"
+    where: drawing-room
+    text: A glass in your hand before the lights go out. When they return you look as shocked as anyone.
+
+knows:
+  - Arthur is dead because of you. Nobody else knows.
+  - The 9:45 blackout had nothing to do with you. It was a gift.
+  - The study passage comes out behind a library bookcase. Almost nobody knows it exists.
+  - 'Cover story: you knocked at 9:35, got no answer, and went looking for the powder room. This house is a labyrinth.'
+
+secret: |
+  **You killed Arthur Blackwood** at about 9:38 with the bronze raven to stop
+  him exposing the $2.4 million you stole. You escaped through the hidden
+  passage into the library, and the torn-out legal page is still on you.
+
+blackmail:
+  - You had a 9:35 meeting with Arthur tonight.
+  - Blackwood Legal Counsel authorized the six transfers.
+  - You were in the library just before the lights went out.
+
+instructions:
+  - "**You may accept Blackmail Cash and lie.**"
+  - Never confess. Make them prove motive, means, opportunity, escape and timeline.
+  - You may say your 9:35 knock went unanswered.
+  - Steer suspicion toward Lindsey's banking access, Molly's fraud, Kevin's threat or Carlotta's will.
+
+mission: |
+  Get at least **two people to publicly accuse someone other than you**.
+  Tell Reggie when you've done it.
+
+rounds:
+  1:
+    text: |
+      Be helpful. Be appalled. Remind people of Kevin's threat, Molly's fake
+      and Carlotta's inheritance.
+
+      At the end of the round Reggie will read Arthur's last text, sent to
+      you. Stay calm: a **scheduled meeting**, legal work.
+    reveal:
+      - When Arthur's phone is read out, admit the 9:35 meeting was real and was about "legal work."
+  2:
+    text: |
+      If the calendar shows **9:35 M.L.**, admit it's you. Then play your best
+      card: read aloud Arthur's email (prop in this envelope):
+
+      > *Morgan, I need you to review the Wellington, Monroe and Vale matters
+      > before midnight. There are too many loose ends. — Arthur*
+
+      *"I am literally his lawyer. Half the suspicious things you've found
+      involve me because Arthur paid me to deal with suspicious things."*
+    reveal:
+      - Read Arthur's email aloud (prop in this envelope).
+  3:
+    text: |
+      They'll come for you: Annie in the corridor, **BLACKWOOD LEGAL COUNSEL**,
+      **ML-0427**, and **LEGAL. $2.4M. MIDNIGHT.** in Arthur's hand.
+
+      *"Of course my office appears on his notes. I'm his attorney. I've spent
+      the last week investigating this with him."* Partially true, which is
+      the best kind of lie.
+
+      When Reggie asks who *you* believe did it, accuse someone.
+    reveal:
+      - When ML-0427 comes out, admit it is a Blackwood Legal Counsel login (but "half the office uses it").
+
+# Phone texts. `trigger` is HOST-only; guests see sender, body and time.
+#   { history: true }                 in the phone from the moment they log in
+#   { round: N, after: M }            M minutes after Round N is unlocked
+#   { cue: "..." }                    Reggie sends it from the host panel
+#   { day: -1, time: "18:00" }        relative to party.date (pre-party teasers)
+# `stamp` shows an in-world time instead of the real delivery time.
+texts:
+  - id: morgan-arthur-friday
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "Friday 11:52 PM"
+    body: "Bring the Wellington papers tomorrow. And your conscience, if it isn't too much trouble. — A."
+  - id: morgan-arthur-929
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "9:29 PM"
+    body: "My study. 9:35. We settle this tonight."
+  - id: morgan-unknown-r3
+    from: Unknown number
+    trigger: { cue: "Right after Annie says she passed Morgan in the corridor (Round Three)" }
+    body: "Every Blackwood secret comes home to roost."
+
+host_notes: |
+  The killer. Her page is deliberately the same shape and length as
+  everyone else's (the tests enforce it). Optional prop: a folded
+  "CONFIDENTIAL LEGAL" page for a final "empty your pockets" moment. Her
+  Round Two envelope must physically contain the email prop.

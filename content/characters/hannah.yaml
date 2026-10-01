@@ -1,0 +1,139 @@
+id: hannah
+name: Hannah Wellington
+written_for: Hannah             # HOST
+tier: supporting                # HOST
+pronouns: she/her               # HOST
+role: Director of the Wellington Foundation
+tagline: "You raise money for good causes. You'd raise it for bad ones too, but they don't throw better parties."
+
+costume: |
+  Gala-season philanthropist: a showstopping gown or tux, long gloves, a
+  donor-wall smile, an evening bag full of business cards, and one
+  ostentatious charity pin.
+
+intro: |
+  You run the **Wellington Foundation**, your grandmother's charity, which
+  funds children's hospitals and the arts and, recently, your entire life.
+  For a year you've been courting Arthur Blackwood's money. Tonight, at
+  midnight, he was going to give you nearly all of it.
+
+backstory: |
+  Arthur told you privately last month that he was preparing an **enormous
+  charitable transfer** to the foundation, "most of what I own." His
+  lawyers, Morgan's office, have had "the Wellington paperwork" for weeks.
+  It was meant to be signed at the midnight announcement.
+
+  Your problem: you've already promised the board. You've already *spent*
+  some of it, on a new wing, a gala and a small flat in Paris that is
+  technically "for visiting donors." If the gift doesn't land, you're fired,
+  or worse.
+
+  Arthur's death before midnight means the gift is **unsigned**. Whatever
+  people think, you needed him alive.
+
+  And Kushington, the forensic accountant Arthur sent to audit your books,
+  has been auditing more than your books.
+
+relationships:
+  - with: arthur
+    text: Your great white whale of a donor. You liked him, too, which is unprofessional.
+  - with: kush
+    text: The forensic accountant who audited the foundation. Then stayed late. Then stayed later.
+  - with: morgan
+    text: Arthur's lawyer, sitting on "the Wellington paperwork." She keeps telling you it's "nearly there."
+  - with: martin
+    text: The art expert. You suspect he knows something about Arthur's collection that you'd very much like to know.
+  - with: courtney
+    if: courtney
+    text: You hired her, a "professional guest" who poses as minor nobility, to make your galas look grander. You did not expect her to turn up here.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:15 PM"
+    where: drawing-room
+    text: Working the room. Three pledges, one marriage proposal (declined), one phone number (accepted).
+  - at: "9:20 PM"
+    where: front-hall
+    text: Passing through the Front Hall you hear Kevin shout at Arthur, "You're going to regret this!" The whole corridor heard.
+  - at: "9:21 PM"
+    until: "9:45 PM"
+    where: drawing-room
+    text: By the fire with Noor and Joji, catching Kushington's eye across the room.
+
+knows:
+  - Arthur was preparing an enormous charitable transfer to your foundation at midnight.
+  - The gift was never signed. Arthur's death cost you everything.
+  - You heard Kevin shout "You're going to regret this" at 9:20.
+  - Morgan's office handled "the Wellington paperwork."
+
+secret: |
+  You've **already spent money from a gift that was never signed**, and
+  you're having a fling with the man Arthur sent to audit you.
+
+blackmail:
+  - Arthur was giving most of his fortune to your foundation at midnight.
+  - You've already spent money the foundation doesn't have yet.
+  - You're involved with Kushington.
+
+instructions:
+  - Reveal in Round One that Arthur was considering giving his fortune away, to you.
+  - You may solicit "donations" of Blackmail Cash for the foundation at any time.
+  - Never admit the Paris flat unless paid.
+  - Defend Kush's honor loudly. Too loudly.
+
+mission: |
+  Discover **who believes Arthur was changing his will.** Names, then report
+  to Reggie.
+
+rounds:
+  1:
+    text: |
+      Carlotta will say Arthur told her he was "giving it all away." **Confirm
+      it**: Arthur was preparing an **enormous charitable transfer** to the
+      Wellington Foundation, to be announced at midnight.
+
+      You'll look like you had a motive. You didn't, and in Round Two you'll
+      find out why that's obvious.
+    reveal:
+      - Arthur was preparing an enormous charitable transfer to your foundation at midnight.
+  2:
+    text: |
+      Point out what nobody has realized: **the gift was never signed.**
+      Arthur dying *before* midnight means the foundation gets nothing. You
+      needed him alive more than anyone.
+
+      If Morgan's email mentions "the Wellington matter," that's your
+      paperwork. Ask her why it took so long.
+    reveal:
+      - The gift was unsigned; Arthur's death before midnight cost the foundation everything.
+  3:
+    text: |
+      If anyone's still on Kevin, confirm you heard him shout at 9:20, and
+      then remind them you also saw him storm off toward the terrace.
+
+      [[if:courtney]]
+      If Courtney's "Lady" act is wobbling, you may expose her as your hired
+      professional guest, or protect her for a price.
+      [[/if]]
+    reveal:
+      - You heard Kevin's 9:20 threat and saw him head for the terrace.
+
+texts:
+  - id: hannah-board-history
+    from: Board Chair
+    trigger: { history: true }
+    stamp: "5:01 PM"
+    body: "Hannah, the board expects the Blackwood gift CONFIRMED by Monday. No more 'nearly there.'"
+  - id: hannah-kush-r1
+    from: K.
+    trigger: { round: 1, after: 9 }
+    body: "I'm about to be very impressive in public. Try not to look."
+  - id: hannah-morgan-r2
+    from: Morgan Leibold
+    trigger: { round: 2, after: 13 }
+    body: "Hannah, so sorry, the Wellington papers are with me. Terrible timing. We'll talk next week. M."
+
+host_notes: |
+  Supporting. Confirms the charitable giveaway (Round One). Resolves the
+  "Wellington" in Morgan's email. Also a corroborating witness to Kevin's
+  9:20 threat.

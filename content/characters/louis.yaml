@@ -1,0 +1,146 @@
+id: louis
+name: Louis
+written_for: Louis              # HOST
+tier: supporting                # HOST
+pronouns: he/him                # HOST
+role: '"Architectural consultant" (treasure hunter)'
+tagline: "Every great house hides a room. You've been looking for this one from the inside."
+
+costume: |
+  Explorer in evening wear: a dinner jacket with suspiciously dusty elbows,
+  a headlamp or small torch in your pocket, cobwebs (optional, encouraged),
+  and the twitchy energy of a man who knows the house is listening.
+
+intro: |
+  You came tonight as Lexi St. Clair's plus-one, "an architectural
+  consultant." You are in fact obsessed with the legend of the **Raven
+  Room**, the vault Silas Blackwood supposedly hid somewhere that appears on
+  no plan.
+
+backstory: |
+  For three weeks you've been letting yourself into Blackwood Manor at night
+  through the old ice-house tunnel, exploring the sealed servants' passages,
+  sleeping in a bricked-off maid's room in the east wing and eating from the
+  larder. **You are the one living in the walls.** The Keyhole wrote about you.
+  You were flattered.
+
+  You never found the Raven Room. You never found any passage near the
+  study. You've tapped every wall in the library and got nothing but a
+  draft and a strange look from the photographer.
+
+  And there's Shea, the nurse, who caught you a week ago and didn't scream.
+  Now you meet every midnight. She brings cheese.
+
+  Tonight at 9:25 you slipped into an east-wing passage for one more look.
+  At 9:45 the lights died and you were trapped in absolute darkness until you
+  found a panel and fell out into the dining room at 9:46, right in front
+  of Kim.
+
+relationships:
+  - with: shea
+    text: The nurse who found you. Your midnight secret. You'd do anything to keep her out of trouble.
+  - with: lexi
+    text: Your "date" for the evening. She thinks you're an architectural consultant. You think she's lovely and very trusting.
+  - with: joji
+    text: The Professor. He has the 1891 plans and won't show you. You've been pumping him for hints all night.
+  - with: kim
+    text: Watched you climb out of a wall. You need to find out what Kim wants.
+  - with: tim
+    text: The photographer caught you tapping walls in the library at 9:00.
+
+evening:
+  - at: "8:00 PM"
+    until: "8:40 PM"
+    where: gallery
+    text: On the Professor's tour, asking a suspicious number of questions about hidden rooms.
+  - at: "9:00 PM"
+    until: "9:15 PM"
+    where: library
+    text: Tapping the library walls for hollow sounds. A cold draft from one bookcase, but it won't budge. Tim walks in on you.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: east-wing
+    text: Into a sealed east-wing passage with a torch, on the far side of the house from the study, hunting the Raven Room.
+  - at: "9:45 PM"
+    until: "9:46 PM"
+    where: east-wing
+    text: The lights die. Your torch dies. Total darkness inside the wall. You feel your way along the brick.
+  - at: "9:46 PM"
+    where: dining-room
+    text: You find a panel, shove it, and fall into the dining room covered in dust, right in front of Kim's phone torch.
+
+knows:
+  - You've been secretly living in the manor's walls for three weeks.
+  - The library has a bookcase with a cold draft behind it, but you could never open it.
+  - From 9:25 to 9:46 you were inside an east-wing passage, nowhere near the study.
+  - Kim saw you come out of the dining-room panel at 9:46.
+
+secret: |
+  **You're the one living in the walls.** You were inside an east-wing passage
+  during the murder and the blackout, and you've been having a secret affair
+  with Shea, Arthur's nurse.
+
+blackmail:
+  - You've been secretly living inside Blackwood Manor's walls.
+  - You were in a hidden passage from 9:25 to 9:46.
+  - You've been meeting Shea at midnight.
+
+instructions:
+  - In Round Two, admit you were **snooping around the library** earlier. Nothing more.
+  - Confess to living in the walls only in Round Three, or if paid.
+  - Never betray Shea.
+  - You may knock on any wall, press any panel, and look disappointed.
+
+mission: |
+  **Locate the hidden passage clue**, the old floor plan, and see it with
+  your own eyes. Tell Reggie when you have.
+
+rounds:
+  1:
+    text: |
+      People may notice the dust on your jacket. Deflect. You were "admiring
+      the cornicing."
+
+      If someone mentions the walls rumor, look very interested and very
+      innocent.
+    reveal:
+      - Deflect questions about the dust on your clothes.
+  2:
+    text: |
+      Admit it, because Tim saw you: **you were snooping around the library
+      at about 9:00, tapping on walls.** You're a "consultant." You were
+      consulting.
+
+      Find out who has the old floor plan. You *need* to see it.
+    reveal:
+      - Admit you were snooping around the library at about 9:00.
+  3:
+    text: |
+      Kim has you, or soon will. Confess, dramatically: **you're the one
+      who's been living in the walls**, hunting the Raven Room.
+
+      But be clear: **from 9:25 to 9:46 you were trapped in an east-wing
+      passage on the far side of the house.** You never found any passage
+      near the study. You've never been in it.
+    reveal:
+      - You've been living in the walls; during the murder you were trapped in an east-wing passage far from the study.
+
+texts:
+  - id: louis-shea-history
+    from: S.
+    trigger: { history: true }
+    stamp: "Last night 11:58 PM"
+    body: "Same room. I'll bring cheese. If anyone asks, you're a draft."
+  - id: louis-unknown-r1
+    from: Unknown number
+    trigger: { round: 1, after: 7 }
+    body: "You've got cobwebs in your hair, Louis. The house is starting to claim you."
+  - id: louis-kim-r2
+    from: Unknown number
+    trigger: { round: 2, after: 15 }
+    body: "9:46. Dining room. Panel. Dust. I saw everything, darling. Let's talk terms. — K"
+
+host_notes: |
+  Supporting. The "someone living in the walls" lore thread and an
+  end-of-Round-One suspect ("literally snooping around hidden walls"). Must
+  never have been in the study passage. Cleared by Kim in Round Three.

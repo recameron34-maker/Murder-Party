@@ -1,0 +1,75 @@
+# Shown identically on EVERY guest page. Nothing here may reveal the solution,
+# the hidden passage, or any one character's secrets.
+
+welcome: |
+  You have been invited to the **Midnight Supper** at Blackwood Manor. This
+  page is yours alone. Don't show it to anyone, don't forward the link, and
+  don't let anyone read over your shoulder. Your secrets are worth real
+  (fake) money tonight.
+
+  More of this page unlocks as the night goes on. When Reggie breaks the seal
+  on a new round, refresh and your next envelope will be waiting.
+
+house: |
+  **Blackwood Manor** was built in 1891 by Silas Blackwood out of black stone,
+  coal money and money nobody asks about. Thirty-one rooms in use, a dozen
+  that aren't. The portraits in the gallery are said to watch you. The east
+  wing has been shut for decades. The lights do strange things in a storm.
+
+  Rooms you'll hear about tonight: the **Drawing Room** (the party), the
+  **Front Hall**, the **Portrait Gallery**, the **Billiard Room**, the
+  **Conservatory**, the **Dining Room** (set for the Supper), the
+  **Terrace**, the **Library**, and at the end of the **East Corridor**,
+  **Arthur's study**.
+
+legend: |
+  On Arthur's desk sits the **Blackwood Raven**, eight pounds of bronze that
+  Silas had cast, people say, from the melted bell of a chapel he tore down.
+  "The raven keeps the Blackwood secrets," the family says.
+
+  There's a less polite saying too: *every Blackwood who has tried to give the
+  fortune away has died before the papers were signed.* Edmund in 1923, down
+  the cellar stairs. Cordelia in 1979, of a fever, an hour before midnight.
+
+  And last month the anonymous society column **The Keyhole** printed a blind
+  item: *"Which crumbling pile has a tenant nobody invited? Staff report
+  footsteps inside the walls and a larder that empties itself."*
+
+supper_rules:
+  - "No guest leaves Blackwood Manor before midnight."
+  - "One chair is left empty for the last Blackwood to die."
+  - "The host's midnight announcement is final. What is said at midnight cannot be unsaid."
+  - "Every guest arrives with a secret."
+  - "The east wing stays dark after eleven."
+  - "Never say the bird's name at the table. Call it *the bird*."
+  - "The last drink before midnight is poured by the house."
+
+blackmail_rules: |
+  Everyone starts with **$3,000 in Blackwood Blackmail Notes** (three
+  $1,000 bills).
+
+  - Offer another guest **$1,000** for **one question** about their
+    character, whereabouts, secret or knowledge.
+  - If they **accept the money, they must answer that question truthfully.**
+    They don't have to volunteer anything beyond the question.
+  - They may **refuse**, or demand more ($2,000, $3,000…). Refusing costs
+    nothing except everyone now *really* wants to know why.
+  - Reggie pays **$1,000** for excellent accusations, found evidence,
+    completed secret missions and committed performances.
+  - **$3,000** buys a private hint card from Reggie. Hints nudge; they never
+    solve.
+
+how_to_play: |
+  - Stay in character, flirt, scheme, deflect, accuse. Be dramatic.
+  - **Don't invent evidence** unless your envelope says you may.
+  - If your envelope says something **must** come out, make sure it's public
+    before the round ends.
+  - Search only the designated game areas. Nothing is hidden in personal
+    belongings, bedrooms, drawers or cabinets.
+  - Never open a future envelope early. (Kushington.)
+
+rounds:
+  0: "Before the Supper"
+  1: "Round One: Enemies"
+  2: "Round Two: Lies by Omission"
+  3: "Round Three: Scandal or Murder"

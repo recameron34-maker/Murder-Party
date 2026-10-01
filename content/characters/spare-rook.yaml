@@ -1,0 +1,113 @@
+id: spare-rook
+name: Rook
+written_for: Spare, any late guest   # HOST
+tier: flex                      # HOST
+effort: low                     # HOST
+pronouns: any                   # HOST
+role: The Blackwood chauffeur
+tagline: "You drove half these people up the hill tonight. Rich people talk in cars as if the driver is upholstery."
+
+costume: |
+  A dark suit or coat, driving gloves, a peaked cap if you can find one, car
+  keys on a heavy ring. Use your own first name: you're "[Name] Rook," but
+  everyone just calls you Rook.
+
+intro: |
+  You've driven for the Blackwoods for six years. Tonight you ferried guests
+  from the station before the storm washed out the lower road, and you heard
+  everything said in the back seat.
+
+backstory: |
+  Nobody notices the driver. That's the job's great luxury. You know who
+  cries in cars, who fights in cars and who does other things in cars.
+
+  Your secret: every **Tuesday** for three months you've driven **Clara** up
+  to the manor after dark and waited by the service door for two hours. You
+  are paid extra not to remember this.
+
+relationships:
+  - with: lindsey
+    text: You drove her and Malik up from the station. They fought in a whisper about "your source." She tipped you to forget it.
+  - with: molly
+    text: You drove her too. She cried on the phone the whole way, saying "if he wants the money back, I'm finished."
+  - with: clara
+    text: Your Tuesday passenger. You've never said a word. You might, for the right price.
+  - with: annie
+    text: The house manager feeds you at the staff supper. You'd do anything for Annie's pie.
+
+evening:
+  - at: "7:15 PM"
+    until: "8:00 PM"
+    where: grounds
+    text: Three runs up from the station in the rain. Ears open.
+  - at: "9:00 PM"
+    until: "9:50 PM"
+    where: kitchen
+    text: At the staff supper downstairs with Mrs. Hale and the kitchen staff. At 9:45 you watch her warming ovens and the old wiring blow the circuit. She drops a whole tray of glasses in the dark.
+
+knows:
+  - Lindsey and Malik argued in your car about "your source."
+  - Molly cried on the phone that she'd be "finished" if Arthur wanted his money back.
+  - You drive Clara to the manor every Tuesday night.
+  - The blackout started in the kitchens. You were there.
+
+secret: |
+  You've secretly driven **Clara to Arthur every Tuesday** for three months,
+  and you've been paid to forget it.
+
+blackmail:
+  - You drive Clara to the manor every Tuesday night.
+  - Lindsey tipped you to forget what you heard in the car.
+  - You were in the kitchens when the lights went out.
+
+instructions:
+  - Low effort. Listen more than you talk. When you talk, it should land.
+  - You may sell any back-seat secret for Blackmail Cash.
+  - Your alibi is the kitchen staff supper, 9:00 to 9:50. Rock solid.
+  - Never volunteer the Tuesdays for free.
+
+mission: |
+  Get a guest to pay you **$1,000 in Blackmail Cash** for a "ride," meaning
+  information. Report the fare to Reggie.
+
+rounds:
+  1:
+    text: |
+      Mention, if anyone's curious, that you drove several guests up tonight
+      and that **Molly cried the whole way about money**.
+    reveal:
+      - Molly cried in your car about being "finished" if Arthur wanted his money back.
+  2:
+    text: |
+      If asked about Lindsey and Malik, you heard them argue about "your
+      source." That's all you heard. (It isn't, but it's all you'll say for
+      free.)
+    reveal:
+      - Lindsey and Malik argued in your car about "your source."
+  3:
+    text: |
+      When the blackout comes up, back Reggie: **you were in the kitchens at
+      9:45. The warming ovens tripped the circuit and Mrs. Hale dropped a
+      tray of glasses.** That was the crash.
+    reveal:
+      - The blackout started in the kitchens; the crash was Mrs. Hale dropping glasses.
+
+texts:
+  - id: rook-lindsey-history
+    from: Ms Vale
+    trigger: { history: true }
+    stamp: "7:40 PM"
+    body: "Thank you for the lift. And for your discretion. You'll find it was well compensated."
+  - id: rook-hale-r1
+    from: Mrs. Hale
+    trigger: { round: 1, after: 6 }
+    body: "Tell them upstairs it was MY ovens, not ghosts. I won't have this house's reputation ruined any further."
+
+fallback: |
+  Nothing depends on Rook. Every fact Rook carries is also carried by
+  someone else: the blackout (Reggie and Tim), Molly's money worries
+  (Molly), Clara's affair (Clara and Tim).
+
+host_notes: |
+  Spare, low effort, any gender or name. Corroborates the blackout origin and
+  Clara's affair. Whereabouts: grounds, then kitchens. Never near the study.

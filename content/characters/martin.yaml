@@ -1,0 +1,130 @@
+id: martin
+name: Martin
+written_for: Martin             # HOST
+tier: supporting                # HOST
+pronouns: he/him                # HOST
+role: Art expert and appraiser to the Blackwood collection
+tagline: "You can price anything in this house by looking at it. Including the guests."
+
+costume: |
+  Connoisseur: a velvet or corduroy jacket, silk scarf or cravat, a jeweler's
+  loupe on a chain, white gloves in your breast pocket, and the bearing of a
+  man who has never been impressed by anything.
+
+intro: |
+  You've appraised the Blackwood collection for ten years. You were the
+  first to suspect the Lady Evangeline portrait was a fake, and you've been
+  savoring this evening because the woman who sold it to Arthur is Molly
+  Monroe, your ex.
+
+backstory: |
+  Molly broke your heart three years ago in a hotel in Venice and you've
+  been very mature about it ever since, apart from tonight.
+
+  On Friday Arthur sent you a note. He'd traced the forger, a man called
+  **Lucien Vasse**, and he'd concluded that **Molly was deceived too**. "I want
+  him, not her," he wrote. You've had that note in your pocket all evening.
+  You haven't mentioned it. You've been enjoying watching her sweat.
+
+  Arthur also asked you to value the whole collection quietly this month.
+  You know why: he was preparing to **give it away** to the Wellington
+  Foundation.
+
+relationships:
+  - with: molly
+    text: Your ex, who sold Arthur the fake. You're going to expose her, and you're going to enjoy it, and then you're going to save her. Maybe.
+  - with: arthur
+    text: Your best client. He trusted your eye more than his own. He asked you to value everything for the giveaway.
+  - with: hannah
+    text: The charity director. You know before she does that Arthur's collection was going to her foundation.
+  - with: jimmy-friedman
+    text: Your card host tonight. He cheats; so do you. Mutual respect.
+
+evening:
+  - at: "8:00 PM"
+    until: "9:00 PM"
+    where: gallery
+    text: Standing in front of the fake Lady Evangeline with a loupe, letting people ask you what you're looking at.
+  - at: "9:00 PM"
+    until: "9:45 PM"
+    where: billiard-room
+    text: At Jimmy Friedman's card table with Daniel and James. You never left. When the lights went out, the pot vanished. You have it.
+
+knows:
+  - The Lady Evangeline portrait is a forgery by Lucien Vasse.
+  - Arthur wrote to you on Friday that Molly was deceived too.
+  - Arthur had you value his whole collection for a gift to the Wellington Foundation.
+  - You were at the card table from 9:00 until the blackout.
+
+secret: |
+  You've had **Arthur's note clearing Molly** in your pocket all night and
+  kept quiet out of spite. You know Arthur was giving his collection away.
+  You also stole the card pot in the dark.
+
+blackmail:
+  - The Lady Evangeline portrait is a forgery.
+  - Arthur told you Molly was deceived too, and you've kept it quiet.
+  - You and Molly were lovers.
+
+instructions:
+  - In Round One, **expose the painting** as a fake, with relish.
+  - Hold Arthur's note until Round Three. Refuse Blackmail offers about whether Molly knew, at any price, until then.
+  - You may appraise anything and anyone, out loud.
+  - Hint that Arthur's collection was "about to change hands" without saying whose.
+
+mission: |
+  **Publicly authenticate or appraise three random objects** (a glass, a
+  shoe, someone's earring). Report your three verdicts to Reggie.
+
+rounds:
+  1:
+    text: |
+      Reggie may ask why you're looking at Molly "like you're about to
+      appraise her." Tell him. **The Lady Evangeline portrait, which Molly sold
+      Arthur for $750,000, is a fake.** Brushwork, canvas, a pigment that
+      didn't exist in Sargent's lifetime.
+
+      Do not say yet whether Molly knew.
+    reveal:
+      - The painting Molly sold Arthur for $750,000 is a forgery.
+  2:
+    text: |
+      Let Molly twist. If the threatening letter turns up, read it over her
+      shoulder.
+
+      Then drop a hint for the mission-hunters: Arthur had you value
+      **everything** in the house this month. "As if it were all about to
+      change hands."
+    reveal:
+      - Arthur had you value his entire collection this month.
+  3:
+    text: |
+      Time to be a decent person. Produce Arthur's note (prop in this
+      envelope) and read it:
+
+      > *Martin — I've traced the Evangeline forgery to Lucien Vasse. Molly
+      > was taken in as badly as I was. I want him, not her. — A.*
+
+      Molly is cleared. Try not to look disappointed.
+    reveal:
+      - Read Arthur's note clearing Molly of knowingly selling a forgery.
+
+texts:
+  - id: martin-arthur-history
+    from: Arthur Blackwood
+    trigger: { history: true }
+    stamp: "Friday 6:15 PM"
+    body: "Note in the post. It's Vasse. Molly's a victim, not a villain. Be kind to her tomorrow, Martin. I know that's hard for you."
+  - id: martin-molly-r1
+    from: Molly
+    trigger: { round: 1, after: 13 }
+    body: "If you say one word about Venice I will tell them about your 'Rembrandt.'"
+  - id: martin-unknown-r3
+    from: Unknown number
+    trigger: { round: 3, after: 4 }
+    body: "Arthur asked you to be kind. Tick tock."
+
+host_notes: |
+  Supporting. Exposes the painting (Round One). In Round Three he carries
+  `molly-cleared-note` (prop in his envelope). If Martin isn't cast, Reggie
+  finds the note in Arthur's desk and reads it.

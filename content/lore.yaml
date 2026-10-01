@@ -1,0 +1,143 @@
+# HOST ONLY. Never rendered on guest pages.
+# The world of Blackwood Manor: rooms, family legend, people who are talked
+# about but not played. Guest-safe lore (the parts everybody at the party
+# would know) lives in guest-common.yaml.
+
+house:
+  name: Blackwood Manor
+  built: 1891
+  builder: Silas Blackwood
+  summary: >
+    A black-stone pile on a hill above a drowned valley, built by Silas
+    Blackwood with coal money and money nobody asks about. Thirty-one rooms
+    in use, a dozen more that aren't, and a web of servants' passages Silas
+    had built so he would never have to see the staff. Most of the passages
+    were bricked up in the 1950s. Not all of them.
+
+# Rooms used in whereabouts. `zone` drives the consistency checker:
+#   murder-zone  = the study and the corridor outside it
+#   escape-zone  = where the hidden passage comes out
+rooms:
+  study:            { name: "Arthur's study", zone: murder-zone, game_area: "Ross's designated 'study' area" }
+  east-corridor:    { name: "East Corridor (outside the study)", zone: murder-zone, game_area: "Hallway leading to the 'study'" }
+  library:          { name: "Library", zone: escape-zone, game_area: "Ross's designated 'library' area" }
+  library-corridor: { name: "Library Corridor", zone: escape-zone, game_area: "Approach to the 'library'" }
+  drawing-room:     { name: "Drawing Room", zone: party, game_area: "Main party room" }
+  front-hall:       { name: "Front Hall", zone: party, game_area: "Entry" }
+  gallery:          { name: "Portrait Gallery", zone: party, game_area: "Wall with framed pictures" }
+  billiard-room:    { name: "Billiard Room", zone: party, game_area: "Card/game table" }
+  dining-room:      { name: "Dining Room (set for the Midnight Supper)", zone: party, game_area: "Dining table" }
+  conservatory:     { name: "Conservatory", zone: party, game_area: "Window / plant corner" }
+  terrace:          { name: "Terrace", zone: outside, game_area: "Balcony or by the window" }
+  kitchen:          { name: "Kitchens and servery (downstairs)", zone: service, game_area: "Kitchen" }
+  cellar:           { name: "Wine cellar", zone: service, game_area: "n/a" }
+  upstairs:         { name: "Upstairs bedrooms", zone: private, game_area: "n/a" }
+  east-wing:        { name: "The shut-up East Wing and its walled passages", zone: private, game_area: "n/a" }
+  grounds:          { name: "Grounds, drive and ice house", zone: outside, game_area: "n/a" }
+
+layout_notes: >
+  The study is at the dead end of the East Corridor. The library looks like
+  it is on the far side of the house: by corridor you walk the East
+  Corridor, cross the Front Hall and go down the Library Corridor, about two
+  minutes. But the library sits directly behind the study wall. Silas's
+  private passage, which the family calls the Raven's Walk, runs twenty steps
+  from a panel beside the study fireplace to a bookcase in the library. From
+  the library side it only opens if you press the carved raven on the third
+  shelf. The nearest powder room is off the Front Hall, the other way
+  entirely from the library.
+
+legend:
+  raven: >
+    The Blackwood Raven is an eight-pound bronze raven Silas had cast in
+    1891, supposedly from the melted bell of the village chapel he pulled
+    down to build the manor. It has always sat on the head of the family's
+    desk. Family saying: "The raven keeps the Blackwood secrets."
+  curse: >
+    Every Blackwood who has tried to give the fortune away has died before
+    the papers were signed. Edmund Blackwood (1923) meant to leave it to the
+    Church and fell down the cellar stairs the night before. Cordelia
+    Blackwood, Arthur's mother (1979), meant to give the manor to the nation
+    and died of a fever before midnight. Arthur announced he would give it
+    all away at midnight tonight. Guests will whisper that the raven did it.
+    It didn't. The curse is mood, never evidence.
+  raven_room: >
+    Legend says Silas hid a vault, the Raven Room, somewhere that appears on
+    no plan. Treasure hunters, including Louis, have been tapping walls for
+    years. The truth is that the "room" is the Raven's Walk passage itself:
+    a narrow, cold corridor with a bench, a candle niche and Silas's initials
+    scratched into the brick. Joji can say this in Round Three if anyone asks.
+  walls: >
+    Last month The Keyhole ran a blind item: "Which crumbling pile has a
+    tenant nobody invited? Staff report footsteps inside the walls and a
+    larder that empties itself." True: Louis has been letting himself in for
+    weeks through the old ice-house tunnel to hunt for the Raven Room, living
+    off the larder and sleeping in a sealed-off maid's room in the east wing.
+    He never found the Raven's Walk.
+
+midnight_supper: >
+  Silas held the first Midnight Supper in 1891 as an annual reckoning. On
+  that night the head of the family makes one announcement at midnight that
+  cannot be taken back. Arthur has hosted it for nearly thirty years. The
+  rules are printed in guest-common.yaml. The ritual drink, "the
+  Reckoning," is a Sazerac poured by the house at half past nine and carried
+  to the head of the family. Annie has carried it for eleven years.
+
+arthur:
+  name: Arthur Blackwood
+  age: 71
+  summary: >
+    Patriarch, collector, terrible judge of character, excellent host. He was
+    dying (heart failure, months not years; only Dr. Noor Beaumont and his
+    nurse Shea knew). He had decided to spend his last Midnight Supper
+    setting everything right:
+      1. Expose the $2.4M theft at midnight. A message to Malik was scheduled
+         to go out at 12:00.
+      2. Give most of the fortune away, largely to the Wellington Foundation
+         (Hannah), with personal gifts: Lexi's Vivienne Fund and Maya's
+         grandmother's portrait.
+      3. Release Carlotta from the "burden" of the estate. That is what the
+         11:30 meeting and the note were for.
+    He tore up his old will himself that afternoon. Nobody killed Arthur for
+    the inheritance.
+
+npcs:
+  - id: silas
+    name: Silas Blackwood
+    note: Founder (d. 1919). Built the manor, the passages, and the Supper.
+  - id: cordelia
+    name: Cordelia Blackwood
+    note: Arthur's mother (d. 1979). The curse's most recent "victim."
+  - id: helena
+    name: Helena Blackwood
+    note: Arthur's ex-wife and Carlotta's mother. Left when Carlotta was twelve and never came back. Lives in Lisbon. Not dead, just gone.
+  - id: vivienne
+    name: Vivienne St. Clair
+    note: Lexi's late mother. Arthur's great love before Clara, though they never married. Arthur is Lexi's godfather.
+  - id: teddy
+    name: Teddy Calloway
+    note: Arthur's late business partner and James's father. Died when James was nine; Arthur took James in.
+  - id: nana-rose
+    name: Rosalind "Nana" Rose
+    note: Maya's grandmother. Blackwood Manor's cook for forty years. Arthur loved her more than most of his relatives.
+  - id: vasse
+    name: Lucien Vasse
+    note: The forger. Painted the fake "Lady Evangeline" that Molly sold to Arthur in good faith. Currently in Marseille, probably.
+  - id: mrs-hale
+    name: Mrs. Hale
+    note: Current cook. Her warming ovens, plus the 1930s wiring, tripped the circuit at 9:45. She will tell anyone who listens that this house hates electricity.
+  - id: evangeline
+    name: Lady Evangeline Blackwood
+    note: Silas's wife. Subject of the forged portrait. Her painted eyes follow you down the gallery. Everyone says so.
+
+money:
+  theft_total: 2400000
+  transfers: [300000, 450000, 275000, 600000, 375000, 400000]
+  period: "Fourteen months"
+  authorized_by: "Blackwood Legal Counsel (BLC), user ID ML-0427"
+  destination: "Corvid Holdings Ltd, a shell company Morgan set up. Corvid means the crow family. She thought that was funny."
+  how_found: >
+    Lindsey Vale (Arthur's private banker) flagged the transfer pattern six
+    weeks ago and told Arthur quietly. Arthur hired Kushington to trace it.
+    Kush traced the authorizations to BLC two days ago and the user ID this
+    week. Arthur spent the week asking Morgan "helpful" questions about the
+    account, giving her the chance to come clean. She didn't.
