@@ -108,31 +108,37 @@ The **Flex** page shows what's live versus falling back for the current roster.
    → Save. A passphrase appears; give it to them.
 5. The host panel works on your phone, so keep it in a pocket.
 
-## Preview on GitHub Pages (now)
+## Branch previews on GitHub Pages (temporary)
 
 Every push to GitHub runs the consistency checker and all the tests (the
-**Actions** tab, plus a ✓ or ✗ next to each commit), then publishes a
-**read-only preview** of the whole site to GitHub Pages:
+**Actions** tab, plus a ✓ or ✗ next to each commit). A temporary landing page
+on GitHub Pages lists **every branch** and links to a **read-only preview**
+of each one:
 
 **<https://recameron34-maker.github.io/Murder-Party/>**
 
-It has the host planner (run of show, timeline, evidence, checker, print
-views) and every guest's page at every round, so you can watch progress
-from any branch. The last push wins.
+Each preview has the host planner (run of show, timeline, evidence, checker,
+print views) and every guest's page at every round. The site is built and
+deployed from `main` (GitHub only lets the default branch deploy Pages); a
+push to any other branch asks `main` to rebuild it within a minute or two.
 
 - **One-time switch-on (only the repo owner can do this):** repo
-  **Settings → Pages → Build and deployment → Source: "Deploy from a branch"
-  → Branch: `gh-pages`, folder `/ (root)` → Save.** About a minute later the
-  page at the top of Settings → Pages says "Your site is live at …".
-- **Getting a 404?** Pages isn't switched on yet, or Source is set to "GitHub
-  Actions" or to `main`. It must be **Deploy from a branch → `gh-pages`**.
-  The workflow can't flip this switch itself; GitHub only lets the repo
-  owner do it.
+  **Settings → Pages → Build and deployment → Source: "GitHub Actions".**
+  Then **Actions → Branch previews (GitHub Pages) → Run workflow** (or push
+  anything). The run shows the address when it's done.
+- **Getting a 404?** Source isn't set to "GitHub Actions" yet. If the run's
+  "Check GitHub Pages" step fails, that's the same cause.
+- **Branches without a preview** (older ones that predate the preview
+  builder) are still listed, with links to their code.
 - **It's a preview, not the party site.** GitHub Pages only serves the same
   static files to everyone, so it can't check passphrases, unlock rounds or
   deliver texts (buttons are inert). Everything on it, including the
   solution, is readable by anyone with the link. Never send it to guests.
-- Build it yourself with `npm run build:static` (output in `site/`).
+- **To remove it later**, delete `.github/workflows/pages.yml` and
+  `.github/landing/`. The old `gh-pages` branch is no longer used and can
+  be deleted.
+- Build one branch's preview yourself with `npm run build:static` (output in
+  `site/`), or the whole landing site with `node .github/landing/build.mjs`.
 
 ## Deploy the party site (Cloudflare, before the party)
 

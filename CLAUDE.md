@@ -118,9 +118,12 @@ that player. The spoiler rules above still apply and are enforced server-side
   Cloudflare Worker + Durable Object in production, deployed by
   `.github/workflows/deploy.yml`: `main` → production, other branches →
   preview; dormant until Ross adds Cloudflare secrets). For now Ross
-  deploys **only to GitHub Pages**: `scripts/build-static.mjs` builds a
-  read-only, spoiler-full preview that the workflow pushes to `gh-pages`.
-  It must never contain passphrases.. `src/lib/check.mjs` is the
+  deploys **only to GitHub Pages**: a TEMPORARY landing page built and
+  deployed from `main` by `.github/workflows/pages.yml` +
+  `.github/landing/build.mjs`, linking to a read-only, spoiler-full preview
+  of every branch (each built by that branch's `scripts/build-static.mjs`).
+  Previews must never contain passphrases. Pages Source must be "GitHub
+  Actions".. `src/lib/check.mjs` is the
   consistency checker. `src/views/` holds the guest, host and print pages.
 - `test/`: spoiler-leak, Morgan-parity, auth and content tests.
 

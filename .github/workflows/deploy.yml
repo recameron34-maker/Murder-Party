@@ -1,10 +1,8 @@
 # On every push:
 #   1. run the consistency checker and all tests;
-#   2. publish a static, read-only PREVIEW to GitHub Pages (gh-pages branch),
-#      https://<owner>.github.io/<repo>/ (spoilers; for checking progress);
-#   3. optionally deploy the real party site to Cloudflare Workers, only if
+#   2. optionally deploy the real party site to Cloudflare Workers, only if
 #      the Cloudflare secrets are set (main → production, others → preview).
-# Links show on each run and under "Deployments" on the repo page.
+# The read-only GitHub Pages previews are built by pages.yml.
 name: Test and deploy
 
 on:
@@ -35,40 +33,6 @@ jobs:
       - name: Spoiler-safety, auth and content tests
         run: npm test
 
-  pages:
-    name: Publish preview to GitHub Pages
-    needs: test
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      deployments: write
-    concurrency:
-      group: gh-pages
-      cancel-in-progress: false
-    environment:
-      name: preview-on-github-pages
-      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - name: Build static preview
-        run: npm ci && npm run build:static
-      - name: Push to the gh-pages branch
-        env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          cd site
-          git init -q -b gh-pages
-          git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-            commit -q -m "Preview of ${GITHUB_REF_NAME} at ${GITHUB_SHA::7}"
-          git push -f -q "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
-          owner="${GITHUB_REPOSITORY_OWNER,,}"
-          echo "::notice title=Preview published::https://${owner}.github.io/${GITHUB_REPOSITORY#*/}/ (first time: Settings → Pages → Deploy from a branch → gh-pages / root)"
-
   deploy:
     name: Deploy to Cloudflare (optional)
     needs: test
@@ -82,7 +46,7 @@ jobs:
     steps:
       - name: Cloudflare not connected yet
         if: env.READY != 'true'
-        run: echo "Cloudflare isn't connected, so only the GitHub Pages preview was published. When you want the real party site (logins, rounds, texts), see README → Deploy the party site."
+        run: echo "Cloudflare isn't connected, so nothing to deploy here (the GitHub Pages previews come from pages.yml). When you want the real party site (logins, rounds, texts), see README → Deploy the party site."
       - uses: actions/checkout@v4
         if: env.READY == 'true'
       - uses: actions/setup-node@v4
