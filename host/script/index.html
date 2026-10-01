@@ -1,0 +1,714 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Run of show</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../">Preview home</a></div><nav class="host"><a href="../" class="">Dashboard</a><a href="./" class="on">Run of show</a><a href="../texts/" class="">Texts</a><a href="../roster/" class="">Roster</a><a href="../characters/" class="">Characters</a><a href="../evidence/" class="">Evidence</a><a href="../timeline/" class="">Timeline</a><a href="../flex/" class="">Flex</a><a href="../check/" class="">Checker</a><a href="../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Run of show</h1>
+
+<p class="inline-form small"><a class="btn small " href="./">All</a><a class="btn small ghost" href="round-0/">Before the Supper</a><a class="btn small ghost" href="round-1/">Round One</a><a class="btn small ghost" href="round-2/">Round Two</a><a class="btn small ghost" href="round-3/">Round Three</a><a class="btn small ghost" href="round-4/">The reveal</a><a class="btn small ghost" href="round-9/">Reference</a></p>
+<p class="small muted">🆕 marks material added for the Part Two upgrades. Part One itself is unchanged in docs/source.</p>
+<section class="seg kind-reference" id="00-truth">
+  <h2>The truth (for Ross&#39;s eyes only)</h2>
+  <div class="meta">Before the Supper · reference</div>
+  
+  
+  <p><strong>Morgan killed Arthur.</strong> At about 9:38, with the bronze raven, over the
+$2.4M she stole through Blackwood Legal Counsel. She escaped through the
+hidden study-to-library passage (the Raven&#39;s Walk) carrying the red folder,
+tore out the CONFIDENTIAL LEGAL page, and hid the folder behind the library
+books.</p>
+<p>The full true timeline is on the <strong>Timeline</strong> page. The key minutes:</p>
+<ul>
+<li><strong>9:29</strong> Arthur texts Morgan: &quot;My study. 9:35. We settle this tonight.&quot;</li>
+<li><strong>9:31</strong> Annie delivers the Reckoning. Arthur alive and alone.</li>
+<li><strong>9:32</strong> Annie passes Morgan heading to the study.</li>
+<li>🆕 <strong>9:33</strong> Clara approaches, sees someone down the hall, turns back.</li>
+<li><strong>9:34</strong> Morgan enters.</li>
+<li><strong>9:36–9:37</strong> Maya overhears: &quot;If the money isn&#39;t back by midnight, I&#39;m going public.&quot; / &quot;You&#39;ll destroy me.&quot;</li>
+<li><strong>~9:38</strong> Morgan kills Arthur.</li>
+<li><strong>9:39</strong> Morgan escapes through the passage with the red folder.</li>
+<li>🆕 <strong>~9:40</strong> Shea approaches with medication, hears voices, turns back.</li>
+<li><strong>9:40–9:41</strong> James and Alma see Morgan at the library end.</li>
+<li><strong>9:45</strong> THE LIGHTS GO OUT. An old circuit trips during Midnight Supper prep.</li>
+</ul>
+<p><strong>Arthur is already dead.</strong> The blackout is unrelated. It&#39;s deliberately
+mundane. The killer didn&#39;t plan it. Everyone merely assumed the murder
+happened during it.</p>
+
+</section><section class="seg kind-checklist" id="01-before">
+  <h2>Before the game</h2>
+  <div class="meta">Before the Supper · checklist · <i>Changed: Prop list now comes from the evidence files; Blackmail Cash, hint cards and the Part Two clues added.</i></div>
+  
+  
+  <p>You need (see <strong>Evidence</strong> for the full list with hiding spots, and <strong>Print</strong> for everything printable):</p>
+<ul>
+<li>Character links and passphrases for every cast guest (Host panel → Roster)</li>
+<li>Round One, Two and Three envelopes (Print → Envelopes)</li>
+<li>Arthur&#39;s phone clue</li>
+<li>🆕 Physical evidence by round, hidden in the designated game areas before guests arrive</li>
+<li>🆕 Props that live inside envelopes: Morgan&#39;s email (R2), the old floor plan (Joji, R2), Carlotta&#39;s note (R3), Martin&#39;s note (R3), Arthur&#39;s bank statement (Kevin, R3)</li>
+<li>Malik&#39;s scheduled-message printout</li>
+<li>🆕 Terrace camera still (keep on you)</li>
+<li>🆕 Blackwood Blackmail Notes: $3,000 per guest (three $1,000 bills), plus a float for rewards</li>
+<li>🆕 Hint cards</li>
+<li>Accusation ballots and pens</li>
+<li>One sealed SOLUTION envelope</li>
+</ul>
+<p>Keep everything organized by round. Do not give anyone future envelopes early.</p>
+<p>🆕 <strong>Tonight&#39;s cast: 25 guests.</strong> Check the Roster before you
+print anything. Spares assigned to late guests appear automatically.</p>
+
+</section><section class="seg kind-speech" id="02-arrivals">
+  <h2>Arrivals</h2>
+  <div class="meta">Before the Supper · speech · <i>Changed: Greetings added for more of the cast.</i></div>
+  
+  
+  <p>Let everyone arrive, get drinks and admire costumes. Stay in character as Reggie.</p>
+<p>Suggested greetings:</p>
+<p><strong>To Carlotta:</strong> &quot;Well. The prodigal Blackwood returns.&quot;</p>
+<p><strong>To Clara:</strong> &quot;My uncle&#39;s former fiancée. This should be completely comfortable for everyone.&quot;</p>
+<p><strong>To Lexi/Maya:</strong> &quot;Birthday girls! Arthur promised surprises. I have been specifically instructed not to ask what they are, which obviously means I&#39;ve been desperate to know.&quot;</p>
+<p><strong>To Kush:</strong> &quot;Kushington. I remain unclear what a forensic accountant does and increasingly concerned you&#39;re going to explain it.&quot;</p>
+<p>🆕 <strong>To Morgan:</strong> &quot;Counselor. Billing by the minute tonight, or is this pro bono?&quot;</p>
+<p>🆕 <strong>To Albie:</strong> &quot;Our medium. Do let me know if any of my ancestors have notes on the canapés.&quot;</p>
+<p>🆕 <strong>To Louis:</strong> &quot;Louis. You look… dusty. Have you been in the walls?&quot; <em>(He&#39;ll panic. Enjoy it.)</em></p>
+<p>🆕 <strong>To Annie:</strong> &quot;Antoinette. The only person in this house who knows where everything is, including the bodies.&quot;</p>
+<p>🆕 <strong>To Noor and Joji:</strong> &quot;The Beaumonts. Doctor, Professor, and, I&#39;m told, heir apparent. Annie has your Reckoning, Noor. The safe one.&quot;</p>
+
+</section><section class="seg kind-speech" id="03-toast">
+  <h2>Birthday toast</h2>
+  <div class="meta">Before the Supper · speech</div>
+  
+  
+  <p>Once most people have drinks:</p>
+<p>&quot;Before my uncle inevitably makes this evening about himself…&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;…a toast.&quot;</p>
+<p><em>Raise glass.</em></p>
+<p>&quot;Blackwood Manor has the pleasure of celebrating TWO birthdays this weekend. Alexandra St. Clair and Maya Rose.&quot;</p>
+<p>&quot;Arthur apparently prepared surprises.&quot;</p>
+<p><em>Look around suspiciously.</em></p>
+<p>&quot;Knowing my uncle, one will be sentimental and the other will involve paperwork.&quot;</p>
+<p>&quot;To Lexi and Maya.&quot;</p>
+<p><em>Toast.</em></p>
+
+</section><section class="seg kind-speech" id="04-opening">
+  <h2>Formal opening</h2>
+  <div class="meta">Before the Supper · speech · <i>Changed: Added the raven legend and the Midnight Supper rules (atmosphere only).</i></div>
+  
+  
+  <p>Gather everyone. Wait until reasonably quiet. Then:</p>
+<p>&quot;Ladies and gentlemen… Welcome to Blackwood Manor.&quot;</p>
+<p>&quot;My name is Reginald Blackwood.&quot;</p>
+<p>&quot;Reggie, unless you&#39;re a creditor.&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;My uncle, Arthur Blackwood, has hosted the Midnight Supper for nearly thirty years.&quot;</p>
+<p>&quot;Some of you are family.&quot; <em>Gesture toward Carlotta/Kevin.</em> &quot;Some are friends.&quot; &quot;Some are business associates.&quot;</p>
+<p><em>Look around.</em></p>
+<p>&quot;And based on this guest list, several of you are people Arthur absolutely should not have invited into the same house.&quot;</p>
+<p><em>Pause for laugh.</em></p>
+<p>&quot;Every person here received the same invitation.&quot; <em>Hold up card.</em> &quot;&#39;Come to Blackwood Manor. At midnight, everything changes.&#39;&quot;</p>
+<p>&quot;Arthur has refused to tell me what that means.&quot;</p>
+<p>&quot;He has, however, assured me that his announcement will be…&quot; <em>Look at card.</em> &quot;…&#39;impossible to ignore.&#39;&quot;</p>
+<p>🆕 &quot;You&#39;ll find the rules of the Supper on your cards. No one leaves before midnight. One chair stays empty for the last Blackwood to die. And whatever is said at midnight cannot be unsaid.&quot;</p>
+<p>🆕 &quot;And please, nobody say the bird&#39;s name at the table. The raven on Arthur&#39;s desk is a hundred and thirty years old and, according to family legend, <em>extremely</em> sensitive.&quot;</p>
+<p>&quot;So drink. Talk. Lie about your net worth. And enjoy yourselves.&quot;</p>
+<p>&quot;At midnight, apparently, everything changes.&quot;</p>
+
+</section><section class="seg kind-cue" id="05-mingle">
+  <h2>Pre-murder mingle</h2>
+  <div class="meta">Before the Supper · cue</div>
+  
+  
+  <p>Give them 20–30 minutes. They know their characters but DO NOT have Round
+One envelopes yet. 🆕 Their phones already show their &quot;history&quot; texts, so
+encourage them to read their phones.</p>
+<p>Encourage introductions. If things are slow:</p>
+<p>&quot;Perhaps everyone should introduce themselves and explain why Arthur Blackwood considers them important enough to ruin my seating chart.&quot;</p>
+<p>Go around quickly.</p>
+<p>🆕 Quietly hide the Round One physical evidence now if you haven&#39;t (cufflink near the study, Molly&#39;s letter behind a frame). Hold the destroyed will for late Round One.</p>
+
+</section><section class="seg kind-cue" id="06-blackout">
+  <h2>The blackout</h2>
+  <div class="meta">Before the Supper · cue · <i>Changed: Added the red-folder announcement (Part Two).</i></div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#red-folder">The red leather folder</a> </p>
+  
+  <p>At the planned time, dim/turn off lights. Wait. Make a loud crash. After
+approximately 10–20 seconds, restore them. <strong>Do NOT leave lights out for 90
+real seconds.</strong></p>
+<p>Then: &quot;Well. That seems ominous.&quot;</p>
+<p>Someone should &quot;discover&quot; Arthur missing.</p>
+<p>&quot;My uncle was supposed to be preparing his announcement.&quot; <em>Pause.</em> &quot;I&#39;ll check the study.&quot;</p>
+<p><em>Leave briefly. Return. Do not smile.</em></p>
+<p>&quot;Ladies and gentlemen. Arthur Blackwood is dead.&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;He is lying behind his desk.&quot;</p>
+<p>&quot;Beside him is the Blackwood Raven, an eight-pound bronze statue from his collection.&quot;</p>
+<p>&quot;It appears to have been used to strike him.&quot;</p>
+<p>🆕 &quot;And there is an empty space on his desk. Madeleine, I believe you were in the study earlier. Was there something there?&quot;</p>
+<p>🆕 <em>Let Maddie describe the red leather folder.</em> &quot;A red leather folder. It&#39;s gone. Whoever did this took it with them.&quot;</p>
+<p>&quot;The storm has washed out the lower road. The police are on their way. But until they arrive…&quot;</p>
+<p><em>Look around.</em></p>
+<p>&quot;…nobody leaves Blackwood Manor.&quot;</p>
+
+</section><section class="seg kind-speech" id="07-rules-blackmail">
+  <h2>Rules, Blackmail Cash and the evidence hunt</h2>
+  <div class="meta">Round One · speech · <i>Changed: Blackmail Cash introduced here, right after the murder (reconciles Part Two&#39;s &quot;at the beginning&quot; with Ross&#39;s &quot;after the murder&quot; speech). Evidence-hunt rule added.</i></div>
+  
+  
+  <p>&quot;You each have secrets. Protect them if you wish. Deflect. Accuse. Be dramatic.&quot;</p>
+<p>&quot;But unless your envelope specifically allows otherwise, do not invent evidence.&quot;</p>
+<p>&quot;If your envelope says something MUST be revealed, make sure it becomes public before the round ends.&quot;</p>
+<p>&quot;And please… do not open future envelopes.&quot; <em>Look at Kush.</em> &quot;I mean you, Kushington.&quot;</p>
+<p>🆕 <strong>Blackmail Cash.</strong> <em>Pull out a stack of Blackwood bills.</em></p>
+<p>&quot;One more thing. My uncle believed everyone had a price. He was usually right.&quot;</p>
+<p>&quot;Each of you has three thousand dollars in Blackwood Cash.&quot;</p>
+<p>&quot;At any point tonight, you may offer another guest one thousand dollars for an answer.&quot;</p>
+<p>&quot;If they accept…&quot; <em>pause</em> &quot;…they must answer your question truthfully.&quot;</p>
+<p>&quot;They may refuse. They may demand more. They may negotiate. But once money changes hands…&quot; &quot;…the truth is owed.&quot;</p>
+<p>&quot;Spend carefully. Information gets considerably more expensive when murder is involved.&quot;</p>
+<p><em>(Unknown to everyone: Morgan is the only exception.)</em></p>
+<p>🆕 <strong>Evidence hunt.</strong> &quot;Evidence is hidden around the house tonight in envelopes marked BLACKWOOD EVIDENCE. Search only the game areas. Nothing is hidden inside personal belongings, bedrooms, drawers or cabinets. If it isn&#39;t obviously part of the game, leave it alone. Bring what you find to me. I pay a thousand dollars a find.&quot;</p>
+
+</section><section class="seg kind-speech" id="08-round-one">
+  <h2>Round One</h2>
+  <div class="meta">Round One · speech · <i>Changed: Unlock Round One in the host panel; phones pick it up within ~15 seconds.</i></div>
+  
+  
+  <p>🆕 <strong>Unlock Round One in the host panel</strong>, then hand out the Round One envelopes.</p>
+<p>&quot;Round One is simple.&quot;</p>
+<p>&quot;Arthur Blackwood had enemies.&quot;</p>
+<p>&quot;Your job is to discover how many of them are currently holding champagne in my living room.&quot;</p>
+<p>&quot;Open your envelopes.&quot;</p>
+<p><em>Give everyone a few minutes.</em> Then: &quot;Start talking.&quot;</p>
+
+</section><section class="seg kind-checklist" id="09-r1-checklist">
+  <h2>Round One checklist</h2>
+  <div class="meta">Round One · checklist · <i>Changed: Added Kevin&#39;s &quot;You&#39;re going to regret this&quot;, the Round One physical clues and the Part Two end-of-round suspicion targets.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#cufflink">Kevin&#39;s cufflink</a> <a class="pill" href="../evidence/#molly-letter">Arthur&#39;s threatening letter to Molly</a> <a class="pill" href="../evidence/#destroyed-will">The destroyed will</a> </p>
+  
+  <p>You do NOT need these in exact order. Make sure these facts emerge:</p>
+<ul>
+<li>□ Jimmy was removed from will.</li>
+<li>□ Molly sold potentially fake painting.</li>
+<li>□ Kevin argued with Arthur. 🆕 <strong>Kevin admits &quot;You&#39;re going to regret this.&quot;</strong></li>
+<li>□ Carlotta heard &quot;I&#39;m giving it all away.&quot;</li>
+<li>□ Hannah says Arthur considered giving away fortune.</li>
+<li>□ Kush reveals Arthur suspected theft.</li>
+<li>□ Maya reveals argument about missing money.</li>
+<li>□ Annie establishes Arthur alive at 9:31.</li>
+<li>□ Shea reveals Arthur&#39;s ominous medical comment.</li>
+<li>□ Joji establishes existence of historical passages.</li>
+<li>□ Tim mentions strange library door.</li>
+<li>□ Malik says person Arthur planned to expose &quot;isn&#39;t family.&quot;</li>
+<li>🆕 □ Cufflink found; Kevin recognizes it.</li>
+<li>🆕 □ Molly&#39;s threatening letter found behind a frame.</li>
+<li>🆕 □ Late in the round: plant/announce the destroyed will.</li>
+</ul>
+<p>🆕 <strong>Ideal suspicion at the end of Round One:</strong> Kevin (disinherited + threat + cufflink), Molly ($750K fraud + letter + knew where the raven was), Carlotta (estranged + giving it away + destroyed will), Lindsey (mysterious meeting), Morgan (9:35 meeting), maybe Louis (snooping in walls). <strong>Nobody should stand out enormously.</strong></p>
+
+</section><section class="seg kind-cue" id="10-r1-shea-maya">
+  <h2>Round One cues: Shea and Maya</h2>
+  <div class="meta">Round One · cue</div>
+  
+  
+  <p><strong>SHEA.</strong> Once Shea says: <strong>&quot;If something happens to me, don&#39;t assume it was natural.&quot;</strong></p>
+<p><em>Step forward.</em> &quot;That&#39;s comforting.&quot;</p>
+<p><em>Pause.</em> &quot;Dr. Beaumont…&quot; <em>Look at Noor.</em> &quot;…perhaps we should establish whether Arthur&#39;s medical condition could have killed him.&quot;</p>
+<p>Let Noor reveal that his illness did NOT cause the death. Then: &quot;So we are officially looking at murder.&quot;</p>
+<hr>
+<p><strong>MAYA.</strong> Once Maya reveals: <strong>&quot;If the money isn&#39;t back by midnight, I&#39;m going public.&quot;</strong></p>
+<p>&quot;Money.&quot; <em>Look around.</em> &quot;Finally. Something this family understands.&quot;</p>
+<p>Then: &quot;Kushington. Arthur hired you for something. What was it?&quot;</p>
+<p>Kush reveals Arthur suspected theft, but NOT the amount.</p>
+
+</section><section class="seg kind-rescue" id="11-r1-rescues">
+  <h2>Round One rescues</h2>
+  <div class="meta">Round One · rescue</div>
+  
+  
+  <p>If Annie hasn&#39;t revealed the 9:31 drink: &quot;Antoinette, weren&#39;t you one of the last people to see Arthur?&quot;</p>
+<p>If Tim hasn&#39;t mentioned the door: &quot;Timothy, you&#39;ve been wandering around this house all evening. Anything unusual?&quot;</p>
+<p>If Joji hasn&#39;t mentioned passages: &quot;Professor, you&#39;ve spent months studying this absurd mausoleum. Does the house have any secrets?&quot;</p>
+<p>If Martin hasn&#39;t exposed the painting: &quot;Martin, you&#39;ve been looking at Molly like you&#39;re about to appraise her. Why?&quot;</p>
+<p>🆕 If Kevin hasn&#39;t admitted his line: &quot;Kevin, half the East Corridor heard you at 9:20. Would you like to tell us what you said, or shall I?&quot;</p>
+
+</section><section class="seg kind-evidence" id="12-r1-end-phone">
+  <h2>End of Round One: first official evidence</h2>
+  <div class="meta">Round One · evidence · <i>Changed: Counterweight line added (Part Two §9).</i></div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#phone">Arthur&#39;s phone</a> </p>
+  
+  <p><em>Ring glass.</em> &quot;Enough. We have our first piece of physical evidence.&quot;</p>
+<p><em>Hold up Arthur&#39;s phone.</em> &quot;Arthur&#39;s phone was recovered beneath his desk. His final outgoing message was sent at 9:29 PM.&quot;</p>
+<p>Read slowly: <strong>MY STUDY. 9:35. WE SETTLE THIS TONIGHT.</strong></p>
+<p><em>Pause.</em> &quot;The recipient…&quot; <em>pause longer</em> &quot;…Morgan Leibold.&quot;</p>
+<p>Let room react. Then look at Morgan. &quot;Counselor?&quot;</p>
+<p>Let Morgan explain she had a scheduled meeting / was doing legal work. <strong>Do NOT push too hard.</strong></p>
+<p>&quot;Interesting.&quot; &quot;Not damning.&quot; &quot;Yet.&quot;</p>
+<p>🆕 <em>Counterweight:</em> &quot;Although, to be fair, a lawyer being summoned by a client is hardly a scandal. Most of you have been summoned by worse.&quot;</p>
+
+</section><section class="seg kind-speech" id="13-round-two">
+  <h2>Round Two</h2>
+  <div class="meta">Round Two · speech · <i>Changed: Unlock in the host panel; Round Two physical evidence goes live; Morgan&#39;s email; floor plan to Joji.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#library-map">The old floor plan</a> <a class="pill" href="../evidence/#calendar">Arthur&#39;s calendar</a> </p>
+  
+  <p>🆕 <strong>Unlock Round Two in the host panel.</strong> Hand envelopes out. 🆕 Hand Joji the old floor plan (or it&#39;s in his envelope). 🆕 Put Arthur&#39;s calendar out on the &quot;study&quot; desk.</p>
+<p>&quot;In Round One, we discovered motives.&quot;</p>
+<p>&quot;In Round Two…&quot;</p>
+<p>&quot;…we find out who has been lying by omission.&quot;</p>
+<p>&quot;Open them.&quot;</p>
+<p>🆕 Early in the round Morgan will produce Arthur&#39;s email (<em>&quot;review the Wellington, Monroe and Vale matters before midnight&quot;</em>). Let her. It&#39;s her best defense and the game needs it. If the calendar&#39;s <strong>9:35 — M.L.</strong> comes up, she&#39;ll admit it&#39;s her.</p>
+
+</section><section class="seg kind-cue" id="14-r2-noor">
+  <h2>Round Two: Noor&#39;s time of death</h2>
+  <div class="meta">Round Two · cue</div>
+  
+  
+  <p>Let the first 5–10 minutes happen naturally. Eventually you want Noor&#39;s time-of-death clue.</p>
+<p>If she hasn&#39;t volunteered: &quot;Dr. Beaumont. You&#39;ve had more time to examine what happened. What can you tell us?&quot;</p>
+<p>NOOR REVEALS: <strong>9:35–9:40 PM.</strong></p>
+<p>Immediately say: &quot;Hold on.&quot;</p>
+<p>&quot;The lights went out at 9:45.&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;So Arthur may have been dead BEFORE the blackout.&quot;</p>
+<p>This is the first major twist.</p>
+<p><strong>After Noor&#39;s reveal.</strong> <em>Look at everyone.</em> &quot;We&#39;ve been investigating what happened in the dark.&quot; &quot;But perhaps…&quot; &quot;…nothing happened in the dark.&quot;</p>
+<p>Let them process.</p>
+
+</section><section class="seg kind-cue" id="15-r2-passage">
+  <h2>Round Two: Tim → Joji (the passage)</h2>
+  <div class="meta">Round Two · cue</div>
+  
+  
+  <p>Tim&#39;s envelope instructs him to ask Joji whether the strange library door could be a passage. Once Tim asks, let Joji perform.</p>
+<p>After Joji reveals the passage connects the study to library:</p>
+<p>&quot;So someone could enter Arthur&#39;s study…&quot; <em>Walk slowly.</em> &quot;…kill him…&quot; &quot;…leave through the wall…&quot; &quot;…and emerge in the library.&quot;</p>
+<p><em>Pause.</em> &quot;Without ever using the study door again.&quot;</p>
+<p>🆕 If Ellery (spare) is cast, they&#39;ll now gasp about the TV series&#39; library bookcase. Let them.</p>
+
+</section><section class="seg kind-cue" id="16-r2-alma">
+  <h2>Round Two: Alma (and James)</h2>
+  <div class="meta">Round Two · cue · <i>Changed: Counterweight line added (Part Two §9).</i></div>
+  
+  
+  <p>If Alma hasn&#39;t spoken within a minute: &quot;Alma. You&#39;ve become very quiet. Weren&#39;t you near the library?&quot;</p>
+<p>She reveals Morgan emerged around 9:41 and claimed to be looking for the restroom. Let Morgan respond. <strong>Do not adjudicate.</strong></p>
+<p>🆕 <em>Counterweight:</em> &quot;Also interesting. But Professor Beaumont has just informed us that half this house appears to contain doors nobody knew existed. Being in a library is not yet a capital offense.&quot;</p>
+<p>If James hasn&#39;t added his 9:40 sighting: &quot;James, didn&#39;t you say you walked through that hallway?&quot;</p>
+
+</section><section class="seg kind-cue" id="17-r2-money">
+  <h2>Round Two: Malik → Kush ($2.4M)</h2>
+  <div class="meta">Round Two · cue</div>
+  
+  <div class="inline-form" style="margin:6px 0">
+  <form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="kush-reggie-r2"><input type="hidden" name="back" value="/host/script"><button class="btn small" type="submit">Send to Kushington &quot;Kush&quot;</button></form>
+  
+  <span class="small"><b>Reggie:</b> Kushington. Your moment approaches. Try to be brief. (You won&#39;t.)</span>
+</div>
+  <p>🆕 <em>Optional: fire Kush&#39;s cue text from the host panel just before this.</em></p>
+<p>Malik should reveal: <strong>&quot;It&#39;s not about inheritance. Follow the money.&quot;</strong></p>
+<p>As soon as he does: <em>Turn slowly toward Kush.</em> &quot;Kushington.&quot; <em>Pause.</em> &quot;I fear this is your moment.&quot;</p>
+<p>LET HIM GO.</p>
+<p>Kush reveals: <strong>$2.4 MILLION.</strong></p>
+<p>After his performance: &quot;Two.&quot; &quot;Point.&quot; &quot;Four.&quot; &quot;Million.&quot;</p>
+<p><em>Pause.</em> &quot;So Arthur wasn&#39;t threatening someone over inheritance.&quot; &quot;He was threatening someone over stolen money.&quot;</p>
+<p>🆕 <strong>Ideal suspicion, middle of Round Two:</strong> Lindsey stole $2.4M? Morgan stole $2.4M? Carlotta killed over inheritance? Molly to hide fraud? Kevin after being disinherited? <em>And maybe the money and the murder aren&#39;t even connected.</em> Say that last one out loud if the room is converging too fast.</p>
+
+</section><section class="seg kind-cue" id="18-r2-women">
+  <h2>🆕 Round Two: the women in the corridor</h2>
+  <div class="meta">Round Two · cue · <i>Changed: New. Part Two §8 (Clara 9:33, Shea ~9:40) makes Maya&#39;s &quot;a woman&quot; ambiguous.</i></div>
+  
+  
+  <p>Over Round Two, three things should surface:</p>
+<ul>
+<li>Maya: the woman said <strong>&quot;You&#39;ll destroy me.&quot;</strong></li>
+<li>Clara: at <strong>9:33</strong> she walked toward the study, saw someone farther down the hall, and turned back. She can&#39;t say who.</li>
+<li>Shea: at about <strong>9:40</strong> she was taking Arthur his medication, heard voices, and turned back.</li>
+</ul>
+<p>If they&#39;re slow: &quot;Ladies. I&#39;m counting at least three of you who&#39;ve been near that study door tonight. Would anyone like to go first?&quot;</p>
+<p>The aim: <strong>Shea and Clara remain possible as &quot;the woman&quot; at the end of Round Two.</strong> Don&#39;t resolve it.</p>
+
+</section><section class="seg kind-evidence" id="19-r2-evidence">
+  <h2>🆕 Round Two: physical evidence</h2>
+  <div class="meta">Round Two · evidence · <i>Changed: New. Part Two clues 4–8, the red folder and the terrace camera.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#calendar">Arthur&#39;s calendar</a> <a class="pill" href="../evidence/#lv-note">The &quot;L.V.&quot; note</a> <a class="pill" href="../evidence/#red-folder">The red leather folder</a> <a class="pill" href="../evidence/#black-thread">The black thread</a> <a class="pill" href="../evidence/#torn-ledger">The torn financial ledger</a> <a class="pill" href="../evidence/#terrace-camera">Terrace camera still</a> </p>
+  
+  <p>Release progressively. Don&#39;t dump it all at once.</p>
+<ul>
+<li><strong>Calendar</strong> (early): out on the desk. &quot;9:35 — M.L.&quot; Morgan admits it. &quot;This doesn&#39;t prove murder.&quot;</li>
+<li><strong>The &quot;L.V.&quot; note</strong> (mid): shifts suspicion hard toward Lindsey. <strong>Let it breathe. Do NOT immediately clear her.</strong></li>
+<li><strong>The red folder</strong> (mid): found in the library area. Molly&#39;s authentication, Kevin&#39;s papers, Lindsey&#39;s memo, the Wellington deed, and a <strong>CONFIDENTIAL LEGAL</strong> tab with the page torn out. &quot;Was Arthur planning to expose <em>all</em> of you?&quot;</li>
+<li><strong>The black thread</strong> (mid): on the raven. Let people compare outfits. It matches nobody uniquely.</li>
+<li><strong>The torn ledger</strong> (late): six transfers, $2,400,000, <strong>AUTHORIZED: BLC.</strong> &quot;Blackwood Legal Counsel? Blackwood Luxury Corporation? Blackwood Lending Company?&quot; Let people argue.</li>
+<li><strong>Terrace camera</strong> (late): when Kevin demands it, make him sweat. Then produce the still: Kevin on the terrace 9:22–9:47. &quot;Kevin. Congratulations. You&#39;re merely unpleasant.&quot;</li>
+<li><strong>Cufflink resolution</strong>: &quot;Kevin lost that cufflink helping me move furniture this afternoon. I&#39;ve known all evening. I wanted to see you sweat.&quot;</li>
+</ul>
+
+</section><section class="seg kind-cue" id="20-r2-chaos">
+  <h2>Round Two: distractions and juicy chaos</h2>
+  <div class="meta">Round Two · cue · <i>Changed: Added Lexi&#39;s trust papers, Albie&#39;s séance script, flex-character red herrings.</i></div>
+  
+  
+  <p>Encourage:</p>
+<ul>
+<li>Maddie/Daniel necklace fight.</li>
+<li>Molly/Martin fake art revelation.</li>
+<li>Kim revealing The Keyhole.</li>
+<li>Lexi&#39;s surprise inheritance documents. 🆕 ($500K Vivienne Fund, unsigned.)</li>
+<li>Kevin&#39;s terrible-looking argument.</li>
+<li>Louis admitting he was snooping around the library.</li>
+<li>🆕 Albie revealing Arthur&#39;s midnight séance script.</li>
+<li>🆕 Jimmy Friedman&#39;s two birthday girls comparing phones.</li>
+<li>🆕 Flex extras if cast: Courtney&#39;s raven selfie, Savanah the &quot;widow,&quot; Wren&#39;s &quot;secret heir,&quot; Hollis&#39;s overheard phone call, Blake&#39;s bandaged hand.</li>
+</ul>
+<p>These are intentional red herrings. Let the room get messy.</p>
+
+</section><section class="seg kind-rescue" id="21-r2-rescues">
+  <h2>Round Two rescues</h2>
+  <div class="meta">Round Two · rescue</div>
+  
+  
+  <p>Missing Morgan sighting? &quot;James, didn&#39;t you say you walked through that hallway?&quot;</p>
+<p>Missing Alma restroom clue? &quot;Alma, what exactly did Morgan tell you?&quot;</p>
+<p>Missing passage? &quot;Professor Beaumont, I&#39;m beginning to suspect your architectural obsession may finally have a purpose.&quot;</p>
+<p>Missing $2.4M? &quot;Kushington, please stop teasing us and tell us what you found.&quot;</p>
+<p>🆕 Missing time of death? &quot;Doctor. The body. When?&quot;</p>
+<p>🆕 Missing the women? &quot;Maya, the voice you heard. Man or woman? And what did she say?&quot;</p>
+
+</section><section class="seg kind-speech" id="22-r2-end">
+  <h2>End of Round Two</h2>
+  <div class="meta">Round Two · speech · <i>Changed: Part Two&#39;s end-of-round suspicion targets added.</i></div>
+  
+  
+  <p>&quot;Let&#39;s stop. We now know four things.&quot;</p>
+<p><em>Count on fingers.</em></p>
+<p>&quot;Arthur was alive at 9:31.&quot;</p>
+<p>&quot;He was arguing about stolen money around 9:36.&quot;</p>
+<p>&quot;He was likely dead by 9:40.&quot;</p>
+<p>&quot;And someone could escape his study directly into the library.&quot;</p>
+<p><em>Pause.</em> &quot;Which means…&quot;</p>
+<p><em>Look toward Morgan, but DO NOT linger.</em></p>
+<p>&quot;…our killer&#39;s window is becoming very small.&quot;</p>
+<p>🆕 <strong>Ideal suspicion at the end of Round Two:</strong> Kevin mostly cleared (camera). Molly&#39;s motive weakening. Carlotta&#39;s inheritance theory starting to collapse. <strong>Morgan + Lindsey</strong> the strongest financial suspects. <strong>Shea/Clara still possible as the unidentified woman.</strong></p>
+
+</section><section class="seg kind-speech" id="23-round-three">
+  <h2>Round Three</h2>
+  <div class="meta">Round Three · speech · <i>Changed: Unlock in the host panel. Counterweight after Annie&#39;s sighting (Part Two §9). Draft letter released.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#draft-letter">Arthur&#39;s unfinished letter</a> </p>
+  <div class="inline-form" style="margin:6px 0">
+  <form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="morgan-unknown-r3"><input type="hidden" name="back" value="/host/script"><button class="btn small" type="submit">Send to Morgan Leibold</button></form>
+  
+  <span class="small"><b>Unknown number:</b> Every Blackwood secret comes home to roost.</span>
+</div>
+  <p>🆕 <strong>Unlock Round Three in the host panel.</strong> Hand envelopes out.</p>
+<p>&quot;Final round.&quot;</p>
+<p>&quot;By the end of this envelope, you will have everything you need to identify Arthur Blackwood&#39;s killer.&quot;</p>
+<p>&quot;Not everything will point toward the killer. Some of it will clear people. Some will correct assumptions.&quot;</p>
+<p>&quot;Your job is to separate scandal…&quot; &quot;…from murder.&quot;</p>
+<p>&quot;Open.&quot;</p>
+<p><strong>Round Three opening.</strong> Let Annie reveal seeing Morgan walking toward the study at 9:32.</p>
+<p>After: &quot;So Morgan was approaching Arthur&#39;s study immediately before the 9:35 meeting.&quot;</p>
+<p>Morgan may defend herself.</p>
+<p>&quot;Which, to be fair, Morgan has never denied was scheduled.&quot;</p>
+<p>🆕 <em>Counterweight:</em> &quot;Which is certainly interesting. Although according to Arthur&#39;s calendar, Morgan was supposed to meet him. So unless attending a scheduled meeting is now murder…&quot; <em>pause</em> &quot;…we need more.&quot;</p>
+<p>🆕 <em>Fire Morgan&#39;s cue text from the host panel right after Annie&#39;s reveal.</em></p>
+<p>Keep it neutral. 🆕 Release Arthur&#39;s unfinished draft letter during this round (&quot;I trusted you because you were supposed to protect this family…&quot;). Keep it ambiguous.</p>
+
+</section><section class="seg kind-cue" id="24-r3-carlotta-note">
+  <h2>Round Three: Carlotta&#39;s note, Kush and Lindsey</h2>
+  <div class="meta">Round Three · cue · <i>Changed: Morgan&#39;s counterweight defense added (Part Two §9).</i></div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#carlotta-note">Arthur&#39;s note to Carlotta</a> </p>
+  
+  <p>Carley will eventually read Arthur&#39;s note:</p>
+<p><strong>Carlotta — you were right. Tonight I stop protecting the people who betrayed my trust. Whatever happens, know that none of this was your burden to carry. — Dad</strong></p>
+<p>After Carley asks: <strong>&quot;Who betrayed him?&quot;</strong></p>
+<p>Turn to Kush. Then Lindsey. Say nothing.</p>
+<p>Let them reveal:</p>
+<ul>
+<li>Morgan&#39;s office controlled authorization.</li>
+<li>Lindsey independently confirms credentials. 🆕 (Lindsey&#39;s role flips: she wasn&#39;t hiding the theft; she <em>discovered</em> it.)</li>
+</ul>
+<p>Then: &quot;So the stolen $2.4 million…&quot; &quot;…leads to Blackwood Legal Counsel.&quot; <em>Pause.</em> &quot;Morgan&#39;s office.&quot;</p>
+<p>🆕 <em>Morgan will say:</em> &quot;I&#39;m his lawyer. Of course my office authorized legal transfers.&quot;</p>
+<p>🆕 <em>Counterweight:</em> &quot;She&#39;s annoyingly correct. The question isn&#39;t whether Morgan had access. The question is whether she abused it.&quot;</p>
+
+</section><section class="seg kind-cue" id="25-r3-malik">
+  <h2>Round Three: Malik&#39;s message</h2>
+  <div class="meta">Round Three · cue</div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#malik-message">Arthur&#39;s scheduled message to Malik</a> </p>
+  <div class="inline-form" style="margin:6px 0">
+  <form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="malik-scheduled-r3"><input type="hidden" name="back" value="/host/script"><button class="btn small" type="submit">Send to Malik</button></form>
+  
+  <span class="small"><b>Arthur Blackwood (scheduled):</b> If you&#39;re reading this, the truth is public. The theft came from inside my legal operation. I trusted the wrong person.</span>
+</div>
+  <p>After the financial reveal: &quot;Malik.&quot; &quot;There&#39;s something else.&quot;</p>
+<p>Hand him Arthur&#39;s scheduled draft. 🆕 <em>(Or fire Malik&#39;s cue text so it lands on his phone, which is creepier.)</em></p>
+<p>He reads: <strong>If you&#39;re reading this, the truth is public. The theft came from inside my legal operation. I trusted the wrong person.</strong></p>
+<p>Let reaction happen.</p>
+
+</section><section class="seg kind-cue" id="26-r3-clearing">
+  <h2>🆕 Round Three: clearing the false theories</h2>
+  <div class="meta">Round Three · cue · <i>Changed: New. Clears Carlotta (Clara), Molly (Martin&#39;s note), the thread (Shea), Louis (Kim).</i></div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#molly-cleared-note">Arthur&#39;s note about the forger</a> </p>
+  
+  <p>Make sure these land during Round Three. Order doesn&#39;t matter:</p>
+<ul>
+<li><strong>Clara:</strong> Arthur told her at 8:30, &quot;I tore up the old will myself. Everyone keeps assuming tonight is about inheritance. It isn&#39;t.&quot; <em>Carlotta&#39;s inheritance theory collapses.</em></li>
+<li><strong>Martin:</strong> reads Arthur&#39;s note: the forger was Lucien Vasse and &quot;Molly was taken in as badly as I was.&quot; <em>Molly cleared.</em></li>
+<li><strong>Shea:</strong> the black thread is from Arthur&#39;s own velvet smoking jacket. <em>The thread points at no one.</em></li>
+<li><strong>Kim:</strong> saw Louis climb out of a dining-room panel at 9:46. <strong>Louis</strong> confesses to living in the walls, but on the far side of the house. <em>Walls mystery solved; Louis cleared.</em></li>
+<li><strong>Lindsey:</strong> discovered the theft (already flipped above).</li>
+</ul>
+<p>Rescues: &quot;Clara, what exactly did Arthur tell you at 8:30?&quot; / &quot;Martin, you&#39;ve had something in your pocket all night.&quot; / &quot;Kim, you look like someone who saw something in the dark.&quot;</p>
+
+</section><section class="seg kind-cue" id="27-r3-shea-blackout">
+  <h2>Round Three: Shea&#39;s cue and the blackout reveal</h2>
+  <div class="meta">Round Three · cue</div>
+  
+  
+  <p>Shea eventually asks: <strong>&quot;Then why did we all assume he died during the blackout?&quot;</strong></p>
+<p>This is your cue. <em>Smile slightly.</em> &quot;Excellent question.&quot; &quot;I&#39;ve been wondering the same thing.&quot;</p>
+<p><strong>The blackout reveal.</strong></p>
+<p>&quot;I&#39;ve spoken with the house staff.&quot;</p>
+<p>&quot;The blackout was caused by an old electrical circuit tripping during preparations downstairs.&quot;</p>
+<p>🆕 &quot;Mrs. Hale&#39;s warming ovens and a 1930s fuse box. The crash we all heard was a tray of glasses.&quot; <em>(Tim, and Rook if cast, can back this up.)</em></p>
+<p>&quot;It occurred at exactly…&quot; <em>Check watch dramatically.</em> &quot;…9:45 PM.&quot;</p>
+<p>&quot;It lasted less than two minutes.&quot;</p>
+<p>&quot;It had nothing to do with Arthur.&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;The blackout didn&#39;t hide the murder.&quot;</p>
+<p>&quot;It hid the discovery of the murder.&quot;</p>
+
+</section><section class="seg kind-cue" id="28-r3-albie">
+  <h2>Round Three: Albie&#39;s cue</h2>
+  <div class="meta">Round Three · cue</div>
+  
+  
+  <p>Albie asks: <strong>&quot;So if Arthur was already dead, who benefits from us believing he died in the dark?&quot;</strong></p>
+<p>Respond: &quot;Someone who needed us looking at 9:45…&quot; &quot;…instead of 9:38.&quot;</p>
+
+</section><section class="seg kind-evidence" id="29-r3-final-evidence">
+  <h2>Final physical evidence</h2>
+  <div class="meta">Round Three · evidence · <i>Changed: &quot;MORGAN. MIDNIGHT. DONE.&quot; replaced by &quot;LEGAL. $2.4M. MIDNIGHT.&quot; (Part Two §2). Merged with Part Two Clue 10. Kevin found it in Arthur&#39;s coat.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../evidence/#bank-statement">Arthur&#39;s folded bank statement (final evidence)</a> </p>
+  
+  <p>Kevin gives you Arthur&#39;s folded bank statement. 🆕 <em>(He&#39;s been wearing Arthur&#39;s coat since 9:22 and finally checked the pockets.)</em></p>
+<p><em>Hold it up.</em> &quot;This was found inside Arthur&#39;s coat.&quot;</p>
+<p><em>Open.</em> &quot;It documents the same transfers Kushington discovered.&quot; &quot;Total: $2.4 million.&quot;</p>
+<p>🆕 &quot;Authorization origin: Blackwood Legal Counsel. Authorized user ID: M-L-zero-four-two-seven.&quot;</p>
+<p><em>Turn page.</em> &quot;Across the top, Arthur wrote three words.&quot;</p>
+<p><em>Pause.</em> Read: <strong>LEGAL. $2.4M. MIDNIGHT.</strong></p>
+<p>🆕 <em>Morgan will argue:</em> &quot;Of course my office appears on his notes. I&#39;m his attorney. I&#39;ve spent the last week investigating this with him.&quot; <strong>That&#39;s partially true.</strong> Let her.</p>
+<p>Do NOT say &quot;therefore Morgan killed him.&quot; Let them accuse.</p>
+<p>🆕 Remind them, if needed, that even this doesn&#39;t prove murder by itself. They still need Annie, Maya, Noor, Joji, James and Alma.</p>
+
+</section><section class="seg kind-speech" id="30-final-timeline">
+  <h2>Final timeline</h2>
+  <div class="meta">Round Three · speech · <i>Changed: Noor&#39;s line now uses her stated range (9:35 to 9:40) instead of &quot;approximately 9:38&quot;.</i></div>
+  
+  
+  <p>Before voting:</p>
+<p>&quot;Let&#39;s establish what we actually know.&quot;</p>
+<p>&quot;9:31. Annie leaves Arthur alive.&quot;</p>
+<p>&quot;9:32. Annie sees Morgan approaching the study.&quot;</p>
+<p>&quot;9:35. Arthur has scheduled Morgan for a private meeting.&quot;</p>
+<p>&quot;9:36. Maya hears Arthur arguing with a woman about stolen money.&quot;</p>
+<p>🆕 &quot;9:35 to 9:40. Noor&#39;s medical estimate places Arthur&#39;s death.&quot;</p>
+<p>&quot;The hidden passage leads directly from the study to the library.&quot;</p>
+<p>&quot;9:40 to 9:41. James and Alma place Morgan at the library end.&quot;</p>
+<p>&quot;9:45. The lights go out.&quot;</p>
+<p><em>Pause.</em> &quot;Arthur was already dead.&quot;</p>
+
+</section><section class="seg kind-speech" id="31-accusations">
+  <h2>Accusations</h2>
+  <div class="meta">Round Three · speech</div>
+  
+  
+  <p>Pass out ballots.</p>
+<p>&quot;Write three things.&quot; &quot;Who killed Arthur Blackwood?&quot; &quot;Why?&quot; &quot;And how did they escape the study?&quot;</p>
+<p>&quot;If you wish, add the approximate time of death.&quot;</p>
+<p>&quot;Do not confer.&quot; &quot;You have three minutes.&quot;</p>
+<p><em>Play dramatic music. Collect ballots.</em></p>
+<p><strong>Optional verbal accusations.</strong> For maximum drama: &quot;I&#39;m going to ask several of you to state your accusation.&quot;</p>
+<p>Choose: Kush. Carley. Jimmy. Maya. Lexi.</p>
+<p>Then finally: &quot;Morgan.&quot; &quot;Who do YOU believe killed Arthur Blackwood?&quot;</p>
+<p>Let her accuse someone. Do not react.</p>
+
+</section><section class="seg kind-speech" id="32-final-reveal">
+  <h2>Final reveal</h2>
+  <div class="meta">The reveal · speech · <i>Changed: &quot;Twenty-five people&quot; now comes from the roster. &quot;MORGAN. MIDNIGHT. DONE.&quot; replaced by &quot;LEGAL. $2.4M. MIDNIGHT.&quot; The passage is named the Raven&#39;s Walk.</i></div>
+  
+  
+  <p>Stand somewhere central. Hold the solution envelope.</p>
+<p>&quot;Twenty-five people came to Blackwood Manor tonight.&quot;</p>
+<p>&quot;Almost everyone lied.&quot;</p>
+<p>&quot;Some about money.&quot; &quot;Some about love.&quot; &quot;Some about art.&quot; &quot;Some about inheritance.&quot;</p>
+<p>&quot;And Madeleine apparently attempted to leave with property belonging to a family trust.&quot;</p>
+<p><em>Look at Maddie. Pause.</em></p>
+<p>&quot;But scandal is not murder.&quot;</p>
+<p>&quot;Arthur Blackwood&#39;s killer relied on one enormous piece of luck.&quot; &quot;The blackout.&quot;</p>
+<p>&quot;We all heard the crash.&quot; &quot;The lights returned.&quot; &quot;Arthur was missing.&quot; &quot;And we made an assumption.&quot; &quot;Arthur died in the dark.&quot;</p>
+<p><em>Pause.</em> &quot;He didn&#39;t.&quot;</p>
+<p>&quot;At 9:31, Antoinette left Arthur alive.&quot;</p>
+<p>&quot;At 9:32, Morgan Leibold was walking toward his study.&quot;</p>
+<p>&quot;At 9:35, Arthur had scheduled Morgan for a private confrontation.&quot;</p>
+<p>&quot;At 9:36, Maya heard Arthur demand the return of stolen money.&quot;</p>
+<p>&quot;A woman replied…&quot; <strong>&#39;You&#39;ll destroy me.&#39;</strong></p>
+<p>&quot;At approximately 9:38…&quot; &quot;…Arthur Blackwood was struck once with the bronze raven.&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;The killer couldn&#39;t leave through the hallway. Too many people might see.&quot;</p>
+<p>&quot;So the killer used something most of us didn&#39;t know existed.&quot; &quot;The servants&#39; passage.&quot; 🆕 &quot;The Raven&#39;s Walk.&quot;</p>
+<p>&quot;Study.&quot; <em>Gesture.</em> &quot;Wall.&quot; <em>Gesture.</em> &quot;Library.&quot;</p>
+<p>&quot;At 9:41, Alma saw Morgan emerge near the library.&quot;</p>
+<p>&quot;Then, four minutes later…&quot; <em>Snap fingers.</em> &quot;…the lights went out.&quot;</p>
+<p>&quot;The perfect distraction.&quot; &quot;But it wasn&#39;t planned.&quot; &quot;It merely made us investigate the wrong minute.&quot;</p>
+<p><em>Walk toward Morgan if comfortable.</em></p>
+<p>&quot;Arthur had discovered $2.4 million missing.&quot;</p>
+<p>&quot;Kushington traced the authorization to Blackwood Legal Counsel.&quot;</p>
+<p>&quot;Lindsey independently confirmed the credentials.&quot;</p>
+<p>&quot;Arthur&#39;s scheduled message said the theft came from inside his legal operation.&quot;</p>
+<p>&quot;And in Arthur&#39;s own handwriting…&quot; <em>Hold bank statement.</em> 🆕 <strong>&#39;Legal. Two point four million. Midnight.&#39;</strong></p>
+<p><em>Pause.</em> &quot;Morgan knew what midnight meant.&quot; &quot;Exposure.&quot; &quot;Police.&quot; &quot;Ruination.&quot;</p>
+<p>&quot;At 9:35, she entered Arthur&#39;s study.&quot; &quot;They argued.&quot; &quot;Arthur refused to stay silent.&quot;</p>
+<p>&quot;Morgan grabbed the bronze raven…&quot; <em>Pause.</em> &quot;…and killed Arthur Blackwood.&quot;</p>
+<h2>MORGAN LEIBOLD IS THE MURDERER.</h2>
+<p>Let chaos happen.</p>
+
+</section><section class="seg kind-speech" id="33-blackmail-reveal">
+  <h2>🆕 The final Blackmail reveal</h2>
+  <div class="meta">The reveal · speech · <i>Changed: New (Part Two).</i></div>
+  
+  
+  <p>After Morgan is exposed, Ross asks: &quot;Morgan…&quot; &quot;Did anyone pay you for information tonight?&quot;</p>
+<p>Let people react. Then:</p>
+<p>&quot;There was one rule Arthur neglected to mention.&quot;</p>
+<p>&quot;Everyone in Blackwood Manor was bound by Blackmail Cash…&quot; &quot;…except the murderer.&quot;</p>
+<p>&quot;Morgan was the only person tonight permitted to take your money…&quot; &quot;…look you directly in the eye…&quot; &quot;…and lie.&quot;</p>
+<p>This should cause absolute outrage. Perfect ending.</p>
+
+</section><section class="seg kind-speech" id="34-after">
+  <h2>After the reveal and awards</h2>
+  <div class="meta">The reveal · speech · <i>Changed: Added a Blackmail Cash award.</i></div>
+  
+  
+  <p>Once everyone settles: &quot;But there is one final matter.&quot;</p>
+<p><em>Look around.</em> &quot;Arthur promised that at midnight…&quot; &quot;…everything would change.&quot; &quot;Apparently he was right.&quot;</p>
+<p><em>Raise glass.</em> &quot;To Arthur Blackwood.&quot; &quot;A terrible judge of character.&quot; <em>Pause.</em> &quot;And an excellent host.&quot;</p>
+<p><em>Toast.</em></p>
+<p><strong>Awards</strong></p>
+<ul>
+<li><strong>Best Detective</strong>: correct murderer + motive + passage.</li>
+<li><strong>Best Performance</strong>: most committed.</li>
+<li><strong>Best Dressed</strong>: self-explanatory.</li>
+<li><strong>Most Suspicious Innocent Person</strong>: most votes despite not being Morgan.</li>
+<li><strong>Most Unhinged Theory</strong>: Ross&#39;s discretion.</li>
+<li><strong>Best Liar</strong>: probably Morgan, assuming she survives socially.</li>
+<li>🆕 <strong>Richest Blackmailer</strong>: most Blackwood Cash at the end.</li>
+</ul>
+
+</section><section class="seg kind-reference" id="35-cheat-sheet">
+  <h2>Ross&#39;s emergency cheat sheet</h2>
+  <div class="meta">Reference · reference</div>
+  
+  
+  <p><strong>If people are LOST</strong>, ask in order:</p>
+<ol>
+<li><strong>&quot;Who was the last confirmed person to see Arthur alive?&quot;</strong> Annie, 9:31.</li>
+<li><strong>&quot;When did Noor say he died?&quot;</strong> 9:35–9:40.</li>
+<li><strong>&quot;Who was scheduled to meet him at 9:35?&quot;</strong> Morgan.</li>
+<li><strong>&quot;Where does the passage exit?&quot;</strong> Library.</li>
+<li><strong>&quot;Who was seen there around 9:41?&quot;</strong> Morgan.</li>
+<li><strong>&quot;What was Arthur arguing about?&quot;</strong> Missing money.</li>
+<li><strong>&quot;Whose office authorized the transfers?&quot;</strong> Morgan&#39;s.</li>
+</ol>
+<p>They should get there.</p>
+<p><strong>If they solve it too early.</strong> Do NOT confirm anything. &quot;An accusation is not a conviction.&quot; Then introduce another unresolved scandal: &quot;What about Molly&#39;s counterfeit painting?&quot; &quot;What exactly is Louis doing in the walls?&quot; &quot;Why did Arthur remove James from his will?&quot; &quot;What was Carlotta supposed to receive at midnight?&quot; 🆕 Or use a counterweight: &quot;Morgan is his lawyer. Of course she&#39;s in the paperwork.&quot;</p>
+<p>Keep Morgan playing. They need to prove: <strong>MOTIVE</strong> ($2.4M theft), <strong>MEANS</strong> (bronze raven), <strong>OPPORTUNITY</strong> (9:35 meeting), <strong>ESCAPE</strong> (hidden passage), <strong>TIMELINE</strong> (murder before the blackout).</p>
+<p><strong>If nobody suspects Morgan.</strong> Do NOT tell them. Prompt the evidence: &quot;Annie, who did you pass?&quot; &quot;Alma, who came from the library?&quot; &quot;Kushington, whose credentials?&quot; &quot;Lindsey, can you confirm that?&quot; &quot;Professor, where does the passage end?&quot; 🆕 Or sell someone the hint card &quot;Ask the house manager who she passed in the corridor.&quot;</p>
+<p>The solution should emerge naturally.</p>
+
+</section><section class="seg kind-reference" id="36-hosting-rule">
+  <h2>Most important hosting rule</h2>
+  <div class="meta">Reference · reference</div>
+  
+  
+  <p>You are not a detective. You are a <strong>conductor</strong>.</p>
+<p>Don&#39;t solve it for them. Don&#39;t explain clues immediately. Drop information. Pause. Let people react.</p>
+<p>🆕 After each strong Morgan clue, deliberately introduce a counterweight. It keeps the room from treating circumstantial evidence as the solution. <strong>&quot;OH SHIT. IT&#39;S MORGAN.&quot;</strong> should land in Round Three, not an hour earlier.</p>
+<p>And whenever possible: <strong>make eye contact before saying someone&#39;s name.</strong> It makes literally everything sound more sinister.</p>
+
+</section>
+</main></body></html>

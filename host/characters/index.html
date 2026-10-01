@@ -1,0 +1,153 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Characters</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../">Preview home</a></div><nav class="host"><a href="../" class="">Dashboard</a><a href="../script/" class="">Run of show</a><a href="../texts/" class="">Texts</a><a href="../roster/" class="">Roster</a><a href="./" class="on">Characters</a><a href="../evidence/" class="">Evidence</a><a href="../timeline/" class="">Timeline</a><a href="../flex/" class="">Flex</a><a href="../check/" class="">Checker</a><a href="../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Characters</h1>
+
+<table><tr><th>Character</th><th>Tier</th><th>Player</th><th>Words</th><th>Preview as guest</th></tr>
+<tr><td><a href="annie/">Antoinette &quot;Annie&quot;</a><div class="small muted">House manager of Blackwood Manor</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Annie · confirmed</td><td class="small">866</td>
+  <td class="small"><a href="../preview/annie/round-0/">R0</a> <a href="../preview/annie/round-1/">R1</a> <a href="../preview/annie/round-2/">R2</a> <a href="../preview/annie/round-3/">R3</a> </td></tr><tr><td><a href="noor/">Dr. Noor Beaumont</a><div class="small muted">Arthur&#39;s private physician</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Noor · confirmed</td><td class="small">842</td>
+  <td class="small"><a href="../preview/noor/round-0/">R0</a> <a href="../preview/noor/round-1/">R1</a> <a href="../preview/noor/round-2/">R2</a> <a href="../preview/noor/round-3/">R3</a> </td></tr><tr><td><a href="joji/">Professor Joji Beaumont</a><div class="small muted">Architectural historian</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Joji · confirmed</td><td class="small">850</td>
+  <td class="small"><a href="../preview/joji/round-0/">R0</a> <a href="../preview/joji/round-1/">R1</a> <a href="../preview/joji/round-2/">R2</a> <a href="../preview/joji/round-3/">R3</a> </td></tr><tr><td><a href="tim/">Timothy &quot;Tim&quot;</a><div class="small muted">Photographer of the Midnight Supper</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Tim · confirmed</td><td class="small">805</td>
+  <td class="small"><a href="../preview/tim/round-0/">R0</a> <a href="../preview/tim/round-1/">R1</a> <a href="../preview/tim/round-2/">R2</a> <a href="../preview/tim/round-3/">R3</a> </td></tr><tr><td><a href="alma/">Alma</a><div class="small muted">Archivist of the Blackwood library</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Alma · confirmed</td><td class="small">781</td>
+  <td class="small"><a href="../preview/alma/round-0/">R0</a> <a href="../preview/alma/round-1/">R1</a> <a href="../preview/alma/round-2/">R2</a> <a href="../preview/alma/round-3/">R3</a> </td></tr><tr><td><a href="jimmy/">James &quot;Jimmy&quot; Calloway</a><div class="small muted">Arthur&#39;s ward, recently cut from the will</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Jimmy · confirmed</td><td class="small">838</td>
+  <td class="small"><a href="../preview/jimmy/round-0/">R0</a> <a href="../preview/jimmy/round-1/">R1</a> <a href="../preview/jimmy/round-2/">R2</a> <a href="../preview/jimmy/round-3/">R3</a> </td></tr><tr><td><a href="kush/">Kushington &quot;Kush&quot;</a><div class="small muted">Forensic accountant</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Kush · confirmed</td><td class="small">734</td>
+  <td class="small"><a href="../preview/kush/round-0/">R0</a> <a href="../preview/kush/round-1/">R1</a> <a href="../preview/kush/round-2/">R2</a> <a href="../preview/kush/round-3/">R3</a> </td></tr><tr><td><a href="lindsey/">Lindsey Vale</a><div class="small muted">Arthur&#39;s private banker</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Lindsey · confirmed</td><td class="small">736</td>
+  <td class="small"><a href="../preview/lindsey/round-0/">R0</a> <a href="../preview/lindsey/round-1/">R1</a> <a href="../preview/lindsey/round-2/">R2</a> <a href="../preview/lindsey/round-3/">R3</a> </td></tr><tr><td><a href="maya/">Maya Rose</a><div class="small muted">Birthday guest; granddaughter of the manor&#39;s old cook</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Maya · confirmed</td><td class="small">756</td>
+  <td class="small"><a href="../preview/maya/round-0/">R0</a> <a href="../preview/maya/round-1/">R1</a> <a href="../preview/maya/round-2/">R2</a> <a href="../preview/maya/round-3/">R3</a> </td></tr><tr><td><a href="malik/">Malik</a><div class="small muted">Investigative podcaster, host of &quot;Old Money&quot;</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Malik · confirmed</td><td class="small">683</td>
+  <td class="small"><a href="../preview/malik/round-0/">R0</a> <a href="../preview/malik/round-1/">R1</a> <a href="../preview/malik/round-2/">R2</a> <a href="../preview/malik/round-3/">R3</a> </td></tr><tr><td><a href="morgan/">Morgan Leibold</a><div class="small muted">Arthur&#39;s attorney, Blackwood Legal Counsel</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Morgan · confirmed</td><td class="small">783</td>
+  <td class="small"><a href="../preview/morgan/round-0/">R0</a> <a href="../preview/morgan/round-1/">R1</a> <a href="../preview/morgan/round-2/">R2</a> <a href="../preview/morgan/round-3/">R3</a> </td></tr><tr><td><a href="carlotta/">Carlotta &quot;Carley&quot; Blackwood</a><div class="small muted">Arthur&#39;s estranged daughter</div></td><td><span class="pill core">core</span></td>
+  <td class="small">Carley · confirmed</td><td class="small">835</td>
+  <td class="small"><a href="../preview/carlotta/round-0/">R0</a> <a href="../preview/carlotta/round-1/">R1</a> <a href="../preview/carlotta/round-2/">R2</a> <a href="../preview/carlotta/round-3/">R3</a> </td></tr><tr><td><a href="clara/">Clara</a><div class="small muted">Arthur&#39;s former fiancée</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Clara · confirmed</td><td class="small">776</td>
+  <td class="small"><a href="../preview/clara/round-0/">R0</a> <a href="../preview/clara/round-1/">R1</a> <a href="../preview/clara/round-2/">R2</a> <a href="../preview/clara/round-3/">R3</a> </td></tr><tr><td><a href="lexi/">Alexandra &quot;Lexi&quot; St. Clair</a><div class="small muted">Birthday guest, Arthur&#39;s goddaughter</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Lexi · confirmed</td><td class="small">760</td>
+  <td class="small"><a href="../preview/lexi/round-0/">R0</a> <a href="../preview/lexi/round-1/">R1</a> <a href="../preview/lexi/round-2/">R2</a> <a href="../preview/lexi/round-3/">R3</a> </td></tr><tr><td><a href="kevin/">Kevin Blackwood</a><div class="small muted">Arthur&#39;s nephew, the heir who wasn&#39;t</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Kevin · confirmed</td><td class="small">780</td>
+  <td class="small"><a href="../preview/kevin/round-0/">R0</a> <a href="../preview/kevin/round-1/">R1</a> <a href="../preview/kevin/round-2/">R2</a> <a href="../preview/kevin/round-3/">R3</a> </td></tr><tr><td><a href="jimmy-friedman/">Jimmy Friedman</a><div class="small muted">Dealmaker, lender, aspiring member of the old-money set</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Jimmy Friedman · confirmed</td><td class="small">703</td>
+  <td class="small"><a href="../preview/jimmy-friedman/round-0/">R0</a> <a href="../preview/jimmy-friedman/round-1/">R1</a> <a href="../preview/jimmy-friedman/round-2/">R2</a> <a href="../preview/jimmy-friedman/round-3/">R3</a> </td></tr><tr><td><a href="molly/">Molly Monroe</a><div class="small muted">Art dealer, Monroe Fine Art</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Molly · confirmed</td><td class="small">798</td>
+  <td class="small"><a href="../preview/molly/round-0/">R0</a> <a href="../preview/molly/round-1/">R1</a> <a href="../preview/molly/round-2/">R2</a> <a href="../preview/molly/round-3/">R3</a> </td></tr><tr><td><a href="martin/">Martin</a><div class="small muted">Art expert and appraiser to the Blackwood collection</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Martin · confirmed</td><td class="small">703</td>
+  <td class="small"><a href="../preview/martin/round-0/">R0</a> <a href="../preview/martin/round-1/">R1</a> <a href="../preview/martin/round-2/">R2</a> <a href="../preview/martin/round-3/">R3</a> </td></tr><tr><td><a href="hannah/">Hannah Wellington</a><div class="small muted">Director of the Wellington Foundation</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Hannah · confirmed</td><td class="small">705</td>
+  <td class="small"><a href="../preview/hannah/round-0/">R0</a> <a href="../preview/hannah/round-1/">R1</a> <a href="../preview/hannah/round-2/">R2</a> <a href="../preview/hannah/round-3/">R3</a> </td></tr><tr><td><a href="shea/">Shea</a><div class="small muted">Arthur&#39;s live-in private nurse</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Shea · confirmed</td><td class="small">813</td>
+  <td class="small"><a href="../preview/shea/round-0/">R0</a> <a href="../preview/shea/round-1/">R1</a> <a href="../preview/shea/round-2/">R2</a> <a href="../preview/shea/round-3/">R3</a> </td></tr><tr><td><a href="maddie/">Madeleine &quot;Maddie&quot;</a><div class="small muted">Daniel&#39;s fiancée, wearer of a borrowed necklace</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Maddie · confirmed</td><td class="small">709</td>
+  <td class="small"><a href="../preview/maddie/round-0/">R0</a> <a href="../preview/maddie/round-1/">R1</a> <a href="../preview/maddie/round-2/">R2</a> <a href="../preview/maddie/round-3/">R3</a> </td></tr><tr><td><a href="daniel/">Daniel</a><div class="small muted">Maddie&#39;s fiancé, Carlotta&#39;s ex</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Daniel · confirmed</td><td class="small">606</td>
+  <td class="small"><a href="../preview/daniel/round-0/">R0</a> <a href="../preview/daniel/round-1/">R1</a> <a href="../preview/daniel/round-2/">R2</a> <a href="../preview/daniel/round-3/">R3</a> </td></tr><tr><td><a href="kim/">Kim</a><div class="small muted">Society darling and secret author of The Keyhole</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Kim · confirmed</td><td class="small">726</td>
+  <td class="small"><a href="../preview/kim/round-0/">R0</a> <a href="../preview/kim/round-1/">R1</a> <a href="../preview/kim/round-2/">R2</a> <a href="../preview/kim/round-3/">R3</a> </td></tr><tr><td><a href="louis/">Louis</a><div class="small muted">&quot;Architectural consultant&quot; (treasure hunter)</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Louis · confirmed</td><td class="small">789</td>
+  <td class="small"><a href="../preview/louis/round-0/">R0</a> <a href="../preview/louis/round-1/">R1</a> <a href="../preview/louis/round-2/">R2</a> <a href="../preview/louis/round-3/">R3</a> </td></tr><tr><td><a href="albie/">Aalvia &quot;Albie&quot;</a><div class="small muted">Spirit medium engaged for the Midnight Supper</div></td><td><span class="pill supporting">supporting</span></td>
+  <td class="small">Albie · confirmed</td><td class="small">676</td>
+  <td class="small"><a href="../preview/albie/round-0/">R0</a> <a href="../preview/albie/round-1/">R1</a> <a href="../preview/albie/round-2/">R2</a> <a href="../preview/albie/round-3/">R3</a> </td></tr><tr><td><a href="savanah/">Savanah, &quot;Mrs. Blackwood&quot;</a><div class="small muted">Lounge singer, and (she insists) Arthur&#39;s widow</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">Savanah · maybe</td><td class="small">769</td>
+  <td class="small"><a href="../preview/savanah/round-0/">R0</a> <a href="../preview/savanah/round-1/">R1</a> <a href="../preview/savanah/round-2/">R2</a> <a href="../preview/savanah/round-3/">R3</a> </td></tr><tr><td><a href="courtney/">Lady Courtney</a><div class="small muted">Minor aristocrat (professional guest)</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">Courtney · maybe</td><td class="small">730</td>
+  <td class="small"><a href="../preview/courtney/round-0/">R0</a> <a href="../preview/courtney/round-1/">R1</a> <a href="../preview/courtney/round-2/">R2</a> <a href="../preview/courtney/round-3/">R3</a> </td></tr><tr><td><a href="spare-rook/">Rook</a><div class="small muted">The Blackwood chauffeur</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">— · spare-unassigned</td><td class="small">573</td>
+  <td class="small"><a href="../preview/spare-rook/round-0/">R0</a> <a href="../preview/spare-rook/round-1/">R1</a> <a href="../preview/spare-rook/round-2/">R2</a> <a href="../preview/spare-rook/round-3/">R3</a> </td></tr><tr><td><a href="spare-quill/">Quill</a><div class="small muted">Portrait painter</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">— · spare-unassigned</td><td class="small">457</td>
+  <td class="small"><a href="../preview/spare-quill/round-0/">R0</a> <a href="../preview/spare-quill/round-1/">R1</a> <a href="../preview/spare-quill/round-2/">R2</a> <a href="../preview/spare-quill/round-3/">R3</a> </td></tr><tr><td><a href="spare-hollis/">Hollis</a><div class="small muted">&quot;Collector&quot; (undercover insurance investigator)</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">— · spare-unassigned</td><td class="small">501</td>
+  <td class="small"><a href="../preview/spare-hollis/round-0/">R0</a> <a href="../preview/spare-hollis/round-1/">R1</a> <a href="../preview/spare-hollis/round-2/">R2</a> <a href="../preview/spare-hollis/round-3/">R3</a> </td></tr><tr><td><a href="spare-vesper/">Vesper</a><div class="small muted">Ghostwriter of Arthur&#39;s memoir</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">— · spare-unassigned</td><td class="small">482</td>
+  <td class="small"><a href="../preview/spare-vesper/round-0/">R0</a> <a href="../preview/spare-vesper/round-1/">R1</a> <a href="../preview/spare-vesper/round-2/">R2</a> <a href="../preview/spare-vesper/round-3/">R3</a> </td></tr><tr><td><a href="spare-blake/">Blake</a><div class="small muted">Fencing master to the Blackwoods</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">— · spare-unassigned</td><td class="small">502</td>
+  <td class="small"><a href="../preview/spare-blake/round-0/">R0</a> <a href="../preview/spare-blake/round-1/">R1</a> <a href="../preview/spare-blake/round-2/">R2</a> <a href="../preview/spare-blake/round-3/">R3</a> </td></tr><tr><td><a href="spare-wren/">Wren</a><div class="small muted">Heir hunter and genealogist</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">— · spare-unassigned</td><td class="small">538</td>
+  <td class="small"><a href="../preview/spare-wren/round-0/">R0</a> <a href="../preview/spare-wren/round-1/">R1</a> <a href="../preview/spare-wren/round-2/">R2</a> <a href="../preview/spare-wren/round-3/">R3</a> </td></tr><tr><td><a href="spare-sterling/">Sterling</a><div class="small muted">Arthur&#39;s &quot;dear old friend from Monaco&quot; (gatecrasher)</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">— · spare-unassigned</td><td class="small">530</td>
+  <td class="small"><a href="../preview/spare-sterling/round-0/">R0</a> <a href="../preview/spare-sterling/round-1/">R1</a> <a href="../preview/spare-sterling/round-2/">R2</a> <a href="../preview/spare-sterling/round-3/">R3</a> </td></tr><tr><td><a href="spare-ellery/">Ellery</a><div class="small muted">Former child star of &quot;The Raven&#39;s Heir&quot;</div></td><td><span class="pill flex">flex</span></td>
+  <td class="small">— · spare-unassigned</td><td class="small">575</td>
+  <td class="small"><a href="../preview/spare-ellery/round-0/">R0</a> <a href="../preview/spare-ellery/round-1/">R1</a> <a href="../preview/spare-ellery/round-2/">R2</a> <a href="../preview/spare-ellery/round-3/">R3</a> </td></tr></table>
+</main></body></html>

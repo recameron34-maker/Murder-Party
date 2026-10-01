@@ -1,0 +1,180 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Run of show</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../../">Preview home</a></div><nav class="host"><a href="../../" class="">Dashboard</a><a href="../" class="on">Run of show</a><a href="../../texts/" class="">Texts</a><a href="../../roster/" class="">Roster</a><a href="../../characters/" class="">Characters</a><a href="../../evidence/" class="">Evidence</a><a href="../../timeline/" class="">Timeline</a><a href="../../flex/" class="">Flex</a><a href="../../check/" class="">Checker</a><a href="../../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Run of show</h1>
+
+<p class="inline-form small"><a class="btn small ghost" href="../">All</a><a class="btn small ghost" href="../round-0/">Before the Supper</a><a class="btn small " href="./">Round One</a><a class="btn small ghost" href="../round-2/">Round Two</a><a class="btn small ghost" href="../round-3/">Round Three</a><a class="btn small ghost" href="../round-4/">The reveal</a><a class="btn small ghost" href="../round-9/">Reference</a></p>
+<p class="small muted">🆕 marks material added for the Part Two upgrades. Part One itself is unchanged in docs/source.</p>
+<section class="seg kind-speech" id="07-rules-blackmail">
+  <h2>Rules, Blackmail Cash and the evidence hunt</h2>
+  <div class="meta">Round One · speech · <i>Changed: Blackmail Cash introduced here, right after the murder (reconciles Part Two&#39;s &quot;at the beginning&quot; with Ross&#39;s &quot;after the murder&quot; speech). Evidence-hunt rule added.</i></div>
+  
+  
+  <p>&quot;You each have secrets. Protect them if you wish. Deflect. Accuse. Be dramatic.&quot;</p>
+<p>&quot;But unless your envelope specifically allows otherwise, do not invent evidence.&quot;</p>
+<p>&quot;If your envelope says something MUST be revealed, make sure it becomes public before the round ends.&quot;</p>
+<p>&quot;And please… do not open future envelopes.&quot; <em>Look at Kush.</em> &quot;I mean you, Kushington.&quot;</p>
+<p>🆕 <strong>Blackmail Cash.</strong> <em>Pull out a stack of Blackwood bills.</em></p>
+<p>&quot;One more thing. My uncle believed everyone had a price. He was usually right.&quot;</p>
+<p>&quot;Each of you has three thousand dollars in Blackwood Cash.&quot;</p>
+<p>&quot;At any point tonight, you may offer another guest one thousand dollars for an answer.&quot;</p>
+<p>&quot;If they accept…&quot; <em>pause</em> &quot;…they must answer your question truthfully.&quot;</p>
+<p>&quot;They may refuse. They may demand more. They may negotiate. But once money changes hands…&quot; &quot;…the truth is owed.&quot;</p>
+<p>&quot;Spend carefully. Information gets considerably more expensive when murder is involved.&quot;</p>
+<p><em>(Unknown to everyone: Morgan is the only exception.)</em></p>
+<p>🆕 <strong>Evidence hunt.</strong> &quot;Evidence is hidden around the house tonight in envelopes marked BLACKWOOD EVIDENCE. Search only the game areas. Nothing is hidden inside personal belongings, bedrooms, drawers or cabinets. If it isn&#39;t obviously part of the game, leave it alone. Bring what you find to me. I pay a thousand dollars a find.&quot;</p>
+
+</section><section class="seg kind-speech" id="08-round-one">
+  <h2>Round One</h2>
+  <div class="meta">Round One · speech · <i>Changed: Unlock Round One in the host panel; phones pick it up within ~15 seconds.</i></div>
+  
+  
+  <p>🆕 <strong>Unlock Round One in the host panel</strong>, then hand out the Round One envelopes.</p>
+<p>&quot;Round One is simple.&quot;</p>
+<p>&quot;Arthur Blackwood had enemies.&quot;</p>
+<p>&quot;Your job is to discover how many of them are currently holding champagne in my living room.&quot;</p>
+<p>&quot;Open your envelopes.&quot;</p>
+<p><em>Give everyone a few minutes.</em> Then: &quot;Start talking.&quot;</p>
+
+</section><section class="seg kind-checklist" id="09-r1-checklist">
+  <h2>Round One checklist</h2>
+  <div class="meta">Round One · checklist · <i>Changed: Added Kevin&#39;s &quot;You&#39;re going to regret this&quot;, the Round One physical clues and the Part Two end-of-round suspicion targets.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#cufflink">Kevin&#39;s cufflink</a> <a class="pill" href="../../evidence/#molly-letter">Arthur&#39;s threatening letter to Molly</a> <a class="pill" href="../../evidence/#destroyed-will">The destroyed will</a> </p>
+  
+  <p>You do NOT need these in exact order. Make sure these facts emerge:</p>
+<ul>
+<li>□ Jimmy was removed from will.</li>
+<li>□ Molly sold potentially fake painting.</li>
+<li>□ Kevin argued with Arthur. 🆕 <strong>Kevin admits &quot;You&#39;re going to regret this.&quot;</strong></li>
+<li>□ Carlotta heard &quot;I&#39;m giving it all away.&quot;</li>
+<li>□ Hannah says Arthur considered giving away fortune.</li>
+<li>□ Kush reveals Arthur suspected theft.</li>
+<li>□ Maya reveals argument about missing money.</li>
+<li>□ Annie establishes Arthur alive at 9:31.</li>
+<li>□ Shea reveals Arthur&#39;s ominous medical comment.</li>
+<li>□ Joji establishes existence of historical passages.</li>
+<li>□ Tim mentions strange library door.</li>
+<li>□ Malik says person Arthur planned to expose &quot;isn&#39;t family.&quot;</li>
+<li>🆕 □ Cufflink found; Kevin recognizes it.</li>
+<li>🆕 □ Molly&#39;s threatening letter found behind a frame.</li>
+<li>🆕 □ Late in the round: plant/announce the destroyed will.</li>
+</ul>
+<p>🆕 <strong>Ideal suspicion at the end of Round One:</strong> Kevin (disinherited + threat + cufflink), Molly ($750K fraud + letter + knew where the raven was), Carlotta (estranged + giving it away + destroyed will), Lindsey (mysterious meeting), Morgan (9:35 meeting), maybe Louis (snooping in walls). <strong>Nobody should stand out enormously.</strong></p>
+
+</section><section class="seg kind-cue" id="10-r1-shea-maya">
+  <h2>Round One cues: Shea and Maya</h2>
+  <div class="meta">Round One · cue</div>
+  
+  
+  <p><strong>SHEA.</strong> Once Shea says: <strong>&quot;If something happens to me, don&#39;t assume it was natural.&quot;</strong></p>
+<p><em>Step forward.</em> &quot;That&#39;s comforting.&quot;</p>
+<p><em>Pause.</em> &quot;Dr. Beaumont…&quot; <em>Look at Noor.</em> &quot;…perhaps we should establish whether Arthur&#39;s medical condition could have killed him.&quot;</p>
+<p>Let Noor reveal that his illness did NOT cause the death. Then: &quot;So we are officially looking at murder.&quot;</p>
+<hr>
+<p><strong>MAYA.</strong> Once Maya reveals: <strong>&quot;If the money isn&#39;t back by midnight, I&#39;m going public.&quot;</strong></p>
+<p>&quot;Money.&quot; <em>Look around.</em> &quot;Finally. Something this family understands.&quot;</p>
+<p>Then: &quot;Kushington. Arthur hired you for something. What was it?&quot;</p>
+<p>Kush reveals Arthur suspected theft, but NOT the amount.</p>
+
+</section><section class="seg kind-rescue" id="11-r1-rescues">
+  <h2>Round One rescues</h2>
+  <div class="meta">Round One · rescue</div>
+  
+  
+  <p>If Annie hasn&#39;t revealed the 9:31 drink: &quot;Antoinette, weren&#39;t you one of the last people to see Arthur?&quot;</p>
+<p>If Tim hasn&#39;t mentioned the door: &quot;Timothy, you&#39;ve been wandering around this house all evening. Anything unusual?&quot;</p>
+<p>If Joji hasn&#39;t mentioned passages: &quot;Professor, you&#39;ve spent months studying this absurd mausoleum. Does the house have any secrets?&quot;</p>
+<p>If Martin hasn&#39;t exposed the painting: &quot;Martin, you&#39;ve been looking at Molly like you&#39;re about to appraise her. Why?&quot;</p>
+<p>🆕 If Kevin hasn&#39;t admitted his line: &quot;Kevin, half the East Corridor heard you at 9:20. Would you like to tell us what you said, or shall I?&quot;</p>
+
+</section><section class="seg kind-evidence" id="12-r1-end-phone">
+  <h2>End of Round One: first official evidence</h2>
+  <div class="meta">Round One · evidence · <i>Changed: Counterweight line added (Part Two §9).</i></div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#phone">Arthur&#39;s phone</a> </p>
+  
+  <p><em>Ring glass.</em> &quot;Enough. We have our first piece of physical evidence.&quot;</p>
+<p><em>Hold up Arthur&#39;s phone.</em> &quot;Arthur&#39;s phone was recovered beneath his desk. His final outgoing message was sent at 9:29 PM.&quot;</p>
+<p>Read slowly: <strong>MY STUDY. 9:35. WE SETTLE THIS TONIGHT.</strong></p>
+<p><em>Pause.</em> &quot;The recipient…&quot; <em>pause longer</em> &quot;…Morgan Leibold.&quot;</p>
+<p>Let room react. Then look at Morgan. &quot;Counselor?&quot;</p>
+<p>Let Morgan explain she had a scheduled meeting / was doing legal work. <strong>Do NOT push too hard.</strong></p>
+<p>&quot;Interesting.&quot; &quot;Not damning.&quot; &quot;Yet.&quot;</p>
+<p>🆕 <em>Counterweight:</em> &quot;Although, to be fair, a lawyer being summoned by a client is hardly a scandal. Most of you have been summoned by worse.&quot;</p>
+
+</section>
+</main></body></html>

@@ -1,0 +1,228 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Run of show</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../../">Preview home</a></div><nav class="host"><a href="../../" class="">Dashboard</a><a href="../" class="on">Run of show</a><a href="../../texts/" class="">Texts</a><a href="../../roster/" class="">Roster</a><a href="../../characters/" class="">Characters</a><a href="../../evidence/" class="">Evidence</a><a href="../../timeline/" class="">Timeline</a><a href="../../flex/" class="">Flex</a><a href="../../check/" class="">Checker</a><a href="../../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Run of show</h1>
+
+<p class="inline-form small"><a class="btn small ghost" href="../">All</a><a class="btn small ghost" href="../round-0/">Before the Supper</a><a class="btn small ghost" href="../round-1/">Round One</a><a class="btn small " href="./">Round Two</a><a class="btn small ghost" href="../round-3/">Round Three</a><a class="btn small ghost" href="../round-4/">The reveal</a><a class="btn small ghost" href="../round-9/">Reference</a></p>
+<p class="small muted">🆕 marks material added for the Part Two upgrades. Part One itself is unchanged in docs/source.</p>
+<section class="seg kind-speech" id="13-round-two">
+  <h2>Round Two</h2>
+  <div class="meta">Round Two · speech · <i>Changed: Unlock in the host panel; Round Two physical evidence goes live; Morgan&#39;s email; floor plan to Joji.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#library-map">The old floor plan</a> <a class="pill" href="../../evidence/#calendar">Arthur&#39;s calendar</a> </p>
+  
+  <p>🆕 <strong>Unlock Round Two in the host panel.</strong> Hand envelopes out. 🆕 Hand Joji the old floor plan (or it&#39;s in his envelope). 🆕 Put Arthur&#39;s calendar out on the &quot;study&quot; desk.</p>
+<p>&quot;In Round One, we discovered motives.&quot;</p>
+<p>&quot;In Round Two…&quot;</p>
+<p>&quot;…we find out who has been lying by omission.&quot;</p>
+<p>&quot;Open them.&quot;</p>
+<p>🆕 Early in the round Morgan will produce Arthur&#39;s email (<em>&quot;review the Wellington, Monroe and Vale matters before midnight&quot;</em>). Let her. It&#39;s her best defense and the game needs it. If the calendar&#39;s <strong>9:35 — M.L.</strong> comes up, she&#39;ll admit it&#39;s her.</p>
+
+</section><section class="seg kind-cue" id="14-r2-noor">
+  <h2>Round Two: Noor&#39;s time of death</h2>
+  <div class="meta">Round Two · cue</div>
+  
+  
+  <p>Let the first 5–10 minutes happen naturally. Eventually you want Noor&#39;s time-of-death clue.</p>
+<p>If she hasn&#39;t volunteered: &quot;Dr. Beaumont. You&#39;ve had more time to examine what happened. What can you tell us?&quot;</p>
+<p>NOOR REVEALS: <strong>9:35–9:40 PM.</strong></p>
+<p>Immediately say: &quot;Hold on.&quot;</p>
+<p>&quot;The lights went out at 9:45.&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;So Arthur may have been dead BEFORE the blackout.&quot;</p>
+<p>This is the first major twist.</p>
+<p><strong>After Noor&#39;s reveal.</strong> <em>Look at everyone.</em> &quot;We&#39;ve been investigating what happened in the dark.&quot; &quot;But perhaps…&quot; &quot;…nothing happened in the dark.&quot;</p>
+<p>Let them process.</p>
+
+</section><section class="seg kind-cue" id="15-r2-passage">
+  <h2>Round Two: Tim → Joji (the passage)</h2>
+  <div class="meta">Round Two · cue</div>
+  
+  
+  <p>Tim&#39;s envelope instructs him to ask Joji whether the strange library door could be a passage. Once Tim asks, let Joji perform.</p>
+<p>After Joji reveals the passage connects the study to library:</p>
+<p>&quot;So someone could enter Arthur&#39;s study…&quot; <em>Walk slowly.</em> &quot;…kill him…&quot; &quot;…leave through the wall…&quot; &quot;…and emerge in the library.&quot;</p>
+<p><em>Pause.</em> &quot;Without ever using the study door again.&quot;</p>
+<p>🆕 If Ellery (spare) is cast, they&#39;ll now gasp about the TV series&#39; library bookcase. Let them.</p>
+
+</section><section class="seg kind-cue" id="16-r2-alma">
+  <h2>Round Two: Alma (and James)</h2>
+  <div class="meta">Round Two · cue · <i>Changed: Counterweight line added (Part Two §9).</i></div>
+  
+  
+  <p>If Alma hasn&#39;t spoken within a minute: &quot;Alma. You&#39;ve become very quiet. Weren&#39;t you near the library?&quot;</p>
+<p>She reveals Morgan emerged around 9:41 and claimed to be looking for the restroom. Let Morgan respond. <strong>Do not adjudicate.</strong></p>
+<p>🆕 <em>Counterweight:</em> &quot;Also interesting. But Professor Beaumont has just informed us that half this house appears to contain doors nobody knew existed. Being in a library is not yet a capital offense.&quot;</p>
+<p>If James hasn&#39;t added his 9:40 sighting: &quot;James, didn&#39;t you say you walked through that hallway?&quot;</p>
+
+</section><section class="seg kind-cue" id="17-r2-money">
+  <h2>Round Two: Malik → Kush ($2.4M)</h2>
+  <div class="meta">Round Two · cue</div>
+  
+  <div class="inline-form" style="margin:6px 0">
+  <form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="kush-reggie-r2"><input type="hidden" name="back" value="/host/script"><button class="btn small" type="submit">Send to Kushington &quot;Kush&quot;</button></form>
+  
+  <span class="small"><b>Reggie:</b> Kushington. Your moment approaches. Try to be brief. (You won&#39;t.)</span>
+</div>
+  <p>🆕 <em>Optional: fire Kush&#39;s cue text from the host panel just before this.</em></p>
+<p>Malik should reveal: <strong>&quot;It&#39;s not about inheritance. Follow the money.&quot;</strong></p>
+<p>As soon as he does: <em>Turn slowly toward Kush.</em> &quot;Kushington.&quot; <em>Pause.</em> &quot;I fear this is your moment.&quot;</p>
+<p>LET HIM GO.</p>
+<p>Kush reveals: <strong>$2.4 MILLION.</strong></p>
+<p>After his performance: &quot;Two.&quot; &quot;Point.&quot; &quot;Four.&quot; &quot;Million.&quot;</p>
+<p><em>Pause.</em> &quot;So Arthur wasn&#39;t threatening someone over inheritance.&quot; &quot;He was threatening someone over stolen money.&quot;</p>
+<p>🆕 <strong>Ideal suspicion, middle of Round Two:</strong> Lindsey stole $2.4M? Morgan stole $2.4M? Carlotta killed over inheritance? Molly to hide fraud? Kevin after being disinherited? <em>And maybe the money and the murder aren&#39;t even connected.</em> Say that last one out loud if the room is converging too fast.</p>
+
+</section><section class="seg kind-cue" id="18-r2-women">
+  <h2>🆕 Round Two: the women in the corridor</h2>
+  <div class="meta">Round Two · cue · <i>Changed: New. Part Two §8 (Clara 9:33, Shea ~9:40) makes Maya&#39;s &quot;a woman&quot; ambiguous.</i></div>
+  
+  
+  <p>Over Round Two, three things should surface:</p>
+<ul>
+<li>Maya: the woman said <strong>&quot;You&#39;ll destroy me.&quot;</strong></li>
+<li>Clara: at <strong>9:33</strong> she walked toward the study, saw someone farther down the hall, and turned back. She can&#39;t say who.</li>
+<li>Shea: at about <strong>9:40</strong> she was taking Arthur his medication, heard voices, and turned back.</li>
+</ul>
+<p>If they&#39;re slow: &quot;Ladies. I&#39;m counting at least three of you who&#39;ve been near that study door tonight. Would anyone like to go first?&quot;</p>
+<p>The aim: <strong>Shea and Clara remain possible as &quot;the woman&quot; at the end of Round Two.</strong> Don&#39;t resolve it.</p>
+
+</section><section class="seg kind-evidence" id="19-r2-evidence">
+  <h2>🆕 Round Two: physical evidence</h2>
+  <div class="meta">Round Two · evidence · <i>Changed: New. Part Two clues 4–8, the red folder and the terrace camera.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#calendar">Arthur&#39;s calendar</a> <a class="pill" href="../../evidence/#lv-note">The &quot;L.V.&quot; note</a> <a class="pill" href="../../evidence/#red-folder">The red leather folder</a> <a class="pill" href="../../evidence/#black-thread">The black thread</a> <a class="pill" href="../../evidence/#torn-ledger">The torn financial ledger</a> <a class="pill" href="../../evidence/#terrace-camera">Terrace camera still</a> </p>
+  
+  <p>Release progressively. Don&#39;t dump it all at once.</p>
+<ul>
+<li><strong>Calendar</strong> (early): out on the desk. &quot;9:35 — M.L.&quot; Morgan admits it. &quot;This doesn&#39;t prove murder.&quot;</li>
+<li><strong>The &quot;L.V.&quot; note</strong> (mid): shifts suspicion hard toward Lindsey. <strong>Let it breathe. Do NOT immediately clear her.</strong></li>
+<li><strong>The red folder</strong> (mid): found in the library area. Molly&#39;s authentication, Kevin&#39;s papers, Lindsey&#39;s memo, the Wellington deed, and a <strong>CONFIDENTIAL LEGAL</strong> tab with the page torn out. &quot;Was Arthur planning to expose <em>all</em> of you?&quot;</li>
+<li><strong>The black thread</strong> (mid): on the raven. Let people compare outfits. It matches nobody uniquely.</li>
+<li><strong>The torn ledger</strong> (late): six transfers, $2,400,000, <strong>AUTHORIZED: BLC.</strong> &quot;Blackwood Legal Counsel? Blackwood Luxury Corporation? Blackwood Lending Company?&quot; Let people argue.</li>
+<li><strong>Terrace camera</strong> (late): when Kevin demands it, make him sweat. Then produce the still: Kevin on the terrace 9:22–9:47. &quot;Kevin. Congratulations. You&#39;re merely unpleasant.&quot;</li>
+<li><strong>Cufflink resolution</strong>: &quot;Kevin lost that cufflink helping me move furniture this afternoon. I&#39;ve known all evening. I wanted to see you sweat.&quot;</li>
+</ul>
+
+</section><section class="seg kind-cue" id="20-r2-chaos">
+  <h2>Round Two: distractions and juicy chaos</h2>
+  <div class="meta">Round Two · cue · <i>Changed: Added Lexi&#39;s trust papers, Albie&#39;s séance script, flex-character red herrings.</i></div>
+  
+  
+  <p>Encourage:</p>
+<ul>
+<li>Maddie/Daniel necklace fight.</li>
+<li>Molly/Martin fake art revelation.</li>
+<li>Kim revealing The Keyhole.</li>
+<li>Lexi&#39;s surprise inheritance documents. 🆕 ($500K Vivienne Fund, unsigned.)</li>
+<li>Kevin&#39;s terrible-looking argument.</li>
+<li>Louis admitting he was snooping around the library.</li>
+<li>🆕 Albie revealing Arthur&#39;s midnight séance script.</li>
+<li>🆕 Jimmy Friedman&#39;s two birthday girls comparing phones.</li>
+<li>🆕 Flex extras if cast: Courtney&#39;s raven selfie, Savanah the &quot;widow,&quot; Wren&#39;s &quot;secret heir,&quot; Hollis&#39;s overheard phone call, Blake&#39;s bandaged hand.</li>
+</ul>
+<p>These are intentional red herrings. Let the room get messy.</p>
+
+</section><section class="seg kind-rescue" id="21-r2-rescues">
+  <h2>Round Two rescues</h2>
+  <div class="meta">Round Two · rescue</div>
+  
+  
+  <p>Missing Morgan sighting? &quot;James, didn&#39;t you say you walked through that hallway?&quot;</p>
+<p>Missing Alma restroom clue? &quot;Alma, what exactly did Morgan tell you?&quot;</p>
+<p>Missing passage? &quot;Professor Beaumont, I&#39;m beginning to suspect your architectural obsession may finally have a purpose.&quot;</p>
+<p>Missing $2.4M? &quot;Kushington, please stop teasing us and tell us what you found.&quot;</p>
+<p>🆕 Missing time of death? &quot;Doctor. The body. When?&quot;</p>
+<p>🆕 Missing the women? &quot;Maya, the voice you heard. Man or woman? And what did she say?&quot;</p>
+
+</section><section class="seg kind-speech" id="22-r2-end">
+  <h2>End of Round Two</h2>
+  <div class="meta">Round Two · speech · <i>Changed: Part Two&#39;s end-of-round suspicion targets added.</i></div>
+  
+  
+  <p>&quot;Let&#39;s stop. We now know four things.&quot;</p>
+<p><em>Count on fingers.</em></p>
+<p>&quot;Arthur was alive at 9:31.&quot;</p>
+<p>&quot;He was arguing about stolen money around 9:36.&quot;</p>
+<p>&quot;He was likely dead by 9:40.&quot;</p>
+<p>&quot;And someone could escape his study directly into the library.&quot;</p>
+<p><em>Pause.</em> &quot;Which means…&quot;</p>
+<p><em>Look toward Morgan, but DO NOT linger.</em></p>
+<p>&quot;…our killer&#39;s window is becoming very small.&quot;</p>
+<p>🆕 <strong>Ideal suspicion at the end of Round Two:</strong> Kevin mostly cleared (camera). Molly&#39;s motive weakening. Carlotta&#39;s inheritance theory starting to collapse. <strong>Morgan + Lindsey</strong> the strongest financial suspects. <strong>Shea/Clara still possible as the unidentified woman.</strong></p>
+
+</section>
+</main></body></html>

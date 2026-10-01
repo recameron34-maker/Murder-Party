@@ -1,0 +1,121 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Clara</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../../">Preview home</a></div><nav class="host"><a href="../../" class="">Dashboard</a><a href="../../script/" class="">Run of show</a><a href="../../texts/" class="">Texts</a><a href="../../roster/" class="">Roster</a><a href="../" class="on">Characters</a><a href="../../evidence/" class="">Evidence</a><a href="../../timeline/" class="">Timeline</a><a href="../../flex/" class="">Flex</a><a href="../../check/" class="">Checker</a><a href="../../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Clara</h1>
+
+<p><span class="pill supporting">supporting</span>  Clara · confirmed · <span class="small muted">content/characters/clara.yaml</span></p>
+<p class="small">Preview as guest: <a href="../../preview/clara/round-0/">Round 0</a> <a href="../../preview/clara/round-1/">Round 1</a> <a href="../../preview/clara/round-2/">Round 2</a> <a href="../../preview/clara/round-3/">Round 3</a> </p>
+<div class="card"><b>Host notes.</b> <p>Supporting. Part Two&#39;s second study visitor (9:33). Round Three clears the
+Carlotta inheritance theory. If Clara isn&#39;t cast, Reggie can read the will
+quote as &quot;something Arthur told Clara&quot; from the host script.</p>
+</div>
+
+<div class="grid">
+  <div class="card"><h3 style="margin-top:0">Secret</h3><p>You were <strong>Arthur&#39;s secret lover</strong> again, you know he <strong>tore up the will
+himself</strong>, and you <strong>walked toward the study at 9:33</strong> and saw someone
+there you couldn&#39;t identify.</p>
+<h3>Mission</h3><p>Get <strong>Carlotta alone</strong> and ask her <strong>what Arthur said about midnight.</strong>
+Report her answer to Reggie.</p>
+</div>
+  <div class="card"><h3 style="margin-top:0">Evening</h3><ul><li><span class="mono">8:30 PM–8:44 PM</span> <span class="muted">study</span>: With Arthur, door locked. He tells you about the will. You leave at 8:44, fixing your lipstick.</li><li><span class="mono">8:45 PM–9:32 PM</span> <span class="muted">drawing-room</span>: Pretending to be cool and unbothered while glowing slightly.</li><li><span class="mono">9:33 PM</span> <span class="muted">east-corridor</span>: You walk toward the study, then see <strong>someone farther down the hall</strong> near the study door. You can&#39;t tell who. You turn back.</li><li><span class="mono">9:34 PM–9:47 PM</span> <span class="muted">drawing-room</span>: Back at the party with a fresh drink, annoyed at yourself. The lights go out at 9:45.</li></ul></div>
+</div>
+<div class="card"><h3 style="margin-top:0">Round One</h3><div class="mono small" style="white-space:pre-wrap">Admit you met Arthur in the study at 8:30, a private conversation
+between old friends. He seemed happy. Lighter. You&#39;re on better terms
+than people think.
+
+Do not elaborate. Let them imagine.
+</div><p><b>Reveal:</b></p><ul><li>You met Arthur privately in the study at 8:30.</li></ul></div><div class="card"><h3 style="margin-top:0">Round Two</h3><div class="mono small" style="white-space:pre-wrap">Confess your second visit: **at 9:33 you walked toward Arthur&#39;s study
+to finish your conversation, but you saw someone farther down the
+corridor and changed your mind.** You couldn&#39;t see who.
+
+Yes, that puts you near the study in the critical window. Yes, you&#39;re a
+woman. Let them wonder.
+</div><p><b>Reveal:</b></p><ul><li>You approached the study at 9:33, saw someone farther down the hall, and turned back.</li></ul></div><div class="card"><h3 style="margin-top:0">Round Three</h3><div class="mono small" style="white-space:pre-wrap">Now clear Carlotta, even if she doesn&#39;t deserve it. Tell the room what
+Arthur told you at 8:30:
+
+**&quot;I tore up the old will myself. Everyone keeps assuming tonight is
+about inheritance. It isn&#39;t.&quot;**
+
+[[if:savanah]]
+And if Savanah is still calling herself the widow, you may inform the
+room, icily, that you were *there* when Arthur sobered up in 2019.
+[[/if]]
+</div><p><b>Reveal:</b></p><ul><li>Arthur told you he tore up the will himself: &quot;tonight isn&#39;t about inheritance.&quot;</li></ul></div>
+<div class="card"><h3 style="margin-top:0">Texts</h3><table><tr><td class="small">history</td><td><b>A.</b> <span class="muted small">(8:46 PM)</span>: You left your earring. I&#39;m keeping it as collateral. Midnight changes everything, darling. Stay till then.</td></tr><tr><td class="small">Round 1 + 10 min</td><td><b>Unknown number</b>: Lovely shade of lipstick at 8:44. Shame if it ended up in The Keyhole.</td></tr><tr><td class="small">Round 2 + 8 min</td><td><b>Dr. Beaumont</b>: Clara, as his physician I&#39;ll keep your confidence. As a woman, I&#39;d say tell them about 9:33 before someone else does.</td></tr></table></div>
+<div class="card"><h3 style="margin-top:0">Connections</h3><ul><li><b>Arthur Blackwood</b>: Your ex-fiancé and current secret lover. You were going to tell him tonight that you&#39;d marry him after all. You never got to.</li><li><b>Carlotta &quot;Carley&quot; Blackwood</b>: His daughter, who has always blamed you for trying to replace her mother. You&#39;d like to make peace. You&#39;d settle for a ceasefire.</li><li><b>Dr. Noor Beaumont</b>: Arthur&#39;s doctor, who knows rather too much about your Tuesdays.</li><li><b>Timothy &quot;Tim&quot;</b>: The photographer. If he took that picture at 8:44, you need it.</li><li><b>Savanah, &quot;Mrs. Blackwood&quot;</b> <span class="pill flex">if savanah</span>: The Las Vegas &quot;wife&quot; Arthur married on a lost weekend right after you left him. You have never forgiven either of them.</li></ul></div>
+</main></body></html>

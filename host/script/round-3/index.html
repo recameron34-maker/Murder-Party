@@ -1,0 +1,227 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Run of show</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../../">Preview home</a></div><nav class="host"><a href="../../" class="">Dashboard</a><a href="../" class="on">Run of show</a><a href="../../texts/" class="">Texts</a><a href="../../roster/" class="">Roster</a><a href="../../characters/" class="">Characters</a><a href="../../evidence/" class="">Evidence</a><a href="../../timeline/" class="">Timeline</a><a href="../../flex/" class="">Flex</a><a href="../../check/" class="">Checker</a><a href="../../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Run of show</h1>
+
+<p class="inline-form small"><a class="btn small ghost" href="../">All</a><a class="btn small ghost" href="../round-0/">Before the Supper</a><a class="btn small ghost" href="../round-1/">Round One</a><a class="btn small ghost" href="../round-2/">Round Two</a><a class="btn small " href="./">Round Three</a><a class="btn small ghost" href="../round-4/">The reveal</a><a class="btn small ghost" href="../round-9/">Reference</a></p>
+<p class="small muted">🆕 marks material added for the Part Two upgrades. Part One itself is unchanged in docs/source.</p>
+<section class="seg kind-speech" id="23-round-three">
+  <h2>Round Three</h2>
+  <div class="meta">Round Three · speech · <i>Changed: Unlock in the host panel. Counterweight after Annie&#39;s sighting (Part Two §9). Draft letter released.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#draft-letter">Arthur&#39;s unfinished letter</a> </p>
+  <div class="inline-form" style="margin:6px 0">
+  <form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="morgan-unknown-r3"><input type="hidden" name="back" value="/host/script"><button class="btn small" type="submit">Send to Morgan Leibold</button></form>
+  
+  <span class="small"><b>Unknown number:</b> Every Blackwood secret comes home to roost.</span>
+</div>
+  <p>🆕 <strong>Unlock Round Three in the host panel.</strong> Hand envelopes out.</p>
+<p>&quot;Final round.&quot;</p>
+<p>&quot;By the end of this envelope, you will have everything you need to identify Arthur Blackwood&#39;s killer.&quot;</p>
+<p>&quot;Not everything will point toward the killer. Some of it will clear people. Some will correct assumptions.&quot;</p>
+<p>&quot;Your job is to separate scandal…&quot; &quot;…from murder.&quot;</p>
+<p>&quot;Open.&quot;</p>
+<p><strong>Round Three opening.</strong> Let Annie reveal seeing Morgan walking toward the study at 9:32.</p>
+<p>After: &quot;So Morgan was approaching Arthur&#39;s study immediately before the 9:35 meeting.&quot;</p>
+<p>Morgan may defend herself.</p>
+<p>&quot;Which, to be fair, Morgan has never denied was scheduled.&quot;</p>
+<p>🆕 <em>Counterweight:</em> &quot;Which is certainly interesting. Although according to Arthur&#39;s calendar, Morgan was supposed to meet him. So unless attending a scheduled meeting is now murder…&quot; <em>pause</em> &quot;…we need more.&quot;</p>
+<p>🆕 <em>Fire Morgan&#39;s cue text from the host panel right after Annie&#39;s reveal.</em></p>
+<p>Keep it neutral. 🆕 Release Arthur&#39;s unfinished draft letter during this round (&quot;I trusted you because you were supposed to protect this family…&quot;). Keep it ambiguous.</p>
+
+</section><section class="seg kind-cue" id="24-r3-carlotta-note">
+  <h2>Round Three: Carlotta&#39;s note, Kush and Lindsey</h2>
+  <div class="meta">Round Three · cue · <i>Changed: Morgan&#39;s counterweight defense added (Part Two §9).</i></div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#carlotta-note">Arthur&#39;s note to Carlotta</a> </p>
+  
+  <p>Carley will eventually read Arthur&#39;s note:</p>
+<p><strong>Carlotta — you were right. Tonight I stop protecting the people who betrayed my trust. Whatever happens, know that none of this was your burden to carry. — Dad</strong></p>
+<p>After Carley asks: <strong>&quot;Who betrayed him?&quot;</strong></p>
+<p>Turn to Kush. Then Lindsey. Say nothing.</p>
+<p>Let them reveal:</p>
+<ul>
+<li>Morgan&#39;s office controlled authorization.</li>
+<li>Lindsey independently confirms credentials. 🆕 (Lindsey&#39;s role flips: she wasn&#39;t hiding the theft; she <em>discovered</em> it.)</li>
+</ul>
+<p>Then: &quot;So the stolen $2.4 million…&quot; &quot;…leads to Blackwood Legal Counsel.&quot; <em>Pause.</em> &quot;Morgan&#39;s office.&quot;</p>
+<p>🆕 <em>Morgan will say:</em> &quot;I&#39;m his lawyer. Of course my office authorized legal transfers.&quot;</p>
+<p>🆕 <em>Counterweight:</em> &quot;She&#39;s annoyingly correct. The question isn&#39;t whether Morgan had access. The question is whether she abused it.&quot;</p>
+
+</section><section class="seg kind-cue" id="25-r3-malik">
+  <h2>Round Three: Malik&#39;s message</h2>
+  <div class="meta">Round Three · cue</div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#malik-message">Arthur&#39;s scheduled message to Malik</a> </p>
+  <div class="inline-form" style="margin:6px 0">
+  <form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="malik-scheduled-r3"><input type="hidden" name="back" value="/host/script"><button class="btn small" type="submit">Send to Malik</button></form>
+  
+  <span class="small"><b>Arthur Blackwood (scheduled):</b> If you&#39;re reading this, the truth is public. The theft came from inside my legal operation. I trusted the wrong person.</span>
+</div>
+  <p>After the financial reveal: &quot;Malik.&quot; &quot;There&#39;s something else.&quot;</p>
+<p>Hand him Arthur&#39;s scheduled draft. 🆕 <em>(Or fire Malik&#39;s cue text so it lands on his phone, which is creepier.)</em></p>
+<p>He reads: <strong>If you&#39;re reading this, the truth is public. The theft came from inside my legal operation. I trusted the wrong person.</strong></p>
+<p>Let reaction happen.</p>
+
+</section><section class="seg kind-cue" id="26-r3-clearing">
+  <h2>🆕 Round Three: clearing the false theories</h2>
+  <div class="meta">Round Three · cue · <i>Changed: New. Clears Carlotta (Clara), Molly (Martin&#39;s note), the thread (Shea), Louis (Kim).</i></div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#molly-cleared-note">Arthur&#39;s note about the forger</a> </p>
+  
+  <p>Make sure these land during Round Three. Order doesn&#39;t matter:</p>
+<ul>
+<li><strong>Clara:</strong> Arthur told her at 8:30, &quot;I tore up the old will myself. Everyone keeps assuming tonight is about inheritance. It isn&#39;t.&quot; <em>Carlotta&#39;s inheritance theory collapses.</em></li>
+<li><strong>Martin:</strong> reads Arthur&#39;s note: the forger was Lucien Vasse and &quot;Molly was taken in as badly as I was.&quot; <em>Molly cleared.</em></li>
+<li><strong>Shea:</strong> the black thread is from Arthur&#39;s own velvet smoking jacket. <em>The thread points at no one.</em></li>
+<li><strong>Kim:</strong> saw Louis climb out of a dining-room panel at 9:46. <strong>Louis</strong> confesses to living in the walls, but on the far side of the house. <em>Walls mystery solved; Louis cleared.</em></li>
+<li><strong>Lindsey:</strong> discovered the theft (already flipped above).</li>
+</ul>
+<p>Rescues: &quot;Clara, what exactly did Arthur tell you at 8:30?&quot; / &quot;Martin, you&#39;ve had something in your pocket all night.&quot; / &quot;Kim, you look like someone who saw something in the dark.&quot;</p>
+
+</section><section class="seg kind-cue" id="27-r3-shea-blackout">
+  <h2>Round Three: Shea&#39;s cue and the blackout reveal</h2>
+  <div class="meta">Round Three · cue</div>
+  
+  
+  <p>Shea eventually asks: <strong>&quot;Then why did we all assume he died during the blackout?&quot;</strong></p>
+<p>This is your cue. <em>Smile slightly.</em> &quot;Excellent question.&quot; &quot;I&#39;ve been wondering the same thing.&quot;</p>
+<p><strong>The blackout reveal.</strong></p>
+<p>&quot;I&#39;ve spoken with the house staff.&quot;</p>
+<p>&quot;The blackout was caused by an old electrical circuit tripping during preparations downstairs.&quot;</p>
+<p>🆕 &quot;Mrs. Hale&#39;s warming ovens and a 1930s fuse box. The crash we all heard was a tray of glasses.&quot; <em>(Tim, and Rook if cast, can back this up.)</em></p>
+<p>&quot;It occurred at exactly…&quot; <em>Check watch dramatically.</em> &quot;…9:45 PM.&quot;</p>
+<p>&quot;It lasted less than two minutes.&quot;</p>
+<p>&quot;It had nothing to do with Arthur.&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;The blackout didn&#39;t hide the murder.&quot;</p>
+<p>&quot;It hid the discovery of the murder.&quot;</p>
+
+</section><section class="seg kind-cue" id="28-r3-albie">
+  <h2>Round Three: Albie&#39;s cue</h2>
+  <div class="meta">Round Three · cue</div>
+  
+  
+  <p>Albie asks: <strong>&quot;So if Arthur was already dead, who benefits from us believing he died in the dark?&quot;</strong></p>
+<p>Respond: &quot;Someone who needed us looking at 9:45…&quot; &quot;…instead of 9:38.&quot;</p>
+
+</section><section class="seg kind-evidence" id="29-r3-final-evidence">
+  <h2>Final physical evidence</h2>
+  <div class="meta">Round Three · evidence · <i>Changed: &quot;MORGAN. MIDNIGHT. DONE.&quot; replaced by &quot;LEGAL. $2.4M. MIDNIGHT.&quot; (Part Two §2). Merged with Part Two Clue 10. Kevin found it in Arthur&#39;s coat.</i></div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#bank-statement">Arthur&#39;s folded bank statement (final evidence)</a> </p>
+  
+  <p>Kevin gives you Arthur&#39;s folded bank statement. 🆕 <em>(He&#39;s been wearing Arthur&#39;s coat since 9:22 and finally checked the pockets.)</em></p>
+<p><em>Hold it up.</em> &quot;This was found inside Arthur&#39;s coat.&quot;</p>
+<p><em>Open.</em> &quot;It documents the same transfers Kushington discovered.&quot; &quot;Total: $2.4 million.&quot;</p>
+<p>🆕 &quot;Authorization origin: Blackwood Legal Counsel. Authorized user ID: M-L-zero-four-two-seven.&quot;</p>
+<p><em>Turn page.</em> &quot;Across the top, Arthur wrote three words.&quot;</p>
+<p><em>Pause.</em> Read: <strong>LEGAL. $2.4M. MIDNIGHT.</strong></p>
+<p>🆕 <em>Morgan will argue:</em> &quot;Of course my office appears on his notes. I&#39;m his attorney. I&#39;ve spent the last week investigating this with him.&quot; <strong>That&#39;s partially true.</strong> Let her.</p>
+<p>Do NOT say &quot;therefore Morgan killed him.&quot; Let them accuse.</p>
+<p>🆕 Remind them, if needed, that even this doesn&#39;t prove murder by itself. They still need Annie, Maya, Noor, Joji, James and Alma.</p>
+
+</section><section class="seg kind-speech" id="30-final-timeline">
+  <h2>Final timeline</h2>
+  <div class="meta">Round Three · speech · <i>Changed: Noor&#39;s line now uses her stated range (9:35 to 9:40) instead of &quot;approximately 9:38&quot;.</i></div>
+  
+  
+  <p>Before voting:</p>
+<p>&quot;Let&#39;s establish what we actually know.&quot;</p>
+<p>&quot;9:31. Annie leaves Arthur alive.&quot;</p>
+<p>&quot;9:32. Annie sees Morgan approaching the study.&quot;</p>
+<p>&quot;9:35. Arthur has scheduled Morgan for a private meeting.&quot;</p>
+<p>&quot;9:36. Maya hears Arthur arguing with a woman about stolen money.&quot;</p>
+<p>🆕 &quot;9:35 to 9:40. Noor&#39;s medical estimate places Arthur&#39;s death.&quot;</p>
+<p>&quot;The hidden passage leads directly from the study to the library.&quot;</p>
+<p>&quot;9:40 to 9:41. James and Alma place Morgan at the library end.&quot;</p>
+<p>&quot;9:45. The lights go out.&quot;</p>
+<p><em>Pause.</em> &quot;Arthur was already dead.&quot;</p>
+
+</section><section class="seg kind-speech" id="31-accusations">
+  <h2>Accusations</h2>
+  <div class="meta">Round Three · speech</div>
+  
+  
+  <p>Pass out ballots.</p>
+<p>&quot;Write three things.&quot; &quot;Who killed Arthur Blackwood?&quot; &quot;Why?&quot; &quot;And how did they escape the study?&quot;</p>
+<p>&quot;If you wish, add the approximate time of death.&quot;</p>
+<p>&quot;Do not confer.&quot; &quot;You have three minutes.&quot;</p>
+<p><em>Play dramatic music. Collect ballots.</em></p>
+<p><strong>Optional verbal accusations.</strong> For maximum drama: &quot;I&#39;m going to ask several of you to state your accusation.&quot;</p>
+<p>Choose: Kush. Carley. Jimmy. Maya. Lexi.</p>
+<p>Then finally: &quot;Morgan.&quot; &quot;Who do YOU believe killed Arthur Blackwood?&quot;</p>
+<p>Let her accuse someone. Do not react.</p>
+
+</section>
+</main></body></html>

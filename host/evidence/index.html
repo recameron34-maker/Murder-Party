@@ -1,0 +1,287 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Evidence &amp; props</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../">Preview home</a></div><nav class="host"><a href="../" class="">Dashboard</a><a href="../script/" class="">Run of show</a><a href="../texts/" class="">Texts</a><a href="../roster/" class="">Roster</a><a href="../characters/" class="">Characters</a><a href="./" class="on">Evidence</a><a href="../timeline/" class="">Timeline</a><a href="../flex/" class="">Flex</a><a href="../check/" class="">Checker</a><a href="../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Evidence &amp; props</h1>
+
+<p class="small muted">Tick props off as you prepare them. Hiding spots are suggestions; set the real ones in content/clues/*.yaml.</p>
+<h2>Round One</h2>
+<div class="card"><table><tr><th>Prep</th><th>Evidence</th><th>When / who</th><th>Hide</th></tr>
+<tr id="cufflink" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="cufflink"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Kevin&#39;s cufflink</b>  <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">BLACKWOOD EVIDENCE: A gold cufflink, engraved with a raven and the
+letter K, found on the study floor.
+</div><p class="small"><b>Truth:</b> Kevin lost it at about 3 PM helping Reggie move furniture into the study. Reggie confirms in Round Two, after Kevin has panicked.</p><p class="small"><b>Prop:</b> Any men&#39;s cufflink (ideally a raven or initial K).</p></details></td>
+  <td class="small">early · Hidden for the hunt<div class="muted">Players find it during the evidence hunt. Kevin must recognize it.</div></td>
+  <td class="small">On the floor near the &quot;study&quot; area, half under a rug or chair leg.</td></tr><tr id="destroyed-will" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="destroyed-will"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>The destroyed will</b>  <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">LAST WILL AND TESTAMENT OF ARTHUR BLACKWOOD
+
+&quot;...the remainder of my estate shall pass...&quot;
+
+[the recipient&#39;s name is torn and scorched away]
+</div><p class="small"><b>Truth:</b> Arthur tore it up himself that afternoon (~4 PM). Clara reveals this in Round Three.</p></details></td>
+  <td class="small">late · Hidden for the hunt<div class="muted">Found late in Round One. Tear and tea-stain the edges; don&#39;t actually burn it at the party.</div></td>
+  <td class="small">Near a fireplace, in a trash basket, or in a decorative box.</td></tr><tr id="molly-letter" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="molly-letter"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Arthur&#39;s threatening letter to Molly</b>  <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">Molly —
+
+We need to discuss the Monroe acquisition tonight.
+I know what happened.
+If you knowingly deceived me, I will have no choice but to involve the authorities.
+
+— A.B.
+</div><p class="small"><b>Truth:</b> Arthur later concluded Molly was deceived too (see molly-cleared-note). The letter was written before he traced the forger, and never sent.</p></details></td>
+  <td class="small">mid · Hidden for the hunt<div class="muted">Hidden behind a framed picture. Molly should read the word IF with emphasis.</div></td>
+  <td class="small">Behind a framed picture in the &quot;gallery&quot; (any wall frame).</td></tr><tr id="phone" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="phone"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Arthur&#39;s phone</b> <span class="pill core">critical</span> <span class="pill info">prop</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">ARTHUR BLACKWOOD: iPhone (recovered beneath the desk)
+
+Last outgoing message, 9:29 PM
+To: Morgan Leibold
+
+&quot;MY STUDY. 9:35. WE SETTLE THIS TONIGHT.&quot;
+</div><p class="small"><b>Truth:</b> Arthur summoned Morgan to confront her about the theft.</p></details></td>
+  <td class="small">end · Reggie<div class="muted">Reggie holds it up at the end of Round One and reads the last message.</div></td>
+  <td class="small">Reggie keeps it on him.</td></tr></table></div>
+<div class="card"><h3 style="margin-top:0">Must come out this round (spoken)</h3><ul><li>★ Arthur alive and alone at 9:31: <span class="muted">Antoinette &quot;Annie&quot;</span> </li><li>&quot;At midnight, I&#39;m giving it all away&quot;: <span class="muted">Carlotta &quot;Carley&quot; Blackwood</span> </li><li>Arthur preparing an enormous charitable transfer: <span class="muted">Hannah Wellington</span> </li><li>James removed from the will (8:50 confrontation): <span class="muted">James &quot;Jimmy&quot; Calloway</span> </li><li>Molly in the study at 8:45; raven on the desk: <span class="muted">Molly Monroe</span> </li><li>The painting is a forgery: <span class="muted">Martin</span> </li><li>&quot;You&#39;re going to regret this&quot; (9:20): <span class="muted">Kevin Blackwood</span> </li><li>★ Arthur suspected theft (no amount): <span class="muted">Kushington &quot;Kush&quot;</span> </li><li>★ Arthur arguing with a woman about money at 9:36: <span class="muted">Maya Rose</span> </li><li>&quot;If something happens to me, don&#39;t assume it was natural&quot;: <span class="muted">Shea</span> </li><li>★ Illness didn&#39;t kill him; he was struck: <span class="muted">Dr. Noor Beaumont</span> </li><li>★ The house has hidden servants&#39; passages: <span class="muted">Professor Joji Beaumont</span> </li><li>★ Strange library bookcase/door with a draft (9:00): <span class="muted">Timothy &quot;Tim&quot;</span> </li><li>Arthur&#39;s target &quot;isn&#39;t family&quot;: <span class="muted">Malik</span> </li><li>Red leather folder on the desk at 9:10: <span class="muted">Madeleine &quot;Maddie&quot;</span> </li></ul></div><h2>Round Two</h2>
+<div class="card"><table><tr><th>Prep</th><th>Evidence</th><th>When / who</th><th>Hide</th></tr>
+<tr id="black-thread" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="black-thread"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>The black thread</b>  <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">BLACKWOOD EVIDENCE: A few black threads, velvet, snagged on the bronze
+raven&#39;s beak.
+</div><p class="small"><b>Truth:</b> From Arthur&#39;s own black velvet smoking jacket. The cuff snagged as he fell. Shea confirms in Round Three.</p><p class="small"><b>Prop:</b> A few strands of black velvet or black yarn.</p></details></td>
+  <td class="small">mid · Hidden for the hunt<div class="muted">Found caught on the raven (or in a small evidence bag &quot;from the raven&quot;). It should not match any one guest.</div></td>
+  <td class="small">Tied around the raven prop&#39;s beak, or in a clear bag beside it in the &quot;study.&quot;</td></tr><tr id="calendar" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="calendar"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Arthur&#39;s calendar</b>  <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">ARTHUR BLACKWOOD — SATURDAY
+
+8:30 — Clara
+8:50 — James
+9:20 — Kevin
+9:31 — Drink
+9:35 — M.L.
+10:00 — Lindsey
+11:30 — Carlotta
+12:00 — Announcement
+</div><p class="small"><b>Truth:</b> M.L. is Morgan Leibold. She admits it. A scheduled meeting isn&#39;t murder.</p></details></td>
+  <td class="small">early · Hidden for the hunt<div class="muted">Found on (or near) the desk in Round Two.</div></td>
+  <td class="small">On the &quot;study&quot; desk under a paperweight, or tucked in a book nearby.</td></tr><tr id="library-map" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="library-map"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>The old floor plan</b> <span class="pill core">critical</span> <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">BLACKWOOD MANOR — GROUND FLOOR — S. BLACKWOOD, 1891
+
+[old-looking plan; mark STUDY and LIBRARY on either side of one wall,
+with a faint dotted line between them. Do NOT label it &quot;secret passage&quot;.]
+
+[small, faded, slightly crooked office stamp in a bottom corner, easy to miss:]
+RECEIVED · B.L.C. · 14 AUG
+</div><p class="small"><b>Truth:</b> The faint line is the Raven&#39;s Walk passage, study to library. The stamp is Blackwood Legal Counsel&#39;s filing stamp from the landmark application, a disguised hint that Morgan&#39;s office had the plans and could know about the passage. Never point it out; let a sharp guest notice that &quot;B.L.C.&quot; matches the ledger&#39;s &quot;AUTHORIZED: BLC&quot;.
+</p><p class="small"><b>Fallback:</b> If Joji is somehow absent, Reggie produces it and asks Tim what he makes of it.</p></details></td>
+  <td class="small">early · Professor Joji Beaumont<div class="muted">Reggie gives it to Joji at the start of Round Two (or put it in Joji&#39;s Round Two envelope).</div></td>
+  <td class="small">Joji&#39;s Round Two envelope.</td></tr><tr id="lv-note" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="lv-note"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>The &quot;L.V.&quot; note</b>  <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">L.V.
+
+We need to discuss the transfers before midnight.
+Come prepared to explain everything.
+</div><p class="small"><b>Truth:</b> Arthur was asking Lindsey to walk him through the banking evidence she&#39;d found. She was helping him, not accused.</p></details></td>
+  <td class="small">mid · Hidden for the hunt<div class="muted">Let it breathe. Do NOT immediately clear Lindsey.</div></td>
+  <td class="small">In a coat pocket on the coat rack, or inside a book on the bar.</td></tr><tr id="morgan-email" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="morgan-email"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Arthur&#39;s email to Morgan</b>  <span class="pill info">prop</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">From: Arthur Blackwood
+To: Morgan Leibold
+Sent: Thursday
+
+Morgan,
+
+I need you to review the Wellington, Monroe and Vale matters before
+midnight. There are too many loose ends.
+
+— Arthur
+</div><p class="small"><b>Truth:</b> Genuine. Wellington is Hannah&#39;s gift, Monroe is Molly&#39;s painting, Vale is Lindsey&#39;s banking. It gives Morgan a legitimate reason to be everywhere in the evidence.</p></details></td>
+  <td class="small">mid · Morgan Leibold<div class="muted">Morgan produces it herself from her Round Two envelope.</div></td>
+  <td class="small">Morgan&#39;s Round Two envelope.</td></tr><tr id="red-folder" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="red-folder"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>The red leather folder</b>  <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">[red folder containing]
+1. Molly&#39;s painting authentication: &quot;Lady Evangeline Blackwood, att. J.S. Sargent&quot;
+2. Kevin&#39;s inheritance documents: allowance schedule, &quot;TERMINATE 12:00 AM&quot; pencilled in
+3. Lindsey&#39;s banking memo: &quot;Six anomalous transfers. Recommend urgent review. — L. Vale&quot;
+4. Blackwood charity paperwork: &quot;Deed of Gift: The Wellington Foundation&quot;
+5. A tab labeled CONFIDENTIAL — LEGAL, with the page torn out
+</div><p class="small"><b>Truth:</b> Morgan carried the folder through the passage at 9:39, tore out the legal page (she still has it) and shoved the folder behind the library books. Finding it in the library is consistent with the passage, but doesn&#39;t name her.</p><p class="small"><b>Prop:</b> A red folder and five sheets; tear out the last one.</p></details></td>
+  <td class="small">mid · Hidden for the hunt<div class="muted">Reggie announces it missing after the murder (Maddie saw it at 9:10). Players find it during Round Two.</div></td>
+  <td class="small">In the &quot;library&quot; area, behind books on a shelf.</td></tr><tr id="terrace-camera" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="terrace-camera"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Terrace camera still</b>  <span class="pill info">physical</span> <span class="pill flex">new</span>
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">BLACKWOOD SECURITY: TERRACE CAM 02
+
+21:22:14  Figure exits drawing-room doors (dark overcoat). Paces.
+21:31:50  Figure smoking at balustrade.
+21:38:03  Figure on phone? Pacing.
+21:45:00  CAMERA POWER INTERRUPTED
+21:46:41  CAMERA RESTORED. Figure at balustrade.
+21:47:30  Figure re-enters drawing room.
+
+[grainy still: a man in an overcoat at the balustrade, face clearly Kevin&#39;s]
+</div><p class="small"><b>Truth:</b> Kevin was on the terrace from 9:22 to 9:47 in Arthur&#39;s coat. Clears him of the murder.</p></details></td>
+  <td class="small">late · Reggie<div class="muted">When Kevin demands the footage (his Round Two envelope), Reggie makes him sweat, then produces the printout.</div></td>
+  <td class="small">Reggie keeps it on him.</td></tr><tr id="torn-ledger" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="torn-ledger"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>The torn financial ledger</b>  <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">[torn page from a ledger]
+
+$300,000
+$450,000
+$275,000
+$600,000
+$375,000
+$400,000
+───────────
+TOTAL  $2,400,000
+
+AUTHORIZED: BLC
+</div><p class="small"><b>Truth:</b> BLC is Blackwood Legal Counsel. Kush and Lindsey confirm in Round Three.</p></details></td>
+  <td class="small">late · Hidden for the hunt<div class="muted">Late Round Two. Let people argue about what BLC means.</div></td>
+  <td class="small">Under a seat cushion or in a magazine rack in the main room.</td></tr></table></div>
+<div class="card"><h3 style="margin-top:0">Must come out this round (spoken)</h3><ul><li>★ Time of death 9:35 to 9:40, before the blackout: <span class="muted">Dr. Noor Beaumont</span> </li><li>★ The passage connects study to library: <span class="muted">Professor Joji Beaumont</span> </li><li>★ James saw Morgan by the library at 9:40: <span class="muted">James &quot;Jimmy&quot; Calloway</span> </li><li>★ Alma saw Morgan emerge near the library at 9:41 (&quot;restroom&quot;): <span class="muted">Alma</span> </li><li>★ The woman said &quot;You&#39;ll destroy me&quot;: <span class="muted">Maya Rose</span> </li><li>&quot;It&#39;s not about inheritance. Follow the money.&quot;: <span class="muted">Malik</span> </li><li>★ $2.4 MILLION: <span class="muted">Kushington &quot;Kush&quot;</span> </li><li>Clara approached the study at 9:33, saw someone, turned back: <span class="muted">Clara</span> </li><li>Shea approached the study ~9:40 with medication, turned back: <span class="muted">Shea</span> </li><li>Lexi&#39;s $500K Vivienne Fund, never signed: <span class="muted">Alexandra &quot;Lexi&quot; St. Clair</span> </li><li>Kim is The Keyhole: <span class="muted">Kim</span> </li><li>Louis was snooping in the library at 9:00: <span class="muted">Louis</span> </li><li>Arthur scripted a midnight séance to expose a thief: <span class="muted">Aalvia &quot;Albie&quot;</span> </li><li>Kevin demands the terrace footage; cufflink explained: <span class="muted">Kevin Blackwood</span> </li></ul></div><h2>Round Three</h2>
+<div class="card"><table><tr><th>Prep</th><th>Evidence</th><th>When / who</th><th>Hide</th></tr>
+<tr id="bank-statement" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="bank-statement"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Arthur&#39;s folded bank statement (final evidence)</b> <span class="pill core">critical</span> <span class="pill info">prop</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">BLACKWOOD HOLDINGS: TRANSFER AUTHORIZATIONS
+
+Six transfers, totaling $2,400,000
+Authorization origin: BLACKWOOD LEGAL COUNSEL
+Authorized user ID: ML-0427
+
+[across the top, in Arthur&#39;s handwriting:]
+LEGAL. $2.4M. MIDNIGHT.
+</div><p class="small"><b>Truth:</b> The money trail ends at Morgan&#39;s credentials. It still doesn&#39;t prove murder by itself; it needs Annie, Maya, Noor, Joji, Jimmy and Alma.</p><p class="small"><b>Fallback:</b> If Kevin isn&#39;t cast, Reggie &quot;finds&quot; it in Arthur&#39;s coat himself.</p></details></td>
+  <td class="small">end · Kevin Blackwood<div class="muted">Kevin finds it in the pocket of Arthur&#39;s coat (which he grabbed at 9:22) and hands it to Reggie, who reads it as the final physical evidence. This merges Part One&#39;s bank statement with Part Two&#39;s Clue 10.</div></td>
+  <td class="small">Kevin&#39;s Round Three envelope.</td></tr><tr id="carlotta-note" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="carlotta-note"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Arthur&#39;s note to Carlotta</b>  <span class="pill info">prop</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">Carlotta — you were right. Tonight I stop protecting the people who
+betrayed my trust. Whatever happens, know that none of this was your
+burden to carry. — Dad
+</div><p class="small"><b>Truth:</b> Meant for their 11:30 meeting. &quot;You were right&quot; refers to her warning, years ago, that he trusted the wrong people.</p><p class="small"><b>Fallback:</b> If Carlotta is somehow absent, Reggie reads it as &quot;a note addressed to Carlotta.&quot;</p></details></td>
+  <td class="small">early · Carlotta &quot;Carley&quot; Blackwood<div class="muted">In Carlotta&#39;s Round Three envelope. She reads it and asks, &quot;Who betrayed him?&quot;</div></td>
+  <td class="small">Carlotta&#39;s Round Three envelope.</td></tr><tr id="draft-letter" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="draft-letter"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Arthur&#39;s unfinished letter</b>  <span class="pill info">physical</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">I trusted you because you were supposed to protect this family.
+Instead, you used that trust to—
+
+[the rest is missing]
+</div><p class="small"><b>Truth:</b> Written to Morgan, the family&#39;s lawyer and &quot;protector.&quot; It also fits Carlotta, Kevin, Lindsey and James on a first read.</p></details></td>
+  <td class="small">early · Hidden for the hunt<div class="muted">Found in Round Three. Keep it ambiguous.</div></td>
+  <td class="small">Folded inside the desk blotter or a book on the &quot;study&quot; desk.</td></tr><tr id="malik-message" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="malik-message"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Arthur&#39;s scheduled message to Malik</b> <span class="pill core">critical</span> <span class="pill info">prop</span> 
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">SCHEDULED: Sunday 12:00 AM
+To: Malik
+
+If you&#39;re reading this, the truth is public. The theft came from inside my
+legal operation. I trusted the wrong person.
+
+— A.B.
+</div><p class="small"><b>Truth:</b> Arthur&#39;s planned midnight exposure, routed through Malik&#39;s podcast.</p></details></td>
+  <td class="small">mid · Reggie<div class="muted">After the financial reveal, Reggie hands Malik the printout (and can fire Malik&#39;s cue text). Malik reads it aloud.</div></td>
+  <td class="small">Reggie keeps it on him.</td></tr><tr id="molly-cleared-note" class="">
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="molly-cleared-note"><input type="hidden" name="done" value="1"><button class="btn small ghost" type="submit">☐ prep</button></form></td>
+  <td><b>Arthur&#39;s note about the forger</b>  <span class="pill info">prop</span> <span class="pill flex">new</span>
+    <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">Martin —
+
+I&#39;ve traced the Evangeline forgery to Lucien Vasse. Molly was taken in as
+badly as I was. I want him, not her.
+
+— A.
+</div><p class="small"><b>Truth:</b> Arthur concluded Molly was a victim, not a fraud. Fills the gap in Part Two&#39;s &quot;another note establishes...&quot;</p><p class="small"><b>Fallback:</b> If Martin isn&#39;t cast, Reggie &quot;finds&quot; it in the desk and reads it.</p></details></td>
+  <td class="small">mid · Martin<div class="muted">In Martin&#39;s Round Three envelope. He reads it aloud and Molly is cleared.</div></td>
+  <td class="small">Martin&#39;s Round Three envelope.</td></tr></table></div>
+<div class="card"><h3 style="margin-top:0">Must come out this round (spoken)</h3><ul><li>★ Annie passed Morgan heading to the study at 9:32: <span class="muted">Antoinette &quot;Annie&quot;</span> </li><li>Arthur tore up the will himself: <span class="muted">Clara</span> </li><li>★ Transfers authorized through Blackwood Legal Counsel: <span class="muted">Kushington &quot;Kush&quot;</span> </li><li>★ Lindsey independently confirms ML-0427 = BLC: <span class="muted">Lindsey Vale</span> </li><li>The black thread is Arthur&#39;s own jacket: <span class="muted">Shea</span> </li><li>&quot;Then why did we all assume he died during the blackout?&quot;: <span class="muted">Shea</span> </li><li>&quot;Who benefits from us believing he died in the dark?&quot;: <span class="muted">Aalvia &quot;Albie&quot;</span> </li><li>Kim saw Louis climb out of the dining-room wall at 9:46: <span class="muted">Kim</span> </li><li>The blackout started in the dining room and kitchens: <span class="muted">Timothy &quot;Tim&quot;</span> </li><li>Why James was cut: the $300K loan from Jimmy Friedman: <span class="muted">James &quot;Jimmy&quot; Calloway</span> </li><li>Single blow, close range, no struggle: <span class="muted">Dr. Noor Beaumont</span> </li></ul></div>
+</main></body></html>

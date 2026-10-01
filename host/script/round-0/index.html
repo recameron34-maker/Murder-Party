@@ -1,0 +1,228 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Run of show</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../../">Preview home</a></div><nav class="host"><a href="../../" class="">Dashboard</a><a href="../" class="on">Run of show</a><a href="../../texts/" class="">Texts</a><a href="../../roster/" class="">Roster</a><a href="../../characters/" class="">Characters</a><a href="../../evidence/" class="">Evidence</a><a href="../../timeline/" class="">Timeline</a><a href="../../flex/" class="">Flex</a><a href="../../check/" class="">Checker</a><a href="../../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Run of show</h1>
+
+<p class="inline-form small"><a class="btn small ghost" href="../">All</a><a class="btn small " href="./">Before the Supper</a><a class="btn small ghost" href="../round-1/">Round One</a><a class="btn small ghost" href="../round-2/">Round Two</a><a class="btn small ghost" href="../round-3/">Round Three</a><a class="btn small ghost" href="../round-4/">The reveal</a><a class="btn small ghost" href="../round-9/">Reference</a></p>
+<p class="small muted">🆕 marks material added for the Part Two upgrades. Part One itself is unchanged in docs/source.</p>
+<section class="seg kind-reference" id="00-truth">
+  <h2>The truth (for Ross&#39;s eyes only)</h2>
+  <div class="meta">Before the Supper · reference</div>
+  
+  
+  <p><strong>Morgan killed Arthur.</strong> At about 9:38, with the bronze raven, over the
+$2.4M she stole through Blackwood Legal Counsel. She escaped through the
+hidden study-to-library passage (the Raven&#39;s Walk) carrying the red folder,
+tore out the CONFIDENTIAL LEGAL page, and hid the folder behind the library
+books.</p>
+<p>The full true timeline is on the <strong>Timeline</strong> page. The key minutes:</p>
+<ul>
+<li><strong>9:29</strong> Arthur texts Morgan: &quot;My study. 9:35. We settle this tonight.&quot;</li>
+<li><strong>9:31</strong> Annie delivers the Reckoning. Arthur alive and alone.</li>
+<li><strong>9:32</strong> Annie passes Morgan heading to the study.</li>
+<li>🆕 <strong>9:33</strong> Clara approaches, sees someone down the hall, turns back.</li>
+<li><strong>9:34</strong> Morgan enters.</li>
+<li><strong>9:36–9:37</strong> Maya overhears: &quot;If the money isn&#39;t back by midnight, I&#39;m going public.&quot; / &quot;You&#39;ll destroy me.&quot;</li>
+<li><strong>~9:38</strong> Morgan kills Arthur.</li>
+<li><strong>9:39</strong> Morgan escapes through the passage with the red folder.</li>
+<li>🆕 <strong>~9:40</strong> Shea approaches with medication, hears voices, turns back.</li>
+<li><strong>9:40–9:41</strong> James and Alma see Morgan at the library end.</li>
+<li><strong>9:45</strong> THE LIGHTS GO OUT. An old circuit trips during Midnight Supper prep.</li>
+</ul>
+<p><strong>Arthur is already dead.</strong> The blackout is unrelated. It&#39;s deliberately
+mundane. The killer didn&#39;t plan it. Everyone merely assumed the murder
+happened during it.</p>
+
+</section><section class="seg kind-checklist" id="01-before">
+  <h2>Before the game</h2>
+  <div class="meta">Before the Supper · checklist · <i>Changed: Prop list now comes from the evidence files; Blackmail Cash, hint cards and the Part Two clues added.</i></div>
+  
+  
+  <p>You need (see <strong>Evidence</strong> for the full list with hiding spots, and <strong>Print</strong> for everything printable):</p>
+<ul>
+<li>Character links and passphrases for every cast guest (Host panel → Roster)</li>
+<li>Round One, Two and Three envelopes (Print → Envelopes)</li>
+<li>Arthur&#39;s phone clue</li>
+<li>🆕 Physical evidence by round, hidden in the designated game areas before guests arrive</li>
+<li>🆕 Props that live inside envelopes: Morgan&#39;s email (R2), the old floor plan (Joji, R2), Carlotta&#39;s note (R3), Martin&#39;s note (R3), Arthur&#39;s bank statement (Kevin, R3)</li>
+<li>Malik&#39;s scheduled-message printout</li>
+<li>🆕 Terrace camera still (keep on you)</li>
+<li>🆕 Blackwood Blackmail Notes: $3,000 per guest (three $1,000 bills), plus a float for rewards</li>
+<li>🆕 Hint cards</li>
+<li>Accusation ballots and pens</li>
+<li>One sealed SOLUTION envelope</li>
+</ul>
+<p>Keep everything organized by round. Do not give anyone future envelopes early.</p>
+<p>🆕 <strong>Tonight&#39;s cast: 25 guests.</strong> Check the Roster before you
+print anything. Spares assigned to late guests appear automatically.</p>
+
+</section><section class="seg kind-speech" id="02-arrivals">
+  <h2>Arrivals</h2>
+  <div class="meta">Before the Supper · speech · <i>Changed: Greetings added for more of the cast.</i></div>
+  
+  
+  <p>Let everyone arrive, get drinks and admire costumes. Stay in character as Reggie.</p>
+<p>Suggested greetings:</p>
+<p><strong>To Carlotta:</strong> &quot;Well. The prodigal Blackwood returns.&quot;</p>
+<p><strong>To Clara:</strong> &quot;My uncle&#39;s former fiancée. This should be completely comfortable for everyone.&quot;</p>
+<p><strong>To Lexi/Maya:</strong> &quot;Birthday girls! Arthur promised surprises. I have been specifically instructed not to ask what they are, which obviously means I&#39;ve been desperate to know.&quot;</p>
+<p><strong>To Kush:</strong> &quot;Kushington. I remain unclear what a forensic accountant does and increasingly concerned you&#39;re going to explain it.&quot;</p>
+<p>🆕 <strong>To Morgan:</strong> &quot;Counselor. Billing by the minute tonight, or is this pro bono?&quot;</p>
+<p>🆕 <strong>To Albie:</strong> &quot;Our medium. Do let me know if any of my ancestors have notes on the canapés.&quot;</p>
+<p>🆕 <strong>To Louis:</strong> &quot;Louis. You look… dusty. Have you been in the walls?&quot; <em>(He&#39;ll panic. Enjoy it.)</em></p>
+<p>🆕 <strong>To Annie:</strong> &quot;Antoinette. The only person in this house who knows where everything is, including the bodies.&quot;</p>
+<p>🆕 <strong>To Noor and Joji:</strong> &quot;The Beaumonts. Doctor, Professor, and, I&#39;m told, heir apparent. Annie has your Reckoning, Noor. The safe one.&quot;</p>
+
+</section><section class="seg kind-speech" id="03-toast">
+  <h2>Birthday toast</h2>
+  <div class="meta">Before the Supper · speech</div>
+  
+  
+  <p>Once most people have drinks:</p>
+<p>&quot;Before my uncle inevitably makes this evening about himself…&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;…a toast.&quot;</p>
+<p><em>Raise glass.</em></p>
+<p>&quot;Blackwood Manor has the pleasure of celebrating TWO birthdays this weekend. Alexandra St. Clair and Maya Rose.&quot;</p>
+<p>&quot;Arthur apparently prepared surprises.&quot;</p>
+<p><em>Look around suspiciously.</em></p>
+<p>&quot;Knowing my uncle, one will be sentimental and the other will involve paperwork.&quot;</p>
+<p>&quot;To Lexi and Maya.&quot;</p>
+<p><em>Toast.</em></p>
+
+</section><section class="seg kind-speech" id="04-opening">
+  <h2>Formal opening</h2>
+  <div class="meta">Before the Supper · speech · <i>Changed: Added the raven legend and the Midnight Supper rules (atmosphere only).</i></div>
+  
+  
+  <p>Gather everyone. Wait until reasonably quiet. Then:</p>
+<p>&quot;Ladies and gentlemen… Welcome to Blackwood Manor.&quot;</p>
+<p>&quot;My name is Reginald Blackwood.&quot;</p>
+<p>&quot;Reggie, unless you&#39;re a creditor.&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;My uncle, Arthur Blackwood, has hosted the Midnight Supper for nearly thirty years.&quot;</p>
+<p>&quot;Some of you are family.&quot; <em>Gesture toward Carlotta/Kevin.</em> &quot;Some are friends.&quot; &quot;Some are business associates.&quot;</p>
+<p><em>Look around.</em></p>
+<p>&quot;And based on this guest list, several of you are people Arthur absolutely should not have invited into the same house.&quot;</p>
+<p><em>Pause for laugh.</em></p>
+<p>&quot;Every person here received the same invitation.&quot; <em>Hold up card.</em> &quot;&#39;Come to Blackwood Manor. At midnight, everything changes.&#39;&quot;</p>
+<p>&quot;Arthur has refused to tell me what that means.&quot;</p>
+<p>&quot;He has, however, assured me that his announcement will be…&quot; <em>Look at card.</em> &quot;…&#39;impossible to ignore.&#39;&quot;</p>
+<p>🆕 &quot;You&#39;ll find the rules of the Supper on your cards. No one leaves before midnight. One chair stays empty for the last Blackwood to die. And whatever is said at midnight cannot be unsaid.&quot;</p>
+<p>🆕 &quot;And please, nobody say the bird&#39;s name at the table. The raven on Arthur&#39;s desk is a hundred and thirty years old and, according to family legend, <em>extremely</em> sensitive.&quot;</p>
+<p>&quot;So drink. Talk. Lie about your net worth. And enjoy yourselves.&quot;</p>
+<p>&quot;At midnight, apparently, everything changes.&quot;</p>
+
+</section><section class="seg kind-cue" id="05-mingle">
+  <h2>Pre-murder mingle</h2>
+  <div class="meta">Before the Supper · cue</div>
+  
+  
+  <p>Give them 20–30 minutes. They know their characters but DO NOT have Round
+One envelopes yet. 🆕 Their phones already show their &quot;history&quot; texts, so
+encourage them to read their phones.</p>
+<p>Encourage introductions. If things are slow:</p>
+<p>&quot;Perhaps everyone should introduce themselves and explain why Arthur Blackwood considers them important enough to ruin my seating chart.&quot;</p>
+<p>Go around quickly.</p>
+<p>🆕 Quietly hide the Round One physical evidence now if you haven&#39;t (cufflink near the study, Molly&#39;s letter behind a frame). Hold the destroyed will for late Round One.</p>
+
+</section><section class="seg kind-cue" id="06-blackout">
+  <h2>The blackout</h2>
+  <div class="meta">Before the Supper · cue · <i>Changed: Added the red-folder announcement (Part Two).</i></div>
+  <p class="small">Evidence: <a class="pill" href="../../evidence/#red-folder">The red leather folder</a> </p>
+  
+  <p>At the planned time, dim/turn off lights. Wait. Make a loud crash. After
+approximately 10–20 seconds, restore them. <strong>Do NOT leave lights out for 90
+real seconds.</strong></p>
+<p>Then: &quot;Well. That seems ominous.&quot;</p>
+<p>Someone should &quot;discover&quot; Arthur missing.</p>
+<p>&quot;My uncle was supposed to be preparing his announcement.&quot; <em>Pause.</em> &quot;I&#39;ll check the study.&quot;</p>
+<p><em>Leave briefly. Return. Do not smile.</em></p>
+<p>&quot;Ladies and gentlemen. Arthur Blackwood is dead.&quot;</p>
+<p><em>Pause.</em></p>
+<p>&quot;He is lying behind his desk.&quot;</p>
+<p>&quot;Beside him is the Blackwood Raven, an eight-pound bronze statue from his collection.&quot;</p>
+<p>&quot;It appears to have been used to strike him.&quot;</p>
+<p>🆕 &quot;And there is an empty space on his desk. Madeleine, I believe you were in the study earlier. Was there something there?&quot;</p>
+<p>🆕 <em>Let Maddie describe the red leather folder.</em> &quot;A red leather folder. It&#39;s gone. Whoever did this took it with them.&quot;</p>
+<p>&quot;The storm has washed out the lower road. The police are on their way. But until they arrive…&quot;</p>
+<p><em>Look around.</em></p>
+<p>&quot;…nobody leaves Blackwood Manor.&quot;</p>
+
+</section>
+</main></body></html>

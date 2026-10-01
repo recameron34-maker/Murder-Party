@@ -1,0 +1,247 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Blackwood Manor</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+header.title{padding:28px 0 6px;text-align:center}
+header.title .role{color:var(--gold);font-variant:small-caps;letter-spacing:.08em}
+header.title .tag{font-style:italic;color:var(--muted);max-width:32em;margin:.6em auto 0}
+nav.tabs{position:sticky;top:0;z-index:5;display:flex;gap:4px;justify-content:space-between;background:rgba(13,9,15,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:8px 0;margin:0 -16px;padding-left:16px;padding-right:16px}
+nav.tabs a{flex:1;text-align:center;text-decoration:none;color:var(--muted);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.05rem;padding:6px 2px;border-radius:999px;position:relative}
+nav.tabs a:hover,nav.tabs a:focus{color:var(--gold2)}
+.badge{display:inline-block;min-width:1.3em;padding:0 .35em;border-radius:999px;background:var(--blood);color:#fff;font:600 .72rem/1.3em system-ui,sans-serif;margin-left:4px;vertical-align:middle}
+.badge[hidden]{display:none}
+section.panel{scroll-margin-top:60px}
+details.secret{border:1px dashed var(--blood);border-radius:var(--radius);padding:10px 14px;background:rgba(143,38,54,.08)}
+details.secret summary{cursor:pointer;color:#e7a0aa;font-weight:600}
+.evening{list-style:none;padding:0;margin:0}
+.evening li{display:grid;grid-template-columns:5.2em 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.evening li:last-child{border-bottom:0}
+.evening .t{color:var(--gold);font-variant-numeric:tabular-nums;font-size:.92rem;padding-top:2px}
+.rel{list-style:none;padding:0}
+.rel li{padding:6px 0;border-bottom:1px solid var(--line)}
+.rel b{color:var(--gold2)}
+.envelope{position:relative}
+.envelope.sealed{text-align:center;color:var(--muted);padding:26px 16px}
+.seal{width:54px;height:54px;border-radius:50%;margin:0 auto 10px;background:radial-gradient(circle at 35% 30%,#c44a5c,#7a1c2b 60%,#4d0f19);display:grid;place-items:center;color:#f3d3d8;font-size:1.4rem;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+.reveal{border-top:1px solid var(--line);margin-top:10px;padding-top:8px}
+.reveal h4{margin:.2em 0 .3em;color:#e7a0aa;font-size:1.05rem}
+.phone{background:#0b080c;border:1px solid var(--line);border-radius:22px;padding:12px}
+.msg{margin:10px 0;max-width:92%}
+.msg .from{font:600 .78rem/1.2 system-ui,sans-serif;color:var(--gold);margin:0 0 3px 8px}
+.msg .bubble{background:#231a26;border:1px solid #3a2c40;border-radius:16px 16px 16px 4px;padding:8px 12px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:.95rem;line-height:1.4;white-space:pre-wrap}
+.msg .when{font:.72rem system-ui,sans-serif;color:var(--muted);margin:3px 0 0 8px}
+.msg.new .bubble{border-color:var(--gold);box-shadow:0 0 0 2px rgba(201,164,92,.25)}
+.empty{color:var(--muted);text-align:center;padding:12px}
+#toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(150%);transition:transform .35s,opacity .35s;opacity:0;visibility:hidden;pointer-events:none;background:#241a27;border:1px solid var(--gold);color:var(--ink);border-radius:16px;padding:10px 14px;max-width:min(92vw,420px);z-index:20;box-shadow:0 10px 30px rgba(0,0,0,.6);font-family:system-ui,sans-serif;font-size:.92rem}
+#toast.show{transform:translateX(-50%) translateY(0);opacity:1;visibility:visible}
+#banner{position:fixed;top:0;left:0;right:0;z-index:30;background:var(--blood);color:#fff;text-align:center;padding:12px 16px;font-family:system-ui,sans-serif}
+#banner[hidden]{display:none}
+#banner button{margin-left:10px}
+.rules li{margin:.4em 0}
+footer{color:var(--muted);text-align:center;font-size:.85rem;padding:30px 0 50px}
+.login{min-height:100vh;display:grid;place-items:center;text-align:center}
+.login .card{max-width:420px;width:100%;padding:26px 20px}
+.login input{width:100%;text-align:center;margin:10px 0;font-size:18px}
+.err{color:#ff9fac}
+.preview-bar{background:#3b2a12;color:#f7dfa9;text-align:center;padding:8px;font-family:system-ui,sans-serif;font-size:.9rem}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../../../">Preview home</a></div>
+<div class="preview-bar">Host preview of Lady Courtney at Round 3. <a href="../../../characters/courtney/">Back to host</a></div>
+<div id="banner" hidden>A new envelope has been unsealed. <button class="btn small ghost" type="button" onclick="location.reload()">Open it</button></div>
+<main class="wrap">
+<header class="title">
+  <div class="role">Minor aristocrat (professional guest)</div>
+  <h1>Lady Courtney</h1>
+  <p class="tag">Your title is fake, your accent is fake, and you&#39;re the most convincing aristocrat in the room.</p>
+</header>
+<nav class="tabs" aria-label="Sections">
+  <a href="#character">You</a>
+  <a href="#envelopes">Envelopes</a>
+  <a href="#phone">Phone<span class="badge" id="unread" hidden>0</span></a>
+  <a href="#supper">Supper</a>
+</nav>
+
+<section class="panel" id="character">
+  <h2>Who you are</h2>
+  <div class="card"><p>To the room you are <strong>Lady Courtney Fane-Whitlow</strong>, daughter of an Earl
+nobody can quite place. In reality you&#39;re Courtney, and you&#39;re a
+<strong>professional guest</strong>, paid to attend parties and make them look grander.
+Tonight&#39;s booking came through Hannah Wellington.</p>
+</div>
+  <h3>Your costume</h3>
+  <div class="card"><p>Aristocrat by way of a costume shop: a tiara (slightly too large), opera
+gloves, a sash with a crest you designed yourself, pearls, and a cut-glass
+accent that slips when you&#39;re drunk.</p>
+</div>
+  <h3>Your story</h3>
+  <div class="card"><p>You&#39;ve been a viscount&#39;s widow, a Hungarian countess and, once, briefly,
+a minor Romanov. You&#39;re very good. Hannah pays you $500 a night to make
+the Wellington galas look like they have titled supporters, and she
+brought you along tonight as &quot;an old family friend of the Blackwoods.&quot;</p>
+<p>You&#39;ve made one mistake already. At <strong>8:05</strong>, while Arthur was greeting
+guests in the Front Hall, you slipped into his empty study and took a
+<strong>selfie posing with the bronze raven</strong> &quot;for the grid.&quot; Then you put it
+back. You posted it. It has 214 likes. Your fingerprints are all over the
+murder weapon.</p>
+</div>
+  <h3>Your connections</h3>
+  <div class="card"><ul class="rel"><li><b>Hannah Wellington</b>: Your employer tonight. She&#39;s terrified you&#39;ll blow your cover. You&#39;re terrified she won&#39;t pay you.</li><li><b>Alexandra &quot;Lexi&quot; St. Clair</b>: You&#39;ve claimed you two were at school together. She keeps squinting at you.</li><li><b>Jimmy Friedman</b>: He&#39;s been trying to do a &quot;deal&quot; with you all night because you have a title. Possibly lucrative.</li><li><b>Molly Monroe</b>: You asked her whether the bird on Arthur&#39;s desk was &quot;worth anything.&quot; She looked at you like a forgery. Rich, coming from her.</li><li><b>Carlotta &quot;Carley&quot; Blackwood</b>: Two years ago you swept into Carley&#39;s Berlin gallery opening as a Hungarian countess, drank the champagne and bought nothing. She knows exactly what you are. She hasn&#39;t said. Yet.</li><li><b>Morgan Leibold</b>: Morgan has hired you twice to play minor nobility at Blackwood Legal client dinners. She knows exactly what you are, and she pays in cash.</li><li><b>Reggie (Ross)</b>: You&#39;ve worked rooms with Reggie before. He&#39;s the only Blackwood who finds your act funny, and the only one who knows your real surname.</li></ul></div>
+  <h3>Your evening</h3>
+  <div class="card"><ul class="evening"><li><span class="t">8:05 PM</span><span>You slip into the empty study and take a selfie with the bronze raven. Then you put it back exactly where it was.</span></li><li><span class="t">8:10 PM<br>– 9:00 PM</span><span>Telling anecdotes about &quot;Daddy&#39;s grouse moor.&quot;</span></li><li><span class="t">9:00 PM<br>– 9:45 PM</span><span>At the piano the whole time, playing badly or turning pages for whoever sings. The whole room saw you.</span></li></ul></div>
+  <h3>What you know</h3>
+  <div class="card"><ul><li>You handled the bronze raven at 8:05. Your fingerprints are on it. There&#39;s a photo.</li><li>You put it back on the desk exactly where you found it.</li><li>You were at the piano from 9:00 until the blackout.</li><li>Hannah Wellington hired you. You are not a lady.</li></ul></div>
+  <h3>Your secret</h3>
+  <details class="secret"><summary>Tap to reveal (check no one's looking)</summary><p>You&#39;re <strong>not a lady</strong>, you&#39;re a hired professional guest. And you <strong>posed
+with the murder weapon at 8:05</strong>, then posted it.</p>
+</details>
+  <h3>If someone pays you</h3>
+  <div class="card"><p class="small muted">Accept $1,000 and you must answer a question about these truthfully.</p><ul><li>You held the bronze raven tonight and posted a photo.</li><li>You&#39;re not an aristocrat; you&#39;re a hired professional guest.</li><li>Hannah Wellington is paying you to be here.</li></ul></div>
+  <h3>Private instructions</h3>
+  <div class="card"><ul><li>Never drop the accent unless paid, or very drunk.</li><li>In Round Two, your raven selfie comes out. Panic beautifully.</li><li>You may &quot;recognize&quot; any guest from &quot;a hunt ball.&quot;</li><li>Your piano alibi (9:00 to 9:45) is rock solid. Use it.</li></ul></div>
+  <h3>Secret mission <span class="small muted">· $1,000 from Reggie</span></h3>
+  <div class="card"><p>Get <strong>someone to invite you to their country house</strong> (any house, any
+country). Report the invitation to Reggie.</p>
+</div>
+</section>
+
+<section class="panel" id="envelopes">
+  <h2>Envelopes</h2>
+  <article class="card envelope">
+  <h3>Round One</h3>
+  <p>Be fabulous. Be devastated. Mention Daddy. Establish your alibi: the
+piano, from 9:00 until the lights went out.</p>
+
+  <div class="reveal"><h4>You must reveal this round</h4><ul><li>You were at the drawing-room piano from 9:00 until the blackout.</li></ul></div>
+</article><article class="card envelope">
+  <h3>Round Two</h3>
+  <p>Your post has been found. Show the room your phone (&quot;delete nothing,
+darling, it&#39;s evidence&quot;) with <strong>you posing with the bronze raven,
+posted at 8:05.</strong></p>
+<p>Your fingerprints are on the murder weapon. Panic. Then remember
+that Molly saw it back on the desk at 8:45, and that you were at the piano
+while Arthur died.</p>
+
+  <div class="reveal"><h4>You must reveal this round</h4><ul><li>You posed with the bronze raven in Arthur&#39;s study at 8:05 and posted the photo.</li></ul></div>
+</article><article class="card envelope">
+  <h3>Round Three</h3>
+  <p>If your cover is about to be blown, choose: confess you&#39;re a hired
+professional guest (dramatic, freeing), or bribe Hannah not to tell.</p>
+
+  <div class="reveal"><h4>You must reveal this round</h4><ul><li>Either confess you&#39;re a hired guest or bribe Hannah to keep quiet.</li></ul></div>
+</article>
+</section>
+
+<section class="panel" id="phone">
+  <h2>Phone</h2>
+  <p class="small muted">Texts arrive here during the night. Keep this page open; your phone will buzz.
+  <button class="btn small ghost" type="button" id="alerts" hidden>Turn on alerts</button></p>
+  <div class="phone" id="thread" data-known="courtney-hannah-history" data-round="3" data-tz="America/Chicago">
+    <div class="msg" data-id="courtney-hannah-history">
+  <div class="from">Hannah W.</div>
+  <div class="bubble">Tonight you&#39;re &#39;an old family friend of the Blackwoods.&#39; Do NOT do the Romanov thing again.</div>
+  <div class="when">4:00 PM</div>
+</div>
+  </div>
+</section>
+
+<section class="panel" id="supper">
+  <h2>The Midnight Supper</h2>
+  <div class="card"><p>You have been invited to the <strong>Midnight Supper</strong> at Blackwood Manor. This
+page is yours alone. Don&#39;t show it to anyone, don&#39;t forward the link, and
+don&#39;t let anyone read over your shoulder. Your secrets are worth real
+(fake) money tonight.</p>
+<p>More of this page unlocks as the night goes on. When Reggie breaks the seal
+on a new round, refresh and your next envelope will be waiting.</p>
+</div>
+  <h3>The house</h3>
+  <div class="card"><p><strong>Blackwood Manor</strong> was built in 1891 by Silas Blackwood out of black stone,
+coal money and money nobody asks about. Thirty-one rooms in use, a dozen
+that aren&#39;t. The portraits in the gallery are said to watch you. The east
+wing has been shut for decades. The lights do strange things in a storm.</p>
+<p>Rooms you&#39;ll hear about tonight: the <strong>Drawing Room</strong> (the party), the
+<strong>Front Hall</strong>, the <strong>Portrait Gallery</strong>, the <strong>Billiard Room</strong>, the
+<strong>Conservatory</strong>, the <strong>Dining Room</strong> (set for the Supper), the
+<strong>Terrace</strong>, the <strong>Library</strong>, and at the end of the <strong>East Corridor</strong>,
+<strong>Arthur&#39;s study</strong>.</p>
+</div>
+  <h3>The legend</h3>
+  <div class="card"><p>On Arthur&#39;s desk sits the <strong>Blackwood Raven</strong>, eight pounds of bronze that
+Silas had cast, people say, from the melted bell of a chapel he tore down.
+&quot;The raven keeps the Blackwood secrets,&quot; the family says.</p>
+<p>There&#39;s a less polite saying too: <em>every Blackwood who has tried to give the
+fortune away has died before the papers were signed.</em> Edmund in 1923, down
+the cellar stairs. Cordelia in 1979, of a fever, an hour before midnight.</p>
+<p>And last month the anonymous society column <strong>The Keyhole</strong> printed a blind
+item: <em>&quot;Which crumbling pile has a tenant nobody invited? Staff report
+footsteps inside the walls and a larder that empties itself.&quot;</em></p>
+</div>
+  <h3>Rules of the Supper</h3>
+  <div class="card"><ol class="rules"><li>No guest leaves Blackwood Manor before midnight.</li><li>One chair is left empty for the last Blackwood to die.</li><li>The host&#39;s midnight announcement is final. What is said at midnight cannot be unsaid.</li><li>Every guest arrives with a secret.</li><li>The east wing stays dark after eleven.</li><li>Never say the bird&#39;s name at the table. Call it <em>the bird</em>.</li><li>The last drink before midnight is poured by the house.</li></ol></div>
+  <h3>Blackmail Cash</h3>
+  <div class="card"><p>Everyone starts with <strong>$3,000 in Blackwood Blackmail Notes</strong> (three
+$1,000 bills).</p>
+<ul>
+<li>Offer another guest <strong>$1,000</strong> for <strong>one question</strong> about their
+character, whereabouts, secret or knowledge.</li>
+<li>If they <strong>accept the money, they must answer that question truthfully.</strong>
+They don&#39;t have to volunteer anything beyond the question.</li>
+<li>They may <strong>refuse</strong>, or demand more ($2,000, $3,000…). Refusing costs
+nothing except everyone now <em>really</em> wants to know why.</li>
+<li>Reggie pays <strong>$1,000</strong> for excellent accusations, found evidence,
+completed secret missions and committed performances.</li>
+<li><strong>$3,000</strong> buys a private hint card from Reggie. Hints nudge; they never
+solve.</li>
+</ul>
+</div>
+  <h3>How to play</h3>
+  <div class="card"><ul>
+<li>Stay in character, flirt, scheme, deflect, accuse. Be dramatic.</li>
+<li><strong>Don&#39;t invent evidence</strong> unless your envelope says you may.</li>
+<li>If your envelope says something <strong>must</strong> come out, make sure it&#39;s public
+before the round ends.</li>
+<li>Search only the designated game areas. Nothing is hidden in personal
+belongings, bedrooms, drawers or cabinets.</li>
+<li>Never open a future envelope early. (Kushington.)</li>
+</ul>
+</div>
+</section>
+
+<footer>
+  
+  <p><svg class="raven" viewBox="0 0 64 64" width="44" height="44" aria-hidden="true"><path fill="#c9a45c" d="M8 44c7-15 20-24 36-24-3 3-5 6-5 10 5 0 9 2 12 6-7 0-12 2-16 7l-6 12-4-9c-6 0-12 0-17-2z"/><circle cx="44" cy="27" r="1.6" fill="#0d090f"/></svg><br>Blackwood Manor</p>
+</footer>
+</main>
+<div id="toast" role="status" aria-live="polite"></div></body></html>

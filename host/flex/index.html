@@ -1,0 +1,131 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Flex coverage</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../">Preview home</a></div><nav class="host"><a href="../" class="">Dashboard</a><a href="../script/" class="">Run of show</a><a href="../texts/" class="">Texts</a><a href="../roster/" class="">Roster</a><a href="../characters/" class="">Characters</a><a href="../evidence/" class="">Evidence</a><a href="../timeline/" class="">Timeline</a><a href="./" class="on">Flex</a><a href="../check/" class="">Checker</a><a href="../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Flex coverage</h1>
+
+<p class="small muted">The game works whether or not flex characters show up. Lines tied to a flex character appear on other guests' pages only while that character is cast (confirmed or spare-assigned).</p>
+<table><tr><th>Flex character</th><th>Status</th><th>If not cast</th></tr>
+<tr><td><a href="../characters/savanah/">Savanah, &quot;Mrs. Blackwood&quot;</a></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">maybe · Savanah</div></td><td class="small">Nothing depends on Savanah. If she isn&#39;t cast, the widow red herring never
+appears. Clara&#39;s and Kim&#39;s Savanah lines are inside [[if:savanah]] blocks
+and disappear automatically.
+</td></tr><tr><td><a href="../characters/courtney/">Lady Courtney</a></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">maybe · Courtney</div></td><td class="small">Nothing depends on Courtney. If she isn&#39;t cast, the raven-selfie red
+herring and the Molly, Hannah, Lexi and Jimmy Friedman lines about her
+(inside [[if:courtney]] blocks) disappear.
+</td></tr><tr><td><a href="../characters/spare-rook/">Rook</a><div class="small muted">low effort</div></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">spare-unassigned</div></td><td class="small">Nothing depends on Rook. Every fact Rook carries is also carried by
+someone else: the blackout (Reggie and Tim), Molly&#39;s money worries
+(Molly), Clara&#39;s affair (Clara and Tim).
+</td></tr><tr><td><a href="../characters/spare-quill/">Quill</a><div class="small muted">low effort</div></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">spare-unassigned</div></td><td class="small">Nothing depends on Quill. Maya&#39;s own Round Three envelope already reveals
+the portrait gift.
+</td></tr><tr><td><a href="../characters/spare-hollis/">Hollis</a><div class="small muted">medium effort</div></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">spare-unassigned</div></td><td class="small">Nothing depends on Hollis. Molly is cleared by Martin&#39;s note (Round Three)
+either way; Hollis only corroborates it and adds a resolvable red herring
+(the 9:05 phone call).
+</td></tr><tr><td><a href="../characters/spare-vesper/">Vesper</a><div class="small muted">medium effort</div></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">spare-unassigned</div></td><td class="small">Nothing depends on Vesper. The &quot;raised up&quot; line corroborates the theft
+being an inside job without pointing to one person.
+</td></tr><tr><td><a href="../characters/spare-blake/">Blake</a><div class="small muted">medium effort</div></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">spare-unassigned</div></td><td class="small">Nothing depends on Blake. The bandage red herring is resolved by Blake&#39;s own
+Round Two envelope and by Jimmy Friedman&#39;s alibi line (inside an
+[[if:spare-blake]] block).
+</td></tr><tr><td><a href="../characters/spare-wren/">Wren</a><div class="small muted">high effort</div></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">spare-unassigned</div></td><td class="small">Nothing depends on Wren. If Wren isn&#39;t cast, the &quot;secret daughter&quot; rumor is
+just gossip Lexi can enjoy, and Lexi&#39;s [[if:spare-wren]] line disappears.
+</td></tr><tr><td><a href="../characters/spare-sterling/">Sterling</a><div class="small muted">high effort</div></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">spare-unassigned</div></td><td class="small">Nothing depends on Sterling. Pure flavor and scandal.
+</td></tr><tr><td><a href="../characters/spare-ellery/">Ellery</a><div class="small muted">high effort</div></td>
+<td><span class="pill warn">fallback</span> <div class="small muted">spare-unassigned</div></td><td class="small">Nothing depends on Ellery. The TV-bookcase line only corroborates Joji&#39;s
+Round Two reveal, after Joji has made it.
+</td></tr>
+</table>
+<h2>Before the Supper</h2><table><tr><th>Status</th><th>On whose page</th><th>Depends on</th><th>Line</th></tr><tr><td><span class="pill warn">hidden</span></td><td>James &quot;Jimmy&quot; Calloway<div class="small muted">relationship</div></td><td>Savanah, &quot;Mrs. Blackwood&quot;</td><td class="small">Arthur&#39;s 2019 Las Vegas bride. You were his minder that weekend and his best man at 3 a.m. in a borrowed bow tie. You also know about the annulment two weeks later. She&#39;s been texting you all week.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Morgan Leibold<div class="small muted">relationship</div></td><td>Savanah, &quot;Mrs. Blackwood&quot;</td><td class="small">You carried her 2019 annulment papers. Let her play the widow.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Carlotta &quot;Carley&quot; Blackwood<div class="small muted">relationship</div></td><td>Savanah, &quot;Mrs. Blackwood&quot;</td><td class="small">Your father&#39;s Las Vegas wife of a fortnight, back in 2019. She insists on calling you her stepdaughter. You&#39;d laugh if it weren&#39;t so exactly like him.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Carlotta &quot;Carley&quot; Blackwood<div class="small muted">relationship</div></td><td>Lady Courtney</td><td class="small">&quot;Lady&quot; Courtney swanned into your Berlin gallery opening as a Hungarian countess, drank the champagne and bought nothing. You know exactly what she is. She knows you know.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Clara<div class="small muted">relationship</div></td><td>Savanah, &quot;Mrs. Blackwood&quot;</td><td class="small">The Las Vegas &quot;wife&quot; Arthur married on a lost weekend right after you left him. You have never forgiven either of them.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Alexandra &quot;Lexi&quot; St. Clair<div class="small muted">relationship</div></td><td>Lady Courtney</td><td class="small">&quot;Lady&quot; Courtney claims you were at school together. You were not. You&#39;d remember.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Jimmy Friedman<div class="small muted">relationship</div></td><td>Lady Courtney</td><td class="small">A real live aristocrat! You&#39;ve been trying to do a deal with &quot;Lady Courtney&quot; all night.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Molly Monroe<div class="small muted">relationship</div></td><td>Lady Courtney</td><td class="small">&quot;Lady&quot; Courtney asked you whether the bird on Arthur&#39;s desk was &quot;worth anything.&quot; You hated her instantly.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Hannah Wellington<div class="small muted">relationship</div></td><td>Lady Courtney</td><td class="small">You hired her, a &quot;professional guest&quot; who poses as minor nobility, to make your galas look grander. You did not expect her to turn up here.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Kim<div class="small muted">relationship</div></td><td>Savanah, &quot;Mrs. Blackwood&quot;</td><td class="small">The Keyhole broke the story of Arthur&#39;s Vegas wedding in 2019, and of its annulment two weeks later. You have the clipping.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Savanah, &quot;Mrs. Blackwood&quot;<div class="small muted">relationship</div></td><td>Lady Courtney</td><td class="small">You recognize a performer when you see one. &quot;Lady&quot; Courtney is no lady. Takes one to know one.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Lady Courtney<div class="small muted">relationship</div></td><td>Savanah, &quot;Mrs. Blackwood&quot;</td><td class="small">The &quot;widow.&quot; You recognize a fellow performer. You&#39;ve been turning the pages for her at the piano.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Sterling<div class="small muted">relationship</div></td><td>Lady Courtney</td><td class="small">&quot;Lady&quot; Courtney clocked you at the door and you clocked her. Professional courtesy: neither of you says a word.</td></tr></table><h2>Round Two</h2><table><tr><th>Status</th><th>On whose page</th><th>Depends on</th><th>Line</th></tr><tr><td><span class="pill warn">hidden</span></td><td>Jimmy Friedman<div class="small muted">Round Two</div></td><td>Blake</td><td class="small">Blake was leaning on the billiard table watching the game the whole
+time too. Vouch for Blake if anyone asks.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Molly Monroe<div class="small muted">Round Two</div></td><td>Lady Courtney</td><td class="small">And if anyone produces Courtney&#39;s photo of herself posing with the raven,
+you can help: when you saw it at <strong>8:45</strong> it was sitting on Arthur&#39;s
+desk, perfectly normal. Whatever she did with it, she put it back.</td></tr></table><h2>Round Three</h2><table><tr><th>Status</th><th>On whose page</th><th>Depends on</th><th>Line</th></tr><tr><td><span class="pill warn">hidden</span></td><td>James &quot;Jimmy&quot; Calloway<div class="small muted">Round Three</div></td><td>Savanah, &quot;Mrs. Blackwood&quot;</td><td class="small">And if Savanah is still calling herself the widow, you were best man at
+that wedding, and you were there when Reggie and the lawyers flew out
+two weeks later with the annulment. Say so, kindly.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Clara<div class="small muted">Round Three</div></td><td>Savanah, &quot;Mrs. Blackwood&quot;</td><td class="small">And if Savanah is still calling herself the widow, you may inform the
+room, icily, that you were <em>there</em> when Arthur sobered up in 2019.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Alexandra &quot;Lexi&quot; St. Clair<div class="small muted">Round Three</div></td><td>Wren</td><td class="small">If Wren the heir hunter is still waving a baptismal record about you,
+the DNA test settles it. Say so, loudly.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Hannah Wellington<div class="small muted">Round Three</div></td><td>Lady Courtney</td><td class="small">If Courtney&#39;s &quot;Lady&quot; act is wobbling, you may expose her as your hired
+professional guest, or protect her for a price.</td></tr><tr><td><span class="pill warn">hidden</span></td><td>Kim<div class="small muted">Round Three</div></td><td>Savanah, &quot;Mrs. Blackwood&quot;</td><td class="small">And if Savanah is still claiming to be Arthur&#39;s widow, produce The
+Keyhole&#39;s 2019 clipping: <strong>&quot;BLACKWOOD&#39;S VEGAS BRIDE: ANNULLED IN A
+FORTNIGHT.&quot;</strong></td></tr></table>
+<h2>Timeline events that only exist if cast</h2><ul><li><span class="pill warn">off</span> 8:05 PM: While Arthur is greeting guests in the Front Hall, Courtney slips into the empty study, takes a selfie posing with the bronze raven, and puts it back on the desk.</li></ul>
+</main></body></html>

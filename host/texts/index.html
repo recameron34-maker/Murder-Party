@@ -1,0 +1,206 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · Phone texts</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../">Preview home</a></div><nav class="host"><a href="../" class="">Dashboard</a><a href="../script/" class="">Run of show</a><a href="./" class="on">Texts</a><a href="../roster/" class="">Roster</a><a href="../characters/" class="">Characters</a><a href="../evidence/" class="">Evidence</a><a href="../timeline/" class="">Timeline</a><a href="../flex/" class="">Flex</a><a href="../check/" class="">Checker</a><a href="../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>Phone texts</h1>
+
+<div class="card">
+  <h2 style="margin-top:0">Send a text now</h2>
+  <form method="post" action="#">
+    <p class="inline-form"><label>To <select name="to"><option value="all">Everyone</option><option value="annie">Antoinette &quot;Annie&quot;</option><option value="noor">Dr. Noor Beaumont</option><option value="joji">Professor Joji Beaumont</option><option value="tim">Timothy &quot;Tim&quot;</option><option value="alma">Alma</option><option value="jimmy">James &quot;Jimmy&quot; Calloway</option><option value="kush">Kushington &quot;Kush&quot;</option><option value="lindsey">Lindsey Vale</option><option value="maya">Maya Rose</option><option value="malik">Malik</option><option value="morgan">Morgan Leibold</option><option value="carlotta">Carlotta &quot;Carley&quot; Blackwood</option><option value="clara">Clara</option><option value="lexi">Alexandra &quot;Lexi&quot; St. Clair</option><option value="kevin">Kevin Blackwood</option><option value="jimmy-friedman">Jimmy Friedman</option><option value="molly">Molly Monroe</option><option value="martin">Martin</option><option value="hannah">Hannah Wellington</option><option value="shea">Shea</option><option value="maddie">Madeleine &quot;Maddie&quot;</option><option value="daniel">Daniel</option><option value="kim">Kim</option><option value="louis">Louis</option><option value="albie">Aalvia &quot;Albie&quot;</option><option value="savanah">Savanah, &quot;Mrs. Blackwood&quot;</option><option value="courtney">Lady Courtney</option></select></label>
+    <label>From <input name="from" value="Unknown number" size="18"></label></p>
+    <p><textarea name="body" required placeholder="The raven is watching." style="min-height:4em;font-family:inherit;font-size:16px"></textarea></p>
+    <button class="btn" type="submit">Send</button>
+  </form>
+  
+</div>
+<div class="card">
+  <h2 style="margin-top:0">Cue texts</h2>
+  <p class="small muted">These fire only when you press Send, usually at a moment in the run of show.</p>
+  <table><tr><th>Cue</th><th>To</th><th>Text</th><th></th></tr>
+  <tr><td class="small">Just before the Malik to Kush cue in Round Two</td><td>Kushington &quot;Kush&quot;</td><td><b>Reggie:</b> Kushington. Your moment approaches. Try to be brief. (You won&#39;t.)</td>
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="kush-reggie-r2"><button class="btn small" type="submit">Send</button></form></td></tr><tr><td class="small">When Reggie hands Malik the scheduled draft (Round Three)</td><td>Malik</td><td><b>Arthur Blackwood (scheduled):</b> If you&#39;re reading this, the truth is public. The theft came from inside my legal operation. I trusted the wrong person.</td>
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="malik-scheduled-r3"><button class="btn small" type="submit">Send</button></form></td></tr><tr><td class="small">Right after Annie says she passed Morgan in the corridor (Round Three)</td><td>Morgan Leibold</td><td><b>Unknown number:</b> Every Blackwood secret comes home to roost.</td>
+  <td><form method="post" action="#" class="inline-form"><input type="hidden" name="id" value="morgan-unknown-r3"><button class="btn small" type="submit">Send</button></form></td></tr>
+  </table>
+</div>
+<div class="card">
+  <h2 style="margin-top:0">Timed texts</h2>
+  <table><tr><th>Trigger</th><th>Status</th><th>To</th><th>Text</th></tr>
+  <tr><td class="small">Day -1 18:00</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Everyone</td><td><b>Blackwood Manor:</b> Your presence is requested at the Midnight Supper tomorrow. Dress for a reckoning. No one leaves before midnight.</td></tr><tr><td class="small">Round 1 + 1 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Everyone</td><td><b>Blackwood Manor:</b> NOTICE: The lower road has washed out in the storm. Police delayed. The house regrets that no one may leave before midnight.</td></tr><tr><td class="small">Round 1 + 2 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Jimmy Friedman</td><td><b>Petal &amp; Thorn Florists:</b> Reminder: your standing order (2 bouquets, identical cards: &#39;Whatever happens, you&#39;re safe with me&#39;) renews Friday.</td></tr><tr><td class="small">Round 1 + 3 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Maya Rose</td><td><b>Jimmy F. 🌹:</b> Whatever happens tonight, birthday girl, you&#39;re safe with me. Delete this.</td></tr><tr><td class="small">Round 1 + 3 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Alexandra &quot;Lexi&quot; St. Clair</td><td><b>Jimmy F.:</b> Whatever happens tonight, birthday girl, you&#39;re safe with me. Delete this.</td></tr><tr><td class="small">Round 1 + 4 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Dr. Noor Beaumont</td><td><b>Joji ❤️:</b> Are you all right? You went very quiet when you came out of the study. You have your &#39;I already know&#39; face on.</td></tr><tr><td class="small">Round 1 + 4 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Aalvia &quot;Albie&quot;</td><td><b>Annie:</b> Free tip for the spirits: Clara&#39;s lipstick at 8:44 was NOT the lipstick she arrived in.</td></tr><tr><td class="small">Round 1 + 5 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Timothy &quot;Tim&quot;</td><td><b>Camera roll:</b> 📷 IMG_0900, Library, 9:00 PM. A bookcase standing a finger&#39;s width proud of the wall. You remember the cold on your hand.</td></tr><tr><td class="small">Round 1 + 5 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Molly Monroe</td><td><b>Martin:</b> You&#39;re doing the thing with your earring. Relax. I&#39;m only going to ruin you a little.</td></tr><tr><td class="small">Round 1 + 6 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Malik</td><td><b>Producer:</b> WAIT a MURDER?? keep recording. do NOT stop recording. this is season 2</td></tr><tr><td class="small">Round 1 + 7 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Kushington &quot;Kush&quot;</td><td><b>H.:</b> You look very serious in that waistcoat. Is it the numbers or is it me</td></tr><tr><td class="small">Round 1 + 7 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Louis</td><td><b>Unknown number:</b> You&#39;ve got cobwebs in your hair, Louis. The house is starting to claim you.</td></tr><tr><td class="small">Round 1 + 8 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Antoinette &quot;Annie&quot;</td><td><b>Mrs. Hale (Kitchens):</b> Is it true?? About Mr Arthur?? We heard the crash and then the lights. Something in this house wants us all in the dark</td></tr><tr><td class="small">Round 1 + 9 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>James &quot;Jimmy&quot; Calloway</td><td><b>Lawyer (voicemail):</b> Mr Calloway, I&#39;ve got your three messages from 9:40-ish. Please stop calling me from what sounds like a crypt.</td></tr><tr><td class="small">Round 1 + 9 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Carlotta &quot;Carley&quot; Blackwood</td><td><b>Daniel:</b> You still do that thing with your lighter when you&#39;re lying. Just so you know.</td></tr><tr><td class="small">Round 1 + 9 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Hannah Wellington</td><td><b>K.:</b> I&#39;m about to be very impressive in public. Try not to look.</td></tr><tr><td class="small">Round 1 + 10 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Professor Joji Beaumont</td><td><b>Noor ❤️:</b> Darling. If you know something about the walls, now is the time to be insufferable about it.</td></tr><tr><td class="small">Round 1 + 10 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Clara</td><td><b>Unknown number:</b> Lovely shade of lipstick at 8:44. Shame if it ended up in The Keyhole.</td></tr><tr><td class="small">Round 1 + 10 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Kim</td><td><b>Freelancer (T.):</b> Got something good from 8:44. Clara + study + lipstick. Name your price.</td></tr><tr><td class="small">Round 1 + 11 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Lindsey Vale</td><td><b>Malik:</b> I&#39;m sorry about earlier. Also I&#39;m still recording. Also you look incredible when you&#39;re furious.</td></tr><tr><td class="small">Round 1 + 12 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Alma</td><td><b>Unknown number:</b> That dress suits you. It suited her better.</td></tr><tr><td class="small">Round 1 + 12 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Daniel</td><td><b>Carley:</b> Your fiancée is wearing my grandmother&#39;s necklace. Interesting choice for a decent man.</td></tr><tr><td class="small">Round 1 + 13 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Martin</td><td><b>Molly:</b> If you say one word about Venice I will tell them about your &#39;Rembrandt.&#39;</td></tr><tr><td class="small">Round 1 + 14 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Kevin Blackwood</td><td><b>Morgan:</b> Breathe. Say it was about family. Nobody can prove otherwise.</td></tr><tr><td class="small">Round 1 + 15 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Madeleine &quot;Maddie&quot;</td><td><b>Daniel ❤️:</b> Babe. The necklace. Maybe tonight isn&#39;t the night to wear the family&#39;s evidence.</td></tr><tr><td class="small">Round 2 + 2 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Maya Rose</td><td><b>Unknown number:</b> You heard her. You know you did. Say what she said.</td></tr><tr><td class="small">Round 2 + 3 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Dr. Noor Beaumont</td><td><b>Unknown number:</b> Tell them what the body told you, Doctor. The dark didn&#39;t kill him.</td></tr><tr><td class="small">Round 2 + 4 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Alma</td><td><b>J.:</b> I saw her too. By the library. Say it first, you&#39;re braver than me.</td></tr><tr><td class="small">Round 2 + 5 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Professor Joji Beaumont</td><td><b>Tim:</b> Professor, I need to ask you something about that library bookcase. Don&#39;t go anywhere.</td></tr><tr><td class="small">Round 2 + 5 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Madeleine &quot;Maddie&quot;</td><td><b>Unknown number:</b> Still wearing it? Midnight&#39;s coming.</td></tr><tr><td class="small">Round 2 + 6 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>James &quot;Jimmy&quot; Calloway</td><td><b>A.:</b> You saw her too, didn&#39;t you. By the library. Don&#39;t make me say it alone.</td></tr><tr><td class="small">Round 2 + 6 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Alexandra &quot;Lexi&quot; St. Clair</td><td><b>Unknown number:</b> Ask Maya who sent HER flowers this week.</td></tr><tr><td class="small">Round 2 + 7 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Molly Monroe</td><td><b>Unknown number:</b> Lady Evangeline is watching you. She always knew she was a copy.</td></tr><tr><td class="small">Round 2 + 8 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Clara</td><td><b>Dr. Beaumont:</b> Clara, as his physician I&#39;ll keep your confidence. As a woman, I&#39;d say tell them about 9:33 before someone else does.</td></tr><tr><td class="small">Round 2 + 8 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Kevin Blackwood</td><td><b>Blackwood Security (auto):</b> Motion recorded: TERRACE CAM 02, 21:22 to 21:47. Footage retained 24h.</td></tr><tr><td class="small">Round 2 + 9 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Timothy &quot;Tim&quot;</td><td><b>The Keyhole (anon):</b> Heard you had a VERY productive evening. Name your price for the 8:44.</td></tr><tr><td class="small">Round 2 + 10 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Carlotta &quot;Carley&quot; Blackwood</td><td><b>Unknown number:</b> Every Blackwood who tried to give it away died before midnight. Ask them who believed in the curse.</td></tr><tr><td class="small">Round 2 + 10 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Shea</td><td><b>L.:</b> I swear I was nowhere near the study. I was stuck in the east wall in the dark. Don&#39;t tell them. Please.</td></tr><tr><td class="small">Round 2 + 11 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Jimmy Friedman</td><td><b>Unknown number:</b> Interest is accruing, Mr Friedman. Not just on your loans.</td></tr><tr><td class="small">Round 2 + 12 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Antoinette &quot;Annie&quot;</td><td><b>Unknown number:</b> You were in that corridor. You saw. Loyalty is a lovely thing until it&#39;s an accessory.</td></tr><tr><td class="small">Round 2 + 13 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Hannah Wellington</td><td><b>Morgan Leibold:</b> Hannah, so sorry, the Wellington papers are with me. Terrible timing. We&#39;ll talk next week. M.</td></tr><tr><td class="small">Round 2 + 14 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Lindsey Vale</td><td><b>Vale &amp; Sons Compliance:</b> Ms Vale, per your request: credential ML-0427 is registered to Blackwood Legal Counsel. Please do not forward.</td></tr><tr><td class="small">Round 2 + 15 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Louis</td><td><b>Unknown number:</b> 9:46. Dining room. Panel. Dust. I saw everything, darling. Let&#39;s talk terms. — K</td></tr><tr><td class="small">Round 2 + 20 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Everyone</td><td><b>Unknown number:</b> The raven saw everything. The raven always does.</td></tr><tr><td class="small">Round 3 + 0 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Everyone</td><td><b>Reggie:</b> Final round. Trust nothing that was said in the dark.</td></tr><tr><td class="small">Round 3 + 1 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Aalvia &quot;Albie&quot;</td><td><b>Unknown number:</b> The dead don&#39;t care about the dark. Ask them who does.</td></tr><tr><td class="small">Round 3 + 2 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Kim</td><td><b>Keyhole tip line:</b> Anonymous tip: &#39;Ask the kitchens what really happened at 9:45. Nobody ever asks the kitchens.&#39;</td></tr><tr><td class="small">Round 3 + 3 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Daniel</td><td><b>Unknown number:</b> Notes under doors always find their way home, Daniel.</td></tr><tr><td class="small">Round 3 + 4 min</td>
+  <td><span class="pill info">pending</span></td>
+  <td>Martin</td><td><b>Unknown number:</b> Arthur asked you to be kind. Tick tock.</td></tr>
+  </table>
+  <p class="small muted">Plus 27 "history" texts already sitting in guests' phones from their first login.</p>
+</div>
+</main></body></html>

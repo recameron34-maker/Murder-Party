@@ -1,0 +1,309 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d090f">
+<title>Host · True timeline</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2064%2064&#39;%3E%3Crect%20width%3D&#39;64&#39;%20height%3D&#39;64&#39;%20rx%3D&#39;14&#39;%20fill%3D&#39;%230d090f&#39;%2F%3E%3Cpath%20d%3D&#39;M14%2040c6-14%2018-22%2032-22-3%203-4%206-4%209%204%200%207%202%209%205-6%200-10%202-13%206l-5%2010-3-7c-6%200-11%200-16-1z&#39;%20fill%3D&#39;%23c9a45c&#39;%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+:root{--bg:#0d090f;--panel:#161017;--panel2:#1e1620;--ink:#efe5d3;--muted:#ad9f8b;--gold:#c9a45c;--gold2:#e3c788;--blood:#8f2636;--line:#33263a;--ok:#6e9b6a;--warn:#c99a3c;--err:#c0495a;--radius:14px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) radial-gradient(ellipse 120% 60% at 50% -10%,#2a1a2c 0%,#130d15 45%,#0d090f 100%) fixed;color:var(--ink);font:18px/1.55 'EB Garamond',Georgia,'Times New Roman',serif}
+a{color:var(--gold2)}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em;line-height:1.15;margin:1.2em 0 .45em}
+h1{font-size:2.1rem;margin:.2em 0}
+h2{font-size:1.55rem;color:var(--gold2)}
+h3{font-size:1.25rem}
+p{margin:.55em 0}
+blockquote{margin:.8em 0;padding:.6em 1em;border-left:3px solid var(--gold);background:rgba(201,164,92,.08);border-radius:0 8px 8px 0;font-style:italic}
+code{font-size:.9em}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{display:inline-block;font:inherit;font-size:1rem;background:var(--blood);color:#fff;border:1px solid #b23a4b;border-radius:999px;padding:.55em 1.2em;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
+.btn.small{font-size:.85rem;padding:.35em .9em}
+input,select,textarea{font:inherit;font-size:16px;background:#0f0a11;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5em .7em;max-width:100%}
+textarea{width:100%;min-height:8em;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+ul{padding-left:1.2em}
+li{margin:.25em 0}
+.raven{font-size:1.6rem;line-height:1}
+
+body{font-size:16px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1100px}
+nav.host{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,9,15,.95);position:sticky;top:0;z-index:5}
+nav.host a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;font-size:.9rem}
+nav.host a.on,nav.host a:hover{color:var(--ink);background:var(--panel2)}
+nav.host .spacer{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+tr.off td{opacity:.5}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;border:1px solid var(--line);white-space:nowrap}
+.pill.core{border-color:var(--blood);color:#f0a5b0}
+.pill.supporting{border-color:var(--gold);color:var(--gold2)}
+.pill.flex{border-color:#5d7f9b;color:#a9c8e2}
+.pill.ok{border-color:var(--ok);color:#a7d3a2}
+.pill.warn{border-color:var(--warn);color:#f0cf8a}
+.pill.err,.pill.error{border-color:var(--err);color:#ff9fac}
+.pill.info{border-color:#5d7f9b;color:#a9c8e2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rounds{display:flex;flex-wrap:wrap;gap:8px}
+.rounds form{display:inline}
+.rounds .btn.on{background:var(--gold);color:#1b1208;border-color:var(--gold2)}
+.seg{border-left:3px solid var(--line);padding-left:12px;margin:18px 0}
+.seg.kind-cue{border-left-color:var(--gold)}
+.seg.kind-rescue{border-left-color:#5d7f9b}
+.seg.kind-evidence{border-left-color:var(--blood)}
+.seg .meta{font-size:.8rem;color:var(--muted)}
+.seg p{margin:.35em 0}
+.inline-form{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+.pass{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold2)}
+.flash{background:#1f2a1d;border:1px solid var(--ok);border-radius:10px;padding:8px 12px;margin:10px 0}
+.flash.bad{background:#2a1d20;border-color:var(--err)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px}
+</style>
+<style>.static-banner{background:#3b2a12;color:#f7dfa9;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;text-align:center}.static-banner a{color:#ffe7b0}form{pointer-events:none;opacity:.55}form input,form select,form textarea{pointer-events:none}@media print{.static-banner{display:none}}</style></head><body ><div class="static-banner">Static preview on GitHub Pages. Buttons and logins don't work here, and this page is visible to anyone with the link, <b>spoilers included</b>. <a href="../../">Preview home</a></div><nav class="host"><a href="../" class="">Dashboard</a><a href="../script/" class="">Run of show</a><a href="../texts/" class="">Texts</a><a href="../roster/" class="">Roster</a><a href="../characters/" class="">Characters</a><a href="../evidence/" class="">Evidence</a><a href="./" class="on">Timeline</a><a href="../flex/" class="">Flex</a><a href="../check/" class="">Checker</a><a href="../print/" class="">Print</a><span class="spacer"></span>
+<span class="small muted" style="align-self:center">Live: <b>Before the Supper</b></span>
+<form method="post" action="#"><button class="btn ghost small" type="submit">Log out</button></form></nav>
+<main class="wrap">
+
+<h1>True timeline</h1>
+
+<p class="small muted">Canonical source: content/timeline.yaml. Times shown are in-world.</p>
+<table><tr><th>When</th><th>Who</th><th>Where</th><th>What really happened</th><th>Players learn it</th></tr>
+<tr class="">
+  <td class="mono">Six weeks ago</td>
+  <td class="small">Lindsey Vale, Arthur Blackwood</td>
+  <td class="small"></td>
+  <td>  Lindsey Vale notices six large transfers out of Blackwood Holdings and quietly warns Arthur.</td>
+  <td class="small"><div>R3: Lindsey Vale <span class="muted">(Her role flips: she discovered the theft)</span></div></td>
+</tr><tr class="">
+  <td class="mono">Three weeks ago</td>
+  <td class="small">Kushington &quot;Kush&quot;, Arthur Blackwood</td>
+  <td class="small"></td>
+  <td>  Arthur hires Kushington to trace the money, telling almost no one.</td>
+  <td class="small"><div>R1: Kushington &quot;Kush&quot; <span class="muted">(Arthur suspected theft (no amount))</span></div></td>
+</tr><tr class="">
+  <td class="mono">This week</td>
+  <td class="small">Kushington &quot;Kush&quot;</td>
+  <td class="small"></td>
+  <td><span class="pill core">critical</span>  Kush totals the theft at $2.4M over six transfers, all authorized from Blackwood Legal Counsel (BLC), user ID ML-0427.</td>
+  <td class="small"><div>R2: Kushington &quot;Kush&quot; <span class="muted">($2.4 MILLION)</span></div><div>R2: clue: The torn financial ledger <span class="muted">(AUTHORIZED: BLC (ambiguous))</span></div><div>R3: Kushington &quot;Kush&quot; <span class="muted">(Morgan&#39;s office controlled the authorization)</span></div></td>
+</tr><tr class="">
+  <td class="mono">This week</td>
+  <td class="small">Arthur Blackwood, Morgan Leibold</td>
+  <td class="small"></td>
+  <td>  Arthur asks Morgan pointed &quot;help me investigate&quot; questions about the account, giving her a chance to confess. She plays along.</td>
+  <td class="small"><div>R2: Morgan Leibold <span class="muted">(Morgan&#39;s defense: &#39;I&#39;ve spent the week investigating this with him.&#39; Partially true.)</span></div></td>
+</tr><tr class="">
+  <td class="mono">Thursday</td>
+  <td class="small">Arthur Blackwood, Morgan Leibold</td>
+  <td class="small"></td>
+  <td>  Arthur emails Morgan: review the Wellington, Monroe and Vale matters before midnight.</td>
+  <td class="small"><div>R2: clue: Arthur&#39;s email to Morgan <span class="muted">(Morgan produces it herself)</span></div></td>
+</tr><tr class="">
+  <td class="mono">Friday night</td>
+  <td class="small">Arthur Blackwood, Malik</td>
+  <td class="small"></td>
+  <td><span class="pill core">critical</span>  Arthur schedules a message to Malik for 12:00 AM: &#39;The theft came from inside my legal operation. I trusted the wrong person.&#39;</td>
+  <td class="small"><div>R3: clue: Arthur&#39;s scheduled message to Malik <span class="muted">(Reggie hands Malik the scheduled draft)</span></div></td>
+</tr><tr class="">
+  <td class="mono">Friday</td>
+  <td class="small">Arthur Blackwood, Martin, Molly Monroe</td>
+  <td class="small"></td>
+  <td>  Arthur concludes the forger Lucien Vasse fooled Molly too, and writes to Martin to say so.</td>
+  <td class="small"><div>R3: clue: Arthur&#39;s note about the forger <span class="muted">(Martin produces Arthur&#39;s note)</span></div></td>
+</tr><tr class="">
+  <td class="mono">~3:00 PM</td>
+  <td class="small">Kevin Blackwood, Reggie (Ross)</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  Kevin loses a cufflink in the study while helping Reggie move furniture for the Supper.</td>
+  <td class="small"><div>R2: Reggie <span class="muted">(Reggie confirms once Kevin has panicked enough)</span></div></td>
+</tr><tr class="">
+  <td class="mono">~4:00 PM</td>
+  <td class="small">Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  Arthur tears up his old will himself and drops it in the study&#39;s fireplace basket.</td>
+  <td class="small"><div>R1: clue: The destroyed will <span class="muted">(Found late Round One; looks like someone destroyed it)</span></div><div>R3: Clara <span class="muted">(&#39;I tore up the old will myself.&#39;)</span></div></td>
+</tr><tr class="">
+  <td class="mono">8:10 PM</td>
+  <td class="small">Carlotta &quot;Carley&quot; Blackwood, Arthur Blackwood</td>
+  <td class="small">Front Hall</td>
+  <td>  Arthur tells Carlotta: &#39;At midnight, I&#39;m giving it all away.&#39;</td>
+  <td class="small"><div>R1: Carlotta &quot;Carley&quot; Blackwood <span class="muted">(Carlotta heard it)</span></div></td>
+</tr><tr class="">
+  <td class="mono">8:30 PM</td>
+  <td class="small">Clara, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  Clara meets Arthur. He tells her: &#39;I tore up the old will myself. Everyone keeps assuming tonight is about inheritance. It isn&#39;t.&#39;</td>
+  <td class="small"><div>R2: clue: Arthur&#39;s calendar <span class="muted">(8:30 Clara)</span></div><div>R3: Clara <span class="muted">(What he said about the will)</span></div></td>
+</tr><tr class="off">
+  <td class="mono">8:05 PM</td>
+  <td class="small">Lady Courtney</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td> <span class="pill flex">flex: courtney</span> While Arthur is greeting guests in the Front Hall, Courtney slips into the empty study, takes a selfie posing with the bronze raven, and puts it back on the desk.</td>
+  <td class="small"><div>R2: Lady Courtney <span class="muted">(Her post surfaces; resolved by Molly seeing the raven on the desk at 8:45)</span></div></td>
+</tr><tr class="">
+  <td class="mono">8:45 PM</td>
+  <td class="small">Molly Monroe, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  Molly visits the study. The raven is on the desk. Arthur tells her they must discuss the painting tonight.</td>
+  <td class="small"><div>R1: Molly Monroe <span class="muted">(Her visit; she knows where the raven was)</span></div></td>
+</tr><tr class="">
+  <td class="mono">8:50 PM</td>
+  <td class="small">James &quot;Jimmy&quot; Calloway, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  James (Jimmy) Calloway confronts Arthur about being cut out of the will.</td>
+  <td class="small"><div>R1: James &quot;Jimmy&quot; Calloway <span class="muted">(Removed from will)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:00 PM</td>
+  <td class="small">Timothy &quot;Tim&quot;, Louis</td>
+  <td class="small">Library</td>
+  <td>  Tim, photographing the library, notices a bookcase that doesn&#39;t sit flush and a cold draft. Louis is in there tapping on the walls.</td>
+  <td class="small"><div>R1: Timothy &quot;Tim&quot; <span class="muted">(Strange library door)</span></div><div>R2: Louis <span class="muted">(Admits snooping around the library)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:10 PM</td>
+  <td class="small">Madeleine &quot;Maddie&quot;, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  Maddie pops into the study and sees a red leather folder open on Arthur&#39;s desk. He closes it when she comes in.</td>
+  <td class="small"><div>R1: Madeleine &quot;Maddie&quot; <span class="muted">(Reggie announces the missing folder; Maddie remembers it)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:20 PM</td>
+  <td class="small">Kevin Blackwood, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  Loud argument. Arthur: &#39;You&#39;re getting nothing.&#39; Kevin: &#39;You&#39;re going to regret this.&#39; Heard down the corridor.</td>
+  <td class="small"><div>R1: Kevin Blackwood <span class="muted">(Kevin must admit the line)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:22 PM–9:47 PM</td>
+  <td class="small">Kevin Blackwood</td>
+  <td class="small">Terrace</td>
+  <td>  Kevin grabs the nearest coat from the hall (Arthur&#39;s) and storms out onto the terrace. The terrace camera records him pacing and smoking the whole time.</td>
+  <td class="small"><div>R2: clue: Terrace camera still <span class="muted">(Late Round Two, clears Kevin)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:25 PM–9:46 PM</td>
+  <td class="small">Louis</td>
+  <td class="small">The shut-up East Wing and its walled passages</td>
+  <td>  Louis slips into a sealed east-wing passage hunting the Raven Room. When the lights die he is trapped in total darkness.</td>
+  <td class="small"><div>R3: Louis <span class="muted">(Confesses; Kim saw him come out)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:29 PM</td>
+  <td class="small">Arthur Blackwood, Morgan Leibold</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td><span class="pill core">critical</span>  Arthur texts Morgan: &quot;My study. 9:35. We settle this tonight.&quot;</td>
+  <td class="small"><div>R1: clue: Arthur&#39;s phone <span class="muted">(End of Round One, Reggie reads it)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:31 PM</td>
+  <td class="small">Antoinette &quot;Annie&quot;, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td><span class="pill core">critical</span>  Annie carries in the Reckoning, Arthur&#39;s 9:30 Sazerac. Arthur is alive and alone, writing, the red folder open.</td>
+  <td class="small"><div>R1: Antoinette &quot;Annie&quot; <span class="muted">(Last confirmed sighting alive)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:32 PM</td>
+  <td class="small">Antoinette &quot;Annie&quot;, Morgan Leibold</td>
+  <td class="small">East Corridor (outside the study)</td>
+  <td><span class="pill core">critical</span>  Walking back, Annie passes Morgan heading toward the study.</td>
+  <td class="small"><div>R3: Antoinette &quot;Annie&quot; <span class="muted">(Annie finally says it)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:33 PM</td>
+  <td class="small">Clara</td>
+  <td class="small">East Corridor (outside the study)</td>
+  <td>  Clara walks toward the study to finish their conversation, sees someone farther down the hall by the study door, and changes her mind. She can&#39;t identify them.</td>
+  <td class="small"><div>R2: Clara <span class="muted">(Her secret visit)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:34 PM</td>
+  <td class="small">Morgan Leibold, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td><span class="pill core">critical</span>  Morgan enters the study.</td>
+  <td class="small"></td>
+</tr><tr class="">
+  <td class="mono">9:36 PM–9:37 PM</td>
+  <td class="small">Maya Rose</td>
+  <td class="small">East Corridor (outside the study)</td>
+  <td><span class="pill core">critical</span>  Maya, arriving for her birthday surprise, hears through the door: Arthur: &#39;If the money isn&#39;t back by midnight, I&#39;m going public.&#39; A woman: &#39;You&#39;ll destroy me.&#39; She leaves.</td>
+  <td class="small"><div>R1: Maya Rose <span class="muted">(The money line; it was a woman)</span></div><div>R2: Maya Rose <span class="muted">(&#39;You&#39;ll destroy me.&#39;)</span></div></td>
+</tr><tr class="">
+  <td class="mono">~9:38 PM</td>
+  <td class="small">Morgan Leibold, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td><span class="pill core">critical</span>  Morgan strikes Arthur once with the bronze raven. As he falls, the cuff of his black velvet smoking jacket snags on the raven&#39;s beak.</td>
+  <td class="small"><div>R2: Dr. Noor Beaumont <span class="muted">(Time of death 9:35 to 9:40)</span></div><div>R3: Shea <span class="muted">(The black thread is from Arthur&#39;s own jacket)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:39 PM</td>
+  <td class="small">Morgan Leibold</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td><span class="pill core">critical</span>  Morgan takes the red folder and leaves through the Raven&#39;s Walk passage into the library. She tears out the CONFIDENTIAL LEGAL page, keeps it on her, and pushes the folder behind the library books.</td>
+  <td class="small"><div>R2: Professor Joji Beaumont <span class="muted">(The passage connects study to library)</span></div><div>R2: clue: The red leather folder <span class="muted">(Folder found in the library, legal page torn out)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:38 PM–9:40 PM</td>
+  <td class="small">James &quot;Jimmy&quot; Calloway</td>
+  <td class="small">Front Hall</td>
+  <td>  James leaves the card game to ring his lawyer about contesting the will. The only signal in the house is at the mouth of the Library Corridor.</td>
+  <td class="small"></td>
+</tr><tr class="">
+  <td class="mono">~9:40 PM</td>
+  <td class="small">Shea</td>
+  <td class="small">East Corridor (outside the study)</td>
+  <td>  Shea carries Arthur&#39;s evening medication toward the study. Before she reaches it she hears voices around the corner and, not wanting to be seen with his pills, goes back to the party.</td>
+  <td class="small"><div>R2: Shea <span class="muted">(Her secret visit)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:40 PM</td>
+  <td class="small">James &quot;Jimmy&quot; Calloway, Morgan Leibold</td>
+  <td class="small">Library Corridor</td>
+  <td><span class="pill core">critical</span>  On the phone, James sees Morgan inside the library.</td>
+  <td class="small"><div>R2: James &quot;Jimmy&quot; Calloway <span class="muted">(Morgan around the library)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:41 PM</td>
+  <td class="small">Alma, Morgan Leibold</td>
+  <td class="small">Library Corridor</td>
+  <td><span class="pill core">critical</span>  Alma meets Morgan coming out of the library. Morgan says she was looking for the restroom. (It&#39;s the other way.)</td>
+  <td class="small"><div>R2: Alma <span class="muted">(Morgan emerged ~9:41, restroom excuse)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:45 PM</td>
+  <td class="small">Mrs. Hale</td>
+  <td class="small">Kitchens and servery (downstairs)</td>
+  <td><span class="pill core">critical</span>  Mrs. Hale&#39;s warming ovens trip the 1930s circuit while preparing the Midnight Supper. Lights out for under two minutes. The crash everyone hears is her dropping a tray of glasses.</td>
+  <td class="small"><div>R3: Reggie <span class="muted">(Blackout reveal)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:46 PM</td>
+  <td class="small">Louis, Kim</td>
+  <td class="small">Dining Room (set for the Midnight Supper)</td>
+  <td>  In the dark, Louis climbs out of a panel beside the dining-room fireplace, filthy with dust. Kim sees him by the light of her phone.</td>
+  <td class="small"><div>R3: Kim <span class="muted">(Kim tells, or trades it)</span></div></td>
+</tr><tr class="">
+  <td class="mono">9:47 PM</td>
+  <td class="small">Reggie (Ross)</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  Lights return. Arthur is missing. Reggie checks the study and finds him dead behind the desk, the raven beside him.</td>
+  <td class="small"><div>R0: Reggie <span class="muted">(The murder announcement)</span></div></td>
+</tr><tr class="">
+  <td class="mono">10:00 PM</td>
+  <td class="small">Lindsey Vale, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  Scheduled meeting with Lindsey to go over the banking evidence. Never happened.</td>
+  <td class="small"><div>R2: clue: Arthur&#39;s calendar <span class="muted">(10:00 Lindsey)</span></div></td>
+</tr><tr class="">
+  <td class="mono">11:30 PM</td>
+  <td class="small">Carlotta &quot;Carley&quot; Blackwood, Arthur Blackwood</td>
+  <td class="small">Arthur&#39;s study</td>
+  <td>  Scheduled meeting to give Carlotta his note and release her from the estate. Never happened.</td>
+  <td class="small"><div>R2: clue: Arthur&#39;s calendar <span class="muted">(11:30 Carlotta)</span></div></td>
+</tr><tr class="">
+  <td class="mono">12:00 AM</td>
+  <td class="small">Arthur Blackwood</td>
+  <td class="small">Dining Room (set for the Midnight Supper)</td>
+  <td>  The midnight announcement. Expose the theft, give the fortune away, free Carlotta. The scheduled message to Malik was set for this minute.</td>
+  <td class="small"><div>R3: clue: Arthur&#39;s scheduled message to Malik <span class="muted">(The scheduled draft)</span></div></td>
+</tr>
+</table>
+<h2>What players learn, round by round</h2>
+<div class="card"><h3 style="margin-top:0">Before the Supper</h3><ul><li><b>9:47 PM</b> The murder announcement: <span class="muted">via Reggie</span></li></ul></div><div class="card"><h3 style="margin-top:0">Round One</h3><ul><li><b>Three weeks ago</b> Arthur suspected theft (no amount): <span class="muted">via Kushington &quot;Kush&quot;</span></li><li><b>4:00 PM</b> Found late Round One; looks like someone destroyed it: <span class="muted">via clue: The destroyed will</span></li><li><b>8:10 PM</b> Carlotta heard it: <span class="muted">via Carlotta &quot;Carley&quot; Blackwood</span></li><li><b>8:45 PM</b> Her visit; she knows where the raven was: <span class="muted">via Molly Monroe</span></li><li><b>8:50 PM</b> Removed from will: <span class="muted">via James &quot;Jimmy&quot; Calloway</span></li><li><b>9:00 PM</b> Strange library door: <span class="muted">via Timothy &quot;Tim&quot;</span></li><li><b>9:10 PM</b> Reggie announces the missing folder; Maddie remembers it: <span class="muted">via Madeleine &quot;Maddie&quot;</span></li><li><b>9:20 PM</b> Kevin must admit the line: <span class="muted">via Kevin Blackwood</span></li><li>★ <b>9:29 PM</b> End of Round One, Reggie reads it: <span class="muted">via clue: Arthur&#39;s phone</span></li><li>★ <b>9:31 PM</b> Last confirmed sighting alive: <span class="muted">via Antoinette &quot;Annie&quot;</span></li><li>★ <b>9:36 PM</b> The money line; it was a woman: <span class="muted">via Maya Rose</span></li></ul></div><div class="card"><h3 style="margin-top:0">Round Two</h3><ul><li>★ <b>This week</b> $2.4 MILLION: <span class="muted">via Kushington &quot;Kush&quot;</span></li><li>★ <b>This week</b> AUTHORIZED: BLC (ambiguous): <span class="muted">via clue: The torn financial ledger</span></li><li><b>This week</b> Morgan&#39;s defense: &#39;I&#39;ve spent the week investigating this with him.&#39; Partially true.: <span class="muted">via Morgan Leibold</span></li><li><b>Thursday</b> Morgan produces it herself: <span class="muted">via clue: Arthur&#39;s email to Morgan</span></li><li><b>3:00 PM</b> Reggie confirms once Kevin has panicked enough: <span class="muted">via Reggie</span></li><li><b>8:30 PM</b> 8:30 Clara: <span class="muted">via clue: Arthur&#39;s calendar</span></li><li><b>8:05 PM</b> Her post surfaces; resolved by Molly seeing the raven on the desk at 8:45: <span class="muted">via Lady Courtney</span></li><li><b>9:00 PM</b> Admits snooping around the library: <span class="muted">via Louis</span></li><li><b>9:22 PM</b> Late Round Two, clears Kevin: <span class="muted">via clue: Terrace camera still</span></li><li><b>9:33 PM</b> Her secret visit: <span class="muted">via Clara</span></li><li>★ <b>9:36 PM</b> &#39;You&#39;ll destroy me.&#39;: <span class="muted">via Maya Rose</span></li><li>★ <b>9:38 PM</b> Time of death 9:35 to 9:40: <span class="muted">via Dr. Noor Beaumont</span></li><li>★ <b>9:39 PM</b> The passage connects study to library: <span class="muted">via Professor Joji Beaumont</span></li><li>★ <b>9:39 PM</b> Folder found in the library, legal page torn out: <span class="muted">via clue: The red leather folder</span></li><li><b>9:40 PM</b> Her secret visit: <span class="muted">via Shea</span></li><li>★ <b>9:40 PM</b> Morgan around the library: <span class="muted">via James &quot;Jimmy&quot; Calloway</span></li><li>★ <b>9:41 PM</b> Morgan emerged ~9:41, restroom excuse: <span class="muted">via Alma</span></li><li><b>10:00 PM</b> 10:00 Lindsey: <span class="muted">via clue: Arthur&#39;s calendar</span></li><li><b>11:30 PM</b> 11:30 Carlotta: <span class="muted">via clue: Arthur&#39;s calendar</span></li></ul></div><div class="card"><h3 style="margin-top:0">Round Three</h3><ul><li><b>Six weeks ago</b> Her role flips: she discovered the theft: <span class="muted">via Lindsey Vale</span></li><li>★ <b>This week</b> Morgan&#39;s office controlled the authorization: <span class="muted">via Kushington &quot;Kush&quot;</span></li><li>★ <b>Friday night</b> Reggie hands Malik the scheduled draft: <span class="muted">via clue: Arthur&#39;s scheduled message to Malik</span></li><li><b>Friday</b> Martin produces Arthur&#39;s note: <span class="muted">via clue: Arthur&#39;s note about the forger</span></li><li><b>4:00 PM</b> &#39;I tore up the old will myself.&#39;: <span class="muted">via Clara</span></li><li><b>8:30 PM</b> What he said about the will: <span class="muted">via Clara</span></li><li><b>9:25 PM</b> Confesses; Kim saw him come out: <span class="muted">via Louis</span></li><li>★ <b>9:32 PM</b> Annie finally says it: <span class="muted">via Antoinette &quot;Annie&quot;</span></li><li>★ <b>9:38 PM</b> The black thread is from Arthur&#39;s own jacket: <span class="muted">via Shea</span></li><li>★ <b>9:45 PM</b> Blackout reveal: <span class="muted">via Reggie</span></li><li><b>9:46 PM</b> Kim tells, or trades it: <span class="muted">via Kim</span></li><li><b>12:00 AM</b> The scheduled draft: <span class="muted">via clue: Arthur&#39;s scheduled message to Malik</span></li></ul></div>
+</main></body></html>
