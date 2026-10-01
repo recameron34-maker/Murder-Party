@@ -1,0 +1,66 @@
+# TEMPORARY: a GitHub Pages landing site that links to a read-only preview of
+# every branch (built by each branch's own scripts/build-static.mjs).
+#
+# GitHub only lets main deploy Pages, so main builds and deploys, and a push
+# to any other branch just asks main to rebuild. Deleting a branch rebuilds
+# too, so it drops off the list.
+#
+# One-time setup: Settings → Pages → Build and deployment → Source: "GitHub Actions".
+# To remove later: delete this file and .github/landing/.
+name: Branch previews (GitHub Pages)
+
+on:
+  push:
+  delete:
+  workflow_dispatch:
+
+concurrency:
+  group: branch-previews-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  ask-main:
+    name: Ask main to rebuild the previews
+    if: github.event_name == 'push' && github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Trigger the Pages build on main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main
+
+  build:
+    name: Build landing page and branch previews
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check GitHub Pages is set to "GitHub Actions"
+        uses: actions/configure-pages@v5
+      - name: Build
+        run: node .github/landing/build.mjs _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
