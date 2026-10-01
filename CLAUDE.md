@@ -115,7 +115,9 @@ that player. The spoiler rules above still apply and are enforced server-side
 - `content/`: all story data (YAML/Markdown). `content/timeline.yaml` is the
   canonical true timeline. `content/script/` is the revised run of show.
 - `src/app.mjs`: the whole app as one fetch handler (Node for dev/tests,
-  Cloudflare Worker + D1 in production). `src/lib/check.mjs` is the
+  Cloudflare Worker + Durable Object in production, deployed by
+  `.github/workflows/deploy.yml`: `main` → production, other branches →
+  preview). `src/lib/check.mjs` is the
   consistency checker. `src/views/` holds the guest, host and print pages.
 - `test/`: spoiler-leak, Morgan-parity, auth and content tests.
 

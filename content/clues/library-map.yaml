@@ -12,7 +12,15 @@ print: |
 
   [old-looking plan; mark STUDY and LIBRARY on either side of one wall,
   with a faint dotted line between them. Do NOT label it "secret passage".]
-truth: The faint line is the Raven's Walk passage, study to library.
+
+  [small, faded, slightly crooked office stamp in a bottom corner, easy to miss:]
+  RECEIVED · B.L.C. · 14 AUG
+truth: >
+  The faint line is the Raven's Walk passage, study to library. The stamp is
+  Blackwood Legal Counsel's filing stamp from the landmark application, a
+  disguised hint that Morgan's office had the plans and could know about the
+  passage. Never point it out; let a sharp guest notice that "B.L.C." matches
+  the ledger's "AUTHORIZED: BLC".
 points_to: []
 critical: true
 refs: [joji]

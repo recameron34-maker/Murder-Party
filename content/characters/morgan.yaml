@@ -45,7 +45,7 @@ relationships:
     text: Your office filed his landmark application. You've read his survey, including the 1891 plans.
   - with: savanah
     if: savanah
-    text: You flew to Las Vegas in 2019 with her annulment papers. Let her play the widow. It muddies the water.
+    text: You carried her 2019 annulment papers. Let her play the widow.
 
 evening:
   - at: "8:00 PM"

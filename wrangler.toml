@@ -1,11 +1,27 @@
 # Cloudflare Workers config for the guest companion app + host panel.
-# Setup (once): see README → "Deploy to Cloudflare".
+# Deploys run from GitHub Actions (.github/workflows/deploy.yml); see README.
 name = "blackwood-manor"
 main = "src/worker.mjs"
 compatibility_date = "2025-09-01"
 workers_dev = true
 
-[[d1_databases]]
-binding = "DB"
-database_name = "blackwood-manor"
-database_id = "REPLACE-WITH-THE-ID-FROM-wrangler-d1-create"
+# Live game state lives in one Durable Object, created on first deploy.
+[[durable_objects.bindings]]
+name = "GAME"
+class_name = "GameState"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["GameState"]
+
+# Preview copy for work-in-progress branches: separate URL, separate game state.
+[env.preview]
+name = "blackwood-manor-preview"
+
+[[env.preview.durable_objects.bindings]]
+name = "GAME"
+class_name = "GameState"
+
+[[env.preview.migrations]]
+tag = "v1"
+new_sqlite_classes = ["GameState"]

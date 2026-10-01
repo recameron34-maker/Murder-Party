@@ -23,3 +23,13 @@ Suggested greetings:
 🆕 **To Louis:** "Louis. You look… dusty. Have you been in the walls?" *(He'll panic. Enjoy it.)*
 
 🆕 **To Annie:** "Antoinette. The only person in this house who knows where everything is, including the bodies."
+
+🆕 **To Noor and Joji:** "The Beaumonts. Doctor, Professor, and, I'm told, heir apparent. Annie has your Reckoning, Noor. The safe one."
+
+[[if:savanah]]
+🆕 **To Savanah:** *(she'll call you "nephew"; let her)* "Auntie. Still not legally. Still magnificent."
+[[/if]]
+
+[[if:courtney]]
+🆕 **To Courtney:** *(loudly, so the room hears)* "Lady Courtney! How is Daddy's grouse moor?" *(Reggie's in on her act.)*
+[[/if]]

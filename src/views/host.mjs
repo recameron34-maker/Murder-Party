@@ -200,6 +200,7 @@ export function textsPage(ctx) {
 // ---------------------------------------------------------------- run of show
 export function scriptPage(ctx, filterRound) {
   const { content } = ctx;
+  const { isLive } = rosterHelpers(content, ctx.state);
   const segs = content.script.filter((s) => filterRound == null || s.round === filterRound);
   const rounds = [...new Set(content.script.map((s) => s.round))].sort((a, b) => a - b);
   return shell(ctx, '/host/script', 'Run of show', html`
@@ -210,7 +211,7 @@ ${segs.map((s) => html`<section class="seg kind-${s.kind}" id="${s.slug}">
   <div class="meta">${ROUND_LABEL[s.round]} · ${s.kind}${s.changes ? html` · <i>Changed: ${s.changes}</i>` : ''}</div>
   ${s.clues.length ? html`<p class="small">Evidence: ${s.clues.map((id) => html`<a class="pill" href="/host/evidence#${id}">${content.clues[id]?.title || id}</a> `)}</p>` : ''}
   ${s.send_texts.map((id) => cueButton(ctx, id))}
-  ${raw(md(substitute(s.body, ctx)))}
+  ${raw(md(substitute(s.body, ctx), isLive))}
 </section>`)}`);
 }
 

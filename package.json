@@ -12,7 +12,8 @@
     "build": "node scripts/build.mjs",
     "check": "node scripts/check.mjs",
     "test": "node --test test/*.test.mjs",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy --env=\"\"",
+    "deploy:preview": "npm run build && wrangler deploy --env preview"
   },
   "dependencies": {
     "marked": "^15.0.0",

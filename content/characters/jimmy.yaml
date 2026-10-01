@@ -38,6 +38,9 @@ relationships:
     text: Your secret. The archivist. Two outsiders in a house that never let either of you all the way in.
   - with: carlotta
     text: Practically a sister. She left; you stayed. She got the name; you got the bills.
+  - with: savanah
+    if: savanah
+    text: Arthur's 2019 Las Vegas bride. You were his minder that weekend and his best man at 3 a.m. in a borrowed bow tie. You also know about the annulment two weeks later. She's been texting you all week.
   - with: kevin
     text: Fellow disappointed heir. You'd love three people to agree he had the bigger motive.
 
@@ -112,6 +115,12 @@ rounds:
       estate "used as collateral by sharks."
 
       It's humiliating. It isn't murder.
+
+      [[if:savanah]]
+      And if Savanah is still calling herself the widow, you were best man at
+      that wedding, and you were there when Reggie and the lawyers flew out
+      two weeks later with the annulment. Say so, kindly.
+      [[/if]]
     reveal:
       - Arthur cut you out because you borrowed $300,000 against your inheritance from Jimmy Friedman.
 

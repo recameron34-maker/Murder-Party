@@ -1,5 +1,7 @@
 # Murder at Blackwood Manor
 
+![Test and deploy](https://github.com/recameron34-maker/Murder-Party/actions/workflows/deploy.yml/badge.svg)
+
 A live-action murder mystery for ~25 guests, plus the website that runs it:
 
 - **Guest companion app.** Each guest logs in with their own passphrase and
@@ -106,27 +108,55 @@ The **Flex** page shows what's live versus falling back for the current roster.
    → Save. A passphrase appears; give it to them.
 5. The host panel works on your phone, so keep it in a pocket.
 
-## Deploy (so guests can use it on their phones)
+## Deploy from GitHub
 
-The site runs free on **Cloudflare Workers**, with a small Cloudflare D1
-database for the live game state.
+Every push to GitHub runs the consistency checker and all the tests (the
+**Actions** tab, plus a ✓ or ✗ next to each commit). Once Cloudflare is
+connected, it also deploys:
 
-One-time setup:
+| Branch | Site | Game state |
+|---|---|---|
+| `main` | `https://blackwood-manor.<your-subdomain>.workers.dev` | the real party |
+| any other branch | `https://blackwood-manor-preview.<your-subdomain>.workers.dev` | separate, for trying things |
 
-```sh
-npx wrangler login                          # opens a browser; free account is fine
-npx wrangler d1 create blackwood-manor      # prints a database_id
-#   → paste that id into wrangler.toml (database_id = "...")
-npx wrangler secret put HOST_PASSWORD       # choose a strong host password
-npx wrangler secret put SESSION_SECRET      # paste 40+ random characters
-npm run deploy
-```
+The address appears on the workflow run and under **Deployments** on the
+repo's front page ("View deployment"). Hosting is free on Cloudflare Workers.
+Game state (round, passphrases, sent texts) lives in a Cloudflare Durable
+Object that's created automatically and survives redeploys.
 
-`npm run deploy` runs the checker (deploy is refused if there are errors),
-bundles the content into the Worker, and prints your site address
-(`https://blackwood-manor.<you>.workers.dev`). Re-run `npm run deploy` after
-editing content. Game state (round, passphrases, sent texts) lives in D1 and
-survives redeploys.
+**Why not GitHub Pages?** Pages only serves static files to everyone, so it
+can't check passphrases or deliver per-player texts, and it would publish
+every character's secrets.
+
+### One-time setup (about 10 minutes)
+
+1. **Cloudflare account.** Sign up free at <https://dash.cloudflare.com>. Open
+   **Workers & Pages** once and pick your `workers.dev` subdomain when asked.
+2. **Account ID.** On the Workers & Pages overview, copy the **Account ID**
+   (right-hand side).
+3. **API token.** Click your profile icon → **API Tokens** → **Create Token**
+   → use the **Edit Cloudflare Workers** template → Account Resources: your
+   account → Zone Resources: All zones → **Continue** → **Create Token**. Copy it.
+4. **GitHub secrets.** In this repo: **Settings → Secrets and variables →
+   Actions → New repository secret**, four times:
+
+   | Name | Value |
+   |---|---|
+   | `CLOUDFLARE_API_TOKEN` | the token from step 3 |
+   | `CLOUDFLARE_ACCOUNT_ID` | the ID from step 2 |
+   | `HOST_PASSWORD` | the password you'll use for `/host` |
+   | `SESSION_SECRET` | 40+ random characters (mash the keyboard) |
+
+5. **Deploy.** Push any commit, or go to **Actions → Test and deploy → Run
+   workflow**. When it finishes, the run shows "Live at …". Open
+   `…/host`, log in, open **Roster**, and passphrases are generated.
+
+Until the secrets exist, the deploy step is skipped with a note and the tests
+still run.
+
+**From your laptop instead:** `npx wrangler login`, then
+`npx wrangler secret put HOST_PASSWORD`, `npx wrangler secret put SESSION_SECRET`,
+then `npm run deploy` (or `npm run deploy:preview`).
 
 **No-internet fallback:** run it on your laptop and have guests join your
 Wi-Fi: `npm run dev -- --lan` (requires `HOST_PASSWORD` in `.dev.vars`). The
@@ -163,4 +193,4 @@ private before guests learn the site exists (GitHub → Settings → Danger Zone
 | `npm run check` | Consistency checker (`--all` to include notes) |
 | `npm test` | Spoiler-safety, auth and content tests |
 | `npm run build` | Compile content for the Worker (`dist/content.json`) |
-| `npm run deploy` | Build and deploy to Cloudflare |
+| `npm run deploy` | Build and deploy to Cloudflare from your laptop (`deploy:preview` for the preview site) |

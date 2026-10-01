@@ -7,14 +7,16 @@ role: Arthur's private physician
 tagline: "You've seen how every body in this house ends. Tonight you were right."
 
 costume: |
-  Elegant and clinical: a dark tailored dress or suit, hair pinned back,
-  reading glasses on a chain, and a vintage doctor's bag that you insist is
-  "purely decorative."
+  Elegant and clinical, and comfortable: a dark flowing dress or soft
+  tailoring, hair pinned back, reading glasses on a chain, and a vintage
+  doctor's bag that you insist is "purely decorative." Low heels. You're
+  expecting; nobody gets to make you stand all night.
 
 intro: |
   You are Arthur's doctor, discreet and brilliant, and the only person in the
   house besides his nurse who knows how sick he was. You're married to the
-  Professor, Joji Beaumont, who loves this house more than is healthy.
+  Professor, Joji Beaumont, who loves this house more than is healthy, and
+  you're expecting your first child.
 
 backstory: |
   For six years you've kept Arthur Blackwood alive with excellent medicine and
@@ -23,7 +25,9 @@ backstory: |
 
   The Beaumonts have Blackwood money in their bones. Arthur funds Joji's
   research on the house, and Joji's research has quietly paid your mortgage.
-  Without Arthur, your lovely life gets a lot less lovely.
+  When you told Arthur about the baby he insisted on being godfather and had
+  Annie invent a non-alcoholic Reckoning just for you. "The Reckoning without
+  the reckoning," he called it. You're going to miss him.
 
   You also have a slightly mortifying secret. Last spring Arthur asked you,
   with enormous dignity, for "something to put the spring back in the step."
@@ -33,7 +37,7 @@ backstory: |
 
 relationships:
   - with: joji
-    text: Your husband, the Professor. Brilliant, distracted, in love with a building. You married him anyway.
+    text: Your husband, the Professor. Brilliant, distracted, in love with a building, and about to be a father. He has measured the nursery four times.
   - with: arthur
     text: Your patient of six years, your patron and a terrible patient. He never once took his pills on time.
   - with: shea
@@ -74,7 +78,7 @@ blackmail:
 instructions:
   - Reveal the time of death (9:35 to 9:40) in **Round Two**, not before. If someone pays you for it in Round One, refuse.
   - Be clinical and precise. You are the one person here whose facts nobody should doubt.
-  - You may examine any physical evidence Reggie produces and give a medical opinion.
+  - You may examine any physical evidence Reggie produces and give a medical opinion. You never have to crawl about searching for it; send someone else.
   - Never mention the "vitality" pills unless paid.
 
 mission: |
@@ -129,6 +133,10 @@ texts:
     body: "Tell them what the body told you, Doctor. The dark didn't kill him."
 
 host_notes: |
+  Noor is pregnant in real life (and in character). Annie's non-alcoholic
+  "Reckoning" is canon, so make sure there's a good mocktail. Keep her role
+  seated and spoken; she shouldn't have to hunt for evidence.
+
   Core. Time of death (9:35 to 9:40) in Round Two is THE first major twist.
   Ross's rescue: "Dr. Beaumont. You've had more time to examine what
   happened. What can you tell us?"
