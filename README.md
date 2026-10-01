@@ -108,25 +108,40 @@ The **Flex** page shows what's live versus falling back for the current roster.
    → Save. A passphrase appears; give it to them.
 5. The host panel works on your phone, so keep it in a pocket.
 
-## Deploy from GitHub
+## Preview on GitHub Pages (now)
 
 Every push to GitHub runs the consistency checker and all the tests (the
-**Actions** tab, plus a ✓ or ✗ next to each commit). Once Cloudflare is
-connected, it also deploys:
+**Actions** tab, plus a ✓ or ✗ next to each commit), then publishes a
+**read-only preview** of the whole site to GitHub Pages:
+
+**<https://recameron34-maker.github.io/Murder-Party/>**
+
+It has the host planner (run of show, timeline, evidence, checker, print
+views) and every guest's page at every round, so you can watch progress
+from any branch. The last push wins.
+
+- **One-time switch-on:** repo **Settings → Pages → Build and deployment →
+  Source: Deploy from a branch → Branch: `gh-pages` / `(root)` → Save.**
+  (The `gh-pages` branch is created by the first workflow run.)
+- **It's a preview, not the party site.** GitHub Pages only serves the same
+  static files to everyone, so it can't check passphrases, unlock rounds or
+  deliver texts (buttons are inert). Everything on it, including the
+  solution, is readable by anyone with the link. Never send it to guests.
+- Build it yourself with `npm run build:static` (output in `site/`).
+
+## Deploy the party site (Cloudflare, before the party)
+
+The real site, with passphrase logins, live rounds and phone texts, needs a
+small server. The same workflow deploys it to **Cloudflare Workers** (free)
+as soon as you add Cloudflare secrets. Until then that step does nothing.
 
 | Branch | Site | Game state |
 |---|---|---|
 | `main` | `https://blackwood-manor.<your-subdomain>.workers.dev` | the real party |
 | any other branch | `https://blackwood-manor-preview.<your-subdomain>.workers.dev` | separate, for trying things |
 
-The address appears on the workflow run and under **Deployments** on the
-repo's front page ("View deployment"). Hosting is free on Cloudflare Workers.
 Game state (round, passphrases, sent texts) lives in a Cloudflare Durable
 Object that's created automatically and survives redeploys.
-
-**Why not GitHub Pages?** Pages only serves static files to everyone, so it
-can't check passphrases or deliver per-player texts, and it would publish
-every character's secrets.
 
 ### One-time setup (about 10 minutes)
 
@@ -193,4 +208,5 @@ private before guests learn the site exists (GitHub → Settings → Danger Zone
 | `npm run check` | Consistency checker (`--all` to include notes) |
 | `npm test` | Spoiler-safety, auth and content tests |
 | `npm run build` | Compile content for the Worker (`dist/content.json`) |
+| `npm run build:static` | Build the read-only GitHub Pages preview into `site/` |
 | `npm run deploy` | Build and deploy to Cloudflare from your laptop (`deploy:preview` for the preview site) |

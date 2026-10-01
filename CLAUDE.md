@@ -117,7 +117,10 @@ that player. The spoiler rules above still apply and are enforced server-side
 - `src/app.mjs`: the whole app as one fetch handler (Node for dev/tests,
   Cloudflare Worker + Durable Object in production, deployed by
   `.github/workflows/deploy.yml`: `main` → production, other branches →
-  preview). `src/lib/check.mjs` is the
+  preview; dormant until Ross adds Cloudflare secrets). For now Ross
+  deploys **only to GitHub Pages**: `scripts/build-static.mjs` builds a
+  read-only, spoiler-full preview that the workflow pushes to `gh-pages`.
+  It must never contain passphrases.. `src/lib/check.mjs` is the
   consistency checker. `src/views/` holds the guest, host and print pages.
 - `test/`: spoiler-leak, Morgan-parity, auth and content tests.
 
