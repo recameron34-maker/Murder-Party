@@ -19,6 +19,7 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
 | Savanah and Courtney | **Both theatrical.** |
 | Spice level | **Saucy.** Bolder innuendo and scandalous entanglements, nothing explicit. |
 | Public GitHub repo | Not a concern for now ("no one knows this site exists"). |
+| Website | **Per-player passphrase login**, with the site as a game companion: texts that arrive at set times or on cue, visible only to that player. Built as a server-rendered app (Cloudflare Workers + D1) instead of static pages. |
 
 ## Open issues from CLAUDE.md
 

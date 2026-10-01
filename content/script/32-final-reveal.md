@@ -2,7 +2,7 @@
 title: Final reveal
 round: 4
 kind: speech
-changes: "Twenty-five people" now comes from the roster. "MORGAN. MIDNIGHT. DONE." replaced by "LEGAL. $2.4M. MIDNIGHT." The passage is named the Raven's Walk.
+changes: '"Twenty-five people" now comes from the roster. "MORGAN. MIDNIGHT. DONE." replaced by "LEGAL. $2.4M. MIDNIGHT." The passage is named the Raven''s Walk.'
 ---
 Stand somewhere central. Hold the solution envelope.
 

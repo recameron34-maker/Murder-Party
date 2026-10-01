@@ -18,11 +18,10 @@ intro: |
   you with everything. Tonight that is a problem.
 
 backstory: |
-  You grew up in a mill town several social classes below Blackwood Manor.
-  Arthur met you at nineteen, waiting tables at one of his dinners, and paid
-  for law school "because you looked at the silver like you were pricing it."
-  Now you have a Chelsea townhouse, a horse named Precedent, and a wardrobe
-  none of which was ever quite paid for.
+  Arthur met you at nineteen, a mill-town girl waiting tables at one of his
+  dinners, and paid for law school "because you looked at the silver like you
+  were pricing it." Now you have a townhouse, a horse named Precedent, and a
+  wardrobe, none of it quite paid for.
 
   Fourteen months ago a property gamble collapsed under you. You "borrowed"
   **$2.4 million** from Blackwood Holdings in six transfers, authorized
@@ -30,20 +29,20 @@ backstory: |
   Holdings** because you thought it was funny. You always meant to pay it
   back.
 
-  This week Arthur kept asking helpful little questions about "some odd
-  transfers." You helped him investigate. You were very helpful.
+  All week Arthur asked you helpful questions about "odd transfers." You
+  were very helpful.
 
 relationships:
   - with: arthur
     text: Your patron, your client, your maker. You'd have said you loved him.
   - with: kevin
-    text: A week in Cannes last summer that Kevin thinks is still going on. Useful man to have in your corner.
+    text: A week in Cannes that Kevin thinks is still going on. Useful.
   - with: annie
     text: You handled her divorce for free. She has been fiercely loyal ever since.
   - with: lindsey
-    text: Arthur's banker. Far too interested in transfer patterns. Keep her talking about confidentiality.
+    text: Arthur's banker. Far too interested in transfer patterns.
   - with: joji
-    text: Your office filed his landmark application in August. You've read his whole survey, including the 1891 plans.
+    text: Your office filed his landmark application. You've read his survey, including the 1891 plans.
   - with: savanah
     if: savanah
     text: You flew to Las Vegas in 2019 with her annulment papers. Let her play the widow. It muddies the water.
@@ -75,8 +74,8 @@ evening:
 knows:
   - Arthur is dead because of you. Nobody else knows.
   - The 9:45 blackout had nothing to do with you. It was a gift.
-  - The study passage comes out behind a library bookcase. Almost nobody knows it exists.
-  - 'Cover story: you knocked at 9:35, got no answer, and went looking for the powder room. This house is a labyrinth.'
+  - The study passage comes out behind a library bookcase.
+  - 'Cover story: you knocked at 9:35, got no answer, and went looking for the powder room.'
 
 secret: |
   **You killed Arthur Blackwood** at about 9:38 with the bronze raven to stop
@@ -92,7 +91,7 @@ instructions:
   - "**You may accept Blackmail Cash and lie.**"
   - Never confess. Make them prove motive, means, opportunity, escape and timeline.
   - You may say your 9:35 knock went unanswered.
-  - Steer suspicion toward Lindsey's banking access, Molly's fraud, Kevin's threat or Carlotta's will.
+  - Steer suspicion toward Lindsey, Molly, Kevin or Carlotta.
 
 mission: |
   Get at least **two people to publicly accuse someone other than you**.

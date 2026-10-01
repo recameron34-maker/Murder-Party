@@ -95,3 +95,31 @@ The roster tracks each character's status: confirmed, maybe, spare-unassigned, o
 - Keep the canonical true timeline in one file and have other views reference it.
 - Ask Ross before changing anything about the solution, the culprit, or core clue logic.
 - Tone: theatrical, dry, funny, as in Reggie's voice in the host script, set inside the spooky Saltburn atmosphere described above. Evoke the vibe; don't copy the film's characters or plot.
+
+## Build status and conventions (added October 2026)
+
+**Ross's decisions so far** (full log in `docs/decisions.md`): cards and
+envelopes are written from scratch; JIMMY and JIMMY FRIEDMAN are two guests;
+Albie and Aalvia are one guest; Savanah and Courtney are both theatrical;
+spice level is **saucy**. Every other open issue above has a documented
+default in `docs/decisions.md`. Treat those as resolved unless Ross says
+otherwise, and keep that file updated when he does.
+
+**Website design change (Ross's request):** instead of unguessable static
+URLs, guests **log in with a per-player passphrase** and the site acts as a
+game companion, including timed and cue-triggered phone texts visible only to
+that player. The spoiler rules above still apply and are enforced server-side
+(see README → Spoiler safety).
+
+**Layout**
+- `content/`: all story data (YAML/Markdown). `content/timeline.yaml` is the
+  canonical true timeline. `content/script/` is the revised run of show.
+- `src/app.mjs`: the whole app as one fetch handler (Node for dev/tests,
+  Cloudflare Worker + D1 in production). `src/lib/check.mjs` is the
+  consistency checker. `src/views/` holds the guest, host and print pages.
+- `test/`: spoiler-leak, Morgan-parity, auth and content tests.
+
+**Before committing:** run `npm run check` (zero errors) and `npm test` (all
+pass). Morgan's page must not be the longest; if you lengthen her file,
+lengthen others or trim hers. Flex characters' content in other people's
+envelopes goes inside `[[if:<id>]] … [[/if]]` blocks.

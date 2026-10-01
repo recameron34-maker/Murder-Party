@@ -2,7 +2,7 @@
 title: Final physical evidence
 round: 3
 kind: evidence
-changes: "MORGAN. MIDNIGHT. DONE." replaced by "LEGAL. $2.4M. MIDNIGHT." (Part Two §2). Merged with Part Two Clue 10. Kevin found it in Arthur's coat.
+changes: '"MORGAN. MIDNIGHT. DONE." replaced by "LEGAL. $2.4M. MIDNIGHT." (Part Two §2). Merged with Part Two Clue 10. Kevin found it in Arthur''s coat.'
 clues: [bank-statement]
 ---
 Kevin gives you Arthur's folded bank statement. 🆕 *(He's been wearing Arthur's coat since 9:22 and finally checked the pockets.)*

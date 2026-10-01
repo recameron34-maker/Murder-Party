@@ -4,6 +4,7 @@
 export function parseClock(str) {
   const m = /^~?\s*(\d{1,2}):(\d{2})\s*(AM|PM)$/i.exec(String(str ?? '').trim());
   if (!m) return null;
+  if (Number(m[1]) < 1 || Number(m[1]) > 12 || Number(m[2]) > 59) return null;
   let h = Number(m[1]) % 12;
   const min = Number(m[2]);
   const pm = m[3].toUpperCase() === 'PM';
