@@ -125,6 +125,182 @@ export function manorMap({ mode = 'guest', rooms = {}, pins = [], linkRooms = fa
   return raw(`<div class="map-wrap"><svg class="manor-map" viewBox="0 0 900 540" role="img" aria-label="Plan of the ground floor of Blackwood Manor">${defs}${style}${parts.join('')}</svg></div>`);
 }
 
+// ---------------------------------------------------------------- the real venue (Ross's flat)
+// Drawn from content/venue.yaml. Guest mode shows rooms, what each one plays
+// tonight and which are shut. Host mode adds evidence pins. Neither shows the
+// passage: it doesn't exist in the flat, only in the story.
+const bbox = (shape) => {
+  const xs = shape.map((p) => p[0]);
+  const ys = shape.map((p) => p[1]);
+  return { x: Math.min(...xs), y: Math.min(...ys), w: Math.max(...xs) - Math.min(...xs), h: Math.max(...ys) - Math.min(...ys) };
+};
+export const gameLabel = (id, rooms) => (ROOM_GEO[id]?.label || rooms?.[id]?.name || id).replace(/\s*[↓(].*$/, '').replace(/^Kitchens$/, 'Kitchens');
+
+// Split a label into lines that fit a width, at roughly 0.52em per character.
+function wrapLabel(text, width, fs) {
+  const max = Math.max(4, Math.floor((width - 10) / (fs * 0.52)));
+  const lines = [];
+  for (const w of String(text).split(' ')) {
+    if (lines.length && (lines[lines.length - 1] + ' ' + w).length <= max) lines[lines.length - 1] += ' ' + w;
+    else lines.push(w);
+  }
+  return lines;
+}
+
+export function venueSpot(venue, gameId) {
+  const sp = (venue.spots || []).find((x) => x.game === gameId);
+  if (sp) return { kind: 'spot', area: sp.area, at: sp.at };
+  const a = (venue.areas || []).find((x) => x.game === gameId);
+  return a ? { kind: 'area', area: a.id, box: bbox(a.shape) } : null;
+}
+
+// "the Living Room, by the front door": where a manor room is tonight.
+export function venueWhere(venue, gameId) {
+  const sp = (venue.spots || []).find((x) => x.game === gameId);
+  const a = (venue.areas || []).find((x) => x.id === (sp ? sp.area : (venue.areas || []).find((y) => y.game === gameId)?.id));
+  if (!a) return null;
+  const detail = sp ? sp.label : a.game_where;
+  return `the ${a.name}${detail ? `, ${detail}` : ''}`;
+}
+
+export function venueAreaName(venue, gameId) {
+  const where = venueSpot(venue, gameId);
+  const a = where && (venue.areas || []).find((x) => x.id === where.area);
+  return a ? a.name : null;
+}
+
+// Evidence pins for the host setup map: beside the spot's marker, or along
+// the bottom of the room that plays the manor room. Positions are worked out
+// per orientation in venueSvg.
+export function venuePins(venue, items) {
+  const counts = new Map();
+  const pins = [];
+  for (const it of items) {
+    const where = venueSpot(venue, it.room);
+    if (!where) continue;
+    const key = `${where.kind}:${where.area}:${it.room}`;
+    const i = counts.get(key) || 0;
+    counts.set(key, i + 1);
+    pins.push({ ...it, where, i });
+  }
+  return pins;
+}
+
+// One orientation of the plan. `tall` turns it a quarter turn clockwise (the
+// balcony at the top, the study at the bottom) so it fits a phone; text stays
+// upright because every coordinate goes through T() and text is placed after.
+function venueSvg(venue, { host, rooms, pins, linkRooms, tall, secret }) {
+  const [vx, vy, vw, vh] = venue.viewbox || [0, 0, 1206, 647];
+  const T = tall ? (x, y) => [vy + vh - y, x - vx] : (x, y) => [x - vx, y - vy];
+  const W = tall ? vh : vw;
+  const H = tall ? vw : vh;
+  const k = tall ? 1.15 : 1.35; // font scale
+  const pts = (shape) => shape.map(([x, y]) => T(x, y).join(',')).join(' ');
+  const parts = [`<rect x="0" y="0" width="${W}" height="${H}" fill="#120d14"/>`];
+  for (const a of venue.areas || []) {
+    const fill = a.shut ? 'url(#v-hatch)' : a.outside && a.game ? 'url(#v-rain)' : a.outside ? '#0f0b11' : a.game === 'study' ? '#2a1519' : a.game ? '#211825' : '#19131c';
+    const stroke = a.outside && !a.game ? '#3a3040' : '#7a6683';
+    parts.push(`<polygon points="${pts(a.shape)}" fill="${fill}" stroke="${stroke}" stroke-width="${a.outside && !a.game ? 1.5 : 5}" stroke-linejoin="round"${a.outside ? ' stroke-dasharray="9 6"' : ''}/>`);
+  }
+  for (const [x1, y1, x2, y2] of venue.openings || []) {
+    const [X1, Y1] = T(x1, y1);
+    const [X2, Y2] = T(x2, y2);
+    parts.push(`<line x1="${X1}" y1="${Y1}" x2="${X2}" y2="${Y2}" stroke="#211825" stroke-width="7"/>`);
+  }
+  const text = [];
+  for (const a of venue.areas || []) {
+    const b = bbox(a.shape.map(([x, y]) => T(x, y)));
+    const [cx, cy] = a.label_at ? T(...a.label_at) : [b.x + b.w / 2, b.y + b.h / 2];
+    const body = [];
+    if (a.label === false) {
+      // drawn, but unlabelled (an entrance labels it)
+    } else if (a.game) {
+      const label = gameLabel(a.game, rooms);
+      const longest = Math.max(...label.split(' ').map((w) => w.length));
+      // shrink (to a floor) when one word is wider than a narrow room
+      const fs = Math.round(Math.max(14, Math.min((b.w < 120 ? 16 : 20) * k, (b.w - 4) / (longest * 0.55))));
+      const lines = wrapLabel(label, b.w, fs);
+      const top = cy - ((lines.length - 1) * fs * 1.05) / 2 - 6;
+      lines.forEach((ln, i) => body.push(`<text x="${cx}" y="${top + i * fs * 1.05}" text-anchor="middle" class="v-game" style="font-size:${fs}px">${esc(ln)}</text>`));
+      const rs = Math.round(12 * k);
+      const room = 2 * Math.min(cx - b.x, b.x + b.w - cx) - 10;
+      const withSize = host && a.size && (a.name.length + a.size.length + 3) * rs * 0.55 < room;
+      body.push(`<text x="${cx}" y="${top + (lines.length - 1) * fs * 1.05 + 14 + 8 * k}" text-anchor="middle" class="v-real" style="font-size:${rs}px">${esc(a.name)}${withSize ? ` · ${esc(a.size)}` : ''}</text>`);
+    } else if (a.shut) {
+      const fs = Math.round(12 * k);
+      const lines = wrapLabel(a.name, b.w, fs);
+      lines.forEach((ln, i) => body.push(`<text x="${cx}" y="${cy - 4 + i * (fs + 2)}" text-anchor="middle" class="v-shut" style="font-size:${fs}px">${esc(ln)}</text>`));
+      if (b.w > 60 && b.h > 60) body.push(`<text x="${cx}" y="${cy + fs + 6 + (lines.length - 1) * (fs + 2)}" text-anchor="middle" class="v-shutnote" style="font-size:${Math.round(9 * k)}px">shut</text>`);
+    } else {
+      const fs = Math.round(12.5 * k);
+      const lines = wrapLabel(a.name, b.w, fs);
+      lines.forEach((ln, i) => body.push(`<text x="${cx}" y="${cy + i * (fs + 2)}" text-anchor="middle" class="v-plain" style="font-size:${fs}px">${esc(ln)}</text>`));
+    }
+    const title = a.game ? `${rooms[a.game]?.name || gameLabel(a.game, rooms)}: ${a.name}${a.size ? ` (${a.size})` : ''}` : `${a.name}${a.shut ? ' (shut tonight)' : ''}`;
+    const g = `<g class="v-area${a.game ? ' v-game-area' : ''}" data-area="${esc(a.id)}"><title>${esc(title)}</title>${body.join('')}</g>`;
+    text.push(linkRooms && a.game ? `<a href="#room-${esc(a.game)}">${g}</a>` : g);
+  }
+  for (const sp of venue.spots || []) {
+    const [x, y] = T(...sp.at);
+    const g = `<g class="v-spot"><title>${esc(`${rooms[sp.game]?.name || gameLabel(sp.game, rooms)}: ${sp.label || ''}`)}</title><path d="M${x} ${y - 8} L${x + 8} ${y} L${x} ${y + 8} L${x - 8} ${y} Z" fill="#c9a45c" stroke="#120d14" stroke-width="1.5"/><text x="${x}" y="${y - 14}" text-anchor="middle" class="v-spotname" style="font-size:${Math.round(14 * k)}px">${esc(gameLabel(sp.game, rooms))}</text>${sp.label ? `<text x="${x}" y="${y + 14 + 8 * k}" text-anchor="middle" class="v-real" style="font-size:${Math.round(11 * k)}px">${esc(sp.label)}</text>` : ''}</g>`;
+    text.push(linkRooms ? `<a href="#room-${esc(sp.game)}">${g}</a>` : g);
+  }
+  for (const e of venue.entrances || []) {
+    // The door is a gap in the wall; the arrow points in from outside.
+    const [dx, dy] = e.dir || [0, -1];
+    const [gx1, gy1] = T(e.at[0] - 20 * Math.abs(dy), e.at[1] - 20 * Math.abs(dx));
+    const [gx2, gy2] = T(e.at[0] + 20 * Math.abs(dy), e.at[1] + 20 * Math.abs(dx));
+    const [tx, ty] = T(e.at[0] - dx * 34, e.at[1] - dy * 34);
+    const [hx, hy] = T(e.at[0] - dx * 8, e.at[1] - dy * 8);
+    const len = Math.hypot(hx - tx, hy - ty) || 1;
+    const ux = (hx - tx) / len;
+    const uy = (hy - ty) / len;
+    const wing = (sgn) => `${hx - ux * 9 + sgn * uy * 7},${hy - uy * 9 - sgn * ux * 7}`;
+    parts.push(`<line x1="${gx1}" y1="${gy1}" x2="${gx2}" y2="${gy2}" stroke="#211825" stroke-width="7"/>`);
+    text.push(`<path d="M${tx} ${ty} L${hx} ${hy} M${wing(1)} L${hx} ${hy} L${wing(-1)}" stroke="#e3c788" stroke-width="2.5" fill="none"/><text x="${tx}" y="${ty + 20}" text-anchor="middle" class="v-entry" style="font-size:${Math.round(12 * k)}px">${esc(e.label)}</text>`);
+  }
+  if (host && secret) {
+    // The real hidden door (host only; it lives in lore.yaml, never venue.yaml).
+    const [x1, y1, x2, y2] = secret.line;
+    const [X1, Y1] = T(x1, y1);
+    const [X2, Y2] = T(x2, y2);
+    text.push(`<g class="v-secret"><title>${esc(secret.note || secret.label || '')}</title><line x1="${X1}" y1="${Y1}" x2="${X2}" y2="${Y2}" stroke="#ff5c74" stroke-width="7" stroke-dasharray="7 4"/><text x="${(X1 + X2) / 2 + (tall ? 0 : 0)}" y="${Math.min(Y1, Y2) - 8}" text-anchor="middle" class="v-secretlabel" style="font-size:${Math.round(12 * k)}px">${esc(secret.label || '')}</text></g>`);
+  }
+  if (host) {
+    for (const p of pins) {
+      let x;
+      let y;
+      if (p.where.kind === 'spot') {
+        // to the left of the marker: its labels sit above and below it
+        [x, y] = T(...p.where.at);
+        x -= 24 + p.i * 24;
+      } else if ((venue.areas || []).find((ar) => ar.id === p.where.area)?.pins_at) {
+        const area = (venue.areas || []).find((ar) => ar.id === p.where.area);
+        [x, y] = T(...area.pins_at);
+        x += p.i * 24;
+      } else {
+        const area = (venue.areas || []).find((ar) => ar.id === p.where.area);
+        const b = bbox(area.shape.map(([ax, ay]) => T(ax, ay)));
+        const per = Math.max(1, Math.floor((b.w - 16) / 24));
+        x = b.x + 16 + (p.i % per) * 24;
+        y = b.y + b.h - 16 - Math.floor(p.i / per) * 24;
+      }
+      text.push(`<g class="v-pin"><title>${esc(p.title || '')}</title><circle cx="${x}" cy="${y}" r="11" fill="${p.color}" stroke="#0d090f" stroke-width="2"/><text x="${x}" y="${y + 4.5}" text-anchor="middle" class="v-pinnum">${esc(p.label)}</text></g>`);
+    }
+  }
+  const defs = `<defs><pattern id="v-hatch${tall ? '-t' : ''}" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#151018"/><line x1="0" y1="0" x2="0" y2="10" stroke="#2a2030" stroke-width="4"/></pattern><pattern id="v-rain${tall ? '-t' : ''}" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#141c18"/><line x1="2" y1="0" x2="0" y2="7" stroke="#2c3d34" stroke-width="1.2"/><line x1="11" y1="6" x2="9" y2="13" stroke="#2c3d34" stroke-width="1.2"/></pattern></defs>`;
+  const body = (parts.join('') + text.join('')).replace(/url\(#v-(hatch|rain)\)/g, (_, n) => `url(#v-${n}${tall ? '-t' : ''})`);
+  return `<svg class="venue-map${tall ? ' venue-tall' : ' venue-wide'}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Plan of the flat, with the manor room each room plays tonight">${defs}${body}</svg>`;
+}
+
+export function venueMap(venue, { mode = 'guest', rooms = {}, pins = [], linkRooms = false, secret = null } = {}) {
+  const host = mode === 'host';
+  const opts = { host, rooms, pins: host ? pins : [], linkRooms, secret: host ? secret : null };
+  const style = `<style>.v-game{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#efe2c8}.v-real{font-family:system-ui,sans-serif;fill:#a8988a}.v-shut{font-family:Georgia,serif;font-style:italic;fill:#6f6176}.v-shutnote{font-family:system-ui,sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;fill:#6f6176}.v-plain{font-family:system-ui,sans-serif;fill:#a8988a}.v-spotname{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#e3c788}.v-entry{font-family:system-ui,sans-serif;font-weight:600;fill:#e3c788}.v-game-area:hover text{fill:#fff}${host ? ".v-pinnum{font:700 12px system-ui,sans-serif;fill:#fff}.v-secretlabel{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#ff9fac}" : ''}</style>`;
+  const legend = `<div class="legend"><span class="lg"><i style="background:#211825;border:1px solid #7a6683"></i>Game room: search here</span><span class="lg"><i style="background:repeating-linear-gradient(45deg,#151018 0 3px,#2a2030 3px 6px);border:1px solid #7a6683"></i>Shut tonight: keep out</span><span class="lg"><i style="background:#c9a45c;transform:rotate(45deg);width:10px;height:10px;border-radius:1px"></i>A manor room in one corner</span></div>`;
+  return raw(`<div class="map-wrap venue-wrap">${style}${venueSvg(venue, { ...opts, tall: false })}${venueSvg(venue, { ...opts, tall: true })}</div>${legend}`);
+}
+
 // Spread pins / dots inside a room rectangle in a grid.
 export function slotsIn(roomId, n, { size = 26, top = 44 } = {}) {
   const g = ROOM_GEO[roomId];

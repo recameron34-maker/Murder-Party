@@ -7,7 +7,7 @@ import { deliveredTexts } from '../lib/texts.mjs';
 import { formatTimeIn } from '../lib/time.mjs';
 import { rosterHelpers } from '../lib/roster.mjs';
 import { page, RAVEN_SVG } from './layout.mjs';
-import { crest, roundStepper, eveningStrip, yourWeb, manorMap, familyTree } from './visuals.mjs';
+import { crest, roundStepper, eveningStrip, yourWeb, venueMap, venueWhere, familyTree } from './visuals.mjs';
 import { GUEST_CSS } from './styles.mjs';
 
 const ROUND_WORDS = { 1: 'One', 2: 'Two', 3: 'Three' };
@@ -84,7 +84,10 @@ export function guestPage(content, state, charId, { round, preview = false, now 
   });
 
   const guestList = liveIds.map((id) => html`<li class="${id === charId ? 'me' : ''}">${crest(id, content.characters[id].name, 44)}<div><b>${content.characters[id].name}</b>${id === charId ? html` <span class="pill-now">you</span>` : ''}<span class="pr">${content.characters[id].public_role}</span>${roster[id]?.player ? html`<span class="player">played by ${roster[id].player}</span>` : ''}</div></li>`);
-  const roomList = Object.entries(gc.rooms || {}).map(([id, text]) => html`<li id="room-${id}"><b>${content.lore.rooms[id]?.name || id}</b> ${text}</li>`);
+  const roomList = Object.entries(gc.rooms || {}).map(([id, text]) => {
+    const where = id === 'east-wing' ? 'every room marked shut' : venueWhere(content.venue, id);
+    return html`<li id="room-${id}"><b>${content.lore.rooms[id]?.name || id}</b> ${text}${where ? html` <span class="tonight">Tonight: ${where}.</span>` : ''}</li>`;
+  });
 
   const body = html`
 ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${live}. <a href="/host/characters/${charId}">Back to host</a></div>` : ''}
@@ -151,7 +154,10 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
   <h3>The guest list</h3>
   <ul class="guest-list">${guestList}</ul>
   <h3>The house</h3>
-  <div class="card">${M(gc.house)}${manorMap({ mode: 'guest', linkRooms: true })}<ul class="rooms">${roomList}</ul></div>
+  <div class="card">${M(gc.house)}
+  ${gc.house_tonight ? M(gc.house_tonight) : ''}
+  ${venueMap(content.venue, { mode: 'guest', rooms: content.lore.rooms, linkRooms: true })}
+  <ul class="rooms">${roomList}</ul></div>
   <h3>The Blackwoods</h3>
   <div class="card">${familyTree(gc.family_tree || [])}</div>
   <h3>The legend</h3>

@@ -44,6 +44,8 @@ Stand somewhere central. Hold the solution envelope.
 
 "Study." *Gesture.* "Wall." *Gesture.* "Library."
 
+🆕 *Tonight it's real.* Walk to the study. "Study." Knock on the wall where the hidden door is. "Wall." Then go round to the landing, slide the bookshelf aside and open the door so the room can see straight through into the study. "Library." *Let them look.* "Silas did love a dramatic exit."
+
 "At 9:41, Alma saw Morgan emerge near the library."
 
 "Then, four minutes later…" *Snap fingers.* "…the lights went out."

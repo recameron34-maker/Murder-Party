@@ -6,7 +6,7 @@ round: 1
 timing: mid
 carrier: found
 delivery: Hidden behind a framed picture. Molly should read the word IF with emphasis.
-hide: Behind a framed picture in the "gallery" (any wall frame).
+hide: Behind one of the framed portraits in the Hall (the Portrait Gallery). Hide before guests arrive.
 room: gallery            # where it is found in the manor (for the host map)
 print: |
   Molly —

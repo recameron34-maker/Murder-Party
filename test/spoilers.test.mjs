@@ -190,9 +190,10 @@ test('the guest house plan shows rooms only: no passage, evidence pins, whereabo
   await app.setRound(hostCookie, 3);
   for (const id of ['morgan', 'joji', 'tim', 'alma']) {
     const html = await (await app.fetch('/', { cookie: await app.loginGuest(id) })).text();
-    const map = html.match(/<svg class="manor-map"[\s\S]*?<\/svg>/);
-    assert.ok(map, `${id} page has a house plan`);
-    assert.ok(!/Raven'?s Walk|passage|m-secret|m-pin|m-dots|#c0495a/i.test(map[0]), `${id}'s plan leaks the passage or host markup`);
+    const maps = [...html.matchAll(/<svg class="venue-map[\s\S]*?<\/svg>/g)].map((m) => m[0]);
+    assert.equal(maps.length, 2, `${id} page has a plan of the flat (wide and tall)`);
+    for (const map of maps) assert.ok(!/Raven'?s Walk|passage|bookcase|bookshelf|v-pin|v-secret|#ff5c74|m-secret|m-pin|m-dots|#c0495a/i.test(map), `${id}'s plan leaks the passage or host markup`);
+    assert.ok(!/class="manor-map"/.test(html), `${id}'s page carries the story map (it shows the study and library back to back)`);
     assert.ok(!/murder-zone|escape-zone|mapdata|webgraph|heatmap/.test(html), `${id}'s page carries host-only visuals`);
   }
 });

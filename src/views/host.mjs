@@ -8,19 +8,20 @@ import { checkContent, wordCount } from '../lib/check.mjs';
 import { flexCoverage } from '../lib/flex.mjs';
 import { page } from './layout.mjs';
 import { HOST_CSS } from './styles.mjs';
-import { crest, crestSvg, roundStepper, manorMap, slotsIn, timelineChart, eveningStrip, yourWeb, webGraph, suspicionHeatmap, initials, shortNames, KIND_LABELS, ROOM_GEO } from './visuals.mjs';
+import { crest, crestSvg, roundStepper, manorMap, venueMap, venuePins, venueWhere, slotsIn, timelineChart, eveningStrip, yourWeb, webGraph, suspicionHeatmap, initials, shortNames, KIND_LABELS, ROOM_GEO } from './visuals.mjs';
 
 const NAV = [
   ['Tonight', [['/host', 'Dashboard'], ['/host/script', 'Run of show'], ['/host/texts', 'Texts']]],
   ['The case', [['/host/map', 'Map'], ['/host/timeline', 'Timeline'], ['/host/evidence', 'Evidence'], ['/host/suspicion', 'Suspicion'], ['/host/web', 'Web']]],
   ['People', [['/host/characters', 'Characters'], ['/host/roster', 'Roster'], ['/host/flex', 'Flex']]],
-  ['Prep', [['/host/print', 'Print'], ['/host/check', 'Checker']]],
+  ['Prep', [['/host/setup', 'Setup'], ['/host/print', 'Print'], ['/host/check', 'Checker']]],
 ];
 const PAGE_INFO = {
   '/host': 'Where the night stands, and what needs to happen next.',
   '/host/script': "Reggie's lines, cues and rescues, round by round. 🆕 marks the Part Two upgrades.",
   '/host/texts': 'Send cue texts, text anyone as anyone, and see what is scheduled.',
-  '/host/map': 'The manor, the hidden passage, where the evidence is, and where everyone was, minute by minute.',
+  '/host/map': "Silas's plans: the manor as the story has it, with the hidden passage, where the evidence is found, and where everyone was, minute by minute.",
+  '/host/setup': 'Your flat as Blackwood Manor: which room plays what, what to set up, and where to hide each piece of evidence, and when.',
   '/host/timeline': 'What really happened, and when the players find out.',
   '/host/evidence': 'Every prop and clue by round: where it hides, who carries it, and what it really means.',
   '/host/suspicion': 'Who the room should suspect at each stage, so you can steer with counterweights.',
@@ -28,7 +29,7 @@ const PAGE_INFO = {
   '/host/characters': 'Every character at a glance. Open one for the full dossier, or preview their phone.',
   '/host/roster': 'Who plays whom, passphrases and login links, and assigning spares to late guests.',
   '/host/flex': 'Which optional-character lines are live, given who is coming.',
-  '/host/print': 'Print-ready envelopes, cards, evidence, ballots, Blackmail Cash and hint cards.',
+  '/host/print': 'Print-ready envelopes, cards, evidence, ballots, Blackmail Cash, hint cards and room signs.',
   '/host/check': 'Contradictions with the true timeline, missing pieces, and spoiler risks.',
 };
 const ROUND_LABEL = { 0: 'Before the Supper', 1: 'Round One', 2: 'Round Two', 3: 'Round Three', 4: 'The reveal', 9: 'Reference' };
@@ -116,9 +117,9 @@ export function dashboardPage(ctx) {
     <h3 class="h-card">Evidence ${live === 0 ? 'to hide before Round One' : 'for this round'}</h3>
     <ul class="checklist">${phys.map((id) => {
       const c = content.clues[id];
-      return html`<li><span class="pin-dot r${c.round}">${c.round}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${c.timing} · ${carrier(c.carrier)}${c.room ? ` · ${ROOM_GEO[c.room]?.label || c.room}` : ''}</span></span></li>`;
+      return html`<li><span class="pin-dot r${c.round}">${c.round}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${c.timing} · ${carrier(c.carrier)}${c.room ? ` · ${venueWhere(content.venue, c.room) || ROOM_GEO[c.room]?.label || c.room}` : ''}</span></span></li>`;
     })}</ul>
-    <p class="small"><a href="/host/map">See it on the map →</a></p>
+    <p class="small"><a href="/host/setup">Where it all goes in the flat →</a></p>
     ${aims.length ? html`<h3>Suspicion target</h3>${aims.map((st) => html`<p class="small"><b>${st.title}:</b> ${st.aim}</p>`)}` : ''}
   </div>
   <div class="card">
@@ -315,7 +316,7 @@ export function evidencePage(ctx) {
   const carrier = (c) => (c === 'host' ? 'Reggie' : c === 'found' ? 'Hidden for the hunt' : content.names[c] || c);
   const pinNo = Object.fromEntries(mapPins(content).map((p) => [p.id, p.label]));
   return shell(ctx, '/host/evidence', 'Evidence & props', html`
-<p class="small muted">Tick props off as you prepare them. Hiding spots are suggestions; set the real ones in content/clues/*.yaml. Numbered pins match the <a href="/host/map">map</a>.</p>
+<p class="small muted">Tick props off as you prepare them. Hiding spots are set for your flat (see <a href="/host/setup">Setup</a>); change them in content/clues/*.yaml. Numbered pins match Setup and the <a href="/host/map">story map</a>.</p>
 ${[1, 2, 3].map((r) => {
   const phys = content.clueOrder.filter((id) => content.clues[id].round === r && content.clues[id].kind !== 'spoken');
   const spoken = content.clueOrder.filter((id) => content.clues[id].round === r && content.clues[id].kind === 'spoken');
@@ -448,10 +449,71 @@ export function printIndexPage(ctx) {
     ['ballots', 'Accusation ballots', 'Four per page.'],
     ['cash', 'Blackmail Cash', '$1,000 notes: three per guest plus a float.'],
     ['hints', 'Hint cards', 'For the $3,000 private hint.'],
+    ['signs', 'Room signs', 'One sign for each room the flat plays tonight (THE STUDY, THE LIBRARY…) and an EAST WING · SHUT sign for every closed door.'],
   ];
   return shell(ctx, '/host/print', 'Print', html`
 <p class="small muted">Each view opens a print-ready page. Use your browser's Print and choose "Save as PDF" or a printer. Envelopes reflect the current roster (flex lines included or dropped).</p>
 <div class="grid">${items.map(([href, title, desc]) => html`<a class="card" style="text-decoration:none;color:inherit" href="/host/print/${raw(href)}" target="_blank"><h3 style="margin-top:0">${title}</h3><p class="small muted">${desc}</p></a>`)}</div>`);
+}
+
+// ---------------------------------------------------------------- setup (the real flat)
+const TIMING_ORDER = { early: 0, mid: 1, late: 2, end: 3 };
+const WHEN_LABEL = (c) => (c.round === 1 ? 'Before guests arrive' : `${ROUND_LABEL[c.round]}, ${c.timing === 'early' ? 'as it opens' : c.timing}`);
+
+export function setupPage(ctx) {
+  const { content, state } = ctx;
+  const venue = content.venue;
+  const numbers = Object.fromEntries(mapPins(content).map((p) => [p.id, p.label]));
+  const hidden = content.clueOrder.filter((id) => content.clues[id].kind === 'physical' && content.clues[id].carrier === 'found' && content.clues[id].room);
+  const kept = content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken' && content.clues[id].carrier === 'host');
+  const pins = venuePins(venue, hidden.map((id) => {
+    const c = content.clues[id];
+    return { id, room: c.room, label: numbers[id] || '?', color: ROUND_COLORS[c.round], title: `${numbers[id]}. ${c.title} (${WHEN_LABEL(c)})\n${c.hide}` };
+  }));
+  const when = [...hidden].sort((a, b) => content.clues[a].round - content.clues[b].round || TIMING_ORDER[content.clues[a].timing] - TIMING_ORDER[content.clues[b].timing]);
+  const groups = [];
+  for (const id of when) {
+    const label = WHEN_LABEL(content.clues[id]);
+    if (!groups.length || groups[groups.length - 1][0] !== label) groups.push([label, []]);
+    groups[groups.length - 1][1].push(id);
+  }
+  const areaClues = (a) => hidden.filter((id) => {
+    const r = content.clues[id].room;
+    return a.game === r || (venue.spots || []).some((sp) => sp.area === a.id && sp.game === r);
+  });
+  const roomName = (id) => content.lore.rooms[id]?.name || id;
+  const setupNotes = content.lore.venue_setup || {};
+  const areas = (venue.areas || []).filter((a) => a.game || setupNotes[a.id] || (venue.spots || []).some((sp) => sp.area === a.id));
+  const shut = (venue.areas || []).filter((a) => a.shut);
+
+  return shell(ctx, '/host/setup', 'Setting up the flat', html`
+${venueMap(venue, { mode: 'host', rooms: content.lore.rooms, pins, secret: content.lore.venue_passage })}
+<div class="legend">${[1, 2, 3].map((r) => html`<span class="lg"><i style="background:${ROUND_COLORS[r]};border-radius:50%;width:12px;height:12px"></i>Round ${r} evidence</span>`)}${content.lore.venue_passage ? html`<span class="lg"><i style="background:repeating-linear-gradient(90deg,#ff5c74 0 6px,transparent 6px 10px)"></i>The Raven's Walk (host only)</span>` : ''}</div>
+<div class="grid">
+  <div class="card"><h3 class="h-card">Hide it, in this order</h3>
+  ${groups.map(([label, ids]) => html`<p class="toc-round">${label}</p><ul class="checklist">${ids.map((id) => {
+    const c = content.clues[id];
+    return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a><br><span class="small muted">${c.hide}</span></span></li>`;
+  })}</ul>`)}
+  </div>
+  <div class="card"><h3 class="h-card">Keep on you</h3><ul class="small">${kept.map((id) => html`<li><b>${content.clues[id].title}</b> <span class="muted">(${ROUND_LABEL[content.clues[id].round]})</span></li>`)}</ul>
+  <h3>Shut tonight</h3><p class="small">${shut.map((a) => a.name).filter((n, i, all) => all.indexOf(n) === i).join(', ')}. Nothing is hidden in them; the rules say so, and the plan on every guest's phone marks them shut.</p>
+  <h3>Signs</h3><p class="small">Print a sign for every game room and every shut door: <a href="/host/print/signs" target="_blank">Print → Room signs</a>.</p>
+  <h3>The passage</h3>${content.lore.venue_passage ? html`<p class="small">${content.lore.venue_passage.note} Guests' plans never show it. The normal way from the study to the library runs through the Family Room, the Living Room and the front door, past the whole party: that's why Morgan needed the wall.</p>` : html`<p class="small">It lives only in the story (<a href="/host/map">Silas's plans</a>).</p>`}</div>
+</div>
+<h2>Room by room</h2>
+<div class="room-grid">
+${areas.map((a) => {
+  const spots = (venue.spots || []).filter((sp) => sp.area === a.id);
+  const clues = areaClues(a);
+  return html`<div class="card room-card${a.game === 'study' ? ' rc-study' : ''}">
+  <h3 class="h-card">${a.name}${a.size ? html` <span class="small muted">${a.size}</span>` : ''}</h3>
+  <p class="small">${a.game ? html`Plays <b>${roomName(a.game)}</b>` : a.shut ? html`<b>Shut</b>` : 'Not a game room'}${spots.length ? html`. Also ${spots.map((sp, i) => html`${i ? ', ' : ''}<b>${roomName(sp.game)}</b> (${sp.label})`)}` : ''}.</p>
+  ${setupNotes[a.id] ? html`<p class="small">${setupNotes[a.id]}</p>` : ''}
+  ${clues.length ? html`<ul class="checklist small">${clues.map((id) => html`<li><span class="pin-dot r${content.clues[id].round}">${numbers[id]}</span><span><b>${content.clues[id].title}</b>: ${content.clues[id].hide}</span></li>`)}</ul>` : ''}
+</div>`;
+})}
+</div>`);
 }
 
 // ---------------------------------------------------------------- map

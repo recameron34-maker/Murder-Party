@@ -31,6 +31,9 @@ li{margin:.25em 0}
 .chart-scroll>svg{display:block;width:100%;height:auto}
 .map-wrap{overflow-x:auto;margin:10px 0;border-radius:10px}
 .manor-map{display:block;width:100%;min-width:620px;height:auto;border-radius:10px}
+.venue-map{display:block;width:100%;height:auto;border-radius:10px}
+.venue-tall{display:none;max-width:460px;margin:0 auto}
+@media (max-width:760px){.venue-wide{display:none}.venue-tall{display:block}}
 .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font:13px system-ui,sans-serif;color:var(--muted);margin:6px 0 2px}
 .legend .lg{display:inline-flex;align-items:center;gap:6px}
 .legend i{display:inline-block;width:18px;height:10px;border-radius:3px}
@@ -127,6 +130,7 @@ body.tabbed section.panel.active{display:block;animation:fade .25s ease}
 .guest-list .pr{display:block;font-size:.88rem;color:var(--muted);line-height:1.3}
 .guest-list .player{display:block;font:12px system-ui,sans-serif;color:#8f8070}
 .rooms{list-style:none;padding:0;margin:10px 0 0}
+.rooms .tonight{display:block;font:600 .8rem system-ui,sans-serif;color:var(--gold);margin-top:2px}
 .rooms li{padding:6px 0;border-bottom:1px solid var(--line);font-size:.95rem;scroll-margin-top:70px}
 .rooms li:target{background:rgba(201,164,92,.12)}
 .rooms b{color:var(--gold2);margin-right:4px}
@@ -214,6 +218,8 @@ nav.host .live-pill b{color:var(--gold2)}
 .m-clock{font:700 1.4rem 'Cormorant Garamond',Georgia,serif;color:var(--gold2);min-width:90px}
 .m-events{flex-basis:100%;color:var(--muted);min-height:2.6em}
 .pin-list{list-style:none;padding:0}
+.room-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.room-card.rc-study{border-color:#7a2a36}
 .pin-list li{display:flex;gap:8px;align-items:flex-start;margin:6px 0}
 .web-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
 .web-panel{position:sticky;top:64px;max-height:calc(100vh - 80px);overflow:auto}
@@ -269,6 +275,10 @@ blockquote{margin:.6em 0;padding:.3em .8em;border-left:3px solid #111;font-style
 .ballot{border:1.5px dashed #111;padding:6mm;min-height:120mm;break-inside:avoid}
 .ballot .line{border-bottom:1px solid #999;height:12mm}
 .pre{white-space:pre-wrap}
+.sign{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:250mm}
+.sign h1{font-size:64pt;letter-spacing:.06em;margin:.2em 0}
+.sign-sub{font:italic 18pt 'Cormorant Garamond',serif;margin:0}
+.sign-line{max-width:150mm;font-size:14pt;margin-top:12mm}
 @page{size:letter;margin:0}
 @media print{.noprint{display:none}}
 `;

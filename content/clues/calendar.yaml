@@ -6,7 +6,7 @@ round: 2
 timing: early
 carrier: found
 delivery: Found on (or near) the desk in Round Two.
-hide: On the "study" desk under a paperweight, or tucked in a book nearby.
+hide: Out on the study desk under the paperweight. Put it there when Round Two opens.
 room: study            # where it is found in the manor (for the host map)
 print: |
   ARTHUR BLACKWOOD — SATURDAY

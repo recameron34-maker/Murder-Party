@@ -43,6 +43,7 @@ add('/host/check', host.checkPage(ctx('/host/check')));
 add('/host/flex', host.flexPage(ctx('/host/flex')));
 add('/host/print', host.printIndexPage(ctx('/host/print')));
 add('/host/map', host.mapPage(ctx('/host/map')));
+add('/host/setup', host.setupPage(ctx('/host/setup')));
 add('/host/web', host.webPage(ctx('/host/web')));
 add('/host/suspicion', host.suspicionPage(ctx('/host/suspicion')));
 for (const id of content.characterOrder) {
@@ -50,7 +51,7 @@ for (const id of content.characterOrder) {
   add(`/host/preview/${id}`, guestPage(content, state, id, { round: 0, preview: true, now }));
   for (const r of ROUNDS) add(`/host/preview/${id}?round=${r}`, guestPage(content, state, id, { round: r, preview: true, now }));
 }
-for (const kind of ['cards', 'evidence', 'ballots', 'cash', 'hints']) add(`/host/print/${kind}`, printView(ctx('/host/print'), kind, new URLSearchParams()));
+for (const kind of ['cards', 'evidence', 'ballots', 'cash', 'hints', 'signs']) add(`/host/print/${kind}`, printView(ctx('/host/print'), kind, new URLSearchParams()));
 for (const r of [1, 2, 3]) add(`/host/print/envelopes?round=${r}`, printView(ctx('/host/print'), 'envelopes', new URLSearchParams({ round: String(r) })));
 add('/guest-login', loginPage());
 
@@ -101,6 +102,7 @@ const index = page({
 <div class="grid">
   ${[
     ['/host', 'Host dashboard', 'Round controls, what must happen this round, the suspicion curve.'],
+    ['/host/setup', 'Setting up the flat', 'Your floor plan: which room plays what, and where each piece of evidence hides.'],
     ['/host/map', 'The manor map', 'Rooms, the secret passage, evidence pins, and a minute-by-minute replay of the murder.'],
     ['/host/timeline', 'True timeline', 'Where everyone was, as charts, plus when players learn each fact.'],
     ['/host/web', 'Relationship web', 'Who is tied to whom. Click a face.'],

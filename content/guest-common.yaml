@@ -22,6 +22,13 @@ house: |
   **Terrace**, the **Library**, and at the end of the **East Corridor**,
   **Arthur's study**.
 
+# Shown above the plan of the flat on every guest page.
+house_tonight: |
+  Tonight the manor is laid over the flat. Each room you walk into is playing
+  a room of Blackwood Manor; the plan below says which. Tap a room for what
+  it's like. Rooms marked **shut** are the East Wing, and the East Wing stays
+  dark: nothing is hidden there, so don't go in.
+
 legend: |
   On Arthur's desk sits the **Blackwood Raven**, eight pounds of bronze that
   Silas had cast, people say, from the melted bell of a chapel he tore down.
@@ -64,7 +71,8 @@ how_to_play: |
   - **Don't invent evidence** unless your envelope says you may.
   - If your envelope says something **must** come out, make sure it's public
     before the round ends.
-  - Search only the designated game areas. Nothing is hidden in personal
+  - Search only the designated game areas (the rooms on the plan in the
+    Manor tab that aren't marked shut). Nothing is hidden in personal
     belongings, bedrooms, drawers or cabinets.
   - Never open a future envelope early. (Kushington.)
 

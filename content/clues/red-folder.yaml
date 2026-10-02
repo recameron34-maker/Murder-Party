@@ -6,7 +6,7 @@ round: 2
 timing: mid
 carrier: found
 delivery: Reggie announces it missing after the murder (Maddie saw it at 9:10). Players find it during Round Two.
-hide: In the "library" area, behind books on a shelf.
+hide: On the library bookshelf on the landing, laid flat among the books on a middle shelf. Never behind the books, and never move the shelf (the hidden door is back there). Put it there mid Round Two.
 room: library            # where it is found in the manor (for the host map)
 print: |
   [red folder containing]

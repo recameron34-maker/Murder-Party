@@ -29,3 +29,5 @@ changes: Blackmail Cash introduced here, right after the murder (reconciles Part
 *(Unknown to everyone: Morgan is the only exception.)*
 
 🆕 **Evidence hunt.** "Evidence is hidden around the house tonight in envelopes marked BLACKWOOD EVIDENCE. Search only the game areas. Nothing is hidden inside personal belongings, bedrooms, drawers or cabinets. If it isn't obviously part of the game, leave it alone. Bring what you find to me. I pay a thousand dollars a find."
+
+🆕 *Then:* "The plan on your phone, under Manor, shows which of my rooms is which tonight. Anything marked shut is the East Wing, and the East Wing stays dark."

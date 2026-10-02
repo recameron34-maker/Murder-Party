@@ -6,7 +6,7 @@ round: 2
 timing: mid
 carrier: found
 delivery: Let it breathe. Do NOT immediately clear Lindsey.
-hide: In a coat pocket on the coat rack, or inside a book on the bar.
+hide: In the pocket of the prop overcoat on the coat rack by the front door (never a guest's coat). Slip it in mid Round Two.
 room: front-hall            # where it is found in the manor (for the host map)
 print: |
   L.V.

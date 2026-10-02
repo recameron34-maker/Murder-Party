@@ -6,7 +6,7 @@ round: 2
 timing: late
 carrier: found
 delivery: Late Round Two. Let people argue about what BLC means.
-hide: Under a seat cushion or in a magazine rack in the main room.
+hide: Under a Living Room sofa cushion. Tuck it in late in Round Two.
 room: drawing-room            # where it is found in the manor (for the host map)
 print: |
   [torn page from a ledger]

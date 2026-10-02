@@ -169,15 +169,45 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
 - Physical clues have a `room`, so they appear as numbered pins on the host
   map. `content/suspicion.yaml` turns Part Two's suspicion curve into a
   heat map, and `solution_window.killer` marks the killer on the map replay.
-- Guest pages include a house plan drawn from `guest-common.yaml` rooms.
-  The plan shows the study and library back to back, which matches the true
-  layout and rewards anyone who studies it. It never shows the passage.
-  If Ross would rather hide that, the guest plan can move the library.
+- Guest pages show the plan of Ross's flat (see below), not the story map,
+  so the study and library are never drawn back to back for guests.
+
+## The flat (Ross's floor plan, October 2026)
+
+Mapped in `content/venue.yaml`; hiding spots in `content/clues/*.yaml`; set
+dressing in `lore.yaml` → `venue_setup`. Host panel → Setup shows it all.
+
+| Real room | Plays |
+|---|---|
+| Living Room | Drawing Room; the front-door corner (coat rack) is the Front Hall |
+| Family Room | Conservatory (bay window) and Billiard Room (card table) |
+| Room (12'3" × 8'8", "Side Room" on the site) | Arthur's study; its doorway is the East Corridor |
+| Landing (top of the front stairs, inside the railings) | Library; its movable bookshelf is the library bookcase |
+| Dining Area | Dining Room, set for the Supper |
+| Hall (6'1" × 5'1") | Portrait Gallery |
+| Kitchen | Mrs. Hale's kitchens, where the blackout "starts" |
+| Balcony | Terrace (reached through the Laundry and back hall) |
+| All three bedrooms, closets, back stairs | Shut: the East Wing |
+
+Why: Part Two says nothing is hidden in bedrooms, so no bedroom plays a game
+room. Ross confirmed the Room can be the study.
+
+**The Raven's Walk is real.** Between the landing and the Room there's a door
+hidden behind a movable bookshelf on the landing side (Ross, October 2026).
+So the study and the library really are back to back with a hidden door,
+while the normal way between them runs through the Family Room, the Living
+Room and the front door, past the whole party. The door stays shut and the
+shelf stays put until the reveal, when Reggie opens it (Ross: yes). The door
+is recorded only in `lore.yaml` → `venue_passage` (host-only); the guest plan
+draws a plain wall there, and a test keeps it that way. Guests can still see
+on their plan that the library landing backs onto the study; that's a fair
+clue, and Round Two points them at the passage anyway.
 
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?
 - Who else does Courtney know? Add ties to `content/characters/courtney.yaml`.
-- The floor plan: map Ross's rooms to the game areas in `content/lore.yaml`
-  and set real hiding spots in `content/clues/*.yaml`.
+- Is there space for a card table in the Family Room (the Billiard Room)?
+  If not, move that spot in `content/venue.yaml`; the kitchen island works.
+- Is the landing roomy enough to search? Only the red folder is found there.
 - Any other real couples in the cast? Real couples make the best pairings.

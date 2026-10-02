@@ -60,3 +60,32 @@ test('there are 8 name-flexible spares spanning low, medium and high effort', ()
   const efforts = new Set(spares.map((id) => content.characters[id].effort));
   assert.deepEqual([...efforts].sort(), ['high', 'low', 'medium']);
 });
+
+test('the flat follows Part Two: no bedroom or shut room plays a game room, and every hidden clue has a real home', () => {
+  const venue = content.venue;
+  const areas = new Map(venue.areas.map((a) => [a.id, a]));
+  for (const a of venue.areas) if (/bedroom/i.test(a.name) || a.shut) assert.ok(!a.game, `${a.id} is a bedroom or shut but plays ${a.game}`);
+  for (const sp of venue.spots) {
+    const a = areas.get(sp.area);
+    assert.ok(a && !a.shut && !/bedroom/i.test(a.name), `${sp.game} sits in ${sp.area}`);
+  }
+  const placed = new Set([...venue.areas.filter((a) => a.game).map((a) => a.game), ...venue.spots.map((sp) => sp.game)]);
+  for (const id of content.clueOrder) {
+    const c = content.clues[id];
+    if (c.kind === 'physical' && c.carrier === 'found') assert.ok(placed.has(c.room), `${id} is hidden in the ${c.room}, which no real room plays`);
+  }
+});
+
+test('the real hidden door is host-only: never in the guest-safe venue file', () => {
+  const secret = content.lore.venue_passage;
+  assert.ok(secret, 'lore.yaml has venue_passage');
+  const venueText = JSON.stringify(content.venue);
+  assert.ok(!venueText.includes(JSON.stringify(secret.line)), 'venue.yaml repeats the passage line');
+  assert.ok(!/passage|raven'?s walk|hidden|secret|bookcase|bookshelf/i.test(venueText), 'venue.yaml mentions the passage');
+  const [x, y1, , y2] = secret.line;
+  for (const [a, b, c, d] of content.venue.openings) {
+    const mx = (a + c) / 2;
+    const my = (b + d) / 2;
+    assert.ok(!(Math.abs(mx - x) < 10 && my > Math.min(y1, y2) - 10 && my < Math.max(y1, y2) + 10), 'an opening is drawn at the hidden door');
+  }
+});
