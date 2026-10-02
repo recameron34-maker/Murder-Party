@@ -1,0 +1,48 @@
+# How each character's portrait is drawn: a silhouette cameo in a gilt oval,
+# like the portraits in the gallery. Silhouettes on purpose: nothing about
+# the real players' looks is assumed. Details come from each costume.
+#
+# PUBLIC-SAFE: portraits appear on name badges, so the emblem must fit the
+# character's public_role, never their secret (Hollis gets a picture frame,
+# not a magnifying glass). The checker refuses telling emblems.
+#
+#   hair     none | bun | long | curls | slick | veil | cap | beret | short
+#   extras   glasses, sunglasses, pearls, necklace, bowtie, rose, stole,
+#            scarf, collar, cravat, sash, tiara, headlamp, lapels, rollneck
+#   emblem   the medallion under the portrait (see the list in the checker)
+
+annie:          { hair: bun,   extras: [collar],              emblem: keys }
+noor:           { hair: bun,   extras: [glasses],             emblem: stethoscope }
+joji:           { hair: short, extras: [scarf],               emblem: compass }
+tim:            { hair: short, extras: [rollneck],            emblem: camera }
+alma:           { hair: bun,   extras: [collar],              emblem: book }
+jimmy:          { hair: slick, extras: [bowtie, lapels],      emblem: signet }
+kush:           { hair: short, extras: [glasses, lapels],     emblem: ledger }
+lindsey:        { hair: long,  extras: [necklace],            emblem: coin }
+maya:           { hair: curls, extras: [tiara],               emblem: cake }
+malik:          { hair: short, extras: [rollneck],            emblem: mic }
+morgan:         { hair: long,  extras: [pearls, lapels],      emblem: scales }
+carlotta:       { hair: long,  extras: [sunglasses],          emblem: key }
+clara:          { hair: curls, extras: [stole],               emblem: ring }
+lexi:           { hair: long,  extras: [necklace],            emblem: cake }
+kevin:          { hair: slick, extras: [lapels],              emblem: crest }
+jimmy-friedman: { hair: slick, extras: [lapels],              emblem: cards }
+molly:          { hair: curls, extras: [glasses],             emblem: frame }
+martin:         { hair: short, extras: [cravat],              emblem: frame }
+hannah:         { hair: bun,   extras: [necklace],            emblem: champagne }
+shea:           { hair: bun,   extras: [collar],              emblem: watch }
+maddie:         { hair: long,  extras: [necklace],            emblem: ring }
+daniel:         { hair: short, extras: [rose, lapels],        emblem: ring }
+kim:            { hair: short, extras: [pearls],              emblem: fan }
+louis:          { hair: curls, extras: [headlamp, lapels],    emblem: compass }
+albie:          { hair: veil,  extras: [necklace],            emblem: crystal }
+savanah:        { hair: veil,  extras: [necklace],            emblem: music }
+courtney:       { hair: long,  extras: [tiara, sash],         emblem: crest }
+spare-rook:     { hair: cap,   extras: [lapels],              emblem: car }
+spare-quill:    { hair: beret, extras: [scarf],               emblem: palette }
+spare-hollis:   { hair: short, extras: [lapels],              emblem: frame }
+spare-vesper:   { hair: short, extras: [rollneck],            emblem: quill }
+spare-blake:    { hair: short, extras: [collar],              emblem: foil }
+spare-wren:     { hair: short, extras: [scarf],               emblem: scroll }
+spare-sterling: { hair: slick, extras: [sunglasses, lapels],  emblem: champagne }
+spare-ellery:   { hair: curls, extras: [cravat],              emblem: star }

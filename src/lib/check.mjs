@@ -326,6 +326,24 @@ export function checkContent(content, state = {}) {
     if ((sus.levels || []).length !== (content.suspicion.stages || []).length) add('error', 'suspicion.yaml', sus.id, 'Needs one level per stage');
   }
 
+  // ------------------------------------------------------------ portraits (public-safe: they go on name badges)
+  {
+    const P = content.portraits || {};
+    const EMBLEMS = ['keys', 'stethoscope', 'compass', 'camera', 'book', 'signet', 'ledger', 'coin', 'cake', 'mic', 'scales', 'key', 'ring', 'crest', 'cards', 'frame', 'champagne', 'watch', 'fan', 'crystal', 'music', 'car', 'palette', 'quill', 'foil', 'scroll', 'star'];
+    const TELLING = ['raven', 'dagger', 'skull', 'keyhole', 'magnifier', 'blood', 'passage'];
+    const HAIRS = ['none', 'short', 'slick', 'bun', 'long', 'curls', 'veil', 'cap', 'beret'];
+    const EXTRAS = ['glasses', 'sunglasses', 'pearls', 'necklace', 'bowtie', 'rose', 'stole', 'scarf', 'collar', 'cravat', 'sash', 'tiara', 'headlamp', 'lapels', 'rollneck'];
+    for (const id of content.characterOrder) {
+      const p = P[id];
+      if (!p) { add('warn', 'portraits.yaml', id, 'No portrait; a plain one will be drawn'); continue; }
+      if (TELLING.includes(p.emblem)) add('error', 'portraits.yaml', id, `Emblem "${p.emblem}" gives the game away (portraits are public)`);
+      else if (!EMBLEMS.includes(p.emblem)) add('error', 'portraits.yaml', id, `Unknown emblem "${p.emblem}"`);
+      if (p.hair && !HAIRS.includes(p.hair)) add('error', 'portraits.yaml', id, `Unknown hair "${p.hair}"`);
+      for (const e of p.extras || []) if (!EXTRAS.includes(e)) add('error', 'portraits.yaml', id, `Unknown extra "${e}"`);
+    }
+    for (const id of Object.keys(P)) if (!ids.has(id)) add('error', 'portraits.yaml', id, 'Portrait for an unknown character');
+  }
+
   // ------------------------------------------------------------ lights
   const sceneIds = new Set((content.lights?.scenes || []).map((x) => x.id));
   for (const s of content.script) if (s.lights && !sceneIds.has(s.lights)) add('error', s._file, s.slug, `Unknown lighting scene "${s.lights}" (content/lights.yaml)`);

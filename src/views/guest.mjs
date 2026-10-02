@@ -7,6 +7,7 @@ import { deliveredTexts } from '../lib/texts.mjs';
 import { formatTimeIn } from '../lib/time.mjs';
 import { rosterHelpers } from '../lib/roster.mjs';
 import { page, RAVEN_SVG } from './layout.mjs';
+import { portrait } from './portraits.mjs';
 import { crest, roundStepper, eveningStrip, yourWeb, venueMap, venueWhere, familyTree } from './visuals.mjs';
 import { GUEST_CSS } from './styles.mjs';
 
@@ -97,7 +98,7 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
 <main class="wrap guest">
 <header class="title">
   <div class="house-line">Blackwood Manor · The Midnight Supper</div>
-  ${crest(charId, c.name, 76)}
+  ${portrait(charId, c.name, content.portraits?.[charId], 120)}
   <div class="role">${c.role}</div>
   <h1>${c.name}</h1>
   <p class="tag">${c.tagline}</p>

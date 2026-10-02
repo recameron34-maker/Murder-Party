@@ -67,6 +67,7 @@ Everything is plain text in `content/`. Change a file and refresh the page.
 | `content/texts.yaml` | Texts sent to everyone |
 | `content/guest-common.yaml` | Rules and lore shown on every guest page, including the step-by-step of the night, the family tree and the public room descriptions |
 | `content/venue.yaml` | Your flat as the venue: each real room's outline (traced from the floor plan), the manor room it plays, and which rooms are shut. Shown to guests, so no hiding spots here |
+| `content/portraits.yaml` | How each character's portrait is drawn: a silhouette cameo in a gilt oval with costume details and an emblem for their public role. Public-safe (portraits go on name badges) |
 | `content/lights.yaml` | The lighting plan for your smart bulbs: Alexa groups and one routine per scene (arrival, the rolling blackout, the flicker, the reveal). Run-of-show segments name their scene |
 | `content/suspicion.yaml` | The suspicion curve: who the room should suspect at each stage (drives the heat map) |
 | `content/lore.yaml` | Host-only world: rooms (and which are in the murder zone), set dressing for each room of the flat (`venue_setup`), the flat's real hidden door (`venue_passage`), the raven curse, the man in the walls, NPCs |

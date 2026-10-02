@@ -7,8 +7,10 @@ import { formatTimeIn, parseClock } from '../lib/time.mjs';
 import { checkContent, wordCount } from '../lib/check.mjs';
 import { flexCoverage } from '../lib/flex.mjs';
 import { page } from './layout.mjs';
+import { prop } from './props.mjs';
+import { portrait } from './portraits.mjs';
 import { HOST_CSS } from './styles.mjs';
-import { crest, crestSvg, roundStepper, venueMap, venuePins, venueWhere, stageSlots, gameLabel, timelineChart, eveningStrip, yourWeb, webGraph, suspicionHeatmap, initials, shortNames, KIND_LABELS, ROOM_LABELS } from './visuals.mjs';
+import { crest, crestSvg, roundStepper, venueMap, venuePins, venueWhere, stageSlots, gameLabel, venueGraph, routeBetween, areaOfRoom, timelineChart, eveningStrip, yourWeb, webGraph, suspicionHeatmap, initials, shortNames, KIND_LABELS, ROOM_LABELS } from './visuals.mjs';
 
 const NAV = [
   ['Tonight', [['/host', 'Dashboard'], ['/host/script', 'Run of show'], ['/host/texts', 'Texts']]],
@@ -188,7 +190,7 @@ ${nowNext(ctx)}
     <h3 class="h-card">Evidence ${live === 0 ? 'to hide before Round One' : 'for this round'}</h3>
     <ul class="checklist">${phys.map((id) => {
       const c = content.clues[id];
-      return html`<li><span class="pin-dot r${c.round}">${c.round}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${c.timing} · ${carrier(c.carrier)}${c.room ? ` · ${venueWhere(content.venue, c.room) || ROOM_LABELS[c.room] || c.room}` : ''}</span></span></li>`;
+      return html`<li><span class="prop-mini">${prop(id, { size: 40 })}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${c.timing} · ${carrier(c.carrier)}${c.room ? ` · ${venueWhere(content.venue, c.room) || ROOM_LABELS[c.room] || c.room}` : ''}</span></span></li>`;
     })}</ul>
     <p class="small"><a href="/host/setup">Where it all goes in the flat →</a></p>
     ${aims.length ? html`<h3>Suspicion target</h3>${aims.map((st) => html`<p class="small"><b>${st.title}:</b> ${st.aim}</p>`)}` : ''}
@@ -389,6 +391,10 @@ export function evidencePage(ctx) {
   const pinNo = clueNumbers(content);
   return shell(ctx, '/host/evidence', 'Evidence & props', html`
 <p class="small muted">Tick props off as you prepare them. Hiding spots are set for your flat (see <a href="/host/setup">Setup</a>); change them in content/clues/*.yaml. Numbered pins match Setup and the <a href="/host/map">case map</a>.</p>
+<div class="card"><h3 class="h-card">The props, at a glance</h3><div class="prop-gallery">
+${[['raven', 'The Blackwood Raven', 'On the study desk all night. Bronze-coloured, heavy-looking.'], ['guest-book', "Silas's guest book", 'By the coat rack, with a fountain pen.']].map(([id, t, d]) => html`<figure class="prop-tile key">${prop(id, { size: 110, title: t })}<figcaption><b>${t}</b><span>${d}</span></figcaption></figure>`)}
+${content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken').map((id) => html`<figure class="prop-tile r${content.clues[id].round}"><a href="#${id}">${prop(id, { size: 110, title: content.clues[id].title })}</a><figcaption><b>${pinNo[id] ? html`<span class="pin-dot r${content.clues[id].round}">${pinNo[id]}</span> ` : ''}${content.clues[id].title}</b><span>${ROUND_LABEL[content.clues[id].round]} · ${state.prepDone[id] ? '✓ made' : 'to make'}</span></figcaption></figure>`)}
+</div></div>
 ${[1, 2, 3].map((r) => {
   const phys = content.clueOrder.filter((id) => content.clues[id].round === r && content.clues[id].kind !== 'spoken');
   const spoken = content.clueOrder.filter((id) => content.clues[id].round === r && content.clues[id].kind === 'spoken');
@@ -399,7 +405,7 @@ ${phys.map((id) => {
   const off = c.carrier !== 'host' && c.carrier !== 'found' && !isLive(c.carrier);
   return html`<tr id="${id}" class="${off ? 'off' : ''}">
   <td>${postButton('/host/prep', { id, done: state.prepDone[id] ? '' : '1' }, state.prepDone[id] ? '✓ ready' : '☐ prep', state.prepDone[id] ? 'btn small' : 'btn small ghost')}</td>
-  <td>${pinNo[id] ? html`<span class="pin-dot r${c.round}">${pinNo[id]}</span> ` : ''}<b>${c.title}</b> ${c.critical ? pill('core', 'critical') : ''} ${pill('info', c.kind)} ${c.source === 'new' ? pill('flex', 'new') : ''}
+  <td><span class="prop-thumb">${prop(id, { size: 64 })}</span>${pinNo[id] ? html`<span class="pin-dot r${c.round}">${pinNo[id]}</span> ` : ''}<b>${c.title}</b> ${c.critical ? pill('core', 'critical') : ''} ${pill('info', c.kind)} ${c.source === 'new' ? pill('flex', 'new') : ''}
     <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">${c.print || ''}</div><p class="small"><b>Truth:</b> ${c.truth}</p>${c.prop_needed ? html`<p class="small"><b>Prop:</b> ${c.prop_needed}</p>` : ''}${c.fallback ? html`<p class="small"><b>Fallback:</b> ${c.fallback}</p>` : ''}</details></td>
   <td class="small">${c.timing} · ${carrier(c.carrier)}${off ? html` ${pill('warn', 'carrier not cast')}` : ''}<div class="muted">${c.delivery}</div></td>
   <td class="small">${c.hide}</td></tr>`;
@@ -423,7 +429,7 @@ ${content.characterOrder.map((id) => {
   const c = content.characters[id];
   const r = roster[id];
   return html`<article class="char-card t-${c.tier}" data-tier="${c.tier}" data-search="${[c.name, c.role, c.public_role, r.player || '', r.status].join(' ').toLowerCase()}">
-  <a class="cc-head" href="/host/characters/${id}">${crest(id, c.name, 52)}<div><b>${c.name}</b><span class="small muted">${c.role}</span></div></a>
+  <a class="cc-head" href="/host/characters/${id}">${portrait(id, c.name, content.portraits?.[id], 60)}<div><b>${c.name}</b><span class="small muted">${c.role}</span></div></a>
   <p class="small">${pill(c.tier)} ${c.effort ? pill('info', c.effort + ' effort') : ''} <span class="muted">${r.player || 'unassigned'} · ${r.status}</span></p>
   <p class="small cc-links">Preview: ${[0, 1, 2, 3].map((n) => html`<a href="/host/preview/${id}?round=${n}">R${n}</a> `)}${ctx.canEdit ? html` · <a href="/host/edit/${id}">edit</a>` : ''}</p>
 </article>`;
@@ -457,7 +463,7 @@ export function characterPage(ctx, id) {
   const rels = c.relationships || [];
   return shell(ctx, '/host/characters', c.name, html`
 <p class="page-info"><a href="/host/characters">← All characters</a></p>
-<div class="dossier-head">${crest(id, c.name, 84)}<div>
+<div class="dossier-head">${portrait(id, c.name, content.portraits?.[id], 110)}<div>
 <p class="small muted">${c.role}<br>Everyone knows them as: <i>${c.public_role}</i></p>
 <p>${pill(c.tier)} ${c.effort ? pill('info', c.effort + ' effort') : ''} ${roster[id].player || 'unassigned'} · ${roster[id].status} · <span class="small muted">${c._file}</span></p></div></div>
 <div class="card"><h3 class="h-card">Their evening</h3>${eveningStrip(c, { host: true, rooms: content.lore.rooms })}</div>
@@ -582,7 +588,7 @@ ${venueMap(venue, { mode: 'host', rooms: content.lore.rooms, pins, secret: conte
   <div class="card"><h3 class="h-card">Hide it, in this order</h3>
   ${groups.map(([label, ids]) => html`<p class="toc-round">${label}</p><ul class="checklist">${ids.map((id) => {
     const c = content.clues[id];
-    return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a><br><span class="small muted">${c.hide}</span></span></li>`;
+    return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span class="prop-mini">${prop(id, { size: 44 })}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a><br><span class="small muted">${c.hide}</span></span></li>`;
   })}</ul>`)}
   </div>
   <div class="card"><h3 class="h-card">Keep on you</h3><ul class="small">${kept.map((id) => html`<li><b>${content.clues[id].title}</b> <span class="muted">(${ROUND_LABEL[content.clues[id].round]})</span></li>`)}</ul>
@@ -616,38 +622,148 @@ export function clueNumbers(content) {
 }
 
 // Where everyone stands, minute by minute, 8:00 to 10:00, in plan coordinates.
-function mapFrames(content, ids) {
+// Everyone's evening as a continuous walk around the flat, for the replay.
+// Stays come from each character's own `evening`; between stays they walk
+// the cheapest route through the flat's doorways; late arrivals come up the
+// front stairs. Positions are in plan coordinates; the page's script turns
+// them for the upright phone plan.
+function trajectories(content, ids) {
   const venue = content.venue;
-  const t0 = parseClock('8:00 PM');
-  const t1 = parseClock('10:00 PM');
-  const frames = [];
-  for (let t = t0; t <= t1; t++) {
+  const T0 = parseClock('8:00 PM');
+  const T1 = parseClock('10:00 PM');
+  const N = T1 - T0 + 1;
+  const edges = venueGraph(venue, { secret: content.lore.venue_passage });
+  const stays = {};
+  for (const id of ids) {
+    let es = (content.characters[id].evening || [])
+      .map((e) => ({ room: e.where, a: parseClock(e.at), b: e.until ? parseClock(e.until) : parseClock(e.at) }))
+      .filter((e) => e.a != null && areaOfRoom(venue, e.room) && e.b >= T0 && e.a <= T1)
+      .sort((x, y) => x.a - y.a);
+    es = es.filter((e, i) => !(es[i + 1] && es[i + 1].a <= e.a));
+    for (let i = 0; i < es.length - 1; i++) if (es[i].b >= es[i + 1].a) es[i].b = Math.max(es[i].a, es[i + 1].a - 1);
+    stays[id] = es.map((e) => ({ room: e.room, a: Math.max(e.a, T0), b: Math.min(e.b, T1) }));
+  }
+  const pos = Object.fromEntries(ids.map((id) => [id, new Array(N).fill(0)]));
+  for (let t = T0; t <= T1; t++) {
     const byRoom = {};
     for (const id of ids) {
-      let best = null;
-      for (const e of content.characters[id].evening || []) {
-        const a = parseClock(e.at);
-        const b = e.until ? parseClock(e.until) : a;
-        if (a != null && a <= t && t <= b && (!best || a >= best.a)) best = { a, room: e.where };
-      }
-      if (best) (byRoom[best.room] ||= []).push(id);
+      const st = stays[id].find((x) => x.a <= t && t <= x.b);
+      if (st) (byRoom[st.room] ||= []).push(id);
     }
-    const d = [];
-    for (const [room, list] of Object.entries(byRoom)) {
-      stageSlots(venue, room, list.length).forEach(([x, y], i) => d.push([list[i], Math.round(x), Math.round(y)]));
-    }
-    const events = (content.timeline.events || [])
-      .filter((e) => e.at && !e.flex)
-      .filter((e) => {
-        const a = parseClock(e.at);
-        const b = e.until ? parseClock(e.until) : a;
-        return a <= t && t <= b;
-      })
-      .map((e) => `${e.at}: ${e.what.replace(/\*\*/g, '')}`);
-    frames.push({ d, e: events });
+    for (const [room, list] of Object.entries(byRoom)) stageSlots(venue, room, list.length).forEach(([x, y], i) => { pos[list[i]][t - T0] = [Math.round(x), Math.round(y)]; });
   }
-  return { t0, t1, frames };
+  const wp = (route) => (route || []).map((p) => [Math.round(p.x), Math.round(p.y), p.kind === 'secret' ? 1 : 0]);
+  const people = {};
+  for (const id of ids) {
+    const st = stays[id];
+    if (!st.length) continue;
+    const routes = st.slice(1).map((x, i) => wp(routeBetween(edges, areaOfRoom(venue, st[i].room), areaOfRoom(venue, x.room))));
+    const arrive = st[0].a > T0 ? wp(routeBetween(edges, 'front-stairs', areaOfRoom(venue, st[0].room))) : null;
+    people[id] = { s: st.map((x) => [x.room, x.a - T0, x.b - T0]), p: pos[id], r: routes, in: arrive };
+  }
+  const events = (content.timeline.events || [])
+    .filter((e) => e.at && !e.flex)
+    .map((e) => ({ a: parseClock(e.at) - T0, b: (e.until ? parseClock(e.until) : parseClock(e.at)) - T0, t: `${e.at}: ${e.what.replace(/\*\*/g, '')}`, k: e.critical ? 1 : 0 }))
+    .filter((e) => e.b >= 0 && e.a <= N - 1);
+  const door = venue.entrances?.[0]?.at || [855, 487];
+  return { T0, N, people, events, entrance: [door[0], door[1] - 14], blackout: [parseClock('9:45 PM') - T0, parseClock('9:47 PM') - T0] };
 }
+
+// The replay's browser script: smooth walking between stays, trails, the
+// blackout, follow-one-person, speed and key-moment marks.
+const MAP_JS = String.raw`(function(){
+  var D=JSON.parse(document.getElementById('mapdata').textContent);
+  var NS='http://www.w3.org/2000/svg';
+  var maps=[].slice.call(document.querySelectorAll('svg[data-case]'));
+  var slider=document.getElementById('m-time'),clock=document.getElementById('m-clock'),ev=document.getElementById('m-events'),play=document.getElementById('m-play'),speedSel=document.getElementById('m-speed'),follow=document.getElementById('m-follow'),marks=document.getElementById('m-marks');
+  var R0=D.range[0],R1=D.range[1],T=D.start,speed=1,playing=false,last=0,followId='';
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e}
+  function fmt(m){var tot=D.T0+Math.floor(m+1e-6),h=(12+Math.floor(tot/60))%24;return (h%12||12)+':'+('0'+(((tot%60)+60)%60)).slice(-2)+' '+(h<12?'AM':'PM')}
+  function along(pts,f){
+    var L=[0];for(var i=1;i<pts.length;i++)L.push(L[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));
+    var tot=L[L.length-1]||1,d=Math.max(0,Math.min(1,f))*tot,walked=[pts[0]],secret=false;
+    for(var j=1;j<pts.length;j++){
+      if(d<=L[j]){var seg=(L[j]-L[j-1])||1,u=(d-L[j-1])/seg,x=pts[j-1][0]+(pts[j][0]-pts[j-1][0])*u,y=pts[j-1][1]+(pts[j][1]-pts[j-1][1])*u;
+        if(pts[j][2]||pts[j-1][2])secret=true;walked.push([x,y]);return {x:x,y:y,walk:walked,secret:secret}}
+      walked.push(pts[j]);if(pts[j][2])secret=true;
+    }
+    var z=pts[pts.length-1];return {x:z[0],y:z[1],walk:walked,secret:secret};
+  }
+  function locate(P,t){
+    var s=P.s,at=function(m){return P.p[m]};
+    if(!s.length)return null;
+    if(t<s[0][1]){if(!P.in||t<s[0][1]-1)return null;return along([D.entrance].concat(P.in,[at(s[0][1])]),t-(s[0][1]-1))}
+    for(var i=0;i<s.length;i++){
+      var a=s[i][1],b=s[i][2];
+      if(t>=a&&t<=b){var m=Math.floor(t),n=Math.min(b,m+1),p1=at(m)||at(a),p2=at(n)||p1,u=t-m;return {x:p1[0]+(p2[0]-p1[0])*u,y:p1[1]+(p2[1]-p1[1])*u}}
+      if(i<s.length-1&&t>b&&t<s[i+1][1]){
+        var a2=s[i+1][1],start=(a===b)?b+Math.min(0.5,(a2-b)/2):b;
+        if(t<=start){var q=at(b);return {x:q[0],y:q[1]}}
+        return along([at(b)].concat(P.r[i],[at(a2)]),(t-start)/(a2-start));
+      }
+    }
+    var z=at(s[s.length-1][2]);return {x:z[0],y:z[1]};
+  }
+  var layers=maps.map(function(svg){
+    var tall=svg.dataset.tall==='1',vx=+svg.dataset.vx,vy=+svg.dataset.vy,vh=+svg.dataset.vh;
+    var tr=function(x,y){return tall?[vy+vh-y,x-vx]:[x-vx,y-vy]};
+    var g=svg.querySelector('.m-dots'),vb=svg.viewBox.baseVal;
+    var path=el('polyline',{fill:'none',stroke:'#e3c788','stroke-width':2,'stroke-dasharray':'3 4','stroke-opacity':.5});g.appendChild(path);
+    var trails=el('g',{}),dots=el('g',{});g.appendChild(trails);g.appendChild(dots);
+    var dark=el('rect',{x:vb.x,y:vb.y,width:vb.width,height:vb.height,fill:'#000',opacity:0,'pointer-events':'none'});svg.appendChild(dark);
+    var who={};
+    Object.keys(D.people).forEach(function(id){
+      var P=D.meta[id],tl=el('polyline',{fill:'none',stroke:P.c,'stroke-width':3,'stroke-linecap':'round','stroke-linejoin':'round',opacity:0});trails.appendChild(tl);
+      var grp=el('g',{opacity:0});var tt=el('title',{});tt.textContent=P.n;grp.appendChild(tt);
+      grp.appendChild(el('circle',{r:11,fill:P.c,stroke:P.k?'#ff6b7f':'#e3c788','stroke-width':P.k?3.5:1.5}));
+      var tx=el('text',{y:3.5,'text-anchor':'middle',style:'font:700 9px system-ui,sans-serif;fill:#fff;pointer-events:none'});tx.textContent=P.i;grp.appendChild(tx);
+      dots.appendChild(grp);who[id]={g:grp,tl:tl};
+    });
+    return {tr:tr,who:who,path:path,dark:dark};
+  });
+  function draw(){
+    layers.forEach(function(L){
+      Object.keys(D.people).forEach(function(id){
+        var w=L.who[id],p=locate(D.people[id],T);
+        if(!p){w.g.setAttribute('opacity',0);w.tl.setAttribute('opacity',0);return}
+        var c=L.tr(p.x,p.y),dim=followId&&followId!==id;
+        w.g.setAttribute('transform','translate('+c[0].toFixed(1)+' '+c[1].toFixed(1)+')'+(followId===id?' scale(1.35)':''));
+        w.g.setAttribute('opacity',dim?.22:1);
+        if(p.walk&&p.walk.length>1){
+          w.tl.setAttribute('points',p.walk.map(function(q){var r=L.tr(q[0],q[1]);return r[0].toFixed(1)+','+r[1].toFixed(1)}).join(' '));
+          w.tl.setAttribute('stroke',p.secret?'#ff5c74':D.meta[id].c);w.tl.setAttribute('stroke-dasharray',p.secret?'6 4':'');
+          w.tl.setAttribute('opacity',dim?.15:.75);
+        } else w.tl.setAttribute('opacity',0);
+      });
+      var bo=D.blackout,o=0;
+      if(T>=bo[0]&&T<=bo[1]){o=Math.min(1,(T-bo[0])/0.15,(bo[1]-T)/0.3)*.78}
+      L.dark.setAttribute('opacity',o.toFixed(2));
+    });
+    clock.textContent=fmt(T)+(T>=D.blackout[0]&&T<=D.blackout[1]?'  ⚡ lights out':'');
+    var m=Math.floor(T+1e-6);ev.textContent='';
+    D.events.forEach(function(e){if(e.a<=m&&m<=e.b){var d=document.createElement('div');d.textContent=e.t;if(e.k)d.className='crit';ev.appendChild(d)}});
+    slider.value=Math.round((T-R0)/(R1-R0)*1000);
+  }
+  function followPath(){
+    layers.forEach(function(L){
+      if(!followId){L.path.setAttribute('points','');return}
+      var pts=[];for(var t=0;t<D.N-1;t+=0.2){var p=locate(D.people[followId],t);if(p){var r=L.tr(p.x,p.y);pts.push(r[0].toFixed(1)+','+r[1].toFixed(1))}}
+      L.path.setAttribute('points',pts.join(' '));L.path.setAttribute('stroke',D.meta[followId].c);
+    });
+  }
+  function buildMarks(){
+    marks.textContent='';
+    D.events.forEach(function(e){if(e.a<R0||e.a>R1)return;var bt=document.createElement('button');bt.type='button';bt.className='m-mark'+(e.k?' crit':'');bt.style.left=((e.a-R0)/(R1-R0)*100)+'%';bt.title=e.t;bt.setAttribute('aria-label',e.t);bt.addEventListener('click',function(){T=e.a;draw()});marks.appendChild(bt)});
+  }
+  function setRange(a,b,start){R0=a;R1=b;T=start==null?a:start;buildMarks();draw()}
+  function tick(ts){if(!playing)return;var dt=last?(ts-last)/1000:0;last=ts;T+=dt*speed;if(T>=R1){T=R1;playing=false;play.textContent='▶ Play'}draw();if(playing)requestAnimationFrame(tick)}
+  play.addEventListener('click',function(){if(playing){playing=false;play.textContent='▶ Play';return}if(T>=R1-0.01)T=R0;playing=true;last=0;play.textContent='❚❚ Pause';requestAnimationFrame(tick)});
+  slider.addEventListener('input',function(){T=R0+(+slider.value/1000)*(R1-R0);draw()});
+  speedSel.addEventListener('change',function(){speed=+speedSel.value});
+  follow.addEventListener('change',function(){followId=follow.value;followPath();draw()});
+  [].forEach.call(document.querySelectorAll('[data-range]'),function(b){b.addEventListener('click',function(){var r=b.dataset.range.split(',');[].forEach.call(document.querySelectorAll('[data-range]'),function(x){x.classList.toggle('ghost',x!==b)});setRange(+r[0],+r[1])})});
+  setRange(R0,R1,D.start);
+})();`;
 
 export function mapPage(ctx) {
   const { content, state } = ctx;
@@ -659,16 +775,22 @@ export function mapPage(ctx) {
     const c = content.clues[id];
     return { id, room: c.room, label: numbers[id], color: ROUND_COLORS[c.round], title: `${numbers[id]}. ${c.title} (Round ${c.round}, ${c.timing})\n${c.hide}` };
   }));
-  const { t0, t1, frames } = mapFrames(content, liveIds);
+  const traj = trajectories(content, liveIds);
   const killer = content.timeline.solution_window?.killer;
-  const people = Object.fromEntries(liveIds.map((id) => [id, { n: content.characters[id].name, i: initials(content.characters[id].name), c: (crestSvg(id, content.characters[id].name).match(/fill="(#[0-9a-f]{6})"/i) || [])[1] || '#555', k: id === killer ? 1 : 0 }]));
-  const data = JSON.stringify({ t0, t1, frames, people, labels: frames.map((_, i) => formatClockSafe(t0 + i)) }).replace(/</g, '\\u003c');
+  const meta = Object.fromEntries(liveIds.map((id) => [id, { n: content.characters[id].name, i: initials(content.characters[id].name), c: (crestSvg(id, content.characters[id].name).match(/fill="(#[0-9a-f]{6})"/i) || [])[1] || '#555', k: id === killer ? 1 : 0 }]));
+  const at = (clock) => parseClock(clock) - traj.T0;
+  const data = JSON.stringify({ ...traj, meta, range: [at('9:25 PM'), at('9:50 PM')], start: at('9:30 PM') }).replace(/</g, '\\u003c');
   const unplaced = [...new Set(liveIds.flatMap((id) => (content.characters[id].evening || []).map((e) => e.where)))].filter((r) => !stageSlots(venue, r, 1).length);
   return shell(ctx, '/host/map', 'The case, in your flat', html`
 <div class="map-controls card">
-  <button class="btn small" type="button" id="m-play">▶ Play 9:25 → 9:50</button>
-  <input type="range" id="m-time" min="${t0}" max="${t1}" value="${parseClock('9:38 PM')}" aria-label="Time">
-  <b id="m-clock" class="m-clock">9:38 PM</b>
+  <div class="mc-row">
+    <button class="btn small" type="button" id="m-play">▶ Play</button>
+    <b id="m-clock" class="m-clock">9:30 PM</b>
+    <span class="mc-group"><button class="btn small" type="button" data-range="${at('9:25 PM')},${at('9:50 PM')}">The murder</button><button class="btn small ghost" type="button" data-range="0,${traj.N - 1}">Whole evening</button></span>
+    <label class="small">Speed <select id="m-speed"><option value="0.5">½ min/sec</option><option value="1" selected>1 min/sec</option><option value="3">3 min/sec</option><option value="8">8 min/sec</option></select></label>
+    <label class="small">Follow <select id="m-follow"><option value="">everyone</option>${liveIds.slice().sort((x, y) => content.characters[x].name.localeCompare(content.characters[y].name)).map((id) => html`<option value="${id}">${content.characters[id].name}</option>`)}</select></label>
+  </div>
+  <div class="m-track"><input type="range" id="m-time" min="0" max="1000" value="200" aria-label="Time"><div id="m-marks" class="m-marks"></div></div>
   <div id="m-events" class="m-events small"></div>
 </div>
 ${venueMap(venue, { mode: 'case', rooms: content.lore.rooms, pins, secret: content.lore.venue_passage })}
@@ -677,10 +799,11 @@ ${unplaced.length ? html`<p class="small pill warn">Not drawn on the map: ${unpl
 <div class="grid">
 <div class="card"><h3 class="h-card">Evidence pins</h3><ol class="pin-list">${pinned.map((id) => {
   const c = content.clues[id];
-  return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span><a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${gameLabel(c.room, content.lore.rooms)} (${venueWhere(venue, c.room) || 'not in the flat'}) · Round ${c.round}, ${c.timing}</span><br><span class="small muted">${c.hide}</span></span></li>`;
+  return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span class="prop-mini">${prop(id, { size: 44 })}</span><span><a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${gameLabel(c.room, content.lore.rooms)} (${venueWhere(venue, c.room) || 'not in the flat'}) · Round ${c.round}, ${c.timing}</span><br><span class="small muted">${c.hide}</span></span></li>`;
 })}</ol></div>
 <div class="card"><h3 class="h-card">How to read it</h3><ul class="small">
-<li>Your flat, with each room labelled by the manor room it plays. Drag the slider (or press play) to watch where everyone is, minute by minute, from their own cards. The red ring is the killer.</li>
+<li>Your flat, with each room labelled by the manor room it plays. Press play and everyone walks the evening their cards describe, through the real doorways; late arrivals come up the front stairs. Trails show where someone is going. The red ring is the killer; a red dashed trail is the hidden door.</li>
+<li><b>Follow</b> one person to dim everyone else and draw their whole evening. The marks under the slider are the key moments: click one to jump there. At 9:45 the house goes dark.</li>
 <li><b>9:31 to 9:34:</b> Annie, Clara and Morgan come through the Family Room (the East Corridor) to the study door. <b>9:36:</b> Maya hears the argument through it.</li>
 <li><b>9:38 to 9:39:</b> Morgan kills Arthur and goes through the hidden door onto the landing (the library). The ordinary way round runs through the Drawing Room, past everyone.</li>
 <li><b>9:40 to 9:41:</b> James and Alma, at the front door (the Library Corridor), see her at the library end. <b>9:42:</b> she's back in the Drawing Room.</li>
@@ -689,37 +812,7 @@ ${unplaced.length ? html`<p class="small pill warn">Not drawn on the map: ${unpl
 </ul></div>
 </div>
 <script type="application/json" id="mapdata">${raw(data)}</script>
-<script>
-(function(){
-  var D=JSON.parse(document.getElementById('mapdata').textContent);
-  var maps=[].slice.call(document.querySelectorAll('svg[data-case]'));
-  var slider=document.getElementById('m-time'),clock=document.getElementById('m-clock'),ev=document.getElementById('m-events'),play=document.getElementById('m-play');
-  var NS='http://www.w3.org/2000/svg';
-  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e}
-  function render(t){
-    var f=D.frames[t-D.t0];if(!f)return;
-    maps.forEach(function(svg){
-      var g=svg.querySelector('.m-dots');var tall=svg.dataset.tall==='1',vx=+svg.dataset.vx,vy=+svg.dataset.vy,vh=+svg.dataset.vh;
-      while(g.firstChild)g.removeChild(g.firstChild);
-      f.d.forEach(function(p){var who=D.people[p[0]];if(!who)return;
-        var x=tall?vy+vh-p[2]:p[1]-vx,y=tall?p[1]-vx:p[2]-vy;
-        var grp=el('g',{});var tt=el('title',{});tt.textContent=who.n;grp.appendChild(tt);
-        grp.appendChild(el('circle',{cx:x,cy:y,r:11,fill:who.c,stroke:who.k?'#ff6b7f':'#e3c788','stroke-width':who.k?3.5:1.5}));
-        var tx=el('text',{x:x,y:y+4,'text-anchor':'middle',style:'font:700 9px system-ui,sans-serif;fill:#fff'});tx.textContent=who.i;grp.appendChild(tx);g.appendChild(grp)});
-    });
-    clock.textContent=D.labels[t-D.t0];
-    ev.textContent='';f.e.forEach(function(s){var d=document.createElement('div');d.textContent=s;ev.appendChild(d)});
-  }
-  slider.addEventListener('input',function(){render(+slider.value)});
-  var timer=null;
-  play.addEventListener('click',function(){
-    if(timer){clearInterval(timer);timer=null;play.textContent='▶ Play 9:25 → 9:50';return}
-    var t=D.t0+85;slider.value=t;render(t);play.textContent='❚❚ Pause';
-    timer=setInterval(function(){t++;if(t>D.t0+110){clearInterval(timer);timer=null;play.textContent='▶ Play 9:25 → 9:50';return}slider.value=t;render(t)},450);
-  });
-  render(+slider.value);
-})();
-</script>`);
+<script>${raw(MAP_JS)}</script>`);
 }
 
 function formatClockSafe(m) {

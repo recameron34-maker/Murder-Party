@@ -284,6 +284,23 @@ wax seals on sealed envelopes, and "Blackwood Manor · The Midnight Supper" /
 prefers reduced motion. The host dashboard opens with "Getting ready" (before
 the party) and "Now / Next" (during it).
 
+## Visuals and the animated case map (October 2026)
+
+- **Portraits**: every character is a silhouette cameo in a gilt oval (like
+  the gallery's watching portraits), with costume details in gold (tiara,
+  pearls, slicked hair, a chauffeur's cap, a headlamp) and an emblem for
+  their public role. Silhouettes on purpose: no assumptions about how the
+  real players look. Used on each guest's page, the host's character cards
+  and dossiers, printed character cards and name badges.
+- **Props**: an illustration for every piece of evidence plus the raven and
+  the guest book, on the Evidence page (a gallery), Setup, the Map and the
+  printed evidence cards.
+- **The case map moves**: between the stays on their cards, people walk the
+  cheapest route through the flat's doorways; late arrivals climb the front
+  stairs; the killer goes through the hidden door (a red trail). The house
+  goes dark at 9:45. Follow one person, change the speed, or jump to a key
+  moment.
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?
