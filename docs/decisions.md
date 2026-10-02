@@ -213,6 +213,47 @@ draws a plain wall there, and a test keeps it that way. Guests can still see
 on their plan that the library landing backs onto the study; that's a fair
 clue, and Round Two points them at the passage anyway.
 
+## Real couples (Ross, October 2026)
+
+Noor & Joji (married, Noor pregnant), Lindsey & Malik, Maya & Kevin. Their
+characters are only ever romantic with each other, and nothing suggests
+they'd stray or knocks their partner. Listed in `content/party.yaml` →
+`couples`; the checker errors on any romance linking one of them to anyone
+else. Single players are fair game.
+
+What changed to get there:
+- **Maya & Kevin** are now a secret couple in the story: the cook's
+  granddaughter and the heir who stayed, sweethearts from one summer at the
+  lake, hiding it from a family with opinions about "the help". Kevin went
+  to the study at 9:20 to tell Arthur; he has a ring in his pocket. They
+  text each other through the night. (Replaces Maya dating Jimmy Friedman
+  and Kevin's Cannes fling with Morgan; Morgan now simply handles Kevin's
+  allowance.)
+- **Jimmy Friedman** courts Lexi only. His mysterious second weekly bouquet
+  goes to his mother.
+- **Lindsey & Malik** are a united team. Their 9:15 conservatory meeting is a
+  whispered plan for midnight, not a fight (still a "secret meeting" to
+  everyone else, so the suspicion curve is unchanged).
+- **Joji**: Alma no longer has a crush on him; they're fellow students of
+  the house.
+
+Romances still in the story, all between characters assumed single (tell us
+if any of these players are partnered): Alma & James (secret affair), Louis
+& Shea (secret affair), Kush & Hannah (fling), Blake (spare) & Hannah
+(fling, past), Martin & Molly (exes), Jimmy Friedman courting Lexi, Clara &
+Arthur (not played).
+
+## Saltburn layers (October 2026)
+
+- The Blackwoods **collect people**: wards, goddaughters, protégés, staff's
+  children put through school. "Once you've slept at Blackwood, you never
+  really leave." (public lore; Reggie's opening uses it)
+- **Silas's guest book**: everyone signs on arrival, in character; family
+  names recur, outsiders appear once. New Supper rule: every guest signs the
+  book. Prop by the coat rack.
+- The house texts everyone through the night (the east wing, Lady
+  Evangeline's portrait, the empty chair's fresh glass).
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?

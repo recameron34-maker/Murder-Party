@@ -7,3 +7,12 @@ host_character: Reginald "Reggie" Blackwood
 # until the date is fixed; dated texts simply won't fire.
 date: null
 timezone: America/Chicago
+
+# Real-life couples (Ross, October 2026). Their characters may only be
+# romantic with each other, and no line anywhere may hint that either would
+# stray or take a dig at their partner. The checker flags romance words that
+# link a coupled character to anyone else. Single players are fair game.
+couples:
+  - [noor, joji]
+  - [lindsey, malik]
+  - [maya, kevin]

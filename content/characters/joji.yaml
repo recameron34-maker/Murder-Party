@@ -44,7 +44,7 @@ relationships:
   - with: louis
     text: He has been pestering you for weeks about the "Raven Room" and wants to see your plans. You have refused, on principle and because he smells faintly of dust.
   - with: alma
-    text: The archivist. She leaves notes in library books for you. You suspect she has a crush. You are flattered and terrified.
+    text: The archivist. She leaves notes in library books for you about the house's history, and lately about the walls. Between you, you know this house better than the Blackwoods do.
 
 evening:
   - at: "8:00 PM"

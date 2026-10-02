@@ -30,11 +30,12 @@ backstory: |
   inheritance. Follow the money."**
 
   Your secret: you've been **recording the party** on a lapel mic since you
-  arrived. Lindsey is furious. Your producer is thrilled.
+  arrived. Lindsey knows, and made you swear her name never touches the
+  tape. Your producer is thrilled.
 
 relationships:
   - with: lindsey
-    text: Your girlfriend and, awkwardly, your original source. You fought in the conservatory at 9:15 about the mic.
+    text: Your girlfriend, your original source, and the bravest person you know. At 9:15 you slipped away with her to the conservatory to plan for midnight.
   - with: arthur
     text: Your secret source. Grand, frightened, determined. He wanted his story told on his terms.
   - with: kim
@@ -50,7 +51,7 @@ evening:
   - at: "9:15 PM"
     until: "9:25 PM"
     where: conservatory
-    text: Lindsey finds the mic and hisses at you among the orchids. You apologize. You don't turn it off.
+    text: In the conservatory with Lindsey, among the orchids. You play her what the mic has caught and promise, again, that her name stays out of it.
   - at: "9:25 PM"
     until: "9:47 PM"
     where: drawing-room

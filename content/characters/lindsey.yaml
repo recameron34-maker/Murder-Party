@@ -27,20 +27,20 @@ backstory: |
   You also did something you shouldn't have. You told your boyfriend,
   **Malik**, the investigative podcaster, that "one of the great families" was
   being robbed from inside. That's how Arthur and Malik ended up talking.
-  It's a career-ending breach of banking confidentiality. Malik was your
-  source before he was your lover. You've never been sure which he
-  prefers.
+  It's a career-ending breach of banking confidentiality, and you'd do it
+  again. Malik has never once used your name: not on air, not in his notes,
+  not even to his producer. That's how you knew he was the one.
 
   Arthur had you booked for **10:00 tonight** to go over the evidence one
   last time before midnight.
 
 relationships:
   - with: malik
-    text: Your boyfriend, the podcaster. You leaked to him and he's never let you forget it. You fought in the conservatory at 9:15 because he's recording tonight.
+    text: Your boyfriend, the podcaster, and the one person in this house you trust completely. At 9:15 you slipped into the conservatory together to plan for midnight.
   - with: arthur
     text: Your client, and the third generation of Blackwoods your family has banked for. He trusted you. You were trying to save him.
   - with: kush
-    text: The forensic accountant Arthur hired after you flagged the transfers. Fussy, brilliant, a little too curious about you.
+    text: The forensic accountant Arthur hired after you flagged the transfers. Fussy, brilliant, a little too curious about your files.
   - with: morgan
     text: Arthur's lawyer. Your offices work together constantly. You've noticed she's been very interested in what you know.
 
@@ -52,7 +52,7 @@ evening:
   - at: "9:15 PM"
     until: "9:25 PM"
     where: conservatory
-    text: A hissed argument with Malik about him recording the party. Anyone near the conservatory might have heard.
+    text: A whispered conference with Malik among the orchids about what Arthur will say at midnight and how to keep your name out of it. To anyone passing, it looked like a secret meeting. It was.
   - at: "9:25 PM"
     until: "9:45 PM"
     where: drawing-room
@@ -124,7 +124,7 @@ texts:
   - id: lindsey-malik-r1
     from: Malik
     trigger: { round: 1, after: 11 }
-    body: "I'm sorry about earlier. Also I'm still recording. Also you look incredible when you're furious."
+    body: "Still recording. Your name is nowhere on it, I promise. Also: that dress. Stay close when the lights come back."
   - id: lindsey-bank-r2
     from: Vale & Sons Compliance
     trigger: { round: 2, after: 14 }

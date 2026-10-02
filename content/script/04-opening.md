@@ -30,6 +30,8 @@ Gather everyone. Wait until reasonably quiet. Then:
 
 "He has, however, assured me that his announcement will be…" *Look at card.* "…'impossible to ignore.'"
 
+🆕 "My family collects people. Wards. Goddaughters. Protégés. The odd podcaster." *Look slowly around the room.* "Tonight, you're the collection. Do try to look valuable."
+
 🆕 "You'll find the rules of the Supper on your cards. No one leaves before midnight. One chair stays empty for the last Blackwood to die. And whatever is said at midnight cannot be unsaid."
 
 🆕 "And please, nobody say the bird's name at the table. The raven on Arthur's desk is a hundred and thirty years old and, according to family legend, *extremely* sensitive."

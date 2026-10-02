@@ -81,7 +81,7 @@ instructions:
   - Your surprise inheritance papers are a **red herring** about you. Reveal them in Round Two and enjoy the scandal.
   - Let people believe you might be Arthur's daughter for as long as you like. Only admit the DNA test if paid.
   - You may refer to anyone below the rank of baronet as "sweet."
-  - If you discover Jimmy Friedman is also courting Maya, you may throw a drink (water).
+  - Jimmy Friedman orders two bouquets every Friday. If you find out who the second is for, decide out loud whether that's adorable or a red flag.
 
 mission: |
   Find out **what Arthur intended to announce before midnight.** Piece it
@@ -137,9 +137,9 @@ texts:
   - id: lexi-unknown-r2
     from: Unknown number
     trigger: { round: 2, after: 6 }
-    body: "Ask Maya who sent HER flowers this week."
+    body: "Ask Jimmy Friedman who gets the OTHER bouquet."
 
 host_notes: |
   Supporting. A red herring (inheritance papers, "secret daughter"). Jimmy
-  Friedman sends the identical text to Lexi and Maya at Round One +3
-  minutes. If they compare phones, chaos. That's intended.
+  Friedman's second weekly bouquet is a running joke: Lexi's Round Two text
+  sends her after it. (It's for his mother.)

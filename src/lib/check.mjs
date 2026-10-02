@@ -326,6 +326,25 @@ export function checkContent(content, state = {}) {
     if ((sus.levels || []).length !== (content.suspicion.stages || []).length) add('error', 'suspicion.yaml', sus.id, 'Needs one level per stage');
   }
 
+  // ------------------------------------------------------------ real couples
+  // Coupled characters may only be romantic with each other (party.yaml).
+  const partnerOf = new Map();
+  for (const pair of content.party?.couples || []) {
+    const [a, b] = pair;
+    for (const id of [a, b]) if (!ids.has(id)) add('error', 'party.yaml', id, `Couple member "${id}" is not a character`);
+    partnerOf.set(a, b);
+    partnerOf.set(b, a);
+  }
+  const ROMANCE = /\b(lovers?|affair|fling|crush|dating|boyfriend|girlfriend|kiss(ed|es)?|flirt\w*|seduc\w*|romanc\w*|in love|smitten|mistress|sleeping with)\b/i;
+  for (const id of content.characterOrder) {
+    for (const r of chars[id].relationships || []) {
+      const coupled = [id, r.with].find((x) => partnerOf.has(x));
+      if (!coupled) continue;
+      const pair = partnerOf.get(id) === r.with;
+      if (!pair && ROMANCE.test(r.text)) add('error', `characters/${id}`, id, `Romance between ${id} and ${r.with}, but ${coupled} is half of a real couple (party.yaml)`);
+    }
+  }
+
   // ------------------------------------------------------------ hints
   for (const h of content.hints) if (![1, 2, 3].includes(h.from_round)) add('error', 'hints.yaml', h.id, 'from_round must be 1, 2 or 3');
 

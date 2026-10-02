@@ -28,7 +28,7 @@ backstory: |
 
 relationships:
   - with: lindsey
-    text: You drove her and Malik up from the station. They fought in a whisper about "your source." She tipped you to forget it.
+    text: You drove her and Malik up from the station. They held hands the whole way and whispered about "the source." She tipped you to forget it.
   - with: molly
     text: You drove her too. She cried on the phone the whole way, saying "if he wants the money back, I'm finished."
   - with: clara
@@ -47,7 +47,7 @@ evening:
     text: At the staff supper downstairs with Mrs. Hale and the kitchen staff. At 9:45 you watch her warming ovens and the old wiring blow the circuit. She drops a whole tray of glasses in the dark.
 
 knows:
-  - Lindsey and Malik argued in your car about "your source."
+  - Lindsey and Malik whispered in your car about "the source."
   - Molly cried on the phone that she'd be "finished" if Arthur wanted his money back.
   - You drive Clara to the manor every Tuesday night.
   - The blackout started in the kitchens. You were there.
@@ -80,11 +80,11 @@ rounds:
       - Molly cried in your car about being "finished" if Arthur wanted his money back.
   2:
     text: |
-      If asked about Lindsey and Malik, you heard them argue about "your
+      If asked about Lindsey and Malik, you heard them whispering about "the
       source." That's all you heard. (It isn't, but it's all you'll say for
       free.)
     reveal:
-      - Lindsey and Malik argued in your car about "your source."
+      - Lindsey and Malik whispered in your car about "the source."
   3:
     text: |
       When the blackout comes up, back Reggie: **you were in the kitchens at

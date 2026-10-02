@@ -102,3 +102,15 @@ test('the real hidden door is host-only: never in the guest-safe venue file', ()
     assert.ok(!(Math.abs(mx - x) < 10 && my > Math.min(y1, y2) - 10 && my < Math.max(y1, y2) + 10), 'an opening is drawn at the hidden door');
   }
 });
+
+test('real couples: the checker flags romance between a coupled character and anyone else', () => {
+  const copy = structuredClone(content);
+  copy.characters.kevin.relationships.push({ with: 'morgan', text: 'Your Cannes fling. You think it is still on.' });
+  const errors = checkContent(copy).filter((f) => f.level === 'error' && /real couple/.test(f.message));
+  assert.ok(errors.length >= 1, 'a fling for Kevin is flagged');
+  const clean = checkContent(content).filter((f) => /real couple/.test(f.message));
+  assert.equal(clean.length, 0, 'the real content is clean');
+  // The partners themselves may be as romantic as they like.
+  assert.ok(content.characters.maya.relationships.some((r) => r.with === 'kevin'));
+  assert.ok(content.characters.kevin.relationships.some((r) => r.with === 'maya'));
+});

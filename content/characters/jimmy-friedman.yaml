@@ -27,15 +27,16 @@ backstory: |
   will. You are, if anything, the one man here who's poorer tonight. That
   hasn't stopped people looking at you.
 
-  Romantically, you're running a two-front campaign: **Maya Rose** (secretly
-  dating, two months) and **Lexi St. Clair** (flowers every Friday). Same
-  florist. Same card. It seemed efficient at the time.
+  Romantically, you're laying siege to **Lexi St. Clair**: flowers every
+  Friday, two dozen at a time. You order two bouquets each week, and nobody
+  knows who the second one is for. (Your mother. You would rather be
+  arrested for murder than admit it.)
 
 relationships:
   - with: jimmy
     text: The other Jimmy. Owes you $300,000. You've been very warm to him all night. Warm like a hand on a throat.
   - with: maya
-    text: Your secret girlfriend. Real feelings, possibly. Inconveniently.
+    text: The cook's granddaughter with a birthday. She has never once let you buy her a drink, which you find deeply unsettling.
   - with: lexi
     text: The St. Clair girl. Old name, old money, new flowers from you every Friday.
   - with: kevin
@@ -48,7 +49,7 @@ evening:
   - at: "8:00 PM"
     until: "9:00 PM"
     where: drawing-room
-    text: Shaking hands, remembering names, sending two identical texts to two birthday girls.
+    text: Shaking hands, remembering names, and finding reasons to stand near Lexi St. Clair.
   - at: "9:00 PM"
     until: "9:45 PM"
     where: billiard-room
@@ -61,21 +62,22 @@ knows:
   - James Calloway owes you $300,000, which is why Arthur cut him out.
   - Daniel and Martin were at your card table from 9:00 until the blackout. James left around 9:38.
   - Kevin is desperate for money. You can smell it.
-  - You're dating Maya and courting Lexi, which is fine as long as they never compare phones.
+  - You've been courting Lexi for months. The second bouquet goes to your mother.
 
 secret: |
   You lent **James Calloway $300,000** against his inheritance, the reason
-  Arthur cut him out. And you're romancing **both birthday girls** at once.
+  Arthur cut him out. And the mysterious **second bouquet** you order every
+  Friday goes to your mother.
 
 blackmail:
   - James owes you $300,000 against his expected inheritance.
-  - You're secretly dating Maya Rose.
-  - You've been sending flowers to Lexi St. Clair too.
+  - You've been sending flowers to Lexi St. Clair every Friday.
+  - The second bouquet is for your mother.
 
 instructions:
   - You may offer "loans" of Blackmail Cash at outrageous interest. Keep a written tally.
   - You can vouch for Daniel and Martin (card table, 9:00 to 9:45) and for James until about 9:38.
-  - Deny everything about the birthday girls until it's impossible.
+  - Deny the second bouquet until it's impossible. Then own it, with feeling.
   - Talk about money constantly. It's the only language you're fluent in.
 
 mission: |
@@ -103,7 +105,7 @@ rounds:
       time too. Vouch for Blake if anyone asks.
       [[/if]]
 
-      If the two birthday girls compare phones, improvise. Badly.
+      If anyone asks who the second bouquet is for, improvise. Badly.
     reveal:
       - Daniel and Martin never left the table; James left around 9:38.
   3:
@@ -123,7 +125,7 @@ texts:
   - id: jimmyf-florist-r1
     from: Petal & Thorn Florists
     trigger: { round: 1, after: 2 }
-    body: "Reminder: your standing order (2 bouquets, identical cards: 'Whatever happens, you're safe with me') renews Friday."
+    body: "Reminder: your standing order renews Friday. Bouquet 1: Ms L. St. Clair. Bouquet 2: Mrs R. Friedman ('To the best mum in the world'). Same cards as always?"
   - id: jimmyf-unknown-r2
     from: Unknown number
     trigger: { round: 2, after: 11 }
