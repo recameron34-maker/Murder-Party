@@ -114,3 +114,15 @@ test('real couples: the checker flags romance between a coupled character and an
   assert.ok(content.characters.maya.relationships.some((r) => r.with === 'kevin'));
   assert.ok(content.characters.kevin.relationships.some((r) => r.with === 'maya'));
 });
+
+test('portraits: everyone has one, emblems are public-safe, and every portrait has the same shape', async () => {
+  const { portraitSvg } = await import('../src/views/portraits.mjs');
+  for (const id of content.characterOrder) assert.ok(content.portraits[id], `${id} has a portrait`);
+  const copy = structuredClone(content);
+  copy.portraits['spare-hollis'] = { hair: 'short', emblem: 'magnifier' };
+  assert.ok(checkContent(copy).some((f) => f.level === 'error' && /gives the game away/.test(f.message)), 'a telling emblem is refused');
+  // Same element skeleton for everyone (only the detail inside the head/hair/extras groups varies).
+  const skeleton = (svg) => svg.replace(/<g clip-path[\s\S]*?<\/g>/, '<g/>').replace(/<g transform="translate\(60 134\)">[\s\S]*?<\/g>/, '<g/>').replace(/"[^"]*"/g, '""');
+  const ref = skeleton(portraitSvg('annie', 'Annie', content.portraits.annie));
+  for (const id of content.characterOrder) assert.equal(skeleton(portraitSvg(id, 'X', content.portraits[id])), ref, `${id}'s portrait has a different shape`);
+});

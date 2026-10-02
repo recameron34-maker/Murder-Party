@@ -38,6 +38,7 @@ export function loadContent(root = path.resolve('content')) {
   const suspicion = readYaml(path.join(root, 'suspicion.yaml')) || { stages: [], suspects: [] };
   const venue = readYaml(path.join(root, 'venue.yaml')) || { areas: [], spots: [], openings: [], entrances: [] };
   const lights = readYaml(path.join(root, 'lights.yaml')) || { groups: [], scenes: [] };
+  const portraits = readYaml(path.join(root, 'portraits.yaml')) || {};
 
   const characters = {};
   const charDir = path.join(root, 'characters');
@@ -109,6 +110,7 @@ export function loadContent(root = path.resolve('content')) {
     suspicion,
     venue,
     lights,
+    portraits,
     characters,
     characterOrder,
     clues,

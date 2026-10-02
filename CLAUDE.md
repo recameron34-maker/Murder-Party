@@ -139,6 +139,14 @@ that player. The spoiler rules above still apply and are enforced server-side
   `venue.yaml` (an area, a spot, or a `stage` box). The flat has a real hidden door (behind the landing bookshelf,
   between the library and the study); it lives only in `lore.yaml` →
   `venue_passage` and must never appear in `venue.yaml` or any guest page.
+- `src/views/props.mjs` draws every piece of evidence (and the raven and
+  guest book) as line art for the host pages and printed evidence cards;
+  `src/views/portraits.mjs` draws character portraits from
+  `content/portraits.yaml`. Portraits are public (they go on name badges):
+  emblems must fit the public role, and every portrait shares one shape.
+- The Map page replay walks everyone through the flat's doorways
+  (`venueGraph` / `routeBetween` in visuals.mjs); keep `venue.yaml`'s
+  openings and `doors` connected so every move has a route.
 - `test/`: spoiler-leak, Morgan-parity, auth and content tests.
 
 **Before committing:** run `npm run check` (zero errors) and `npm test` (all

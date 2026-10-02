@@ -7,6 +7,8 @@ import { formatTimeIn, parseClock } from '../lib/time.mjs';
 import { checkContent, wordCount } from '../lib/check.mjs';
 import { flexCoverage } from '../lib/flex.mjs';
 import { page } from './layout.mjs';
+import { prop } from './props.mjs';
+import { portrait } from './portraits.mjs';
 import { HOST_CSS } from './styles.mjs';
 import { crest, crestSvg, roundStepper, venueMap, venuePins, venueWhere, stageSlots, gameLabel, venueGraph, routeBetween, areaOfRoom, timelineChart, eveningStrip, yourWeb, webGraph, suspicionHeatmap, initials, shortNames, KIND_LABELS, ROOM_LABELS } from './visuals.mjs';
 
@@ -188,7 +190,7 @@ ${nowNext(ctx)}
     <h3 class="h-card">Evidence ${live === 0 ? 'to hide before Round One' : 'for this round'}</h3>
     <ul class="checklist">${phys.map((id) => {
       const c = content.clues[id];
-      return html`<li><span class="pin-dot r${c.round}">${c.round}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${c.timing} · ${carrier(c.carrier)}${c.room ? ` · ${venueWhere(content.venue, c.room) || ROOM_LABELS[c.room] || c.room}` : ''}</span></span></li>`;
+      return html`<li><span class="prop-mini">${prop(id, { size: 40 })}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${c.timing} · ${carrier(c.carrier)}${c.room ? ` · ${venueWhere(content.venue, c.room) || ROOM_LABELS[c.room] || c.room}` : ''}</span></span></li>`;
     })}</ul>
     <p class="small"><a href="/host/setup">Where it all goes in the flat →</a></p>
     ${aims.length ? html`<h3>Suspicion target</h3>${aims.map((st) => html`<p class="small"><b>${st.title}:</b> ${st.aim}</p>`)}` : ''}
@@ -389,6 +391,10 @@ export function evidencePage(ctx) {
   const pinNo = clueNumbers(content);
   return shell(ctx, '/host/evidence', 'Evidence & props', html`
 <p class="small muted">Tick props off as you prepare them. Hiding spots are set for your flat (see <a href="/host/setup">Setup</a>); change them in content/clues/*.yaml. Numbered pins match Setup and the <a href="/host/map">case map</a>.</p>
+<div class="card"><h3 class="h-card">The props, at a glance</h3><div class="prop-gallery">
+${[['raven', 'The Blackwood Raven', 'On the study desk all night. Bronze-coloured, heavy-looking.'], ['guest-book', "Silas's guest book", 'By the coat rack, with a fountain pen.']].map(([id, t, d]) => html`<figure class="prop-tile key">${prop(id, { size: 110, title: t })}<figcaption><b>${t}</b><span>${d}</span></figcaption></figure>`)}
+${content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken').map((id) => html`<figure class="prop-tile r${content.clues[id].round}"><a href="#${id}">${prop(id, { size: 110, title: content.clues[id].title })}</a><figcaption><b>${pinNo[id] ? html`<span class="pin-dot r${content.clues[id].round}">${pinNo[id]}</span> ` : ''}${content.clues[id].title}</b><span>${ROUND_LABEL[content.clues[id].round]} · ${state.prepDone[id] ? '✓ made' : 'to make'}</span></figcaption></figure>`)}
+</div></div>
 ${[1, 2, 3].map((r) => {
   const phys = content.clueOrder.filter((id) => content.clues[id].round === r && content.clues[id].kind !== 'spoken');
   const spoken = content.clueOrder.filter((id) => content.clues[id].round === r && content.clues[id].kind === 'spoken');
@@ -399,7 +405,7 @@ ${phys.map((id) => {
   const off = c.carrier !== 'host' && c.carrier !== 'found' && !isLive(c.carrier);
   return html`<tr id="${id}" class="${off ? 'off' : ''}">
   <td>${postButton('/host/prep', { id, done: state.prepDone[id] ? '' : '1' }, state.prepDone[id] ? '✓ ready' : '☐ prep', state.prepDone[id] ? 'btn small' : 'btn small ghost')}</td>
-  <td>${pinNo[id] ? html`<span class="pin-dot r${c.round}">${pinNo[id]}</span> ` : ''}<b>${c.title}</b> ${c.critical ? pill('core', 'critical') : ''} ${pill('info', c.kind)} ${c.source === 'new' ? pill('flex', 'new') : ''}
+  <td><span class="prop-thumb">${prop(id, { size: 64 })}</span>${pinNo[id] ? html`<span class="pin-dot r${c.round}">${pinNo[id]}</span> ` : ''}<b>${c.title}</b> ${c.critical ? pill('core', 'critical') : ''} ${pill('info', c.kind)} ${c.source === 'new' ? pill('flex', 'new') : ''}
     <details><summary class="small">Printed text · truth</summary><div class="small mono" style="white-space:pre-wrap">${c.print || ''}</div><p class="small"><b>Truth:</b> ${c.truth}</p>${c.prop_needed ? html`<p class="small"><b>Prop:</b> ${c.prop_needed}</p>` : ''}${c.fallback ? html`<p class="small"><b>Fallback:</b> ${c.fallback}</p>` : ''}</details></td>
   <td class="small">${c.timing} · ${carrier(c.carrier)}${off ? html` ${pill('warn', 'carrier not cast')}` : ''}<div class="muted">${c.delivery}</div></td>
   <td class="small">${c.hide}</td></tr>`;
@@ -423,7 +429,7 @@ ${content.characterOrder.map((id) => {
   const c = content.characters[id];
   const r = roster[id];
   return html`<article class="char-card t-${c.tier}" data-tier="${c.tier}" data-search="${[c.name, c.role, c.public_role, r.player || '', r.status].join(' ').toLowerCase()}">
-  <a class="cc-head" href="/host/characters/${id}">${crest(id, c.name, 52)}<div><b>${c.name}</b><span class="small muted">${c.role}</span></div></a>
+  <a class="cc-head" href="/host/characters/${id}">${portrait(id, c.name, content.portraits?.[id], 60)}<div><b>${c.name}</b><span class="small muted">${c.role}</span></div></a>
   <p class="small">${pill(c.tier)} ${c.effort ? pill('info', c.effort + ' effort') : ''} <span class="muted">${r.player || 'unassigned'} · ${r.status}</span></p>
   <p class="small cc-links">Preview: ${[0, 1, 2, 3].map((n) => html`<a href="/host/preview/${id}?round=${n}">R${n}</a> `)}${ctx.canEdit ? html` · <a href="/host/edit/${id}">edit</a>` : ''}</p>
 </article>`;
@@ -457,7 +463,7 @@ export function characterPage(ctx, id) {
   const rels = c.relationships || [];
   return shell(ctx, '/host/characters', c.name, html`
 <p class="page-info"><a href="/host/characters">← All characters</a></p>
-<div class="dossier-head">${crest(id, c.name, 84)}<div>
+<div class="dossier-head">${portrait(id, c.name, content.portraits?.[id], 110)}<div>
 <p class="small muted">${c.role}<br>Everyone knows them as: <i>${c.public_role}</i></p>
 <p>${pill(c.tier)} ${c.effort ? pill('info', c.effort + ' effort') : ''} ${roster[id].player || 'unassigned'} · ${roster[id].status} · <span class="small muted">${c._file}</span></p></div></div>
 <div class="card"><h3 class="h-card">Their evening</h3>${eveningStrip(c, { host: true, rooms: content.lore.rooms })}</div>
@@ -582,7 +588,7 @@ ${venueMap(venue, { mode: 'host', rooms: content.lore.rooms, pins, secret: conte
   <div class="card"><h3 class="h-card">Hide it, in this order</h3>
   ${groups.map(([label, ids]) => html`<p class="toc-round">${label}</p><ul class="checklist">${ids.map((id) => {
     const c = content.clues[id];
-    return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a><br><span class="small muted">${c.hide}</span></span></li>`;
+    return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span class="prop-mini">${prop(id, { size: 44 })}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a><br><span class="small muted">${c.hide}</span></span></li>`;
   })}</ul>`)}
   </div>
   <div class="card"><h3 class="h-card">Keep on you</h3><ul class="small">${kept.map((id) => html`<li><b>${content.clues[id].title}</b> <span class="muted">(${ROUND_LABEL[content.clues[id].round]})</span></li>`)}</ul>
@@ -793,7 +799,7 @@ ${unplaced.length ? html`<p class="small pill warn">Not drawn on the map: ${unpl
 <div class="grid">
 <div class="card"><h3 class="h-card">Evidence pins</h3><ol class="pin-list">${pinned.map((id) => {
   const c = content.clues[id];
-  return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span><a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${gameLabel(c.room, content.lore.rooms)} (${venueWhere(venue, c.room) || 'not in the flat'}) · Round ${c.round}, ${c.timing}</span><br><span class="small muted">${c.hide}</span></span></li>`;
+  return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span class="prop-mini">${prop(id, { size: 44 })}</span><span><a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${gameLabel(c.room, content.lore.rooms)} (${venueWhere(venue, c.room) || 'not in the flat'}) · Round ${c.round}, ${c.timing}</span><br><span class="small muted">${c.hide}</span></span></li>`;
 })}</ol></div>
 <div class="card"><h3 class="h-card">How to read it</h3><ul class="small">
 <li>Your flat, with each room labelled by the manor room it plays. Press play and everyone walks the evening their cards describe, through the real doorways; late arrivals come up the front stairs. Trails show where someone is going. The red ring is the killer; a red dashed trail is the hidden door.</li>

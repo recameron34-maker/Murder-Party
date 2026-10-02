@@ -5,6 +5,8 @@ import { md, mdInline, applyConditionals } from '../lib/markdown.mjs';
 import { rosterHelpers } from '../lib/roster.mjs';
 import { FONTS, PRINT_CSS } from './styles.mjs';
 import { gameLabel } from './visuals.mjs';
+import { prop } from './props.mjs';
+import { portrait } from './portraits.mjs';
 
 const ROUND_WORDS = { 1: 'Round One', 2: 'Round Two', 3: 'Round Three' };
 
@@ -48,6 +50,7 @@ export function printView(ctx, kind, query) {
         const c = chars[id];
         return html`<div class="page">
   <div class="env-head"><span class="r">Blackwood Manor · Character</span><span>For ${roster[id].player || ''} only</span></div>
+  <div class="card-portrait">${portrait(id, c.name, content.portraits?.[id], 90)}</div>
   <h1>${c.name}</h1><p><i>${c.role}</i>: ${c.tagline}</p>
   ${M(c.intro)}<h3>Costume</h3>${M(c.costume)}<h3>Your story</h3>${M(c.backstory)}
   <h3>Connections</h3><ul>${c.relationships.filter((r) => !r.if || isLive(r.if)).map((r) => html`<li><b>${name(r.with)}</b>: ${I(r.text)}</li>`)}</ul>
@@ -74,6 +77,7 @@ export function printView(ctx, kind, query) {
     case 'evidence': {
       const ids = content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken' && content.clues[id].print);
       return printPage('Evidence cards', chunk(ids, 4).map((group) => html`<div class="page"><div class="cards">${group.map((id, i) => html`<div class="cardp">
+  <div class="ev-art">${prop(id, { size: 96 })}</div>
   <div class="stamp">BLACKWOOD EVIDENCE</div>
   <div class="pre">${content.clues[id].print.trim()}</div>
   <div style="position:absolute;bottom:3mm;right:4mm;font-size:7pt;color:#777">R${content.clues[id].round} · ${id}</div></div>`)}</div></div>`));
@@ -99,7 +103,7 @@ export function printView(ctx, kind, query) {
   <div style="position:absolute;bottom:3mm;right:4mm;font-size:7pt;color:#777">from Round ${h.from_round}</div></div>`)}</div></div>`));
     case 'badges':
       // Name badges: name and public role only (what everyone knows).
-      return printPage('Name badges', chunk(liveIds, 8).map((group) => html`<div class="page"><div class="badges">${group.map((id) => html`<div class="badge"><div class="stamp">BLACKWOOD MANOR · MIDNIGHT SUPPER</div><div class="b-name">${chars[id].name}</div><div class="b-role">${chars[id].public_role}</div></div>`)}</div></div>`));
+      return printPage('Name badges', chunk(liveIds, 8).map((group) => html`<div class="page"><div class="badges">${group.map((id) => html`<div class="badge"><div class="stamp">BLACKWOOD MANOR · MIDNIGHT SUPPER</div><div class="b-portrait">${portrait(id, chars[id].name, content.portraits?.[id], 64)}</div><div class="b-name">${chars[id].name}</div><div class="b-role">${chars[id].public_role}</div></div>`)}</div></div>`));
     case 'awards': {
       const awards = content.party.awards || [];
       return printPage('Award certificates', awards.map((a) => html`<div class="page sign certificate"><div class="stamp">BLACKWOOD MANOR · THE MIDNIGHT SUPPER</div><p class="sign-sub">The house is pleased to recognise</p><div class="cert-line"></div><h1>${a.title}</h1><p class="sign-line">${a.for}</p><p class="cert-foot">Signed at midnight, in the presence of the raven.<br>Reginald Blackwood, host</p></div>`));

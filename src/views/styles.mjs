@@ -111,6 +111,7 @@ footer{color:var(--muted);text-align:center;font-size:.85rem;padding:30px 0 50px
 .preview-bar{background:#3b2a12;color:#f7dfa9;text-align:center;padding:8px;font-family:system-ui,sans-serif;font-size:.9rem}
 
 header.title .crest{margin:8px auto 10px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5));animation:candle 5s ease-in-out infinite}
+header.title .portrait{display:block;margin:10px auto 8px;animation:candle 5s ease-in-out infinite}
 header.title h1{font-size:2.4rem}
 .login .raven{animation:candle 5s ease-in-out infinite;width:56px;height:56px}
 .login h1{font-size:2.6rem;letter-spacing:.02em}
@@ -248,6 +249,18 @@ h2[id],.card[id],section[id]{scroll-margin-top:96px}
 .m-events{color:var(--muted);min-height:2.6em}
 .m-events .crit{color:var(--ink)}
 .pin-list{list-style:none;padding:0}
+.prop-art{display:block;color:var(--gold2);flex:none}
+.portrait{display:block;flex:none;filter:drop-shadow(0 6px 12px rgba(0,0,0,.45))}
+.prop-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.prop-tile{margin:0;background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.prop-tile .prop-art{margin:0 auto 6px}
+.prop-tile.r1{border-top:3px solid #7fa7d8}.prop-tile.r2{border-top:3px solid #c9a45c}.prop-tile.r3{border-top:3px solid #d0607a}.prop-tile.key{border-top:3px solid var(--blood)}
+.prop-tile figcaption{font-size:.82rem;line-height:1.3}
+.prop-tile figcaption b{display:block;color:var(--ink)}
+.prop-tile figcaption span{color:var(--muted)}
+.prop-tile figcaption .pin-dot{color:#fff;vertical-align:middle}
+.prop-thumb{float:right;margin:0 0 4px 8px}
+.prop-mini{flex:none;display:inline-block;background:rgba(0,0,0,.2);border-radius:6px;padding:2px}
 .ready-list .tick{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);font:700 .75rem system-ui,sans-serif;color:var(--muted)}
 .ready-list li.ok .tick{border-color:var(--ok);color:#a7d3a2}
 .ready-list li.todo .tick{border-color:var(--warn);color:#f0cf8a}
@@ -328,6 +341,10 @@ blockquote{margin:.6em 0;padding:.3em .8em;border-left:3px solid #111;font-style
 .ballot{border:1.5px dashed #111;padding:6mm;min-height:120mm;break-inside:avoid}
 .ballot .line{border-bottom:1px solid #999;height:12mm}
 .pre{white-space:pre-wrap}
+.card-portrait{float:right;margin:0 0 4mm 6mm}
+.b-portrait .portrait{margin:0 auto 1mm;display:block}
+.ev-art{position:absolute;top:4mm;right:4mm;color:#222;opacity:.9}
+.ev-art .prop-art{width:24mm;height:18mm}
 .badges{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
 .badge{border:1.5px solid #111;border-radius:3mm;height:56mm;padding:5mm;display:flex;flex-direction:column;justify-content:center;text-align:center;break-inside:avoid;background:repeating-linear-gradient(45deg,#fbf8f1,#fbf8f1 6px,#f4eee2 6px,#f4eee2 7px)}
 .badge .stamp{font-size:7pt;align-self:center}

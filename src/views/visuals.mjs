@@ -58,8 +58,10 @@ const labelOf = (content, id) => shortNames(content.names || {})[id] || shortNam
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
 // ---------------------------------------------------------------- crest (portrait medallion)
+export const crestColor = (id) => (id === 'arthur' ? '#1a1214' : CREST_COLORS[hash(id) % CREST_COLORS.length]);
+
 export function crestSvg(id, name, size = 56) {
-  const color = id === 'arthur' ? '#1a1214' : CREST_COLORS[hash(id) % CREST_COLORS.length];
+  const color = crestColor(id);
   const ini = initials(name);
   const fs = ini.length > 1 ? 21 : 26;
   return `<svg class="crest" viewBox="0 0 64 64" width="${size}" height="${size}" role="img" aria-label="${esc(name)}"><circle cx="32" cy="32" r="30" fill="${color}" stroke="#c9a45c" stroke-width="2.5"/><circle cx="32" cy="32" r="25" fill="none" stroke="#e3c788" stroke-opacity=".45" stroke-width="1" stroke-dasharray="1.5 3"/><path d="M14 22 Q32 8 50 22" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="6"/><text x="32" y="${ini.length > 1 ? 39.5 : 41}" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="700" font-size="${fs}" fill="#f3e6c8">${esc(ini)}</text></svg>`;
