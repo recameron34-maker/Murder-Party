@@ -326,6 +326,12 @@ export function checkContent(content, state = {}) {
     if ((sus.levels || []).length !== (content.suspicion.stages || []).length) add('error', 'suspicion.yaml', sus.id, 'Needs one level per stage');
   }
 
+  // ------------------------------------------------------------ lights
+  const sceneIds = new Set((content.lights?.scenes || []).map((x) => x.id));
+  for (const s of content.script) if (s.lights && !sceneIds.has(s.lights)) add('error', s._file, s.slug, `Unknown lighting scene "${s.lights}" (content/lights.yaml)`);
+  for (const g of content.lights?.groups || []) if (!(content.venue?.areas || []).some((a) => a.id === g.room)) add('error', 'lights.yaml', g.name, `Light group for unknown room "${g.room}"`);
+  for (const sc of content.lights?.scenes || []) if (!sc.routine) add('error', 'lights.yaml', sc.id, 'Scene needs a routine name');
+
   // ------------------------------------------------------------ real couples
   // Coupled characters may only be romantic with each other (party.yaml).
   const partnerOf = new Map();

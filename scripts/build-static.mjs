@@ -51,7 +51,7 @@ for (const id of content.characterOrder) {
   add(`/host/preview/${id}`, guestPage(content, state, id, { round: 0, preview: true, now }));
   for (const r of ROUNDS) add(`/host/preview/${id}?round=${r}`, guestPage(content, state, id, { round: r, preview: true, now }));
 }
-for (const kind of ['cards', 'evidence', 'ballots', 'cash', 'hints', 'signs']) add(`/host/print/${kind}`, printView(ctx('/host/print'), kind, new URLSearchParams()));
+for (const kind of ['cards', 'evidence', 'ballots', 'cash', 'hints', 'signs', 'badges', 'awards']) add(`/host/print/${kind}`, printView(ctx('/host/print'), kind, new URLSearchParams()));
 for (const r of [1, 2, 3]) add(`/host/print/envelopes?round=${r}`, printView(ctx('/host/print'), 'envelopes', new URLSearchParams({ round: String(r) })));
 add('/guest-login', loginPage());
 

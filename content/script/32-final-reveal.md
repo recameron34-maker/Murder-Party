@@ -3,6 +3,7 @@ title: Final reveal
 round: 4
 kind: speech
 changes: '"Twenty-five people" now comes from the roster. "MORGAN. MIDNIGHT. DONE." replaced by "LEGAL. $2.4M. MIDNIGHT." The passage is named the Raven''s Walk.'
+lights: reveal
 ---
 Stand somewhere central. Hold the solution envelope.
 
@@ -44,7 +45,7 @@ Stand somewhere central. Hold the solution envelope.
 
 "Study." *Gesture.* "Wall." *Gesture.* "Library."
 
-🆕 *Tonight it's real.* Walk to the study. "Study." Knock on the wall where the hidden door is. "Wall." Then go round to the landing, slide the bookshelf aside and open the door so the room can see straight through into the study. "Library." *Let them look.* "Silas did love a dramatic exit."
+🆕 *Tonight it's real.* Walk to the study. "Study." Knock on the wall where the hidden door is. "Wall." Then go round to the landing, slide the bookshelf aside and open the door so the room can see straight through into the study (fire **Blackwood passage** as the shelf moves). "Library." *Let them look.* "Silas did love a dramatic exit."
 
 "At 9:41, Alma saw Morgan emerge near the library."
 

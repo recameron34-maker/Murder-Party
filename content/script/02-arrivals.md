@@ -3,6 +3,7 @@ title: Arrivals
 round: 0
 kind: speech
 changes: Greetings added for more of the cast.
+lights: arrival
 ---
 Let everyone arrive, get drinks and admire costumes. Stay in character as Reggie.
 

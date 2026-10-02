@@ -77,6 +77,56 @@ ${error ? html`<p class="flash bad">${error}</p>` : ''}
 }
 
 // ---------------------------------------------------------------- dashboard
+const KIND_ICON = { speech: '🎙', cue: '⏱', checklist: '☑', rescue: '🛟', evidence: '🔎', reference: '📖' };
+
+const sceneById = (content, id) => (content.lights?.scenes || []).find((x) => x.id === id) || null;
+
+// The lighting scene in force at a segment: its own, or the last one before it.
+function sceneAt(content, slug) {
+  let scene = null;
+  for (const s of content.script) {
+    if (s.lights) scene = sceneById(content, s.lights);
+    if (s.slug === slug) return { scene, own: !!s.lights };
+  }
+  return { scene: null, own: false };
+}
+
+function lightsBox(scene, own) {
+  if (!scene) return '';
+  return html`<div class="lights-box${own ? ' fire' : ''}"><span class="lb-icon">💡</span><div><b>${own ? 'Lights: fire' : 'Lights: still'} “${scene.routine}”</b><br><span class="small">${scene.look}</span>${scene.sound && own ? html`<br><span class="small muted">🎵 ${scene.sound}</span>` : ''}</div></div>`;
+}
+
+// Now / Next: walk the run of show one step at a time during the party.
+function nowNext(ctx) {
+  const { content, state } = ctx;
+  const steps = content.script.filter((s) => s.kind !== 'reference');
+  let i = steps.findIndex((s) => s.slug === state.segment);
+  if (i < 0) i = Math.max(0, steps.findIndex((s) => s.round === state.liveRound));
+  const cur = steps[i];
+  const prev = steps[i - 1];
+  const next = steps[i + 1];
+  const { isLive } = rosterHelpers(content, state);
+  const { scene, own } = sceneAt(content, cur.slug);
+  const move = (to, label, cls = '') => html`<form method="post" action="/host/segment"><input type="hidden" name="to" value="${to.slug}"><button class="btn ${cls}" type="submit">${label}</button></form>`;
+  return html`<div class="card now-step" id="now">
+  <div class="ns-top"><span class="pill">${ROUND_LABEL[cur.round]}</span><span class="small muted">Step ${i + 1} of ${steps.length}</span><a class="small" href="/host/script#${cur.slug}">Open in run of show</a></div>
+  <h2 class="h-card">${KIND_ICON[cur.kind] || ''} ${cur.title}</h2>
+  ${lightsBox(scene, own)}
+  ${cur.round > state.liveRound && cur.round <= 3 ? html`<form method="post" action="/host/round" class="unlock"><input type="hidden" name="round" value="${cur.round}"><button class="btn" type="submit">Unlock ${ROUND_LABEL[cur.round]} on every phone</button></form>` : ''}
+  ${cur.send_texts.map((id) => cueButton(ctx, id))}
+  <div class="ns-body">${raw(md(substitute(cur.body, ctx), isLive))}</div>
+  <div class="ns-nav">${prev ? move(prev, '◀ Back', 'ghost') : html`<span></span>`}${next ? move(next, html`Next: ${next.title} ▶`) : html`<span class="muted small">That's the night. Go to bed.</span>`}</div>
+</div>`;
+}
+
+function scheduleCard(ctx) {
+  const sched = ctx.content.party.schedule || [];
+  if (!sched.length) return '';
+  const live = ctx.state.liveRound;
+  const nowIdx = sched.reduce((acc, row, i) => (row.round <= live ? i : acc), 0);
+  return html`<div class="card"><h3 class="h-card">Tonight's schedule</h3><ol class="sched">${sched.map((row, i) => html`<li class="${row.round === live && i <= nowIdx ? 'on' : ''}"><b>${row.time}</b><span>${row.what}${row.food ? html` <span class="muted">· ${row.food}</span>` : ''}</span></li>`)}</ol><p class="small muted">Suggested times, anchored to food. Change them in content/party.yaml.</p></div>`;
+}
+
 export function dashboardPage(ctx) {
   const { content, state } = ctx;
   const { roster, liveIds, canLogin, guestCount, isLive } = rosterHelpers(content, state);
@@ -97,6 +147,7 @@ export function dashboardPage(ctx) {
   const carrier = (c) => (c === 'host' ? 'Reggie' : c === 'found' ? 'hidden for the hunt' : shortNames(content.names)[c] || c);
 
   return shell(ctx, '/host', 'Dashboard', html`
+${nowNext(ctx)}
 <div class="card hero">
   ${roundStepper(live, { labels: ['Before', 'Round One', 'Round Two', 'Round Three', 'Reveal'] })}
   <div class="rounds">${[0, 1, 2, 3].map((n) => html`<form method="post" action="/host/round" onsubmit="return confirm('Set the live round to ${ROUND_LABEL[n]}?')"><input type="hidden" name="round" value="${n}"><button class="btn ${live === n ? 'on' : 'ghost'}" type="submit">${n === live ? '● ' : ''}${ROUND_LABEL[n]}</button></form>`)}</div>
@@ -146,6 +197,7 @@ export function dashboardPage(ctx) {
     <p><a href="/host/flex">Live vs. fallback →</a></p></div>
 </div>
 
+${scheduleCard(ctx)}
 <div class="card">
   <h2 class="h-card">The suspicion curve</h2>
   ${suspicionHeatmap(content, { highlightRound: focusRound })}
@@ -257,7 +309,6 @@ export function scriptPage(ctx, filterRound) {
   const all = content.script;
   const segs = all.filter((s) => filterRound == null || s.round === filterRound);
   const rounds = [...new Set(all.map((s) => s.round))].sort((a, b) => a - b);
-  const KIND_ICON = { speech: '🎙', cue: '⏱', checklist: '☑', rescue: '🛟', evidence: '🔎', reference: '📖' };
   const num = (s) => all.indexOf(s) + 1;
   return shell(ctx, '/host/script', 'Run of show', html`
 <p class="inline-form small">${html`<a class="btn small ${filterRound == null ? '' : 'ghost'}" href="/host/script">All</a>`}${rounds.map((r) => html`<a class="btn small ${filterRound === r ? '' : 'ghost'}" href="/host/script?round=${r}">${ROUND_LABEL[r]}</a>`)}</p>
@@ -272,6 +323,7 @@ ${segs.map((s, i) => {
   <div class="seg-head"><span class="seg-num">§${num(s)}</span><h2>${KIND_ICON[s.kind] || ''} ${s.title}</h2></div>
   <div class="meta">${ROUND_LABEL[s.round]} · ${s.kind}${s.changes ? html` · <i>Changed: ${s.changes}</i>` : ''}</div>
   ${s.clues.length ? html`<p class="small">Evidence: ${s.clues.map((id) => html`<a class="pill" href="/host/evidence#${id}">${content.clues[id]?.title || id}</a> `)}</p>` : ''}
+  ${s.lights ? lightsBox(sceneById(content, s.lights), true) : ''}
   ${s.send_texts.map((id) => cueButton(ctx, id))}
   ${raw(md(substitute(s.body, ctx), isLive))}
   <p class="seg-nav small">${prev ? html`<a href="#${prev.slug}">← ${prev.title}</a>` : html`<span></span>`}<a href="#top">↑ top</a>${next ? html`<a href="#${next.slug}">${next.title} →</a>` : html`<span></span>`}</p>
@@ -449,6 +501,8 @@ export function printIndexPage(ctx) {
     ['ballots', 'Accusation ballots', 'Four per page.'],
     ['cash', 'Blackmail Cash', '$1,000 notes: three per guest plus a float.'],
     ['hints', 'Hint cards', 'For the $3,000 private hint.'],
+    ['badges', 'Name badges', "Eight per page: each character's name and what everyone knows them as. Hand out at the door."],
+    ['awards', 'Award certificates', "One per award (Best Detective, Best Liar…), with a line for the winner's name."],
     ['signs', 'Room signs', 'One sign for each room the flat plays tonight (THE STUDY, THE LIBRARY…) and an EAST WING · SHUT sign for every closed door.'],
   ];
   return shell(ctx, '/host/print', 'Print', html`
@@ -459,6 +513,18 @@ export function printIndexPage(ctx) {
 // ---------------------------------------------------------------- setup (the real flat)
 const TIMING_ORDER = { early: 0, mid: 1, late: 2, end: 3 };
 const WHEN_LABEL = (c) => (c.round === 1 ? 'Before guests arrive' : `${ROUND_LABEL[c.round]}, ${c.timing === 'early' ? 'as it opens' : c.timing}`);
+
+function lightsSection(content) {
+  const L = content.lights || {};
+  if (!(L.scenes || []).length) return '';
+  const areaName = (id) => (content.venue.areas || []).find((a) => a.id === id)?.name || id;
+  return html`<h2 id="lights">Lights</h2>
+<div class="grid">
+  <div class="card"><h3 class="h-card">1. Make these Alexa groups</h3><ul class="small">${(L.groups || []).map((g) => html`<li><b>${g.name}</b>: the bulbs in your ${areaName(g.room)}</li>`)}</ul><p class="small"><b>Safety.</b> ${L.safety || ''}</p></div>
+  <div class="card"><h3 class="h-card">2. Make one routine per scene</h3><p class="small">Alexa app → More → Routines → +. Name it as below, add the actions, and fire it from the app (the ▶ next to the routine) so nobody hears you ask for a blackout. Each scene shows up in the run of show and on the dashboard at the right moment.</p></div>
+</div>
+<div class="lights-table">${L.scenes.map((sc) => html`<div class="card lt-row"><div class="lt-name">💡 <b>${sc.routine}</b><br><span class="small muted">${sc.when}</span></div><div class="small"><p>${sc.look}</p>${sc.steps ? html`<ol class="lt-steps">${sc.steps.map((st) => html`<li>${st}</li>`)}</ol>` : ''}${sc.sound ? html`<p class="muted">🎵 ${sc.sound}</p>` : ''}</div></div>`)}</div>`;
+}
 
 export function setupPage(ctx) {
   const { content, state } = ctx;
@@ -501,6 +567,7 @@ ${venueMap(venue, { mode: 'host', rooms: content.lore.rooms, pins, secret: conte
   <h3>Signs</h3><p class="small">Print a sign for every game room and every shut door: <a href="/host/print/signs" target="_blank">Print → Room signs</a>.</p>
   <h3>The passage</h3>${content.lore.venue_passage ? html`<p class="small">${content.lore.venue_passage.note} Guests' plans never show it. The normal way from the study to the library runs through the Family Room, the Living Room and the front door, past the whole party: that's why Morgan needed the wall.</p>` : html`<p class="small">It lives only in the story (see the <a href="/host/map">Map</a>).</p>`}</div>
 </div>
+${lightsSection(content)}
 <h2>Room by room</h2>
 <div class="room-grid">
 ${areas.map((a) => {

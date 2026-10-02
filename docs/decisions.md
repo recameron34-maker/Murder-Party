@@ -254,6 +254,25 @@ Arthur (not played).
 - The house texts everyone through the night (the east wing, Lady
   Evangeline's portrait, the empty chair's fresh glass).
 
+## Checked against published murder mystery games (October 2026)
+
+Commercial kits and hosting guides (Night of Mystery, Freeform Games,
+Masters of Mystery, Red Herring Games) agree on: character booklets ahead of
+time, name badges, a host who paces acts and rescues dead conversation,
+clues released progressively, objectives beyond "solve it", bribery and
+blackmail, pacing anchored to food courses, music and lighting, and awards
+at the end. We had most of it. Added:
+
+- **Lighting plan** (`content/lights.yaml`): Alexa groups per room and one
+  routine per scene, cued in the run of show and on the dashboard. The
+  blackout rolls room by room (dining room first, as Tim says) with thunder,
+  then returns with the study glowing red. Fire routines from the app, not
+  by voice. Stairs and bathroom stay on ordinary switches.
+- **Now / Next** on the dashboard: one step of the run of show at a time.
+- **Suggested schedule** by food course (`party.yaml` → `schedule`).
+- **Name badges** and **award certificates** (`party.yaml` → `awards`).
+- **The midnight photograph** and signing out of the guest book.
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?

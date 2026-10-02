@@ -1,9 +1,9 @@
 // Authentication and access control.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { makeApp, cookieFrom, ORIGIN } from './helpers.mjs';
+import { makeApp, cookieFrom, ORIGIN, content } from './helpers.mjs';
 
-const HOST_PAGES = ['/host', '/host/roster', '/host/texts', '/host/script', '/host/timeline', '/host/evidence', '/host/characters', '/host/characters/morgan', '/host/preview/morgan', '/host/check', '/host/flex', '/host/print', '/host/print/cards', '/host/print/passphrases'];
+const HOST_PAGES = ['/host', '/host/roster', '/host/texts', '/host/script', '/host/timeline', '/host/evidence', '/host/characters', '/host/characters/morgan', '/host/preview/morgan', '/host/check', '/host/flex', '/host/print', '/host/print/cards', '/host/print/passphrases', '/host/map', '/host/setup', '/host/web', '/host/suspicion', '/host/print/badges', '/host/print/awards', '/host/print/signs'];
 
 test('host pages require the host password, and a guest session is not enough', async () => {
   const app = await makeApp();
@@ -91,4 +91,26 @@ test('host text bodies are escaped on guest pages', async () => {
   const html = await (await app.fetch('/', { cookie: maya })).text();
   assert.ok(!html.includes('<img src=x'));
   assert.ok(html.includes('&lt;img src=x onerror=alert(1)&gt;'));
+});
+
+test('host Now / Next steps through the run of show and shows the lighting cue', async () => {
+  const app = await makeApp();
+  const h = await app.loginHost();
+  let res = await app.fetch('/host/segment', { method: 'POST', form: { to: '06-blackout' }, cookie: h, headers: { origin: ORIGIN } });
+  assert.equal(res.status, 303);
+  const html = await (await app.fetch('/host', { cookie: h })).text();
+  assert.match(html, /The blackout/);
+  assert.match(html, /Blackwood blackout/);
+  res = await app.fetch('/host/segment', { method: 'POST', form: { to: 'no-such-step' }, cookie: h, headers: { origin: ORIGIN } });
+  assert.equal((await app.state()).segment, '06-blackout', 'unknown step ignored');
+});
+
+test('printed name badges carry public roles only', async () => {
+  const app = await makeApp();
+  const h = await app.loginHost();
+  const html = await (await app.fetch('/host/print/badges', { cookie: h })).text();
+  for (const id of content.characterOrder) {
+    const c = content.characters[id];
+    if (!c.public_role.includes(c.role)) assert.ok(!html.includes(c.role), `${id}'s private role on a badge`);
+  }
 });

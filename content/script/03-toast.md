@@ -2,6 +2,7 @@
 title: Birthday toast
 round: 0
 kind: speech
+lights: toast
 ---
 Once most people have drinks:
 

@@ -2,6 +2,7 @@
 title: Pre-murder mingle
 round: 0
 kind: cue
+lights: mingle
 ---
 Give them 20–30 minutes. They know their characters but DO NOT have Round
 One envelopes yet. 🆕 Their phones already show their "history" texts, so

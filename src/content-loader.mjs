@@ -37,6 +37,7 @@ export function loadContent(root = path.resolve('content')) {
   const globalTexts = (readYaml(path.join(root, 'texts.yaml')) || {}).texts || [];
   const suspicion = readYaml(path.join(root, 'suspicion.yaml')) || { stages: [], suspects: [] };
   const venue = readYaml(path.join(root, 'venue.yaml')) || { areas: [], spots: [], openings: [], entrances: [] };
+  const lights = readYaml(path.join(root, 'lights.yaml')) || { groups: [], scenes: [] };
 
   const characters = {};
   const charDir = path.join(root, 'characters');
@@ -86,6 +87,7 @@ export function loadContent(root = path.resolve('content')) {
       changes: meta.changes || null,
       clues: meta.clues || [],
       send_texts: meta.send_texts || [],
+      lights: meta.lights || null,
       body,
       _file: rel(file),
     });
@@ -106,6 +108,7 @@ export function loadContent(root = path.resolve('content')) {
     globalTexts,
     suspicion,
     venue,
+    lights,
     characters,
     characterOrder,
     clues,

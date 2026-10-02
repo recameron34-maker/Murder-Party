@@ -11,6 +11,7 @@ export function defaultState() {
     firstLogin: {}, // { characterId: ISO string }
     prepDone: {}, // { clueId: true } evidence prep checklist
     partyDate: null, // overrides party.yaml date when set in the host panel
+    segment: null, // slug of the run-of-show segment the host is on (dashboard Now / Next)
   };
 }
 

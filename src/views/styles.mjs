@@ -218,6 +218,25 @@ nav.host .live-pill b{color:var(--gold2)}
 .m-clock{font:700 1.4rem 'Cormorant Garamond',Georgia,serif;color:var(--gold2);min-width:90px}
 .m-events{flex-basis:100%;color:var(--muted);min-height:2.6em}
 .pin-list{list-style:none;padding:0}
+.now-step{border-color:var(--gold);box-shadow:0 0 0 1px rgba(201,164,92,.25),0 10px 30px rgba(0,0,0,.35)}
+.now-step h2{font-size:1.6rem}
+.ns-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.ns-top a{margin-left:auto}
+.ns-body{max-height:340px;overflow:auto;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);margin:10px 0;padding:6px 2px}
+.ns-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ns-nav form{display:inline}
+.unlock{margin:8px 0}
+.lights-box{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:8px 0;background:rgba(201,164,92,.06)}
+.lights-box.fire{border-color:var(--gold);background:rgba(201,164,92,.13)}
+.lb-icon{font-size:1.3rem;line-height:1}
+.sched{list-style:none;padding:0;margin:.3em 0}
+.sched li{display:grid;grid-template-columns:78px 1fr;gap:8px;padding:5px 6px;border-bottom:1px dashed var(--line);font-size:.92rem}
+.sched li.on{background:rgba(201,164,92,.12);border-radius:6px}
+.lights-table{display:grid;gap:8px}
+.lt-row{display:grid;grid-template-columns:220px 1fr;gap:14px;margin:0}
+.lt-row p{margin:.2em 0}
+.lt-steps{margin:.3em 0;padding-left:1.3em}
+@media (max-width:700px){.lt-row{grid-template-columns:1fr}}
 .room-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
 .room-card.rc-study{border-color:#7a2a36}
 .pin-list li{display:flex;gap:8px;align-items:flex-start;margin:6px 0}
@@ -275,6 +294,14 @@ blockquote{margin:.6em 0;padding:.3em .8em;border-left:3px solid #111;font-style
 .ballot{border:1.5px dashed #111;padding:6mm;min-height:120mm;break-inside:avoid}
 .ballot .line{border-bottom:1px solid #999;height:12mm}
 .pre{white-space:pre-wrap}
+.badges{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.badge{border:1.5px solid #111;border-radius:3mm;height:56mm;padding:5mm;display:flex;flex-direction:column;justify-content:center;text-align:center;break-inside:avoid;background:repeating-linear-gradient(45deg,#fbf8f1,#fbf8f1 6px,#f4eee2 6px,#f4eee2 7px)}
+.badge .stamp{font-size:7pt;align-self:center}
+.b-name{font:700 22pt 'Cormorant Garamond',serif;line-height:1.05}
+.b-role{font:italic 11pt 'Cormorant Garamond',serif;margin-top:2mm}
+.certificate{border:3px double #7a1c2b;margin:10mm;min-height:230mm}
+.cert-line{width:120mm;border-bottom:1.5px solid #111;height:16mm;margin:6mm auto}
+.cert-foot{font:italic 11pt 'Cormorant Garamond',serif;margin-top:16mm}
 .sign{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:250mm}
 .sign h1{font-size:64pt;letter-spacing:.06em;margin:.2em 0}
 .sign-sub{font:italic 18pt 'Cormorant Garamond',serif;margin:0}
