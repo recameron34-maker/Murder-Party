@@ -7,6 +7,7 @@ timing: late
 carrier: found
 delivery: Found late in Round One. Tear and tea-stain the edges; don't actually burn it at the party.
 hide: Near a fireplace, in a trash basket, or in a decorative box.
+room: study            # where it is found in the manor (for the host map)
 print: |
   LAST WILL AND TESTAMENT OF ARTHUR BLACKWOOD
 

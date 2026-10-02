@@ -4,6 +4,7 @@ written_for: Hannah             # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
 role: Director of the Wellington Foundation
+public_role: "Director of the Wellington Foundation"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You raise money for good causes. You'd raise it for bad ones too, but they don't throw better parties."
 
 costume: |

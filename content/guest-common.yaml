@@ -73,3 +73,45 @@ rounds:
   1: "Round One: Enemies"
   2: "Round Two: Lies by Omission"
   3: "Round Three: Scandal or Murder"
+
+# How the night runs, shown as a step-by-step on every guest page. `round`
+# links a step to the live round so the current step lights up.
+tonight_steps:
+  - { round: 0, title: "Arrive & mingle", text: "Get a drink. Be your character. Your phone already holds a few old messages; read them." }
+  - { round: 0, title: "The lights go out", text: "Something crashes in the dark. When the lights come back, Arthur Blackwood is dead in his study." }
+  - { round: 1, title: "Round One: Enemies", text: "Open your first envelope. Who hated Arthur enough? Everyone, apparently." }
+  - { round: 2, title: "Round Two: Lies by Omission", text: "Second envelope. People admit what they left out. Evidence turns up around the house." }
+  - { round: 3, title: "Round Three: Scandal or Murder", text: "Final envelope. Some of it clears people. Separate the scandal from the murder." }
+  - { round: 4, title: "Accuse", text: "Write down who did it, why, and how they got out of the study. No conferring." }
+  - { round: 4, title: "The reveal", text: "Reggie names the killer. Awards for best detective, best liar, best dressed." }
+
+# The Blackwood family, as everyone in the house knows it. Drawn as a tree.
+# `parent` builds the tree; `ward: true` draws a dashed line (not by blood).
+family_tree:
+  - { id: silas, name: "Silas Blackwood", years: "1851–1919", spouse: "Lady Evangeline (the portrait in the gallery)", note: "Built the manor, the walls, and the Supper." }
+  - { id: edmund, name: "Edmund", years: "1879–1923", parent: silas, note: "Meant to leave it all to the Church. Fell down the cellar stairs the night before." }
+  - { id: cordelia, name: "Cordelia", years: "1921–1979", parent: edmund, spouse: "Montague (hosted the Supper 1979–1997)", note: "Meant to give the manor to the nation. A fever, an hour before midnight." }
+  - { id: arthur, name: "Arthur", years: "1955–tonight", parent: cordelia, spouse: "Helena (left; lives in Lisbon)", note: "Hosted the Supper for nearly thirty years. Promised to give it all away at midnight." }
+  - { id: lionel, name: "Lionel", years: "1958–2011", parent: cordelia }
+  - { id: edgar, name: "Edgar", years: "1961–2016", parent: cordelia }
+  - { id: carlotta, name: "Carlotta \"Carley\"", parent: arthur, note: "The heir who left." }
+  - { id: james, name: "James Calloway", parent: arthur, ward: true, note: "Arthur's ward since he was nine." }
+  - { id: reggie, name: "Reginald \"Reggie\"", parent: lionel, note: "Your host." }
+  - { id: kevin, name: "Kevin", parent: edgar, note: "The heir who stayed." }
+
+# Rooms guests can see on the house plan (ids match lore.yaml). Never include
+# anything about hidden passages here.
+rooms:
+  drawing-room: "The party. Candlelight, a fire that's never quite warm enough, and a piano someone will definitely play badly."
+  front-hall: "Black-and-white marble, a sweeping staircase, and a coat rack where everyone's coats are hanging. Arthur's too."
+  gallery: "Two centuries of Blackwoods in oil paint. Lady Evangeline's eyes follow you. Everyone says so."
+  billiard-room: "Green baize, cigar smoke, and Jimmy Friedman's card game. Bad decisions at reasonable stakes."
+  dining-room: "Set for the Midnight Supper: thirteen places and one chair left empty for the last Blackwood to die."
+  conservatory: "A glasshouse full of orchids and secrets. The storm sounds very loud in here."
+  terrace: "Stone balustrade, rain, a security camera above the doors, and the best view of the drowned valley."
+  library: "Floor-to-ceiling books, rolling ladders, and Alma's card catalogue, which she will not let you touch."
+  library-corridor: "The quiet corridor to the library. The only spot in the house where phones get signal."
+  east-corridor: "A long panelled corridor that ends at one door: Arthur's study."
+  study: "Arthur's study. The desk, the decanter, the bronze raven. This is where he was found."
+  kitchen: "Below stairs. Mrs. Hale's kingdom of warming ovens, copper pans, and 1930s wiring."
+  east-wing: "Shut for decades. The lights stay off after eleven. Staff say they hear footsteps in the walls."

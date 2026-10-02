@@ -162,6 +162,18 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
 - Final Timeline uses Noor's 9:35 to 9:40
 - "Twenty-five people" is computed from the roster
 
+## Website depth (October 2026)
+
+- Every character has a `public_role`: what everyone at the party knows.
+  The guest list shows it; the checker flags one that gives a secret away.
+- Physical clues have a `room`, so they appear as numbered pins on the host
+  map. `content/suspicion.yaml` turns Part Two's suspicion curve into a
+  heat map, and `solution_window.killer` marks the killer on the map replay.
+- Guest pages include a house plan drawn from `guest-common.yaml` rooms.
+  The plan shows the study and library back to back, which matches the true
+  layout and rewards anyone who studies it. It never shows the passage.
+  If Ross would rather hide that, the guest plan can move the library.
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?

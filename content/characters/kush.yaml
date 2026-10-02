@@ -4,6 +4,7 @@ written_for: Kush               # HOST
 tier: core                      # HOST
 pronouns: he/him                # HOST
 role: Forensic accountant
+public_role: "Forensic accountant and friend of Arthur's"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Money always leaves footprints. You follow them for a living, and for fun."
 
 costume: |

@@ -4,6 +4,7 @@ written_for: Noor               # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
 role: Arthur's private physician
+public_role: "Arthur's physician; married to the Professor"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've seen how every body in this house ends. Tonight you were right."
 
 costume: |

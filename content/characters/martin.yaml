@@ -4,6 +4,7 @@ written_for: Martin             # HOST
 tier: supporting                # HOST
 pronouns: he/him                # HOST
 role: Art expert and appraiser to the Blackwood collection
+public_role: "Art expert and appraiser to the Blackwood collection"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You can price anything in this house by looking at it. Including the guests."
 
 costume: |

@@ -7,6 +7,7 @@ timing: mid
 carrier: found
 delivery: Let it breathe. Do NOT immediately clear Lindsey.
 hide: In a coat pocket on the coat rack, or inside a book on the bar.
+room: front-hall            # where it is found in the manor (for the host map)
 print: |
   L.V.
 

@@ -5,6 +5,7 @@ tier: flex                      # HOST
 effort: medium                  # HOST
 pronouns: any                   # HOST
 role: '"Collector" (undercover insurance investigator)'
+public_role: "Private art collector"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You're here to admire the art. You're here to find out who faked it."
 
 costume: |

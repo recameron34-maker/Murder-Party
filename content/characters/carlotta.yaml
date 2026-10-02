@@ -4,6 +4,7 @@ written_for: Carlotta / Carley  # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
 role: Arthur's estranged daughter
+public_role: "Arthur's daughter, home for the first time in nine years"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You left at nineteen and swore you'd never come back. It's been nine years. Here you are."
 
 costume: |

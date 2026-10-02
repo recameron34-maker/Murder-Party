@@ -4,6 +4,7 @@ written_for: Tim                # HOST
 tier: core                      # HOST
 pronouns: he/him                # HOST
 role: Photographer of the Midnight Supper
+public_role: "Photographer of the Midnight Supper"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've been everywhere tonight. The camera never blinks."
 
 costume: |

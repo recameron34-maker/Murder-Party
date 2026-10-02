@@ -7,6 +7,7 @@ timing: early
 carrier: found
 delivery: Found in Round Three. Keep it ambiguous.
 hide: Folded inside the desk blotter or a book on the "study" desk.
+room: study            # where it is found in the manor (for the host map)
 print: |
   I trusted you because you were supposed to protect this family.
   Instead, you used that trust to—

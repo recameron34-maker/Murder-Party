@@ -7,6 +7,7 @@ import { deliveredTexts } from '../lib/texts.mjs';
 import { formatTimeIn } from '../lib/time.mjs';
 import { rosterHelpers } from '../lib/roster.mjs';
 import { page, RAVEN_SVG } from './layout.mjs';
+import { crest, roundStepper, eveningStrip, yourWeb, manorMap, familyTree } from './visuals.mjs';
 import { GUEST_CSS } from './styles.mjs';
 
 const ROUND_WORDS = { 1: 'One', 2: 'Two', 3: 'Three' };
@@ -41,10 +42,22 @@ function renderText(t, tz) {
 </div>`;
 }
 
+const ICONS = {
+  you: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 5-7 8-7s7 2 8 7"/></svg>',
+  envelopes: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg>',
+  manor: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/><path d="M12 3v-1"/></svg>',
+};
+
+function nowCard(live) {
+  if (live === 0) return html`<div class="now-card"><b>The Supper hasn't started.</b> Read your character, plan your costume, and check your phone. Envelopes arrive once the lights go out.</div>`;
+  return html`<a class="now-card live" href="#envelopes"><b>Round ${ROUND_WORDS[live]} is open.</b> Read your envelope and make sure your reveals come out before the round ends. →</a>`;
+}
+
 export function guestPage(content, state, charId, { round, preview = false, now = new Date() } = {}) {
   const c = content.characters[charId];
   const gc = content.guestCommon;
-  const { isLive } = rosterHelpers(content, state);
+  const { isLive, liveIds, roster } = rosterHelpers(content, state);
   const live = round ?? state.liveRound ?? 0;
   const tz = content.party.timezone || 'UTC';
   const M = (text) => raw(md(text, isLive));
@@ -52,6 +65,7 @@ export function guestPage(content, state, charId, { round, preview = false, now 
   const name = (id) => content.names[id] || id;
   const texts = deliveredTexts(content, { ...state, liveRound: live }, charId, now);
   const rels = (c.relationships || []).filter((r) => !r.if || isLive(r.if));
+  const opened = [1, 2, 3].filter((n) => n <= live).length;
 
   const envelopes = [1, 2, 3].map((n) => {
     if (n > live) {
@@ -62,30 +76,36 @@ export function guestPage(content, state, charId, { round, preview = false, now 
 </article>`;
     }
     const r = c.rounds[n];
-    return html`<article class="card envelope">
-  <h3>Round ${ROUND_WORDS[n]}</h3>
+    return html`<article class="card envelope${n === live ? ' current' : ''}">
+  <h3>Round ${ROUND_WORDS[n]}${n === live ? html` <span class="pill-now">now</span>` : ''}</h3>
   ${M(r.text)}
   <div class="reveal"><h4>You must reveal this round</h4><ul>${r.reveal.map((x) => html`<li>${I(x)}</li>`)}</ul></div>
 </article>`;
   });
 
+  const guestList = liveIds.map((id) => html`<li class="${id === charId ? 'me' : ''}">${crest(id, content.characters[id].name, 44)}<div><b>${content.characters[id].name}</b>${id === charId ? html` <span class="pill-now">you</span>` : ''}<span class="pr">${content.characters[id].public_role}</span>${roster[id]?.player ? html`<span class="player">played by ${roster[id].player}</span>` : ''}</div></li>`);
+  const roomList = Object.entries(gc.rooms || {}).map(([id, text]) => html`<li id="room-${id}"><b>${content.lore.rooms[id]?.name || id}</b> ${text}</li>`);
+
   const body = html`
 ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${live}. <a href="/host/characters/${charId}">Back to host</a></div>` : ''}
-<div id="banner" hidden>A new envelope has been unsealed. <button class="btn small ghost" type="button" onclick="location.reload()">Open it</button></div>
-<main class="wrap">
+<div id="banner" hidden>A new envelope has been unsealed. <button class="btn small ghost" type="button" onclick="location.hash='#envelopes';location.reload()">Open it</button></div>
+<main class="wrap guest">
 <header class="title">
+  ${crest(charId, c.name, 76)}
   <div class="role">${c.role}</div>
   <h1>${c.name}</h1>
   <p class="tag">${c.tagline}</p>
+  ${roundStepper(live, { compact: true })}
 </header>
 <nav class="tabs" aria-label="Sections">
-  <a href="#character">You</a>
-  <a href="#envelopes">Envelopes</a>
-  <a href="#phone">Phone<span class="badge" id="unread" hidden>0</span></a>
-  <a href="#supper">Supper</a>
+  <a href="#character">${raw(ICONS.you)}<span>You</span></a>
+  <a href="#envelopes">${raw(ICONS.envelopes)}<span>Envelopes</span><span class="badge" id="sealed">${opened}/3</span></a>
+  <a href="#phone">${raw(ICONS.phone)}<span>Phone</span><span class="badge" id="unread" hidden>0</span></a>
+  <a href="#manor">${raw(ICONS.manor)}<span>Manor</span></a>
 </nav>
 
 <section class="panel" id="character">
+  ${nowCard(live)}
   <h2>Who you are</h2>
   <div class="card">${M(c.intro)}</div>
   <h3>Your costume</h3>
@@ -93,9 +113,9 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
   <h3>Your story</h3>
   <div class="card">${M(c.backstory)}</div>
   <h3>Your connections</h3>
-  <div class="card"><ul class="rel">${rels.map((r) => html`<li><b>${name(r.with)}</b>: ${I(r.text)}</li>`)}</ul></div>
+  <div class="card">${yourWeb(c, rels, content.names)}<ul class="rel">${rels.map((r) => html`<li><b>${name(r.with)}</b>: ${I(r.text)}</li>`)}</ul></div>
   <h3>Your evening</h3>
-  <div class="card"><ul class="evening">${c.evening.map((e) => html`<li><span class="t">${e.at}${e.until ? html`<br>– ${e.until}` : ''}</span><span>${I(e.text)}</span></li>`)}</ul></div>
+  <div class="card">${eveningStrip(c)}<ul class="evening">${c.evening.map((e) => html`<li><span class="t">${e.at}${e.until ? html`<br>– ${e.until}` : ''}</span><span>${I(e.text)}</span></li>`)}</ul></div>
   <h3>What you know</h3>
   <div class="card"><ul>${c.knows.map((k) => html`<li>${I(k)}</li>`)}</ul></div>
   <h3>Your secret</h3>
@@ -105,11 +125,12 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
   <h3>Private instructions</h3>
   <div class="card"><ul>${c.instructions.map((x) => html`<li>${I(x)}</li>`)}</ul></div>
   <h3>Secret mission <span class="small muted">· $1,000 from Reggie</span></h3>
-  ${live >= 1 ? html`<div class="card">${M(c.mission)}</div>` : html`<div class="card envelope sealed"><div class="seal">✦</div><p>Your mission arrives with Round One.</p></div>`}
+  ${live >= 1 ? html`<div class="card mission">${M(c.mission)}</div>` : html`<div class="card envelope sealed"><div class="seal">✦</div><p>Your mission arrives with Round One.</p></div>`}
 </section>
 
 <section class="panel" id="envelopes">
   <h2>Envelopes</h2>
+  <p class="small muted">${opened} of 3 unsealed. New envelopes appear here the moment Reggie opens a round.</p>
   ${envelopes}
 </section>
 
@@ -122,17 +143,25 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
   </div>
 </section>
 
-<section class="panel" id="supper">
-  <h2>The Midnight Supper</h2>
+<section class="panel" id="manor">
+  <h2>The Manor</h2>
   <div class="card">${M(gc.welcome)}</div>
+  <h3>How tonight works</h3>
+  <ol class="steps">${(gc.tonight_steps || []).map((st, i) => html`<li class="${st.round < live ? 'done' : st.round === live ? 'now' : ''}"><span class="n">${i + 1}</span><div><b>${st.title}</b><p>${st.text}</p></div></li>`)}</ol>
+  <h3>The guest list</h3>
+  <ul class="guest-list">${guestList}</ul>
   <h3>The house</h3>
-  <div class="card">${M(gc.house)}</div>
+  <div class="card">${M(gc.house)}${manorMap({ mode: 'guest', linkRooms: true })}<ul class="rooms">${roomList}</ul></div>
+  <h3>The Blackwoods</h3>
+  <div class="card">${familyTree(gc.family_tree || [])}</div>
   <h3>The legend</h3>
   <div class="card">${M(gc.legend)}</div>
   <h3>Rules of the Supper</h3>
   <div class="card"><ol class="rules">${gc.supper_rules.map((r) => html`<li>${I(r)}</li>`)}</ol></div>
   <h3>Blackmail Cash</h3>
-  <div class="card">${M(gc.blackmail_rules)}</div>
+  <div class="card"><div class="bills" aria-hidden="true"><span>$1,000</span><span>$1,000</span><span>$1,000</span></div>
+  <ol class="flow"><li><b>Offer</b> $1,000</li><li><b>Ask</b> one question</li><li><b>If they take it</b>, the truth is owed</li></ol>
+  ${M(gc.blackmail_rules)}</div>
   <h3>How to play</h3>
   <div class="card">${M(gc.how_to_play)}</div>
 </section>
@@ -150,7 +179,21 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
 // Identical for every guest; contains no character data.
 const GUEST_JS = `
 (function(){
-  var thread=document.getElementById('thread'); if(!thread) return;
+  var panels=[].slice.call(document.querySelectorAll('section.panel'));
+  var tabs=[].slice.call(document.querySelectorAll('nav.tabs a'));
+  var ids=panels.map(function(p){return p.id});
+  document.body.classList.add('tabbed');
+  function show(id,scroll){
+    if(ids.indexOf(id)<0) id='character';
+    panels.forEach(function(p){p.classList.toggle('active',p.id===id)});
+    tabs.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id)});
+    if(id==='phone'){unread=0;bump(0)}
+    if(scroll!==false) window.scrollTo(0,0);
+  }
+  tabs.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var id=a.getAttribute('href').slice(1);history.replaceState(null,'','#'+id);show(id)})});
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||a.closest('nav.tabs'))return;var id=a.getAttribute('href').slice(1);if(ids.indexOf(id)>=0){e.preventDefault();history.replaceState(null,'','#'+id);show(id)}});
+  window.addEventListener('hashchange',function(){var id=location.hash.slice(1);if(ids.indexOf(id)>=0)show(id)});
+  var thread=document.getElementById('thread');
   var known=new Set((thread.dataset.known||'').split(',').filter(Boolean));
   var round=Number(thread.dataset.round||0);
   var unread=0, badge=document.getElementById('unread'), toast=document.getElementById('toast');
@@ -164,17 +207,16 @@ const GUEST_JS = `
     var w=document.createElement('div'); w.className='when'; w.textContent=t.stamp||fmt(t.at);
     d.appendChild(f); d.appendChild(b); d.appendChild(w); thread.appendChild(d);
   }
-  function show(msg){toast.textContent=msg; toast.classList.add('show'); setTimeout(function(){toast.classList.remove('show')},6000)}
+  function showToast(msg){toast.textContent=msg; toast.classList.add('show'); setTimeout(function(){toast.classList.remove('show')},6000)}
   function bump(n){unread+=n; badge.textContent=unread; badge.hidden=!unread; document.title=unread?'('+unread+') Blackwood Manor':'Blackwood Manor'}
   function alertNew(list){
     var t=list[list.length-1];
-    show('💬 '+t.from+': '+(t.body.length>90?t.body.slice(0,90)+'…':t.body));
-    bump(list.length);
+    showToast('💬 '+t.from+': '+(t.body.length>90?t.body.slice(0,90)+'…':t.body));
+    if(location.hash!=='#phone') bump(list.length);
     try{navigator.vibrate&&navigator.vibrate([90,60,90])}catch(e){}
     try{if(window.Notification&&Notification.permission==='granted'&&document.hidden){new Notification(t.from,{body:t.body})}}catch(e){}
   }
-  location.hash==='#phone'&&(unread=0);
-  window.addEventListener('hashchange',function(){if(location.hash==='#phone'){unread=0;bump(0)}});
+  show(location.hash.slice(1)||'character',false);
   async function poll(){
     try{
       var r=await fetch('/api/updates',{cache:'no-store',credentials:'same-origin'});

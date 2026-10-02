@@ -4,6 +4,7 @@ written_for: Joji               # HOST
 tier: core                      # HOST
 pronouns: he/him                # HOST
 role: Architectural historian
+public_role: "Architectural historian writing the history of the house"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Every house is a confession, if you know how to read the walls."
 
 costume: |

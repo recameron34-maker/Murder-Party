@@ -5,6 +5,7 @@ tier: flex                      # HOST
 effort: low                     # HOST
 pronouns: any                   # HOST
 role: The Blackwood chauffeur
+public_role: "The Blackwood chauffeur"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You drove half these people up the hill tonight. Rich people talk in cars as if the driver is upholstery."
 
 costume: |

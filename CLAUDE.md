@@ -123,8 +123,13 @@ that player. The spoiler rules above still apply and are enforced server-side
   `.github/landing/build.mjs`, linking to a read-only, spoiler-full preview
   of every branch (each built by that branch's `scripts/build-static.mjs`).
   Previews must never contain passphrases. Pages Source must be "GitHub
-  Actions".. `src/lib/check.mjs` is the
-  consistency checker. `src/views/` holds the guest, host and print pages.
+  Actions". `src/lib/check.mjs` is the
+  consistency checker. `src/views/` holds the guest, host and print pages;
+  `src/views/visuals.mjs` draws every diagram as server-side SVG (crests,
+  round stepper, manor map, timeline swimlanes, relationship webs, family
+  tree, suspicion heat map). Guest-mode visuals must use only that guest's
+  data and public lore: the guest manor map never shows the passage, pins or
+  whereabouts, and the guest list shows `public_role`, never `role`.
 - `test/`: spoiler-leak, Morgan-parity, auth and content tests.
 
 **Before committing:** run `npm run check` (zero errors) and `npm test` (all

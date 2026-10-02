@@ -4,6 +4,7 @@ written_for: Lexi               # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
 role: Birthday guest, Arthur's goddaughter
+public_role: "Birthday girl; Arthur's goddaughter"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Born into the right family. Just not, you've always suspected, this one."
 
 costume: |

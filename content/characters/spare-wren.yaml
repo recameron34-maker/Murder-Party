@@ -5,6 +5,7 @@ tier: flex                      # HOST
 effort: high                    # HOST
 pronouns: any                   # HOST
 role: Heir hunter and genealogist
+public_role: "Genealogist"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Every great fortune has a lost heir. You find them, for thirty percent."
 
 costume: |

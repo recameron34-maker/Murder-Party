@@ -104,6 +104,18 @@ npcs:
   - id: silas
     name: Silas Blackwood
     note: Founder (d. 1919). Built the manor, the passages, and the Supper.
+  - id: edmund
+    name: Edmund Blackwood
+    note: Silas's son (1879–1923). Meant to leave the fortune to the Church; fell down the cellar stairs the night before.
+  - id: montague
+    name: Montague Blackwood
+    note: Cordelia's widower. Hosted the Midnight Supper from her death in 1979 until his in 1997, when Arthur took over.
+  - id: lionel
+    name: Lionel Blackwood
+    note: Arthur's younger brother, Reggie's father (1958–2011).
+  - id: edgar
+    name: Edgar Blackwood
+    note: Arthur's youngest brother, Kevin's father (1961–2016).
   - id: cordelia
     name: Cordelia Blackwood
     note: Arthur's mother (d. 1979). The curse's most recent "victim."

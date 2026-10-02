@@ -12,6 +12,7 @@
 #                via = character id, "host", or a clue id
 
 solution_window:
+  killer: morgan   # drawn with a red ring on the host map's time scrubber
   # The consistency checker enforces these. Nobody else may be in these
   # rooms during these windows, and flex characters may never be.
   murder_zone:

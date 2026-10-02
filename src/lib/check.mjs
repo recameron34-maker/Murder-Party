@@ -58,6 +58,8 @@ export function checkContent(content, state = {}) {
       if (!r?.reveal?.length) add('error', where, id, `Round ${n} envelope has no "reveal" items`);
     }
     if (!c.mission?.trim()) add('error', where, id, 'Missing secret mission');
+    if (!c.public_role?.trim()) add('error', where, id, 'Missing public_role (shown on every guest list)');
+    else if (/keyhole|killer|murder|secret|undercover|fake|gatecrash|treasure/i.test(c.public_role)) add('warn', where, id, `public_role "${c.public_role}" may give away a secret; it appears on every guest's page`);
 
     for (const rel of c.relationships || []) {
       if (!known.has(rel.with)) add('error', where, id, `Relationship refers to undefined character "${rel.with}"`);
@@ -126,7 +128,9 @@ export function checkContent(content, state = {}) {
 
   // ------------------------------------------------------------ solution window
   const sw = content.timeline.solution_window || {};
+  if (sw.killer && !ids.has(sw.killer)) add('error', 'timeline.yaml', 'solution_window', `killer "${sw.killer}" is not a character`);
   for (const [zoneName, zone] of Object.entries(sw)) {
+    if (!zone || typeof zone !== 'object') continue;
     const win = [parseClock(zone.from), parseClock(zone.to)];
     for (const id of content.characterOrder) {
       for (const e of chars[id].evening || []) {
@@ -253,6 +257,24 @@ export function checkContent(content, state = {}) {
     const r = roster[id];
     if (r.status === 'maybe') add('info', 'roster', id, `${chars[id].name} (${r.player}) is a maybe; their [[if]] lines stay off until confirmed`);
     if (r.status === 'spare-assigned' && !r.player) add('warn', 'roster', id, `${chars[id].name} is spare-assigned but has no player name`);
+  }
+
+  // ------------------------------------------------------------ public lore (shown on every guest page)
+  const gc = content.guestCommon || {};
+  for (const [room, text] of Object.entries(gc.rooms || {})) {
+    if (!rooms[room]) add('error', 'guest-common.yaml', room, `Room "${room}" isn't in lore.yaml`);
+    if (/passage|raven'?s walk|hidden door|secret door|bookcase/i.test(text)) add('error', 'guest-common.yaml', room, 'Public room description hints at the hidden passage');
+  }
+  const famIds = new Set((gc.family_tree || []).map((f) => f.id));
+  for (const f of gc.family_tree || []) if (f.parent && !famIds.has(f.parent)) add('error', 'guest-common.yaml', f.id, `Family tree parent "${f.parent}" is missing`);
+  for (const id of content.clueOrder) {
+    const cl = content.clues[id];
+    if (cl.room && !rooms[cl.room]) add('error', cl._file || 'clues', id, `Unknown room "${cl.room}"`);
+    if (cl.kind === 'physical' && !cl.room) add('warn', cl._file || 'clues', id, 'Physical clue has no room (it won\'t show on the host map)');
+  }
+  for (const sus of content.suspicion?.suspects || []) {
+    if (!ids.has(sus.id)) add('error', 'suspicion.yaml', sus.id, `Unknown character "${sus.id}"`);
+    if ((sus.levels || []).length !== (content.suspicion.stages || []).length) add('error', 'suspicion.yaml', sus.id, 'Needs one level per stage');
   }
 
   // ------------------------------------------------------------ hints

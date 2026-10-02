@@ -5,6 +5,7 @@ tier: flex                      # HOST
 effort: medium                  # HOST
 pronouns: any                   # HOST
 role: Ghostwriter of Arthur's memoir
+public_role: "Ghostwriter of Arthur's memoir"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've been Arthur's voice for a year. Now you're the only one who knows how his book ends."
 
 costume: |

@@ -4,6 +4,7 @@ written_for: Molly              # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
 role: Art dealer, Monroe Fine Art
+public_role: "Art dealer, Monroe Fine Art"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You sold Arthur a masterpiece. It's a fake. You'd very much like everyone to stop saying so."
 
 costume: |
