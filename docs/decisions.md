@@ -179,18 +179,28 @@ dressing in `lore.yaml` → `venue_setup`. Host panel → Setup shows it all.
 
 | Real room | Plays |
 |---|---|
-| Living Room | Drawing Room; the front-door corner (coat rack) is the Front Hall |
-| Family Room | Conservatory (bay window) and Billiard Room (card table) |
-| Room (12'3" × 8'8", "Side Room" on the site) | Arthur's study; its doorway is the East Corridor |
-| Landing (top of the front stairs, inside the railings) | Library; its movable bookshelf is the library bookcase |
+| Room (12'3" × 8'8", "Side Room" on the site) | Arthur's study |
+| Family Room | The East Corridor: the only way to the study door |
+| Landing (top of the front stairs) | Library; its movable bookshelf is the library bookcase |
+| Living Room | Drawing Room (the party); the coat rack is the Front Hall; the front door is the Library Corridor |
 | Dining Area | Dining Room, set for the Supper |
+| Bedroom off the Dining Area (11'7" × 8'3") | Conservatory (unlocked; nothing hidden there) |
+| Kitchen | Billiard Room (the card game at the island) |
+| Laundry | The kitchens, where the blackout crash comes from |
 | Hall (6'1" × 5'1") | Portrait Gallery |
-| Kitchen | Mrs. Hale's kitchens, where the blackout "starts" |
-| Balcony | Terrace (reached through the Laundry and back hall) |
-| All three bedrooms, closets, back stairs | Shut: the East Wing |
+| Balcony | Terrace |
+| Small bedroom, Primary Bedroom, closets, back stairs | Shut. In the story the small bedroom is the East Wing (Louis) and the primary bedroom is "upstairs" (Shea) |
 
-Why: Part Two says nothing is hidden in bedrooms, so no bedroom plays a game
-room. Ross confirmed the Room can be the study.
+The case map (host → Map) draws the whole story on this plan, minute by
+minute. Ross (October 2026): any bedroom can be unlocked; the case map must
+match the flat. The Family Room has to be the East Corridor: the study's only
+ordinary door opens into it, and in the story nobody but the five study
+visitors is there between 9:31 and 9:41 (Carlotta's Conservatory and the card
+game moved away from the study door for that reason).
+
+Part Two says nothing is hidden in bedrooms: the Conservatory bedroom holds
+no evidence, and the checker enforces it. Ross confirmed the Room can be the
+study.
 
 **The Raven's Walk is real.** Between the landing and the Room there's a door
 hidden behind a movable bookshelf on the landing side (Ross, October 2026).
@@ -207,7 +217,5 @@ clue, and Round Two points them at the passage anyway.
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?
 - Who else does Courtney know? Add ties to `content/characters/courtney.yaml`.
-- Is there space for a card table in the Family Room (the Billiard Room)?
-  If not, move that spot in `content/venue.yaml`; the kitchen island works.
 - Is the landing roomy enough to search? Only the red folder is found there.
 - Any other real couples in the cast? Real couples make the best pairings.

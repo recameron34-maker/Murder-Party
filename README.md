@@ -19,8 +19,9 @@ A live-action murder mystery for ~25 guests, plus the website that runs it:
   - **Tonight**: a dashboard with round controls, "right now" (what must come
     out this round and who carries it, evidence to release, cue texts, the
     suspicion target), the run of show (with a table of contents), and texts.
-  - **The case**: a manor map with the secret passage, numbered evidence pins
-    and a minute-by-minute replay of everyone's movements; the true timeline
+  - **The case**: the murder drawn on your floor plan, with the hidden door,
+    numbered evidence pins and a minute-by-minute replay of everyone's
+    movements; the true timeline
     as swimlane charts; the evidence checklist; the suspicion curve heat map;
     and a clickable web of every relationship.
   - **People**: character cards with search and tier filters, full dossiers,

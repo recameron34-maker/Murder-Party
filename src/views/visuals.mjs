@@ -71,59 +71,27 @@ export function roundStepper(live, { labels = ['Before', 'Round One', 'Round Two
   return html`<ol class="stepper${compact ? ' compact' : ''}" aria-label="Progress through the night">${labels.map((label, i) => html`<li class="${i < live ? 'done' : i === live ? 'now' : ''}"><span class="dot">${i < live ? '✓' : i === 0 ? '✦' : ['', 'I', 'II', 'III', '★'][i]}</span><span class="lbl">${label}</span></li>`)}</ol>`;
 }
 
-// ---------------------------------------------------------------- the manor map
-// Coordinates are in a 900×540 plan. Labels are short versions of lore.yaml names.
-export const ROOM_GEO = {
-  terrace: { x: 130, y: 16, w: 280, h: 58, label: 'Terrace', outside: true },
-  conservatory: { x: 20, y: 90, w: 110, h: 310, label: 'Conservatory' },
-  'drawing-room': { x: 130, y: 90, w: 280, h: 150, label: 'Drawing Room' },
-  gallery: { x: 410, y: 90, w: 310, h: 150, label: 'Portrait Gallery' },
-  study: { x: 720, y: 150, w: 160, h: 180, label: 'Study' },
-  'east-corridor': { x: 410, y: 240, w: 310, h: 45, label: 'East Corridor', corridor: true },
-  'front-hall': { x: 290, y: 240, w: 120, h: 160, label: 'Front Hall' },
-  'billiard-room': { x: 130, y: 240, w: 160, h: 160, label: 'Billiard Room' },
-  'library-corridor': { x: 410, y: 355, w: 310, h: 45, label: 'Library Corridor', corridor: true },
-  library: { x: 720, y: 330, w: 160, h: 170, label: 'Library' },
-  'dining-room': { x: 130, y: 400, w: 280, h: 120, label: 'Dining Room' },
-  kitchen: { x: 20, y: 400, w: 110, h: 120, label: 'Kitchens ↓' },
-  'east-wing': { x: 410, y: 400, w: 310, h: 120, label: 'East Wing (shut)', shut: true },
+// ---------------------------------------------------------------- manor room labels
+// Short names for the manor's rooms (lore.yaml has the long ones).
+export const ROOM_LABELS = {
+  study: 'Study',
+  'east-corridor': 'East Corridor',
+  library: 'Library',
+  'library-corridor': 'Library Corridor',
+  'drawing-room': 'Drawing Room',
+  'front-hall': 'Front Hall',
+  gallery: 'Portrait Gallery',
+  'billiard-room': 'Billiard Room',
+  'dining-room': 'Dining Room',
+  conservatory: 'Conservatory',
+  terrace: 'Terrace',
+  kitchen: 'Kitchens',
+  'east-wing': 'East Wing',
+  upstairs: 'Upstairs',
+  grounds: 'Grounds',
+  cellar: 'Cellar',
 };
 const ZONE_STROKE = { 'murder-zone': '#c0495a', 'escape-zone': '#e3c788' };
-
-export function manorMap({ mode = 'guest', rooms = {}, pins = [], linkRooms = false } = {}) {
-  const host = mode === 'host';
-  const parts = [];
-  parts.push(`<rect x="0" y="0" width="900" height="540" fill="#120d14"/>`);
-  // wall mass between the two east corridors
-  parts.push(`<rect x="410" y="285" width="310" height="70" fill="#0c080d"/>`);
-  parts.push(`<text x="565" y="326" text-anchor="middle" class="m-wall">· · ·  the walls  · · ·</text>`);
-  for (const [id, g] of Object.entries(ROOM_GEO)) {
-    const zone = rooms[id]?.zone;
-    const stroke = host && ZONE_STROKE[zone] ? ZONE_STROKE[zone] : '#6d5a74';
-    const fill = g.outside ? 'url(#m-rain)' : g.shut ? 'url(#m-hatch)' : g.corridor ? '#241b27' : id === 'study' ? '#2a1519' : '#1f1722';
-    const rect = `<rect x="${g.x}" y="${g.y}" width="${g.w}" height="${g.h}" fill="${fill}" stroke="${stroke}" stroke-width="${host && ZONE_STROKE[zone] ? 3 : 2}"${g.outside ? ' stroke-dasharray="8 6"' : ''} rx="3"/>`;
-    const lx = g.x + g.w / 2;
-    const ly = g.corridor ? g.y + g.h / 2 + 7 : g.y + 30;
-    const label = `<text x="${lx}" y="${ly}" text-anchor="middle" class="m-label${g.corridor ? ' m-corr' : ''}">${esc(g.label)}</text>`;
-    const group = `<g class="m-room" data-room="${id}"><title>${esc(rooms[id]?.title || g.label)}</title>${rect}${label}</g>`;
-    parts.push(linkRooms ? `<a href="#room-${id}">${group}</a>` : group);
-  }
-  // furniture flourishes (public): the desk and raven in the study, the long table
-  parts.push(`<rect x="770" y="225" width="70" height="28" fill="#3a2a1f" stroke="#6b4f1d"/><text x="805" y="218" text-anchor="middle" class="m-tiny">desk</text>`);
-  parts.push(`<rect x="170" y="455" width="200" height="26" rx="13" fill="#2e2219" stroke="#6b4f1d"/><text x="270" y="500" text-anchor="middle" class="m-tiny">the Supper table</text>`);
-  parts.push(`<path d="M300 300 h50 v40 h-50" fill="none" stroke="#6d5a74" stroke-width="1.5"/><text x="350" y="360" text-anchor="middle" class="m-tiny">stairs</text>`);
-  if (host) {
-    // The Raven's Walk: study fireplace → library bookcase.
-    parts.push(`<path d="M864 296 C 880 316, 850 344, 864 366" fill="none" stroke="#c0495a" stroke-width="4" stroke-dasharray="7 5"/><circle cx="864" cy="296" r="5" fill="#c0495a"/><circle cx="864" cy="366" r="5" fill="#c0495a"/><text x="856" y="392" class="m-secret" text-anchor="end">Raven's Walk ↑</text>`);
-    for (const p of pins) {
-      parts.push(`<g class="m-pin"><title>${esc(p.title)}</title><circle cx="${p.x}" cy="${p.y}" r="11" fill="${p.color}" stroke="#0d090f" stroke-width="2"/><text x="${p.x}" y="${p.y + 4.5}" text-anchor="middle" class="m-pinnum">${esc(p.label)}</text></g>`);
-    }
-    parts.push(`<g id="m-dots"></g>`);
-  }
-  const defs = `<defs><pattern id="m-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#17111a"/><line x1="0" y1="0" x2="0" y2="10" stroke="#2b2230" stroke-width="4"/></pattern><pattern id="m-rain" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#141c18"/><line x1="2" y1="0" x2="0" y2="7" stroke="#2c3d34" stroke-width="1.2"/><line x1="11" y1="6" x2="9" y2="13" stroke="#2c3d34" stroke-width="1.2"/></pattern></defs>`;
-  const style = `<style>.m-label{font:600 19px 'Cormorant Garamond',Georgia,serif;fill:#e9dcc6}.m-corr{font-size:16px;fill:#b9a993}.m-tiny{font:italic 13px Georgia,serif;fill:#8f8070}.m-wall{font:italic 14px Georgia,serif;fill:#4a3d50;letter-spacing:.1em}.m-room:hover rect{filter:brightness(1.25)}${host ? ".m-secret{font:700 15px 'Cormorant Garamond',Georgia,serif;fill:#ff9fac}.m-pinnum{font:700 12px system-ui,sans-serif;fill:#fff}" : ''}</style>`;
-  return raw(`<div class="map-wrap"><svg class="manor-map" viewBox="0 0 900 540" role="img" aria-label="Plan of the ground floor of Blackwood Manor">${defs}${style}${parts.join('')}</svg></div>`);
-}
 
 // ---------------------------------------------------------------- the real venue (Ross's flat)
 // Drawn from content/venue.yaml. Guest mode shows rooms, what each one plays
@@ -134,7 +102,7 @@ const bbox = (shape) => {
   const ys = shape.map((p) => p[1]);
   return { x: Math.min(...xs), y: Math.min(...ys), w: Math.max(...xs) - Math.min(...xs), h: Math.max(...ys) - Math.min(...ys) };
 };
-export const gameLabel = (id, rooms) => (ROOM_GEO[id]?.label || rooms?.[id]?.name || id).replace(/\s*[↓(].*$/, '').replace(/^Kitchens$/, 'Kitchens');
+export const gameLabel = (id, rooms) => ROOM_LABELS[id] || (rooms?.[id]?.name || id).replace(/\s*\(.*$/, '');
 
 // Split a label into lines that fit a width, at roughly 0.52em per character.
 function wrapLabel(text, width, fs) {
@@ -150,8 +118,22 @@ function wrapLabel(text, width, fs) {
 export function venueSpot(venue, gameId) {
   const sp = (venue.spots || []).find((x) => x.game === gameId);
   if (sp) return { kind: 'spot', area: sp.area, at: sp.at };
-  const a = (venue.areas || []).find((x) => x.game === gameId);
+  const a = (venue.areas || []).find((x) => x.game === gameId) || (venue.areas || []).find((x) => x.story === gameId);
   return a ? { kind: 'area', area: a.id, box: bbox(a.shape) } : null;
+}
+
+// Where n people stand in a manor room on the case map, in plan coordinates:
+// a grid inside the room's stage box (or the room that plays it).
+export function stageSlots(venue, roomId, n, size = 24) {
+  let box = venue.stage?.[roomId];
+  if (!box) {
+    const where = venueSpot(venue, roomId);
+    if (!where) return [];
+    box = where.kind === 'spot' ? [where.at[0] - 30, where.at[1] - 12, 60, 24] : [where.box.x + 10, where.box.y + 10, where.box.w - 20, where.box.h - 20];
+  }
+  const [x, y, w] = box;
+  const cols = Math.max(1, Math.floor(w / size));
+  return Array.from({ length: n }, (_, i) => [x + size / 2 + (i % cols) * size, y + size / 2 + Math.floor(i / cols) * size]);
 }
 
 // "the Living Room, by the front door": where a manor room is tonight.
@@ -160,7 +142,7 @@ export function venueWhere(venue, gameId) {
   const a = (venue.areas || []).find((x) => x.id === (sp ? sp.area : (venue.areas || []).find((y) => y.game === gameId)?.id));
   if (!a) return null;
   const detail = sp ? sp.label : a.game_where;
-  return `the ${a.name}${detail ? `, ${detail}` : ''}`;
+  return `the ${a.aka || a.name}${detail ? `, ${detail}` : ''}`;
 }
 
 export function venueAreaName(venue, gameId) {
@@ -189,7 +171,7 @@ export function venuePins(venue, items) {
 // One orientation of the plan. `tall` turns it a quarter turn clockwise (the
 // balcony at the top, the study at the bottom) so it fits a phone; text stays
 // upright because every coordinate goes through T() and text is placed after.
-function venueSvg(venue, { host, rooms, pins, linkRooms, tall, secret }) {
+function venueSvg(venue, { host, kase, rooms, pins, linkRooms, tall, secret }) {
   const [vx, vy, vw, vh] = venue.viewbox || [0, 0, 1206, 647];
   const T = tall ? (x, y) => [vy + vh - y, x - vx] : (x, y) => [x - vx, y - vy];
   const W = tall ? vh : vw;
@@ -197,10 +179,16 @@ function venueSvg(venue, { host, rooms, pins, linkRooms, tall, secret }) {
   const k = tall ? 1.15 : 1.35; // font scale
   const pts = (shape) => shape.map(([x, y]) => T(x, y).join(',')).join(' ');
   const parts = [`<rect x="0" y="0" width="${W}" height="${H}" fill="#120d14"/>`];
+  const zoneOf = (a) => (kase ? rooms[a.game || a.story]?.zone : null);
   for (const a of venue.areas || []) {
     const fill = a.shut ? 'url(#v-hatch)' : a.outside && a.game ? 'url(#v-rain)' : a.outside ? '#0f0b11' : a.game === 'study' ? '#2a1519' : a.game ? '#211825' : '#19131c';
     const stroke = a.outside && !a.game ? '#3a3040' : '#7a6683';
     parts.push(`<polygon points="${pts(a.shape)}" fill="${fill}" stroke="${stroke}" stroke-width="${a.outside && !a.game ? 1.5 : 5}" stroke-linejoin="round"${a.outside ? ' stroke-dasharray="9 6"' : ''}/>`);
+  }
+  // Case map: outline the murder zone (red) and the escape zone (gold).
+  for (const a of venue.areas || []) {
+    const z = zoneOf(a);
+    if (ZONE_STROKE[z]) parts.push(`<polygon points="${pts(a.shape)}" fill="none" stroke="${ZONE_STROKE[z]}" stroke-width="3" stroke-linejoin="round"/>`);
   }
   for (const [x1, y1, x2, y2] of venue.openings || []) {
     const [X1, Y1] = T(x1, y1);
@@ -226,11 +214,20 @@ function venueSvg(venue, { host, rooms, pins, linkRooms, tall, secret }) {
       const room = 2 * Math.min(cx - b.x, b.x + b.w - cx) - 10;
       const withSize = host && a.size && (a.name.length + a.size.length + 3) * rs * 0.55 < room;
       body.push(`<text x="${cx}" y="${top + (lines.length - 1) * fs * 1.05 + 14 + 8 * k}" text-anchor="middle" class="v-real" style="font-size:${rs}px">${esc(a.name)}${withSize ? ` · ${esc(a.size)}` : ''}</text>`);
+    } else if (a.shut && kase && a.story) {
+      // case map: the story this shut room stands for
+      const fs = Math.round(15 * k);
+      const rs = Math.round(11 * k);
+      const real = (a.name.length + 7) * rs * 0.55 < b.w - 8 ? `${a.name} · shut` : a.name;
+      body.push(`<text x="${cx}" y="${cy - 4}" text-anchor="middle" class="v-story" style="font-size:${fs}px">${esc(gameLabel(a.story, rooms))}</text><text x="${cx}" y="${cy + 12 + 4 * k}" text-anchor="middle" class="v-real" style="font-size:${rs}px">${esc(real)}</text>`);
     } else if (a.shut) {
       const fs = Math.round(12 * k);
       const lines = wrapLabel(a.name, b.w, fs);
       lines.forEach((ln, i) => body.push(`<text x="${cx}" y="${cy - 4 + i * (fs + 2)}" text-anchor="middle" class="v-shut" style="font-size:${fs}px">${esc(ln)}</text>`));
       if (b.w > 60 && b.h > 60) body.push(`<text x="${cx}" y="${cy + fs + 6 + (lines.length - 1) * (fs + 2)}" text-anchor="middle" class="v-shutnote" style="font-size:${Math.round(9 * k)}px">shut</text>`);
+    } else if (kase && a.story) {
+      const fs = Math.round(13 * k);
+      body.push(`<text x="${cx}" y="${cy - 2}" text-anchor="middle" class="v-story" style="font-size:${fs}px">${esc(gameLabel(a.story, rooms))}</text><text x="${cx}" y="${cy + 12 + 4 * k}" text-anchor="middle" class="v-real" style="font-size:${Math.round(11 * k)}px">${esc(a.name)}</text>`);
     } else {
       const fs = Math.round(12.5 * k);
       const lines = wrapLabel(a.name, b.w, fs);
@@ -242,7 +239,8 @@ function venueSvg(venue, { host, rooms, pins, linkRooms, tall, secret }) {
   }
   for (const sp of venue.spots || []) {
     const [x, y] = T(...sp.at);
-    const g = `<g class="v-spot"><title>${esc(`${rooms[sp.game]?.name || gameLabel(sp.game, rooms)}: ${sp.label || ''}`)}</title><path d="M${x} ${y - 8} L${x + 8} ${y} L${x} ${y + 8} L${x - 8} ${y} Z" fill="#c9a45c" stroke="#120d14" stroke-width="1.5"/><text x="${x}" y="${y - 14}" text-anchor="middle" class="v-spotname" style="font-size:${Math.round(14 * k)}px">${esc(gameLabel(sp.game, rooms))}</text>${sp.label ? `<text x="${x}" y="${y + 14 + 8 * k}" text-anchor="middle" class="v-real" style="font-size:${Math.round(11 * k)}px">${esc(sp.label)}</text>` : ''}</g>`;
+    const spotFill = kase && ZONE_STROKE[rooms[sp.game]?.zone] ? ZONE_STROKE[rooms[sp.game]?.zone] : '#c9a45c';
+    const g = `<g class="v-spot"><title>${esc(`${rooms[sp.game]?.name || gameLabel(sp.game, rooms)}: ${sp.label || ''}`)}</title><path d="M${x} ${y - 8} L${x + 8} ${y} L${x} ${y + 8} L${x - 8} ${y} Z" fill="${spotFill}" stroke="#120d14" stroke-width="1.5"/><text x="${x}" y="${y - 14}" text-anchor="middle" class="v-spotname" style="font-size:${Math.round(14 * k)}px">${esc(gameLabel(sp.game, rooms))}</text>${sp.label && !kase ? `<text x="${x}" y="${y + 14 + 8 * k}" text-anchor="middle" class="v-real" style="font-size:${Math.round(11 * k)}px">${esc(sp.label)}</text>` : ''}</g>`;
     text.push(linkRooms ? `<a href="#room-${esc(sp.game)}">${g}</a>` : g);
   }
   for (const e of venue.entrances || []) {
@@ -289,29 +287,22 @@ function venueSvg(venue, { host, rooms, pins, linkRooms, tall, secret }) {
     }
   }
   const defs = `<defs><pattern id="v-hatch${tall ? '-t' : ''}" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#151018"/><line x1="0" y1="0" x2="0" y2="10" stroke="#2a2030" stroke-width="4"/></pattern><pattern id="v-rain${tall ? '-t' : ''}" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#141c18"/><line x1="2" y1="0" x2="0" y2="7" stroke="#2c3d34" stroke-width="1.2"/><line x1="11" y1="6" x2="9" y2="13" stroke="#2c3d34" stroke-width="1.2"/></pattern></defs>`;
+  // People are drawn under the room names, so a crowded room stays readable.
+  if (kase) parts.push('<g class="m-dots"></g>');
   const body = (parts.join('') + text.join('')).replace(/url\(#v-(hatch|rain)\)/g, (_, n) => `url(#v-${n}${tall ? '-t' : ''})`);
-  return `<svg class="venue-map${tall ? ' venue-tall' : ' venue-wide'}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Plan of the flat, with the manor room each room plays tonight">${defs}${body}</svg>`;
+  const data = kase ? ` data-case="1" data-tall="${tall ? 1 : 0}" data-vx="${vx}" data-vy="${vy}" data-vh="${vh}"` : '';
+  return `<svg class="venue-map${tall ? ' venue-tall' : ' venue-wide'}" viewBox="0 0 ${W} ${H}"${data} role="img" aria-label="Plan of the flat, with the manor room each room plays tonight">${defs}${body}</svg>`;
 }
 
+// mode: 'guest' (rooms only), 'host' (Setup: + hiding spots and the hidden
+// door) or 'case' (the Map page: + the story's rooms, zones and the replay).
 export function venueMap(venue, { mode = 'guest', rooms = {}, pins = [], linkRooms = false, secret = null } = {}) {
-  const host = mode === 'host';
-  const opts = { host, rooms, pins: host ? pins : [], linkRooms, secret: host ? secret : null };
-  const style = `<style>.v-game{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#efe2c8}.v-real{font-family:system-ui,sans-serif;fill:#a8988a}.v-shut{font-family:Georgia,serif;font-style:italic;fill:#6f6176}.v-shutnote{font-family:system-ui,sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;fill:#6f6176}.v-plain{font-family:system-ui,sans-serif;fill:#a8988a}.v-spotname{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#e3c788}.v-entry{font-family:system-ui,sans-serif;font-weight:600;fill:#e3c788}.v-game-area:hover text{fill:#fff}${host ? ".v-pinnum{font:700 12px system-ui,sans-serif;fill:#fff}.v-secretlabel{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#ff9fac}" : ''}</style>`;
-  const legend = `<div class="legend"><span class="lg"><i style="background:#211825;border:1px solid #7a6683"></i>Game room: search here</span><span class="lg"><i style="background:repeating-linear-gradient(45deg,#151018 0 3px,#2a2030 3px 6px);border:1px solid #7a6683"></i>Shut tonight: keep out</span><span class="lg"><i style="background:#c9a45c;transform:rotate(45deg);width:10px;height:10px;border-radius:1px"></i>A manor room in one corner</span></div>`;
+  const kase = mode === 'case';
+  const host = mode === 'host' || kase;
+  const opts = { host, kase, rooms, pins: host ? pins : [], linkRooms, secret: host ? secret : null };
+  const style = `<style>.v-game{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#efe2c8;paint-order:stroke;stroke:#120d14;stroke-width:4px;stroke-linejoin:round}.v-real,.v-spotname,.v-story{paint-order:stroke;stroke:#120d14;stroke-width:3px;stroke-linejoin:round}.v-real{font-family:system-ui,sans-serif;fill:#a8988a}.v-shut{font-family:Georgia,serif;font-style:italic;fill:#6f6176}.v-shutnote{font-family:system-ui,sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;fill:#6f6176}.v-plain{font-family:system-ui,sans-serif;fill:#a8988a}.v-spotname{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#e3c788}.v-entry{font-family:system-ui,sans-serif;font-weight:600;fill:#e3c788}.v-game-area:hover text{fill:#fff}${host ? ".v-pinnum{font:700 12px system-ui,sans-serif;fill:#fff}.v-secretlabel{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#ff9fac}.v-story{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#b9a7c4}" : ''}</style>`;
+  const legend = kase ? '' : `<div class="legend"><span class="lg"><i style="background:#211825;border:1px solid #7a6683"></i>Game room: search here</span><span class="lg"><i style="background:repeating-linear-gradient(45deg,#151018 0 3px,#2a2030 3px 6px);border:1px solid #7a6683"></i>Shut tonight: keep out</span><span class="lg"><i style="background:#c9a45c;transform:rotate(45deg);width:10px;height:10px;border-radius:1px"></i>A manor room in one corner</span></div>`;
   return raw(`<div class="map-wrap venue-wrap">${style}${venueSvg(venue, { ...opts, tall: false })}${venueSvg(venue, { ...opts, tall: true })}</div>${legend}`);
-}
-
-// Spread pins / dots inside a room rectangle in a grid.
-export function slotsIn(roomId, n, { size = 26, top = 44 } = {}) {
-  const g = ROOM_GEO[roomId];
-  if (!g) return [];
-  // Corridors get one row along the top; short rooms (the terrace) along the bottom.
-  const usableTop = g.corridor ? g.y + 6 : g.h < 100 ? g.y + g.h - size - 4 : g.y + top;
-  const cols = Math.max(1, Math.floor((g.w - 12) / size));
-  return Array.from({ length: n }, (_, i) => ({
-    x: g.x + 6 + size / 2 + (i % cols) * size,
-    y: usableTop + size / 2 + Math.floor(i / cols) * size,
-  }));
 }
 
 // ---------------------------------------------------------------- timeline swimlanes (HOST)
@@ -361,7 +352,7 @@ export function timelineChart(content, { from = '8:00 PM', to = '10:00 PM', ids 
       const zone = content.lore.rooms[e.where]?.zone;
       const room = content.lore.rooms[e.where]?.name || e.where;
       out.push(`<rect x="${xa}" y="${y + 3}" width="${xb - xa}" height="${rowH - 6}" rx="3" fill="${ZONE_FILL[zone] || '#56485f'}"><title>${esc(`${c.name}: ${e.at}${e.until ? '–' + e.until : ''} · ${room}\n${e.text.replace(/\*\*/g, '')}`)}</title></rect>`);
-      if (xb - xa > 70) out.push(`<text x="${xa + 5}" y="${y + 14}" class="t-room">${esc(ROOM_GEO[e.where]?.label || room)}</text>`);
+      if (xb - xa > 70) out.push(`<text x="${xa + 5}" y="${y + 14}" class="t-room">${esc(ROOM_LABELS[e.where] || room)}</text>`);
     }
   });
   const legend = Object.entries({ 'murder-zone': 'Study & East Corridor', 'escape-zone': 'Library & corridor', party: 'Party rooms', outside: 'Outside', service: 'Below stairs', private: 'Private / walls' })
@@ -392,7 +383,7 @@ export function eveningStrip(c, { host = false, rooms = {} } = {}) {
     const xb = Math.max(xa + 6, x(e.b));
     const zone = rooms[e.where]?.zone;
     const fill = host ? ZONE_FILL[zone] || '#56485f' : ROOM_COLORS[hash(e.where) % ROOM_COLORS.length];
-    const label = ROOM_GEO[e.where]?.label || e.where;
+    const label = ROOM_LABELS[e.where] || e.where;
     out.push(`<rect x="${xa}" y="20" width="${xb - xa}" height="30" rx="4" fill="${fill}" stroke="#0d090f"><title>${esc(`${e.at}${e.until ? '–' + e.until : ''} · ${label}`)}</title></rect>`);
     if (xb - xa > 62) out.push(`<text x="${xa + 5}" y="39" class="s-room">${esc(label)}</text>`);
   }

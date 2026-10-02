@@ -281,6 +281,16 @@ export function checkContent(content, state = {}) {
     if (!Array.isArray(a.shape) || a.shape.length < 3) add('error', 'venue.yaml', a.id, 'Area needs a shape of at least three points');
     if (a.game && !rooms[a.game]) add('error', 'venue.yaml', a.id, `Unknown manor room "${a.game}"`);
     if (a.game && a.shut) add('error', 'venue.yaml', a.id, 'A shut room cannot also be a game room');
+    if (a.story && !rooms[a.story]) add('error', 'venue.yaml', a.id, `Unknown manor room "${a.story}"`);
+  }
+  for (const [rid, box] of Object.entries(venue.stage || {})) {
+    if (!rooms[rid]) add('error', 'venue.yaml', rid, `Stage box for unknown manor room "${rid}"`);
+    if (!Array.isArray(box) || box.length !== 4) add('error', 'venue.yaml', rid, 'Stage box must be [x, y, width, height]');
+  }
+  if ((venue.areas || []).length) {
+    const drawn = new Set([...Object.keys(venue.stage || {}), ...(venue.areas || []).flatMap((a) => [a.game, a.story]).filter(Boolean), ...(venue.spots || []).map((sp) => sp.game)]);
+    const used = new Set(content.characterOrder.flatMap((id) => (chars[id].evening || []).map((e) => e.where)));
+    for (const r of used) if (rooms[r] && !drawn.has(r)) add('warn', 'venue.yaml', r, `Someone's evening is in the ${r}, but no room of the flat plays it (the case map can't draw them)`);
   }
   for (const sp of venue.spots || []) {
     if (!rooms[sp.game]) add('error', 'venue.yaml', sp.game, `Unknown manor room "${sp.game}"`);
@@ -296,6 +306,8 @@ export function checkContent(content, state = {}) {
     for (const id of content.clueOrder) {
       const cl = content.clues[id];
       if (cl.kind === 'physical' && cl.carrier === 'found' && cl.room && !placed.has(cl.room)) add('error', cl._file || 'clues', id, `Hidden in the ${cl.room}, but no real room plays the ${cl.room} (venue.yaml)`);
+      const home = (venue.spots || []).find((sp) => sp.game === cl.room)?.area || (venue.areas || []).find((a) => a.game === cl.room)?.id;
+      if (cl.kind === 'physical' && cl.carrier === 'found' && /bedroom/i.test(areaById.get(home)?.name || '')) add('error', cl._file || 'clues', id, `Hidden in a bedroom (${home}); Part Two says nothing is hidden in bedrooms`);
     }
     for (const id of ['study', 'library']) if (!placed.has(id)) add('error', 'venue.yaml', id, `No real room plays the ${id}`);
   }

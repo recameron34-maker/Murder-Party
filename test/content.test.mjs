@@ -61,19 +61,32 @@ test('there are 8 name-flexible spares spanning low, medium and high effort', ()
   assert.deepEqual([...efforts].sort(), ['high', 'low', 'medium']);
 });
 
-test('the flat follows Part Two: no bedroom or shut room plays a game room, and every hidden clue has a real home', () => {
+test('the flat follows Part Two: nothing hidden in bedrooms or shut rooms, and every hidden clue has a real home', () => {
   const venue = content.venue;
   const areas = new Map(venue.areas.map((a) => [a.id, a]));
-  for (const a of venue.areas) if (/bedroom/i.test(a.name) || a.shut) assert.ok(!a.game, `${a.id} is a bedroom or shut but plays ${a.game}`);
+  for (const a of venue.areas) if (a.shut) assert.ok(!a.game, `${a.id} is shut but plays ${a.game}`);
   for (const sp of venue.spots) {
     const a = areas.get(sp.area);
-    assert.ok(a && !a.shut && !/bedroom/i.test(a.name), `${sp.game} sits in ${sp.area}`);
+    assert.ok(a && !a.shut, `${sp.game} sits in ${sp.area}`);
   }
-  const placed = new Set([...venue.areas.filter((a) => a.game).map((a) => a.game), ...venue.spots.map((sp) => sp.game)]);
+  const homeOf = (room) => venue.spots.find((sp) => sp.game === room)?.area || venue.areas.find((a) => a.game === room)?.id;
   for (const id of content.clueOrder) {
     const c = content.clues[id];
-    if (c.kind === 'physical' && c.carrier === 'found') assert.ok(placed.has(c.room), `${id} is hidden in the ${c.room}, which no real room plays`);
+    if (c.kind !== 'physical' || c.carrier !== 'found') continue;
+    const home = areas.get(homeOf(c.room));
+    assert.ok(home, `${id} is hidden in the ${c.room}, which no real room plays`);
+    assert.ok(!/bedroom/i.test(home.name), `${id} is hidden in a bedroom (${home.id})`);
   }
+});
+
+test('the case map can place everyone: every room in anyone\'s evening is drawn on the flat', () => {
+  const venue = content.venue;
+  const drawn = new Set([...Object.keys(venue.stage || {}), ...venue.areas.flatMap((a) => [a.game, a.story]).filter(Boolean), ...venue.spots.map((sp) => sp.game)]);
+  for (const id of content.characterOrder) for (const e of content.characters[id].evening || []) assert.ok(drawn.has(e.where), `${id} at ${e.at} is in the ${e.where}, which the flat doesn't draw`);
+  // The study's only ordinary door opens into the room playing the East Corridor.
+  assert.equal(venue.areas.find((a) => a.id === 'family-room').game, 'east-corridor');
+  assert.equal(venue.areas.find((a) => a.game === 'study').id, 'room');
+  assert.equal(venue.areas.find((a) => a.game === 'library').id, 'landing');
 });
 
 test('the real hidden door is host-only: never in the guest-safe venue file', () => {
