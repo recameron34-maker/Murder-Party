@@ -273,6 +273,17 @@ at the end. We had most of it. Added:
 - **Name badges** and **award certificates** (`party.yaml` → `awards`).
 - **The midnight photograph** and signing out of the guest book.
 
+## The look (October 2026)
+
+Saltburn-style theming, CSS only, on the existing night palette so every
+diagram still matches: a faint gold damask wallpaper behind everything, a
+candlelit vignette, gilt (gold-leaf) headings, an engraved inner frame on
+every card, a slow candle glow on each guest's crest and on the login raven,
+wax seals on sealed envelopes, and "Blackwood Manor · The Midnight Supper" /
+"You are expected" lines like an invitation. Motion stops for anyone who
+prefers reduced motion. The host dashboard opens with "Getting ready" (before
+the party) and "Now / Next" (during it).
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?

@@ -93,7 +93,8 @@ function sceneAt(content, slug) {
 
 function lightsBox(scene, own) {
   if (!scene) return '';
-  return html`<div class="lights-box${own ? ' fire' : ''}"><span class="lb-icon">💡</span><div><b>${own ? 'Lights: fire' : 'Lights: still'} “${scene.routine}”</b><br><span class="small">${scene.look}</span>${scene.sound && own ? html`<br><span class="small muted">🎵 ${scene.sound}</span>` : ''}</div></div>`;
+  if (!own) return html`<div class="lights-box"><span class="lb-icon">💡</span><div class="small">Lights stay on <b>“${scene.routine}”</b>. Nothing to fire this step.</div></div>`;
+  return html`<div class="lights-box fire"><span class="lb-icon">💡</span><div><b>Lights: fire “${scene.routine}”</b><br><span class="small">${scene.look}</span>${scene.sound ? html`<br><span class="small muted">🎵 ${scene.sound}</span>` : ''}</div></div>`;
 }
 
 // Now / Next: walk the run of show one step at a time during the party.
@@ -117,6 +118,24 @@ function nowNext(ctx) {
   <div class="ns-body">${raw(md(substitute(cur.body, ctx), isLive))}</div>
   <div class="ns-nav">${prev ? move(prev, '◀ Back', 'ghost') : html`<span></span>`}${next ? move(next, html`Next: ${next.title} ▶`) : html`<span class="muted small">That's the night. Go to bed.</span>`}</div>
 </div>`;
+}
+
+// Before the party: what's done and what isn't, each with the page that fixes it.
+function readyCard(ctx, { loginIds, missingPass, errors }) {
+  const { content, state } = ctx;
+  const props = content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken');
+  const prepped = props.filter((id) => state.prepDone[id]).length;
+  const date = state.partyDate || content.party.date;
+  const items = [
+    [missingPass === 0, `Passphrases for all ${loginIds.length} guests`, '/host/roster', missingPass ? `${missingPass} still to generate` : 'done'],
+    [!!date, 'Party date set (for the teaser text the day before)', '/host#date', date || 'not set'],
+    [errors === 0, 'Consistency checker clean', '/host/check', errors ? `${errors} errors` : 'no errors'],
+    [prepped === props.length, 'Evidence and props made', '/host/evidence', `${prepped} of ${props.length} ticked off`],
+    [null, 'Print envelopes, badges, cash, ballots, signs and certificates', '/host/print', ''],
+    [null, 'Dress the flat and hide Round One evidence', '/host/setup', ''],
+    [null, 'Build the Alexa light routines and test the blackout', '/host/setup#lights', ''],
+  ];
+  return html`<div class="card ready"><h3 class="h-card">Getting ready</h3><ul class="checklist ready-list">${items.map(([ok, label, href, note]) => html`<li class="${ok === true ? 'ok' : ok === false ? 'todo' : ''}"><span class="tick">${ok === true ? '✓' : ok === false ? '!' : '○'}</span><span><a href="${href}">${label}</a>${note ? html` <span class="small muted">· ${note}</span>` : ''}</span></li>`)}</ul></div>`;
 }
 
 function scheduleCard(ctx) {
@@ -147,6 +166,7 @@ export function dashboardPage(ctx) {
   const carrier = (c) => (c === 'host' ? 'Reggie' : c === 'found' ? 'hidden for the hunt' : shortNames(content.names)[c] || c);
 
   return shell(ctx, '/host', 'Dashboard', html`
+${live === 0 ? readyCard(ctx, { loginIds, missingPass, errors }) : ''}
 ${nowNext(ctx)}
 <div class="card hero">
   ${roundStepper(live, { labels: ['Before', 'Round One', 'Round Two', 'Round Three', 'Reveal'] })}
@@ -207,7 +227,7 @@ ${scheduleCard(ctx)}
   <h2 class="h-card">Coming up on guests' phones</h2>
   ${sched.length ? html`<table><tr><th>When</th><th>To</th><th>From</th><th>Text</th></tr>${sched.map((t) => html`<tr><td>${fmtTime(ctx, t.at)}</td><td>${t.to === 'all' ? 'Everyone' : content.names[t.to]}</td><td>${t.from}</td><td>${t.body}</td></tr>`)}</table>` : html`<p class="muted small">Nothing scheduled. Timed texts start when a round is unlocked.</p>`}
 </div>
-<div class="card">
+<div class="card" id="date">
   <h2 class="h-card">Party date</h2>
   <form method="post" action="/host/settings" class="inline-form">
     <input type="date" name="partyDate" value="${state.partyDate || content.party.date || ''}">
@@ -517,7 +537,10 @@ const WHEN_LABEL = (c) => (c.round === 1 ? 'Before guests arrive' : `${ROUND_LAB
 function lightsSection(content) {
   const L = content.lights || {};
   if (!(L.scenes || []).length) return '';
-  const areaName = (id) => (content.venue.areas || []).find((a) => a.id === id)?.name || id;
+  const areaName = (id) => {
+    const a = (content.venue.areas || []).find((x) => x.id === id);
+    return a ? a.aka || a.name : id;
+  };
   return html`<h2 id="lights">Lights</h2>
 <div class="grid">
   <div class="card"><h3 class="h-card">1. Make these Alexa groups</h3><ul class="small">${(L.groups || []).map((g) => html`<li><b>${g.name}</b>: the bulbs in your ${areaName(g.room)}</li>`)}</ul><p class="small"><b>Safety.</b> ${L.safety || ''}</p></div>
