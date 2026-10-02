@@ -8,7 +8,7 @@ import { checkContent, wordCount } from '../lib/check.mjs';
 import { flexCoverage } from '../lib/flex.mjs';
 import { page } from './layout.mjs';
 import { HOST_CSS } from './styles.mjs';
-import { crest, crestSvg, roundStepper, manorMap, venueMap, venuePins, venueWhere, slotsIn, timelineChart, eveningStrip, yourWeb, webGraph, suspicionHeatmap, initials, shortNames, KIND_LABELS, ROOM_GEO } from './visuals.mjs';
+import { crest, crestSvg, roundStepper, venueMap, venuePins, venueWhere, stageSlots, gameLabel, timelineChart, eveningStrip, yourWeb, webGraph, suspicionHeatmap, initials, shortNames, KIND_LABELS, ROOM_LABELS } from './visuals.mjs';
 
 const NAV = [
   ['Tonight', [['/host', 'Dashboard'], ['/host/script', 'Run of show'], ['/host/texts', 'Texts']]],
@@ -20,7 +20,7 @@ const PAGE_INFO = {
   '/host': 'Where the night stands, and what needs to happen next.',
   '/host/script': "Reggie's lines, cues and rescues, round by round. 🆕 marks the Part Two upgrades.",
   '/host/texts': 'Send cue texts, text anyone as anyone, and see what is scheduled.',
-  '/host/map': "Silas's plans: the manor as the story has it, with the hidden passage, where the evidence is found, and where everyone was, minute by minute.",
+  '/host/map': 'The murder on your floor plan: which room plays what, the hidden door, where the evidence is, and where everyone was, minute by minute.',
   '/host/setup': 'Your flat as Blackwood Manor: which room plays what, what to set up, and where to hide each piece of evidence, and when.',
   '/host/timeline': 'What really happened, and when the players find out.',
   '/host/evidence': 'Every prop and clue by round: where it hides, who carries it, and what it really means.',
@@ -77,6 +77,75 @@ ${error ? html`<p class="flash bad">${error}</p>` : ''}
 }
 
 // ---------------------------------------------------------------- dashboard
+const KIND_ICON = { speech: '🎙', cue: '⏱', checklist: '☑', rescue: '🛟', evidence: '🔎', reference: '📖' };
+
+const sceneById = (content, id) => (content.lights?.scenes || []).find((x) => x.id === id) || null;
+
+// The lighting scene in force at a segment: its own, or the last one before it.
+function sceneAt(content, slug) {
+  let scene = null;
+  for (const s of content.script) {
+    if (s.lights) scene = sceneById(content, s.lights);
+    if (s.slug === slug) return { scene, own: !!s.lights };
+  }
+  return { scene: null, own: false };
+}
+
+function lightsBox(scene, own) {
+  if (!scene) return '';
+  if (!own) return html`<div class="lights-box"><span class="lb-icon">💡</span><div class="small">Lights stay on <b>“${scene.routine}”</b>. Nothing to fire this step.</div></div>`;
+  return html`<div class="lights-box fire"><span class="lb-icon">💡</span><div><b>Lights: fire “${scene.routine}”</b><br><span class="small">${scene.look}</span>${scene.sound ? html`<br><span class="small muted">🎵 ${scene.sound}</span>` : ''}</div></div>`;
+}
+
+// Now / Next: walk the run of show one step at a time during the party.
+function nowNext(ctx) {
+  const { content, state } = ctx;
+  const steps = content.script.filter((s) => s.kind !== 'reference');
+  let i = steps.findIndex((s) => s.slug === state.segment);
+  if (i < 0) i = Math.max(0, steps.findIndex((s) => s.round === state.liveRound));
+  const cur = steps[i];
+  const prev = steps[i - 1];
+  const next = steps[i + 1];
+  const { isLive } = rosterHelpers(content, state);
+  const { scene, own } = sceneAt(content, cur.slug);
+  const move = (to, label, cls = '') => html`<form method="post" action="/host/segment"><input type="hidden" name="to" value="${to.slug}"><button class="btn ${cls}" type="submit">${label}</button></form>`;
+  return html`<div class="card now-step" id="now">
+  <div class="ns-top"><span class="pill">${ROUND_LABEL[cur.round]}</span><span class="small muted">Step ${i + 1} of ${steps.length}</span><a class="small" href="/host/script#${cur.slug}">Open in run of show</a></div>
+  <h2 class="h-card">${KIND_ICON[cur.kind] || ''} ${cur.title}</h2>
+  ${lightsBox(scene, own)}
+  ${cur.round > state.liveRound && cur.round <= 3 ? html`<form method="post" action="/host/round" class="unlock"><input type="hidden" name="round" value="${cur.round}"><button class="btn" type="submit">Unlock ${ROUND_LABEL[cur.round]} on every phone</button></form>` : ''}
+  ${cur.send_texts.map((id) => cueButton(ctx, id))}
+  <div class="ns-body">${raw(md(substitute(cur.body, ctx), isLive))}</div>
+  <div class="ns-nav">${prev ? move(prev, '◀ Back', 'ghost') : html`<span></span>`}${next ? move(next, html`Next: ${next.title} ▶`) : html`<span class="muted small">That's the night. Go to bed.</span>`}</div>
+</div>`;
+}
+
+// Before the party: what's done and what isn't, each with the page that fixes it.
+function readyCard(ctx, { loginIds, missingPass, errors }) {
+  const { content, state } = ctx;
+  const props = content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken');
+  const prepped = props.filter((id) => state.prepDone[id]).length;
+  const date = state.partyDate || content.party.date;
+  const items = [
+    [missingPass === 0, `Passphrases for all ${loginIds.length} guests`, '/host/roster', missingPass ? `${missingPass} still to generate` : 'done'],
+    [!!date, 'Party date set (for the teaser text the day before)', '/host#date', date || 'not set'],
+    [errors === 0, 'Consistency checker clean', '/host/check', errors ? `${errors} errors` : 'no errors'],
+    [prepped === props.length, 'Evidence and props made', '/host/evidence', `${prepped} of ${props.length} ticked off`],
+    [null, 'Print envelopes, badges, cash, ballots, signs and certificates', '/host/print', ''],
+    [null, 'Dress the flat and hide Round One evidence', '/host/setup', ''],
+    [null, 'Build the Alexa light routines and test the blackout', '/host/setup#lights', ''],
+  ];
+  return html`<div class="card ready"><h3 class="h-card">Getting ready</h3><ul class="checklist ready-list">${items.map(([ok, label, href, note]) => html`<li class="${ok === true ? 'ok' : ok === false ? 'todo' : ''}"><span class="tick">${ok === true ? '✓' : ok === false ? '!' : '○'}</span><span><a href="${href}">${label}</a>${note ? html` <span class="small muted">· ${note}</span>` : ''}</span></li>`)}</ul></div>`;
+}
+
+function scheduleCard(ctx) {
+  const sched = ctx.content.party.schedule || [];
+  if (!sched.length) return '';
+  const live = ctx.state.liveRound;
+  const nowIdx = sched.reduce((acc, row, i) => (row.round <= live ? i : acc), 0);
+  return html`<div class="card"><h3 class="h-card">Tonight's schedule</h3><ol class="sched">${sched.map((row, i) => html`<li class="${row.round === live && i <= nowIdx ? 'on' : ''}"><b>${row.time}</b><span>${row.what}${row.food ? html` <span class="muted">· ${row.food}</span>` : ''}</span></li>`)}</ol><p class="small muted">Suggested times, anchored to food. Change them in content/party.yaml.</p></div>`;
+}
+
 export function dashboardPage(ctx) {
   const { content, state } = ctx;
   const { roster, liveIds, canLogin, guestCount, isLive } = rosterHelpers(content, state);
@@ -97,6 +166,8 @@ export function dashboardPage(ctx) {
   const carrier = (c) => (c === 'host' ? 'Reggie' : c === 'found' ? 'hidden for the hunt' : shortNames(content.names)[c] || c);
 
   return shell(ctx, '/host', 'Dashboard', html`
+${live === 0 ? readyCard(ctx, { loginIds, missingPass, errors }) : ''}
+${nowNext(ctx)}
 <div class="card hero">
   ${roundStepper(live, { labels: ['Before', 'Round One', 'Round Two', 'Round Three', 'Reveal'] })}
   <div class="rounds">${[0, 1, 2, 3].map((n) => html`<form method="post" action="/host/round" onsubmit="return confirm('Set the live round to ${ROUND_LABEL[n]}?')"><input type="hidden" name="round" value="${n}"><button class="btn ${live === n ? 'on' : 'ghost'}" type="submit">${n === live ? '● ' : ''}${ROUND_LABEL[n]}</button></form>`)}</div>
@@ -117,7 +188,7 @@ export function dashboardPage(ctx) {
     <h3 class="h-card">Evidence ${live === 0 ? 'to hide before Round One' : 'for this round'}</h3>
     <ul class="checklist">${phys.map((id) => {
       const c = content.clues[id];
-      return html`<li><span class="pin-dot r${c.round}">${c.round}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${c.timing} · ${carrier(c.carrier)}${c.room ? ` · ${venueWhere(content.venue, c.room) || ROOM_GEO[c.room]?.label || c.room}` : ''}</span></span></li>`;
+      return html`<li><span class="pin-dot r${c.round}">${c.round}</span><span>${state.prepDone[id] ? '✓ ' : ''}<a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${c.timing} · ${carrier(c.carrier)}${c.room ? ` · ${venueWhere(content.venue, c.room) || ROOM_LABELS[c.room] || c.room}` : ''}</span></span></li>`;
     })}</ul>
     <p class="small"><a href="/host/setup">Where it all goes in the flat →</a></p>
     ${aims.length ? html`<h3>Suspicion target</h3>${aims.map((st) => html`<p class="small"><b>${st.title}:</b> ${st.aim}</p>`)}` : ''}
@@ -146,6 +217,7 @@ export function dashboardPage(ctx) {
     <p><a href="/host/flex">Live vs. fallback →</a></p></div>
 </div>
 
+${scheduleCard(ctx)}
 <div class="card">
   <h2 class="h-card">The suspicion curve</h2>
   ${suspicionHeatmap(content, { highlightRound: focusRound })}
@@ -155,7 +227,7 @@ export function dashboardPage(ctx) {
   <h2 class="h-card">Coming up on guests' phones</h2>
   ${sched.length ? html`<table><tr><th>When</th><th>To</th><th>From</th><th>Text</th></tr>${sched.map((t) => html`<tr><td>${fmtTime(ctx, t.at)}</td><td>${t.to === 'all' ? 'Everyone' : content.names[t.to]}</td><td>${t.from}</td><td>${t.body}</td></tr>`)}</table>` : html`<p class="muted small">Nothing scheduled. Timed texts start when a round is unlocked.</p>`}
 </div>
-<div class="card">
+<div class="card" id="date">
   <h2 class="h-card">Party date</h2>
   <form method="post" action="/host/settings" class="inline-form">
     <input type="date" name="partyDate" value="${state.partyDate || content.party.date || ''}">
@@ -257,7 +329,6 @@ export function scriptPage(ctx, filterRound) {
   const all = content.script;
   const segs = all.filter((s) => filterRound == null || s.round === filterRound);
   const rounds = [...new Set(all.map((s) => s.round))].sort((a, b) => a - b);
-  const KIND_ICON = { speech: '🎙', cue: '⏱', checklist: '☑', rescue: '🛟', evidence: '🔎', reference: '📖' };
   const num = (s) => all.indexOf(s) + 1;
   return shell(ctx, '/host/script', 'Run of show', html`
 <p class="inline-form small">${html`<a class="btn small ${filterRound == null ? '' : 'ghost'}" href="/host/script">All</a>`}${rounds.map((r) => html`<a class="btn small ${filterRound === r ? '' : 'ghost'}" href="/host/script?round=${r}">${ROUND_LABEL[r]}</a>`)}</p>
@@ -272,6 +343,7 @@ ${segs.map((s, i) => {
   <div class="seg-head"><span class="seg-num">§${num(s)}</span><h2>${KIND_ICON[s.kind] || ''} ${s.title}</h2></div>
   <div class="meta">${ROUND_LABEL[s.round]} · ${s.kind}${s.changes ? html` · <i>Changed: ${s.changes}</i>` : ''}</div>
   ${s.clues.length ? html`<p class="small">Evidence: ${s.clues.map((id) => html`<a class="pill" href="/host/evidence#${id}">${content.clues[id]?.title || id}</a> `)}</p>` : ''}
+  ${s.lights ? lightsBox(sceneById(content, s.lights), true) : ''}
   ${s.send_texts.map((id) => cueButton(ctx, id))}
   ${raw(md(substitute(s.body, ctx), isLive))}
   <p class="seg-nav small">${prev ? html`<a href="#${prev.slug}">← ${prev.title}</a>` : html`<span></span>`}<a href="#top">↑ top</a>${next ? html`<a href="#${next.slug}">${next.title} →</a>` : html`<span></span>`}</p>
@@ -314,9 +386,9 @@ export function evidencePage(ctx) {
   const { content, state } = ctx;
   const { isLive } = rosterHelpers(content, state);
   const carrier = (c) => (c === 'host' ? 'Reggie' : c === 'found' ? 'Hidden for the hunt' : content.names[c] || c);
-  const pinNo = Object.fromEntries(mapPins(content).map((p) => [p.id, p.label]));
+  const pinNo = clueNumbers(content);
   return shell(ctx, '/host/evidence', 'Evidence & props', html`
-<p class="small muted">Tick props off as you prepare them. Hiding spots are set for your flat (see <a href="/host/setup">Setup</a>); change them in content/clues/*.yaml. Numbered pins match Setup and the <a href="/host/map">story map</a>.</p>
+<p class="small muted">Tick props off as you prepare them. Hiding spots are set for your flat (see <a href="/host/setup">Setup</a>); change them in content/clues/*.yaml. Numbered pins match Setup and the <a href="/host/map">case map</a>.</p>
 ${[1, 2, 3].map((r) => {
   const phys = content.clueOrder.filter((id) => content.clues[id].round === r && content.clues[id].kind !== 'spoken');
   const spoken = content.clueOrder.filter((id) => content.clues[id].round === r && content.clues[id].kind === 'spoken');
@@ -449,6 +521,8 @@ export function printIndexPage(ctx) {
     ['ballots', 'Accusation ballots', 'Four per page.'],
     ['cash', 'Blackmail Cash', '$1,000 notes: three per guest plus a float.'],
     ['hints', 'Hint cards', 'For the $3,000 private hint.'],
+    ['badges', 'Name badges', "Eight per page: each character's name and what everyone knows them as. Hand out at the door."],
+    ['awards', 'Award certificates', "One per award (Best Detective, Best Liar…), with a line for the winner's name."],
     ['signs', 'Room signs', 'One sign for each room the flat plays tonight (THE STUDY, THE LIBRARY…) and an EAST WING · SHUT sign for every closed door.'],
   ];
   return shell(ctx, '/host/print', 'Print', html`
@@ -460,10 +534,25 @@ export function printIndexPage(ctx) {
 const TIMING_ORDER = { early: 0, mid: 1, late: 2, end: 3 };
 const WHEN_LABEL = (c) => (c.round === 1 ? 'Before guests arrive' : `${ROUND_LABEL[c.round]}, ${c.timing === 'early' ? 'as it opens' : c.timing}`);
 
+function lightsSection(content) {
+  const L = content.lights || {};
+  if (!(L.scenes || []).length) return '';
+  const areaName = (id) => {
+    const a = (content.venue.areas || []).find((x) => x.id === id);
+    return a ? a.aka || a.name : id;
+  };
+  return html`<h2 id="lights">Lights</h2>
+<div class="grid">
+  <div class="card"><h3 class="h-card">1. Make these Alexa groups</h3><ul class="small">${(L.groups || []).map((g) => html`<li><b>${g.name}</b>: the bulbs in your ${areaName(g.room)}</li>`)}</ul><p class="small"><b>Safety.</b> ${L.safety || ''}</p></div>
+  <div class="card"><h3 class="h-card">2. Make one routine per scene</h3><p class="small">Alexa app → More → Routines → +. Name it as below, add the actions, and fire it from the app (the ▶ next to the routine) so nobody hears you ask for a blackout. Each scene shows up in the run of show and on the dashboard at the right moment.</p></div>
+</div>
+<div class="lights-table">${L.scenes.map((sc) => html`<div class="card lt-row"><div class="lt-name">💡 <b>${sc.routine}</b><br><span class="small muted">${sc.when}</span></div><div class="small"><p>${sc.look}</p>${sc.steps ? html`<ol class="lt-steps">${sc.steps.map((st) => html`<li>${st}</li>`)}</ol>` : ''}${sc.sound ? html`<p class="muted">🎵 ${sc.sound}</p>` : ''}</div></div>`)}</div>`;
+}
+
 export function setupPage(ctx) {
   const { content, state } = ctx;
   const venue = content.venue;
-  const numbers = Object.fromEntries(mapPins(content).map((p) => [p.id, p.label]));
+  const numbers = clueNumbers(content);
   const hidden = content.clueOrder.filter((id) => content.clues[id].kind === 'physical' && content.clues[id].carrier === 'found' && content.clues[id].room);
   const kept = content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken' && content.clues[id].carrier === 'host');
   const pins = venuePins(venue, hidden.map((id) => {
@@ -499,8 +588,9 @@ ${venueMap(venue, { mode: 'host', rooms: content.lore.rooms, pins, secret: conte
   <div class="card"><h3 class="h-card">Keep on you</h3><ul class="small">${kept.map((id) => html`<li><b>${content.clues[id].title}</b> <span class="muted">(${ROUND_LABEL[content.clues[id].round]})</span></li>`)}</ul>
   <h3>Shut tonight</h3><p class="small">${shut.map((a) => a.name).filter((n, i, all) => all.indexOf(n) === i).join(', ')}. Nothing is hidden in them; the rules say so, and the plan on every guest's phone marks them shut.</p>
   <h3>Signs</h3><p class="small">Print a sign for every game room and every shut door: <a href="/host/print/signs" target="_blank">Print → Room signs</a>.</p>
-  <h3>The passage</h3>${content.lore.venue_passage ? html`<p class="small">${content.lore.venue_passage.note} Guests' plans never show it. The normal way from the study to the library runs through the Family Room, the Living Room and the front door, past the whole party: that's why Morgan needed the wall.</p>` : html`<p class="small">It lives only in the story (<a href="/host/map">Silas's plans</a>).</p>`}</div>
+  <h3>The passage</h3>${content.lore.venue_passage ? html`<p class="small">${content.lore.venue_passage.note} Guests' plans never show it. The normal way from the study to the library runs through the Family Room, the Living Room and the front door, past the whole party: that's why Morgan needed the wall.</p>` : html`<p class="small">It lives only in the story (see the <a href="/host/map">Map</a>).</p>`}</div>
 </div>
+${lightsSection(content)}
 <h2>Room by room</h2>
 <div class="room-grid">
 ${areas.map((a) => {
@@ -516,31 +606,18 @@ ${areas.map((a) => {
 </div>`);
 }
 
-// ---------------------------------------------------------------- map
+// ---------------------------------------------------------------- map (the case, on the flat)
 const ROUND_COLORS = { 1: '#7fa7d8', 2: '#c9a45c', 3: '#d0607a' };
 
-export function mapPins(content) {
-  const physical = content.clueOrder.filter((id) => content.clues[id].room);
-  const byRoom = {};
-  for (const id of physical) (byRoom[content.clues[id].room] ||= []).push(id);
-  const pins = [];
+// Evidence numbers shared by the Map, Setup and Evidence pages.
+export function clueNumbers(content) {
   let n = 0;
-  const numbers = Object.fromEntries(physical.map((id) => [id, ++n]));
-  for (const [room, ids] of Object.entries(byRoom)) {
-    const g = ROOM_GEO[room];
-    if (!g) continue;
-    ids.forEach((id, i) => {
-      const c = content.clues[id];
-      // Pins stack from the room's bottom-left corner (the passage runs down the
-      // study's right-hand wall); people dots fill from the top-left. On the
-      // short terrace the dots take the bottom-left, so pins go bottom-right.
-      pins.push({ id, room, label: String(numbers[id]), x: g.h < 100 ? g.x + g.w - 18 - i * 26 : g.x + 18 + (i % 5) * 26, y: g.y + g.h - 16 - Math.floor(i / 5) * 26, color: ROUND_COLORS[c.round], title: `${numbers[id]}. ${c.title} (Round ${c.round}, ${c.timing})\n${c.hide}` });
-    });
-  }
-  return pins.sort((a, b) => Number(a.label) - Number(b.label));
+  return Object.fromEntries(content.clueOrder.filter((id) => content.clues[id].room).map((id) => [id, String(++n)]));
 }
 
+// Where everyone stands, minute by minute, 8:00 to 10:00, in plan coordinates.
 function mapFrames(content, ids) {
+  const venue = content.venue;
   const t0 = parseClock('8:00 PM');
   const t1 = parseClock('10:00 PM');
   const frames = [];
@@ -553,12 +630,11 @@ function mapFrames(content, ids) {
         const b = e.until ? parseClock(e.until) : a;
         if (a != null && a <= t && t <= b && (!best || a >= best.a)) best = { a, room: e.where };
       }
-      if (best && ROOM_GEO[best.room]) (byRoom[best.room] ||= []).push(id);
+      if (best) (byRoom[best.room] ||= []).push(id);
     }
     const d = [];
     for (const [room, list] of Object.entries(byRoom)) {
-      const slots = slotsIn(room, list.length, { size: 28, top: 42 });
-      list.forEach((id, i) => d.push([id, Math.round(slots[i].x), Math.round(slots[i].y)]));
+      stageSlots(venue, room, list.length).forEach(([x, y], i) => d.push([list[i], Math.round(x), Math.round(y)]));
     }
     const events = (content.timeline.events || [])
       .filter((e) => e.at && !e.flex)
@@ -576,44 +652,61 @@ function mapFrames(content, ids) {
 export function mapPage(ctx) {
   const { content, state } = ctx;
   const { liveIds } = rosterHelpers(content, state);
-  const pins = mapPins(content);
+  const venue = content.venue;
+  const numbers = clueNumbers(content);
+  const pinned = content.clueOrder.filter((id) => numbers[id]);
+  const pins = venuePins(venue, pinned.map((id) => {
+    const c = content.clues[id];
+    return { id, room: c.room, label: numbers[id], color: ROUND_COLORS[c.round], title: `${numbers[id]}. ${c.title} (Round ${c.round}, ${c.timing})\n${c.hide}` };
+  }));
   const { t0, t1, frames } = mapFrames(content, liveIds);
-  const people = Object.fromEntries(liveIds.map((id) => [id, { n: content.characters[id].name, i: initials(content.characters[id].name), c: (crestSvg(id, content.characters[id].name).match(/fill="(#[0-9a-f]{6})"/i) || [])[1] || '#555', k: id === content.timeline.solution_window?.killer ? 1 : 0 }]));
+  const killer = content.timeline.solution_window?.killer;
+  const people = Object.fromEntries(liveIds.map((id) => [id, { n: content.characters[id].name, i: initials(content.characters[id].name), c: (crestSvg(id, content.characters[id].name).match(/fill="(#[0-9a-f]{6})"/i) || [])[1] || '#555', k: id === killer ? 1 : 0 }]));
   const data = JSON.stringify({ t0, t1, frames, people, labels: frames.map((_, i) => formatClockSafe(t0 + i)) }).replace(/</g, '\\u003c');
-  return shell(ctx, '/host/map', 'The manor', html`
+  const unplaced = [...new Set(liveIds.flatMap((id) => (content.characters[id].evening || []).map((e) => e.where)))].filter((r) => !stageSlots(venue, r, 1).length);
+  return shell(ctx, '/host/map', 'The case, in your flat', html`
 <div class="map-controls card">
   <button class="btn small" type="button" id="m-play">▶ Play 9:25 → 9:50</button>
   <input type="range" id="m-time" min="${t0}" max="${t1}" value="${parseClock('9:38 PM')}" aria-label="Time">
   <b id="m-clock" class="m-clock">9:38 PM</b>
   <div id="m-events" class="m-events small"></div>
 </div>
-${manorMap({ mode: 'host', rooms: Object.fromEntries(Object.entries(content.lore.rooms).map(([k, v]) => [k, { zone: v.zone, title: v.name }])), pins })}
-<div class="legend"><span class="lg"><i style="background:#c0495a"></i>Study & East Corridor (murder zone)</span><span class="lg"><i style="background:#e3c788"></i>Library end of the passage</span><span class="lg"><i style="background:repeating-linear-gradient(90deg,#c0495a 0 6px,transparent 6px 10px)"></i>The Raven's Walk (secret)</span>${[1, 2, 3].map((r) => html`<span class="lg"><i style="background:${ROUND_COLORS[r]};border-radius:50%;width:12px;height:12px"></i>Round ${r} evidence</span>`)}<span class="lg"><i style="border:2px solid #ff6b7f;border-radius:50%;width:12px;height:12px;background:none"></i>The killer</span></div>
+${venueMap(venue, { mode: 'case', rooms: content.lore.rooms, pins, secret: content.lore.venue_passage })}
+<div class="legend"><span class="lg"><i style="border:2px solid #c0495a;background:none"></i>Murder zone: the study and the East Corridor</span><span class="lg"><i style="border:2px solid #e3c788;background:none"></i>Escape zone: the library and its corridor</span><span class="lg"><i style="background:repeating-linear-gradient(90deg,#ff5c74 0 6px,transparent 6px 10px)"></i>The Raven's Walk (the real hidden door)</span>${[1, 2, 3].map((r) => html`<span class="lg"><i style="background:${ROUND_COLORS[r]};border-radius:50%;width:12px;height:12px"></i>Round ${r} evidence</span>`)}<span class="lg"><i style="border:2px solid #ff6b7f;border-radius:50%;width:12px;height:12px;background:none"></i>The killer</span><span class="lg"><i style="border:1px solid #6f6176;background:repeating-linear-gradient(45deg,#151018 0 3px,#2a2030 3px 6px)"></i>Shut rooms (the story still uses some)</span></div>
+${unplaced.length ? html`<p class="small pill warn">Not drawn on the map: ${unplaced.join(', ')}. Give them a stage box in content/venue.yaml.</p>` : ''}
 <div class="grid">
-<div class="card"><h3 class="h-card">Evidence pins</h3><ol class="pin-list">${pins.map((p) => {
-  const c = content.clues[p.id];
-  return html`<li><span class="pin-dot r${c.round}">${p.label}</span><span><a href="/host/evidence#${p.id}">${c.title}</a> <span class="muted">· ${ROOM_GEO[p.room].label} · Round ${c.round}, ${c.timing}</span><br><span class="small muted">${c.hide}</span></span></li>`;
+<div class="card"><h3 class="h-card">Evidence pins</h3><ol class="pin-list">${pinned.map((id) => {
+  const c = content.clues[id];
+  return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span><a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${gameLabel(c.room, content.lore.rooms)} (${venueWhere(venue, c.room) || 'not in the flat'}) · Round ${c.round}, ${c.timing}</span><br><span class="small muted">${c.hide}</span></span></li>`;
 })}</ol></div>
 <div class="card"><h3 class="h-card">How to read it</h3><ul class="small">
-<li>Drag the slider (or press play) to watch where everyone is, minute by minute, from their own cards. The red ring is the killer.</li>
-<li>At <b>9:34</b> Morgan is alone in the study. At <b>9:39</b> she's in the library, having used the passage. At <b>9:41</b> Alma meets her in the Library Corridor.</li>
-<li>Guests see this plan too, but without the passage, the pins or anyone's whereabouts.</li>
-<li>Your apartment's floor plan will map onto these rooms; hiding spots live in <span class="mono">content/clues/*.yaml</span>.</li>
+<li>Your flat, with each room labelled by the manor room it plays. Drag the slider (or press play) to watch where everyone is, minute by minute, from their own cards. The red ring is the killer.</li>
+<li><b>9:31 to 9:34:</b> Annie, Clara and Morgan come through the Family Room (the East Corridor) to the study door. <b>9:36:</b> Maya hears the argument through it.</li>
+<li><b>9:38 to 9:39:</b> Morgan kills Arthur and goes through the hidden door onto the landing (the library). The ordinary way round runs through the Drawing Room, past everyone.</li>
+<li><b>9:40 to 9:41:</b> James and Alma, at the front door (the Library Corridor), see her at the library end. <b>9:42:</b> she's back in the Drawing Room.</li>
+<li>Shut rooms still play a part in the story: Louis is trapped in the East Wing (the small bedroom) and Shea fetches medicine upstairs (the primary bedroom). Nobody goes in on the night.</li>
+<li>Guests' plans show the rooms but never the hidden door, the pins or anyone's whereabouts.</li>
 </ul></div>
 </div>
 <script type="application/json" id="mapdata">${raw(data)}</script>
 <script>
 (function(){
   var D=JSON.parse(document.getElementById('mapdata').textContent);
-  var g=document.getElementById('m-dots'),slider=document.getElementById('m-time'),clock=document.getElementById('m-clock'),ev=document.getElementById('m-events'),play=document.getElementById('m-play');
+  var maps=[].slice.call(document.querySelectorAll('svg[data-case]'));
+  var slider=document.getElementById('m-time'),clock=document.getElementById('m-clock'),ev=document.getElementById('m-events'),play=document.getElementById('m-play');
   var NS='http://www.w3.org/2000/svg';
   function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e}
   function render(t){
     var f=D.frames[t-D.t0];if(!f)return;
-    while(g.firstChild)g.removeChild(g.firstChild);
-    f.d.forEach(function(p){var who=D.people[p[0]];var grp=el('g',{});var tt=el('title',{});tt.textContent=who.n;grp.appendChild(tt);
-      grp.appendChild(el('circle',{cx:p[1],cy:p[2],r:12,fill:who.c,stroke:who.k?'#ff6b7f':'#e3c788','stroke-width':who.k?3.5:1.5}));
-      var tx=el('text',{x:p[1],y:p[2]+4,'text-anchor':'middle',style:'font:700 10px system-ui,sans-serif;fill:#fff'});tx.textContent=who.i;grp.appendChild(tx);g.appendChild(grp)});
+    maps.forEach(function(svg){
+      var g=svg.querySelector('.m-dots');var tall=svg.dataset.tall==='1',vx=+svg.dataset.vx,vy=+svg.dataset.vy,vh=+svg.dataset.vh;
+      while(g.firstChild)g.removeChild(g.firstChild);
+      f.d.forEach(function(p){var who=D.people[p[0]];if(!who)return;
+        var x=tall?vy+vh-p[2]:p[1]-vx,y=tall?p[1]-vx:p[2]-vy;
+        var grp=el('g',{});var tt=el('title',{});tt.textContent=who.n;grp.appendChild(tt);
+        grp.appendChild(el('circle',{cx:x,cy:y,r:11,fill:who.c,stroke:who.k?'#ff6b7f':'#e3c788','stroke-width':who.k?3.5:1.5}));
+        var tx=el('text',{x:x,y:y+4,'text-anchor':'middle',style:'font:700 9px system-ui,sans-serif;fill:#fff'});tx.textContent=who.i;grp.appendChild(tx);g.appendChild(grp)});
+    });
     clock.textContent=D.labels[t-D.t0];
     ev.textContent='';f.e.forEach(function(s){var d=document.createElement('div');d.textContent=s;ev.appendChild(d)});
   }

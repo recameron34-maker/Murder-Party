@@ -4,10 +4,16 @@ round: 0
 kind: cue
 changes: Added the red-folder announcement (Part Two).
 clues: [red-folder]
+lights: blackout
 ---
 At the planned time, dim/turn off lights. Wait. Make a loud crash. After
 approximately 10–20 seconds, restore them. **Do NOT leave lights out for 90
 real seconds.**
+
+🆕 *With the smart bulbs:* tap **Blackwood blackout** in the Alexa app. The
+dining room dies first, then the kitchens, then the house; thunder; your pan
+in the kitchen; 15 seconds later the lights come back low, with the study
+glowing red. (Lights → Setup has the routine step by step.)
 
 Then: "Well. That seems ominous."
 

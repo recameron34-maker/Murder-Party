@@ -15,8 +15,10 @@ const ROUND_WORDS = { 1: 'One', 2: 'Two', 3: 'Three' };
 export function loginPage({ prefill = '', error = '' } = {}) {
   const body = html`<main class="wrap login"><div>
   ${raw(RAVEN_SVG)}
+  <div class="house-line">You are expected</div>
   <h1>Blackwood Manor</h1>
   <p class="muted"><i>The Midnight Supper</i></p>
+  <div class="flourish">✦</div>
   <form class="card" method="post" action="/login" autocomplete="off">
     <p>Speak your passphrase, and the house will remember you.</p>
     ${error ? html`<p class="err">${error}</p>` : ''}
@@ -94,10 +96,12 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
 <div id="banner" hidden>A new envelope has been unsealed. <button class="btn small ghost" type="button" onclick="location.hash='#envelopes';location.reload()">Open it</button></div>
 <main class="wrap guest">
 <header class="title">
+  <div class="house-line">Blackwood Manor · The Midnight Supper</div>
   ${crest(charId, c.name, 76)}
   <div class="role">${c.role}</div>
   <h1>${c.name}</h1>
   <p class="tag">${c.tagline}</p>
+  <div class="flourish">✦</div>
   ${roundStepper(live, { compact: true })}
 </header>
 <nav class="tabs" aria-label="Sections">

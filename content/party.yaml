@@ -7,3 +7,38 @@ host_character: Reginald "Reggie" Blackwood
 # until the date is fixed; dated texts simply won't fire.
 date: null
 timezone: America/Chicago
+
+# Suggested clock times, anchored to food the way most hosted mystery games
+# are (starters, main, dessert). `round` links each phase to the live round
+# so the dashboard can show where you are. Move the times; keep the order.
+schedule:
+  - { time: "7:30 PM", what: "Arrivals, drinks, the guest book", food: "Champagne and canapés", round: 0 }
+  - { time: "8:00 PM", what: "Birthday toast and formal opening", food: "", round: 0 }
+  - { time: "8:15 PM", what: "Mingle in character", food: "Canapés keep coming", round: 0 }
+  - { time: "8:45 PM", what: "The blackout and the body", food: "", round: 0 }
+  - { time: "8:55 PM", what: "Rules, Blackmail Cash, Round One", food: "Starters / grazing board", round: 1 }
+  - { time: "9:40 PM", what: "Round Two", food: "Main course", round: 2 }
+  - { time: "10:30 PM", what: "Round Three", food: "Dessert", round: 3 }
+  - { time: "11:10 PM", what: "Accusations", food: "Coffee and the Reckoning (a Sazerac)", round: 3 }
+  - { time: "11:25 PM", what: "The reveal and the hidden door", food: "", round: 3 }
+  - { time: "11:50 PM", what: "Awards, the midnight photograph, the guest book", food: "Midnight snacks", round: 3 }
+
+# Awards, read out after the reveal (the run of show has the patter).
+# Print → Award certificates prints one each with a line for the winner.
+awards:
+  - { title: "Best Detective", for: "Named the murderer, the motive and the way out of the study." }
+  - { title: "Best Performance", for: "Never once broke character. Possibly never will." }
+  - { title: "Best Dressed", for: "Dressed for a reckoning, and won it." }
+  - { title: "Most Suspicious Innocent Person", for: "The most votes of anyone who didn't do it." }
+  - { title: "Most Unhinged Theory", for: "Wrong in ways that will be discussed for years." }
+  - { title: "Best Liar", for: "Lied beautifully, and possibly still is." }
+  - { title: "Richest Blackmailer", for: "Ended the night with the most Blackwood Blackmail Notes." }
+
+# Real-life couples (Ross, October 2026). Their characters may only be
+# romantic with each other, and no line anywhere may hint that either would
+# stray or take a dig at their partner. The checker flags romance words that
+# link a coupled character to anyone else. Single players are fair game.
+couples:
+  - [noor, joji]
+  - [lindsey, malik]
+  - [maya, kevin]

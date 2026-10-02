@@ -10,6 +10,23 @@ texts:
     from: Blackwood Manor
     trigger: { round: 1, after: 1 }
     body: "NOTICE: The lower road has washed out in the storm. Police delayed. The house regrets that no one may leave before midnight."
+  - id: all-welcome
+    from: Blackwood Manor
+    trigger: { history: true }
+    stamp: "Tonight"
+    body: "Welcome. Sign the book in the Front Hall. The house remembers everyone who signs it."
+  - id: all-eastwing
+    from: Blackwood Manor
+    trigger: { round: 1, after: 25 }
+    body: "A guest has been seen in the east wing. There are no guests in the east wing."
+  - id: all-portrait
+    from: Blackwood Manor
+    trigger: { round: 2, after: 9 }
+    body: "Lady Evangeline's portrait has been straightened. Nobody admits to straightening it."
+  - id: all-chair
+    from: Blackwood Manor
+    trigger: { round: 3, after: 12 }
+    body: "The empty chair at the Supper has been given a fresh glass. Someone poured it."
   - id: all-raven
     from: Unknown number
     trigger: { round: 2, after: 20 }

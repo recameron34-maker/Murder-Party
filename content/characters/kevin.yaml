@@ -31,14 +31,22 @@ backstory: |
   out) and stormed onto the terrace to smoke and rage at the rain. You
   were out there until the lights came back.
 
-  And there's Morgan. A week in Cannes last summer. She's been distant
-  since. You're sure it's just the job.
+  And there's **Maya Rose**, the cook's granddaughter. The summer you were
+  fourteen she showed you where the kitchen hid the good biscuits and you
+  taught her to swim in the black lake below the house. Last spring you
+  found each other again, and you've been together since, secretly: your
+  late father would have called her "the help", and you never dared ask
+  Arthur. You went to the study at 9:20 to finally tell him. He didn't let
+  you get that far. There's a ring in your jacket, bought with the last of
+  his allowance. You were going to say it at midnight anyway.
 
 relationships:
   - with: arthur
     text: Your uncle. You performed devotion for fifteen years and got "you're getting nothing" for your trouble.
+  - with: maya
+    text: The love of your life, and the one secret in this house that's yours. Tonight you were going to say it out loud.
   - with: morgan
-    text: Your Cannes fling. You think it's still on. You'd do anything for her, and you'd defend her to anyone.
+    text: Arthur's lawyer, who has handled your allowance for years. Always kind, always quick with a pen. You'd defend her to anyone.
   - with: reggie
     text: Your cousin. You spent the afternoon helping him move furniture into the study. He owes you.
   - with: carlotta
@@ -72,17 +80,18 @@ knows:
 secret: |
   You **threatened Arthur at 9:20** and you live entirely on his money, which
   stops at midnight. But you were on the terrace, on camera, during the
-  murder.
+  murder. And you've been secretly with Maya Rose for a year.
 
 blackmail:
   - You said "You're going to regret this" to Arthur.
   - You live on an allowance from Arthur, which ends tonight.
-  - You had an affair with Morgan in Cannes.
+  - You and Maya Rose are secretly together, and there's a ring in your pocket.
 
 instructions:
   - In Round One you **must admit you said "You're going to regret this."** Insist you meant the family, not murder.
   - When a cufflink is found, **recognize it as yours** and panic. You don't know when you lost it.
   - Defend Morgan if people accuse her. You can't help yourself.
+  - If anyone points at Maya, defend her, loudly. Explaining why is optional.
   - In Round Three, the coat will matter. Follow your envelope.
 
 mission: |
@@ -131,6 +140,15 @@ texts:
     trigger: { history: true }
     stamp: "9:21 PM"
     body: "Regret is a luxury, Kevin. You can't afford it either."
+  - id: kevin-maya-history
+    from: M ♥
+    trigger: { history: true }
+    stamp: "6:20 PM"
+    body: "If you tell him tonight, tell him properly. I'm not a secret you keep from your uncle. (Fine, I am. But not after midnight.)"
+  - id: kevin-maya-r2
+    from: M ♥
+    trigger: { round: 2, after: 5 }
+    body: "I was at the study door at 9:36. It was a woman's voice. You were outside, I know you were. Hold your nerve."
   - id: kevin-morgan-r1
     from: Morgan
     trigger: { round: 1, after: 14 }
@@ -141,7 +159,8 @@ texts:
     body: "Motion recorded: TERRACE CAM 02, 21:22 to 21:47. Footage retained 24h."
 
 host_notes: |
-  Supporting. False suspect C. The terrace camera still (late Round Two)
+  Supporting. Kevin and Maya are a couple in real life: their storyline is
+  a secret romance with each other, never with anyone else. False suspect C. The terrace camera still (late Round Two)
   clears him. In Round Three he hands Reggie the bank statement; the prop
   must be in his Round Three envelope. If Kevin isn't cast, Reggie "finds" the
   statement in Arthur's coat himself. Morgan's Round One text to Kevin

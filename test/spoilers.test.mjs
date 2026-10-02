@@ -114,17 +114,17 @@ test('updates API returns only your own delivered texts, on schedule', async () 
   const get = async (cookie) => (await app.fetch('/api/updates', { cookie })).json();
 
   let d = await get(maya);
-  assert.deepEqual(d.texts.map((t) => t.id), ['maya-arthur-history']);
+  assert.deepEqual(d.texts.map((t) => t.id).sort(), ['all-welcome', 'maya-arthur-history', 'maya-kevin-history']);
   assert.equal(d.round, 0);
 
   const t0 = app.now;
   await app.setRound(hostCookie, 1);
   app.now = new Date(t0.getTime() + 2 * 60000); // Round One + 2 min
   d = await get(maya);
-  assert.deepEqual(d.texts.map((t) => t.id).sort(), ['all-road', 'maya-arthur-history']);
-  app.now = new Date(t0.getTime() + 4 * 60000); // + 4 min: Jimmy F's text (after: 3)
+  assert.deepEqual(d.texts.map((t) => t.id).sort(), ['all-road', 'all-welcome', 'maya-arthur-history', 'maya-kevin-history']);
+  app.now = new Date(t0.getTime() + 4 * 60000); // + 4 min: Kevin's text (after: 3)
   d = await get(maya);
-  assert.ok(d.texts.some((t) => t.id === 'maya-jimmyf-r1'));
+  assert.ok(d.texts.some((t) => t.id === 'maya-kevin-r1'));
   assert.ok(!d.texts.some((t) => t.id.startsWith('kevin-')), 'no other guests\' texts');
   assert.ok(!d.texts.some((t) => t.id === 'maya-unknown-r2'), 'round 2 text not before round 2');
 
@@ -192,7 +192,7 @@ test('the guest house plan shows rooms only: no passage, evidence pins, whereabo
     const html = await (await app.fetch('/', { cookie: await app.loginGuest(id) })).text();
     const maps = [...html.matchAll(/<svg class="venue-map[\s\S]*?<\/svg>/g)].map((m) => m[0]);
     assert.equal(maps.length, 2, `${id} page has a plan of the flat (wide and tall)`);
-    for (const map of maps) assert.ok(!/Raven'?s Walk|passage|bookcase|bookshelf|v-pin|v-secret|#ff5c74|m-secret|m-pin|m-dots|#c0495a/i.test(map), `${id}'s plan leaks the passage or host markup`);
+    for (const map of maps) assert.ok(!/Raven'?s Walk|passage|bookcase|bookshelf|v-pin|v-secret|v-story|data-case|#ff5c74|m-secret|m-pin|m-dots|#c0495a/i.test(map), `${id}'s plan leaks the passage or host markup`);
     assert.ok(!/class="manor-map"/.test(html), `${id}'s page carries the story map (it shows the study and library back to back)`);
     assert.ok(!/murder-zone|escape-zone|mapdata|webgraph|heatmap/.test(html), `${id}'s page carries host-only visuals`);
   }

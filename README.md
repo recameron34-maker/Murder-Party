@@ -16,19 +16,23 @@ A live-action murder mystery for ~25 guests, plus the website that runs it:
     and which are shut (it turns upright on phones), the Blackwood family
     tree, the legend, the Supper rules and Blackmail Cash.
 - **Host panel** (`/host`, password-protected), grouped into four menus:
-  - **Tonight**: a dashboard with round controls, "right now" (what must come
-    out this round and who carries it, evidence to release, cue texts, the
-    suspicion target), the run of show (with a table of contents), and texts.
-  - **The case**: a manor map with the secret passage, numbered evidence pins
-    and a minute-by-minute replay of everyone's movements; the true timeline
+  - **Tonight**: a dashboard that walks you through the night one step at a
+    time (**Now / Next**: what to say, which light routine to fire, which
+    texts to send, when to unlock a round), the suggested schedule by food
+    course, round controls, what must come out this round, the run of show
+    (with a table of contents), and texts.
+  - **The case**: the murder drawn on your floor plan, with the hidden door,
+    numbered evidence pins and a minute-by-minute replay of everyone's
+    movements; the true timeline
     as swimlane charts; the evidence checklist; the suspicion curve heat map;
     and a clickable web of every relationship.
   - **People**: character cards with search and tier filters, full dossiers,
     the roster and flex coverage.
   - **Prep**: Setup (your floor plan with every hiding spot, what to hide
     when, and room-by-room set dressing), print views (envelopes, evidence,
-    ballots, Blackmail Cash, hint cards, login cards, room signs) and the
-    consistency checker.
+    ballots, Blackmail Cash, hint cards, login cards, room signs, name
+    badges, award certificates) and the consistency checker. Setup also has
+    the lighting plan.
 
 > **Spoiler warning:** everything in this repo (`content/`, `docs/`, the
 > tests) reveals the solution. Guests should only ever see the website.
@@ -63,6 +67,7 @@ Everything is plain text in `content/`. Change a file and refresh the page.
 | `content/texts.yaml` | Texts sent to everyone |
 | `content/guest-common.yaml` | Rules and lore shown on every guest page, including the step-by-step of the night, the family tree and the public room descriptions |
 | `content/venue.yaml` | Your flat as the venue: each real room's outline (traced from the floor plan), the manor room it plays, and which rooms are shut. Shown to guests, so no hiding spots here |
+| `content/lights.yaml` | The lighting plan for your smart bulbs: Alexa groups and one routine per scene (arrival, the rolling blackout, the flicker, the reveal). Run-of-show segments name their scene |
 | `content/suspicion.yaml` | The suspicion curve: who the room should suspect at each stage (drives the heat map) |
 | `content/lore.yaml` | Host-only world: rooms (and which are in the murder zone), set dressing for each room of the flat (`venue_setup`), the flat's real hidden door (`venue_passage`), the raven curse, the man in the walls, NPCs |
 | `content/hints.yaml` | Hint cards |

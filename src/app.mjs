@@ -213,6 +213,14 @@ async function hostRoute({ request, deps, url, path, method, now, secure, secret
       });
       return back(n ? `Round ${n} is live.` : 'Back to before the Supper.');
     }
+    if (path === '/host/segment') {
+      const slug = f('to');
+      if (!content.script.some((s) => s.slug === slug)) return back('Unknown segment', true);
+      await updateState(store, (s) => {
+        s.segment = slug;
+      });
+      return redirect('/host#now');
+    }
     if (path === '/host/roster') {
       const id = f('id');
       const status = f('status');

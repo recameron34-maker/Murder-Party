@@ -2,6 +2,7 @@
 title: Accusations
 round: 3
 kind: speech
+lights: accusations
 ---
 Pass out ballots.
 

@@ -97,6 +97,13 @@ export function printView(ctx, kind, query) {
       return printPage('Hint cards', chunk(content.hints, 6).map((g) => html`<div class="page"><div class="cards">${g.map((h) => html`<div class="cardp" style="min-height:50mm">
   <div class="stamp">${h.category}</div><p style="font-size:15pt"><i>"${h.text}"</i></p>
   <div style="position:absolute;bottom:3mm;right:4mm;font-size:7pt;color:#777">from Round ${h.from_round}</div></div>`)}</div></div>`));
+    case 'badges':
+      // Name badges: name and public role only (what everyone knows).
+      return printPage('Name badges', chunk(liveIds, 8).map((group) => html`<div class="page"><div class="badges">${group.map((id) => html`<div class="badge"><div class="stamp">BLACKWOOD MANOR · MIDNIGHT SUPPER</div><div class="b-name">${chars[id].name}</div><div class="b-role">${chars[id].public_role}</div></div>`)}</div></div>`));
+    case 'awards': {
+      const awards = content.party.awards || [];
+      return printPage('Award certificates', awards.map((a) => html`<div class="page sign certificate"><div class="stamp">BLACKWOOD MANOR · THE MIDNIGHT SUPPER</div><p class="sign-sub">The house is pleased to recognise</p><div class="cert-line"></div><h1>${a.title}</h1><p class="sign-line">${a.for}</p><p class="cert-foot">Signed at midnight, in the presence of the raven.<br>Reginald Blackwood, host</p></div>`));
+    }
     case 'signs': {
       const venue = content.venue || {};
       const gc = content.guestCommon || {};

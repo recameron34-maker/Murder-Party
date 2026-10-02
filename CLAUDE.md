@@ -126,15 +126,17 @@ that player. The spoiler rules above still apply and are enforced server-side
   Actions". `src/lib/check.mjs` is the
   consistency checker. `src/views/` holds the guest, host and print pages;
   `src/views/visuals.mjs` draws every diagram as server-side SVG (crests,
-  round stepper, manor map, timeline swimlanes, relationship webs, family
-  tree, suspicion heat map). Guest-mode visuals must use only that guest's
-  data and public lore: the guest manor map never shows the passage, pins or
+  round stepper, the flat's plan in guest / setup / case modes, timeline
+  swimlanes, relationship webs, family tree, suspicion heat map). Guest-mode visuals must use only that guest's
+  data and public lore: the guest plan never shows the passage, pins or
   whereabouts, and the guest list shows `public_role`, never `role`.
   Guests see the real flat (`content/venue.yaml`, traced from Ross's floor
   plan), never the story map; the venue file is guest-safe, so hiding spots
   stay in `content/clues/` and set dressing in `lore.yaml` → `venue_setup`.
-  Part Two forbids hiding anything in bedrooms, so no bedroom may play a
-  game room. The flat has a real hidden door (behind the landing bookshelf,
+  Ross allows unlocking bedrooms, but Part Two forbids hiding anything in
+  them (the checker enforces it). The host case map (Map page) draws the
+  story on the flat, so every room in anyone's evening needs a home in
+  `venue.yaml` (an area, a spot, or a `stage` box). The flat has a real hidden door (behind the landing bookshelf,
   between the library and the study); it lives only in `lore.yaml` →
   `venue_passage` and must never appear in `venue.yaml` or any guest page.
 - `test/`: spoiler-leak, Morgan-parity, auth and content tests.

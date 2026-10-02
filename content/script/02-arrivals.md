@@ -3,8 +3,11 @@ title: Arrivals
 round: 0
 kind: speech
 changes: Greetings added for more of the cast.
+lights: arrival
 ---
 Let everyone arrive, get drinks and admire costumes. Stay in character as Reggie.
+
+🆕 **The guest book.** Steer every arrival to the book by the coat rack: "Everyone signs the book. Family tradition since 1891. The house likes to know who it's had." Have them sign as their character. Keep it out for the reveal; it makes a lovely last line.
 
 Suggested greetings:
 

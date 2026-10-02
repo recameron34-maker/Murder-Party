@@ -4,20 +4,28 @@
 # the study, the library and the rest on the night. Never put hiding spots,
 # the passage or anyone's whereabouts here. Hiding spots live in
 # content/clues/*.yaml; host-only setup notes live in lore.yaml (venue_setup).
+# The host case map (Map page) draws the story on this same plan.
 #
 # Coordinates trace Ross's floor plan (image pixels, about 1206 × 647).
-#   game   the manor room this real room plays (room id from lore.yaml)
-#   shut   off-limits tonight ("the East Wing stays dark"); never a game area
+#   game        the manor room this real room plays (room id from lore.yaml)
+#   shut        off-limits tonight ("the East Wing stays dark"); never a game area
+#   story       a shut room's part in the story (case map only; nobody goes in)
+#   aka         how guest pages name the room ("Tonight: the …")
 #   game_where  optional: where in the room, for "Tonight: …" on guest pages
 #   label_at    optional: where the room's label sits (default: the middle)
 #   label       false to leave a room unlabelled
 #   pins_at     optional: where the host map starts its row of evidence pins
-#   spots  manor rooms that are just a corner of a real room
+#   spots       manor rooms that are just a corner of a real room
+#   stage       where each manor room's people stand on the case map replay,
+#               as [x, y, width, height]
 #
 # Why this layout: the study (the Side Room, labelled "Room" on the floor
-# plan) is the dead end of the flat, and the library is the landing at the
-# top of the front stairs. The way between them is through the Family Room,
-# the Living Room and the front door, past everyone at the party.
+# plan) is the dead end of the flat, through the Family Room, which plays the
+# East Corridor. The library is the landing at the top of the front stairs.
+# The way between them runs through the Living Room (the Drawing Room, where
+# the party is) and the front door (the Library Corridor), past everyone.
+# Ross: any bedroom may be unlocked. The bedroom off the Dining Area plays the
+# Conservatory, so Carlotta waits out of sight of the study door.
 
 name: "Ross's flat"
 viewbox: [14, 76, 1180, 492]
@@ -39,9 +47,10 @@ areas:
     shut: true
     shape: [[26, 345], [138, 345], [138, 485], [26, 485]]
   - id: bedroom-small
-    name: Bedroom
+    name: Small bedroom
     size: "8'5\" × 8'3\""
     shut: true
+    story: east-wing
     shape: [[141, 141], [278, 141], [278, 276], [141, 276]]
   - id: linen
     name: Closet
@@ -49,18 +58,26 @@ areas:
     shape: [[279, 141], [326, 141], [326, 276], [279, 276]]
   - id: bedroom
     name: Bedroom
+    aka: bedroom off the Dining Area
     size: "11'7\" × 8'3\""
+    game: conservatory
+    shape: [[327, 141], [512, 141], [512, 193], [490, 193], [490, 276], [327, 276]]
+  - id: bedroom-closet
+    name: Closet
     shut: true
-    shape: [[327, 141], [490, 141], [490, 276], [327, 276]]
+    label: false
+    shape: [[491, 194], [512, 194], [512, 276], [491, 276]]
   - id: laundry
     name: Laundry
     size: "4'6\" × 13'0\""
+    game: kitchen
     note: Walk through to reach the terrace.
     shape: [[141, 278], [217, 278], [217, 485], [141, 485]]
   - id: kitchen
     name: Kitchen
     size: "12'6\" × 13'0\""
-    game: kitchen
+    game: billiard-room
+    game_where: at the island
     shape: [[218, 278], [414, 278], [414, 485], [218, 485]]
   - id: hall
     name: Hall
@@ -80,35 +97,38 @@ areas:
     name: Dining Area
     size: "13'10\" × 15'10\""
     game: dining-room
-    label_at: [650, 170]
+    label_at: [612, 150]
     shape: [[515, 141], [560, 90], [660, 90], [708, 141], [708, 343], [515, 343]]
   - id: primary-bedroom
     name: Primary Bedroom
     size: "12'5\" × 11'5\""
     shut: true
+    story: upstairs
     shape: [[578, 345], [775, 345], [775, 487], [738, 527], [615, 527], [578, 487]]
   - id: living-room
     name: Living Room
     size: "14'1\" × 12'7\""
     game: drawing-room
-    label_at: [790, 205]
+    label_at: [812, 160]
+    pins_at: [915, 205]
     shape: [[711, 141], [932, 141], [932, 343], [711, 343]]
   - id: landing
     name: Landing
     note: The top of the front stairs, inside the railings.
     game: library
+    label_at: [830, 374]
     shape: [[778, 345], [903, 345], [925, 403], [778, 403]]
   - id: front-stairs
     name: Front stairs
     outside: true
+    story: grounds
     note: Up from the street.
     shape: [[778, 405], [928, 405], [928, 487], [778, 487]]
   - id: family-room
     name: Family Room
     size: "15'5\" × 12'7\""
-    game: conservatory
-    game_where: in the bay window
-    label_at: [1090, 290]
+    game: east-corridor
+    label_at: [1070, 190]
     shape: [[934, 141], [1130, 141], [1178, 192], [1178, 292], [1130, 343], [934, 343]]
   - id: closet-right
     name: Closet
@@ -124,8 +144,8 @@ areas:
 
 # Manor rooms that are one corner of a real room.
 spots:
-  - { game: front-hall, area: living-room, at: [880, 280], label: "by the front door" }
-  - { game: billiard-room, area: family-room, at: [1000, 215], label: "at the card table" }
+  - { game: front-hall, area: living-room, at: [900, 262], label: "by the coat rack" }
+  - { game: library-corridor, area: living-room, at: [790, 322], label: "at the front door" }
 
 # Gaps in the walls (open doorways), drawn as breaks in the plan.
 openings:
@@ -134,6 +154,7 @@ openings:
   - [217, 320, 217, 450]    # laundry ↔ kitchen
   - [414, 280, 414, 356]    # kitchen ↔ hall (open)
   - [515, 290, 515, 336]    # hall ↔ dining area
+  - [513, 150, 513, 190]    # dining area ↔ bedroom (the Conservatory tonight)
   - [708, 178, 708, 278]    # dining area ↔ living room
   - [932, 168, 932, 318]    # living room ↔ family room
   - [1030, 343, 1092, 343]  # family room ↔ the Room
@@ -144,3 +165,21 @@ openings:
 # and through the front door (an opening above) into the Living Room.
 entrances:
   - { label: "Stairs up", at: [855, 487], dir: [0, -1] }
+
+# Case map only: where people stand in each manor room, [x, y, w, h].
+stage:
+  drawing-room: [716, 194, 150, 96]
+  front-hall: [872, 274, 56, 40]
+  library-corridor: [800, 328, 50, 14]
+  library: [868, 378, 30, 22]
+  east-corridor: [944, 228, 150, 96]
+  study: [1000, 372, 120, 24]
+  dining-room: [530, 186, 170, 60]
+  conservatory: [340, 236, 140, 30]
+  billiard-room: [230, 330, 170, 60]
+  gallery: [482, 334, 30, 22]
+  kitchen: [146, 330, 66, 120]
+  terrace: [80, 252, 50, 30]
+  east-wing: [150, 236, 120, 30]
+  upstairs: [600, 400, 160, 40]
+  grounds: [870, 452, 50, 26]

@@ -19,21 +19,21 @@ house:
 #   escape-zone  = where the hidden passage comes out
 rooms:
   study:            { name: "Arthur's study", zone: murder-zone, game_area: "The Side Room off the Family Room (12'3\" × 8'8\"), at the dead end of the flat" }
-  east-corridor:    { name: "East Corridor (outside the study)", zone: murder-zone, game_area: "The doorway from the Family Room into the Side Room" }
+  east-corridor:    { name: "East Corridor (outside the study)", zone: murder-zone, game_area: "The Family Room: the way to the study door" }
   library:          { name: "Library", zone: escape-zone, game_area: "The landing at the top of the front stairs, with the movable bookshelf" }
-  library-corridor: { name: "Library Corridor", zone: escape-zone, game_area: "The front door, between the landing and the Living Room" }
+  library-corridor: { name: "Library Corridor", zone: escape-zone, game_area: "The front door, between the Living Room and the landing" }
   drawing-room:     { name: "Drawing Room", zone: party, game_area: "Living Room" }
-  front-hall:       { name: "Front Hall", zone: party, game_area: "The front door corner of the Living Room (coat rack)" }
+  front-hall:       { name: "Front Hall", zone: party, game_area: "The coat rack by the front door, in the Living Room" }
   gallery:          { name: "Portrait Gallery", zone: party, game_area: "The Hall between the Kitchen and the Dining Area (hang the portraits here)" }
-  billiard-room:    { name: "Billiard Room", zone: party, game_area: "A card table in the Family Room" }
+  billiard-room:    { name: "Billiard Room", zone: party, game_area: "The kitchen island, with a card table cloth" }
   dining-room:      { name: "Dining Room (set for the Midnight Supper)", zone: party, game_area: "Dining Area (the table, set for the Supper)" }
-  conservatory:     { name: "Conservatory", zone: party, game_area: "The Family Room bay window" }
+  conservatory:     { name: "Conservatory", zone: party, game_area: "The bedroom off the Dining Area (unlocked tonight)" }
   terrace:          { name: "Terrace", zone: outside, game_area: "Balcony (through the Laundry and the back hall)" }
-  kitchen:          { name: "Kitchens and servery (downstairs)", zone: service, game_area: "Kitchen" }
+  kitchen:          { name: "Kitchens and servery (downstairs)", zone: service, game_area: "The Laundry, by the back stairs (the crash in the blackout)" }
   cellar:           { name: "Wine cellar", zone: service, game_area: "n/a" }
-  upstairs:         { name: "Upstairs bedrooms", zone: private, game_area: "n/a" }
-  east-wing:        { name: "The shut-up East Wing and its walled passages", zone: private, game_area: "Every shut room: the bedrooms, closets and back stairs" }
-  grounds:          { name: "Grounds, drive and ice house", zone: outside, game_area: "n/a" }
+  upstairs:         { name: "Upstairs bedrooms", zone: private, game_area: "The Primary Bedroom (shut; story only)" }
+  east-wing:        { name: "The shut-up East Wing and its walled passages", zone: private, game_area: "The small bedroom and every other shut room" }
+  grounds:          { name: "Grounds, drive and ice house", zone: outside, game_area: "The front stairs, outside" }
 
 # How Ross's flat plays the manor tonight (HOST ONLY). Keys are area ids from
 # venue.yaml, which holds the guest-safe plan. The host Setup page shows these
@@ -56,15 +56,20 @@ venue_setup:
     the doorway with a ribbon until the lights come back and the body is
     "found".
   family-room: >
-    Two rooms in one. The bay window is the Conservatory: every plant you own
-    and a cluster of candles. Against the solid wall, a card table with a
-    green cloth is the Billiard Room, Jimmy Friedman's game. Keep the doorway
-    to the study clear; it's the East Corridor.
+    The East Corridor, Arthur's end of the house: a runner rug if you have
+    one, two or three portraits, candles and nothing bright. Guests can
+    still hang out here, but keep a clear path to the study doorway. In the
+    story this room is empty at 9:31 to 9:41 except for the five people who
+    went to Arthur's door.
   living-room: >
     The Drawing Room, where the party lives. By the front door, a coat rack
     is the Front Hall: hang one dark prop overcoat on it (never a guest's
     coat). The Round Two L.V. note goes in its pocket. The torn ledger goes
-    under a sofa cushion late in Round Two.
+    under a sofa cushion late in Round Two. Silas's guest book and a pen sit
+    on a small table by the coat rack; everyone signs it on arrival, in
+    character. The front door itself is the
+    Library Corridor, "the only spot in the house where phones get signal",
+    where James and Alma see Morgan.
   dining-area: >
     The Dining Room, set for the Midnight Supper: candles, place cards, and
     one empty chair at the head.
@@ -74,9 +79,13 @@ venue_setup:
     Evangeline"). Arthur's letter to Molly goes behind one of them in Round
     One. Guests pass through on the way to the bathroom, so they will look.
   kitchen: >
-    Mrs. Hale's kitchens: food and drink. The blackout "starts" here: kill
-    the dining-room lights first, then the rest, and drop a pan for the crash
-    Tim hears.
+    The Billiard Room: Jimmy Friedman's card game at the island. A green
+    cloth, a deck, chips and a whisky decanter; food and drink can live on
+    the counters around it.
+  laundry: >
+    Mrs. Hale's kitchens, "below stairs" by the back stairs. The blackout
+    starts here: kill the dining-room lights first, then the rest, and drop
+    a pan back here for the crash Tim hears.
   balcony: >
     The Terrace, where Kevin paces from 9:22. Tape a fake security camera
     (or a phone on a stand) above the door. Reggie keeps the camera still.
@@ -85,9 +94,16 @@ venue_setup:
     the back stairs door closed.
   primary-bedroom: >
     Shut. Coats can go on the bed, but sign the door EAST WING: KEEP OUT, so
-    nobody searches it.
-  bedroom: Shut. EAST WING sign on the door.
-  bedroom-small: Shut. EAST WING sign on the door.
+    nobody searches it. In the story it's "upstairs", where Shea fetches
+    Arthur's medication at 9:38.
+  bedroom: >
+    Unlocked tonight as the Conservatory: every plant you own, candles, and
+    a chair by the window for Carlotta. Put personal things away; nothing is
+    hidden here (Part Two: nothing in bedrooms), it's just a room to be in.
+    Keep its closet shut.
+  bedroom-small: >
+    Shut. EAST WING sign on the door. In the story it's where Louis is
+    trapped in the walls from 9:25 until after the blackout.
 
 # The Raven's Walk is real tonight: the door between the landing and the
 # Side Room, hidden behind the landing bookshelf. HOST ONLY: never put it in
@@ -110,6 +126,14 @@ layout_notes: >
   the library side it only opens if you press the carved raven on the third
   shelf. The nearest powder room is off the Front Hall, the other way
   entirely from the library.
+
+  In Ross's flat (venue.yaml; the host Map page draws it): the study is the
+  Room at the dead end, reached only through the Family Room, which plays the
+  East Corridor. The library is the landing at the top of the front stairs.
+  The ordinary way between them runs through the Family Room, the Living
+  Room (the Drawing Room, full of people) and the front door (the Library
+  Corridor). The Raven's Walk is the real door between the Room and the
+  landing, hidden behind the landing bookshelf.
 
 legend:
   raven: >

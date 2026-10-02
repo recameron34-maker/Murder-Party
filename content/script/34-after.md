@@ -3,6 +3,7 @@ title: After the reveal and awards
 round: 4
 kind: speech
 changes: Added a Blackmail Cash award.
+lights: afterparty
 ---
 Once everyone settles: "But there is one final matter."
 
@@ -21,3 +22,12 @@ Once everyone settles: "But there is one final matter."
 - **Most Unhinged Theory**: Ross's discretion.
 - **Best Liar**: probably Morgan, assuming she survives socially.
 - 🆕 **Richest Blackmailer**: most Blackwood Cash at the end.
+
+🆕 **The Supper photograph.** Every year one photograph is taken at the
+stroke of midnight. Get everyone round the Dining Room table (or crammed
+into the Dining Area), give Tim the camera, and count down from ten. The
+empty chair stays empty.
+
+🆕 **The guest book.** Last thing: pass Silas's book round once more. "Sign
+out, please. The house likes to know who survived." (Print certificates for
+the awards from Print → Award certificates.)

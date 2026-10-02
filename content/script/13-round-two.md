@@ -4,6 +4,7 @@ round: 2
 kind: speech
 changes: Unlock in the host panel; Round Two physical evidence goes live; Morgan's email; floor plan to Joji.
 clues: [library-map, calendar]
+lights: round-two
 ---
 🆕 **Unlock Round Two in the host panel.** Hand envelopes out. 🆕 Hand Joji the old floor plan (or it's in his envelope). 🆕 Put Arthur's calendar out on the "study" desk.
 

@@ -179,18 +179,28 @@ dressing in `lore.yaml` → `venue_setup`. Host panel → Setup shows it all.
 
 | Real room | Plays |
 |---|---|
-| Living Room | Drawing Room; the front-door corner (coat rack) is the Front Hall |
-| Family Room | Conservatory (bay window) and Billiard Room (card table) |
-| Room (12'3" × 8'8", "Side Room" on the site) | Arthur's study; its doorway is the East Corridor |
-| Landing (top of the front stairs, inside the railings) | Library; its movable bookshelf is the library bookcase |
+| Room (12'3" × 8'8", "Side Room" on the site) | Arthur's study |
+| Family Room | The East Corridor: the only way to the study door |
+| Landing (top of the front stairs) | Library; its movable bookshelf is the library bookcase |
+| Living Room | Drawing Room (the party); the coat rack is the Front Hall; the front door is the Library Corridor |
 | Dining Area | Dining Room, set for the Supper |
+| Bedroom off the Dining Area (11'7" × 8'3") | Conservatory (unlocked; nothing hidden there) |
+| Kitchen | Billiard Room (the card game at the island) |
+| Laundry | The kitchens, where the blackout crash comes from |
 | Hall (6'1" × 5'1") | Portrait Gallery |
-| Kitchen | Mrs. Hale's kitchens, where the blackout "starts" |
-| Balcony | Terrace (reached through the Laundry and back hall) |
-| All three bedrooms, closets, back stairs | Shut: the East Wing |
+| Balcony | Terrace |
+| Small bedroom, Primary Bedroom, closets, back stairs | Shut. In the story the small bedroom is the East Wing (Louis) and the primary bedroom is "upstairs" (Shea) |
 
-Why: Part Two says nothing is hidden in bedrooms, so no bedroom plays a game
-room. Ross confirmed the Room can be the study.
+The case map (host → Map) draws the whole story on this plan, minute by
+minute. Ross (October 2026): any bedroom can be unlocked; the case map must
+match the flat. The Family Room has to be the East Corridor: the study's only
+ordinary door opens into it, and in the story nobody but the five study
+visitors is there between 9:31 and 9:41 (Carlotta's Conservatory and the card
+game moved away from the study door for that reason).
+
+Part Two says nothing is hidden in bedrooms: the Conservatory bedroom holds
+no evidence, and the checker enforces it. Ross confirmed the Room can be the
+study.
 
 **The Raven's Walk is real.** Between the landing and the Room there's a door
 hidden behind a movable bookshelf on the landing side (Ross, October 2026).
@@ -203,11 +213,80 @@ draws a plain wall there, and a test keeps it that way. Guests can still see
 on their plan that the library landing backs onto the study; that's a fair
 clue, and Round Two points them at the passage anyway.
 
+## Real couples (Ross, October 2026)
+
+Noor & Joji (married, Noor pregnant), Lindsey & Malik, Maya & Kevin. Their
+characters are only ever romantic with each other, and nothing suggests
+they'd stray or knocks their partner. Listed in `content/party.yaml` →
+`couples`; the checker errors on any romance linking one of them to anyone
+else. Single players are fair game.
+
+What changed to get there:
+- **Maya & Kevin** are now a secret couple in the story: the cook's
+  granddaughter and the heir who stayed, sweethearts from one summer at the
+  lake, hiding it from a family with opinions about "the help". Kevin went
+  to the study at 9:20 to tell Arthur; he has a ring in his pocket. They
+  text each other through the night. (Replaces Maya dating Jimmy Friedman
+  and Kevin's Cannes fling with Morgan; Morgan now simply handles Kevin's
+  allowance.)
+- **Jimmy Friedman** courts Lexi only. His mysterious second weekly bouquet
+  goes to his mother.
+- **Lindsey & Malik** are a united team. Their 9:15 conservatory meeting is a
+  whispered plan for midnight, not a fight (still a "secret meeting" to
+  everyone else, so the suspicion curve is unchanged).
+- **Joji**: Alma no longer has a crush on him; they're fellow students of
+  the house.
+
+Romances still in the story, all between characters assumed single (tell us
+if any of these players are partnered): Alma & James (secret affair), Louis
+& Shea (secret affair), Kush & Hannah (fling), Blake (spare) & Hannah
+(fling, past), Martin & Molly (exes), Jimmy Friedman courting Lexi, Clara &
+Arthur (not played).
+
+## Saltburn layers (October 2026)
+
+- The Blackwoods **collect people**: wards, goddaughters, protégés, staff's
+  children put through school. "Once you've slept at Blackwood, you never
+  really leave." (public lore; Reggie's opening uses it)
+- **Silas's guest book**: everyone signs on arrival, in character; family
+  names recur, outsiders appear once. New Supper rule: every guest signs the
+  book. Prop by the coat rack.
+- The house texts everyone through the night (the east wing, Lady
+  Evangeline's portrait, the empty chair's fresh glass).
+
+## Checked against published murder mystery games (October 2026)
+
+Commercial kits and hosting guides (Night of Mystery, Freeform Games,
+Masters of Mystery, Red Herring Games) agree on: character booklets ahead of
+time, name badges, a host who paces acts and rescues dead conversation,
+clues released progressively, objectives beyond "solve it", bribery and
+blackmail, pacing anchored to food courses, music and lighting, and awards
+at the end. We had most of it. Added:
+
+- **Lighting plan** (`content/lights.yaml`): Alexa groups per room and one
+  routine per scene, cued in the run of show and on the dashboard. The
+  blackout rolls room by room (dining room first, as Tim says) with thunder,
+  then returns with the study glowing red. Fire routines from the app, not
+  by voice. Stairs and bathroom stay on ordinary switches.
+- **Now / Next** on the dashboard: one step of the run of show at a time.
+- **Suggested schedule** by food course (`party.yaml` → `schedule`).
+- **Name badges** and **award certificates** (`party.yaml` → `awards`).
+- **The midnight photograph** and signing out of the guest book.
+
+## The look (October 2026)
+
+Saltburn-style theming, CSS only, on the existing night palette so every
+diagram still matches: a faint gold damask wallpaper behind everything, a
+candlelit vignette, gilt (gold-leaf) headings, an engraved inner frame on
+every card, a slow candle glow on each guest's crest and on the login raven,
+wax seals on sealed envelopes, and "Blackwood Manor · The Midnight Supper" /
+"You are expected" lines like an invitation. Motion stops for anyone who
+prefers reduced motion. The host dashboard opens with "Getting ready" (before
+the party) and "Now / Next" (during it).
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?
 - Who else does Courtney know? Add ties to `content/characters/courtney.yaml`.
-- Is there space for a card table in the Family Room (the Billiard Room)?
-  If not, move that spot in `content/venue.yaml`; the kitchen island works.
 - Is the landing roomy enough to search? Only the red folder is found there.
 - Any other real couples in the cast? Real couples make the best pairings.

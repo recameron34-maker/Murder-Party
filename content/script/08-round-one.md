@@ -3,6 +3,7 @@ title: Round One
 round: 1
 kind: speech
 changes: Unlock Round One in the host panel; phones pick it up within ~15 seconds.
+lights: investigation
 ---
 🆕 **Unlock Round One in the host panel**, then hand out the Round One envelopes.
 

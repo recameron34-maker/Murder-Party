@@ -5,6 +5,7 @@ kind: speech
 changes: Unlock in the host panel. Counterweight after Annie's sighting (Part Two §9). Draft letter released.
 clues: [draft-letter]
 send_texts: [morgan-unknown-r3]
+lights: round-three
 ---
 🆕 **Unlock Round Three in the host panel.** Hand envelopes out.
 

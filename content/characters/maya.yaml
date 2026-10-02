@@ -27,17 +27,22 @@ backstory: |
   twenty to ten. I've found something of your grandmother's."* You went a
   little early. You wish you hadn't.
 
-  Your romantic secret: for two months you've been seeing **Jimmy
-  Friedman**. Flowers, dinners, very good champagne. You do not know he has
-  also been sending flowers to Lexi.
+  Your other secret is **Kevin Blackwood**. The summer you were both
+  fourteen, the visiting nephew and the cook's granddaughter, you taught him
+  where the kitchen hid the good biscuits and he taught you to swim in the
+  black lake below the house. Last spring you found each other again, and
+  you've been together ever since, quietly. Quietly because the Blackwoods
+  have always had opinions about "the help", and because Kevin's whole life
+  runs on his uncle's money. He swore he'd stop hiding you tonight: at
+  midnight, at the Supper, where what's said can't be unsaid.
 
 relationships:
   - with: lexi
     text: Your co-birthday girl. Raised in silk while you were raised in flour. You're fond of her, mostly.
   - with: arthur
     text: The man who paid for your education and loved your grandmother. He was going to give you something of hers tonight.
-  - with: jimmy-friedman
-    text: Your secret boyfriend of two months. Charming, rich-ish, and suspiciously good at keeping his phone face-down.
+  - with: kevin
+    text: Your secret. The boy from the lake, grown into a man in a dinner jacket who checks you're all right from across every room. He promised to tell them all at midnight.
   - with: carlotta
     text: You played in this house together as children, the heiress and the cook's granddaughter. Then she left.
   - with: alma
@@ -47,7 +52,7 @@ evening:
   - at: "8:00 PM"
     until: "9:35 PM"
     where: drawing-room
-    text: Birthday toasts, champagne, Jimmy Friedman's hand on the small of your back when nobody was looking.
+    text: Birthday toasts, champagne, and Kevin catching your eye across the room while pretending he barely knows you. At 9:22 you watch him storm out to the terrace and decide to let him cool off.
   - at: "9:36 PM"
     until: "9:37 PM"
     where: east-corridor
@@ -62,22 +67,23 @@ knows:
   - 'Arthur''s exact words: "If the money isn''t back by midnight, I''m going public."'
   - 'The other voice was a **woman''s**. She said: "You''ll destroy me." You couldn''t tell whose voice it was through the door.'
   - Arthur had a surprise for you, something of Nana Rose's.
+  - Kevin stormed out to the terrace at 9:22. You let him go.
 
 secret: |
   You were **outside Arthur's study at 9:36** and heard him arguing with a
-  woman about missing money, minutes before he died. You're also secretly
-  dating Jimmy Friedman.
+  woman about missing money, minutes before he died. And you're secretly
+  with Kevin Blackwood, the heir who stayed.
 
 blackmail:
   - You were outside the study door at about 9:36.
   - The voice arguing with Arthur was a woman's.
-  - You're secretly dating Jimmy Friedman.
+  - You and Kevin Blackwood are secretly together.
 
 instructions:
   - Reveal Arthur's line about the money in **Round One**. Keep the woman's exact words, "You'll destroy me", for **Round Two**.
   - You honestly couldn't recognize the woman's voice. Never claim to.
   - You may cry, once, beautifully. It's your birthday.
-  - If you learn about Jimmy Friedman and Lexi, you may cause a scene.
+  - Keep Kevin secret unless someone pays. Defend him if you like, without saying why.
 
 mission: |
   Find out **which women were near Arthur's study** tonight. Names and times,
@@ -119,10 +125,15 @@ texts:
     trigger: { history: true }
     stamp: "7:55 PM"
     body: "Happy birthday, Maya. Study, twenty to ten. I've found something of Rose's. Don't tell Lexi, she'll want one too."
-  - id: maya-jimmyf-r1
-    from: Jimmy F. 🌹
+  - id: maya-kevin-history
+    from: K ♥
+    trigger: { history: true }
+    stamp: "6:15 PM"
+    body: "Wear the red. Midnight, I tell all of them. Your Nana would have liked me, admit it."
+  - id: maya-kevin-r1
+    from: K ♥
     trigger: { round: 1, after: 3 }
-    body: "Whatever happens tonight, birthday girl, you're safe with me. Delete this."
+    body: "I said something stupid to Arthur at 9:20. I was on the terrace after, the whole time. Don't look at me in there. Midnight still stands."
   - id: maya-unknown-r2
     from: Unknown number
     trigger: { round: 2, after: 2 }

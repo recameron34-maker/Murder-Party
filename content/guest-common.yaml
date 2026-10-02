@@ -38,6 +38,18 @@ legend: |
   fortune away has died before the papers were signed.* Edmund in 1923, down
   the cellar stairs. Cordelia in 1979, of a fever, an hour before midnight.
 
+  The Blackwoods **collect people**. A ward, a goddaughter, a cook's
+  granddaughter put through school, a nephew kept on an allowance, a
+  photographer given the run of the house. They take you in, dress you up,
+  let you sleep under the portraits, and make you feel, for one golden
+  summer, that you belong. The family saying: *once you've slept at
+  Blackwood, you never really leave.* Nobody is sure it's meant kindly.
+
+  In the Front Hall lies **Silas's guest book**. Everyone who has sat at the
+  Midnight Supper since 1891 has signed it. The family's names come back year
+  after year. Most other names appear once. **Sign it when you arrive, in
+  character.** The house likes to know who it's had.
+
   And last month the anonymous society column **The Keyhole** printed a blind
   item: *"Which crumbling pile has a tenant nobody invited? Staff report
   footsteps inside the walls and a larder that empties itself."*
@@ -50,6 +62,7 @@ supper_rules:
   - "The east wing stays dark after eleven."
   - "Never say the bird's name at the table. Call it *the bird*."
   - "The last drink before midnight is poured by the house."
+  - "Every guest signs the book."
 
 blackmail_rules: |
   Everyone starts with **$3,000 in Blackwood Blackmail Notes** (three
@@ -73,7 +86,8 @@ how_to_play: |
     before the round ends.
   - Search only the designated game areas (the rooms on the plan in the
     Manor tab that aren't marked shut). Nothing is hidden in personal
-    belongings, bedrooms, drawers or cabinets.
+    belongings, bedrooms, drawers or cabinets, not even in the bedroom that
+    is playing the Conservatory tonight.
   - Never open a future envelope early. (Kushington.)
 
 rounds:

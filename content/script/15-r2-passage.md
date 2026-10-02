@@ -3,6 +3,7 @@ title: "Round Two: Tim → Joji (the passage)"
 round: 2
 kind: cue
 send_texts: []
+lights: flicker
 ---
 Tim's envelope instructs him to ask Joji whether the strange library door could be a passage. Once Tim asks, let Joji perform.
 
