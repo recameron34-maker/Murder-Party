@@ -234,10 +234,19 @@ h2[id],.card[id],section[id]{scroll-margin-top:96px}
 .cc-links a{color:var(--muted)}
 .dossier-head{display:flex;gap:14px;align-items:center;margin-bottom:10px}
 .dossier-head p{margin:.2em 0}
-.map-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.map-controls input[type=range]{flex:1;min-width:200px;accent-color:var(--gold)}
-.m-clock{font:700 1.4rem 'Cormorant Garamond',Georgia,serif;color:var(--gold2);min-width:90px}
-.m-events{flex-basis:100%;color:var(--muted);min-height:2.6em}
+.map-controls{display:block}
+.mc-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.mc-group{display:inline-flex;gap:4px}
+.mc-row select{font-size:14px;padding:.25em .4em}
+.m-clock{font:700 1.4rem 'Cormorant Garamond',Georgia,serif;color:var(--gold2);min-width:150px}
+.m-track{position:relative;margin:10px 0 4px}
+.m-track input[type=range]{width:100%;accent-color:var(--gold)}
+.m-marks{position:relative;height:14px}
+.m-mark{position:absolute;top:0;width:10px;height:10px;margin-left:-5px;border-radius:50%;border:1px solid var(--muted);background:var(--panel2);padding:0;cursor:pointer}
+.m-mark.crit{border-color:var(--gold);background:var(--gold)}
+.m-mark:hover{transform:scale(1.4)}
+.m-events{color:var(--muted);min-height:2.6em}
+.m-events .crit{color:var(--ink)}
 .pin-list{list-style:none;padding:0}
 .ready-list .tick{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);font:700 .75rem system-ui,sans-serif;color:var(--muted)}
 .ready-list li.ok .tick{border-color:var(--ok);color:#a7d3a2}

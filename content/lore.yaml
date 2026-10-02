@@ -110,6 +110,7 @@ venue_setup:
 # venue.yaml. Drawn on the host Setup map as a line [x1, y1, x2, y2].
 venue_passage:
   line: [932, 350, 932, 400]
+  between: [room, landing]
   label: "Raven's Walk"
   note: >
     The door between the study (Side Room) and the library (landing), behind

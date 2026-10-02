@@ -160,6 +160,14 @@ openings:
   - [1030, 343, 1092, 343]  # family room ↔ the Room
   - [460, 358, 498, 358]    # hall ↔ bathroom
   - [812, 343, 850, 343]    # the front door: landing ↔ living room
+  - [800, 404, 890, 404]    # the front stairs come up onto the landing
+
+# Closed doors into shut rooms. Not drawn as openings; the case map's
+# replay walks story moves through them (Louis to the East Wing, Shea
+# "upstairs").
+doors:
+  - [230, 277, 272, 277]    # kitchen ↔ small bedroom
+  - [648, 343, 688, 343]    # dining area ↔ primary bedroom
 
 # `dir` is the way you walk in: up the front stairs, across the landing,
 # and through the front door (an opening above) into the Living Room.

@@ -145,6 +145,73 @@ export function venueWhere(venue, gameId) {
   return `the ${a.aka || a.name}${detail ? `, ${detail}` : ''}`;
 }
 
+// ---------------------------------------------------------------- walking routes (case map)
+// The flat as a graph: rooms joined by doorways (openings, closed doors, and
+// on the host map the hidden door). Routes are lists of doorway midpoints.
+function distToSegment(px, py, [ax, ay], [bx, by]) {
+  const dx = bx - ax;
+  const dy = by - ay;
+  const len = dx * dx + dy * dy || 1;
+  const t = Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / len));
+  return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+}
+function areasTouching(venue, x, y, limit = 12) {
+  return (venue.areas || [])
+    .map((a) => ({ id: a.id, d: Math.min(...a.shape.map((p, i) => distToSegment(x, y, p, a.shape[(i + 1) % a.shape.length]))) }))
+    .filter((a) => a.d <= limit)
+    .sort((a, b) => a.d - b.d)
+    .slice(0, 2)
+    .map((a) => a.id);
+}
+
+export function areaOfRoom(venue, room) {
+  const sp = (venue.spots || []).find((x) => x.game === room);
+  if (sp) return sp.area;
+  return ((venue.areas || []).find((a) => a.game === room) || (venue.areas || []).find((a) => a.story === room))?.id || null;
+}
+
+export function venueGraph(venue, { secret = null } = {}) {
+  const edges = [];
+  const link = (line, weight, kind, between) => {
+    const [x1, y1, x2, y2] = line;
+    const mx = (x1 + x2) / 2;
+    const my = (y1 + y2) / 2;
+    const ends = between || areasTouching(venue, mx, my);
+    if (ends.length === 2) edges.push({ a: ends[0], b: ends[1], x: mx, y: my, w: weight, kind });
+  };
+  for (const o of venue.openings || []) link(o, 1, 'open');
+  for (const o of venue.doors || []) link(o, 1.2, 'door');
+  if (secret?.line) link(secret.line, 2.5, 'secret', secret.between);
+  return edges;
+}
+
+// Cheapest route between two rooms: [{x, y, kind}] doorway by doorway.
+export function routeBetween(edges, from, to) {
+  if (!from || !to || from === to) return [];
+  const dist = { [from]: 0 };
+  const prev = {};
+  const done = new Set();
+  for (;;) {
+    let u = null;
+    for (const [k, v] of Object.entries(dist)) if (!done.has(k) && (u === null || v < dist[u])) u = k;
+    if (u === null || u === to) break;
+    done.add(u);
+    for (const e of edges) {
+      const v = e.a === u ? e.b : e.b === u ? e.a : null;
+      if (!v || done.has(v)) continue;
+      const nd = dist[u] + e.w;
+      if (dist[v] === undefined || nd < dist[v]) {
+        dist[v] = nd;
+        prev[v] = { from: u, e };
+      }
+    }
+  }
+  if (dist[to] === undefined) return null;
+  const out = [];
+  for (let v = to; v !== from; v = prev[v].from) out.unshift({ x: prev[v].e.x, y: prev[v].e.y, kind: prev[v].e.kind });
+  return out;
+}
+
 export function venueAreaName(venue, gameId) {
   const where = venueSpot(venue, gameId);
   const a = where && (venue.areas || []).find((x) => x.id === where.area);
