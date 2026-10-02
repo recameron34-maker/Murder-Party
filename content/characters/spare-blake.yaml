@@ -5,6 +5,7 @@ tier: flex                      # HOST
 effort: medium                  # HOST
 pronouns: any                   # HOST
 role: Fencing master to the Blackwoods
+public_role: "Fencing master to the Blackwoods"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've taught half this family to hold a blade. The other half you've taught other things."
 
 costume: |

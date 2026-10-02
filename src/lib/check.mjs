@@ -58,6 +58,8 @@ export function checkContent(content, state = {}) {
       if (!r?.reveal?.length) add('error', where, id, `Round ${n} envelope has no "reveal" items`);
     }
     if (!c.mission?.trim()) add('error', where, id, 'Missing secret mission');
+    if (!c.public_role?.trim()) add('error', where, id, 'Missing public_role (shown on every guest list)');
+    else if (/keyhole|killer|murder|secret|undercover|fake|gatecrash|treasure/i.test(c.public_role)) add('warn', where, id, `public_role "${c.public_role}" may give away a secret; it appears on every guest's page`);
 
     for (const rel of c.relationships || []) {
       if (!known.has(rel.with)) add('error', where, id, `Relationship refers to undefined character "${rel.with}"`);
@@ -126,7 +128,9 @@ export function checkContent(content, state = {}) {
 
   // ------------------------------------------------------------ solution window
   const sw = content.timeline.solution_window || {};
+  if (sw.killer && !ids.has(sw.killer)) add('error', 'timeline.yaml', 'solution_window', `killer "${sw.killer}" is not a character`);
   for (const [zoneName, zone] of Object.entries(sw)) {
+    if (!zone || typeof zone !== 'object') continue;
     const win = [parseClock(zone.from), parseClock(zone.to)];
     for (const id of content.characterOrder) {
       for (const e of chars[id].evening || []) {
@@ -253,6 +257,61 @@ export function checkContent(content, state = {}) {
     const r = roster[id];
     if (r.status === 'maybe') add('info', 'roster', id, `${chars[id].name} (${r.player}) is a maybe; their [[if]] lines stay off until confirmed`);
     if (r.status === 'spare-assigned' && !r.player) add('warn', 'roster', id, `${chars[id].name} is spare-assigned but has no player name`);
+  }
+
+  // ------------------------------------------------------------ public lore (shown on every guest page)
+  const gc = content.guestCommon || {};
+  for (const [room, text] of Object.entries(gc.rooms || {})) {
+    if (!rooms[room]) add('error', 'guest-common.yaml', room, `Room "${room}" isn't in lore.yaml`);
+    if (/passage|raven'?s walk|hidden door|secret door|bookcase/i.test(text)) add('error', 'guest-common.yaml', room, 'Public room description hints at the hidden passage');
+  }
+  const famIds = new Set((gc.family_tree || []).map((f) => f.id));
+  for (const f of gc.family_tree || []) if (f.parent && !famIds.has(f.parent)) add('error', 'guest-common.yaml', f.id, `Family tree parent "${f.parent}" is missing`);
+  for (const id of content.clueOrder) {
+    const cl = content.clues[id];
+    if (cl.room && !rooms[cl.room]) add('error', cl._file || 'clues', id, `Unknown room "${cl.room}"`);
+    if (cl.kind === 'physical' && !cl.room) add('warn', cl._file || 'clues', id, 'Physical clue has no room (it won\'t show on the host map)');
+  }
+  // ------------------------------------------------------------ the venue (Ross's flat; also shown to guests)
+  const venue = content.venue || {};
+  const areaById = new Map();
+  for (const a of venue.areas || []) {
+    if (areaById.has(a.id)) add('error', 'venue.yaml', a.id, 'Duplicate area id');
+    areaById.set(a.id, a);
+    if (!Array.isArray(a.shape) || a.shape.length < 3) add('error', 'venue.yaml', a.id, 'Area needs a shape of at least three points');
+    if (a.game && !rooms[a.game]) add('error', 'venue.yaml', a.id, `Unknown manor room "${a.game}"`);
+    if (a.game && a.shut) add('error', 'venue.yaml', a.id, 'A shut room cannot also be a game room');
+  }
+  for (const sp of venue.spots || []) {
+    if (!rooms[sp.game]) add('error', 'venue.yaml', sp.game, `Unknown manor room "${sp.game}"`);
+    const a = areaById.get(sp.area);
+    if (!a) add('error', 'venue.yaml', sp.game, `Spot is in unknown area "${sp.area}"`);
+    else if (a.shut) add('error', 'venue.yaml', sp.game, `Spot is in a shut room (${sp.area})`);
+  }
+  for (const text of [venue.name, ...(venue.areas || []).flatMap((a) => [a.name, a.note]), ...(venue.spots || []).map((sp) => sp.label), ...(venue.entrances || []).map((e) => e.label)]) {
+    if (text && /passage|raven'?s walk|hidden door|secret door|bookcase/i.test(text)) add('error', 'venue.yaml', 'text', `Guest-visible venue text hints at the hidden passage: "${text}"`);
+  }
+  if ((venue.areas || []).length) {
+    const placed = new Set([...(venue.areas || []).filter((a) => a.game).map((a) => a.game), ...(venue.spots || []).map((sp) => sp.game)]);
+    for (const id of content.clueOrder) {
+      const cl = content.clues[id];
+      if (cl.kind === 'physical' && cl.carrier === 'found' && cl.room && !placed.has(cl.room)) add('error', cl._file || 'clues', id, `Hidden in the ${cl.room}, but no real room plays the ${cl.room} (venue.yaml)`);
+    }
+    for (const id of ['study', 'library']) if (!placed.has(id)) add('error', 'venue.yaml', id, `No real room plays the ${id}`);
+  }
+  for (const id of Object.keys(content.lore.venue_setup || {})) if (!areaById.has(id)) add('error', 'lore.yaml', id, `venue_setup refers to unknown venue area "${id}"`);
+  const secret = content.lore.venue_passage;
+  if (secret) {
+    const [sx1, sy1, sx2, sy2] = secret.line || [];
+    const near = (x, y, x1, y1, x2, y2) => x >= Math.min(x1, x2) - 8 && x <= Math.max(x1, x2) + 8 && y >= Math.min(y1, y2) - 8 && y <= Math.max(y1, y2) + 8;
+    for (const o of venue.openings || []) {
+      if (near((o[0] + o[2]) / 2, (o[1] + o[3]) / 2, sx1, sy1, sx2, sy2)) add('error', 'venue.yaml', 'openings', 'An opening is drawn where the hidden door is: guests would see the passage');
+    }
+  }
+
+  for (const sus of content.suspicion?.suspects || []) {
+    if (!ids.has(sus.id)) add('error', 'suspicion.yaml', sus.id, `Unknown character "${sus.id}"`);
+    if ((sus.levels || []).length !== (content.suspicion.stages || []).length) add('error', 'suspicion.yaml', sus.id, 'Needs one level per stage');
   }
 
   // ------------------------------------------------------------ hints

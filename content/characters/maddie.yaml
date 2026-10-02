@@ -4,6 +4,7 @@ written_for: Maddie             # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
 role: Daniel's fiancée, wearer of a borrowed necklace
+public_role: "Daniel's fiancée, wearing the Blackwood jet necklace"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "It looks better on you than it ever looked on a Blackwood. That has to count for something."
 
 costume: |

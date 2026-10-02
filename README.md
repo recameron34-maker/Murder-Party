@@ -5,14 +5,30 @@
 A live-action murder mystery for ~25 guests, plus the website that runs it:
 
 - **Guest companion app.** Each guest logs in with their own passphrase and
-  sees only their character: story, connections, evening, secret, mission,
-  round envelopes as you unlock them, and an in-page phone that receives
-  texts during the night.
-- **Host panel** (`/host`, password-protected). Unlock rounds, fire cue texts,
-  text anyone, assign spares to late arrivals, plus the run of show, true
-  timeline, evidence checklist, consistency checker, flex coverage and print
-  views (envelopes, evidence, ballots, Blackmail Cash, hint cards, login
-  cards).
+  sees only their character. Four tabs (a bottom bar on phones):
+  - **You**: portrait crest, a "right now" card for the live round, their
+    story, a diagram of their own connections, a strip of their own
+    evening, secret and mission.
+  - **Envelopes**: Round 1–3 envelopes as you unlock them.
+  - **Phone**: texts that arrive during the night.
+  - **Manor**: how the night works step by step, who's here (by public role
+    only), a plan of your flat showing which manor room each real room plays
+    and which are shut (it turns upright on phones), the Blackwood family
+    tree, the legend, the Supper rules and Blackmail Cash.
+- **Host panel** (`/host`, password-protected), grouped into four menus:
+  - **Tonight**: a dashboard with round controls, "right now" (what must come
+    out this round and who carries it, evidence to release, cue texts, the
+    suspicion target), the run of show (with a table of contents), and texts.
+  - **The case**: a manor map with the secret passage, numbered evidence pins
+    and a minute-by-minute replay of everyone's movements; the true timeline
+    as swimlane charts; the evidence checklist; the suspicion curve heat map;
+    and a clickable web of every relationship.
+  - **People**: character cards with search and tier filters, full dossiers,
+    the roster and flex coverage.
+  - **Prep**: Setup (your floor plan with every hiding spot, what to hide
+    when, and room-by-room set dressing), print views (envelopes, evidence,
+    ballots, Blackmail Cash, hint cards, login cards, room signs) and the
+    consistency checker.
 
 > **Spoiler warning:** everything in this repo (`content/`, `docs/`, the
 > tests) reveals the solution. Guests should only ever see the website.
@@ -45,8 +61,10 @@ Everything is plain text in `content/`. Change a file and refresh the page.
 | `content/script/*.md` | The revised run of show (Part One + Part Two upgrades; 🆕 marks new material) |
 | `content/roster.yaml` | Who plays whom and their status (confirmed / maybe / declined / spare) |
 | `content/texts.yaml` | Texts sent to everyone |
-| `content/guest-common.yaml` | Rules and lore shown on every guest page |
-| `content/lore.yaml` | Host-only world: rooms, the raven curse, the man in the walls, NPCs |
+| `content/guest-common.yaml` | Rules and lore shown on every guest page, including the step-by-step of the night, the family tree and the public room descriptions |
+| `content/venue.yaml` | Your flat as the venue: each real room's outline (traced from the floor plan), the manor room it plays, and which rooms are shut. Shown to guests, so no hiding spots here |
+| `content/suspicion.yaml` | The suspicion curve: who the room should suspect at each stage (drives the heat map) |
+| `content/lore.yaml` | Host-only world: rooms (and which are in the murder zone), set dressing for each room of the flat (`venue_setup`), the flat's real hidden door (`venue_passage`), the raven curse, the man in the walls, NPCs |
 | `content/hints.yaml` | Hint cards |
 | `docs/decisions.md` | How every open question was resolved, and what's still worth confirming |
 | `docs/source/` | Your original Part One and Part Two (never edited) |
@@ -202,8 +220,13 @@ terminal prints the address to give out.
 - Morgan's page has the same sections, shape and approximate length as
   everyone else's, and "you may accept Blackmail Cash and lie" sits among
   everyone's private instructions.
+- Diagrams are drawn on the server as inline SVG, from that guest's data
+  only. The guest house plan has no passage, no evidence pins and nobody's
+  whereabouts; the guest list shows each character's `public_role`, never
+  their real role. The map replay, swimlanes, web and heat map are host-only.
 - `npm test` proves it: it logs in as every guest at every round and checks
-  for leaks of other characters' secrets, locked rounds and host notes. It
+  for leaks of other characters' secrets, whereabouts, private roles, locked
+  rounds and host notes, and that the house plan carries no host markup. It
   also checks Morgan's page parity, auth and cookie tampering, rate limits
   and text delivery.
 

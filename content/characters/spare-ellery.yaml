@@ -5,6 +5,7 @@ tier: flex                      # HOST
 effort: high                    # HOST
 pronouns: any                   # HOST
 role: Former child star of "The Raven's Heir"
+public_role: "Former child star of the TV series The Raven's Heir"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "At eleven you played young Arthur Blackwood on television. You never quite stopped."
 
 costume: |

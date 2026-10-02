@@ -1,6 +1,6 @@
 id: library-map
 title: The old floor plan
-kind: physical
+kind: prop
 source: part-two
 round: 2
 timing: early

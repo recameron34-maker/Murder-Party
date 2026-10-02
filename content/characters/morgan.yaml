@@ -5,6 +5,7 @@ written_for: Morgan            # HOST
 tier: core                     # HOST
 pronouns: she/her              # HOST
 role: Arthur's attorney, Blackwood Legal Counsel
+public_role: "Arthur's attorney, Blackwood Legal Counsel"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Everybody's secrets cross your desk eventually. You file them alphabetically."
 
 costume: |

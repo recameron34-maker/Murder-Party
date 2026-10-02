@@ -5,6 +5,7 @@ tier: flex                      # HOST
 effort: high                    # HOST
 pronouns: any                   # HOST
 role: Arthur's "dear old friend from Monaco" (gatecrasher)
+public_role: "Arthur's old friend from Monaco"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Nobody invited you. Nobody's going to ask you to leave. That's the whole trick."
 
 costume: |

@@ -35,6 +35,8 @@ export function loadContent(root = path.resolve('content')) {
   const timeline = readYaml(path.join(root, 'timeline.yaml'));
   const hints = readYaml(path.join(root, 'hints.yaml')).hints || [];
   const globalTexts = (readYaml(path.join(root, 'texts.yaml')) || {}).texts || [];
+  const suspicion = readYaml(path.join(root, 'suspicion.yaml')) || { stages: [], suspects: [] };
+  const venue = readYaml(path.join(root, 'venue.yaml')) || { areas: [], spots: [], openings: [], entrances: [] };
 
   const characters = {};
   const charDir = path.join(root, 'characters');
@@ -102,6 +104,8 @@ export function loadContent(root = path.resolve('content')) {
     timeline,
     hints,
     globalTexts,
+    suspicion,
+    venue,
     characters,
     characterOrder,
     clues,

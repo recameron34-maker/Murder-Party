@@ -18,22 +18,87 @@ house:
 #   murder-zone  = the study and the corridor outside it
 #   escape-zone  = where the hidden passage comes out
 rooms:
-  study:            { name: "Arthur's study", zone: murder-zone, game_area: "Ross's designated 'study' area" }
-  east-corridor:    { name: "East Corridor (outside the study)", zone: murder-zone, game_area: "Hallway leading to the 'study'" }
-  library:          { name: "Library", zone: escape-zone, game_area: "Ross's designated 'library' area" }
-  library-corridor: { name: "Library Corridor", zone: escape-zone, game_area: "Approach to the 'library'" }
-  drawing-room:     { name: "Drawing Room", zone: party, game_area: "Main party room" }
-  front-hall:       { name: "Front Hall", zone: party, game_area: "Entry" }
-  gallery:          { name: "Portrait Gallery", zone: party, game_area: "Wall with framed pictures" }
-  billiard-room:    { name: "Billiard Room", zone: party, game_area: "Card/game table" }
-  dining-room:      { name: "Dining Room (set for the Midnight Supper)", zone: party, game_area: "Dining table" }
-  conservatory:     { name: "Conservatory", zone: party, game_area: "Window / plant corner" }
-  terrace:          { name: "Terrace", zone: outside, game_area: "Balcony or by the window" }
+  study:            { name: "Arthur's study", zone: murder-zone, game_area: "The Side Room off the Family Room (12'3\" × 8'8\"), at the dead end of the flat" }
+  east-corridor:    { name: "East Corridor (outside the study)", zone: murder-zone, game_area: "The doorway from the Family Room into the Side Room" }
+  library:          { name: "Library", zone: escape-zone, game_area: "The landing at the top of the front stairs, with the movable bookshelf" }
+  library-corridor: { name: "Library Corridor", zone: escape-zone, game_area: "The front door, between the landing and the Living Room" }
+  drawing-room:     { name: "Drawing Room", zone: party, game_area: "Living Room" }
+  front-hall:       { name: "Front Hall", zone: party, game_area: "The front door corner of the Living Room (coat rack)" }
+  gallery:          { name: "Portrait Gallery", zone: party, game_area: "The Hall between the Kitchen and the Dining Area (hang the portraits here)" }
+  billiard-room:    { name: "Billiard Room", zone: party, game_area: "A card table in the Family Room" }
+  dining-room:      { name: "Dining Room (set for the Midnight Supper)", zone: party, game_area: "Dining Area (the table, set for the Supper)" }
+  conservatory:     { name: "Conservatory", zone: party, game_area: "The Family Room bay window" }
+  terrace:          { name: "Terrace", zone: outside, game_area: "Balcony (through the Laundry and the back hall)" }
   kitchen:          { name: "Kitchens and servery (downstairs)", zone: service, game_area: "Kitchen" }
   cellar:           { name: "Wine cellar", zone: service, game_area: "n/a" }
   upstairs:         { name: "Upstairs bedrooms", zone: private, game_area: "n/a" }
-  east-wing:        { name: "The shut-up East Wing and its walled passages", zone: private, game_area: "n/a" }
+  east-wing:        { name: "The shut-up East Wing and its walled passages", zone: private, game_area: "Every shut room: the bedrooms, closets and back stairs" }
   grounds:          { name: "Grounds, drive and ice house", zone: outside, game_area: "n/a" }
+
+# How Ross's flat plays the manor tonight (HOST ONLY). Keys are area ids from
+# venue.yaml, which holds the guest-safe plan. The host Setup page shows these
+# next to the plan, with the evidence to hide in each room by round.
+venue_setup:
+  landing: >
+    The library. The movable bookshelf in front of the hidden door is the
+    library bookcase: fill it with old books, add a LIBRARY sign and a
+    candle, and let it sit a finger's width proud of the wall, the way Tim
+    remembers it. Don't move it and don't let anyone else move it until the
+    reveal. The red folder goes on a shelf in Round Two, laid flat among the
+    books, never behind them. Guests arrive through here, so it doubles as
+    the way in.
+  room: >
+    Arthur's study. Clear the built-in desk except for the raven prop, a
+    decanter and one glass, a desk blotter, a paperweight, a few books and a
+    wastebasket. Drape a black smoking jacket over the chair, or tape an
+    outline on the floor. One lamp, nothing brighter. Sign on the doorway:
+    THE STUDY. Round One evidence goes in before anyone arrives; rope off
+    the doorway with a ribbon until the lights come back and the body is
+    "found".
+  family-room: >
+    Two rooms in one. The bay window is the Conservatory: every plant you own
+    and a cluster of candles. Against the solid wall, a card table with a
+    green cloth is the Billiard Room, Jimmy Friedman's game. Keep the doorway
+    to the study clear; it's the East Corridor.
+  living-room: >
+    The Drawing Room, where the party lives. By the front door, a coat rack
+    is the Front Hall: hang one dark prop overcoat on it (never a guest's
+    coat). The Round Two L.V. note goes in its pocket. The torn ledger goes
+    under a sofa cushion late in Round Two.
+  dining-area: >
+    The Dining Room, set for the Midnight Supper: candles, place cards, and
+    one empty chair at the head.
+  hall: >
+    The Portrait Gallery. Hang or prop three or four framed pictures (old
+    portraits from a thrift shop are perfect, and one should be "Lady
+    Evangeline"). Arthur's letter to Molly goes behind one of them in Round
+    One. Guests pass through on the way to the bathroom, so they will look.
+  kitchen: >
+    Mrs. Hale's kitchens: food and drink. The blackout "starts" here: kill
+    the dining-room lights first, then the rest, and drop a pan for the crash
+    Tim hears.
+  balcony: >
+    The Terrace, where Kevin paces from 9:22. Tape a fake security camera
+    (or a phone on a stand) above the door. Reggie keeps the camera still.
+  back-hall: >
+    The way to the terrace through the Laundry. Keep the laundry tidy and
+    the back stairs door closed.
+  primary-bedroom: >
+    Shut. Coats can go on the bed, but sign the door EAST WING: KEEP OUT, so
+    nobody searches it.
+  bedroom: Shut. EAST WING sign on the door.
+  bedroom-small: Shut. EAST WING sign on the door.
+
+# The Raven's Walk is real tonight: the door between the landing and the
+# Side Room, hidden behind the landing bookshelf. HOST ONLY: never put it in
+# venue.yaml. Drawn on the host Setup map as a line [x1, y1, x2, y2].
+venue_passage:
+  line: [932, 350, 932, 400]
+  label: "Raven's Walk"
+  note: >
+    The door between the study (Side Room) and the library (landing), behind
+    the movable bookshelf. It stays shut and hidden until the reveal, when
+    Reggie moves the shelf and walks through it.
 
 layout_notes: >
   The study is at the dead end of the East Corridor. The library looks like
@@ -104,6 +169,18 @@ npcs:
   - id: silas
     name: Silas Blackwood
     note: Founder (d. 1919). Built the manor, the passages, and the Supper.
+  - id: edmund
+    name: Edmund Blackwood
+    note: Silas's son (1879–1923). Meant to leave the fortune to the Church; fell down the cellar stairs the night before.
+  - id: montague
+    name: Montague Blackwood
+    note: Cordelia's widower. Hosted the Midnight Supper from her death in 1979 until his in 1997, when Arthur took over.
+  - id: lionel
+    name: Lionel Blackwood
+    note: Arthur's younger brother, Reggie's father (1958–2011).
+  - id: edgar
+    name: Edgar Blackwood
+    note: Arthur's youngest brother, Kevin's father (1961–2016).
   - id: cordelia
     name: Cordelia Blackwood
     note: Arthur's mother (d. 1979). The curse's most recent "victim."

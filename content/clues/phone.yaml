@@ -7,6 +7,7 @@ timing: end
 carrier: host
 delivery: Reggie holds it up at the end of Round One and reads the last message.
 hide: Reggie keeps it on him.
+room: study            # where it is found in the manor (for the host map)
 print: |
   ARTHUR BLACKWOOD: iPhone (recovered beneath the desk)
 

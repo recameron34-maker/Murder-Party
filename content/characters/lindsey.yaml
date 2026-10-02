@@ -4,6 +4,7 @@ written_for: Lindsey            # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
 role: Arthur's private banker
+public_role: "Arthur's private banker at Vale & Sons"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Discretion is the product. You've never once given it away for free."
 
 costume: |

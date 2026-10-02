@@ -123,8 +123,20 @@ that player. The spoiler rules above still apply and are enforced server-side
   `.github/landing/build.mjs`, linking to a read-only, spoiler-full preview
   of every branch (each built by that branch's `scripts/build-static.mjs`).
   Previews must never contain passphrases. Pages Source must be "GitHub
-  Actions".. `src/lib/check.mjs` is the
-  consistency checker. `src/views/` holds the guest, host and print pages.
+  Actions". `src/lib/check.mjs` is the
+  consistency checker. `src/views/` holds the guest, host and print pages;
+  `src/views/visuals.mjs` draws every diagram as server-side SVG (crests,
+  round stepper, manor map, timeline swimlanes, relationship webs, family
+  tree, suspicion heat map). Guest-mode visuals must use only that guest's
+  data and public lore: the guest manor map never shows the passage, pins or
+  whereabouts, and the guest list shows `public_role`, never `role`.
+  Guests see the real flat (`content/venue.yaml`, traced from Ross's floor
+  plan), never the story map; the venue file is guest-safe, so hiding spots
+  stay in `content/clues/` and set dressing in `lore.yaml` → `venue_setup`.
+  Part Two forbids hiding anything in bedrooms, so no bedroom may play a
+  game room. The flat has a real hidden door (behind the landing bookshelf,
+  between the library and the study); it lives only in `lore.yaml` →
+  `venue_passage` and must never appear in `venue.yaml` or any guest page.
 - `test/`: spoiler-leak, Morgan-parity, auth and content tests.
 
 **Before committing:** run `npm run check` (zero errors) and `npm test` (all

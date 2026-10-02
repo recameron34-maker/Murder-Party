@@ -4,6 +4,7 @@ written_for: Maya               # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
 role: Birthday guest; granddaughter of the manor's old cook
+public_role: "Birthday girl; granddaughter of the manor's old cook"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You grew up below stairs. Tonight you're the birthday girl at the top of them."
 
 costume: |

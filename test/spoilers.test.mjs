@@ -88,7 +88,7 @@ for (const [label, roster] of [
   const app = await makeApp({ roster });
   const hostCookie = await app.loginHost();
   await app.setRound(hostCookie, 3);
-  const shape = (html) => [...html.matchAll(/<(h[1-4]|section|nav|details|meta|title)\b[^>]*>/g)].map((m) => m[0].replace(/>[^<]*$/, '').replace(/content="[^"]*"|id="(?!character|envelopes|phone|supper)[^"]*"/g, '')).join('|');
+  const shape = (html) => [...html.replace(/<svg[\s\S]*?<\/svg>/g, '<svg>').matchAll(/<(h[1-4]|section|nav|details|meta|title)\b[^>]*>/g)].map((m) => m[0].replace(/>[^<]*$/, '').replace(/content="[^"]*"|id="(?!character|envelopes|phone|manor)[^"]*"/g, '')).join('|');
   const headings = (html) => [...html.matchAll(/<h[23]\b[^>]*>([\s\S]*?)<\/h[23]>/g)].map((m) => m[1].replace(/<[^>]+>/g, '').trim()).join(' / ');
   const pages = {};
   for (const id of content.characterOrder.filter((x) => chars[x].tier !== 'flex')) {
@@ -182,4 +182,49 @@ test('unassigned spares and declined maybes cannot log in; assigned spares can',
   await app.fetch('/host/roster', { method: 'POST', form: { id: 'savanah', player: 'Savanah', status: 'declined' }, cookie: hostCookie });
   const page = await (await app.fetch('/', { cookie: savanah })).text();
   assert.ok(page.includes('Speak your passphrase'), 'declined guest is logged out');
+});
+
+test('the guest house plan shows rooms only: no passage, evidence pins, whereabouts or murder zones', async () => {
+  const app = await makeApp();
+  const hostCookie = await app.loginHost();
+  await app.setRound(hostCookie, 3);
+  for (const id of ['morgan', 'joji', 'tim', 'alma']) {
+    const html = await (await app.fetch('/', { cookie: await app.loginGuest(id) })).text();
+    const maps = [...html.matchAll(/<svg class="venue-map[\s\S]*?<\/svg>/g)].map((m) => m[0]);
+    assert.equal(maps.length, 2, `${id} page has a plan of the flat (wide and tall)`);
+    for (const map of maps) assert.ok(!/Raven'?s Walk|passage|bookcase|bookshelf|v-pin|v-secret|#ff5c74|m-secret|m-pin|m-dots|#c0495a/i.test(map), `${id}'s plan leaks the passage or host markup`);
+    assert.ok(!/class="manor-map"/.test(html), `${id}'s page carries the story map (it shows the study and library back to back)`);
+    assert.ok(!/murder-zone|escape-zone|mapdata|webgraph|heatmap/.test(html), `${id}'s page carries host-only visuals`);
+  }
+});
+
+const allStrings = (v) => (typeof v === 'string' ? [v] : v && typeof v === 'object' ? Object.values(v).flatMap(allStrings) : []);
+
+test('each guest sees only their own whereabouts, and other characters only by public role', async () => {
+  const app = await makeApp();
+  const hostCookie = await app.loginHost();
+  await app.setRound(hostCookie, 3);
+  const { liveIds } = rosterHelpers(content, (await app.state()));
+  for (const id of loginIds) {
+    const html = await (await app.fetch('/', { cookie: await app.loginGuest(id) })).text();
+    const text = pageText(html);
+    // Phrases this guest legitimately knows too (e.g. a line Maya overhears) are skipped.
+    const own = snippet(allStrings(chars[id]).join(' '), Infinity);
+    for (const other of content.characterOrder) {
+      if (other === id) continue;
+      for (const e of chars[other].evening || []) {
+        const s = snippet(e.text, 40);
+        if (s.length >= 30 && !own.includes(s)) assert.ok(!text.includes(s), `${id}'s page contains ${other}'s whereabouts: "${s}"`);
+      }
+    }
+    // The guest list: live characters only, each by public role.
+    const list = html.match(/<ul class="guest-list">([\s\S]*?)<\/ul>/)[1];
+    const listed = [...list.matchAll(/<b>([^<]+)<\/b>/g)].map((m) => m[1].replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&'));
+    assert.deepEqual([...listed].sort(), liveIds.map((x) => chars[x].name).sort(), `${id}'s guest list is exactly the live cast`);
+    const listText = pageText(list);
+    for (const other of liveIds) {
+      const c = chars[other];
+      if (!c.public_role.includes(c.role) && other !== id) assert.ok(!listText.includes(c.role), `${id}'s guest list shows ${other}'s private role`);
+    }
+  }
 });

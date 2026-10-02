@@ -10,6 +10,7 @@ You need (see **Evidence** for the full list with hiding spots, and **Print** fo
 - Round One, Two and Three envelopes (Print → Envelopes)
 - Arthur's phone clue
 - 🆕 Physical evidence by round, hidden in the designated game areas before guests arrive
+- 🆕 The flat dressed as the manor: Host panel → **Setup** has the room-by-room list and every hiding spot; Print → **Room signs** for THE STUDY, THE LIBRARY and the rest, plus EAST WING · SHUT for closed doors
 - 🆕 Props that live inside envelopes: Morgan's email (R2), the old floor plan (Joji, R2), Carlotta's note (R3), Martin's note (R3), Arthur's bank statement (Kevin, R3)
 - Malik's scheduled-message printout
 - 🆕 Terrace camera still (keep on you)

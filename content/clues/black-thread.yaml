@@ -6,7 +6,8 @@ round: 2
 timing: mid
 carrier: found
 delivery: Found caught on the raven (or in a small evidence bag "from the raven"). It should not match any one guest.
-hide: Tied around the raven prop's beak, or in a clear bag beside it in the "study."
+hide: Tied round the raven prop's beak on the study desk. Add it mid Round Two.
+room: study            # where it is found in the manor (for the host map)
 print: |
   BLACKWOOD EVIDENCE: A few black threads, velvet, snagged on the bronze
   raven's beak.

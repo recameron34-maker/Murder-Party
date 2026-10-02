@@ -4,6 +4,7 @@ written_for: Annie              # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
 role: House manager of Blackwood Manor
+public_role: "House manager of Blackwood Manor"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've poured every drink in this house for eleven years. You know who needs one."
 
 costume: |

@@ -4,6 +4,7 @@ written_for: Clara              # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
 role: Arthur's former fiancée
+public_role: "Arthur's former fiancée"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You left him three weeks before the wedding. You've been finding your way back to his study ever since."
 
 costume: |

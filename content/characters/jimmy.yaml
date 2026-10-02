@@ -4,6 +4,7 @@ written_for: Jimmy (not Jimmy Friedman)   # HOST
 tier: core                      # HOST
 pronouns: he/him                # HOST
 role: Arthur's ward, recently cut from the will
+public_role: "Arthur's ward, raised at Blackwood Manor"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Raised in the house, never of it. As of last month, not even in the will."
 
 costume: |

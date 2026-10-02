@@ -4,6 +4,7 @@ written_for: Alma               # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
 role: Archivist of the Blackwood library
+public_role: "Archivist cataloguing the Blackwood library; lives at the manor"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've read every letter this family ever wrote. You wish one had been to you."
 
 costume: |

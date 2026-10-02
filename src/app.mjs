@@ -304,6 +304,10 @@ async function hostRoute({ request, deps, url, path, method, now, secure, secret
   if (path === '/host/check') return respond(host.checkPage(ctx));
   if (path === '/host/flex') return respond(host.flexPage(ctx));
   if (path === '/host/print') return respond(host.printIndexPage(ctx));
+  if (path === '/host/map') return respond(host.mapPage(ctx));
+  if (path === '/host/setup') return respond(host.setupPage(ctx));
+  if (path === '/host/web') return respond(host.webPage(ctx));
+  if (path === '/host/suspicion') return respond(host.suspicionPage(ctx));
 
   let m;
   if ((m = /^\/host\/characters\/([a-z0-9-]+)$/.exec(path)) && content.characters[m[1]]) return respond(host.characterPage(ctx, m[1]));

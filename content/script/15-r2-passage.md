@@ -12,4 +12,6 @@ After Joji reveals the passage connects the study to library:
 
 *Pause.* "Without ever using the study door again."
 
+🆕 *Don't open the real door yet.* If anyone heads for the landing bookshelf, stop them: "Touch Silas's bookcase and the house will have you for breakfast." Save it for the reveal.
+
 🆕 If Ellery (spare) is cast, they'll now gasp about the TV series' library bookcase. Let them.

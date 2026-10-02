@@ -4,6 +4,7 @@ written_for: Kevin              # HOST
 tier: supporting                # HOST
 pronouns: he/him                # HOST
 role: Arthur's nephew, the heir who wasn't
+public_role: "Arthur's nephew, Reggie's cousin"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You're the Blackwood who stayed. Apparently that counts for nothing."
 
 costume: |

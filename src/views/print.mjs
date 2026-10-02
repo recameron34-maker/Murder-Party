@@ -4,6 +4,7 @@ import { html, raw, toString } from '../lib/html.mjs';
 import { md, mdInline, applyConditionals } from '../lib/markdown.mjs';
 import { rosterHelpers } from '../lib/roster.mjs';
 import { FONTS, PRINT_CSS } from './styles.mjs';
+import { gameLabel } from './visuals.mjs';
 
 const ROUND_WORDS = { 1: 'Round One', 2: 'Round Two', 3: 'Round Three' };
 
@@ -96,6 +97,17 @@ export function printView(ctx, kind, query) {
       return printPage('Hint cards', chunk(content.hints, 6).map((g) => html`<div class="page"><div class="cards">${g.map((h) => html`<div class="cardp" style="min-height:50mm">
   <div class="stamp">${h.category}</div><p style="font-size:15pt"><i>"${h.text}"</i></p>
   <div style="position:absolute;bottom:3mm;right:4mm;font-size:7pt;color:#777">from Round ${h.from_round}</div></div>`)}</div></div>`));
+    case 'signs': {
+      const venue = content.venue || {};
+      const gc = content.guestCommon || {};
+      const sign = (big, small, line) => html`<div class="page sign"><div class="stamp">BLACKWOOD MANOR</div><h1>${big}</h1><p class="sign-sub">${small}</p>${line ? html`<p class="sign-line">${I(line)}</p>` : ''}</div>`;
+      const games = [...(venue.areas || []).filter((a) => a.game).map((a) => a.game), ...(venue.spots || []).map((sp) => sp.game)];
+      const shutDoors = (venue.areas || []).filter((a) => a.shut && !/closet/i.test(a.name));
+      return printPage('Room signs', [
+        ...games.map((g) => sign(`THE ${gameLabel(g, content.lore.rooms).toUpperCase()}`, 'A room of Blackwood Manor', gc.rooms?.[g])),
+        ...shutDoors.map((a) => sign('EAST WING · SHUT', a.name, 'The east wing stays dark. Nothing in here is part of the game.')),
+      ]);
+    }
     default:
       return null;
   }

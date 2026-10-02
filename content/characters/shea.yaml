@@ -4,6 +4,7 @@ written_for: Shea               # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
 role: Arthur's live-in private nurse
+public_role: "Arthur's live-in nurse"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You know the body in this house better than anyone. Tonight that's not a comfort."
 
 costume: |

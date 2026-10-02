@@ -42,12 +42,16 @@ add('/host/characters', host.charactersPage(ctx('/host/characters')));
 add('/host/check', host.checkPage(ctx('/host/check')));
 add('/host/flex', host.flexPage(ctx('/host/flex')));
 add('/host/print', host.printIndexPage(ctx('/host/print')));
+add('/host/map', host.mapPage(ctx('/host/map')));
+add('/host/setup', host.setupPage(ctx('/host/setup')));
+add('/host/web', host.webPage(ctx('/host/web')));
+add('/host/suspicion', host.suspicionPage(ctx('/host/suspicion')));
 for (const id of content.characterOrder) {
   add(`/host/characters/${id}`, host.characterPage(ctx('/host/characters'), id));
   add(`/host/preview/${id}`, guestPage(content, state, id, { round: 0, preview: true, now }));
   for (const r of ROUNDS) add(`/host/preview/${id}?round=${r}`, guestPage(content, state, id, { round: r, preview: true, now }));
 }
-for (const kind of ['cards', 'evidence', 'ballots', 'cash', 'hints']) add(`/host/print/${kind}`, printView(ctx('/host/print'), kind, new URLSearchParams()));
+for (const kind of ['cards', 'evidence', 'ballots', 'cash', 'hints', 'signs']) add(`/host/print/${kind}`, printView(ctx('/host/print'), kind, new URLSearchParams()));
 for (const r of [1, 2, 3]) add(`/host/print/envelopes?round=${r}`, printView(ctx('/host/print'), 'envelopes', new URLSearchParams({ round: String(r) })));
 add('/guest-login', loginPage());
 
@@ -96,7 +100,22 @@ const index = page({
 <p class="flash bad"><b>Spoilers.</b> This is a read-only snapshot of the host planner and every guest's page, for checking progress. Anyone with this link can read everything, including the solution. Don't send it to guests. The real party site (passphrase logins, rounds, live texts) runs on Cloudflare; see the README.</p>
 <p class="small muted">Built ${now.toISOString().slice(0, 16).replace('T', ' ')} UTC · ${guestCount} guests cast · ${content.characterOrder.length} characters · ${content.clueOrder.length} clues · consistency checker: ${errors ? `${errors} errors` : 'no errors'}</p>
 <div class="grid">
-  ${[['/host', 'Host dashboard'], ['/host/script', 'Run of show'], ['/host/timeline', 'True timeline'], ['/host/evidence', 'Evidence & props'], ['/host/characters', 'Characters'], ['/host/texts', 'Phone texts'], ['/host/flex', 'Flex coverage'], ['/host/check', 'Consistency checker'], ['/host/print', 'Print views'], ['/guest-login', 'Guest login screen']].map(([href, label]) => html`<a class="card" style="text-decoration:none;color:inherit" href="${href}"><h3 style="margin:0">${label}</h3></a>`)}
+  ${[
+    ['/host', 'Host dashboard', 'Round controls, what must happen this round, the suspicion curve.'],
+    ['/host/setup', 'Setting up the flat', 'Your floor plan: which room plays what, and where each piece of evidence hides.'],
+    ['/host/map', 'The manor map', 'Rooms, the secret passage, evidence pins, and a minute-by-minute replay of the murder.'],
+    ['/host/timeline', 'True timeline', 'Where everyone was, as charts, plus when players learn each fact.'],
+    ['/host/web', 'Relationship web', 'Who is tied to whom. Click a face.'],
+    ['/host/suspicion', 'Suspicion curve', 'Who the room should suspect at each stage.'],
+    ['/host/script', 'Run of show', "Reggie's script, round by round."],
+    ['/host/evidence', 'Evidence & props', 'What to hide, where, and what it means.'],
+    ['/host/characters', 'Characters', `All ${content.characterOrder.length} dossiers.`],
+    ['/host/texts', 'Phone texts', 'Every timed and cue text.'],
+    ['/host/flex', 'Flex coverage', 'Which optional lines are live.'],
+    ['/host/check', 'Consistency checker', 'Contradictions and spoiler risks.'],
+    ['/host/print', 'Print views', 'Envelopes, cards, ballots, cash, hints.'],
+    ['/guest-login', 'Guest login screen', 'What guests see first.'],
+  ].map(([href, label, desc]) => html`<a class="card" style="text-decoration:none;color:inherit" href="${href}"><h3 style="margin:0">${label}</h3><p class="small muted" style="margin:.3em 0 0">${desc}</p></a>`)}
 </div>
 <h2>Guest pages (as each guest sees them)</h2>
 <table><tr><th>Character</th><th>Tier</th><th>Round</th></tr>

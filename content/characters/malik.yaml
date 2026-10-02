@@ -4,6 +4,7 @@ written_for: Malik              # HOST
 tier: core                      # HOST
 pronouns: he/him                # HOST
 role: Investigative podcaster, host of "Old Money"
+public_role: "Host of the investigative podcast Old Money"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Rich people never think the help is listening. You are the help, with a microphone."
 
 costume: |

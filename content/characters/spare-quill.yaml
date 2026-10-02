@@ -5,6 +5,7 @@ tier: flex                      # HOST
 effort: low                     # HOST
 pronouns: any                   # HOST
 role: Portrait painter
+public_role: "Portrait painter"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You paint the rich as they wish to be seen. It's the most lucrative lie in England."
 
 costume: |
