@@ -1,5 +1,5 @@
 id: shea
-name: Shea
+name: Shea Sheridan
 written_for: Shea               # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
@@ -33,6 +33,14 @@ backstory: |
   apologetic. You should have told Douglas. Instead you've been meeting him at
   midnight in a sealed-off maid's room. Saucy, dangerous, and not at all
   professional.
+
+  You trained on night shifts in a hospital that smelled of bleach and
+  despair, and you took the castle job because the advert said "live-in,
+  discreet, remote." It is all three. Your room is at the top of the back
+  stairs, with a window over the black lake and a door that locks from the
+  inside. You've nursed three rich men to the end and liked none of them
+  until Douglas, who called you "Sister" and asked about your life as if it
+  might be interesting. It is. You've just never told anyone here.
 
 relationships:
   - with: douglas

@@ -1,5 +1,5 @@
 id: clara
-name: Clara
+name: Clara Clarendon
 written_for: Clara              # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
@@ -32,6 +32,15 @@ backstory: |
   At 9:33 you went back, wanting to finish the conversation (or start
   another), but you saw someone farther down the corridor by the study door
   and lost your nerve. You couldn't see who it was.
+
+  You were engaged to Douglas twenty years ago, for eleven glorious months,
+  wearing a ring that had been Cordelia's. You gave it back the night before
+  the wedding, down by the black lake, and he threw it in. (He told everyone
+  you threw it. You let him.) Since then you've married once, divorced well,
+  and become the woman hostesses seat beside difficult men. The Clarendons
+  were old money before the Camerons had any money at all; your grandmother
+  called them "coal people" and never came to the Supper. You haven't missed
+  one since you were twenty-five.
 
 relationships:
   - with: douglas

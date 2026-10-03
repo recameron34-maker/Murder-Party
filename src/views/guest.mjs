@@ -118,7 +118,7 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
 </nav>
 
 <section class="panel" id="character">
-  ${nowCard(live, paper && !preview)}
+  ${nowCard(live, paper && live === 0)}
   <h2>Who you are</h2>
   <div class="card">${M(c.intro)}</div>
   <h3>Your costume</h3>

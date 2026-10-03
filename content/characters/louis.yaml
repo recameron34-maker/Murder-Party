@@ -1,5 +1,5 @@
 id: louis
-name: Louis
+name: Louis Loudoun
 written_for: Louis              # HOST
 tier: supporting                # HOST
 pronouns: he/him                # HOST
@@ -36,6 +36,15 @@ backstory: |
   At 9:45 the lights died and you were trapped in absolute darkness until you
   found a panel and fell out into the dining room at 9:46, right in front
   of Kim.
+
+  The Loudouns had a castle too, once. It's a ruin now, with a ticket booth
+  and a gift shop selling tea towels printed with your family crest. You've
+  spent your life in other people's great houses as a consultant, measuring
+  cornices and curing damp, and every one of them felt like a museum of what
+  you should have had. Cameron Castle is different. It has secrets the
+  family has forgotten, and you've appointed yourself the man who remembers
+  them. When you find the Raven Room you're going to sit in it, in the dark,
+  and feel at home.
 
 relationships:
   - with: shea

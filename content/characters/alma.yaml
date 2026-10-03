@@ -1,5 +1,5 @@
 id: alma
-name: Alma
+name: Alma Almsbury
 written_for: Alma               # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
@@ -28,6 +28,15 @@ backstory: |
   You are also, very quietly, **sleeping with James Calloway**. Two outsiders
   in a house that never quite let either of you in. Nobody knows. Douglas
   would have found it "touching," which is worse than disapproving.
+
+  The Almsburys were in service at the castle for three generations. Your
+  great-grandmother kept the linen and lies in the village churchyard under
+  a stone the Camerons paid for. In your first week you found her name in
+  the household accounts, in Silas's own hand, beside a wage of four
+  shillings. You took the job to catalogue the library. You stayed because
+  you can't stop reading the family's letters as if they were written to
+  you, and because at night, in Carlotta's silk, walking the long gallery,
+  you can almost pass for someone who was born here.
 
 relationships:
   - with: jimmy

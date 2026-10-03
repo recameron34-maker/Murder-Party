@@ -92,7 +92,7 @@ the words on their card, so say them exactly and walk away.
 [[/if]]
 
 [[if:spare-vesper]]
-**To Vesper:** "Vesper. Write everything down. I'll want it in the book."
+**To Maggie (Vesper):** "Ms. Pancini. Write everything down. I'll want it in the book."
 [[/if]]
 
 [[if:spare-blake]]

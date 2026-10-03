@@ -1,5 +1,5 @@
 id: albie
-name: Aalvia "Albie"
+name: Aalvia "Albie" Albemarle
 written_for: Albie / Aalvia (same guest)   # HOST
 tier: supporting                # HOST
 pronouns: confirm with Ross     # HOST
@@ -29,6 +29,15 @@ backstory: |
   face, for a liar."
 
   You and Douglas were secret allies. Nobody believes it.
+
+  You were born Aalvia Albemarle in a seaside town where your mother read
+  palms on the pier, and you learned the trade at her elbow: watch the
+  hands, never the cards. You added "Madame" at twenty-two and the accent at
+  twenty-five. The Camerons have kept mediums for a century; there's a
+  cabinet of spirit photographs from Cordelia's séances in the Portrait
+  Gallery, and you've studied every one. Of all the houses you've worked,
+  this is the only one where you've felt something you didn't invent: a cold
+  patch on the gallery stairs that you will not stand in.
 
 relationships:
   - with: douglas

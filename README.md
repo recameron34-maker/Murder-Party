@@ -120,6 +120,13 @@ The **Flex** page shows what's live versus falling back for the current roster.
 
 ## Party night
 
+**Paper night (the current plan).** `content/party.yaml` has `phones: false`:
+guests read their pages *before* the party and keep their phones away on the
+night. Their pages never open a round. Every in-party message is printed
+inside the right round's envelope, and the texts to everyone appear on the
+Dashboard as lines to read aloud. The round buttons just move your own
+dashboard on. Set `phones: true` for the phone companion described below.
+
 1. **Before:** set the party date (Dashboard), check the Roster, print login
    cards or text each guest their link (the link pre-fills their passphrase),
    print envelopes and evidence, hide Round One evidence.
@@ -131,6 +138,10 @@ The **Flex** page shows what's live versus falling back for the current roster.
 4. **Late guest?** Roster → pick a spare → type their name → `spare-assigned`
    → Save. A passphrase appears; give it to them.
 5. The host panel works on your phone, so keep it in a pocket.
+
+(With `phones: false`, steps 2 and 3 happen on paper: hand out the round's
+envelopes, read the announcements on the Dashboard, and leave the cue texts
+alone; they're already printed in the envelopes.)
 
 ## Branch previews on GitHub Pages (temporary)
 

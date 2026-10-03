@@ -1,5 +1,5 @@
 id: savanah
-name: Savanah, "Mrs. Cameron"
+name: Savanah Savoy, "Mrs. Cameron"
 written_for: Savanah (maybe RSVP)   # HOST
 tier: flex                      # HOST
 pronouns: she/her               # HOST
@@ -30,6 +30,15 @@ backstory: |
   apology and a song. Come."* You came. You're broke, the Sapphire Room has
   closed, and with Douglas dead and his will in pieces, a "widow" might do
   very nicely out of the estate if nobody checks.
+
+  Savanah Savoy is a stage name, and the best thing you ever made. You sang
+  in hotel bars from Reno to Atlantic City, three sets a night, and the
+  Sapphire Room was the nearest thing you ever had to a home. Douglas walked
+  in one night in a tan suit, tipped the band a thousand dollars to play
+  "Moon River" four times, and proposed before the fourth. You've told the
+  story so often it's polished smooth. Cameron Castle is the first place
+  you've ever stood where your voice sounds small. You hate that. You're
+  going to sing anyway.
 
 relationships:
   - with: douglas

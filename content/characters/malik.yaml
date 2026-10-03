@@ -1,5 +1,5 @@
 id: malik
-name: Malik
+name: Malik Mallory
 written_for: Malik              # HOST
 tier: core                      # HOST
 pronouns: he/him                # HOST
@@ -32,6 +32,15 @@ backstory: |
   Your secret: you've been **recording the party** on a lapel mic since you
   arrived. Lindsey knows, and made you swear her name never touches the
   tape. Your producer is thrilled.
+
+  Old Money began as a podcast about the families who own the country and
+  became a podcast about why they never seem to get caught. You grew up in a
+  flat across the river from the kind of houses you're now invited into, and
+  part of you is still the boy at that window. The Camerons are your white
+  whale: a century of rumours, a curse, and finally a man inside who wanted
+  to talk. You are careful, scrupulously so, because Lindsey trusted you
+  with something that could end her career. You'd burn the whole story
+  before you let it touch her.
 
 relationships:
   - with: lindsey

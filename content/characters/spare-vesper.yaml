@@ -1,5 +1,5 @@
 id: spare-vesper
-name: Vesper
+name: Margaux "Maggie" Pancini
 written_for: Spare, any late guest   # HOST
 tier: flex                      # HOST
 effort: medium                  # HOST
@@ -11,7 +11,8 @@ tagline: "You've been Douglas's voice for a year. Now you're the only one who kn
 costume: |
   Literary noir: black on black, a fountain pen, ink-stained cuffs, a
   leather manuscript folder labeled BLACK STONE, and the look of someone who
-  hasn't slept since the first draft. You're "[Name] Vesper."
+  hasn't slept since the first draft. You write as "Vesper"; the name on
+  the cover will be Douglas's.
 
 intro: |
   For a year you've been ghostwriting Douglas's memoir, *Black Stone*. You've
@@ -28,6 +29,14 @@ backstory: |
   Your own sin: the juiciest chapters, about Clara, about Carlotta's mother,
   about a Las Vegas weekend, you **embellished**. Quite a lot. Douglas
   signed off on them laughing.
+
+  You came to ghostwriting from a literary career that never quite caught:
+  two novels, admired and unbought. Douglas found you through his publisher
+  and hired you after one lunch, because you were the only writer who asked
+  him what he was ashamed of. You've spent a year in the castle library with
+  a recorder between you, learning the cadence of a man who never once had
+  to raise his voice. You've started dreaming in his sentences. Some nights,
+  writing alone, you forget which memories are yours.
 
 relationships:
   - with: clara
@@ -101,7 +110,8 @@ texts:
     body: "Final chapter stays in the drawer until midnight Saturday. Then publish and be damned, as they say. Usually about me."
 
 fallback: |
-  Nothing depends on Vesper. The "raised up" line corroborates the theft
+  Played by Maggie Pancini (October 2026), so the character is Margaux
+  "Maggie" Pancini, ghostwriting as "Vesper". Nothing depends on Vesper. The "raised up" line corroborates the theft
   being an inside job without pointing to one person.
 
 host_notes: |

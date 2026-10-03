@@ -1,10 +1,10 @@
 id: courtney
-name: Lady Courtney
+name: Lady Courtney Fane-Whitlow
 written_for: Courtney (maybe RSVP)  # HOST
 tier: flex                      # HOST
 pronouns: she/her               # HOST
 role: Minor aristocrat (professional guest)
-public_role: "Lady Courtney Fane-Whitlow, an old friend of the family"   # what everyone at the party knows; shown on every guest's guest list
+public_role: "An old friend of the family, or so she says"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Your title is fake, your accent is fake, and you're the most convincing aristocrat in the room."
 
 costume: |
@@ -29,6 +29,14 @@ backstory: |
   **selfie posing with the bronze raven** "for the grid." Then you put it
   back. You posted it. It has 214 likes. Your fingerprints are all over the
   murder weapon.
+
+  Your real name is Courtney. The rest is invented, and you're prouder of
+  the invention than most people are of their ancestors. You grew up above a
+  dry cleaner's, pressing rich people's evening clothes and learning exactly
+  how they were meant to hang. Fane-Whitlow came from two gravestones in a
+  churchyard you liked the look of. Tonight is the best house you've ever
+  worked: real portraits, a real raven, a real dead man. You keep catching
+  yourself wanting to belong here, which is deeply unprofessional.
 
 relationships:
   - with: hannah

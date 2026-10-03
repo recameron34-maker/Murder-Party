@@ -1,5 +1,5 @@
 id: maddie
-name: Madeleine "Maddie"
+name: Madeleine "Maddie" Maddox
 written_for: Maddie             # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
@@ -32,6 +32,15 @@ backstory: |
   This afternoon someone slid an unsigned note under your door: **"Return
   what isn't yours before midnight."** You've been looking at everyone's
   handwriting since.
+
+  The Maddoxes are Surrey money: two cars, one pony, a tennis court nobody
+  plays on. Next to the Camerons you feel like a guest in your own life, and
+  you've decided that's simply a matter of accessories. Since Douglas let
+  you wear the Raven's Tears you've caught yourself in every dark window in
+  the castle: jet at your throat, candlelight in the stones, the portraits
+  looking down as if they'd finally approved. The family has a saying about
+  that necklace: every woman who wore it to the Supper married into money.
+  You're choosing to take it as a promise.
 
 relationships:
   - with: daniel

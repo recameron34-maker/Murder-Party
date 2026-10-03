@@ -1,5 +1,5 @@
 id: martin
-name: Martin
+name: Martin Martingale
 written_for: Martin             # HOST
 tier: supporting                # HOST
 pronouns: he/him                # HOST
@@ -30,6 +30,15 @@ backstory: |
   Douglas also asked you to value the whole collection quietly this month.
   You know why: he was preparing to **give it away** to the Wellington
   Foundation.
+
+  A martingale is a betting system where you double your stake every time
+  you lose, and your family has played it with its fortune for three
+  generations. You inherited the name, the eye and nothing else. You can
+  date a canvas by its smell and price a room from the doorway, and the
+  Camerons have kept you on retainer for a decade to tell them what their
+  own walls are worth. You've watched their collection the way other men
+  watch someone across a crowded room. It was going to be given away.
+  Frankly, you took that personally.
 
 relationships:
   - with: molly

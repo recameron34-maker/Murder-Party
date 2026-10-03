@@ -378,6 +378,43 @@ door all evening. Fixed with one new story beat rather than by moving rooms:
   ghostwriter of Douglas's memoir: medium effort and tied to half the cast.
   Swap her on the Roster page if another spare suits her better.
 
+## Cameron Castle, new names and deeper backgrounds (October 2026)
+
+- **Rebrand** (Ross): Blackwood Manor is now **Cameron Castle**, the victim
+  is **Douglas Cameron**, and the host is **Roderick Cameron**, his younger
+  brother. Blackwood Legal Counsel (BLC) is **Cameron Legal Counsel (CLC)**,
+  so the acronym red herrings still work. The castle is in Scotland ("the
+  most haunted private house in Scotland"), above the black lake. The source
+  docs keep the old names; CLAUDE.md maps them.
+- **Names built from the players' names**, the way Kush became Kushington:
+
+  | Player | Character |
+  |---|---|
+  | Albie / Aalvia | Aalvia "Albie" Albemarle |
+  | Alma | Alma Almsbury |
+  | Annie | Antoinette "Annie" Annesley |
+  | Clara | Clara Clarendon |
+  | Courtney | Lady Courtney Fane-Whitlow |
+  | Daniel | Daniel Danforth |
+  | Kim | Kimberley "Kim" Kimbolton |
+  | Louis | Louis Loudoun |
+  | Maddie | Madeleine "Maddie" Maddox |
+  | Malik | Malik Mallory |
+  | Martin | Martin Martingale |
+  | Savanah | Savanah Savoy, "Mrs. Cameron" |
+  | Shea | Shea Sheridan |
+  | Tim | Timothy "Tim" Tilbury |
+  | Maggie Pancini | Margaux "Maggie" Pancini (the spare Vesper: she ghostwrites as "Vesper") |
+
+  Characters who already had full names keep them. Unassigned spares keep
+  one-word names until someone is cast; name them after the player then.
+- **Every character got a deeper background**: one more paragraph each, on
+  where they come from and what the Camerons and the castle mean to them
+  (outsiders who want in, insiders who can't get out, the house watching).
+  No new times on the night, the real couples stay devoted to each other,
+  flex characters gained no clues, and Morgan's is the same length as
+  everyone else's.
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?

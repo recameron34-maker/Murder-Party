@@ -1,5 +1,5 @@
 id: daniel
-name: Daniel
+name: Daniel Danforth
 written_for: Daniel             # HOST
 tier: supporting                # HOST
 pronouns: he/him                # HOST
@@ -28,6 +28,14 @@ backstory: |
   So this afternoon **you slid an anonymous note under her door: "Return what
   isn't yours before midnight."** You thought it would scare her into doing
   the right thing. Instead she's spent all night hunting the author.
+
+  The Danforths sell boats to people who already have boats. You were sent
+  to the castle every summer as a boy to make friends with "the right sort,"
+  and the right sort was Carlotta, barefoot on the terrace, daring you to
+  swim the black lake in the dark. You did. You nearly drowned. She laughed
+  and kissed you on the jetty, and you've measured every night of your life
+  against it since. You're engaged, sensible and kind, and you still can't
+  walk past the conservatory without your heart doing something undignified.
 
 relationships:
   - with: maddie

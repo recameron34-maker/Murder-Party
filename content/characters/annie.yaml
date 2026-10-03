@@ -1,5 +1,5 @@
 id: annie
-name: Antoinette "Annie"
+name: Antoinette "Annie" Annesley
 written_for: Annie              # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
@@ -31,6 +31,15 @@ backstory: |
   And you owe Morgan. When your marriage went bad, she handled your divorce
   for nothing and got you the flat. You don't forget kindness. It's rare
   enough in this house.
+
+  Antoinette Annesley: your mother found the name in a magazine and hoped it
+  would buy you a better life than hers. You got thirty years of this one
+  instead. You keep the keys to every room except the east wing, which
+  Douglas keeps himself, and you know the castle's moods: which floorboards
+  report you, which portraits catch the candlelight, which kitchen door
+  won't latch in a storm. Once a year, after the Supper, Douglas pours you a
+  glass of the good vintage and toasts "the only Cameron worth the name."
+  You have never told him what's actually in the bottle.
 
 relationships:
   - with: douglas

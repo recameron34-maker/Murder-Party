@@ -43,7 +43,9 @@ cast:
   # Flex: maybes
   savanah:        { player: Savanah,  status: maybe }
   courtney:       { player: Courtney, status: maybe }
-  # Flex: spares for late additions
+  # Flex: spares for late additions. When you hand one to a late guest, give
+  # the character a name built from theirs (Kush → Kushington, Maggie
+  # Pancini → Margaux "Maggie" Pancini) in its characters/*.yaml file.
   spare-rook:     { player: null, status: spare-unassigned }
   spare-quill:    { player: null, status: spare-unassigned }
   spare-hollis:   { player: null, status: spare-unassigned }
