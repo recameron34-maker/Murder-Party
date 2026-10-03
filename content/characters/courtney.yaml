@@ -58,14 +58,18 @@ evening:
     where: drawing-room
     text: Telling anecdotes about "Daddy's grouse moor."
   - at: "9:00 PM"
-    until: "9:45 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: At the piano the whole time, playing badly or turning pages for whoever sings. The whole room saw you.
+    text: At the piano, playing badly or turning pages for whoever sings.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: When the cake comes out you carry the candles in like a coronation, then stay at the front of the crowd conducting the singing with a champagne flute. The whole room saw you.
 
 knows:
   - You handled the bronze raven at 8:05. Your fingerprints are on it. There's a photo.
   - You put it back on the desk exactly where you found it.
-  - You were at the piano from 9:00 until the blackout.
+  - You were in full view from 9:00 until the blackout: at the piano, then conducting the singing at the birthday cake.
   - Hannah Wellington hired you. You are not a lady.
 
 secret: |
@@ -81,7 +85,7 @@ instructions:
   - Never drop the accent unless paid, or very drunk.
   - In Round Two, your raven selfie comes out. Panic beautifully.
   - You may "recognize" any guest from "a hunt ball."
-  - Your piano alibi (9:00 to 9:45) is rock solid. Use it.
+  - Your alibi (the piano, then the cake, 9:00 to 9:45) is rock solid. Use it.
 
 mission: |
   Get **someone to invite you to their country house** (any house, any
@@ -91,9 +95,9 @@ rounds:
   1:
     text: |
       Be fabulous. Be devastated. Mention Daddy. Establish your alibi: the
-      piano, from 9:00 until the lights went out.
+      piano from 9:00, then the birthday cake until the lights went out.
     reveal:
-      - You were at the drawing-room piano from 9:00 until the blackout.
+      - You were at the drawing-room piano from 9:00, then at the birthday cake until the blackout.
   2:
     text: |
       Your post has been found. Show the room your phone ("delete nothing,
@@ -101,8 +105,8 @@ rounds:
       posted at 8:05.**
 
       Your fingerprints are on the murder weapon. Panic. Then remember
-      that Molly saw it back on the desk at 8:45, and that you were at the piano
-      while Arthur died.
+      that Molly saw it back on the desk at 8:45, and that you were
+      conducting "Happy Birthday" while Arthur died.
     reveal:
       - You posed with the bronze raven in Arthur's study at 8:05 and posted the photo.
   3:
@@ -135,4 +139,5 @@ host_notes: |
 
   Flex (maybe RSVP), theatrical. Zero solution-critical clues. Red herring:
   fingerprints on the weapon, resolved by Molly (raven on the desk at 8:45) and
-  her piano alibi. Whereabouts: drawing room, far from the study, 9:00 to 9:45.
+  her alibi (piano, then cake). Whereabouts: drawing room, then the dining room
+  from 9:25, far from the study.

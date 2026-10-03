@@ -49,9 +49,13 @@ evening:
     where: upstairs
     text: You help Arthur dress for the Supper. Black velvet smoking jacket. You fasten the cuffs yourself.
   - at: "8:00 PM"
-    until: "9:38 PM"
+    until: "9:24 PM"
     where: drawing-room
     text: At the party, keeping an eye on Arthur's color whenever he passes. At 9:20 you hear Kevin shouting in the study.
+  - at: "9:25 PM"
+    until: "9:37 PM"
+    where: dining-room
+    text: At the birthday cake in the Dining Room. Arthur doesn't come out for it, and it's nearly time for his evening pills.
   - at: "9:38 PM"
     until: "9:39 PM"
     where: upstairs
@@ -61,8 +65,8 @@ evening:
     text: You walk toward the study with the pills, but **before you reach it you hear voices** around the corner toward the Front Hall. You don't want to be seen with his medication. You turn back.
   - at: "9:42 PM"
     until: "9:47 PM"
-    where: drawing-room
-    text: Back at the party, pills still in your pocket. The lights go out at 9:45.
+    where: dining-room
+    text: Back at the cake, pills still in your pocket. The lights go out at 9:45.
 
 knows:
   - 'Arthur said last week: "If something happens to me, don''t assume it was natural."'

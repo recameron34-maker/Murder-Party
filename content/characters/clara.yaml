@@ -52,16 +52,20 @@ evening:
     where: study
     text: With Arthur, door locked. He tells you about the will. You leave at 8:44, fixing your lipstick.
   - at: "8:45 PM"
-    until: "9:32 PM"
+    until: "9:24 PM"
     where: drawing-room
     text: Pretending to be cool and unbothered while glowing slightly.
+  - at: "9:25 PM"
+    until: "9:32 PM"
+    where: dining-room
+    text: At the birthday cake. Arthur doesn't come out for it; he never does. You decide to go and finish your conversation.
   - at: "9:33 PM"
     where: east-corridor
     text: You walk toward the study, then see **someone farther down the hall** near the study door. You can't tell who. You turn back.
   - at: "9:34 PM"
     until: "9:47 PM"
-    where: drawing-room
-    text: Back at the party with a fresh drink, annoyed at yourself. The lights go out at 9:45.
+    where: dining-room
+    text: Back at the cake with a fresh drink, annoyed at yourself. The lights go out at 9:45.
 
 knows:
   - 'Arthur told you at 8:30: "I tore up the old will myself. Everyone keeps assuming tonight is about inheritance. It isn''t."'

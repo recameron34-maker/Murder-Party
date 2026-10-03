@@ -52,9 +52,13 @@ evening:
     where: drawing-room
     text: Trapped by Kushington explaining forensic accounting. You diagnosed him with "enthusiasm" and escaped.
   - at: "9:15 PM"
-    until: "9:45 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: By the fire with Joji and Hannah, the whole time. Joji was describing load-bearing walls. You were counting the minutes until supper.
+    text: By the fire with Joji and Hannah. Joji was describing load-bearing walls. You were counting the minutes until supper.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: When the birthday cake comes out, the three of you follow it into the Dining Room and settle by the fireplace, together the whole time. Joji knocks on the panelling to show you a load-bearing wall and swears something knocks back. You tell him it's the pipes. You're nearly sure.
   - at: "9:47 PM"
     where: study
     text: When the lights come back and Reggie finds Arthur, you go in with him. One blow to the head. The body is already cooling. That bothers you a great deal.

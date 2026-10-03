@@ -50,17 +50,21 @@ relationships:
 
 evening:
   - at: "8:00 PM"
-    until: "9:35 PM"
+    until: "9:24 PM"
     where: drawing-room
     text: Birthday toasts, champagne, and Kevin catching your eye across the room while pretending he barely knows you. At 9:22 you watch him storm out to the terrace and decide to let him cool off.
+  - at: "9:25 PM"
+    until: "9:35 PM"
+    where: dining-room
+    text: 'Your cake comes out in the Dining Room: black icing, a sugar raven, your name and Lexi''s in silver. You blow out the candles and save Kevin a slice. Arthur said twenty to ten for your surprise. You can''t wait that long.'
   - at: "9:36 PM"
     until: "9:37 PM"
     where: east-corridor
     text: 'You arrive at the study door early. Through the oak you hear Arthur, furious: **"If the money isn''t back by midnight, I''m going public."** Then a woman''s voice, low and desperate: **"You''ll destroy me."** You back away and leave.'
   - at: "9:38 PM"
     until: "9:47 PM"
-    where: drawing-room
-    text: Back at the party, pale, pretending nothing happened. You planned to go back at twenty to ten. Then the lights went out.
+    where: dining-room
+    text: Back at your own cake, pale, pretending nothing happened. You planned to go back at twenty to ten. Then the lights went out.
 
 knows:
   - At about **9:36** you heard Arthur arguing in the study about money.

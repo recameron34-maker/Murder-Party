@@ -15,6 +15,7 @@ schedule:
   - { time: "7:30 PM", what: "Arrivals, drinks, the guest book", food: "Champagne and canapés", round: 0 }
   - { time: "8:00 PM", what: "Birthday toast and formal opening", food: "", round: 0 }
   - { time: "8:15 PM", what: "Mingle in character", food: "Canapés keep coming", round: 0 }
+  - { time: "8:35 PM", what: "The birthday cake, in the Dining Room", food: "Birthday cake", round: 0 }
   - { time: "8:45 PM", what: "The blackout and the body", food: "", round: 0 }
   - { time: "8:55 PM", what: "Rules, Blackmail Cash, Round One", food: "Starters / grazing board", round: 1 }
   - { time: "9:40 PM", what: "Round Two", food: "Main course", round: 2 }

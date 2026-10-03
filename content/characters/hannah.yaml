@@ -57,9 +57,13 @@ evening:
     where: front-hall
     text: Passing through the Front Hall you hear Kevin shout at Arthur, "You're going to regret this!" The whole corridor heard.
   - at: "9:21 PM"
-    until: "9:45 PM"
+    until: "9:24 PM"
     where: drawing-room
     text: By the fire with Noor and Joji, catching Kushington's eye across the room.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: The birthday cake comes out and you follow it with Noor and Joji. The three of you hold the dining-room fireplace until the lights go out. Kushington is across the cake from you and keeps losing his place mid-sentence.
 
 knows:
   - Arthur was preparing an enormous charitable transfer to your foundation at midnight.

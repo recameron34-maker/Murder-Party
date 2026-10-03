@@ -60,7 +60,8 @@ venue_setup:
     one, two or three portraits, candles and nothing bright. Guests can
     still hang out here, but keep a clear path to the study doorway. In the
     story this room is empty at 9:31 to 9:41 except for the five people who
-    went to Arthur's door.
+    went to Arthur's door, and the Drawing Room next to it is nearly empty
+    too: everyone is at the cake.
   living-room: >
     The Drawing Room, where the party lives. By the front door, a coat rack
     is the Front Hall: hang one dark prop overcoat on it (never a guest's
@@ -72,7 +73,9 @@ venue_setup:
     where James and Alma see Morgan.
   dining-area: >
     The Dining Room, set for the Midnight Supper: candles, place cards, and
-    one empty chair at the head.
+    one empty chair at the head. Leave room on the sideboard (or the end of
+    the table) for the birthday cake: it comes out here before the blackout,
+    and the whole party gathers round it, exactly as they did in the story.
   hall: >
     The Portrait Gallery. Hang or prop three or four framed pictures (old
     portraits from a thrift shop are perfect, and one should be "Lady
@@ -132,8 +135,10 @@ layout_notes: >
   Room at the dead end, reached only through the Family Room, which plays the
   East Corridor. The library is the landing at the top of the front stairs.
   The ordinary way between them runs through the Family Room, the Living
-  Room (the Drawing Room, full of people) and the front door (the Library
-  Corridor). The Raven's Walk is the real door between the Room and the
+  Room (the Drawing Room) and the front door (the Library Corridor). From
+  9:25 the Drawing Room is nearly empty: the party has followed the birthday
+  cake into the Dining Room, round the corner and well away from the study
+  door. The card game is further in still, at the kitchen island. The Raven's Walk is the real door between the Room and the
   landing, hidden behind the landing bookshelf.
 
 legend:
@@ -171,6 +176,15 @@ midnight_supper: >
   rules are printed in guest-common.yaml. The ritual drink, "the
   Reckoning," is a Sazerac poured by the house at half past nine and carried
   to the head of the family. Annie has carried it for eleven years.
+
+  Birthdays at Blackwood have a ritual too. The cake (always black icing,
+  always a sugar raven) is carried into the Dining Room at twenty-five past
+  nine and cut under the portraits, and the head of the family never comes
+  out to see it. Silas's rule: "Blackwoods don't watch other people being
+  celebrated." Tonight that rule empties the east end of the house at the
+  worst possible moment: from 9:25 almost everyone is round the cake in the
+  Dining Room, deep in the flat, and the Drawing Room and the East Corridor
+  are dark and quiet.
 
 arthur:
   name: Arthur Blackwood

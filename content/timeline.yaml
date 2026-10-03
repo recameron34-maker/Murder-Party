@@ -198,6 +198,20 @@ events:
     source: new
     learned: [{ round: 3, via: louis, how: "Confesses; Kim saw him come out" }]
 
+  - id: birthday-cake
+    at: "9:25 PM"
+    until: "9:45 PM"
+    who: [annie, lexi, maya]
+    where: dining-room
+    what: >
+      Annie carries Lexi and Maya's birthday cake (black icing, a sugar raven)
+      into the Dining Room and almost the whole party follows it there, until
+      the blackout. Arthur stays in his study: the head of the family never
+      comes out for cake. The Drawing Room and the East Corridor go quiet,
+      which is why nobody notices who slips away to the study door.
+    source: new
+    learned: [{ round: 0, via: host, how: "Everyone was at the cake; their evenings say so" }]
+
   - id: arthur-texts-morgan
     at: "9:29 PM"
     who: [arthur, morgan]

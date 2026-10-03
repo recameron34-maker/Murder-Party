@@ -50,11 +50,15 @@ evening:
     where: drawing-room
     text: Explaining forensic accounting to Noor, who diagnosed you with "enthusiasm."
   - at: "9:15 PM"
+    until: "9:24 PM"
+    where: drawing-room
+    text: Cornering Lexi and anyone else within reach about double-entry bookkeeping.
+  - at: "9:25 PM"
     until: "9:45 PM"
-    where: drawing-room
-    text: Cornering Lexi and anyone else within reach about double-entry bookkeeping. Hannah kept catching your eye from across the room.
+    where: dining-room
+    text: When Lexi's cake comes out you follow her into the Dining Room and carry on about double-entry bookkeeping between bites. Hannah kept catching your eye across the cake.
   - at: "9:45 PM"
-    where: drawing-room
+    where: dining-room
     text: In the dark you clutched your folder to your chest. Priorities.
 
 knows:

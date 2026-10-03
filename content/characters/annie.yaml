@@ -46,15 +46,19 @@ relationships:
 
 evening:
   - at: "8:00 PM"
-    until: "9:29 PM"
+    until: "9:24 PM"
     where: drawing-room
     text: Champagne, canapés, seating-plan diplomacy. Clara and Arthur disappeared into the study at 8:30; you noted the time and her lipstick.
   - at: "9:22 PM"
     where: front-hall
     text: Kevin storms past you, takes the nearest coat off the hook (Arthur's, as it happens) and goes out onto the terrace.
+  - at: "9:25 PM"
+    until: "9:29 PM"
+    where: dining-room
+    text: 'You carry the birthday cake into the Dining Room: black icing, a sugar raven, the way Blackwood cakes have always looked. The whole party follows you in, singing. Arthur stays in his study. The head of the family never comes out for cake.'
   - at: "9:30 PM"
     where: drawing-room
-    text: You mix the Reckoning at the bar, Arthur's Sazerac, as the Supper rules require.
+    text: You mix the Reckoning at the bar, Arthur's Sazerac, as the Supper rules require. The drawing room is empty behind you; everyone is at the cake.
   - at: "9:31 PM"
     where: study
     text: You carry it in. Arthur is **alive and alone** at his desk, writing, a red leather folder open in front of him. He says, "Last one, Annie." You thought he meant the drink.
@@ -63,8 +67,8 @@ evening:
     text: Walking back down the East Corridor you pass **Morgan** heading toward the study. She smiles. You smile. She has a meeting; it's none of your business.
   - at: "9:33 PM"
     until: "9:47 PM"
-    where: drawing-room
-    text: Back to champagne duty. The lights go out at 9:45 with a crash from somewhere downstairs. You're holding a full tray in the dark.
+    where: dining-room
+    text: Back to champagne duty at the cake. The lights go out at 9:45 with a crash from somewhere downstairs. You're holding a full tray in the dark.
 
 knows:
   - You were the last person to see Arthur alive, at **9:31**. He was alone.

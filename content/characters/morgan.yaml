@@ -50,9 +50,13 @@ relationships:
 
 evening:
   - at: "8:00 PM"
-    until: "9:31 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: 'Charming everyone. At 9:29 Arthur texts: **"My study. 9:35. We settle this tonight."**'
+    text: Charming everyone.
+  - at: "9:25 PM"
+    until: "9:31 PM"
+    where: dining-room
+    text: 'You follow the birthday cake into the Dining Room with everyone else. At 9:29 Arthur texts: **"My study. 9:35. We settle this tonight."**'
   - at: "9:32 PM"
     where: east-corridor
     text: You pass Annie coming back from the study with an empty tray. You smile. She smiles.
@@ -69,8 +73,8 @@ evening:
     text: 'You nearly walk into Alma. "Looking for the restroom," you say. She walks you there herself.'
   - at: "9:42 PM"
     until: "9:47 PM"
-    where: drawing-room
-    text: A glass in your hand before the lights go out. When they return you look as shocked as anyone.
+    where: dining-room
+    text: Back at the cake with a glass in your hand before the lights go out. When they return you look as shocked as anyone.
 
 knows:
   - Arthur is dead because of you. Nobody else knows.

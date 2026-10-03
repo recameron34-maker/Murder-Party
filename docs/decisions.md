@@ -206,7 +206,7 @@ study.
 hidden behind a movable bookshelf on the landing side (Ross, October 2026).
 So the study and the library really are back to back with a hidden door,
 while the normal way between them runs through the Family Room, the Living
-Room and the front door, past the whole party. The door stays shut and the
+Room and the front door. The door stays shut and the
 shelf stays put until the reveal, when Reggie opens it (Ross: yes). The door
 is recorded only in `lore.yaml` → `venue_passage` (host-only); the guest plan
 draws a plain wall there, and a test keeps it that way. Guests can still see
@@ -301,9 +301,55 @@ the party) and "Now / Next" (during it).
   goes dark at 9:45. Follow one person, change the speed, or jump to a key
   moment.
 
+## Clearing the study end: the birthday cake (October 2026)
+
+Ross: too many people were near the study before and during the murder. In
+the flat the Living Room (the Drawing Room) opens wide onto the Family Room
+(the East Corridor), so a party of twenty there would have watched the study
+door all evening. Fixed with one new story beat rather than by moving rooms:
+
+- **9:25: the birthday cake.** Annie carries Lexi and Maya's cake (black
+  icing, a sugar raven) into the Dining Room and almost the whole party
+  follows it, staying until the 9:45 blackout. A new family ritual explains
+  why Arthur stays in his study: *Blackwoods don't watch other people being
+  celebrated.* It's in the timeline (`birthday-cake`), the lore, and the
+  guest-safe legend.
+- **Who moved:** everyone who was in the Drawing Room from 9:25 to 9:45 now
+  splits their evening at 9:25 and spends the rest at the cake: Noor, Joji
+  and Hannah (by the dining-room fireplace), Kush, Lexi, Maya, Morgan,
+  Clara, Shea, Annie (after carrying in the Reckoning), Lindsey and Malik
+  (from the Conservatory next door), Maddie, Kim, Albie's spirit circle,
+  Savanah and Courtney (their piano alibis become "singing at the cake"),
+  and the spares Vesper, Sterling and Ellery. The card game stays at the
+  kitchen island, further in still.
+- **Result:** from 9:30 to 9:41 the Drawing Room and the East Corridor are
+  empty except for the solution-critical visitors (Annie, Morgan, Clara,
+  Maya, Shea) and, at the front door, James and Alma. The Dining Room is
+  round a corner, about thirty feet from the study door.
+- **Nothing in the solution changed.** Same times, same witnesses, same
+  lines overheard. Lines that said "the drawing room" for 9:25–9:45 now say
+  the cake or the Dining Room (Lexi sees Maya come back *to the cake* at
+  9:38; Morgan rejoins the crowd at the cake at 9:42; Malik's recording is
+  twenty minutes of "Happy Birthday"). The old wording is in git history.
+- **New flavor:** at the dining-room fireplace Joji knocks on the panelling
+  and something knocks back. It's Louis in the walls; he falls out of that
+  panel at 9:46. Tim and Alma, working at the Supper table, keep their backs
+  to the cake, so they can't testify about who left it.
+- **Do it for real:** run of show → **The birthday cake** (new cue,
+  ten minutes before the blackout, schedule 8:35). Annie's player carries the
+  real cake in; the **Blackwood cake** light routine brightens the Dining
+  Room and dims the Drawing Room and East Corridor, so the guests drift deep
+  into the flat exactly as their characters did. The blackout then kills the
+  Dining Room first, right over their heads.
+- **Map:** the coat rack (Front Hall) is now just right of the front door,
+  "around the corner" from the East Corridor, which is where Shea hears
+  voices at 9:40.
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?
 - Who else does Courtney know? Add ties to `content/characters/courtney.yaml`.
 - Is the landing roomy enough to search? Only the red folder is found there.
 - Any other real couples in the cast? Real couples make the best pairings.
+- A real birthday cake for Lexi and Maya at about 8:35, ten minutes before
+  the blackout: fine with them? (Any cake works; black icing is a bonus.)

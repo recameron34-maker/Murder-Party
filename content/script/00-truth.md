@@ -11,6 +11,7 @@ books.
 
 The full true timeline is on the **Timeline** page. The key minutes:
 
+- 🆕 **9:25** The birthday cake comes out in the Dining Room and the party follows it. The east end of the house goes quiet, which is why nobody sees who goes to the study door.
 - **9:29** Arthur texts Morgan: "My study. 9:35. We settle this tonight."
 - **9:31** Annie delivers the Reckoning. Arthur alive and alone.
 - **9:32** Annie passes Morgan heading to the study.

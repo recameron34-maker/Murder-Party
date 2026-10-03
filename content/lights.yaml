@@ -37,6 +37,22 @@ scenes:
     when: Pre-murder mingle
     look: Drawing Room 45%, everything else 30%. Library a single dim bulb (15%), like a reading lamp left on.
     sound: Add a distant thunder track under the music. The storm is building.
+  - id: cake
+    routine: "Blackwood cake"
+    when: The birthday cake, ten minutes before the blackout
+    look: >
+      Dining Room up to 70% warm, so the cake and its candles are the
+      brightest thing in the flat. Drawing Room down to 20%, East Corridor
+      10%, Library 15%, Study still off. People follow the light, so the
+      whole party drifts deep into the flat, away from the study door, just
+      as it did in the story.
+    sound: Music down. Lead "Happy Birthday". The thunder track keeps going underneath.
+    steps:
+      - Dining Room → 70%, warm white
+      - Drawing Room → 20%
+      - East Corridor → 10%
+      - Library → 15%
+      - Study → power off
   - id: blackout
     routine: "Blackwood blackout"
     when: The blackout (your cue in the run of show)

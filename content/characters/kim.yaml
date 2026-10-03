@@ -50,9 +50,13 @@ evening:
     where: drawing-room
     text: Collecting secrets like canapés.
   - at: "9:15 PM"
-    until: "9:45 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: Near the piano, watching who watches whom, all the way to the blackout.
+    text: Near the piano, watching who watches whom.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: You follow the birthday cake into the Dining Room and take the corner by the fireplace, watching who watches whom, all the way to the blackout.
   - at: "9:46 PM"
     where: dining-room
     text: In the dark, by your phone's light, a panel by the dining-room fireplace opens and **Louis crawls out of the wall**, filthy. He sees you see him.

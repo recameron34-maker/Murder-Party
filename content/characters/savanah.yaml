@@ -56,15 +56,19 @@ evening:
     where: drawing-room
     text: Introducing yourself as "the widow, darling, well, the wife, as of an hour ago."
   - at: "9:00 PM"
-    until: "9:45 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: At the piano, singing a medley of the songs Arthur requested in Vegas. Everyone in the room watched you the whole time; you made sure of it.
+    text: At the piano, singing a medley of the songs Arthur requested in Vegas.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: 'You lead "Happy Birthday" at the cake, then keep going a cappella from a dining chair: the rest of the Vegas medley. Everyone in the room watched you the whole time; you made sure of it.'
 
 knows:
   - You married Arthur in Las Vegas in 2019.
   - You signed something two weeks later. You've decided it doesn't count.
   - Morgan Leibold was the lawyer who brought the papers.
-  - You were at the piano from 9:00 until the blackout, in full view.
+  - You were singing from 9:00 until the blackout, in full view: at the piano, then at the birthday cake.
 
 secret: |
   **Your marriage to Arthur was annulled in 2019.** You know it. You're
@@ -79,7 +83,7 @@ instructions:
   - Introduce yourself to everyone as "Mrs. Blackwood." Commit.
   - You may sing a few bars at any dramatic moment.
   - Admit the annulment only if paid, or if someone produces proof.
-  - Your alibi (the piano, 9:00 to 9:45) is the best in the house. Mention it constantly.
+  - Your alibi (singing in front of everyone, 9:00 to 9:45) is the best in the house. Mention it constantly.
 
 mission: |
   Get **two different people to call you "Mrs. Blackwood"** without being
@@ -106,10 +110,10 @@ rounds:
   3:
     text: |
       If the annulment comes out, concede with enormous dignity. Then point
-      out that a woman who was *singing at a piano in front of twenty people*
+      out that a woman who was *singing in front of twenty people*
       from 9:00 to 9:45 didn't kill anyone.
     reveal:
-      - Concede the annulment if proven, and stand on your piano alibi.
+      - Concede the annulment if proven, and stand on your singing alibi.
 
 texts:
   - id: savanah-arthur-history
@@ -136,4 +140,4 @@ host_notes: |
   Flex (maybe RSVP), theatrical. Carries zero solution-critical clues. Her
   red herring ("the widow inherits") is resolved by Kim's 2019 Keyhole
   clipping (Round Three) and by Clara. Whereabouts: the drawing-room piano,
-  far from the study.
+  then the birthday cake in the dining room, far from the study.

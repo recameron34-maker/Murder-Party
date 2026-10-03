@@ -54,18 +54,22 @@ evening:
     where: drawing-room
     text: Birthday toast, a hundred kisses on the cheek, three proposals (two jokes).
   - at: "9:00 PM"
+    until: "9:24 PM"
+    where: drawing-room
+    text: Pinned to the sofa by Kushington explaining double-entry bookkeeping.
+  - at: "9:25 PM"
     until: "9:45 PM"
-    where: drawing-room
-    text: Pinned to the sofa by Kushington explaining double-entry bookkeeping. You were there the whole time; half the room can say so.
+    where: dining-room
+    text: 'Your birthday cake comes out in the Dining Room and the whole party follows it: candles, singing, a sugar raven you behead with the cake knife. Kushington follows too and resumes the bookkeeping. You were there the whole time; half the room can say so.'
   - at: "9:38 PM"
-    where: drawing-room
-    text: You notice Maya come back from somewhere looking white as a sheet.
+    where: dining-room
+    text: You notice Maya come back to the cake from somewhere, looking white as a sheet.
 
 knows:
   - Arthur had arranged a $500,000 trust for you, to be signed at midnight. It now never will be.
   - Everyone thinks you might be Arthur's secret daughter. You're not. You have proof.
-  - Maya came back to the drawing room at about 9:38 looking shaken.
-  - You were in the drawing room from 9:00 to the blackout.
+  - Maya came back to the cake at about 9:38 looking shaken.
+  - You were in the drawing room from 9:00, then at your birthday cake in the Dining Room from 9:25 to the blackout.
 
 secret: |
   You **know you are not Arthur's daughter**, from a DNA test you took
@@ -91,14 +95,15 @@ rounds:
   1:
     text: |
       You're the birthday girl and the goddaughter. Be devastated, gracefully.
-      You were in the drawing room the whole time, so you're safe, and you
+      You were at the party the whole time (the drawing room, then your own
+      cake in the Dining Room), so you're safe, and you
       can be helpful: Maya came back around 9:38 looking like she'd seen a
       ghost.
 
       Start working on your mission. Somebody here knows what Arthur meant
       by "everything changes."
     reveal:
-      - Maya returned to the drawing room around 9:38 looking shaken.
+      - Maya returned to the cake around 9:38 looking shaken.
   2:
     text: |
       Produce your "surprise": **papers from Arthur establishing the Vivienne

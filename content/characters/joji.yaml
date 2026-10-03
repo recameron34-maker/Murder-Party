@@ -56,9 +56,13 @@ evening:
     where: drawing-room
     text: Holding court on the manor's "architectural secrets." People pretended to listen.
   - at: "9:15 PM"
-    until: "9:45 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: By the fire with Noor and Hannah the whole time, explaining load-bearing walls with hand gestures.
+    text: By the fire with Noor and Hannah, explaining load-bearing walls with hand gestures.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: The birthday cake comes out and the three of you follow it, then stay together by the dining-room fireplace until the lights go out. You knock on the panelling beside it to demonstrate a load-bearing wall. Something knocks back. Noor says pipes. Silas never put pipes there.
 
 knows:
   - Silas Blackwood built **servants' passages** inside the walls in 1891. Most were sealed in the 1950s.
