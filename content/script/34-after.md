@@ -7,9 +7,9 @@ lights: afterparty
 ---
 Once everyone settles: "But there is one final matter."
 
-*Look around.* "Arthur promised that at midnight…" "…everything would change." "Apparently he was right."
+*Look around.* "Douglas promised that at midnight…" "…everything would change." "Apparently he was right."
 
-*Raise glass.* "To Arthur Blackwood." "A terrible judge of character." *Pause.* "And an excellent host."
+*Raise glass.* "To Douglas Cameron." "A terrible judge of character." *Pause.* "And an excellent host."
 
 *Toast.*
 
@@ -21,9 +21,9 @@ Once everyone settles: "But there is one final matter."
 - **Most Suspicious Innocent Person**: most votes despite not being Morgan.
 - **Most Unhinged Theory**: Ross's discretion.
 - **Best Liar**: probably Morgan, assuming she survives socially.
-- 🆕 **Richest Blackmailer**: most Blackwood Cash at the end.
+- 🆕 **Richest Blackmailer**: most Cameron Cash at the end.
 
-🆕 **The closet.** If anyone is still wondering why Arthur and Reggie were
+🆕 **The closet.** If anyone is still wondering why Douglas and Roderick were
 never in the same room: show them the study closet.
 
 🆕 **The Supper photograph.** Every year one photograph is taken at the

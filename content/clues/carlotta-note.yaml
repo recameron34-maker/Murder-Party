@@ -1,5 +1,5 @@
 id: carlotta-note
-title: Arthur's note to Carlotta
+title: Douglas's note to Carlotta
 kind: prop
 source: part-one
 round: 3
@@ -14,5 +14,5 @@ print: |
 truth: Meant for their 11:30 meeting. "You were right" refers to her warning, years ago, that he trusted the wrong people.
 points_to: []
 critical: false
-refs: [carlotta, arthur]
-fallback: If Carlotta is somehow absent, Reggie reads it as "a note addressed to Carlotta."
+refs: [carlotta, douglas]
+fallback: If Carlotta is somehow absent, Roderick reads it as "a note addressed to Carlotta."

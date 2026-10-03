@@ -7,7 +7,7 @@ clues: [phone]
 ---
 *Ring glass.* "Enough. We have our first piece of physical evidence."
 
-*Hold up Arthur's phone.* "Arthur's phone was recovered beneath his desk. His final outgoing message was sent at 9:29 PM."
+*Hold up Douglas's phone.* "Douglas's phone was recovered beneath his desk. His final outgoing message was sent at 9:29 PM."
 
 Read slowly: **MY STUDY. 9:35. WE SETTLE THIS TONIGHT.**
 

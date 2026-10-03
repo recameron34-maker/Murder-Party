@@ -3,8 +3,8 @@ name: Lindsey Vale
 written_for: Lindsey            # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
-role: Arthur's private banker
-public_role: "Arthur's private banker at Vale & Sons"   # what everyone at the party knows; shown on every guest's guest list
+role: Douglas's private banker
+public_role: "Douglas's private banker at Vale & Sons"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Discretion is the product. You've never once given it away for free."
 
 costume: |
@@ -13,36 +13,36 @@ costume: |
   freeze your accounts with one phone call.
 
 intro: |
-  You are Arthur's private banker at Vale & Sons, your family's bank, which
-  has looked after Blackwood money for three generations. You noticed
+  You are Douglas's private banker at Vale & Sons, your family's bank, which
+  has looked after Cameron money for three generations. You noticed
   something wrong before anyone else did. You haven't told anyone why
   you're really here tonight.
 
 backstory: |
-  Six weeks ago, reviewing Blackwood Holdings, you saw a pattern: six large
+  Six weeks ago, reviewing Cameron Holdings, you saw a pattern: six large
   transfers out over fourteen months, each routed somewhere it shouldn't
-  have gone. You took it to Arthur, quietly, in person. He went pale and
+  have gone. You took it to Douglas, quietly, in person. He went pale and
   thanked you, and later he hired a forensic accountant.
 
   You also did something you shouldn't have. You told your boyfriend,
   **Malik**, the investigative podcaster, that "one of the great families" was
-  being robbed from inside. That's how Arthur and Malik ended up talking.
+  being robbed from inside. That's how Douglas and Malik ended up talking.
   It's a career-ending breach of banking confidentiality, and you'd do it
   again. Malik has never once used your name: not on air, not in his notes,
   not even to his producer. That's how you knew he was the one.
 
-  Arthur had you booked for **10:00 tonight** to go over the evidence one
+  Douglas had you booked for **10:00 tonight** to go over the evidence one
   last time before midnight.
 
 relationships:
   - with: malik
     text: Your boyfriend, the podcaster, and the one person in this house you trust completely. At 9:15 you slipped into the conservatory together to plan for midnight.
-  - with: arthur
-    text: Your client, and the third generation of Blackwoods your family has banked for. He trusted you. You were trying to save him.
+  - with: douglas
+    text: Your client, and the third generation of Camerons your family has banked for. He trusted you. You were trying to save him.
   - with: kush
-    text: The forensic accountant Arthur hired after you flagged the transfers. Fussy, brilliant, a little too curious about your files.
+    text: The forensic accountant Douglas hired after you flagged the transfers. Fussy, brilliant, a little too curious about your files.
   - with: morgan
-    text: Arthur's lawyer. Your offices work together constantly. You've noticed she's been very interested in what you know.
+    text: Douglas's lawyer. Your offices work together constantly. You've noticed she's been very interested in what you know.
 
 evening:
   - at: "8:00 PM"
@@ -52,25 +52,25 @@ evening:
   - at: "9:15 PM"
     until: "9:25 PM"
     where: conservatory
-    text: A whispered conference with Malik among the orchids about what Arthur will say at midnight and how to keep your name out of it. To anyone passing, it looked like a secret meeting. It was.
+    text: A whispered conference with Malik among the orchids about what Douglas will say at midnight and how to keep your name out of it. To anyone passing, it looked like a secret meeting. It was.
   - at: "9:25 PM"
     until: "9:45 PM"
     where: dining-room
-    text: Out of the conservatory just as the birthday cake comes into the Dining Room next door, so you slip into the crowd around it, rehearsing what you'll tell Arthur at 10:00. The lights go out at 9:45.
+    text: Out of the conservatory just as the birthday cake comes into the Dining Room next door, so you slip into the crowd around it, rehearsing what you'll tell Douglas at 10:00. The lights go out at 9:45.
 
 knows:
-  - You flagged six suspicious transfers to Arthur six weeks ago, before anyone else knew.
-  - You had a 10:00 meeting with Arthur tonight to go through the banking evidence.
-  - The user ID that authorized the transfers, **ML-0427**, is a **Blackwood Legal Counsel** credential. You can confirm it from the bank's side.
+  - You flagged six suspicious transfers to Douglas six weeks ago, before anyone else knew.
+  - You had a 10:00 meeting with Douglas tonight to go through the banking evidence.
+  - The user ID that authorized the transfers, **ML-0427**, is a **Cameron Legal Counsel** credential. You can confirm it from the bank's side.
   - You told Malik things you were legally forbidden to tell him.
 
 secret: |
-  You **discovered the theft** and you've been helping Arthur investigate it,
+  You **discovered the theft** and you've been helping Douglas investigate it,
   and you can independently confirm the authorizing credentials belong to
-  Blackwood Legal Counsel. You also leaked confidential information to Malik.
+  Cameron Legal Counsel. You also leaked confidential information to Malik.
 
 blackmail:
-  - You had a private meeting with Arthur scheduled for 10:00 tonight.
+  - You had a private meeting with Douglas scheduled for 10:00 tonight.
   - You knew about the suspicious transfers before almost anyone.
   - You leaked confidential banking information to Malik.
 
@@ -82,42 +82,42 @@ instructions:
 
 mission: |
   Learn **whether anyone besides you knew about the suspicious transfers.**
-  Find them, learn when they knew, then report to Reggie.
+  Find them, learn when they knew, then report to Roderick.
 
 rounds:
   1:
     text: |
-      Admit you're Arthur's private banker. If anyone asks, Arthur had you
+      Admit you're Douglas's private banker. If anyone asks, Douglas had you
       scheduled for a **private meeting tonight**. You won't say what about.
       Client confidentiality.
 
       You're going to look mysterious. Lean into it.
     reveal:
-      - You're Arthur's private banker and had a private meeting scheduled with him tonight.
+      - You're Douglas's private banker and had a private meeting scheduled with him tonight.
   2:
     text: |
       A note will be found: **"L.V. — We need to discuss the transfers before
       midnight. Come prepared to explain everything."**
 
-      That looks like Arthur accusing *you*. Don't fully explain. Say only that
-      you were "assisting Mr. Blackwood with a banking matter" and that you
+      That looks like Douglas accusing *you*. Don't fully explain. Say only that
+      you were "assisting Mr. Cameron with a banking matter" and that you
       can't discuss it. Watch suspicion swing your way. Let it.
     reveal:
       - Acknowledge the L.V. note is to you, without explaining it.
   3:
     text: |
-      Time to flip. When Kush reveals Blackwood Legal Counsel, confirm it
-      **independently**: *"I flagged those transfers to Arthur six weeks ago.
-      The authorizing credential, ML-0427, belongs to Blackwood Legal
+      Time to flip. When Kush reveals Cameron Legal Counsel, confirm it
+      **independently**: *"I flagged those transfers to Douglas six weeks ago.
+      The authorizing credential, ML-0427, belongs to Cameron Legal
       Counsel. I can confirm it from the bank's side."*
 
       You weren't hiding the theft. **You discovered it.**
     reveal:
-      - You discovered the theft and independently confirm ML-0427 is a Blackwood Legal Counsel credential.
+      - You discovered the theft and independently confirm ML-0427 is a Cameron Legal Counsel credential.
 
 texts:
-  - id: lindsey-arthur-history
-    from: Arthur Blackwood
+  - id: lindsey-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "2:20 PM"
     body: "10 o'clock tonight. Bring everything. I want it airtight before midnight."
@@ -128,7 +128,7 @@ texts:
   - id: lindsey-bank-r2
     from: Vale & Sons Compliance
     trigger: { round: 2, after: 14 }
-    body: "Ms Vale, per your request: credential ML-0427 is registered to Blackwood Legal Counsel. Please do not forward."
+    body: "Ms Vale, per your request: credential ML-0427 is registered to Cameron Legal Counsel. Please do not forward."
 
 host_notes: |
   Core. False suspect D (Part Two). The Round Three credential confirmation is

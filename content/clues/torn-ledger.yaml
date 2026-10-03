@@ -5,9 +5,9 @@ source: part-two
 round: 2
 timing: late
 carrier: found
-delivery: Late Round Two. Let people argue about what BLC means.
+delivery: Late Round Two. Let people argue about what CLC means.
 hide: Under a Living Room sofa cushion. Tuck it in late in Round Two.
-room: drawing-room            # where it is found in the manor (for the host map)
+room: drawing-room            # where it is found in the castle (for the host map)
 print: |
   [torn page from a ledger]
 
@@ -20,8 +20,8 @@ print: |
   ───────────
   TOTAL  $2,400,000
 
-  AUTHORIZED: BLC
-truth: BLC is Blackwood Legal Counsel. Kush and Lindsey confirm in Round Three.
+  AUTHORIZED: CLC
+truth: CLC is Cameron Legal Counsel. Kush and Lindsey confirm in Round Three.
 points_to: [morgan, lindsey]
 critical: false
 refs: []

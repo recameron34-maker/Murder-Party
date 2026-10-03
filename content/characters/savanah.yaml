@@ -1,10 +1,10 @@
 id: savanah
-name: Savanah, "Mrs. Blackwood"
+name: Savanah, "Mrs. Cameron"
 written_for: Savanah (maybe RSVP)   # HOST
 tier: flex                      # HOST
 pronouns: she/her               # HOST
-role: Lounge singer, and (she insists) Arthur's widow
-public_role: "Las Vegas lounge singer who introduces herself as Mrs. Blackwood"   # what everyone at the party knows; shown on every guest's guest list
+role: Lounge singer, and (she insists) Douglas's widow
+public_role: "Las Vegas lounge singer who introduces herself as Mrs. Cameron"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Married in Vegas, abandoned in a fortnight. You've come to collect."
 
 costume: |
@@ -14,36 +14,36 @@ costume: |
   sunglasses at night.
 
 intro: |
-  In 2019, the week after Clara dumped him, Arthur Blackwood flew to Las
+  In 2019, the week after Clara dumped him, Douglas Cameron flew to Las
   Vegas to "clear his head," walked into the Sapphire Room where you were
   singing, and married you at 3 a.m. at the Little Chapel of the Raven
-  (genuinely its name). As far as you're concerned you are **Mrs. Arthur
-  Blackwood**, and as of tonight a very wealthy widow.
+  (genuinely its name). As far as you're concerned you are **Mrs. Douglas
+  Cameron**, and as of tonight a very wealthy widow.
 
 backstory: |
-  James Calloway stood as best man. Two weeks later Arthur's lawyers flew in, a
-  sharp woman named Morgan with a briefcase, with Reggie carrying the luggage, and you signed some papers in a hotel suite while
+  James Calloway stood as best man. Two weeks later Douglas's lawyers flew in, a
+  sharp woman named Morgan with a briefcase, with Roderick carrying the luggage, and you signed some papers in a hotel suite while
   very hungover. You know perfectly well they were **annulment papers**.
   You've chosen not to remember that.
 
-  Arthur sent you a Supper invitation last month with a note: *"I owe you an
+  Douglas sent you a Supper invitation last month with a note: *"I owe you an
   apology and a song. Come."* You came. You're broke, the Sapphire Room has
-  closed, and with Arthur dead and his will in pieces, a "widow" might do
+  closed, and with Douglas dead and his will in pieces, a "widow" might do
   very nicely out of the estate if nobody checks.
 
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your husband of a fortnight, in 2019. He was sweet, drunk and sad. You liked him more than you meant to.
   - with: jimmy
-    text: James Calloway was Arthur's minder that Vegas weekend and his best man at 3 a.m. in a borrowed bow tie. The only person here who actually saw the wedding. You've been texting him all week to "get your stories straight."
+    text: James Calloway was Douglas's minder that Vegas weekend and his best man at 3 a.m. in a borrowed bow tie. The only person here who actually saw the wedding. You've been texting him all week to "get your stories straight."
   - with: carlotta
-    text: Arthur's daughter, which makes her, as you keep reminding her, your stepdaughter. Carley has asked you to stop. You will not stop.
+    text: Douglas's daughter, which makes her, as you keep reminding her, your stepdaughter. Carley has asked you to stop. You will not stop.
   - with: kim
     text: An old friend from the party circuit, and the only one here who calls you "Mrs. B" to your face. Kim always seems to know which of your stories are true.
-  - with: reggie
-    text: Reggie flew out in 2019, paid your hotel bill and helped make the whole thing quietly disappear. You call him "little brother." He hasn't stopped you.
+  - with: roderick
+    text: Roderick flew out in 2019, paid your hotel bill and helped make the whole thing quietly disappear. You call him "little brother." He hasn't stopped you.
   - with: clara
-    text: The ex-fiancée whose exit sent Arthur to Vegas. She looks at you like something on her shoe. Mutual.
+    text: The ex-fiancée whose exit sent Douglas to Vegas. She looks at you like something on her shoe. Mutual.
   - with: morgan
     text: The lawyer who brought the papers in 2019. If anyone can contradict you, it's her. Watch her.
   - with: courtney
@@ -58,55 +58,55 @@ evening:
   - at: "9:00 PM"
     until: "9:24 PM"
     where: drawing-room
-    text: At the piano, singing a medley of the songs Arthur requested in Vegas.
+    text: At the piano, singing a medley of the songs Douglas requested in Vegas.
   - at: "9:25 PM"
     until: "9:45 PM"
     where: dining-room
     text: 'You lead "Happy Birthday" at the cake, then keep going a cappella from a dining chair: the rest of the Vegas medley. Everyone in the room watched you the whole time; you made sure of it.'
 
 knows:
-  - You married Arthur in Las Vegas in 2019.
+  - You married Douglas in Las Vegas in 2019.
   - You signed something two weeks later. You've decided it doesn't count.
   - Morgan Leibold was the lawyer who brought the papers.
   - You were singing from 9:00 until the blackout, in full view: at the piano, then at the birthday cake.
 
 secret: |
-  **Your marriage to Arthur was annulled in 2019.** You know it. You're
+  **Your marriage to Douglas was annulled in 2019.** You know it. You're
   bluffing about being his widow because you're broke.
 
 blackmail:
-  - You married Arthur in Las Vegas in 2019.
+  - You married Douglas in Las Vegas in 2019.
   - You signed annulment papers two weeks later.
   - You're broke and hoping for a payout.
 
 instructions:
-  - Introduce yourself to everyone as "Mrs. Blackwood." Commit.
+  - Introduce yourself to everyone as "Mrs. Cameron." Commit.
   - You may sing a few bars at any dramatic moment.
   - Admit the annulment only if paid, or if someone produces proof.
   - Your alibi (singing in front of everyone, 9:00 to 9:45) is the best in the house. Mention it constantly.
 
 mission: |
-  Get **two different people to call you "Mrs. Blackwood"** without being
-  told to. Report them to Reggie.
+  Get **two different people to call you "Mrs. Cameron"** without being
+  told to. Report them to Roderick.
 
 rounds:
   1:
     text: |
-      Arthur is dead and you're the grieving widow. Weep magnificently.
+      Douglas is dead and you're the grieving widow. Weep magnificently.
       Then mention, delicately, that "as his wife" you suppose the estate is
       now… a matter for you.
 
       The room will now think you had the best motive of anyone. Enjoy it.
       You have the best alibi too.
     reveal:
-      - Announce you're Arthur's widow from a 2019 Las Vegas wedding.
+      - Announce you're Douglas's widow from a 2019 Las Vegas wedding.
   2:
     text: |
       People will dig. Defend the marriage with documents (your "wedding
       photo") and passion. If anyone mentions Morgan, insist "that woman made
       me sign things while I was unwell."
     reveal:
-      - Accuse Arthur's lawyer of making you sign papers in 2019.
+      - Accuse Douglas's lawyer of making you sign papers in 2019.
   3:
     text: |
       If the annulment comes out, concede with enormous dignity. Then point
@@ -116,11 +116,11 @@ rounds:
       - Concede the annulment if proven, and stand on your singing alibi.
 
 texts:
-  - id: savanah-arthur-history
-    from: Arthur Blackwood
+  - id: savanah-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Last month"
-    body: "I owe you an apology and a song. Come to the Supper. Bring the red dress. — A."
+    body: "I owe you an apology and a song. Come to the Supper. Bring the red dress. — D."
   - id: savanah-unknown-r2
     from: Unknown number
     trigger: { round: 2, after: 8 }
@@ -135,7 +135,7 @@ host_notes: |
   Real-life ties (Ross): Savanah knows Jimmy, Kim, Ross and Carley. Her
   character is built around them. "Jimmy" is assumed to be the player of
   James Calloway; if Ross meant Jimmy Friedman, move the best-man tie there.
-  Reggie is in on her backstory: play along when she calls you "little brother."
+  Roderick is in on her backstory: play along when she calls you "little brother."
 
   Flex (maybe RSVP), theatrical. Carries zero solution-critical clues. Her
   red herring ("the widow inherits") is resolved by Kim's 2019 Keyhole

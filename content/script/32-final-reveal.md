@@ -7,7 +7,7 @@ lights: reveal
 ---
 Stand somewhere central. Hold the solution envelope.
 
-"{{guest_count_words}} people came to Blackwood Manor tonight."
+"{{guest_count_words}} people came to Cameron Castle tonight."
 
 "Almost everyone lied."
 
@@ -19,23 +19,23 @@ Stand somewhere central. Hold the solution envelope.
 
 "But scandal is not murder."
 
-"Arthur Blackwood's killer relied on one enormous piece of luck." "The blackout."
+"Douglas Cameron's killer relied on one enormous piece of luck." "The blackout."
 
-"We all heard the crash." "The lights returned." "Arthur was missing." "And we made an assumption." "Arthur died in the dark."
+"We all heard the crash." "The lights returned." "Douglas was missing." "And we made an assumption." "Douglas died in the dark."
 
 *Pause.* "He didn't."
 
-"At 9:31, Antoinette left Arthur alive."
+"At 9:31, Antoinette left Douglas alive."
 
 "At 9:32, Morgan Leibold was walking toward his study."
 
-"At 9:35, Arthur had scheduled Morgan for a private confrontation."
+"At 9:35, Douglas had scheduled Morgan for a private confrontation."
 
-"At 9:36, Maya heard Arthur demand the return of stolen money."
+"At 9:36, Maya heard Douglas demand the return of stolen money."
 
 "A woman replied…" **'You'll destroy me.'**
 
-"At approximately 9:38…" "…Arthur Blackwood was struck once with the bronze raven."
+"At approximately 9:38…" "…Douglas Cameron was struck once with the bronze raven."
 
 *Pause.*
 
@@ -45,7 +45,7 @@ Stand somewhere central. Hold the solution envelope.
 
 "Study." *Gesture.* "Wall." *Gesture.* "Library."
 
-🆕 *Tonight it's real.* Walk to the study. "Study." Knock on the wall where the hidden door is. "Wall." Then go round to the landing, slide the bookshelf aside and open the door so the room can see straight through into the study (fire **Blackwood passage** as the shelf moves). "Library." *Let them look.* "Silas did love a dramatic exit."
+🆕 *Tonight it's real.* Walk to the study. "Study." Knock on the wall where the hidden door is. "Wall." Then go round to the landing, slide the bookshelf aside and open the door so the room can see straight through into the study (fire **Cameron passage** as the shelf moves). "Library." *Let them look.* "Silas did love a dramatic exit."
 
 "At 9:41, Alma saw Morgan emerge near the library."
 
@@ -55,21 +55,21 @@ Stand somewhere central. Hold the solution envelope.
 
 *Walk toward Morgan if comfortable.*
 
-"Arthur had discovered $2.4 million missing."
+"Douglas had discovered $2.4 million missing."
 
-"Kushington traced the authorization to Blackwood Legal Counsel."
+"Kushington traced the authorization to Cameron Legal Counsel."
 
 "Lindsey independently confirmed the credentials."
 
-"Arthur's scheduled message said the theft came from inside his legal operation."
+"Douglas's scheduled message said the theft came from inside his legal operation."
 
-"And in Arthur's own handwriting…" *Hold bank statement.* 🆕 **'Legal. Two point four million. Midnight.'**
+"And in Douglas's own handwriting…" *Hold bank statement.* 🆕 **'Legal. Two point four million. Midnight.'**
 
 *Pause.* "Morgan knew what midnight meant." "Exposure." "Police." "Ruination."
 
-"At 9:35, she entered Arthur's study." "They argued." "Arthur refused to stay silent."
+"At 9:35, she entered Douglas's study." "They argued." "Douglas refused to stay silent."
 
-"Morgan grabbed the bronze raven…" *Pause.* "…and killed Arthur Blackwood."
+"Morgan grabbed the bronze raven…" *Pause.* "…and killed Douglas Cameron."
 
 ## MORGAN LEIBOLD IS THE MURDERER.
 

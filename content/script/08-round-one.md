@@ -9,7 +9,7 @@ lights: investigation
 
 "Round One is simple."
 
-"Arthur Blackwood had enemies."
+"Douglas Cameron had enemies."
 
 "Your job is to discover how many of them are currently holding champagne in my living room."
 

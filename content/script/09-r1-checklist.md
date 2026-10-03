@@ -9,16 +9,16 @@ You do NOT need these in exact order. Make sure these facts emerge:
 
 - □ Jimmy was removed from will.
 - □ Molly sold potentially fake painting.
-- □ Kevin argued with Arthur. 🆕 **Kevin admits "You're going to regret this."**
+- □ Kevin argued with Douglas. 🆕 **Kevin admits "You're going to regret this."**
 - □ Carlotta heard "I'm giving it all away."
-- □ Hannah says Arthur considered giving away fortune.
-- □ Kush reveals Arthur suspected theft.
+- □ Hannah says Douglas considered giving away fortune.
+- □ Kush reveals Douglas suspected theft.
 - □ Maya reveals argument about missing money.
-- □ Annie establishes Arthur alive at 9:31.
-- □ Shea reveals Arthur's ominous medical comment.
+- □ Annie establishes Douglas alive at 9:31.
+- □ Shea reveals Douglas's ominous medical comment.
 - □ Joji establishes existence of historical passages.
 - □ Tim mentions strange library door.
-- □ Malik says person Arthur planned to expose "isn't family."
+- □ Malik says person Douglas planned to expose "isn't family."
 - 🆕 □ Cufflink found; Kevin recognizes it.
 - 🆕 □ Molly's threatening letter found behind a frame.
 - 🆕 □ Late in the round: plant/announce the destroyed will.

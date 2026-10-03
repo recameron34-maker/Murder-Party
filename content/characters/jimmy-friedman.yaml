@@ -20,10 +20,10 @@ intro: |
 backstory: |
   Your specialty is lending heirs money against what they're *going* to
   inherit. Your best investment was **James Calloway: $300,000** against his
-  Blackwood expectations. Then Arthur cut James out of the will, and your
+  Cameron expectations. Then Douglas cut James out of the will, and your
   "investment" became a very expensive IOU.
 
-  Arthur dying doesn't help you. You needed him alive and James back in the
+  Douglas dying doesn't help you. You needed him alive and James back in the
   will. You are, if anything, the one man here who's poorer tonight. That
   hasn't stopped people looking at you.
 
@@ -59,14 +59,14 @@ evening:
     text: Lights out. Somebody grabbed the pot in the dark. You suspect Martin.
 
 knows:
-  - James Calloway owes you $300,000, which is why Arthur cut him out.
+  - James Calloway owes you $300,000, which is why Douglas cut him out.
   - Daniel and Martin were at your card table from 9:00 until the blackout. James left around 9:38.
   - Kevin is desperate for money. You can smell it.
   - You've been courting Lexi for months. The second bouquet goes to your mother.
 
 secret: |
   You lent **James Calloway $300,000** against his inheritance, the reason
-  Arthur cut him out. And the mysterious **second bouquet** you order every
+  Douglas cut him out. And the mysterious **second bouquet** you order every
   Friday goes to your mother.
 
 blackmail:
@@ -82,7 +82,7 @@ instructions:
 
 mission: |
   Make a **"business deal" with another guest** that trades information for
-  information. Get it in writing on a napkin. Report the deal to Reggie.
+  information. Get it in writing on a napkin. Report the deal to Roderick.
 
 rounds:
   1:
@@ -111,10 +111,10 @@ rounds:
   3:
     text: |
       Confirm, if asked, that **James owes you $300,000** against his
-      inheritance, and that Arthur's death means you'll never see it. You
-      needed Arthur alive more than anyone here.
+      inheritance, and that Douglas's death means you'll never see it. You
+      needed Douglas alive more than anyone here.
     reveal:
-      - James owes you $300,000; Arthur's death ruined you, so you had no motive.
+      - James owes you $300,000; Douglas's death ruined you, so you had no motive.
 
 texts:
   - id: jimmyf-james-history

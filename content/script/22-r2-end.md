@@ -8,7 +8,7 @@ changes: Part Two's end-of-round suspicion targets added.
 
 *Count on fingers.*
 
-"Arthur was alive at 9:31."
+"Douglas was alive at 9:31."
 
 "He was arguing about stolen money around 9:36."
 

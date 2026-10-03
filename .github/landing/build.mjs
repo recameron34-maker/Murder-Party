@@ -114,7 +114,7 @@ const page = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Blackwood Manor: branch previews</title>
+<title>Cameron Castle: branch previews</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=EB+Garamond:wght@400;600&display=swap">
 <style>
@@ -138,7 +138,7 @@ a{color:var(--gold2)}
 .btn.ghost{background:transparent;color:var(--gold2);border-color:var(--gold)}
 footer{color:var(--muted);font-size:.85rem;margin-top:30px}
 </style></head><body><main>
-<h1>Blackwood Manor: branch previews</h1>
+<h1>Cameron Castle: branch previews</h1>
 <p class="muted">Temporary landing page. Every branch of the repo, each with a read-only preview of the host planner and every guest's page. Rebuilt automatically whenever any branch is pushed.</p>
 <p class="warn"><b>Spoilers.</b> Anyone with this link can read everything, including the solution. Don't send it to guests. The real party site (passphrase logins, live rounds, phone texts) is separate. See the README.</p>
 ${cards}
@@ -152,7 +152,7 @@ fs.writeFileSync(path.join(OUT, 'index.html'), page);
 const base = `/${REPO.split('/')[1]}/`;
 fs.writeFileSync(
   path.join(OUT, '404.html'),
-  page.replace('<head>', `<head>\n<base href="${base}">`).replace('<h1>Blackwood Manor: branch previews</h1>', '<h1>Not found</h1><p>That page doesn\'t exist. Here are the branches:</p>'),
+  page.replace('<head>', `<head>\n<base href="${base}">`).replace('<h1>Cameron Castle: branch previews</h1>', '<h1>Not found</h1><p>That page doesn\'t exist. Here are the branches:</p>'),
 );
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 fs.writeFileSync(path.join(OUT, 'robots.txt'), 'User-agent: *\nDisallow: /\n');

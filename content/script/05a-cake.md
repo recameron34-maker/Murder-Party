@@ -3,12 +3,12 @@ title: The birthday cake
 round: 0
 kind: cue
 lights: cake
-changes: Arthur leaves for his study at the cake and changes into Reggie in the closet. Nobody acts out the murder; the guests only have to solve it.
+changes: Douglas leaves for his study at the cake and changes into Roderick in the closet. Nobody acts out the murder; the guests only have to solve it.
 ---
 🆕 About fifteen minutes before the blackout. In the story, Lexi and Maya's
 cake came out at 9:25, almost the whole house followed it into the Dining
-Room, and Arthur stayed in his study. The same thing happens for real, and
-it does one important job: **Arthur has to leave the room well before the
+Room, and Douglas stayed in his study. The same thing happens for real, and
+it does one important job: **Douglas has to leave the room well before the
 lights go out.** In the solution he dies seven minutes before the blackout,
 so nobody can have seen him alive just before it.
 
@@ -16,15 +16,15 @@ so nobody can have seen him alive just before it.
 nearest (Annie carries it in the story). The party follows it into the
 Dining Room.
 
-**2. Arthur leaves.** In the Dining Room doorway, as Arthur:
+**2. Douglas leaves.** In the Dining Room doorway, as Douglas:
 
-"Blackwood birthdays have one rule. The cake is cut in the Dining Room, under the portraits, and the head of the family does not come out to watch."
+"Cameron birthdays have one rule. The cake is cut in the Dining Room, under the portraits, and the head of the family does not come out to watch."
 
 *Beat.*
 
-"Blackwoods don't watch other people being celebrated. Enjoy it."
+"Camerons don't watch other people being celebrated. Enjoy it."
 
-Fire **Blackwood cake** and walk to your study without looking back. Let
+Fire **Cameron cake** and walk to your study without looking back. Let
 the room sing "Happy Birthday" without you.
 
 [[if:savanah]]

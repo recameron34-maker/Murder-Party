@@ -4,9 +4,9 @@ written_for: Spare, any late guest   # HOST
 tier: flex                      # HOST
 effort: medium                  # HOST
 pronouns: any                   # HOST
-role: Ghostwriter of Arthur's memoir
-public_role: "Ghostwriter of Arthur's memoir"   # what everyone at the party knows; shown on every guest's guest list
-tagline: "You've been Arthur's voice for a year. Now you're the only one who knows how his book ends."
+role: Ghostwriter of Douglas's memoir
+public_role: "Ghostwriter of Douglas's memoir"   # what everyone at the party knows; shown on every guest's guest list
+tagline: "You've been Douglas's voice for a year. Now you're the only one who knows how his book ends."
 
 costume: |
   Literary noir: black on black, a fountain pen, ink-stained cuffs, a
@@ -14,26 +14,26 @@ costume: |
   hasn't slept since the first draft. You're "[Name] Vesper."
 
 intro: |
-  For a year you've been ghostwriting Arthur's memoir, *Black Stone*. You've
+  For a year you've been ghostwriting Douglas's memoir, *Black Stone*. You've
   heard every secret he was willing to say out loud, and a few he whispered
   to make sure you wrote them down.
 
 backstory: |
-  Last week Arthur dictated a final chapter titled **"The Thief in My
+  Last week Douglas dictated a final chapter titled **"The Thief in My
   House."** You have the draft. It says: *"Someone I raised up has been
   robbing me. I will not name them until midnight."* He raised up a lot of
   people: a ward, a cook's granddaughter, a scholarship lawyer, a nephew.
   The line fits half the room.
 
   Your own sin: the juiciest chapters, about Clara, about Carlotta's mother,
-  about a Las Vegas weekend, you **embellished**. Quite a lot. Arthur
+  about a Las Vegas weekend, you **embellished**. Quite a lot. Douglas
   signed off on them laughing.
 
 relationships:
   - with: clara
     text: Chapter Nine is about her. She hasn't read it. She'd sue.
   - with: carlotta
-    text: Chapter Two is about her mother leaving. Arthur cried dictating it. You've never told Carlotta.
+    text: Chapter Two is about her mother leaving. Douglas cried dictating it. You've never told Carlotta.
   - with: malik
     text: A journalist. He's been circling you all night, trying to get the final chapter.
 
@@ -48,18 +48,18 @@ evening:
     text: When the cake comes out you follow the crowd into the Dining Room and take notes on who stands next to whom. Never out of sight.
 
 knows:
-  - 'Arthur''s last dictated chapter: "Someone I raised up has been robbing me. I will not name them until midnight."'
+  - 'Douglas''s last dictated chapter: "Someone I raised up has been robbing me. I will not name them until midnight."'
   - You embellished several chapters about real people.
-  - Arthur cried dictating the chapter about Carlotta's mother.
+  - Douglas cried dictating the chapter about Carlotta's mother.
 
 secret: |
-  You hold Arthur's unpublished last chapter, **"The Thief in My House,"**
+  You hold Douglas's unpublished last chapter, **"The Thief in My House,"**
   and you've **embellished** the memoir's most scandalous chapters.
 
 blackmail:
-  - You have Arthur's final chapter, "The Thief in My House."
+  - You have Douglas's final chapter, "The Thief in My House."
   - You embellished the chapters about Clara and the Vegas weekend.
-  - Arthur cried about Carlotta's mother.
+  - Douglas cried about Carlotta's mother.
 
 instructions:
   - You may read short "excerpts" from *Black Stone* at dramatic moments. Invent freely; they're memoir, not evidence.
@@ -69,33 +69,33 @@ instructions:
 
 mission: |
   Get someone to give you **a quote for the final chapter**, something
-  dramatic about Arthur, on the record. Report it to Reggie.
+  dramatic about Douglas, on the record. Report it to Roderick.
 
 rounds:
   1:
     text: |
-      Reveal that you were writing Arthur's memoir. Be coy about how it
+      Reveal that you were writing Douglas's memoir. Be coy about how it
       ends.
     reveal:
-      - You were ghostwriting Arthur's memoir, Black Stone.
+      - You were ghostwriting Douglas's memoir, Black Stone.
   2:
     text: |
-      Read the line from Arthur's final chapter: **"Someone I raised up has
+      Read the line from Douglas's final chapter: **"Someone I raised up has
       been robbing me. I will not name them until midnight."**
 
-      Then let the room count the people Arthur "raised up."
+      Then let the room count the people Douglas "raised up."
     reveal:
-      - 'Arthur''s final chapter: "Someone I raised up has been robbing me."'
+      - 'Douglas''s final chapter: "Someone I raised up has been robbing me."'
   3:
     text: |
-      If Carlotta seems shattered, tell her about Chapter Two. Arthur cried.
+      If Carlotta seems shattered, tell her about Chapter Two. Douglas cried.
       He loved her. That's not evidence; it's just true.
     reveal:
-      - Tell Carlotta that Arthur cried dictating the chapter about her mother.
+      - Tell Carlotta that Douglas cried dictating the chapter about her mother.
 
 texts:
-  - id: vesper-arthur-history
-    from: Arthur Blackwood
+  - id: vesper-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Last week"
     body: "Final chapter stays in the drawer until midnight Saturday. Then publish and be damned, as they say. Usually about me."

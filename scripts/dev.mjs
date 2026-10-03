@@ -95,7 +95,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(port, lan ? '0.0.0.0' : '127.0.0.1', () => {
-  console.log(`\n  Blackwood Manor is open.\n`);
+  console.log(`\n  Cameron Castle is open.\n`);
   console.log(`  Guests:  http://localhost:${port}/`);
   console.log(`  Host:    http://localhost:${port}/host   (password: ${env.HOST_PASSWORD === 'blackwood' ? 'blackwood' : 'from HOST_PASSWORD'})`);
   if (lan) {

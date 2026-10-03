@@ -1,6 +1,6 @@
 # HOST ONLY. The ideal suspicion curve from Part Two §10: who the room
 # should suspect, and how strongly, at each stage. Drawn as a heat map on
-# the host Dashboard and Suspicion page so Reggie can steer with
+# the host Dashboard and Suspicion page so Roderick can steer with
 # counterweights. Levels: 0 cleared, 1 murmurs, 2 warm, 3 hot.
 stages:
   - { id: r1-end, round: 1, title: "End of Round One", aim: "Several strong suspects. Nobody should stand out enormously." }
@@ -11,19 +11,19 @@ stages:
 suspects:
   - id: kevin
     levels: [3, 3, 1, 0]
-    notes: ["Disinherited, the 9:20 threat, the cufflink", "Killed Arthur after being disinherited?", "Terrace camera: mostly cleared", "Cleared"]
+    notes: ["Disinherited, the 9:20 threat, the cufflink", "Killed Douglas after being disinherited?", "Terrace camera: mostly cleared", "Cleared"]
   - id: molly
     levels: [3, 3, 1, 0]
-    notes: ["$750K fake, the threatening letter, knew where the raven was", "Killed Arthur to hide the fraud?", "Motive weakening", "Cleared by Arthur's note to Martin"]
+    notes: ["$750K fake, the threatening letter, knew where the raven was", "Killed Douglas to hide the fraud?", "Motive weakening", "Cleared by Douglas's note to Martin"]
   - id: carlotta
     levels: [3, 3, 2, 0]
-    notes: ["Estranged, 'giving it all away', the destroyed will", "Inheritance murder?", "Theory starting to collapse", "Cleared: Arthur tore up the will himself (Clara)"]
+    notes: ["Estranged, 'giving it all away', the destroyed will", "Inheritance murder?", "Theory starting to collapse", "Cleared: Douglas tore up the will himself (Clara)"]
   - id: lindsey
     levels: [2, 3, 3, 0]
     notes: ["Mysterious financial activity, a secret meeting", "Stole the $2.4M? The L.V. note", "Strongest financial suspect", "Flips: she discovered the theft"]
   - id: morgan
     levels: [2, 2, 3, 3]
-    notes: ["The 9:35 meeting on Arthur's phone", "Stole the $2.4M? Her email defends her", "Strongest financial suspect, near the library at 9:41", "Corridor at 9:32, BLC, ML-0427, the passage: it locks together"]
+    notes: ["The 9:35 meeting on Douglas's phone", "Stole the $2.4M? Her email defends her", "Strongest financial suspect, near the library at 9:41", "Corridor at 9:32, CLC, ML-0427, the passage: it locks together"]
   - id: louis
     levels: [1, 1, 1, 0]
     notes: ["Literally snooping around hidden walls", "Snooping in the library", "Who is living in the walls?", "Cleared by Kim: trapped in the east wing"]

@@ -5,7 +5,7 @@ tier: supporting                # HOST
 pronouns: she/her               # HOST
 role: Art dealer, Monroe Fine Art
 public_role: "Art dealer, Monroe Fine Art"   # what everyone at the party knows; shown on every guest's guest list
-tagline: "You sold Arthur a masterpiece. It's a fake. You'd very much like everyone to stop saying so."
+tagline: "You sold Douglas a masterpiece. It's a fake. You'd very much like everyone to stop saying so."
 
 costume: |
   Gallery glamour: a dramatic dress or sharp suit in jewel tones, statement
@@ -13,13 +13,13 @@ costume: |
   slightly too clever for the room.
 
 intro: |
-  You own Monroe Fine Art. Two years ago you sold Arthur Blackwood the
+  You own Monroe Fine Art. Two years ago you sold Douglas Cameron the
   crown jewel of his gallery, a "lost Sargent" portrait of **Lady Evangeline
-  Blackwood**, for **$750,000**. Her painted eyes follow you down the gallery.
+  Cameron**, for **$750,000**. Her painted eyes follow you down the gallery.
   Everyone says so. Lately they seem to be following you in particular.
 
 backstory: |
-  The painting is a forgery. You found out a month ago, the same week Arthur
+  The painting is a forgery. You found out a month ago, the same week Douglas
   did. **You didn't know.** You were taken in as completely as he was, by a
   "dealer" in Marseille you now suspect was the forger himself.
 
@@ -27,7 +27,7 @@ backstory: |
   refund $750,000 you're finished. That's a very good motive, and you know
   it.
 
-  At **8:45** Arthur called you into the study. The raven was on his desk;
+  At **8:45** Douglas called you into the study. The raven was on his desk;
   he turned it in his hands while he talked. He said, "We need to discuss
   the Monroe acquisition tonight. I know what happened." You don't know
   whether he meant the forgery or your part in it.
@@ -36,15 +36,15 @@ backstory: |
   night, used to be lovers. It ended badly. He's enjoying this far too much.
 
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your best client. Generous, exacting, frightening. You never found out whether he forgave you.
   - with: martin
     text: Your ex. The expert who will expose the painting tonight. You'd like to strangle him with his own measuring tape.
   - with: hannah
-    text: She's been courting Arthur's money for her foundation. Professional rivals for the same checkbook.
+    text: She's been courting Douglas's money for her foundation. Professional rivals for the same checkbook.
   - with: courtney
     if: courtney
-    text: '"Lady" Courtney asked you whether the bird on Arthur''s desk was "worth anything." You hated her instantly.'
+    text: '"Lady" Courtney asked you whether the bird on Douglas''s desk was "worth anything." You hated her instantly.'
 
 evening:
   - at: "8:00 PM"
@@ -54,7 +54,7 @@ evening:
   - at: "8:45 PM"
     until: "8:49 PM"
     where: study
-    text: Arthur calls you in. The **bronze raven is on his desk**. "We need to discuss the Monroe acquisition tonight. I know what happened."
+    text: Douglas calls you in. The **bronze raven is on his desk**. "We need to discuss the Monroe acquisition tonight. I know what happened."
   - at: "8:50 PM"
     until: "9:25 PM"
     where: drawing-room
@@ -66,70 +66,70 @@ evening:
 
 knows:
   - The Lady Evangeline portrait is a forgery. You didn't know when you sold it.
-  - At 8:45 the bronze raven was sitting on Arthur's desk. You know exactly where it was kept.
-  - Arthur said "I know what happened" about the painting tonight.
+  - At 8:45 the bronze raven was sitting on Douglas's desk. You know exactly where it was kept.
+  - Douglas said "I know what happened" about the painting tonight.
   - You were alone in the gallery from 9:25 to 9:45.
 
 secret: |
-  You sold Arthur a **$750,000 forgery**, unknowingly, and a refund would
+  You sold Douglas a **$750,000 forgery**, unknowingly, and a refund would
   bankrupt you. You were in the study at 8:45 with the murder weapon, and you
   have no alibi for 9:25 to 9:45.
 
 blackmail:
-  - The painting you sold Arthur is a forgery.
-  - You were in Arthur's study at 8:45 and the raven was on his desk.
+  - The painting you sold Douglas is a forgery.
+  - You were in Douglas's study at 8:45 and the raven was on his desk.
   - You and Martin were lovers.
 
 instructions:
-  - Admit your 8:45 visit in Round One. Insist you never deceived Arthur on purpose.
+  - Admit your 8:45 visit in Round One. Insist you never deceived Douglas on purpose.
   - When the threatening letter appears, read the word **IF** with enormous emphasis.
   - You may "appraise" other guests' jewelry cruelly and accurately.
   - Never admit Martin got under your skin. He did.
 
 mission: |
   Convince someone the **painting could have been switched after you sold
-  it.** (It wasn't, probably.) Report your convert to Reggie.
+  it.** (It wasn't, probably.) Report your convert to Roderick.
 
 rounds:
   1:
     text: |
       Martin will expose the painting as a fake. Deny you knew. Then admit,
-      because it'll come out anyway, that **Arthur called you into the study at
+      because it'll come out anyway, that **Douglas called you into the study at
       8:45 and the raven was right there on his desk.**
 
       Yes, that means you knew where the murder weapon was. So did everyone
       who's ever been in that study.
     reveal:
-      - You visited Arthur in the study at 8:45; the raven was on his desk.
+      - You visited Douglas in the study at 8:45; the raven was on his desk.
   2:
     text: |
       A letter may be found behind a picture frame: *"Molly — We need to
       discuss the Monroe acquisition tonight. I know what happened. **If** you
       knowingly deceived me, I will have no choice but to involve the
-      authorities. — A.B."*
+      authorities. — D.C."*
 
       It looks awful. Seize on the word **IF**. You did not *knowingly* do
       anything.
 
       [[if:courtney]]
       And if anyone produces Courtney's photo of herself posing with the raven,
-      you can help: when you saw it at **8:45** it was sitting on Arthur's
+      you can help: when you saw it at **8:45** it was sitting on Douglas's
       desk, perfectly normal. Whatever she did with it, she put it back.
       [[/if]]
     reveal:
       - Respond to the threatening letter by stressing "IF you knowingly deceived me."
   3:
     text: |
-      If Martin produces Arthur's note about the forger, **you're cleared.**
-      Arthur had worked out that you'd been fooled too.
+      If Martin produces Douglas's note about the forger, **you're cleared.**
+      Douglas had worked out that you'd been fooled too.
 
       Be gracious. Then never speak to Martin again.
     reveal:
-      - Arthur had concluded you were also deceived by the forger.
+      - Douglas had concluded you were also deceived by the forger.
 
 texts:
-  - id: molly-arthur-history
-    from: Arthur Blackwood
+  - id: molly-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Thursday"
     body: "Saturday, Molly. My study. We'll talk about Evangeline like grown-ups."

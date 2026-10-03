@@ -19,11 +19,11 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
 | Savanah and Courtney | **Both theatrical.** |
 | Spice level | **Saucy.** Bolder innuendo and scandalous entanglements, nothing explicit. |
 | Public GitHub repo | Not a concern for now ("no one knows this site exists"). |
-| Noor and Joji | **Married**, and **Noor is pregnant** (in real life and in character). Arthur was to be godfather; Annie pours Noor an alcohol-free Reckoning. Her role stays seated and spoken. |
+| Noor and Joji | **Married**, and **Noor is pregnant** (in real life and in character). Douglas was to be godfather; Annie pours Noor an alcohol-free Reckoning. Her role stays seated and spoken. |
 | Lindsey and Malik | **Dating** (confirmed). |
-| Savanah's real-life ties | Knows **Jimmy, Kim, Ross and Carley**. Her character: James was best man at her 3 a.m. Vegas wedding to Arthur, Reggie helped bury the annulment (she calls him "nephew"), Kim is her old friend, Carley is her horrified "stepdaughter." *Assumed "Jimmy" = James Calloway's player.* |
-| Courtney's real-life ties | Knows **Ross, Carley, Morgan** and others. Her character: she crashed Carley's Berlin opening as a fake countess, Morgan has hired her for client dinners, Reggie is in on the act. |
-| Morgan breadcrumb | **Keep, but super subtle and disguised:** the old floor-plan prop carries a faded filing stamp, "RECEIVED · B.L.C. · 14 AUG". Joji only remembers "somebody's office stamp." Only a guest who matches it to the ledger's "AUTHORIZED: BLC" will realize Morgan's office had the plans. |
+| Savanah's real-life ties | Knows **Jimmy, Kim, Ross and Carley**. Her character: James was best man at her 3 a.m. Vegas wedding to Douglas, Roderick helped bury the annulment (she calls him "nephew"), Kim is her old friend, Carley is her horrified "stepdaughter." *Assumed "Jimmy" = James Calloway's player.* |
+| Courtney's real-life ties | Knows **Ross, Carley, Morgan** and others. Her character: she crashed Carley's Berlin opening as a fake countess, Morgan has hired her for client dinners, Roderick is in on the act. |
+| Morgan breadcrumb | **Keep, but super subtle and disguised:** the old floor-plan prop carries a faded filing stamp, "RECEIVED · B.L.C. · 14 AUG". Joji only remembers "somebody's office stamp." Only a guest who matches it to the ledger's "AUTHORIZED: CLC" will realize Morgan's office had the plans. |
 | Deploy | **GitHub only, for now** (Ross). A **temporary landing page deployed from `main`** to GitHub Pages lists every branch and links to its static, read-only, spoiler-full preview, so he can watch progress. Pages Source: "GitHub Actions". Remove later by deleting `.github/workflows/pages.yml` and `.github/landing/`. The real party site (logins, rounds, texts) needs Cloudflare. That deploy job is already in the workflow and stays dormant until the secrets are added, before guests get links. |
 | Floor plan | Coming from Ross; it will map the game areas and the hiding spots. |
 | Website | **Per-player passphrase login**, with the site as a game companion: texts that arrive at set times or on cue, visible only to that player. Built as a server-rendered app (Cloudflare Workers + D1) instead of static pages. |
@@ -35,22 +35,22 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
 2. **Name collisions**
    - James "Jimmy" Calloway (core: removed from will, sees Morgan at 9:40) and
      **Jimmy Friedman** (supporting: the fixer, "business deal" mission) are
-     separate. Reggie calls the first one "James" in the script, which helps.
+     separate. Roderick calls the first one "James" in the script, which helps.
    - *Default:* **Dr. Noor Beaumont and Professor Joji Beaumont are married.**
      Both are Beaumonts and both appear in the script. If they aren't a
      couple in real life, make them siblings or rename one; only
      `noor.yaml`/`joji.yaml` mention it.
    - Head count: 25 guests (24 named in CLAUDE.md, plus Jimmy Friedman, with
-     Albie = Aalvia), which matches "Twenty-five people came to Blackwood
-     Manor tonight." The revised script computes this number from the roster,
+     Albie = Aalvia), which matches "Twenty-five people came to Cameron
+     Castle tonight." The revised script computes this number from the roster,
      so it stays right when maybes and spares are added.
 3. **Roster gaps**
-   - Aalvia "Albie" is the medium Arthur hired to "channel" the founder at
+   - Aalvia "Albie" is the medium Douglas hired to "channel" the founder at
      the Midnight Supper. She has both the "who benefits from the dark?" cue
-     and the "secret allies" mission. Arthur really did confide in her.
+     and the "secret allies" mission. Douglas really did confide in her.
    - *Default:* **Kim** secretly writes **The Keyhole**, the anonymous society
      gossip column. **Malik** is the investigative podcaster ("Old Money")
-     whom Arthur was feeding information. **Lindsey is dating Malik.**
+     whom Douglas was feeding information. **Lindsey is dating Malik.**
 4. **Part One revised for Part Two**: `content/script/*.md` is the revised
    run of show. Part One itself is untouched in `docs/source/`. The change
    list is under "Script revisions" below.
@@ -61,25 +61,25 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
    "empty your pockets" moment.
 6. **Kevin's terrace-camera alibi**: new physical clue `terrace-camera`
    (late Round Two). Kevin grabbed the nearest coat from the hall at 9:22,
-   which was Arthur's, and paced the terrace until 9:47 on camera. His Round
-   Two envelope tells him to ask Reggie for the footage. Because he's been
-   wearing Arthur's coat, Kevin is also the one who finds the folded bank
+   which was Douglas's, and paced the terrace until 9:47 on camera. His Round
+   Two envelope tells him to ask Roderick for the footage. Because he's been
+   wearing Douglas's coat, Kevin is also the one who finds the folded bank
    statement in its pocket in Round Three, which explains Part One's "Kevin
-   gives you Arthur's folded bank statement."
+   gives you Douglas's folded bank statement."
 7. **Annie's 9:32 sighting stays in Round Three** (Part One). Part Two's
    suspicion curve needs Shea and Clara to remain possible as "the woman" at
    the end of Round Two, which an earlier Annie reveal would kill. The
    counterweight example in Part Two is a pattern, not a schedule. Annie's
    reason for keeping quiet: Morgan handled Annie's divorce for free and Annie
    is loyal. Besides, the meeting was on the calendar, so why would it matter?
-8. **Shea and the clue mapping.** Shea is Arthur's private nurse (the
+8. **Shea and the clue mapping.** Shea is Douglas's private nurse (the
    medication, the ominous comment, the "why did we assume the blackout?"
    cue). Her secret mission is unchanged. Clue mapping:
    - Part Two **Clue 10 (final bank document)** and Part One's **folded bank
      statement** are the same prop. Page one shows the authorizations with
-     BLC and ML-0427. Across the top, in Arthur's hand: **LEGAL. $2.4M.
-     MIDNIGHT.** Kevin finds it in Arthur's coat.
-   - **Arthur's phone** (end of Round One), **Carlotta's note** (Round Three)
+     CLC and ML-0427. Across the top, in Douglas's hand: **LEGAL. $2.4M.
+     MIDNIGHT.** Kevin finds it in Douglas's coat.
+   - **Douglas's phone** (end of Round One), **Carlotta's note** (Round Three)
      and **Malik's scheduled message** (Round Three) stay as Part One beats.
      None of the ten Part Two clues replaces them.
    - **Clue 9 (the draft letter)** is a separate unfinished letter from
@@ -89,12 +89,12 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
 ## New issues found while reading, and how they were filled
 
 - **Molly's clearing note** didn't exist. New prop `molly-cleared-note`,
-  produced by **Martin in Round Three**: Arthur's note saying the forger
+  produced by **Martin in Round Three**: Douglas's note saying the forger
   Lucien Vasse fooled Molly too. Saucy reason Martin sat on it all night: he
   and Molly used to sleep together and he enjoyed watching her sweat. If
-  Martin isn't cast, Reggie "finds" the note.
-- **The black thread** is from **Arthur's own black silk tie** (first written
-  as a black velvet smoking jacket; changed when Ross chose Arthur's live
+  Martin isn't cast, Roderick "finds" the note.
+- **The black thread** is from **Douglas's own black silk tie** (first written
+  as a black velvet smoking jacket; changed when Ross chose Douglas's live
   costume, a tan suit, black tie, flat cap and wig). It snagged on the
   raven's beak as he fell. Shea (who dressed him)
   confirms it in Round Three. It points at nobody's costume, so it can't
@@ -105,19 +105,19 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
   "at the beginning" means the beginning of the game.
 - **Noor's time of death**: the Final Timeline now says "9:35 to 9:40"
   (Noor's range). "Approximately 9:38" survives only in the final reveal,
-  where Reggie is telling the truth.
+  where Roderick is telling the truth.
 - **"The Wellington matter"** in Morgan's email: Hannah is Hannah
   **Wellington** of the **Wellington Foundation**, the planned charitable
   transfer. Monroe = Molly, Vale = Lindsey.
 - **How Morgan knew about the passage**: Joji's survey of the house,
-  including the 1891 plans, went through Blackwood Legal for a landmark
+  including the 1891 plans, went through Cameron Legal for a landmark
   application in August. It sits in Morgan's backstory. Per Ross, the only
   outward trace is the disguised "B.L.C." filing stamp on the floor-plan prop.
 
 ## Lore layer (spooky Saltburn), all additive
 
-- **The raven curse**: every Blackwood who tried to give the fortune away
-  died before signing (Edmund 1923, Cordelia 1979). Arthur announced he'd
+- **The raven curse**: every Cameron who tried to give the fortune away
+  died before signing (Edmund 1923, Cordelia 1979). Douglas announced he'd
   give it all away. Guests may blame the curse. It's mood, not evidence.
 - **Midnight Supper rules** (seven, printed on every guest page), plus "the
   Reckoning", the 9:30 drink the house pours for the patriarch. Annie
@@ -126,7 +126,7 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
   through the ice-house tunnel for weeks hunting Silas's legendary "Raven
   Room". At 9:25 to 9:46 he was trapped in an east-wing passage, far from
   the study. Kim saw him crawl out at 9:46.
-- **Portraits that watch**: Molly's forged "Lady Evangeline Blackwood".
+- **Portraits that watch**: Molly's forged "Lady Evangeline Cameron".
 - **Staff who see everything**: Annie (house manager, eleven years) and Shea
   (live-in nurse).
 - **Outsiders angling in**: Morgan (the scholarship girl who became the
@@ -136,8 +136,8 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
 
 ## Flex characters
 
-- **Savanah**, theatrical: "the Widow Blackwood". She claims a 1999 Las Vegas
-  wedding to Arthur makes her his heir. It was annulled in 2001. Kim or
+- **Savanah**, theatrical: "the Widow Cameron". She claims a 1999 Las Vegas
+  wedding to Douglas makes her his heir. It was annulled in 2001. Kim or
   Morgan can resolve it.
 - **Courtney**, theatrical: a "professional guest" hired to make parties look
   grander, posing as minor nobility. Her 8:40 selfie with the raven puts her
@@ -181,7 +181,7 @@ dressing in `lore.yaml` → `venue_setup`. Host panel → Setup shows it all.
 
 | Real room | Plays |
 |---|---|
-| Room (12'3" × 8'8", "Side Room" on the site) | Arthur's study |
+| Room (12'3" × 8'8", "Side Room" on the site) | Douglas's study |
 | Family Room | The East Corridor: the only way to the study door |
 | Landing (top of the front stairs) | Library; its movable bookshelf is the library bookcase |
 | Living Room | Drawing Room (the party); the coat rack is the Front Hall; the front door is the Library Corridor |
@@ -209,7 +209,7 @@ hidden behind a movable bookshelf on the landing side (Ross, October 2026).
 So the study and the library really are back to back with a hidden door,
 while the normal way between them runs through the Family Room, the Living
 Room and the front door. The door stays shut and the
-shelf stays put until the reveal, when Reggie opens it (Ross: yes). The door
+shelf stays put until the reveal, when Roderick opens it (Ross: yes). The door
 is recorded only in `lore.yaml` → `venue_passage` (host-only); the guest plan
 draws a plain wall there, and a test keeps it that way. Guests can still see
 on their plan that the library landing backs onto the study; that's a fair
@@ -227,7 +227,7 @@ What changed to get there:
 - **Maya & Kevin** are now a secret couple in the story: the cook's
   granddaughter and the heir who stayed, sweethearts from one summer at the
   lake, hiding it from a family with opinions about "the help". Kevin went
-  to the study at 9:20 to tell Arthur; he has a ring in his pocket. They
+  to the study at 9:20 to tell Douglas; he has a ring in his pocket. They
   text each other through the night. (Replaces Maya dating Jimmy Friedman
   and Kevin's Cannes fling with Morgan; Morgan now simply handles Kevin's
   allowance.)
@@ -243,13 +243,13 @@ Romances still in the story, all between characters assumed single (tell us
 if any of these players are partnered): Alma & James (secret affair), Louis
 & Shea (secret affair), Kush & Hannah (fling), Blake (spare) & Hannah
 (fling, past), Martin & Molly (exes), Jimmy Friedman courting Lexi, Clara &
-Arthur (not played).
+Douglas (not played).
 
 ## Saltburn layers (October 2026)
 
-- The Blackwoods **collect people**: wards, goddaughters, protégés, staff's
-  children put through school. "Once you've slept at Blackwood, you never
-  really leave." (public lore; Reggie's opening uses it)
+- The Camerons **collect people**: wards, goddaughters, protégés, staff's
+  children put through school. "Once you've slept at Cameron, you never
+  really leave." (public lore; Roderick's opening uses it)
 - **Silas's guest book**: everyone signs on arrival, in character; family
   names recur, outsiders appear once. New Supper rule: every guest signs the
   book. Prop by the coat rack.
@@ -281,7 +281,7 @@ Saltburn-style theming, CSS only, on the existing night palette so every
 diagram still matches: a faint gold damask wallpaper behind everything, a
 candlelit vignette, gilt (gold-leaf) headings, an engraved inner frame on
 every card, a slow candle glow on each guest's crest and on the login raven,
-wax seals on sealed envelopes, and "Blackwood Manor · The Midnight Supper" /
+wax seals on sealed envelopes, and "Cameron Castle · The Midnight Supper" /
 "You are expected" lines like an invitation. Motion stops for anyone who
 prefers reduced motion. The host dashboard opens with "Getting ready" (before
 the party) and "Now / Next" (during it).
@@ -313,7 +313,7 @@ door all evening. Fixed with one new story beat rather than by moving rooms:
 - **9:25: the birthday cake.** Annie carries Lexi and Maya's cake (black
   icing, a sugar raven) into the Dining Room and almost the whole party
   follows it, staying until the 9:45 blackout. A new family ritual explains
-  why Arthur stays in his study: *Blackwoods don't watch other people being
+  why Douglas stays in his study: *Camerons don't watch other people being
   celebrated.* It's in the timeline (`birthday-cake`), the lore, and the
   guest-safe legend.
 - **Who moved:** everyone who was in the Drawing Room from 9:25 to 9:45 now
@@ -339,7 +339,7 @@ door all evening. Fixed with one new story beat rather than by moving rooms:
   to the cake, so they can't testify about who left it.
 - **Do it for real:** run of show → **The birthday cake** (new cue,
   ten minutes before the blackout, schedule 8:35). Annie's player carries the
-  real cake in; the **Blackwood cake** light routine brightens the Dining
+  real cake in; the **Cameron cake** light routine brightens the Dining
   Room and dims the Drawing Room and East Corridor, so the guests drift deep
   into the flat exactly as their characters did. The blackout then kills the
   Dining Room first, right over their heads.
@@ -347,25 +347,25 @@ door all evening. Fixed with one new story beat rather than by moving rooms:
   "around the corner" from the East Corridor, which is where Shea hears
   voices at 9:40.
 
-## Ross plays Arthur, then his brother Reggie; paper on the night (October 2026)
+## Ross plays Douglas, then his brother Roderick; paper on the night (October 2026)
 
-- **Ross plays Arthur** from the doors (7:30) until the birthday cake: tan
+- **Ross plays Douglas** from the doors (7:30) until the birthday cake: tan
   suit, black silk tie, flat cap worn indoors ("it's my house"), silver wig.
-  Arrivals, the toast and the opening are Arthur's now (the Reggie versions
+  Arrivals, the toast and the opening are Douglas's now (the Roderick versions
   are in git history), with a quiet card line for every guest.
-- **Arthur leaves at the cake** (about 8:15), changes into Reggie in the
+- **Douglas leaves at the cake** (about 8:15), changes into Roderick in the
   study closet, and fires the blackout at about 8:30. When the lights come
   back he walks out of the study: **"My brother has been murdered."** He has
-  to leave well before the blackout because in the solution Arthur dies
+  to leave well before the blackout because in the solution Douglas dies
   seven minutes before it.
-- **Reggie is Arthur's brother** (Ross, October 2026): his much younger
-  half-brother, Montague's late son by a second marriage, raised by Arthur.
+- **Roderick is Douglas's brother** (Ross, October 2026): his much younger
+  half-brother, Montague's late son by a second marriage, raised by Douglas.
   Kevin is now his nephew too (they're about the same age); Savanah calls
   him "little brother"; Lionel is no longer anyone's father.
 - **Nobody acts out the murder** (Ross changed his mind about the live
   murder): no cue texts at the cake, no live Kevin row, no Morgan briefing.
   The guests only solve it. The hidden door stays shut until the reveal.
-- **The black thread** is still Arthur's own black silk tie, which guests
+- **The black thread** is still Douglas's own black silk tie, which guests
   see him wearing all evening.
 - **No phones at the party** (`phones: false` in party.yaml). Guests read
   their pages before the party: character, story, connections, messages so
@@ -375,7 +375,7 @@ door all evening. Fixed with one new story beat rather than by moving rooms:
   listed on the dashboard. Set `phones: true` to bring the phone companion
   back; the tests cover both.
 - **Maggie Pancini** (new guest) plays the spare **Vesper**, the
-  ghostwriter of Arthur's memoir: medium effort and tied to half the cast.
+  ghostwriter of Douglas's memoir: medium effort and tied to half the cast.
   Swap her on the Roster page if another spare suits her better.
 
 ## Still worth confirming with Ross

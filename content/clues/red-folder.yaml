@@ -5,15 +5,15 @@ source: part-two
 round: 2
 timing: mid
 carrier: found
-delivery: Reggie announces it missing after the murder (Maddie saw it at 9:10). Players find it during Round Two.
+delivery: Roderick announces it missing after the murder (Maddie saw it at 9:10). Players find it during Round Two.
 hide: On the library bookshelf on the landing, laid flat among the books on a middle shelf. Never behind the books, and never move the shelf (the hidden door is back there). Put it there mid Round Two.
-room: library            # where it is found in the manor (for the host map)
+room: library            # where it is found in the castle (for the host map)
 print: |
   [red folder containing]
-  1. Molly's painting authentication: "Lady Evangeline Blackwood, att. J.S. Sargent"
+  1. Molly's painting authentication: "Lady Evangeline Cameron, att. J.S. Sargent"
   2. Kevin's inheritance documents: allowance schedule, "TERMINATE 12:00 AM" pencilled in
   3. Lindsey's banking memo: "Six anomalous transfers. Recommend urgent review. — L. Vale"
-  4. Blackwood charity paperwork: "Deed of Gift: The Wellington Foundation"
+  4. Cameron charity paperwork: "Deed of Gift: The Wellington Foundation"
   5. A tab labeled CONFIDENTIAL — LEGAL, with the page torn out
 truth: Morgan carried the folder through the passage at 9:39, tore out the legal page (she still has it) and shoved the folder behind the library books. Finding it in the library is consistent with the passage, but doesn't name her.
 points_to: [molly, kevin, lindsey, hannah]

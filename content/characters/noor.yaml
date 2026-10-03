@@ -3,8 +3,8 @@ name: Dr. Noor Beaumont
 written_for: Noor               # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
-role: Arthur's private physician
-public_role: "Arthur's physician; married to the Professor"   # what everyone at the party knows; shown on every guest's guest list
+role: Douglas's private physician
+public_role: "Douglas's physician; married to the Professor"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've seen how every body in this house ends. Tonight you were right."
 
 costume: |
@@ -14,23 +14,23 @@ costume: |
   expecting; nobody gets to make you stand all night.
 
 intro: |
-  You are Arthur's doctor, discreet and brilliant, and the only person in the
+  You are Douglas's doctor, discreet and brilliant, and the only person in the
   house besides his nurse who knows how sick he was. You're married to the
   Professor, Joji Beaumont, who loves this house more than is healthy, and
   you're expecting your first child.
 
 backstory: |
-  For six years you've kept Arthur Blackwood alive with excellent medicine and
+  For six years you've kept Douglas Cameron alive with excellent medicine and
   total discretion. He had **heart failure**: months, not years. He made you
   promise to tell no one.
 
-  The Beaumonts have Blackwood money in their bones. Arthur funds Joji's
+  The Beaumonts have Cameron money in their bones. Douglas funds Joji's
   research on the house, and Joji's research has quietly paid your mortgage.
-  When you told Arthur about the baby he insisted on being godfather and had
+  When you told Douglas about the baby he insisted on being godfather and had
   Annie invent a non-alcoholic Reckoning just for you. "The Reckoning without
   the reckoning," he called it. You're going to miss him.
 
-  You also have a slightly mortifying secret. Last spring Arthur asked you,
+  You also have a slightly mortifying secret. Last spring Douglas asked you,
   with enormous dignity, for "something to put the spring back in the step."
   You prescribed it. You have since become aware that the spring was for
   Clara. You'd rather die than discuss it, which in this house is a real
@@ -39,12 +39,12 @@ backstory: |
 relationships:
   - with: joji
     text: Your husband, the Professor. Brilliant, devoted, in love with every old building he meets and, above all, with you. About to be a father; he has measured the nursery four times.
-  - with: arthur
+  - with: douglas
     text: Your patient of six years, your patron and a terrible patient. He never once took his pills on time.
   - with: shea
-    text: Arthur's nurse. You two are the only ones who knew the truth about his heart.
+    text: Douglas's nurse. You two are the only ones who knew the truth about his heart.
   - with: clara
-    text: You know far more about her and Arthur's "meetings" than you'd like to, medically speaking.
+    text: You know far more about her and Douglas's "meetings" than you'd like to, medically speaking.
 
 evening:
   - at: "8:00 PM"
@@ -61,70 +61,70 @@ evening:
     text: When the birthday cake comes out, the three of you follow it into the Dining Room and settle by the fireplace, together the whole time. Joji knocks on the panelling to show you a load-bearing wall and swears something knocks back. You tell him it's the pipes. You're nearly sure.
   - at: "9:47 PM"
     where: study
-    text: When the lights come back and Reggie finds Arthur, you go in with him. One blow to the head. The body is already cooling. That bothers you a great deal.
+    text: When the lights come back and Roderick finds Douglas, you go in with him. One blow to the head. The body is already cooling. That bothers you a great deal.
 
 knows:
-  - Arthur had severe heart failure and only months to live. Only you and Shea knew.
+  - Douglas had severe heart failure and only months to live. Only you and Shea knew.
   - His illness did **not** kill him. One blow to the head with something heavy did.
   - From the body (temperature, the drink half-finished, the blood) he died between **9:35 and 9:40 PM**, not during the blackout.
-  - You prescribed Arthur a little "vitality" medication for reasons involving Clara.
+  - You prescribed Douglas a little "vitality" medication for reasons involving Clara.
 
 secret: |
-  You've known since 9:47 that **Arthur died before the lights went out**,
+  You've known since 9:47 that **Douglas died before the lights went out**,
   between 9:35 and 9:40. You've kept it to yourself because you wanted to be
   certain, and because a doctor saying "murder" in this house is how
-  doctors get uninvited. You also prescribed Arthur's "vitality" pills.
+  doctors get uninvited. You also prescribed Douglas's "vitality" pills.
 
 blackmail:
-  - Arthur was dying of heart failure.
-  - Arthur died between 9:35 and 9:40, before the blackout.
-  - You prescribed Arthur's "vitality" pills, and you know who they were for.
+  - Douglas was dying of heart failure.
+  - Douglas died between 9:35 and 9:40, before the blackout.
+  - You prescribed Douglas's "vitality" pills, and you know who they were for.
 
 instructions:
   - Reveal the time of death (9:35 to 9:40) in **Round Two**, not before. If someone pays you for it in Round One, refuse.
   - Be clinical and precise. You are the one person here whose facts nobody should doubt.
-  - You may examine any physical evidence Reggie produces and give a medical opinion. You never have to crawl about searching for it; send someone else.
+  - You may examine any physical evidence Roderick produces and give a medical opinion. You never have to crawl about searching for it; send someone else.
   - Never mention the "vitality" pills unless paid.
 
 mission: |
-  Privately ask **three people when they last saw Arthur alive.** Write down
-  their answers. Bring the list to Reggie.
+  Privately ask **three people when they last saw Douglas alive.** Write down
+  their answers. Bring the list to Roderick.
 
 rounds:
   1:
     text: |
-      Shea is going to say something chilling about Arthur's health. When
-      Reggie turns to you, confirm that Arthur had a serious heart condition,
+      Shea is going to say something chilling about Douglas's health. When
+      Roderick turns to you, confirm that Douglas had a serious heart condition,
       but that **his illness did not cause his death.** He was struck.
 
       This is officially murder.
     reveal:
-      - Arthur's illness did not kill him. He was struck on the head.
+      - Douglas's illness did not kill him. He was struck on the head.
   2:
     text: |
       Now the big one. When asked (or when the moment feels right), say it
       plainly:
 
-      **Arthur died between 9:35 and 9:40 PM.**
+      **Douglas died between 9:35 and 9:40 PM.**
 
       The lights went out at 9:45. He was dead *before* the blackout.
       Everyone has been investigating the wrong minute.
     reveal:
-      - Arthur's time of death was between 9:35 and 9:40 PM, before the blackout.
+      - Douglas's time of death was between 9:35 and 9:40 PM, before the blackout.
   3:
     text: |
       One more medical detail if anyone asks: it was a **single blow**,
-      struck close. No defensive wounds, no struggle. Arthur let his killer
+      struck close. No defensive wounds, no struggle. Douglas let his killer
       get near him. He wasn't afraid of whoever it was.
 
       Support the timeline: 9:31 alive (Annie), 9:35 to 9:40 dead (you), 9:45
       blackout.
     reveal:
-      - It was a single blow from close range with no struggle; Arthur wasn't afraid of the killer.
+      - It was a single blow from close range with no struggle; Douglas wasn't afraid of the killer.
 
 texts:
-  - id: noor-arthur-history
-    from: Arthur Blackwood
+  - id: noor-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Yesterday 7:03 PM"
     body: "Not a word to anyone tomorrow. I intend to die at a time of my choosing, Doctor, and not a minute before the announcement."

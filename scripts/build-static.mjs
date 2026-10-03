@@ -93,21 +93,21 @@ const errors = findings.filter((f) => f.level === 'error').length;
 const { guestCount } = rosterHelpers(content, state);
 const ROUND_NAMES = ['Before', 'R1', 'R2', 'R3'];
 const index = page({
-  title: 'Blackwood Manor: preview',
+  title: 'Cameron Castle: preview',
   css: HOST_CSS,
   body: html`<main class="wrap">
-<h1>Murder at Blackwood Manor: build preview</h1>
+<h1>Murder at Cameron Castle: build preview</h1>
 <p class="flash bad"><b>Spoilers.</b> This is a read-only snapshot of the host planner and every guest's page, for checking progress. Anyone with this link can read everything, including the solution. Don't send it to guests. The real party site (passphrase logins, rounds, live texts) runs on Cloudflare; see the README.</p>
 <p class="small muted">Built ${now.toISOString().slice(0, 16).replace('T', ' ')} UTC · ${guestCount} guests cast · ${content.characterOrder.length} characters · ${content.clueOrder.length} clues · consistency checker: ${errors ? `${errors} errors` : 'no errors'}</p>
 <div class="grid">
   ${[
     ['/host', 'Host dashboard', 'Round controls, what must happen this round, the suspicion curve.'],
     ['/host/setup', 'Setting up the flat', 'Your floor plan: which room plays what, and where each piece of evidence hides.'],
-    ['/host/map', 'The manor map', 'Rooms, the secret passage, evidence pins, and a minute-by-minute replay of the murder.'],
+    ['/host/map', 'The castle map', 'Rooms, the secret passage, evidence pins, and a minute-by-minute replay of the murder.'],
     ['/host/timeline', 'True timeline', 'Where everyone was, as charts, plus when players learn each fact.'],
     ['/host/web', 'Relationship web', 'Who is tied to whom. Click a face.'],
     ['/host/suspicion', 'Suspicion curve', 'Who the room should suspect at each stage.'],
-    ['/host/script', 'Run of show', "Reggie's script, round by round."],
+    ['/host/script', 'Run of show', "Roderick's script, round by round."],
     ['/host/evidence', 'Evidence & props', 'What to hide, where, and what it means.'],
     ['/host/characters', 'Characters', `All ${content.characterOrder.length} dossiers.`],
     ['/host/texts', 'Phone texts', 'Every timed and cue text.'],

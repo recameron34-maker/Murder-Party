@@ -9,7 +9,7 @@ Tim's envelope instructs him to ask Joji whether the strange library door could 
 
 After Joji reveals the passage connects the study to library:
 
-"So someone could enter Arthur's study…" *Walk slowly.* "…kill him…" "…leave through the wall…" "…and emerge in the library."
+"So someone could enter Douglas's study…" *Walk slowly.* "…kill him…" "…leave through the wall…" "…and emerge in the library."
 
 *Pause.* "Without ever using the study door again."
 

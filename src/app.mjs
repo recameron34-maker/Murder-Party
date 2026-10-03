@@ -61,7 +61,7 @@ export async function handle(request, deps) {
     return await route(request, deps);
   } catch (err) {
     console.error(err);
-    return textResponse(500, 'The house groans. Something went wrong. Tell Reggie.');
+    return textResponse(500, 'The house groans. Something went wrong. Tell Roderick.');
   }
 }
 

@@ -15,11 +15,11 @@ costume: |
 intro: |
   You came tonight as Lexi St. Clair's plus-one, "an architectural
   consultant." You are in fact obsessed with the legend of the **Raven
-  Room**, the vault Silas Blackwood supposedly hid somewhere that appears on
+  Room**, the vault Silas Cameron supposedly hid somewhere that appears on
   no plan.
 
 backstory: |
-  For three weeks you've been letting yourself into Blackwood Manor at night
+  For three weeks you've been letting yourself into Cameron Castle at night
   through the old ice-house tunnel, exploring the sealed servants' passages,
   sleeping in a bricked-off maid's room in the east wing and eating from the
   larder. **You are the one living in the walls.** The Keyhole wrote about you.
@@ -71,7 +71,7 @@ evening:
     text: You find a panel, shove it, and fall into the dining room covered in dust, right in front of Kim's phone torch.
 
 knows:
-  - You've been secretly living in the manor's walls for three weeks.
+  - You've been secretly living in the castle's walls for three weeks.
   - The library has a bookcase with a cold draft behind it, but you could never open it.
   - From 9:25 to 9:46 you were inside an east-wing passage, nowhere near the study.
   - Kim saw you come out of the dining-room panel at 9:46.
@@ -79,10 +79,10 @@ knows:
 secret: |
   **You're the one living in the walls.** You were inside an east-wing passage
   during the murder and the blackout, and you've been having a secret affair
-  with Shea, Arthur's nurse.
+  with Shea, Douglas's nurse.
 
 blackmail:
-  - You've been secretly living inside Blackwood Manor's walls.
+  - You've been secretly living inside Cameron Castle's walls.
   - You were in a hidden passage from 9:25 to 9:46.
   - You've been meeting Shea at midnight.
 
@@ -94,7 +94,7 @@ instructions:
 
 mission: |
   **Locate the hidden passage clue**, the old floor plan, and see it with
-  your own eyes. Tell Reggie when you have.
+  your own eyes. Tell Roderick when you have.
 
 rounds:
   1:

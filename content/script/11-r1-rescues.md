@@ -3,7 +3,7 @@ title: Round One rescues
 round: 1
 kind: rescue
 ---
-If Annie hasn't revealed the 9:31 drink: "Antoinette, weren't you one of the last people to see Arthur?"
+If Annie hasn't revealed the 9:31 drink: "Antoinette, weren't you one of the last people to see Douglas?"
 
 If Tim hasn't mentioned the door: "Timothy, you've been wandering around this house all evening. Anything unusual?"
 

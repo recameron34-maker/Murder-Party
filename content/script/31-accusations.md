@@ -6,7 +6,7 @@ lights: accusations
 ---
 Pass out ballots.
 
-"Write three things." "Who killed Arthur Blackwood?" "Why?" "And how did they escape the study?"
+"Write three things." "Who killed Douglas Cameron?" "Why?" "And how did they escape the study?"
 
 "If you wish, add the approximate time of death."
 
@@ -18,6 +18,6 @@ Pass out ballots.
 
 Choose: Kush. Carley. Jimmy. Maya. Lexi.
 
-Then finally: "Morgan." "Who do YOU believe killed Arthur Blackwood?"
+Then finally: "Morgan." "Who do YOU believe killed Douglas Cameron?"
 
 Let her accuse someone. Do not react.

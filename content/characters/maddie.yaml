@@ -4,8 +4,8 @@ written_for: Maddie             # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
 role: Daniel's fiancée, wearer of a borrowed necklace
-public_role: "Daniel's fiancée, wearing the Blackwood jet necklace"   # what everyone at the party knows; shown on every guest's guest list
-tagline: "It looks better on you than it ever looked on a Blackwood. That has to count for something."
+public_role: "Daniel's fiancée, wearing the Cameron jet necklace"   # what everyone at the party knows; shown on every guest's guest list
+tagline: "It looks better on you than it ever looked on a Cameron. That has to count for something."
 
 costume: |
   Engagement-season glamour: a jewel-toned dress, a statement necklace (the
@@ -13,19 +13,19 @@ costume: |
   gloves, and a ring you flash at Carlotta.
 
 intro: |
-  You're engaged to Daniel, who was once engaged to Carlotta Blackwood. This
+  You're engaged to Daniel, who was once engaged to Carlotta Cameron. This
   is the first time you've seen her in person, and you're handling it
-  beautifully. Arthur lent you the family's **Raven's Tears** necklace,
+  beautifully. Douglas lent you the family's **Raven's Tears** necklace,
   jet and diamonds, "for the evening." You've decided the evening is going to
   last a lot longer than that.
 
 backstory: |
-  Arthur adored you, or you like to think so. When you admired the Raven's
+  Douglas adored you, or you like to think so. When you admired the Raven's
   Tears last month he laughed and said you should "wear it to the Supper."
   You've been calling it a **wedding gift** ever since. It belongs to the
-  Blackwood family trust and you know it.
+  Cameron family trust and you know it.
 
-  At **9:10** you slipped into the study to ask Arthur, sweetly, whether you
+  At **9:10** you slipped into the study to ask Douglas, sweetly, whether you
   might keep it. He had a **red leather folder** open on his desk and closed
   it the moment you came in. He said, "Ask me again after midnight."
 
@@ -38,7 +38,7 @@ relationships:
     text: Your fiancé. Devoted, decent, dull. He keeps "gently suggesting" you give the necklace back.
   - with: carlotta
     text: Daniel's ex. The one who ran. You've decided she's beneath your notice and you can't stop noticing her.
-  - with: arthur
+  - with: douglas
     text: He lent you the necklace. You'll always say he gave it.
   - with: tim
     text: The photographer has taken a lot of pictures of your neckline tonight. You assumed it was admiration.
@@ -51,10 +51,10 @@ evening:
   - at: "9:10 PM"
     until: "9:12 PM"
     where: study
-    text: You ask Arthur about keeping the necklace. A **red leather folder** is open on his desk; he closes it when you come in. "Ask me again after midnight."
+    text: You ask Douglas about keeping the necklace. A **red leather folder** is open on his desk; he closes it when you come in. "Ask me again after midnight."
   - at: "9:20 PM"
     where: front-hall
-    text: You hear Kevin shouting at Arthur, "You're going to regret this!"
+    text: You hear Kevin shouting at Douglas, "You're going to regret this!"
   - at: "9:21 PM"
     until: "9:24 PM"
     where: drawing-room
@@ -65,45 +65,45 @@ evening:
     text: At the birthday cake in the Dining Room, the Raven's Tears catching every candle, until the lights go out.
 
 knows:
-  - At 9:10 there was a **red leather folder** on Arthur's desk. He closed it when you came in.
-  - The necklace belongs to the Blackwood family trust. You've been calling it a gift.
+  - At 9:10 there was a **red leather folder** on Douglas's desk. He closed it when you came in.
+  - The necklace belongs to the Cameron family trust. You've been calling it a gift.
   - Someone sent you an anonymous note telling you to return it before midnight.
-  - Kevin shouted at Arthur at 9:20.
+  - Kevin shouted at Douglas at 9:20.
 
 secret: |
   You **intend to leave tonight wearing a necklace that belongs to the
-  Blackwood family trust.** You were also in the study at 9:10 and saw the
+  Cameron family trust.** You were also in the study at 9:10 and saw the
   red folder.
 
 blackmail:
-  - The necklace belongs to the Blackwood family trust, not to you.
-  - You were in Arthur's study at 9:10.
-  - Arthur never actually said you could keep it.
+  - The necklace belongs to the Cameron family trust, not to you.
+  - You were in Douglas's study at 9:10.
+  - Douglas never actually said you could keep it.
 
 instructions:
-  - When Reggie announces the missing red folder, confirm you **saw it on Arthur's desk at 9:10**.
+  - When Roderick announces the missing red folder, confirm you **saw it on Douglas's desk at 9:10**.
   - Never take the necklace off. Ever.
   - Fight with Daniel about the necklace in Round Two, publicly and dramatically.
   - You may compare anyone's handwriting to the anonymous note.
 
 mission: |
   Find out **who sent the anonymous necklace note.** Report the culprit to
-  Reggie.
+  Roderick.
 
 rounds:
   1:
     text: |
-      After the murder Reggie will mention an empty space on Arthur's desk.
-      Confirm it: **at 9:10 there was a red leather folder there.** Arthur
+      After the murder Roderick will mention an empty space on Douglas's desk.
+      Confirm it: **at 9:10 there was a red leather folder there.** Douglas
       closed it when you came in.
 
       If asked why you were in the study: "to thank him for the necklace."
     reveal:
-      - There was a red leather folder on Arthur's desk at 9:10.
+      - There was a red leather folder on Douglas's desk at 9:10.
   2:
     text: |
       Daniel is going to bring up the necklace. **Have the fight**, in the
-      middle of the room. "Arthur *gave* it to me." "He lent it to you." "Same
+      middle of the room. "Douglas *gave* it to me." "He lent it to you." "Same
       thing, in this family!"
 
       You may produce the anonymous note: *"Return what isn't yours before
@@ -112,15 +112,15 @@ rounds:
       - Fight with Daniel about the necklace and produce the anonymous note.
   3:
     text: |
-      The trust's lawyers (or Reggie) may point out the necklace belongs to
+      The trust's lawyers (or Roderick) may point out the necklace belongs to
       the family trust. Concede nothing. Or concede everything, tearfully,
       if Daniel has finally been honest with you about the note.
     reveal:
       - Admit, or refuse to admit, that the necklace belongs to the family trust.
 
 texts:
-  - id: maddie-arthur-history
-    from: Arthur Blackwood
+  - id: maddie-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Last month"
     body: "Wear the Tears to the Supper, my dear. They've been in a box far too long. (They go back in the box after.)"

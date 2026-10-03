@@ -14,14 +14,14 @@ costume: |
 
 intro: |
   You host **Old Money**, the investigative podcast about how the very rich
-  stay that way. For the last month Arthur Blackwood has been secretly
+  stay that way. For the last month Douglas Cameron has been secretly
   feeding you a story. Tonight, at midnight, he was going to hand you the
   ending.
 
 backstory: |
-  It started with your girlfriend, **Lindsey Vale**, Arthur's banker, telling
+  It started with your girlfriend, **Lindsey Vale**, Douglas's banker, telling
   you more than she should have about "one of the great families" being
-  robbed from inside. You followed the thread to Arthur. To your surprise he
+  robbed from inside. You followed the thread to Douglas. To your surprise he
   wanted to talk. He said: *"At midnight I'm going to say it out loud, and
   you're going to make sure nobody can bury it."*
 
@@ -36,7 +36,7 @@ backstory: |
 relationships:
   - with: lindsey
     text: Your girlfriend, your original source, and the bravest person you know. At 9:15 you slipped away with her to the conservatory to plan for midnight.
-  - with: arthur
+  - with: douglas
     text: Your secret source. Grand, frightened, determined. He wanted his story told on his terms.
   - with: kim
     text: You've long suspected Kim knows who writes The Keyhole. A rival in gossip; a colleague in sin.
@@ -58,64 +58,64 @@ evening:
     text: Out of the conservatory with Lindsey and straight into the birthday crowd in the Dining Room. Your recording catches twenty minutes of "Happy Birthday", gossip and somebody's terrible laugh. Then the lights go out at 9:45.
 
 knows:
-  - Arthur was feeding you a story about theft from inside his circle.
-  - The person Arthur planned to expose **"isn't family."**
-  - '"It''s not about inheritance. Follow the money." (Arthur''s words to you last week.)'
-  - Arthur's big reveal was going to go public at midnight, through you.
+  - Douglas was feeding you a story about theft from inside his circle.
+  - The person Douglas planned to expose **"isn't family."**
+  - '"It''s not about inheritance. Follow the money." (Douglas''s words to you last week.)'
+  - Douglas's big reveal was going to go public at midnight, through you.
 
 secret: |
-  Arthur was **secretly feeding you a story about theft from inside his
+  Douglas was **secretly feeding you a story about theft from inside his
   circle**, to go public at midnight. And you've been recording the whole
   party on a hidden lapel mic.
 
 blackmail:
-  - Arthur was secretly feeding you a story for your podcast.
+  - Douglas was secretly feeding you a story for your podcast.
   - Lindsey leaked banking information to you.
   - You've been secretly recording the party.
 
 instructions:
-  - Round One, "isn't family." Round Two, "follow the money." Round Three, read Arthur's scheduled message.
+  - Round One, "isn't family." Round Two, "follow the money." Round Three, read Douglas's scheduled message.
   - You may "interview" anyone at any time. Hold out a pen like a microphone.
   - Protect Lindsey as your source. Never name her unless paid.
   - You may play back "your recording" for laughs. It contains nothing useful.
 
 mission: |
   Conduct **three mini "interviews"** with three different guests, on the
-  record. Report the juiciest quote to Reggie.
+  record. Report the juiciest quote to Roderick.
 
 rounds:
   1:
     text: |
-      When people speculate about family greed, drop this: **Arthur told you
+      When people speculate about family greed, drop this: **Douglas told you
       the person he planned to expose "isn't family."**
 
       Don't say how you know him. Not yet. You protect your sources.
     reveal:
-      - The person Arthur planned to expose "isn't family."
+      - The person Douglas planned to expose "isn't family."
   2:
     text: |
       When the room is chasing the will and the inheritance, stop them:
 
       **"It's not about inheritance. Follow the money."**
 
-      Then look at Kushington. Reggie will take it from there.
+      Then look at Kushington. Roderick will take it from there.
     reveal:
       - '"It''s not about inheritance. Follow the money."'
   3:
     text: |
-      After the financial reveal, Reggie will hand you a printout of a message
-      Arthur scheduled to send you at midnight. Read it to the room, slowly:
+      After the financial reveal, Roderick will hand you a printout of a message
+      Douglas scheduled to send you at midnight. Read it to the room, slowly:
 
       > **If you're reading this, the truth is public. The theft came from
       > inside my legal operation. I trusted the wrong person.**
 
       Then let the room react.
     reveal:
-      - Read Arthur's scheduled message aloud.
+      - Read Douglas's scheduled message aloud.
 
 texts:
-  - id: malik-arthur-history
-    from: Arthur Blackwood
+  - id: malik-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Last week"
     body: "It's not about inheritance, Mr. Malik. Follow the money. Midnight Saturday. Bring your microphone and your nerve."
@@ -124,11 +124,11 @@ texts:
     trigger: { round: 1, after: 6 }
     body: "WAIT a MURDER?? keep recording. do NOT stop recording. this is season 2"
   - id: malik-scheduled-r3
-    from: Arthur Blackwood (scheduled)
-    trigger: { cue: "When Reggie hands Malik the scheduled draft (Round Three)" }
+    from: Douglas Cameron (scheduled)
+    trigger: { cue: "When Roderick hands Malik the scheduled draft (Round Three)" }
     body: "If you're reading this, the truth is public. The theft came from inside my legal operation. I trusted the wrong person."
 
 host_notes: |
-  Core. Round Three: Reggie hands him the printed scheduled draft (prop) or
+  Core. Round Three: Roderick hands him the printed scheduled draft (prop) or
   sends the cue text. "Isn't family" (R1) and "Follow the money" (R2) set up
   Kush.

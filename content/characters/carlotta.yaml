@@ -1,10 +1,10 @@
 id: carlotta
-name: Carlotta "Carley" Blackwood
+name: Carlotta "Carley" Cameron
 written_for: Carlotta / Carley  # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
-role: Arthur's estranged daughter
-public_role: "Arthur's daughter, home for the first time in nine years"   # what everyone at the party knows; shown on every guest's guest list
+role: Douglas's estranged daughter
+public_role: "Douglas's daughter, home for the first time in nine years"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You left at nineteen and swore you'd never come back. It's been nine years. Here you are."
 
 costume: |
@@ -13,7 +13,7 @@ costume: |
   one piece of family jewelry you claim to hate.
 
 intro: |
-  You're Arthur's only child and the rightful heir to Blackwood Manor, a
+  You're Douglas's only child and the rightful heir to Cameron Castle, a
   house you fled at nineteen and have described in three gallery
   installations as "a mausoleum with central heating." This is your first
   Midnight Supper in nine years. Your father wrote and asked you to come.
@@ -34,7 +34,7 @@ backstory: |
   engaged to someone else. Wonderful.
 
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your father. You haven't forgiven him and now you never will. That's the part you can't stand.
   - with: daniel
     text: Your ex-fiancé. You left him two weeks before the wedding to run to Berlin. He's marrying Maddie now. She keeps looking at you.
@@ -54,7 +54,7 @@ relationships:
 evening:
   - at: "8:10 PM"
     where: front-hall
-    text: 'Arthur greets you, kisses your cheek, and says: **"At midnight, I''m giving it all away."** Then he walks off to his study.'
+    text: 'Douglas greets you, kisses your cheek, and says: **"At midnight, I''m giving it all away."** Then he walks off to his study.'
   - at: "8:15 PM"
     until: "9:25 PM"
     where: drawing-room
@@ -65,29 +65,29 @@ evening:
     text: Alone among the orchids, smoking and furious, maybe crying. Nobody saw you. You have no alibi and you know it.
 
 knows:
-  - 'Arthur told you at 8:10: "At midnight, I''m giving it all away."'
+  - 'Douglas told you at 8:10: "At midnight, I''m giving it all away."'
   - You were alone in the conservatory from 9:25 to 9:45. No alibi.
   - Your father had booked a private meeting with you at 11:30, just before the announcement. You don't know why.
-  - Years ago you warned Arthur that he trusted the wrong people.
+  - Years ago you warned Douglas that he trusted the wrong people.
 
 secret: |
   You're **broke**, you came home hoping your father would help, and he told
   you he was giving everything away. You have no alibi for the murder.
 
 blackmail:
-  - Arthur told you he was giving it all away at midnight.
+  - Douglas told you he was giving it all away at midnight.
   - Your Berlin gallery has closed and you have no money.
   - You were alone and unseen from 9:25 to 9:45.
 
 instructions:
   - Reveal "I'm giving it all away" in **Round One**. You look guilty. That's correct.
   - Never admit you're broke unless paid.
-  - In Round Three, read Arthur's note aloud and ask the room the question that turns the whole night.
+  - In Round Three, read Douglas's note aloud and ask the room the question that turns the whole night.
   - Treat everyone as a social inferior, especially those who are.
 
 mission: |
-  Find out **who believes they're in Arthur's will.** Collect names and
-  report to Reggie.
+  Find out **who believes they're in Douglas's will.** Collect names and
+  report to Roderick.
 
 rounds:
   1:
@@ -98,13 +98,13 @@ rounds:
       Yes, it means you were about to lose everything. Yes, that looks like a
       motive. Make them prove it.
     reveal:
-      - 'Arthur told you at 8:10: "At midnight, I''m giving it all away."'
+      - 'Douglas told you at 8:10: "At midnight, I''m giving it all away."'
   2:
     text: |
       A destroyed will may have turned up. Everyone will look at you. You
       didn't do it, and you don't know who did.
 
-      If Arthur's calendar surfaces showing **11:30 Carlotta**, admit you
+      If Douglas's calendar surfaces showing **11:30 Carlotta**, admit you
       didn't know about any meeting. Admit, if pressed, that you were alone
       in the conservatory from 9:25 to 9:45.
     reveal:
@@ -120,10 +120,10 @@ rounds:
 
       Then ask the room, and mean it: **"Who betrayed him?"**
     reveal:
-      - Read Arthur's note aloud and ask "Who betrayed him?"
+      - Read Douglas's note aloud and ask "Who betrayed him?"
 
 texts:
-  - id: carlotta-arthur-history
+  - id: carlotta-douglas-history
     from: Dad
     trigger: { history: true }
     stamp: "Last month"
@@ -135,7 +135,7 @@ texts:
   - id: carlotta-unknown-r2
     from: Unknown number
     trigger: { round: 2, after: 10 }
-    body: "Every Blackwood who tried to give it away died before midnight. Ask them who believed in the curse."
+    body: "Every Cameron who tried to give it away died before midnight. Ask them who believed in the curse."
 
 host_notes: |
   Core (her Round Three note leads into the Kush and Lindsey financial

@@ -15,7 +15,7 @@ Immediately say: "Hold on."
 
 *Pause.*
 
-"So Arthur may have been dead BEFORE the blackout."
+"So Douglas may have been dead BEFORE the blackout."
 
 This is the first major twist.
 

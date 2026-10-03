@@ -14,23 +14,23 @@ costume: |
   Quill.
 
 intro: |
-  Arthur commissioned you to restore an old portrait of **Nana Rose**, the
-  manor's cook for forty years, as a birthday gift for Maya. It's finished,
+  Douglas commissioned you to restore an old portrait of **Nana Rose**, the
+  castle's cook for forty years, as a birthday gift for Maya. It's finished,
   hidden under a sheet in the conservatory. Now there's no one to give it to
   her.
 
 backstory: |
-  You've painted three Blackwoods, two of their mistresses and one horse.
-  Your secret commission is the scandalous one. Last year Arthur paid you to
+  You've painted three Camerons, two of their mistresses and one horse.
+  Your secret commission is the scandalous one. Last year Douglas paid you to
   paint **Clara**, "in the classical style," wearing very little except
   pearls. It hangs behind a velvet curtain in his study. Nobody else has
   seen it. You'd rather keep it that way. So would Clara.
 
 relationships:
   - with: maya
-    text: Arthur's birthday gift for her, her grandmother's portrait, is your work. You want her to have it.
+    text: Douglas's birthday gift for her, her grandmother's portrait, is your work. You want her to have it.
   - with: clara
-    text: You painted her for Arthur's private study. Classical style. Pearls.
+    text: You painted her for Douglas's private study. Classical style. Pearls.
   - with: molly
     text: The art dealer. She once tried to sell one of your paintings as "school of Sargent." You haven't forgotten.
 
@@ -45,42 +45,42 @@ evening:
     text: Sketching Jimmy Friedman's card game. Smoke, green baize, bad decisions.
 
 knows:
-  - Arthur's surprise for Maya was a restored portrait of her grandmother.
-  - There's a portrait of Clara behind a curtain in Arthur's study.
+  - Douglas's surprise for Maya was a restored portrait of her grandmother.
+  - There's a portrait of Clara behind a curtain in Douglas's study.
   - You were sketching in the billiard room from 9:10 to the blackout.
 
 secret: |
-  You painted a **very private portrait of Clara** for Arthur's study, and
-  you know Arthur's birthday gift to Maya.
+  You painted a **very private portrait of Clara** for Douglas's study, and
+  you know Douglas's birthday gift to Maya.
 
 blackmail:
-  - Arthur had you restore Nana Rose's portrait for Maya.
-  - You painted Clara, scandalously, for Arthur.
+  - Douglas had you restore Nana Rose's portrait for Maya.
+  - You painted Clara, scandalously, for Douglas.
   - The portrait of Clara hangs behind a curtain in the study.
 
 instructions:
   - Low effort. Sketch people. Hand them the sketch. Watch their faces.
   - You may sell the secret of the Clara portrait for Blackmail Cash.
-  - Comfort Maya at some point. It's what Arthur would have wanted.
+  - Comfort Maya at some point. It's what Douglas would have wanted.
   - Your alibi: sketching the card game from 9:10.
 
 mission: |
   Do a **60-second sketch of three different guests** (stick figures are
-  fine) and get each to sign it. Show Reggie.
+  fine) and get each to sign it. Show Roderick.
 
 rounds:
   1:
     text: |
-      Tell Maya, privately or publicly, that Arthur had a birthday gift for
+      Tell Maya, privately or publicly, that Douglas had a birthday gift for
       her: her grandmother's portrait, which you restored.
     reveal:
-      - Arthur's birthday gift for Maya was a restored portrait of Nana Rose.
+      - Douglas's birthday gift for Maya was a restored portrait of Nana Rose.
   2:
     text: |
-      If people are speculating about Clara and Arthur, smile mysteriously.
+      If people are speculating about Clara and Douglas, smile mysteriously.
       You know more than they do. You've *painted* more than they know.
     reveal:
-      - Hint that Clara and Arthur were closer than people think.
+      - Hint that Clara and Douglas were closer than people think.
   3:
     text: |
       If paid, reveal the portrait of Clara behind the study curtain. Or
@@ -89,8 +89,8 @@ rounds:
       - Reveal, or protect, the private portrait of Clara.
 
 texts:
-  - id: quill-arthur-history
-    from: Arthur Blackwood
+  - id: quill-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Yesterday"
     body: "Rose to the conservatory, under a sheet. I'll walk Maya in myself after the toast. She'll cry. So will I, probably."

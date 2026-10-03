@@ -5,11 +5,11 @@ source: new
 round: 2
 timing: late
 carrier: host
-delivery: When Kevin demands the footage (his Round Two envelope), Reggie makes him sweat, then produces the printout.
-hide: Reggie keeps it on him.
-room: terrace            # where it is found in the manor (for the host map)
+delivery: When Kevin demands the footage (his Round Two envelope), Roderick makes him sweat, then produces the printout.
+hide: Roderick keeps it on him.
+room: terrace            # where it is found in the castle (for the host map)
 print: |
-  BLACKWOOD SECURITY: TERRACE CAM 02
+  CAMERON SECURITY: TERRACE CAM 02
 
   21:22:14  Figure exits drawing-room doors (dark overcoat). Paces.
   21:31:50  Figure smoking at balustrade.
@@ -19,7 +19,7 @@ print: |
   21:47:30  Figure re-enters drawing room.
 
   [grainy still: a man in an overcoat at the balustrade, face clearly Kevin's]
-truth: Kevin was on the terrace from 9:22 to 9:47 in Arthur's coat. Clears him of the murder.
+truth: Kevin was on the terrace from 9:22 to 9:47 in Douglas's coat. Clears him of the murder.
 points_to: []
 critical: false
 refs: [kevin]

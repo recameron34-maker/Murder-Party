@@ -2,22 +2,22 @@
 title: Birthday toast
 round: 0
 kind: speech
-changes: Arthur gives the toast now; Reggie, his younger brother, is "late". The old Reggie toast is in git history.
+changes: Douglas gives the toast now; Roderick, his younger brother, is "late". The old Roderick toast is in git history.
 lights: toast
 ---
-Once most people have drinks, tap a glass. You're Arthur.
+Once most people have drinks, tap a glass. You're Douglas.
 
-"My little brother Reginald was meant to do this."
+"My little brother Roderick was meant to do this."
 
 *Pause.*
 
-"Reginald is late."
+"Roderick is late."
 
 "So. A toast."
 
 *Raise glass.*
 
-"Blackwood Manor has the pleasure of celebrating TWO birthdays this weekend. Alexandra St. Clair and Maya Rose."
+"Cameron Castle has the pleasure of celebrating TWO birthdays this weekend. Alexandra St. Clair and Maya Rose."
 
 "I have prepared surprises for both of them. One is sentimental. The other involves paperwork."
 

@@ -64,7 +64,7 @@ test('only Morgan\'s page says who the killer is', async () => {
   await app.setRound(hostCookie, 3);
   for (const id of loginIds) {
     const text = pageText(await (await app.fetch('/', { cookie: await app.loginGuest(id) })).text());
-    const says = /You killed Arthur|You may accept Blackmail Cash and lie/i.test(text);
+    const says = /You killed Douglas|You may accept Blackmail Cash and lie/i.test(text);
     assert.equal(says, id === 'morgan', `${id}`);
   }
 });
@@ -114,14 +114,14 @@ test('updates API returns only your own delivered texts, on schedule', async () 
   const get = async (cookie) => (await app.fetch('/api/updates', { cookie })).json();
 
   let d = await get(maya);
-  assert.deepEqual(d.texts.map((t) => t.id).sort(), ['all-welcome', 'maya-arthur-history', 'maya-kevin-history']);
+  assert.deepEqual(d.texts.map((t) => t.id).sort(), ['all-welcome', 'maya-douglas-history', 'maya-kevin-history']);
   assert.equal(d.round, 0);
 
   const t0 = app.now;
   await app.setRound(hostCookie, 1);
   app.now = new Date(t0.getTime() + 2 * 60000); // Round One + 2 min
   d = await get(maya);
-  assert.deepEqual(d.texts.map((t) => t.id).sort(), ['all-road', 'all-welcome', 'maya-arthur-history', 'maya-kevin-history']);
+  assert.deepEqual(d.texts.map((t) => t.id).sort(), ['all-road', 'all-welcome', 'maya-douglas-history', 'maya-kevin-history']);
   app.now = new Date(t0.getTime() + 4 * 60000); // + 4 min: Kevin's text (after: 3)
   d = await get(maya);
   assert.ok(d.texts.some((t) => t.id === 'maya-kevin-r1'));
@@ -130,7 +130,7 @@ test('updates API returns only your own delivered texts, on schedule', async () 
 
   const k = await get(kevin);
   assert.ok(!k.texts.some((t) => t.id.startsWith('maya-')));
-  assert.ok(k.texts.some((t) => t.id === 'kevin-arthur-history'));
+  assert.ok(k.texts.some((t) => t.id === 'kevin-douglas-history'));
 });
 
 test('cue texts and host texts reach only their recipient', async () => {

@@ -100,7 +100,7 @@ test('host Now / Next steps through the run of show and shows the lighting cue',
   assert.equal(res.status, 303);
   const html = await (await app.fetch('/host', { cookie: h })).text();
   assert.match(html, /The blackout/);
-  assert.match(html, /Blackwood blackout/);
+  assert.match(html, /Cameron blackout/);
   res = await app.fetch('/host/segment', { method: 'POST', form: { to: 'no-such-step' }, cookie: h, headers: { origin: ORIGIN } });
   assert.equal((await app.state()).segment, '06-blackout', 'unknown step ignored');
 });
@@ -108,7 +108,7 @@ test('host Now / Next steps through the run of show and shows the lighting cue',
 test('Send all sends several cue texts in one tap (phone mode)', async () => {
   const app = await makeApp({ phones: true });
   const h = await app.loginHost();
-  const ids = ['kush-reggie-r2', 'malik-scheduled-r3'];
+  const ids = ['kush-roderick-r2', 'malik-scheduled-r3'];
   const res = await app.fetch('/host/cue', { method: 'POST', form: { ids: ids.join(',') }, cookie: h, headers: { origin: ORIGIN } });
   assert.equal(res.status, 303);
   const sent = (await app.state()).cueSent;
@@ -119,7 +119,7 @@ test('paper night: guest pages stay pre-party, and envelopes carry the messages'
   const app = await makeApp({ phones: false });
   const h = await app.loginHost();
   await app.setRound(h, 2);
-  await app.fetch('/host/cue', { method: 'POST', form: { ids: 'kush-reggie-r2,malik-scheduled-r3' }, cookie: h, headers: { origin: ORIGIN } });
+  await app.fetch('/host/cue', { method: 'POST', form: { ids: 'kush-roderick-r2,malik-scheduled-r3' }, cookie: h, headers: { origin: ORIGIN } });
   for (const id of ['lindsey', 'kush', 'morgan']) {
     const cookie = await app.loginGuest(id);
     const page = await (await app.fetch('/', { cookie })).text();

@@ -19,7 +19,7 @@ This is your cue. *Smile slightly.* "Excellent question." "I've been wondering t
 
 "It lasted less than two minutes."
 
-"It had nothing to do with Arthur."
+"It had nothing to do with Douglas."
 
 *Pause.*
 

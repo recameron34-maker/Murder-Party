@@ -11,7 +11,7 @@ lights: round-three
 
 "Final round."
 
-"By the end of this envelope, you will have everything you need to identify Arthur Blackwood's killer."
+"By the end of this envelope, you will have everything you need to identify Douglas Cameron's killer."
 
 "Not everything will point toward the killer. Some of it will clear people. Some will correct assumptions."
 
@@ -21,14 +21,14 @@ lights: round-three
 
 **Round Three opening.** Let Annie reveal seeing Morgan walking toward the study at 9:32.
 
-After: "So Morgan was approaching Arthur's study immediately before the 9:35 meeting."
+After: "So Morgan was approaching Douglas's study immediately before the 9:35 meeting."
 
 Morgan may defend herself.
 
 "Which, to be fair, Morgan has never denied was scheduled."
 
-🆕 *Counterweight:* "Which is certainly interesting. Although according to Arthur's calendar, Morgan was supposed to meet him. So unless attending a scheduled meeting is now murder…" *pause* "…we need more."
+🆕 *Counterweight:* "Which is certainly interesting. Although according to Douglas's calendar, Morgan was supposed to meet him. So unless attending a scheduled meeting is now murder…" *pause* "…we need more."
 
 🆕 *Fire Morgan's cue text from the host panel right after Annie's reveal.*
 
-Keep it neutral. 🆕 Release Arthur's unfinished draft letter during this round ("I trusted you because you were supposed to protect this family…"). Keep it ambiguous.
+Keep it neutral. 🆕 Release Douglas's unfinished draft letter during this round ("I trusted you because you were supposed to protect this family…"). Keep it ambiguous.

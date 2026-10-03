@@ -1,4 +1,4 @@
-# Murder at Blackwood Manor
+# Murder at Cameron Castle
 
 ![Test and deploy](https://github.com/recameron34-maker/Murder-Party/actions/workflows/deploy.yml/badge.svg)
 
@@ -11,9 +11,9 @@ A live-action murder mystery for ~25 guests, plus the website that runs it:
     evening, secret and mission.
   - **Envelopes**: Round 1–3 envelopes as you unlock them.
   - **Phone**: texts that arrive during the night.
-  - **Manor**: how the night works step by step, who's here (by public role
-    only), a plan of your flat showing which manor room each real room plays
-    and which are shut (it turns upright on phones), the Blackwood family
+  - **Castle**: how the night works step by step, who's here (by public role
+    only), a plan of your flat showing which castle room each real room plays
+    and which are shut (it turns upright on phones), the Cameron family
     tree, the legend, the Supper rules and Blackmail Cash.
 - **Host panel** (`/host`, password-protected), grouped into four menus:
   - **Tonight**: a dashboard that walks you through the night one step at a
@@ -66,7 +66,7 @@ Everything is plain text in `content/`. Change a file and refresh the page.
 | `content/roster.yaml` | Who plays whom and their status (confirmed / maybe / declined / spare) |
 | `content/texts.yaml` | Texts sent to everyone |
 | `content/guest-common.yaml` | Rules and lore shown on every guest page, including the step-by-step of the night, the family tree and the public room descriptions |
-| `content/venue.yaml` | Your flat as the venue: each real room's outline (traced from the floor plan), the manor room it plays, and which rooms are shut. Shown to guests, so no hiding spots here |
+| `content/venue.yaml` | Your flat as the venue: each real room's outline (traced from the floor plan), the castle room it plays, and which rooms are shut. Shown to guests, so no hiding spots here |
 | `content/portraits.yaml` | How each character's portrait is drawn: a silhouette cameo in a gilt oval with costume details and an emblem for their public role. Public-safe (portraits go on name badges) |
 | `content/lights.yaml` | The lighting plan for your smart bulbs: Alexa groups and one routine per scene (arrival, the rolling blackout, the flicker, the reveal). Run-of-show segments name their scene |
 | `content/suspicion.yaml` | The suspicion curve: who the room should suspect at each stage (drives the heat map) |

@@ -20,10 +20,10 @@ const NAV = [
 ];
 const PAGE_INFO = {
   '/host': 'Where the night stands, and what needs to happen next.',
-  '/host/script': "Reggie's lines, cues and rescues, round by round. 🆕 marks the Part Two upgrades.",
+  '/host/script': "Roderick's lines, cues and rescues, round by round. 🆕 marks the Part Two upgrades.",
   '/host/texts': 'Send cue texts, text anyone as anyone, and see what is scheduled.',
   '/host/map': 'The murder on your floor plan: which room plays what, the hidden door, where the evidence is, and where everyone was, minute by minute.',
-  '/host/setup': 'Your flat as Blackwood Manor: which room plays what, what to set up, and where to hide each piece of evidence, and when.',
+  '/host/setup': 'Your flat as Cameron Castle: which room plays what, what to set up, and where to hide each piece of evidence, and when.',
   '/host/timeline': 'What really happened, and when the players find out.',
   '/host/evidence': 'Every prop and clue by round: where it hides, who carries it, and what it really means.',
   '/host/suspicion': 'Who the room should suspect at each stage, so you can steer with counterweights.',
@@ -37,7 +37,7 @@ const PAGE_INFO = {
 const ROUND_LABEL = { 0: 'Before the Supper', 1: 'Round One', 2: 'Round Two', 3: 'Round Three', 4: 'The reveal', 9: 'Reference' };
 
 function shell(ctx, active, title, content, { info = PAGE_INFO[active] } = {}) {
-  const body = html`<nav class="host"><a class="brand" href="/host">✦ Blackwood</a>
+  const body = html`<nav class="host"><a class="brand" href="/host">✦ Cameron</a>
 ${NAV.map(([group, links]) => html`<div class="grp"><span class="grp-label">${group}</span>${links.map(([href, label]) => html`<a href="${href}" class="${href === active ? 'on' : ''}">${label}</a>`)}</div>`)}
 <span class="spacer"></span>
 <span class="live-pill">Live: <b>${ROUND_LABEL[ctx.state.liveRound]}</b></span>
@@ -165,7 +165,7 @@ export function dashboardPage(ctx) {
   const phys = content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken' && content.clues[id].round === focusRound);
   const segs = content.script.filter((s) => s.round === live);
   const aims = (content.suspicion?.stages || []).filter((st) => st.round === focusRound);
-  const carrier = (c) => (c === 'host' ? 'Reggie' : c === 'found' ? 'hidden for the hunt' : shortNames(content.names)[c] || c);
+  const carrier = (c) => (c === 'host' ? 'Roderick' : c === 'found' ? 'hidden for the hunt' : shortNames(content.names)[c] || c);
   // Paper night: the texts to everyone become lines you read aloud.
   const announceList = (r) => {
     const list = announcements(content, r);
@@ -382,7 +382,7 @@ export function timelinePage(ctx) {
   const { content } = ctx;
   const ev = content.timeline.events;
   const name = (id) => content.names[id] || id;
-  const via = (v) => (v === 'host' ? 'Reggie' : content.clues[v] ? `clue: ${content.clues[v].title}` : name(v));
+  const via = (v) => (v === 'host' ? 'Roderick' : content.clues[v] ? `clue: ${content.clues[v].title}` : name(v));
   const byRound = [0, 1, 2, 3].map((r) => ({ r, items: ev.flatMap((e) => (e.learned || []).filter((l) => l.round === r).map((l) => ({ e, l }))) }));
   const { liveIds } = rosterHelpers(content, ctx.state);
   return shell(ctx, '/host/timeline', 'True timeline', html`
@@ -410,12 +410,12 @@ ${byRound.map(({ r, items }) => html`<div class="card"><h3 style="margin-top:0">
 export function evidencePage(ctx) {
   const { content, state } = ctx;
   const { isLive } = rosterHelpers(content, state);
-  const carrier = (c) => (c === 'host' ? 'Reggie' : c === 'found' ? 'Hidden for the hunt' : content.names[c] || c);
+  const carrier = (c) => (c === 'host' ? 'Roderick' : c === 'found' ? 'Hidden for the hunt' : content.names[c] || c);
   const pinNo = clueNumbers(content);
   return shell(ctx, '/host/evidence', 'Evidence & props', html`
 <p class="small muted">Tick props off as you prepare them. Hiding spots are set for your flat (see <a href="/host/setup">Setup</a>); change them in content/clues/*.yaml. Numbered pins match Setup and the <a href="/host/map">case map</a>.</p>
 <div class="card"><h3 class="h-card">The props, at a glance</h3><div class="prop-gallery">
-${[['raven', 'The Blackwood Raven', 'On the study desk all night. Bronze-coloured, heavy-looking.'], ['guest-book', "Silas's guest book", 'By the coat rack, with a fountain pen.']].map(([id, t, d]) => html`<figure class="prop-tile key">${prop(id, { size: 110, title: t })}<figcaption><b>${t}</b><span>${d}</span></figcaption></figure>`)}
+${[['raven', 'The Cameron Raven', 'On the study desk all night. Bronze-coloured, heavy-looking.'], ['guest-book', "Silas's guest book", 'By the coat rack, with a fountain pen.']].map(([id, t, d]) => html`<figure class="prop-tile key">${prop(id, { size: 110, title: t })}<figcaption><b>${t}</b><span>${d}</span></figcaption></figure>`)}
 ${content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken').map((id) => html`<figure class="prop-tile r${content.clues[id].round}"><a href="#${id}">${prop(id, { size: 110, title: content.clues[id].title })}</a><figcaption><b>${pinNo[id] ? html`<span class="pin-dot r${content.clues[id].round}">${pinNo[id]}</span> ` : ''}${content.clues[id].title}</b><span>${ROUND_LABEL[content.clues[id].round]} · ${state.prepDone[id] ? '✓ made' : 'to make'}</span></figcaption></figure>`)}
 </div></div>
 ${[1, 2, 3].map((r) => {
@@ -546,7 +546,7 @@ export function printIndexPage(ctx) {
     ['envelopes?round=1', 'Round One envelopes', 'One page per cast guest, including their secret mission.'],
     ['envelopes?round=2', 'Round Two envelopes', 'Remember the props: Morgan\'s email, Joji\'s floor plan.'],
     ['envelopes?round=3', 'Round Three envelopes', 'Props: Carlotta\'s note, Martin\'s note, Kevin\'s bank statement.'],
-    ['evidence', 'Evidence cards', 'Printed text for every physical clue and prop, stamped BLACKWOOD EVIDENCE.'],
+    ['evidence', 'Evidence cards', 'Printed text for every physical clue and prop, stamped CAMERON CASTLE EVIDENCE.'],
     ['ballots', 'Accusation ballots', 'Four per page.'],
     ['cash', 'Blackmail Cash', '$1,000 notes: three per guest plus a float.'],
     ['hints', 'Hint cards', 'For the $3,000 private hint.'],
@@ -825,10 +825,10 @@ ${unplaced.length ? html`<p class="small pill warn">Not drawn on the map: ${unpl
   return html`<li><span class="pin-dot r${c.round}">${numbers[id]}</span><span class="prop-mini">${prop(id, { size: 44 })}</span><span><a href="/host/evidence#${id}">${c.title}</a> <span class="muted">· ${gameLabel(c.room, content.lore.rooms)} (${venueWhere(venue, c.room) || 'not in the flat'}) · Round ${c.round}, ${c.timing}</span><br><span class="small muted">${c.hide}</span></span></li>`;
 })}</ol></div>
 <div class="card"><h3 class="h-card">How to read it</h3><ul class="small">
-<li>Your flat, with each room labelled by the manor room it plays. Press play and everyone walks the evening their cards describe, through the real doorways; late arrivals come up the front stairs. Trails show where someone is going. The red ring is the killer; a red dashed trail is the hidden door.</li>
+<li>Your flat, with each room labelled by the castle room it plays. Press play and everyone walks the evening their cards describe, through the real doorways; late arrivals come up the front stairs. Trails show where someone is going. The red ring is the killer; a red dashed trail is the hidden door.</li>
 <li><b>Follow</b> one person to dim everyone else and draw their whole evening. The marks under the slider are the key moments: click one to jump there. At 9:45 the house goes dark.</li>
 <li><b>9:31 to 9:34:</b> Annie, Clara and Morgan come through the Family Room (the East Corridor) to the study door. <b>9:36:</b> Maya hears the argument through it.</li>
-<li><b>9:38 to 9:39:</b> Morgan kills Arthur and goes through the hidden door onto the landing (the library). The ordinary way round runs through the Drawing Room, past everyone.</li>
+<li><b>9:38 to 9:39:</b> Morgan kills Douglas and goes through the hidden door onto the landing (the library). The ordinary way round runs through the Drawing Room, past everyone.</li>
 <li><b>9:40 to 9:41:</b> James and Alma, at the front door (the Library Corridor), see her at the library end. <b>9:42:</b> she's back in the Drawing Room.</li>
 <li>Shut rooms still play a part in the story: Louis is trapped in the East Wing (the small bedroom) and Shea fetches medicine upstairs (the primary bedroom). Nobody goes in on the night.</li>
 <li>Guests' plans show the rooms but never the hidden door, the pins or anyone's whereabouts.</li>
@@ -850,7 +850,7 @@ export function webPage(ctx) {
   const ids = content.characterOrder.filter(canLogin);
   const name = (x) => content.names[x] || x;
   return shell(ctx, '/host/web', 'The web', html`
-<div class="filter-bar">${Object.entries(KIND_LABELS).map(([k, l]) => html`<label class="kind-toggle"><input type="checkbox" checked data-kind="${k}"> ${l}</label>`)}<label class="kind-toggle"><input type="checkbox" checked data-kind="arthur"> Ties to Arthur</label></div>
+<div class="filter-bar">${Object.entries(KIND_LABELS).map(([k, l]) => html`<label class="kind-toggle"><input type="checkbox" checked data-kind="${k}"> ${l}</label>`)}<label class="kind-toggle"><input type="checkbox" checked data-kind="douglas"> Ties to Douglas</label></div>
 <div class="web-layout">
   <div>${webGraph(content, ids)}</div>
   <aside class="card web-panel" id="webpanel">
@@ -894,7 +894,7 @@ export function suspicionPage(ctx) {
   <div class="card"><h3 class="h-card">Counterweights</h3><ul class="small">
     <li><b>Annie's sighting:</b> "Unless attending a scheduled meeting is now murder… we need more."</li>
     <li><b>Alma's sighting:</b> "Being in a library is not yet a capital offense."</li>
-    <li><b>Blackwood Legal Counsel:</b> "She's annoyingly correct. The question is whether she abused it."</li>
+    <li><b>Cameron Legal Counsel:</b> "She's annoyingly correct. The question is whether she abused it."</li>
     <li><b>Too early?</b> "An accusation is not a conviction." Then raise Molly, Louis, James or Carlotta.</li>
   </ul></div>
 </div>`);

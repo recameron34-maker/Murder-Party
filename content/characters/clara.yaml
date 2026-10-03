@@ -3,8 +3,8 @@ name: Clara
 written_for: Clara              # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
-role: Arthur's former fiancée
-public_role: "Arthur's former fiancée"   # what everyone at the party knows; shown on every guest's guest list
+role: Douglas's former fiancée
+public_role: "Douglas's former fiancée"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You left him three weeks before the wedding. You've been finding your way back to his study ever since."
 
 costume: |
@@ -13,19 +13,19 @@ costume: |
   finger at a time. Optional: an engagement ring worn on a chain.
 
 intro: |
-  In 2019 you were three weeks from marrying Arthur Blackwood. You walked
+  In 2019 you were three weeks from marrying Douglas Cameron. You walked
   out, because he loved his work, his house and his grudges more than he
   loved you, or so you said. Everyone assumes you're here to gloat. You are
   not here to gloat.
 
 backstory: |
-  For the last three months you and Arthur have been **sleeping together
+  For the last three months you and Douglas have been **sleeping together
   again**, discreetly, in his study, on Tuesdays and occasionally on
   Saturdays. Tonight's 8:30 "meeting" was one of those. You came out at 8:44
   with your lipstick freshly redone, and you're almost sure that wretched
   photographer saw.
 
-  During it, Arthur told you something strange: **"I tore up the old will
+  During it, Douglas told you something strange: **"I tore up the old will
   myself. Everyone keeps assuming tonight is about inheritance. It isn't."**
   He seemed lighter than you'd seen him in years.
 
@@ -34,23 +34,23 @@ backstory: |
   and lost your nerve. You couldn't see who it was.
 
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your ex-fiancé and current secret lover. You were going to tell him tonight that you'd marry him after all. You never got to.
   - with: carlotta
     text: His daughter, who has always blamed you for trying to replace her mother. You'd like to make peace. You'd settle for a ceasefire.
   - with: noor
-    text: Arthur's doctor, who knows rather too much about your Tuesdays.
+    text: Douglas's doctor, who knows rather too much about your Tuesdays.
   - with: tim
     text: The photographer. If he took that picture at 8:44, you need it.
   - with: savanah
     if: savanah
-    text: The Las Vegas "wife" Arthur married on a lost weekend right after you left him. You have never forgiven either of them.
+    text: The Las Vegas "wife" Douglas married on a lost weekend right after you left him. You have never forgiven either of them.
 
 evening:
   - at: "8:30 PM"
     until: "8:44 PM"
     where: study
-    text: With Arthur, door locked. He tells you about the will. You leave at 8:44, fixing your lipstick.
+    text: With Douglas, door locked. He tells you about the will. You leave at 8:44, fixing your lipstick.
   - at: "8:45 PM"
     until: "9:24 PM"
     where: drawing-room
@@ -58,7 +58,7 @@ evening:
   - at: "9:25 PM"
     until: "9:32 PM"
     where: dining-room
-    text: At the birthday cake. Arthur doesn't come out for it; he never does. You decide to go and finish your conversation.
+    text: At the birthday cake. Douglas doesn't come out for it; he never does. You decide to go and finish your conversation.
   - at: "9:33 PM"
     where: east-corridor
     text: You walk toward the study, then see **someone farther down the hall** near the study door. You can't tell who. You turn back.
@@ -68,43 +68,43 @@ evening:
     text: Back at the cake with a fresh drink, annoyed at yourself. The lights go out at 9:45.
 
 knows:
-  - 'Arthur told you at 8:30: "I tore up the old will myself. Everyone keeps assuming tonight is about inheritance. It isn''t."'
+  - 'Douglas told you at 8:30: "I tore up the old will myself. Everyone keeps assuming tonight is about inheritance. It isn''t."'
   - At **9:33** someone was standing farther down the East Corridor near the study. You couldn't identify them.
-  - You and Arthur were secretly lovers again.
+  - You and Douglas were secretly lovers again.
 
 secret: |
-  You were **Arthur's secret lover** again, you know he **tore up the will
+  You were **Douglas's secret lover** again, you know he **tore up the will
   himself**, and you **walked toward the study at 9:33** and saw someone
   there you couldn't identify.
 
 blackmail:
-  - You and Arthur were sleeping together again.
+  - You and Douglas were sleeping together again.
   - You walked toward the study at 9:33.
-  - Arthur told you he tore up his own will.
+  - Douglas told you he tore up his own will.
 
 instructions:
-  - Round One, your 8:30 meeting. Round Two, your 9:33 walk. Round Three, what Arthur said about the will.
+  - Round One, your 8:30 meeting. Round Two, your 9:33 walk. Round Three, what Douglas said about the will.
   - Never describe your 8:30 meeting as anything but "a conversation" unless paid.
   - You honestly could not identify the person in the corridor. Don't guess.
   - You may become visibly emotional once per round. Make it count.
 
 mission: |
-  Get **Carlotta alone** and ask her **what Arthur said about midnight.**
-  Report her answer to Reggie.
+  Get **Carlotta alone** and ask her **what Douglas said about midnight.**
+  Report her answer to Roderick.
 
 rounds:
   1:
     text: |
-      Admit you met Arthur in the study at 8:30, a private conversation
+      Admit you met Douglas in the study at 8:30, a private conversation
       between old friends. He seemed happy. Lighter. You're on better terms
       than people think.
 
       Do not elaborate. Let them imagine.
     reveal:
-      - You met Arthur privately in the study at 8:30.
+      - You met Douglas privately in the study at 8:30.
   2:
     text: |
-      Confess your second visit: **at 9:33 you walked toward Arthur's study
+      Confess your second visit: **at 9:33 you walked toward Douglas's study
       to finish your conversation, but you saw someone farther down the
       corridor and changed your mind.** You couldn't see who.
 
@@ -115,20 +115,20 @@ rounds:
   3:
     text: |
       Now clear Carlotta, even if she doesn't deserve it. Tell the room what
-      Arthur told you at 8:30:
+      Douglas told you at 8:30:
 
       **"I tore up the old will myself. Everyone keeps assuming tonight is
       about inheritance. It isn't."**
 
       [[if:savanah]]
       And if Savanah is still calling herself the widow, you may inform the
-      room, icily, that you were *there* when Arthur sobered up in 2019.
+      room, icily, that you were *there* when Douglas sobered up in 2019.
       [[/if]]
     reveal:
-      - 'Arthur told you he tore up the will himself: "tonight isn''t about inheritance."'
+      - 'Douglas told you he tore up the will himself: "tonight isn''t about inheritance."'
 
 texts:
-  - id: clara-arthur-history
+  - id: clara-douglas-history
     from: A.
     trigger: { history: true }
     stamp: "8:46 PM"
@@ -144,5 +144,5 @@ texts:
 
 host_notes: |
   Supporting. Part Two's second study visitor (9:33). Round Three clears the
-  Carlotta inheritance theory. If Clara isn't cast, Reggie can read the will
-  quote as "something Arthur told Clara" from the host script.
+  Carlotta inheritance theory. If Clara isn't cast, Roderick can read the will
+  quote as "something Douglas told Clara" from the host script.

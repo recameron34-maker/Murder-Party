@@ -2,22 +2,22 @@
 title: Arrivals
 round: 0
 kind: speech
-changes: You greet the guests as Arthur now (Reggie is "late"); the old Reggie greetings are in git history. Greetings for the whole cast.
+changes: You greet the guests as Douglas now (Roderick is "late"); the old Roderick greetings are in git history. Greetings for the whole cast.
 lights: arrival
 ---
-🆕 **You are Arthur Blackwood until the cake.** Tan suit, black silk tie, flat
+🆕 **You are Douglas Cameron until the cake.** Tan suit, black silk tie, flat
 cap (indoors, because it's your house), silver wig. Greet every arrival at
 the top of the stairs like a man who owns the stairs. If anyone asks where
-Reggie is: "Late. It's the only family tradition he has ever kept."
+Roderick is: "Late. It's the only family tradition he has ever kept."
 
 🆕 **The guest book.** Steer every arrival to the book by the coat rack:
 "Everyone signs the book. Family tradition since 1891. The house likes to
 know who it's had." Have them sign as their character. Keep it out for the
 reveal; it makes a lovely last line.
 
-Arthur's rule for the whole night: **everything waits until midnight.** Any
+Douglas's rule for the whole night: **everything waits until midnight.** Any
 question about the will, the money, the announcement, anyone's secret:
-*"At midnight."* (Playing Arthur has the full list of what he knows and must
+*"At midnight."* (Playing Douglas has the full list of what he knows and must
 never say.)
 
 Greetings. Lines marked *(quietly)* are for that guest's ear only; they're
@@ -104,7 +104,7 @@ the words on their card, so say them exactly and walk away.
 [[/if]]
 
 [[if:spare-sterling]]
-**To Sterling:** "Sterling! Monaco! …Remind me which year?" *(Sterling has never met Arthur. Enjoy the face.)*
+**To Sterling:** "Sterling! Monaco! …Remind me which year?" *(Sterling has never met Douglas. Enjoy the face.)*
 [[/if]]
 
 [[if:spare-ellery]]

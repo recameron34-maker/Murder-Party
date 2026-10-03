@@ -17,7 +17,7 @@ export function loginPage({ prefill = '', error = '' } = {}) {
   const body = html`<main class="wrap login"><div>
   ${raw(RAVEN_SVG)}
   <div class="house-line">You are expected</div>
-  <h1>Blackwood Manor</h1>
+  <h1>Cameron Castle</h1>
   <p class="muted"><i>The Midnight Supper</i></p>
   <div class="flourish">✦</div>
   <form class="card" method="post" action="/login" autocomplete="off">
@@ -53,7 +53,7 @@ const ICONS = {
 };
 
 function nowCard(live, paper) {
-  if (paper) return html`<div class="now-card"><b>Read everything here before the party.</b> On the night, phones stay away: your envelopes come on paper, one per round, from Reggie.</div>`;
+  if (paper) return html`<div class="now-card"><b>Read everything here before the party.</b> On the night, phones stay away: your envelopes come on paper, one per round, from Roderick.</div>`;
   if (live === 0) return html`<div class="now-card"><b>The Supper hasn't started.</b> Read your character, plan your costume, and check your phone. Envelopes arrive once the lights go out.</div>`;
   return html`<a class="now-card live" href="#envelopes"><b>Round ${ROUND_WORDS[live]} is open.</b> Read your envelope and make sure your reveals come out before the round ends. →</a>`;
 }
@@ -80,7 +80,7 @@ export function guestPage(content, state, charId, { round, preview = false, now 
       return html`<article class="card envelope sealed">
   <div class="seal">✦</div>
   <h3>Round ${ROUND_WORDS[n]}</h3>
-  <p>${paper ? 'On paper, on the night. Reggie hands it to you.' : 'Sealed. Reggie will break the seal when the time comes.'}</p>
+  <p>${paper ? 'On paper, on the night. Roderick hands it to you.' : 'Sealed. Roderick will break the seal when the time comes.'}</p>
 </article>`;
     }
     const r = c.rounds[n];
@@ -102,7 +102,7 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
 <div id="banner" hidden>A new envelope has been unsealed. <button class="btn small ghost" type="button" onclick="location.hash='#envelopes';location.reload()">Open it</button></div>
 <main class="wrap guest">
 <header class="title">
-  <div class="house-line">Blackwood Manor · The Midnight Supper</div>
+  <div class="house-line">Cameron Castle · The Midnight Supper</div>
   ${portrait(charId, c.name, content.portraits?.[charId], 120)}
   <div class="role">${c.role}</div>
   <h1>${c.name}</h1>
@@ -114,7 +114,7 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
   <a href="#character">${raw(ICONS.you)}<span>You</span></a>
   <a href="#envelopes">${raw(ICONS.envelopes)}<span>Envelopes</span><span class="badge" id="sealed">${opened}/3</span></a>
   <a href="#phone">${raw(ICONS.phone)}<span>${paper ? 'Messages' : 'Phone'}</span><span class="badge" id="unread" hidden>0</span></a>
-  <a href="#manor">${raw(ICONS.manor)}<span>Manor</span></a>
+  <a href="#manor">${raw(ICONS.manor)}<span>Castle</span></a>
 </nav>
 
 <section class="panel" id="character">
@@ -137,13 +137,13 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
   <div class="card"><p class="small muted">Accept $1,000 and you must answer a question about these truthfully.</p><ul>${c.blackmail.map((b) => html`<li>${I(b)}</li>`)}</ul></div>
   <h3>Private instructions</h3>
   <div class="card"><ul>${c.instructions.map((x) => html`<li>${I(x)}</li>`)}</ul></div>
-  <h3>Secret mission <span class="small muted">· $1,000 from Reggie</span></h3>
+  <h3>Secret mission <span class="small muted">· $1,000 from Roderick</span></h3>
   ${live >= 1 ? html`<div class="card mission">${M(c.mission)}</div>` : html`<div class="card envelope sealed"><div class="seal">✦</div><p>${paper ? 'Your mission is in your Round One envelope.' : 'Your mission arrives with Round One.'}</p></div>`}
 </section>
 
 <section class="panel" id="envelopes">
   <h2>Envelopes</h2>
-  <p class="small muted">${paper ? 'Tonight the envelopes are paper: one per round, handed to you by Reggie. Nothing new will appear here.' : `${opened} of 3 unsealed. New envelopes appear here the moment Reggie opens a round.`}</p>
+  <p class="small muted">${paper ? 'Tonight the envelopes are paper: one per round, handed to you by Roderick. Nothing new will appear here.' : `${opened} of 3 unsealed. New envelopes appear here the moment Roderick opens a round.`}</p>
   ${envelopes}
 </section>
 
@@ -157,7 +157,7 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
 </section>
 
 <section class="panel" id="manor">
-  <h2>The Manor</h2>
+  <h2>The Castle</h2>
   <div class="card">${M(gc.welcome)}</div>
   <h3>How tonight works</h3>
   <ol class="steps">${(gc.tonight_steps || []).map((st, i) => html`<li class="${st.round < live ? 'done' : st.round === live ? 'now' : ''}"><span class="n">${i + 1}</span><div><b>${st.title}</b><p>${st.text}</p></div></li>`)}</ol>
@@ -168,7 +168,7 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
   ${gc.house_tonight ? M(gc.house_tonight) : ''}
   ${venueMap(content.venue, { mode: 'guest', rooms: content.lore.rooms, linkRooms: true })}
   <ul class="rooms">${roomList}</ul></div>
-  <h3>The Blackwoods</h3>
+  <h3>The Camerons</h3>
   <div class="card">${familyTree(gc.family_tree || [])}</div>
   <h3>The legend</h3>
   <div class="card">${M(gc.legend)}</div>
@@ -183,8 +183,8 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
 </section>
 
 <footer>
-  ${preview ? '' : html`<form method="post" action="/logout"><button class="btn ghost small" type="submit">Leave the manor (log out)</button></form>`}
-  <p>${raw(RAVEN_SVG)}<br>Blackwood Manor</p>
+  ${preview ? '' : html`<form method="post" action="/logout"><button class="btn ghost small" type="submit">Leave the castle (log out)</button></form>`}
+  <p>${raw(RAVEN_SVG)}<br>Cameron Castle</p>
 </footer>
 </main>
 <div id="toast" role="status" aria-live="polite"></div>`;
@@ -224,7 +224,7 @@ const GUEST_JS = `
     d.appendChild(f); d.appendChild(b); d.appendChild(w); thread.appendChild(d);
   }
   function showToast(msg){toast.textContent=msg; toast.classList.add('show'); setTimeout(function(){toast.classList.remove('show')},6000)}
-  function bump(n){unread+=n; badge.textContent=unread; badge.hidden=!unread; document.title=unread?'('+unread+') Blackwood Manor':'Blackwood Manor'}
+  function bump(n){unread+=n; badge.textContent=unread; badge.hidden=!unread; document.title=unread?'('+unread+') Cameron Castle':'Cameron Castle'}
   function alertNew(list){
     var t=list[list.length-1];
     showToast('💬 '+t.from+': '+(t.body.length>90?t.body.slice(0,90)+'…':t.body));

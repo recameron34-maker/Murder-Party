@@ -42,7 +42,7 @@ relationships:
     text: James Calloway used to sell you family stories when he was broke at university. He doesn't know it was you he was selling to.
   - with: savanah
     if: savanah
-    text: The Keyhole broke the story of Arthur's Vegas wedding in 2019, and of its annulment two weeks later. You have the clipping.
+    text: The Keyhole broke the story of Douglas's Vegas wedding in 2019, and of its annulment two weeks later. You have the clipping.
 
 evening:
   - at: "8:00 PM"
@@ -84,7 +84,7 @@ instructions:
 
 mission: |
   Learn **one secret from three different guests without spending Blackmail
-  Cash.** Report all three to Reggie.
+  Cash.** Report all three to Roderick.
 
 rounds:
   1:
@@ -111,8 +111,8 @@ rounds:
       from the study.
 
       [[if:savanah]]
-      And if Savanah is still claiming to be Arthur's widow, produce The
-      Keyhole's 2019 clipping: **"BLACKWOOD'S VEGAS BRIDE: ANNULLED IN A
+      And if Savanah is still claiming to be Douglas's widow, produce The
+      Keyhole's 2019 clipping: **"CAMERON'S VEGAS BRIDE: ANNULLED IN A
       FORTNIGHT."**
       [[/if]]
     reveal:

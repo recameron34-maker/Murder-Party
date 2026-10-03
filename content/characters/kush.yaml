@@ -4,7 +4,7 @@ written_for: Kush               # HOST
 tier: core                      # HOST
 pronouns: he/him                # HOST
 role: Forensic accountant
-public_role: "Forensic accountant and friend of Arthur's"   # what everyone at the party knows; shown on every guest's guest list
+public_role: "Forensic accountant and friend of Douglas's"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Money always leaves footprints. You follow them for a living, and for fun."
 
 costume: |
@@ -14,34 +14,34 @@ costume: |
 
 intro: |
   Nobody at this party can explain what a forensic accountant does, and you
-  are thrilled to tell them, at length. Three weeks ago Arthur hired you,
+  are thrilled to tell them, at length. Three weeks ago Douglas hired you,
   very quietly, to find out where some of his money had gone.
 
 backstory: |
-  You've spent three weeks in a cold room off the kitchens with Arthur's
+  You've spent three weeks in a cold room off the kitchens with Douglas's
   ledgers, a space heater and an increasingly personal relationship with
-  Blackwood Holdings' wire records. It's the happiest you've ever been.
+  Cameron Holdings' wire records. It's the happiest you've ever been.
 
   You found it. **Six transfers over fourteen months, $2.4 million in
-  total.** And every one was authorized through **Blackwood Legal Counsel**.
-  You told Arthur two days ago, and this week you matched the user ID. He
+  total.** And every one was authorized through **Cameron Legal Counsel**.
+  You told Douglas two days ago, and this week you matched the user ID. He
   told you to say nothing until midnight.
 
   Your own secrets: your professional certification **lapsed in March** and
   you haven't quite renewed it. And while doing due diligence on the
-  Wellington Foundation for Arthur, you and Hannah Wellington have been
+  Wellington Foundation for Douglas, you and Hannah Wellington have been
   "working late." Very late. On the ledgers. Mostly.
 
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your client. He hired you because "nobody would ever suspect a man that boring." You chose to take it as a compliment.
   - with: lindsey
-    text: Arthur's banker. She flagged the transfers before you were hired. You respect her enormously and suspect her a little, professionally.
+    text: Douglas's banker. She flagged the transfers before you were hired. You respect her enormously and suspect her a little, professionally.
   - with: hannah
-    text: You audited her foundation for Arthur. It was clean. The two of you, less so.
+    text: You audited her foundation for Douglas. It was clean. The two of you, less so.
   - with: morgan
-    text: Arthur's lawyer. You've been very polite to her all evening and you haven't stopped watching her.
-  - with: reggie
+    text: Douglas's lawyer. You've been very polite to her all evening and you haven't stopped watching her.
+  - with: roderick
     text: Your host, who has publicly mocked your profession twice tonight. He'll regret it when you're a hero.
 
 evening:
@@ -62,26 +62,26 @@ evening:
     text: In the dark you clutched your folder to your chest. Priorities.
 
 knows:
-  - Arthur suspected theft and hired you three weeks ago.
+  - Douglas suspected theft and hired you three weeks ago.
   - The total is **$2.4 million**, in six transfers over fourteen months.
-  - Every transfer was authorized through **Blackwood Legal Counsel**, user ID **ML-0427**.
+  - Every transfer was authorized through **Cameron Legal Counsel**, user ID **ML-0427**.
   - Lindsey Vale flagged the transfers before you were hired.
 
 secret: |
   You know the full shape of the theft: **$2.4 million, authorized through
-  Blackwood Legal Counsel.** Your certification has lapsed, and you're having
+  Cameron Legal Counsel.** Your certification has lapsed, and you're having
   a fling with Hannah Wellington.
 
 blackmail:
-  - Arthur hired you to trace missing money.
+  - Douglas hired you to trace missing money.
   - The theft totals $2.4 million.
   - Your professional certification lapsed in March.
 
 instructions:
-  - Round One, the suspicion only. Round Two, the amount. Round Three, Blackwood Legal Counsel. Refuse Blackmail offers that would jump ahead, whatever the price.
-  - When you finally reveal the $2.4 million, **perform**. This is your moment and Reggie will give it to you.
-  - You may explain any financial document Reggie produces, at whatever length the room will tolerate.
-  - Do not open future envelopes. Reggie will be watching you specifically.
+  - Round One, the suspicion only. Round Two, the amount. Round Three, Cameron Legal Counsel. Refuse Blackmail offers that would jump ahead, whatever the price.
+  - When you finally reveal the $2.4 million, **perform**. This is your moment and Roderick will give it to you.
+  - You may explain any financial document Roderick produces, at whatever length the room will tolerate.
+  - Do not open future envelopes. Roderick will be watching you specifically.
 
 mission: |
   Get someone to dramatically ask you, **"Kushington, what did you find?"**
@@ -90,43 +90,43 @@ mission: |
 rounds:
   1:
     text: |
-      When Maya mentions money, Reggie will turn to you: *"Kushington. Arthur
+      When Maya mentions money, Roderick will turn to you: *"Kushington. Douglas
       hired you for something. What was it?"*
 
-      Reveal: **Arthur suspected someone was stealing from him** and hired
+      Reveal: **Douglas suspected someone was stealing from him** and hired
       you to trace it. Do NOT give the amount. Be tantalizing about it.
     reveal:
-      - Arthur suspected theft and hired you to trace it (no amount yet).
+      - Douglas suspected theft and hired you to trace it (no amount yet).
   2:
     text: |
-      When Malik says *"It's not about inheritance. Follow the money,"* Reggie
+      When Malik says *"It's not about inheritance. Follow the money,"* Roderick
       will turn to you. **Let it rip.**
 
       **$2.4 MILLION.** Six transfers over fourteen months. Embezzled from
-      Blackwood Holdings by someone with access. Pause for gasps. Take your
+      Cameron Holdings by someone with access. Pause for gasps. Take your
       time.
 
-      If a torn ledger turns up saying **AUTHORIZED: BLC**, you may say you
-      have a theory about BLC, but you need one more piece. (You need Round
+      If a torn ledger turns up saying **AUTHORIZED: CLC**, you may say you
+      have a theory about CLC, but you need one more piece. (You need Round
       Three.)
     reveal:
       - The stolen amount is $2.4 million, in six transfers.
   3:
     text: |
-      When Carlotta asks *"Who betrayed him?"* Reggie will look at you.
+      When Carlotta asks *"Who betrayed him?"* Roderick will look at you.
 
-      Reveal: **the transfers were authorized through Blackwood Legal
+      Reveal: **the transfers were authorized through Cameron Legal
       Counsel**, Morgan's office, using user ID **ML-0427**. Then look at
       Lindsey, who can confirm it independently.
 
       You have not proved who *typed* it. You've proved whose office it came
       from.
     reveal:
-      - The transfers were authorized through Blackwood Legal Counsel (Morgan's office), ID ML-0427.
+      - The transfers were authorized through Cameron Legal Counsel (Morgan's office), ID ML-0427.
 
 texts:
-  - id: kush-arthur-history
-    from: Arthur Blackwood
+  - id: kush-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Thursday 10:40 PM"
     body: "Not a word until midnight, Kushington. Not to anyone. Especially not anyone you like."
@@ -134,12 +134,12 @@ texts:
     from: H.
     trigger: { round: 1, after: 7 }
     body: "You look very serious in that waistcoat. Is it the numbers or is it me"
-  - id: kush-reggie-r2
-    from: Reggie
+  - id: kush-roderick-r2
+    from: Roderick
     trigger: { cue: "Just before the Malik to Kush cue in Round Two" }
     body: "Kushington. Your moment approaches. Try to be brief. (You won't.)"
 
 host_notes: |
   Core. Round One: suspected theft. Round Two: $2.4M (the Malik to Kush
-  cue). Round Three: Blackwood Legal Counsel (with Lindsey). Rescue: "Kushington,
+  cue). Round Three: Cameron Legal Counsel (with Lindsey). Rescue: "Kushington,
   please stop teasing us and tell us what you found."

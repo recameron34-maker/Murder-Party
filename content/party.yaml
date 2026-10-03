@@ -1,7 +1,7 @@
 # Party-wide settings.
-title: Murder at Blackwood Manor
+title: Murder at Cameron Castle
 host_name: Ross
-host_character: Reginald "Reggie" Blackwood
+host_character: Roderick Cameron
 # Party date (YYYY-MM-DD) and IANA time zone. Pre-party teaser texts
 # ({ day: -1, time: "18:00" }) are scheduled relative to this. Leave null
 # until the date is fixed; dated texts simply won't fire.
@@ -20,10 +20,10 @@ phones: false
 # are (starters, main, dessert). `round` links each phase to the live round
 # so the dashboard can show where you are. Move the times; keep the order.
 schedule:
-  - { time: "7:30 PM", what: "Doors. Arrivals as Arthur, drinks, the guest book", food: "Champagne and canapés", round: 0 }
-  - { time: "7:50 PM", what: "Birthday toast and formal opening (Arthur)", food: "", round: 0 }
+  - { time: "7:30 PM", what: "Doors. Arrivals as Douglas, drinks, the guest book", food: "Champagne and canapés", round: 0 }
+  - { time: "7:50 PM", what: "Birthday toast and formal opening (Douglas)", food: "", round: 0 }
   - { time: "8:00 PM", what: "Mingle in character", food: "Canapés keep coming", round: 0 }
-  - { time: "8:15 PM", what: "The birthday cake; Arthur retires to his study (change in the closet)", food: "Birthday cake", round: 0 }
+  - { time: "8:15 PM", what: "The birthday cake; Douglas retires to his study (change in the closet)", food: "Birthday cake", round: 0 }
   - { time: "8:30 PM", what: "The blackout. \"My brother has been murdered.\"", food: "", round: 0 }
   - { time: "8:40 PM", what: "Rules, Blackmail Cash, Round One envelopes", food: "Starters / grazing board", round: 1 }
   - { time: "9:25 PM", what: "Round Two envelopes", food: "Main course", round: 2 }
@@ -41,7 +41,7 @@ awards:
   - { title: "Most Suspicious Innocent Person", for: "The most votes of anyone who didn't do it." }
   - { title: "Most Unhinged Theory", for: "Wrong in ways that will be discussed for years." }
   - { title: "Best Liar", for: "Lied beautifully, and possibly still is." }
-  - { title: "Richest Blackmailer", for: "Ended the night with the most Blackwood Blackmail Notes." }
+  - { title: "Richest Blackmailer", for: "Ended the night with the most Cameron Blackmail Notes." }
 
 # Real-life couples (Ross, October 2026). Their characters may only be
 # romantic with each other, and no line anywhere may hint that either would

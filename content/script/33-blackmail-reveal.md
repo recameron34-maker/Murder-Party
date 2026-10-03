@@ -8,9 +8,9 @@ After Morgan is exposed, Ross asks: "Morgan…" "Did anyone pay you for informat
 
 Let people react. Then:
 
-"There was one rule Arthur neglected to mention."
+"There was one rule Douglas neglected to mention."
 
-"Everyone in Blackwood Manor was bound by Blackmail Cash…" "…except the murderer."
+"Everyone in Cameron Castle was bound by Blackmail Cash…" "…except the murderer."
 
 "Morgan was the only person tonight permitted to take your money…" "…look you directly in the eye…" "…and lie."
 

@@ -290,7 +290,7 @@ h2[id],.card[id],section[id]{scroll-margin-top:96px}
 .web-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
 .web-panel{position:sticky;top:64px;max-height:calc(100vh - 80px);overflow:auto}
 @media (max-width:900px){.web-layout{grid-template-columns:1fr}.web-panel{position:static;max-height:none}}
-#webgraph.hide-romance .k-romance,#webgraph.hide-money .k-money,#webgraph.hide-family .k-family,#webgraph.hide-rivalry .k-rivalry,#webgraph.hide-ties .k-ties,#webgraph.hide-arthur .to-arthur{display:none}
+#webgraph.hide-romance .k-romance,#webgraph.hide-money .k-money,#webgraph.hide-family .k-family,#webgraph.hide-rivalry .k-rivalry,#webgraph.hide-ties .k-ties,#webgraph.hide-douglas .to-douglas{display:none}
 table{width:100%;border-collapse:collapse;font-size:.92rem}
 th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
 th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}

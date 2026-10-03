@@ -23,27 +23,27 @@ safety: >
 
 scenes:
   - id: arrival
-    routine: "Blackwood arrival"
+    routine: "Cameron arrival"
     when: Before the first guest rings
     look: Candlelight. Every game room warm white (about 2200K) at 40%. The study OFF, its doorway roped. Dining Room 30% with real candles on the table.
     sound: Low string-quartet covers of pop songs. Rain on the windows if you have a speaker spare.
   - id: toast
-    routine: "Blackwood toast"
+    routine: "Cameron toast"
     when: Birthday toast
     look: Drawing Room up to 60% so everyone can see the birthday girls. Everything else stays at 40%.
     sound: Music down for the toast, back up after.
   - id: mingle
-    routine: "Blackwood storm"
+    routine: "Cameron storm"
     when: Pre-murder mingle
     look: Drawing Room 45%, everything else 30%. Library a single dim bulb (15%), like a reading lamp left on.
     sound: Add a distant thunder track under the music. The storm is building.
   - id: cake
-    routine: "Blackwood cake"
-    when: The birthday cake, as Arthur leaves for his study
+    routine: "Cameron cake"
+    when: The birthday cake, as Douglas leaves for his study
     look: >
       Dining Room up to 70% warm, so the cake and its candles are the
       brightest thing in the flat. Drawing Room down to 20%, East Corridor
-      10%, Library 15%, and the Study one warm lamp at 30%: Arthur is in
+      10%, Library 15%, and the Study one warm lamp at 30%: Douglas is in
       there. People follow the light, so the whole party drifts deep into
       the flat, away from the study door, just as it did in the story.
     sound: Music down so the room can sing "Happy Birthday" (you're on your way to the study). The thunder track keeps going underneath.
@@ -54,8 +54,8 @@ scenes:
       - Library → 15%
       - Study → 30%, warm white
   - id: blackout
-    routine: "Blackwood blackout"
-    when: The blackout (you fire it from the study, changed into Reggie)
+    routine: "Cameron blackout"
+    when: The blackout (you fire it from the study, changed into Roderick)
     look: >
       Dining Room OFF, wait 1 second, Kitchens OFF, wait 1 second, every
       group OFF. Thunder. Wait 15 seconds. Then every group back to 25%, and
@@ -69,18 +69,18 @@ scenes:
       - Wait 1 second
       - Kitchens → power off
       - Wait 1 second
-      - All Blackwood groups → power off
+      - All Cameron groups → power off
       - Play a thunder sound
       - Wait 15 seconds
       - All groups → 25%, warm white
       - Study → 20%, deep red
   - id: investigation
-    routine: "Blackwood investigation"
+    routine: "Cameron investigation"
     when: Round One
     look: Bright enough to read envelopes and phones. Game rooms 50% warm. Study 35% red-amber. Library 25%.
     sound: Music back, a little quieter. The storm keeps going underneath.
   - id: flicker
-    routine: "Blackwood flicker"
+    routine: "Cameron flicker"
     when: The moment the passage is mentioned (Round Two, Tim asks Joji)
     look: Every group dips to 5% for one second, then back to where it was. Do it once. Nobody will forget it.
     sound: One crack of thunder.
@@ -90,35 +90,35 @@ scenes:
       - All groups → 45%
       - Play a thunder sound
   - id: round-two
-    routine: "Blackwood deeper"
+    routine: "Cameron deeper"
     when: Round Two
     look: Everything down to 40%. The Gallery at 60% so the portraits can watch.
     sound: Darker playlist. Fewer pop covers, more strings.
   - id: round-three
-    routine: "Blackwood midnight"
+    routine: "Cameron midnight"
     when: Round Three
     look: Everything 30%, the Dining Room on candles only. Midnight is coming and the house knows it.
     sound: A ticking clock under the music if you can find one.
   - id: accusations
-    routine: "Blackwood accusation"
+    routine: "Cameron accusation"
     when: Accusations
     look: Everything 15%. Drawing Room 40%, a pool of light around you.
     sound: Music off. Just the storm.
   - id: reveal
-    routine: "Blackwood reveal"
+    routine: "Cameron reveal"
     when: The final reveal
     look: >
       Everything off except the Study, white at 70%, when you say "Study."
-      When you open the hidden door, fire "Blackwood passage": Library and
+      When you open the hidden door, fire "Cameron passage": Library and
       Study both up to 100%, so the room can see straight through.
     sound: Silence. Let the thunder sound once when you open the door.
   - id: passage
-    routine: "Blackwood passage"
+    routine: "Cameron passage"
     when: You slide the bookshelf aside at the reveal
     look: Library and Study 100% warm white. Everything else stays dim.
     sound: One crack of thunder.
   - id: afterparty
-    routine: "Blackwood afterparty"
+    routine: "Cameron afterparty"
     when: Awards, the midnight photograph, and after
     look: Everything 70% warm. Colour bulbs can go gold and deep green.
     sound: '"Murder on the Dancefloor", obviously. Then whatever you like.'

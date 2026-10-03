@@ -7,15 +7,15 @@ timing: late
 carrier: found
 delivery: Found late in Round One. Tear and tea-stain the edges; don't actually burn it at the party.
 hide: Torn into pieces in the study wastebasket, a few scraps left on the desk. Hide before guests arrive.
-room: study            # where it is found in the manor (for the host map)
+room: study            # where it is found in the castle (for the host map)
 print: |
-  LAST WILL AND TESTAMENT OF ARTHUR BLACKWOOD
+  LAST WILL AND TESTAMENT OF DOUGLAS CAMERON
 
   "...the remainder of my estate shall pass..."
 
   [the recipient's name is torn and scorched away]
-truth: Arthur tore it up himself that afternoon (~4 PM). Clara reveals this in Round Three.
+truth: Douglas tore it up himself that afternoon (~4 PM). Clara reveals this in Round Three.
 points_to: [carlotta, kevin]
 critical: false
-refs: [arthur, clara]
+refs: [douglas, clara]
 times: ["4:00 PM"]

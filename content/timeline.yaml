@@ -38,106 +38,106 @@ events:
   # ---------------------------------------------------------------- background
   - id: lindsey-flags-transfers
     when: "Six weeks ago"
-    who: [lindsey, arthur]
-    what: Lindsey Vale notices six large transfers out of Blackwood Holdings and quietly warns Arthur.
+    who: [lindsey, douglas]
+    what: Lindsey Vale notices six large transfers out of Cameron Holdings and quietly warns Douglas.
     source: part-two
     learned: [{ round: 3, via: lindsey, how: "Her role flips: she discovered the theft" }]
 
   - id: kush-hired
     when: "Three weeks ago"
-    who: [kush, arthur]
-    what: Arthur hires Kushington to trace the money, telling almost no one.
+    who: [kush, douglas]
+    what: Douglas hires Kushington to trace the money, telling almost no one.
     source: part-one
-    learned: [{ round: 1, via: kush, how: "Arthur suspected theft (no amount)" }]
+    learned: [{ round: 1, via: kush, how: "Douglas suspected theft (no amount)" }]
 
   - id: kush-traces-blc
     when: "This week"
     who: [kush]
-    what: Kush totals the theft at $2.4M over six transfers, all authorized from Blackwood Legal Counsel (BLC), user ID ML-0427.
+    what: Kush totals the theft at $2.4M over six transfers, all authorized from Cameron Legal Counsel (CLC), user ID ML-0427.
     source: part-one
     critical: true
     learned:
       - { round: 2, via: kush, how: "$2.4 MILLION" }
-      - { round: 2, via: torn-ledger, how: "AUTHORIZED: BLC (ambiguous)" }
+      - { round: 2, via: torn-ledger, how: "AUTHORIZED: CLC (ambiguous)" }
       - { round: 3, via: kush, how: "Morgan's office controlled the authorization" }
 
-  - id: arthur-questions-morgan
+  - id: douglas-questions-morgan
     when: "This week"
-    who: [arthur, morgan]
-    what: Arthur asks Morgan pointed "help me investigate" questions about the account, giving her a chance to confess. She plays along.
+    who: [douglas, morgan]
+    what: Douglas asks Morgan pointed "help me investigate" questions about the account, giving her a chance to confess. She plays along.
     source: part-two
     learned: [{ round: 2, via: morgan, how: "Morgan's defense: 'I've spent the week investigating this with him.' Partially true." }]
 
-  - id: arthur-emails-morgan
+  - id: douglas-emails-morgan
     when: "Thursday"
-    who: [arthur, morgan]
-    what: "Arthur emails Morgan: review the Wellington, Monroe and Vale matters before midnight."
+    who: [douglas, morgan]
+    what: "Douglas emails Morgan: review the Wellington, Monroe and Vale matters before midnight."
     source: part-two
     learned: [{ round: 2, via: morgan-email, how: "Morgan produces it herself" }]
 
-  - id: arthur-schedules-message
+  - id: douglas-schedules-message
     when: "Friday night"
-    who: [arthur, malik]
-    what: "Arthur schedules a message to Malik for 12:00 AM: 'The theft came from inside my legal operation. I trusted the wrong person.'"
+    who: [douglas, malik]
+    what: "Douglas schedules a message to Malik for 12:00 AM: 'The theft came from inside my legal operation. I trusted the wrong person.'"
     source: part-one
     critical: true
-    learned: [{ round: 3, via: malik-message, how: "Reggie hands Malik the scheduled draft" }]
+    learned: [{ round: 3, via: malik-message, how: "Roderick hands Malik the scheduled draft" }]
 
-  - id: arthur-clears-molly
+  - id: douglas-clears-molly
     when: "Friday"
-    who: [arthur, martin, molly]
-    what: Arthur concludes the forger Lucien Vasse fooled Molly too, and writes to Martin to say so.
+    who: [douglas, martin, molly]
+    what: Douglas concludes the forger Lucien Vasse fooled Molly too, and writes to Martin to say so.
     source: new
-    learned: [{ round: 3, via: molly-cleared-note, how: "Martin produces Arthur's note" }]
+    learned: [{ round: 3, via: molly-cleared-note, how: "Martin produces Douglas's note" }]
 
   - id: kevin-loses-cufflink
     at: "3:00 PM"
     approx: true
-    who: [kevin, reggie]
+    who: [kevin, roderick]
     where: study
-    what: Kevin loses a cufflink in the study while helping Reggie move furniture for the Supper.
+    what: Kevin loses a cufflink in the study while helping Roderick move furniture for the Supper.
     source: part-two
-    learned: [{ round: 2, via: host, how: "Reggie confirms once Kevin has panicked enough" }]
+    learned: [{ round: 2, via: host, how: "Roderick confirms once Kevin has panicked enough" }]
 
-  - id: arthur-tears-will
+  - id: douglas-tears-will
     at: "4:00 PM"
     approx: true
-    who: [arthur]
+    who: [douglas]
     where: study
-    what: Arthur tears up his old will himself and drops it in the study's fireplace basket.
+    what: Douglas tears up his old will himself and drops it in the study's fireplace basket.
     source: part-two
     learned:
       - { round: 1, via: destroyed-will, how: "Found late Round One; looks like someone destroyed it" }
       - { round: 3, via: clara, how: "'I tore up the old will myself.'" }
 
   # ---------------------------------------------------------------- the evening
-  - id: reggie-late
+  - id: roderick-late
     at: "7:00 PM"
     until: "9:47 PM"
-    who: [reggie]
+    who: [roderick]
     where: grounds
     what: >
-      Arthur sends Reggie, his younger half-brother, down to the village for
+      Douglas sends Roderick, his younger half-brother, down to the village for
       more champagne. The lower road floods behind him, and he spends the
       evening getting back. He comes up the back stairs as the lights go out
       at 9:45, goes to find his brother, and is in the study when they
-      return. (Ross plays Arthur until the cake, then Reggie.)
+      return. (Ross plays Douglas until the cake, then Roderick.)
     source: new
-    learned: [{ round: 0, via: host, how: "Reggie comes out of the study: 'My brother has been murdered.'" }]
+    learned: [{ round: 0, via: host, how: "Roderick comes out of the study: 'My brother has been murdered.'" }]
 
   - id: carlotta-giving-away
     at: "8:10 PM"
-    who: [carlotta, arthur]
+    who: [carlotta, douglas]
     where: front-hall
-    what: "Arthur tells Carlotta: 'At midnight, I'm giving it all away.'"
+    what: "Douglas tells Carlotta: 'At midnight, I'm giving it all away.'"
     source: part-one
     learned: [{ round: 1, via: carlotta, how: "Carlotta heard it" }]
 
-  - id: clara-meets-arthur
+  - id: clara-meets-douglas
     at: "8:30 PM"
-    who: [clara, arthur]
+    who: [clara, douglas]
     where: study
-    what: "Clara meets Arthur. He tells her: 'I tore up the old will myself. Everyone keeps assuming tonight is about inheritance. It isn't.'"
+    what: "Clara meets Douglas. He tells her: 'I tore up the old will myself. Everyone keeps assuming tonight is about inheritance. It isn't.'"
     source: part-one
     learned:
       - { round: 2, via: calendar, how: "8:30 Clara" }
@@ -147,24 +147,24 @@ events:
     at: "8:05 PM"
     who: [courtney]
     where: study
-    what: While Arthur is greeting guests in the Front Hall, Courtney slips into the empty study, takes a selfie posing with the bronze raven, and puts it back on the desk.
+    what: While Douglas is greeting guests in the Front Hall, Courtney slips into the empty study, takes a selfie posing with the bronze raven, and puts it back on the desk.
     source: new
     flex: courtney
     learned: [{ round: 2, via: courtney, how: "Her post surfaces; resolved by Molly seeing the raven on the desk at 8:45" }]
 
   - id: molly-visits-study
     at: "8:45 PM"
-    who: [molly, arthur]
+    who: [molly, douglas]
     where: study
-    what: Molly visits the study. The raven is on the desk. Arthur tells her they must discuss the painting tonight.
+    what: Molly visits the study. The raven is on the desk. Douglas tells her they must discuss the painting tonight.
     source: part-one
     learned: [{ round: 1, via: molly, how: "Her visit; she knows where the raven was" }]
 
-  - id: jimmy-confronts-arthur
+  - id: jimmy-confronts-douglas
     at: "8:50 PM"
-    who: [jimmy, arthur]
+    who: [jimmy, douglas]
     where: study
-    what: James (Jimmy) Calloway confronts Arthur about being cut out of the will.
+    what: James (Jimmy) Calloway confronts Douglas about being cut out of the will.
     source: part-one
     learned: [{ round: 1, via: jimmy, how: "Removed from will" }]
 
@@ -180,17 +180,17 @@ events:
 
   - id: maddie-sees-folder
     at: "9:10 PM"
-    who: [maddie, arthur]
+    who: [maddie, douglas]
     where: study
-    what: Maddie pops into the study and sees a red leather folder open on Arthur's desk. He closes it when she comes in.
+    what: Maddie pops into the study and sees a red leather folder open on Douglas's desk. He closes it when she comes in.
     source: part-two
-    learned: [{ round: 1, via: maddie, how: "Reggie announces the missing folder; Maddie remembers it" }]
+    learned: [{ round: 1, via: maddie, how: "Roderick announces the missing folder; Maddie remembers it" }]
 
   - id: kevin-argument
     at: "9:20 PM"
-    who: [kevin, arthur]
+    who: [kevin, douglas]
     where: study
-    what: "Loud argument. Arthur: 'You're getting nothing.' Kevin: 'You're going to regret this.' Heard down the corridor."
+    what: "Loud argument. Douglas: 'You're getting nothing.' Kevin: 'You're going to regret this.' Heard down the corridor."
     source: part-one
     learned: [{ round: 1, via: kevin, how: "Kevin must admit the line" }]
 
@@ -199,7 +199,7 @@ events:
     until: "9:47 PM"
     who: [kevin]
     where: terrace
-    what: Kevin grabs the nearest coat from the hall (Arthur's) and storms out onto the terrace. The terrace camera records him pacing and smoking the whole time.
+    what: Kevin grabs the nearest coat from the hall (Douglas's) and storms out onto the terrace. The terrace camera records him pacing and smoking the whole time.
     source: new
     learned: [{ round: 2, via: terrace-camera, how: "Late Round Two, clears Kevin" }]
 
@@ -220,26 +220,26 @@ events:
     what: >
       Annie carries Lexi and Maya's birthday cake (black icing, a sugar raven)
       into the Dining Room and almost the whole party follows it there, until
-      the blackout. Arthur stays in his study: the head of the family never
+      the blackout. Douglas stays in his study: the head of the family never
       comes out for cake. The Drawing Room and the East Corridor go quiet,
       which is why nobody notices who slips away to the study door.
     source: new
     learned: [{ round: 0, via: host, how: "Everyone was at the cake; their evenings say so" }]
 
-  - id: arthur-texts-morgan
+  - id: douglas-texts-morgan
     at: "9:29 PM"
-    who: [arthur, morgan]
+    who: [douglas, morgan]
     where: study
-    what: 'Arthur texts Morgan: "My study. 9:35. We settle this tonight."'
+    what: 'Douglas texts Morgan: "My study. 9:35. We settle this tonight."'
     source: part-one
     critical: true
-    learned: [{ round: 1, via: phone, how: "End of Round One, Reggie reads it" }]
+    learned: [{ round: 1, via: phone, how: "End of Round One, Roderick reads it" }]
 
   - id: annie-delivers-drink
     at: "9:31 PM"
-    who: [annie, arthur]
+    who: [annie, douglas]
     where: study
-    what: Annie carries in the Reckoning, Arthur's 9:30 Sazerac. Arthur is alive and alone, writing, the red folder open.
+    what: Annie carries in the Reckoning, Douglas's 9:30 Sazerac. Douglas is alive and alone, writing, the red folder open.
     source: part-one
     critical: true
     learned: [{ round: 1, via: annie, how: "Last confirmed sighting alive" }]
@@ -263,7 +263,7 @@ events:
 
   - id: morgan-enters
     at: "9:34 PM"
-    who: [morgan, arthur]
+    who: [morgan, douglas]
     where: study
     what: Morgan enters the study.
     source: part-one
@@ -275,7 +275,7 @@ events:
     until: "9:37 PM"
     who: [maya]
     where: east-corridor
-    what: "Maya, arriving for her birthday surprise, hears through the door: Arthur: 'If the money isn't back by midnight, I'm going public.' A woman: 'You'll destroy me.' She leaves."
+    what: "Maya, arriving for her birthday surprise, hears through the door: Douglas: 'If the money isn't back by midnight, I'm going public.' A woman: 'You'll destroy me.' She leaves."
     source: part-one
     critical: true
     learned:
@@ -285,14 +285,14 @@ events:
   - id: murder
     at: "9:38 PM"
     approx: true
-    who: [morgan, arthur]
+    who: [morgan, douglas]
     where: study
-    what: Morgan strikes Arthur once with the bronze raven. As he falls, his black silk tie snags on the raven's beak.
+    what: Morgan strikes Douglas once with the bronze raven. As he falls, his black silk tie snags on the raven's beak.
     source: part-one
     critical: true
     learned:
       - { round: 2, via: noor, how: "Time of death 9:35 to 9:40" }
-      - { round: 3, via: shea, how: "The black thread is from Arthur's own tie" }
+      - { round: 3, via: shea, how: "The black thread is from Douglas's own tie" }
 
   - id: morgan-escapes
     at: "9:39 PM"
@@ -319,7 +319,7 @@ events:
     approx: true
     who: [shea]
     where: east-corridor
-    what: Shea carries Arthur's evening medication toward the study. Before she reaches it she hears voices around the corner and, not wanting to be seen with his pills, goes back to the party.
+    what: Shea carries Douglas's evening medication toward the study. Before she reaches it she hears voices around the corner and, not wanting to be seen with his pills, goes back to the party.
     source: part-two
     learned: [{ round: 2, via: shea, how: "Her secret visit" }]
 
@@ -360,16 +360,16 @@ events:
 
   - id: discovery
     at: "9:47 PM"
-    who: [reggie]
+    who: [roderick]
     where: study
-    what: Lights return. Arthur is missing. Reggie checks the study and finds him dead behind the desk, the raven beside him.
+    what: Lights return. Douglas is missing. Roderick checks the study and finds him dead behind the desk, the raven beside him.
     source: part-one
     learned: [{ round: 0, via: host, how: "The murder announcement" }]
 
   # ---------------------------------------------------------------- never happened
   - id: lindsey-meeting
     at: "10:00 PM"
-    who: [lindsey, arthur]
+    who: [lindsey, douglas]
     where: study
     what: Scheduled meeting with Lindsey to go over the banking evidence. Never happened.
     source: part-two
@@ -377,7 +377,7 @@ events:
 
   - id: carlotta-meeting
     at: "11:30 PM"
-    who: [carlotta, arthur]
+    who: [carlotta, douglas]
     where: study
     what: Scheduled meeting to give Carlotta his note and release her from the estate. Never happened.
     source: part-two
@@ -385,7 +385,7 @@ events:
 
   - id: announcement
     at: "12:00 AM"
-    who: [arthur]
+    who: [douglas]
     where: dining-room
     what: The midnight announcement. Expose the theft, give the fortune away, free Carlotta. The scheduled message to Malik was set for this minute.
     source: part-one
