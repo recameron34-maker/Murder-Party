@@ -12,12 +12,12 @@ timezone: America/Chicago
 # are (starters, main, dessert). `round` links each phase to the live round
 # so the dashboard can show where you are. Move the times; keep the order.
 schedule:
-  - { time: "7:30 PM", what: "Arrivals, drinks, the guest book", food: "Champagne and canapés", round: 0 }
+  - { time: "7:30 PM", what: "Arrivals as Arthur, drinks, the guest book", food: "Champagne and canapés", round: 0 }
   - { time: "8:00 PM", what: "Birthday toast and formal opening", food: "", round: 0 }
   - { time: "8:15 PM", what: "Mingle in character", food: "Canapés keep coming", round: 0 }
-  - { time: "8:35 PM", what: "The birthday cake, in the Dining Room", food: "Birthday cake", round: 0 }
-  - { time: "8:45 PM", what: "The blackout and the body", food: "", round: 0 }
-  - { time: "8:55 PM", what: "Rules, Blackmail Cash, Round One", food: "Starters / grazing board", round: 1 }
+  - { time: "8:35 PM", what: "The birthday cake; Arthur retires to his study (the live murder)", food: "Birthday cake", round: 0 }
+  - { time: "8:50 PM", what: "The blackout; Reggie arrives late and finds the body", food: "", round: 0 }
+  - { time: "9:00 PM", what: "Rules, Blackmail Cash, Round One", food: "Starters / grazing board", round: 1 }
   - { time: "9:40 PM", what: "Round Two", food: "Main course", round: 2 }
   - { time: "10:30 PM", what: "Round Three", food: "Dessert", round: 3 }
   - { time: "11:10 PM", what: "Accusations", food: "Coffee and the Reckoning (a Sazerac)", round: 3 }

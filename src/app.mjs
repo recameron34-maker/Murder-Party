@@ -240,13 +240,17 @@ async function hostRoute({ request, deps, url, path, method, now, secure, secret
       return back(`New passphrase for ${content.characters[id].name}. Their old one (and any logged-in phone) no longer works.`);
     }
     if (path === '/host/cue') {
-      const id = f('id');
+      // One text (id) or several at once (ids, comma-separated: "Send all").
+      const ids = (f('ids') ? f('ids').split(',') : [f('id')]).map((x) => x.trim()).filter((x) => /^[a-z0-9-]+$/.test(x));
       const undo = f('undo') === '1';
+      if (!ids.length) return back('No text to send.', true);
       await updateState(store, (s) => {
-        if (undo) delete s.cueSent[id];
-        else s.cueSent[id] = s.cueSent[id] || now.toISOString();
+        for (const id of ids) {
+          if (undo) delete s.cueSent[id];
+          else s.cueSent[id] = s.cueSent[id] || now.toISOString();
+        }
       });
-      return back(undo ? 'Unsent.' : 'Sent.', false, f('back') || null);
+      return back(undo ? 'Unsent.' : ids.length > 1 ? `Sent ${ids.length} texts.` : 'Sent.', false, f('back') || null);
     }
     if (path === '/host/custom') {
       const to = f('to');

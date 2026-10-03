@@ -105,6 +105,23 @@ test('host Now / Next steps through the run of show and shows the lighting cue',
   assert.equal((await app.state()).segment, '06-blackout', 'unknown step ignored');
 });
 
+test('the cake step sends all its cue texts with one tap, each only to its recipient', async () => {
+  const app = await makeApp();
+  const h = await app.loginHost();
+  await app.fetch('/host/segment', { method: 'POST', form: { to: '05a-cake' }, cookie: h, headers: { origin: ORIGIN } });
+  const dash = await (await app.fetch('/host', { cookie: h })).text();
+  assert.match(dash, /Send all 5 at once/);
+  const ids = content.script.find((s) => s.slug === '05a-cake').send_texts;
+  const res = await app.fetch('/host/cue', { method: 'POST', form: { ids: ids.join(',') }, cookie: h, headers: { origin: ORIGIN } });
+  assert.equal(res.status, 303);
+  const sent = (await app.state()).cueSent;
+  for (const id of ids) assert.ok(sent[id], `${id} sent`);
+  const annie = await (await app.fetch('/', { cookie: await app.loginGuest('annie') })).text();
+  assert.match(annie, /The Reckoning, Annie\. My study\./);
+  const morgan = await (await app.fetch('/', { cookie: await app.loginGuest('morgan') })).text();
+  assert.ok(!/The Reckoning, Annie/.test(morgan) && !/evening pills/.test(morgan), 'Morgan gets no cake cue');
+});
+
 test('printed name badges carry public roles only', async () => {
   const app = await makeApp();
   const h = await app.loginHost();

@@ -93,8 +93,10 @@ The canonical true timeline is `content/timeline.yaml`. Lore is in
   Lucien Vasse fooled Molly too. Saucy reason Martin sat on it all night: he
   and Molly used to sleep together and he enjoyed watching her sweat. If
   Martin isn't cast, Reggie "finds" the note.
-- **The black thread** is from **Arthur's own black velvet smoking jacket**.
-  The cuff snagged on the raven's beak as he fell. Shea (who dressed him)
+- **The black thread** is from **Arthur's own black silk tie** (first written
+  as a black velvet smoking jacket; changed when Ross chose Arthur's live
+  costume, a tan suit, black tie, flat cap and wig). It snagged on the
+  raven's beak as he fell. Shea (who dressed him)
   confirms it in Round Three. It points at nobody's costume, so it can't
   accidentally accuse a guest. Part Two's "creates chaos without lying"
   still holds.
@@ -345,11 +347,62 @@ door all evening. Fixed with one new story beat rather than by moving rooms:
   "around the corner" from the East Corridor, which is where Shea hears
   voices at 9:40.
 
+## Ross plays Arthur, then Reggie: the live murder (October 2026)
+
+Ross's call: he plays **Arthur** from the first guest until the birthday
+cake, Morgan's player kills him for real in the study, she slips out through
+the real hidden door, and he changes in the study closet, follows her
+through it and walks in through the front door as **Reggie**, late.
+
+- **Arthur's look**: tan suit, black silk tie, flat cap worn indoors ("it's
+  my house"), silver wig. **Reggie's**: a dark burgundy suit, wet overcoat,
+  umbrella.
+- **The black thread** was Arthur's black velvet smoking jacket. Guests now
+  watch Arthur in a tan suit all evening, so the thread is his **black silk
+  tie** instead. That keeps Part Two's design intact (a black thread matches
+  several guests, Morgan among them) and Shea's Round Three answer ("it's
+  Arthur's own; I tied it at seven") still lands. The body is the costume:
+  jacket, tie, wig, and the cap on the floor by the raven.
+- **Reggie in the story**: Arthur sent him to the village for champagne at
+  seven and the lower road flooded behind him; he gets back at 9:47 as the
+  lights return (timeline: `reggie-late`). Nothing in the story placed him at
+  the party between 8:00 and 9:45, so only the real-time speeches moved:
+  Arrivals, the toast and the opening are now Arthur's (the Reggie versions
+  are in git history). He has "the Blackwood face" (guest family tree), so
+  the same-actor joke is part of the world.
+- **The live murder** (run of show → The live murder, host only): at the
+  cake Arthur says the family rule and goes to his study. Annie brings him
+  the Reckoning; Morgan follows a minute later and passes her coming back;
+  they argue, she says "You'll destroy me", he turns away, she lifts the
+  raven (a light prop, no contact). She leaves by the hidden door and walks
+  in through the front door ("looking for the restroom"). He changes in the
+  closet, follows, fires the blackout from the landing and walks in as
+  Reggie. Her real route is exactly her story route.
+- **Morgan never stands out**: at the cake, Carlotta, Molly, Louis, Shea and
+  Annie also leave, each cued by one text on their phone (Send all, one
+  tap). Morgan gets no text: she's briefed in person, so her page stays the
+  same shape as everyone's. Clara's, Maya's, James's and Alma's study-end
+  moments stay on their cards only; walking them for real would show them
+  Morgan.
+- **Optional**: the Kevin row ("You're getting nothing." / "You're going to
+  regret this!") live in the mingle, cued by a text from Uncle Arthur.
+- **Safety and fallbacks**: test the shelf twice, tape marks under it,
+  front door shut from the cake to the entrance, late guests wait
+  downstairs. If the shelf sticks or someone is on the landing, cross to the
+  front door in the fifteen dark seconds instead. If Morgan's player says
+  no, Arthur dies alone and nothing else changes.
+- **After the awards** Ross tells everyone it really happened, and Morgan
+  takes a bow.
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?
 - Who else does Courtney know? Add ties to `content/characters/courtney.yaml`.
 - Is the landing roomy enough to search? Only the red folder is found there.
 - Any other real couples in the cast? Real couples make the best pairings.
-- A real birthday cake for Lexi and Maya at about 8:35, ten minutes before
-  the blackout: fine with them? (Any cake works; black icing is a bonus.)
+- A real birthday cake for Lexi and Maya at about 8:35, fifteen minutes
+  before the blackout: fine with them? (Any cake works; black icing is a
+  bonus.)
+- Is Morgan's player up for the live murder, and Kevin's for the live row?
+- Does the hidden door open from the study side with the shelf in place,
+  and can the shelf be slid back from the landing quietly?

@@ -9,10 +9,10 @@ delivery: Found caught on the raven (or in a small evidence bag "from the raven"
 hide: Tied round the raven prop's beak on the study desk. Add it mid Round Two.
 room: study            # where it is found in the manor (for the host map)
 print: |
-  BLACKWOOD EVIDENCE: A few black threads, velvet, snagged on the bronze
+  BLACKWOOD EVIDENCE: A few black threads, silk, snagged on the bronze
   raven's beak.
-truth: From Arthur's own black velvet smoking jacket. The cuff snagged as he fell. Shea confirms in Round Three.
+truth: From Arthur's own black silk tie, worn with his tan suit (Ross wears it as Arthur, so the guests have seen it). It snagged on the beak as he fell. Shea confirms in Round Three.
 points_to: [carlotta, clara, shea, morgan]
 critical: false
 refs: [shea, arthur]
-prop_needed: A few strands of black velvet or black yarn.
+prop_needed: A few strands of black silk (fray the end of an old black tie) or black thread.

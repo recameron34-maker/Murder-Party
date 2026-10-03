@@ -135,6 +135,10 @@ rounds:
       - Hand Arthur's folded bank statement (from his coat) to Reggie.
 
 texts:
+  - id: kevin-row
+    from: Uncle Arthur
+    trigger: { cue: "Pre-murder mingle: the optional live row" }
+    body: "A word, Kevin. Now."
   - id: kevin-arthur-history
     from: Uncle Arthur
     trigger: { history: true }

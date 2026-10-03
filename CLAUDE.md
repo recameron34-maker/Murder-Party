@@ -26,7 +26,7 @@ Guests will open this website. Nothing a guest can reach may reveal the solution
 
 ## Cast (as best reconstructed from the docs — needs confirmation from Ross)
 
-Host: Ross as Reginald "Reggie" Blackwood, Arthur's nephew. Victim: Arthur Blackwood (not played).
+Host: Ross as Reginald "Reggie" Blackwood, Arthur's nephew. Victim: Arthur Blackwood (originally not played; Ross now plays him until the murder, see Build status).
 
 Carlotta "Carley" Blackwood (estranged daughter), Clara (Arthur's former fiancée), Lexi / Alexandra St. Clair (birthday), Maya Rose (birthday), Kush / "Kushington" (forensic accountant), Kevin Blackwood (disinherited relative), Jimmy / James (removed from will), Molly Monroe (sold fake painting), Martin (art expert), Hannah (charity), Annie / Antoinette (delivered Arthur's drink), Shea (medical/medication role), Noor / Dr. Beaumont (doctor), Joji / "the Professor" (architectural historian), Tim / Timothy, Malik (journalist / scheduled message), Morgan Leibold (Arthur's attorney — the killer), Alma, Maddie / Madeleine (necklace), Daniel, Kim (The Keyhole), Louis (snooping in walls), Lindsey Vale (private banker), Albie, Aalvia.
 
@@ -101,7 +101,12 @@ The roster tracks each character's status: confirmed, maybe, spare-unassigned, o
 **Ross's decisions so far** (full log in `docs/decisions.md`): cards and
 envelopes are written from scratch; JIMMY and JIMMY FRIEDMAN are two guests;
 Albie and Aalvia are one guest; Savanah and Courtney are both theatrical;
-spice level is **saucy**. Every other open issue above has a documented
+spice level is **saucy**; Ross plays **Arthur** (tan suit, black silk tie,
+flat cap, wig) until the birthday cake, Morgan's player "kills" him live in
+the study and leaves through the real hidden door, and Ross follows her
+through it and walks in late as **Reggie** (burgundy suit). Morgan's
+briefing for that is host-only (run of show → The live murder) and given in
+person: never put it on her page or in her texts. Every other open issue above has a documented
 default in `docs/decisions.md`. Treat those as resolved unless Ross says
 otherwise, and keep that file updated when he does.
 

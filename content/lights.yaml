@@ -39,27 +39,30 @@ scenes:
     sound: Add a distant thunder track under the music. The storm is building.
   - id: cake
     routine: "Blackwood cake"
-    when: The birthday cake, ten minutes before the blackout
+    when: The birthday cake, as Arthur leaves for his study
     look: >
       Dining Room up to 70% warm, so the cake and its candles are the
       brightest thing in the flat. Drawing Room down to 20%, East Corridor
-      10%, Library 15%, Study still off. People follow the light, so the
-      whole party drifts deep into the flat, away from the study door, just
-      as it did in the story.
-    sound: Music down. Lead "Happy Birthday". The thunder track keeps going underneath.
+      10%, Library 15%, and the Study one warm lamp at 30%: Arthur is in
+      there. People follow the light, so the whole party drifts deep into
+      the flat, away from the study door, just as it did in the story.
+    sound: Music down so the room can sing "Happy Birthday" (you're on your way to the study). The thunder track keeps going underneath.
     steps:
       - Dining Room → 70%, warm white
       - Drawing Room → 20%
       - East Corridor → 10%
       - Library → 15%
-      - Study → power off
+      - Study → 30%, warm white
   - id: blackout
     routine: "Blackwood blackout"
-    when: The blackout (your cue in the run of show)
+    when: The blackout (you fire it from the landing, as Reggie)
     look: >
       Dining Room OFF, wait 1 second, Kitchens OFF, wait 1 second, every
-      group OFF. Thunder. Wait 15 seconds (drop a pan in the kitchen now).
-      Then every group back to 25%, and the Study a deep red at 20%.
+      group OFF. Thunder. Wait 15 seconds. Then every group back to 25%, and
+      the Study a deep red at 20%. You're on the landing, so nobody drops a
+      pan in the kitchen: if Alexa's sound library has a crash or breaking
+      glass, add it straight after the thunder; if not, the thunder is
+      enough.
     sound: A thunder sound from Alexa's sound library (or a storm track), loud, as the last group dies.
     steps:
       - Dining Room → power off

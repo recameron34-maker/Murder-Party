@@ -111,6 +111,19 @@ events:
       - { round: 3, via: clara, how: "'I tore up the old will myself.'" }
 
   # ---------------------------------------------------------------- the evening
+  - id: reggie-late
+    at: "7:00 PM"
+    until: "9:47 PM"
+    who: [reggie]
+    where: grounds
+    what: >
+      Arthur sends Reggie down to the village for more champagne. The lower
+      road floods behind him, and he spends the evening getting back. He
+      walks in at 9:47 as the lights return and finds the body. (Ross plays
+      Arthur until the cake, then returns as Reggie.)
+    source: new
+    learned: [{ round: 0, via: host, how: "Reggie arrives late, soaked, and says so" }]
+
   - id: carlotta-giving-away
     at: "8:10 PM"
     who: [carlotta, arthur]
@@ -273,12 +286,12 @@ events:
     approx: true
     who: [morgan, arthur]
     where: study
-    what: Morgan strikes Arthur once with the bronze raven. As he falls, the cuff of his black velvet smoking jacket snags on the raven's beak.
+    what: Morgan strikes Arthur once with the bronze raven. As he falls, his black silk tie snags on the raven's beak.
     source: part-one
     critical: true
     learned:
       - { round: 2, via: noor, how: "Time of death 9:35 to 9:40" }
-      - { round: 3, via: shea, how: "The black thread is from Arthur's own jacket" }
+      - { round: 3, via: shea, how: "The black thread is from Arthur's own tie" }
 
   - id: morgan-escapes
     at: "9:39 PM"

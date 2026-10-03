@@ -123,7 +123,7 @@ family_tree:
   - { id: edgar, name: "Edgar", years: "1961–2016", parent: cordelia }
   - { id: carlotta, name: "Carlotta \"Carley\"", parent: arthur, note: "The heir who left." }
   - { id: james, name: "James Calloway", parent: arthur, ward: true, note: "Arthur's ward since he was nine." }
-  - { id: reggie, name: "Reginald \"Reggie\"", parent: lionel, note: "Your host." }
+  - { id: reggie, name: "Reginald \"Reggie\"", parent: lionel, note: "Your host. Has the Blackwood face: everyone says he's Arthur at forty." }
   - { id: kevin, name: "Kevin", parent: edgar, note: "The heir who stayed." }
 
 # Rooms guests can see on the house plan (ids match lore.yaml). Never include

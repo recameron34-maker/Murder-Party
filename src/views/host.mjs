@@ -116,7 +116,7 @@ function nowNext(ctx) {
   <h2 class="h-card">${KIND_ICON[cur.kind] || ''} ${cur.title}</h2>
   ${lightsBox(scene, own)}
   ${cur.round > state.liveRound && cur.round <= 3 ? html`<form method="post" action="/host/round" class="unlock"><input type="hidden" name="round" value="${cur.round}"><button class="btn" type="submit">Unlock ${ROUND_LABEL[cur.round]} on every phone</button></form>` : ''}
-  ${cur.send_texts.map((id) => cueButton(ctx, id))}
+  ${cueButtons(ctx, cur.send_texts)}
   <div class="ns-body">${raw(md(substitute(cur.body, ctx), isLive))}</div>
   <div class="ns-nav">${prev ? move(prev, '◀ Back', 'ghost') : html`<span></span>`}${next ? move(next, html`Next: ${next.title} ▶`) : html`<span class="muted small">That's the night. Go to bed.</span>`}</div>
 </div>`;
@@ -197,7 +197,7 @@ ${nowNext(ctx)}
   </div>
   <div class="card">
     <h3 class="h-card">Cue texts${live === 0 ? '' : ' this round'}</h3>
-    ${cueSegs.length ? cueSegs.map((s) => html`<p class="small"><b>${s.title}</b></p>${s.send_texts.map((id) => cueButton(ctx, id))}`) : html`<p class="muted small">None linked to ${ROUND_LABEL[live]}. All cue texts are on <a href="/host/texts">Texts</a>.</p>`}
+    ${cueSegs.length ? cueSegs.map((s) => html`<p class="small"><b>${s.title}</b></p>${cueButtons(ctx, s.send_texts)}`) : html`<p class="muted small">None linked to ${ROUND_LABEL[live]}. All cue texts are on <a href="/host/texts">Texts</a>.</p>`}
     <h3>Run of show</h3>
     <ol class="mini-toc">${segs.map((s) => html`<li><a href="/host/script#${s.slug}">${s.title}</a></li>`)}</ol>
   </div>
@@ -243,6 +243,14 @@ function findText(content, id) {
   for (const cid of content.characterOrder) for (const t of content.characters[cid].texts || []) if (t.id === id) return { ...t, to: cid };
   for (const t of content.globalTexts || []) if (t.id === id) return { ...t, to: 'all' };
   return null;
+}
+
+// A step's cue texts, with one "Send all" button when there are several
+// still to send (the host may be busy, in costume, or dead).
+function cueButtons(ctx, ids) {
+  const unsent = ids.filter((id) => !ctx.state.cueSent[id] && findText(ctx.content, id));
+  const all = ids.length > 1 && unsent.length > 1 ? postButton('/host/cue', { ids: unsent.join(','), back: ctx.path }, `Send all ${unsent.length} at once`, 'btn') : '';
+  return html`${all}${ids.map((id) => cueButton(ctx, id))}`;
 }
 
 function cueButton(ctx, id) {
@@ -346,7 +354,7 @@ ${segs.map((s, i) => {
   <div class="meta">${ROUND_LABEL[s.round]} · ${s.kind}${s.changes ? html` · <i>Changed: ${s.changes}</i>` : ''}</div>
   ${s.clues.length ? html`<p class="small">Evidence: ${s.clues.map((id) => html`<a class="pill" href="/host/evidence#${id}">${content.clues[id]?.title || id}</a> `)}</p>` : ''}
   ${s.lights ? lightsBox(sceneById(content, s.lights), true) : ''}
-  ${s.send_texts.map((id) => cueButton(ctx, id))}
+  ${cueButtons(ctx, s.send_texts)}
   ${raw(md(substitute(s.body, ctx), isLive))}
   <p class="seg-nav small">${prev ? html`<a href="#${prev.slug}">← ${prev.title}</a>` : html`<span></span>`}<a href="#top">↑ top</a>${next ? html`<a href="#${next.slug}">${next.title} →</a>` : html`<span></span>`}</p>
 </section>`;
@@ -594,7 +602,7 @@ ${venueMap(venue, { mode: 'host', rooms: content.lore.rooms, pins, secret: conte
   <div class="card"><h3 class="h-card">Keep on you</h3><ul class="small">${kept.map((id) => html`<li><b>${content.clues[id].title}</b> <span class="muted">(${ROUND_LABEL[content.clues[id].round]})</span></li>`)}</ul>
   <h3>Shut tonight</h3><p class="small">${shut.map((a) => a.name).filter((n, i, all) => all.indexOf(n) === i).join(', ')}. Nothing is hidden in them; the rules say so, and the plan on every guest's phone marks them shut.</p>
   <h3>Signs</h3><p class="small">Print a sign for every game room and every shut door: <a href="/host/print/signs" target="_blank">Print → Room signs</a>.</p>
-  <h3>The passage</h3>${content.lore.venue_passage ? html`<p class="small">${content.lore.venue_passage.note} Guests' plans never show it. The normal way from the study to the library runs through the Family Room, the Living Room and the front door, past the whole party: that's why Morgan needed the wall.</p>` : html`<p class="small">It lives only in the story (see the <a href="/host/map">Map</a>).</p>`}</div>
+  <h3>The passage</h3>${content.lore.venue_passage ? html`<p class="small">${content.lore.venue_passage.note} Guests' plans never show it. The normal way from the study to the library runs through the Family Room, the Living Room and the front door. Tonight Morgan and then you (as Reggie) really use it: see <a href="/host/script#00a-live-murder">The live murder</a>.</p>` : html`<p class="small">It lives only in the story (see the <a href="/host/map">Map</a>).</p>`}</div>
 </div>
 ${lightsSection(content)}
 <h2>Room by room</h2>

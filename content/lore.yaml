@@ -47,14 +47,31 @@ venue_setup:
     reveal. The red folder goes on a shelf in Round Two, laid flat among the
     books, never behind them. Guests arrive through here, so it doubles as
     the way in.
+
+    Tonight the hidden door is used twice before the reveal: Morgan leaves
+    the study through it after the live murder, and you follow a few minutes
+    later as Reggie (run of show → The live murder). Put small tape marks on
+    the floor at the shelf's feet so it always goes back to the same spot,
+    clear the heavy books off the bottom shelves so it slides quietly, and
+    keep the front door SHUT from the cake until you walk in as Reggie: with
+    it shut, nobody inside can see the landing. Text any late guest to wait
+    downstairs until you come and get them.
   room: >
     Arthur's study. Clear the built-in desk except for the raven prop, a
     decanter and one glass, a desk blotter, a paperweight, a few books and a
-    wastebasket. Drape a black smoking jacket over the chair, or tape an
-    outline on the floor. One lamp, nothing brighter. Sign on the doorway:
-    THE STUDY. Round One evidence goes in before anyone arrives; rope off
-    the doorway with a ribbon until the lights come back and the body is
-    "found".
+    wastebasket. One lamp, nothing brighter. Sign on the doorway: THE STUDY.
+    Round One evidence goes in before anyone arrives; rope off the doorway
+    with a ribbon during arrivals (Arthur's private room).
+
+    Tonight you are in here as Arthur from the cake until Morgan "kills"
+    you. The raven prop must be light enough for her to lift one-handed
+    (it's eight pounds of bronze in the story, not in her hand). The red
+    leather folder, legal page already torn out, sits open on the desk.
+    After the murder the body is your Arthur costume: the tan jacket, the
+    black silk tie, the wig and the flat cap behind the desk, the cap on the
+    floor by the raven. Take the folder with you; it isn't found until
+    Round Two. (The costume replaces the old advice to drape a black smoking
+    jacket over the chair or tape an outline on the floor.)
   family-room: >
     The East Corridor, Arthur's end of the house: a runner rug if you have
     one, two or three portraits, candles and nothing bright. Guests can
@@ -104,6 +121,12 @@ venue_setup:
     a chair by the window for Carlotta. Put personal things away; nothing is
     hidden here (Part Two: nothing in bedrooms), it's just a room to be in.
     Keep its closet shut.
+  closet-right: >
+    The study's closet: your quick-change room. Hang Reggie's burgundy suit
+    in the order you put it on (trousers first), with a different tie, the
+    dark overcoat, an umbrella, a spray bottle of water for "rain" on your
+    hair and coat, and an empty bag for the tan trousers and the red folder.
+    Keep the door shut all night; to the guests it's just a shut closet.
   bedroom-small: >
     Shut. EAST WING sign on the door. In the story it's where Louis is
     trapped in the walls from 9:25 until after the blackout.
@@ -117,8 +140,10 @@ venue_passage:
   label: "Raven's Walk"
   note: >
     The door between the study (Side Room) and the library (landing), behind
-    the movable bookshelf. It stays shut and hidden until the reveal, when
-    Reggie moves the shelf and walks through it.
+    the movable bookshelf. Tonight it is used three times: Morgan escapes
+    through it after the live murder, you follow her as Reggie a few minutes
+    later, and at the reveal you open it in front of everyone. Nobody at the
+    cake can see the landing as long as the front door stays shut.
 
 layout_notes: >
   The study is at the dead end of the East Corridor. The library looks like
@@ -203,6 +228,21 @@ arthur:
          11:30 meeting and the note were for.
     He tore up his old will himself that afternoon. Nobody killed Arthur for
     the inheritance.
+  tonight: >
+    Ross plays Arthur from the first guest until the birthday cake: a tan
+    suit, a black silk tie (Shea tied it; it's the black thread on the
+    raven), the flat cap he wears indoors because it's his house, and silver
+    hair (a wig). Then Morgan kills him for real, offstage, and Ross comes
+    back as Reggie in a dark burgundy suit, late from the flooded road.
+
+reggie: >
+  Reginald "Reggie" Blackwood, Lionel's son, Arthur's nephew and tonight's
+  host. He has the Blackwood face: everyone says he is Arthur at forty,
+  which Arthur hated. He spent the afternoon hauling furniture into the study
+  with Kevin; at seven Arthur sent him down to the village for more
+  champagne, and the lower road flooded behind him. He gets back at 9:47,
+  just as the lights return, and he is the one who finds the body. He is not
+  a suspect and never pretends to be.
 
 npcs:
   - id: silas

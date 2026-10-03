@@ -23,6 +23,13 @@ Once everyone settles: "But there is one final matter."
 - **Best Liar**: probably Morgan, assuming she survives socially.
 - 🆕 **Richest Blackmailer**: most Blackwood Cash at the end.
 
+🆕 **What really happened tonight.** Once the awards are done, step out of
+character: the murder wasn't just a story. While they were singing to Lexi
+and Maya, Morgan really did leave the cake, really did "kill" Arthur in the
+study, and really did walk out through the bookshelf door. Arthur followed
+her through it four minutes later, wearing Reggie's suit. Show them the
+closet. Let Morgan take a bow.
+
 🆕 **The Supper photograph.** Every year one photograph is taken at the
 stroke of midnight. Get everyone round the Dining Room table (or crammed
 into the Dining Area), give Tim the camera, and count down from ten. The

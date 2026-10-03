@@ -123,6 +123,10 @@ rounds:
       - Read Arthur's note aloud and ask "Who betrayed him?"
 
 texts:
+  - id: carlotta-mum
+    from: Mum
+    trigger: { cue: "The birthday cake: send all as Arthur leaves for his study" }
+    body: "Is he still doing the cake thing? Go somewhere quiet and I'll call you. x"
   - id: carlotta-arthur-history
     from: Dad
     trigger: { history: true }

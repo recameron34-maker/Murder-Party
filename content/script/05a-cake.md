@@ -1,31 +1,46 @@
 ---
-title: The birthday cake
+title: The birthday cake (and the live murder)
 round: 0
 kind: cue
 lights: cake
+send_texts: [annie-reckoning, carlotta-mum, molly-evangeline, louis-reminder, shea-pills]
+changes: Arthur leaves for his study at the cake, and the murder happens for real. Minute by minute in The live murder.
 ---
-🆕 About ten minutes before the blackout. In the story, Lexi and Maya's cake
-came out at 9:25 and almost the whole house followed it into the Dining Room.
-That's why nobody saw who went to Arthur's door. Do the same thing for real.
+🆕 About fifteen minutes before the blackout. In the story, Lexi and Maya's
+cake came out at 9:25, almost the whole house followed it into the Dining
+Room, and Arthur stayed in his study. Tonight that happens for real, and so
+does the murder. The minute-by-minute plan and Morgan's briefing are in
+**The live murder** (reference, top of the run of show).
 
-Light the candles and hand the cake to Annie: she carries it in the story too.
-Fire **Blackwood cake**. The Dining Room comes up, the Drawing Room and the
-East Corridor go dim, and the party follows the light.
+**1. The cake comes out.** Light the candles and hand the cake to Annie: she
+carries it in the story too. The party follows it into the Dining Room.
 
-"Blackwood birthdays have one rule. The cake is cut in the Dining Room, under
-the portraits, and the head of the family does not come out to watch."
+**2. Arthur leaves.** In the Dining Room doorway, as Arthur:
 
-*Glance toward the study.*
+"Blackwood birthdays have one rule. The cake is cut in the Dining Room, under the portraits, and the head of the family does not come out to watch."
 
-"Uncle Arthur is keeping the tradition."
+*Beat.*
 
-Lead "Happy Birthday". Let Lexi and Maya blow out the candles.
+"Blackwoods don't watch other people being celebrated. Enjoy it. I'll see some of you in my study."
+
+Fire **Blackwood cake**, tap **Send all** (the button above), and walk to
+the study without looking back. Shut the front door as you pass it. Let the
+room start "Happy Birthday" without you.
 
 [[if:savanah]]
-Savanah will want to take over the singing. Let her.
+Savanah will take over the singing. Let her.
 [[/if]]
 
-Cut slowly and keep them in the Dining Room. If the Round One cufflink isn't
-down by the study yet, this is your moment: nobody is watching that end of
-the flat. When everyone has a slice and the room is loud, go to **The
-blackout**. The Dining Room dies first, right over their heads.
+**3. What happens without you.** Each player's phone or card tells them:
+
+- Annie brings you the Reckoning from the bar. "Last one, Annie."
+- Morgan follows a minute later. Annie passes her coming back.
+- Carlotta slips off to the Conservatory, Molly to the Portrait Gallery, and Louis disappears. Shea fetches Arthur's pills from the Primary Bedroom.
+
+Five or six people leave the cake, and Morgan is just one of them, exactly
+as the story is built. Everyone else stays in the Dining Room, eating cake,
+a long way from the study door.
+
+**4. The murder, the hidden door and your change.** Follow **The live
+murder**. When you're through the door, on the landing, as Reggie: go to
+**The blackout**.

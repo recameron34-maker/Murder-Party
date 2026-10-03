@@ -14,8 +14,8 @@ costume: |
 
 intro: |
   For two years you've lived at Blackwood Manor as Arthur's private nurse. You
-  dressed him for dinner tonight, tied his tie and fastened the cuffs of his
-  black velvet smoking jacket. You know exactly how sick he was. He told you
+  dressed him for dinner tonight: the tan suit, the black silk tie you tied
+  yourself, and the flat cap he insists on wearing indoors at his own Supper. You know exactly how sick he was. He told you
   things he told nobody else.
 
 backstory: |
@@ -47,7 +47,7 @@ relationships:
 evening:
   - at: "7:00 PM"
     where: upstairs
-    text: You help Arthur dress for the Supper. Black velvet smoking jacket. You fasten the cuffs yourself.
+    text: 'You help Arthur dress for the Supper: the tan suit, a black silk tie, and the flat cap he wears indoors because it''s his house. You tie the tie yourself.'
   - at: "8:00 PM"
     until: "9:24 PM"
     where: drawing-room
@@ -72,7 +72,7 @@ knows:
   - 'Arthur said last week: "If something happens to me, don''t assume it was natural."'
   - Arthur had severe heart disease. It was a secret.
   - At about **9:40** you walked toward the study and turned back before reaching it.
-  - Arthur was wearing a **black velvet smoking jacket** tonight. You fastened the cuffs.
+  - Arthur was wearing a tan suit and a **black silk tie** tonight. You tied it.
 
 secret: |
   You **walked toward the study at about 9:40** with Arthur's pills and turned
@@ -118,17 +118,21 @@ rounds:
   3:
     text: |
       If the **black thread** found on the raven is still a mystery: it's
-      from **Arthur's own jacket.** Black velvet. You fastened his cuffs at 7.
-      It snagged when he fell.
+      from **Arthur's own tie.** Black silk. You tied it yourself at 7. It
+      snagged on the beak when he fell.
 
       Then ask the question that turns the room, out loud:
 
       **"Then why did we all assume he died during the blackout?"**
     reveal:
-      - The black thread is from Arthur's own velvet smoking jacket.
+      - The black thread is from Arthur's own black silk tie.
       - Ask "Then why did we all assume he died during the blackout?"
 
 texts:
+  - id: shea-pills
+    from: Alarm
+    trigger: { cue: "The birthday cake: send all as Arthur leaves for his study" }
+    body: "Arthur: evening pills."
   - id: shea-louis-history
     from: L.
     trigger: { history: true }
@@ -146,5 +150,5 @@ texts:
 
 host_notes: |
   Supporting. Part Two's third woman near the study (~9:40). Round Three:
-  resolves the black thread (Arthur's jacket; see docs/decisions.md) and
+  resolves the black thread (Arthur's own tie; see docs/decisions.md) and
   gives Reggie the blackout cue.

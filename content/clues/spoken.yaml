@@ -37,7 +37,7 @@ spoken:
   - { id: clara-will, title: "Arthur tore up the will himself", round: 3, carrier: clara, critical: false, refs: [clara] }
   - { id: kush-blc, title: "Transfers authorized through Blackwood Legal Counsel", round: 3, carrier: kush, critical: true, refs: [kush, morgan] }
   - { id: lindsey-credentials, title: "Lindsey independently confirms ML-0427 = BLC", round: 3, carrier: lindsey, critical: true, refs: [lindsey] }
-  - { id: shea-thread, title: "The black thread is Arthur's own jacket", round: 3, carrier: shea, critical: false, refs: [shea] }
+  - { id: shea-thread, title: "The black thread is Arthur's own tie", round: 3, carrier: shea, critical: false, refs: [shea] }
   - { id: shea-question, title: "\"Then why did we all assume he died during the blackout?\"", round: 3, carrier: shea, critical: false, refs: [shea] }
   - { id: albie-question, title: "\"Who benefits from us believing he died in the dark?\"", round: 3, carrier: albie, critical: false, refs: [albie] }
   - { id: kim-louis, title: "Kim saw Louis climb out of the dining-room wall at 9:46", round: 3, carrier: kim, critical: false, times: ["9:46 PM"], refs: [kim, louis] }
