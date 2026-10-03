@@ -46,18 +46,22 @@ evening:
     where: drawing-room
     text: Reading tarot for guests. Everyone draws the Tower. You stacked the deck.
   - at: "9:00 PM"
+    until: "9:24 PM"
+    where: drawing-room
+    text: Holding a "spirit circle" by the fire for anyone who'd sit, with half the room watching and laughing.
+  - at: "9:25 PM"
     until: "9:45 PM"
-    where: drawing-room
-    text: Holding a "spirit circle" by the fire for anyone who'd sit, with half the room watching and laughing. Never left.
+    where: dining-room
+    text: When the cake goes through, the spirit circle follows it. You reconvene at the end of the Supper table among the candles and ask Silas whether he likes cake. Half the room watching and laughing. Never left.
   - at: "9:45 PM"
-    where: drawing-room
+    where: dining-room
     text: When the lights go out you scream, which is unprofessional but heartfelt.
 
 knows:
   - Arthur hired you to "channel" Silas at midnight and announce that "one among you has bled this house."
   - Arthur knew someone close to him had stolen from him. He never told you who.
   - Your spirit messages come from Annie's gossip.
-  - You were in the drawing room in front of everyone from 9:00 until the blackout.
+  - You were in front of everyone from 9:00 until the blackout: the drawing room, then the Dining Room when the cake came out.
 
 secret: |
   You're a **fraud** who gets "visions" from Annie, and you and Arthur were

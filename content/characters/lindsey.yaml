@@ -55,8 +55,8 @@ evening:
     text: A whispered conference with Malik among the orchids about what Arthur will say at midnight and how to keep your name out of it. To anyone passing, it looked like a secret meeting. It was.
   - at: "9:25 PM"
     until: "9:45 PM"
-    where: drawing-room
-    text: Back at the party, rehearsing what you'll tell Arthur at 10:00. The lights go out at 9:45.
+    where: dining-room
+    text: Out of the conservatory just as the birthday cake comes into the Dining Room next door, so you slip into the crowd around it, rehearsing what you'll tell Arthur at 10:00. The lights go out at 9:45.
 
 knows:
   - You flagged six suspicious transfers to Arthur six weeks ago, before anyone else knew.

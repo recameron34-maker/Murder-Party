@@ -39,9 +39,13 @@ relationships:
 
 evening:
   - at: "8:00 PM"
-    until: "9:45 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: At the party all night, watching your characters walk around in real life. Never left the drawing room.
+    text: At the party all night, watching your characters walk around in real life.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: When the cake comes out you follow the crowd into the Dining Room and take notes on who stands next to whom. Never out of sight.
 
 knows:
   - 'Arthur''s last dictated chapter: "Someone I raised up has been robbing me. I will not name them until midnight."'
@@ -61,7 +65,7 @@ instructions:
   - You may read short "excerpts" from *Black Stone* at dramatic moments. Invent freely; they're memoir, not evidence.
   - The "Thief in My House" quote is real. Reveal it in Round Two.
   - Never admit the embellishments unless paid.
-  - Your alibi: the drawing room all night.
+  - Your alibi: the crowd all night, the drawing room and then the birthday cake.
 
 mission: |
   Get someone to give you **a quote for the final chapter**, something
@@ -103,4 +107,4 @@ fallback: |
 host_notes: |
   Spare, medium effort, any gender or name. Corroborating flavor only; the
   "raised up" line fits James, Maya, Morgan and Kevin equally. Whereabouts:
-  drawing room.
+  drawing room, then the dining room for the cake.

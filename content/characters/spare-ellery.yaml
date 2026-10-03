@@ -46,14 +46,18 @@ evening:
     where: drawing-room
     text: Signing headshots nobody asked for.
   - at: "9:00 PM"
-    until: "9:45 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: Performing your famous monologue from Episode 3 at Albie's spirit circle, to mixed reviews. You never left.
+    text: Performing your famous monologue from Episode 3 at Albie's spirit circle, to mixed reviews.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: The spirit circle follows the birthday cake into the Dining Room, and so do you. You perform the monologue again by candlelight, to better reviews. You never left.
 
 knows:
   - The Raven's Heir had a library bookcase that opened into a secret corridor, supposedly based on the real plans.
   - You're in talks to play Arthur in a reboot and have been taking notes on everyone.
-  - You were in the drawing room from 8:00 until the blackout.
+  - You were in full view from 8:00 until the blackout: the drawing room, then the Dining Room when the cake came out.
 
 secret: |
   You're **gathering material on everyone here** for a TV reboot of the
@@ -114,4 +118,5 @@ fallback: |
 
 host_notes: |
   Spare, high effort, any gender or name. Corroborates the passage only after
-  Joji's reveal (instructed). Whereabouts: drawing room.
+  Joji's reveal (instructed). Whereabouts: drawing room, then the dining room
+  for the cake.

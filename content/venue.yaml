@@ -22,8 +22,9 @@
 # Why this layout: the study (the Side Room, labelled "Room" on the floor
 # plan) is the dead end of the flat, through the Family Room, which plays the
 # East Corridor. The library is the landing at the top of the front stairs.
-# The way between them runs through the Living Room (the Drawing Room, where
-# the party is) and the front door (the Library Corridor), past everyone.
+# The way between them runs through the Living Room (the Drawing Room) and the
+# front door (the Library Corridor). From 9:25 the party is round the birthday
+# cake in the Dining Area, so the Living Room is nearly empty.
 # Ross: any bedroom may be unlocked. The bedroom off the Dining Area plays the
 # Conservatory, so Carlotta waits out of sight of the study door.
 
@@ -144,8 +145,8 @@ areas:
 
 # Manor rooms that are one corner of a real room.
 spots:
-  - { game: front-hall, area: living-room, at: [900, 262], label: "by the coat rack" }
-  - { game: library-corridor, area: living-room, at: [790, 322], label: "at the front door" }
+  - { game: front-hall, area: living-room, at: [896, 286], label: "by the coat rack" }
+  - { game: library-corridor, area: living-room, at: [774, 308], label: "at the front door" }
 
 # Gaps in the walls (open doorways), drawn as breaks in the plan.
 openings:
@@ -177,12 +178,12 @@ entrances:
 # Case map only: where people stand in each manor room, [x, y, w, h].
 stage:
   drawing-room: [716, 194, 150, 96]
-  front-hall: [872, 274, 56, 40]
+  front-hall: [866, 302, 56, 34]
   library-corridor: [800, 328, 50, 14]
   library: [868, 378, 30, 22]
   east-corridor: [944, 228, 150, 96]
   study: [1000, 372, 120, 24]
-  dining-room: [530, 186, 170, 60]
+  dining-room: [528, 176, 172, 110]
   conservatory: [340, 236, 140, 30]
   billiard-room: [230, 330, 170, 60]
   gallery: [482, 334, 30, 22]

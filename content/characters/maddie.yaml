@@ -56,9 +56,13 @@ evening:
     where: front-hall
     text: You hear Kevin shouting at Arthur, "You're going to regret this!"
   - at: "9:21 PM"
-    until: "9:47 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: In the drawing room, keeping Daniel's ex in your peripheral vision, until the lights go out.
+    text: In the drawing room, keeping Daniel's ex in your peripheral vision.
+  - at: "9:25 PM"
+    until: "9:47 PM"
+    where: dining-room
+    text: At the birthday cake in the Dining Room, the Raven's Tears catching every candle, until the lights go out.
 
 knows:
   - At 9:10 there was a **red leather folder** on Arthur's desk. He closed it when you came in.

@@ -46,14 +46,18 @@ evening:
     where: front-hall
     text: You sweep in behind a group of real guests, announcing yourself to nobody in particular.
   - at: "8:00 PM"
-    until: "9:45 PM"
+    until: "9:24 PM"
     where: drawing-room
-    text: Dancing with Hannah, pitching, refilling. You never left the drawing room; you can't risk anyone checking a list.
+    text: Dancing with Hannah, pitching, refilling.
+  - at: "9:25 PM"
+    until: "9:45 PM"
+    where: dining-room
+    text: You follow the cake into the Dining Room and sing louder than anyone, so everyone remembers you were there. You never left the crowd; you can't risk anyone checking a list.
 
 knows:
   - You were never invited and you never met Arthur.
   - Jimmy Friedman bought a share of a yacht that doesn't exist.
-  - You were in the drawing room from 8:00 until the blackout.
+  - You were with the crowd from 8:00 until the blackout: the drawing room, then the birthday cake in the Dining Room.
 
 secret: |
   **You're a gatecrasher and a con artist.** You've never met Arthur and you
@@ -68,7 +72,7 @@ instructions:
   - High effort. Tell rich, specific, completely invented stories about "dear Arthur."
   - Sell at least one "investment" for Blackmail Cash.
   - If cornered, claim Reggie invited you. Make Reggie decide.
-  - Your alibi is the drawing room; you were never out of sight.
+  - Your alibi is the crowd: the drawing room, then the cake. You were never out of sight.
 
 mission: |
   Get a guest to **give you Blackmail Cash for an "investment
@@ -111,4 +115,4 @@ fallback: |
 
 host_notes: |
   Spare, high effort, any gender or name. Flavor only. Ross may choose to "remember"
-  inviting Sterling, or not. Whereabouts: front hall, then drawing room.
+  inviting Sterling, or not. Whereabouts: front hall, drawing room, then the dining room for the cake.

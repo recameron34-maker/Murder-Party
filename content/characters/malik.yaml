@@ -54,8 +54,8 @@ evening:
     text: In the conservatory with Lindsey, among the orchids. You play her what the mic has caught and promise, again, that her name stays out of it.
   - at: "9:25 PM"
     until: "9:47 PM"
-    where: drawing-room
-    text: Back in the drawing room. Your recording catches forty minutes of piano, gossip and somebody's terrible laugh. Then the lights go out at 9:45.
+    where: dining-room
+    text: Out of the conservatory with Lindsey and straight into the birthday crowd in the Dining Room. Your recording catches twenty minutes of "Happy Birthday", gossip and somebody's terrible laugh. Then the lights go out at 9:45.
 
 knows:
   - Arthur was feeding you a story about theft from inside his circle.

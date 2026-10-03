@@ -16,6 +16,7 @@ You need (see **Evidence** for the full list with hiding spots, and **Print** fo
 - 🆕 Terrace camera still (keep on you)
 - 🆕 Blackwood Blackmail Notes: $3,000 per guest (three $1,000 bills), plus a float for rewards
 - 🆕 Hint cards
+- 🆕 Lexi and Maya's birthday cake, candles, a lighter and a cake knife. Black icing and a sugar raven if the bakery will do it; any cake works. It comes out before the blackout (see **The birthday cake**)
 - 🆕 A guest book and a fountain pen by the coat rack (an old-looking notebook is fine; write "Silas Blackwood, 1891" and "Arthur Blackwood" on the first page)
 - Accusation ballots and pens
 - One sealed SOLUTION envelope
