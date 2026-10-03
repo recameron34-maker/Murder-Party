@@ -1,10 +1,10 @@
 id: alma
-name: Alma
+name: Alma Almsbury
 written_for: Alma               # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
-role: Archivist of the Blackwood library
-public_role: "Archivist cataloguing the Blackwood library; lives at the manor"   # what everyone at the party knows; shown on every guest's guest list
+role: Archivist of the Cameron library
+public_role: "Archivist cataloguing the Cameron library; lives at the castle"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've read every letter this family ever wrote. You wish one had been to you."
 
 costume: |
@@ -13,21 +13,30 @@ costume: |
   in your hair, white cotton archivist's gloves, and a key on a ribbon.
 
 intro: |
-  For six months you've lived at Blackwood Manor cataloguing its library and
+  For six months you've lived at Cameron Castle cataloguing its library and
   archives. You know the family's history better than the family does. You
   dress in their cast-offs, sleep under their roof and dream of belonging.
   Nobody's noticed. Or everyone has.
 
 backstory: |
   You came from nowhere, a council flat and a library card, and the
-  Blackwoods are the most beautiful thing you've ever seen. You've read
-  Arthur's love letters to Vivienne St. Clair, his furious letters to
+  Camerons are the most beautiful thing you've ever seen. You've read
+  Douglas's love letters to Vivienne St. Clair, his furious letters to
   Carlotta, and his apology letters to Clara. You've worn Carlotta's old
   dresses from the attic trunks. She hasn't recognized them yet.
 
   You are also, very quietly, **sleeping with James Calloway**. Two outsiders
-  in a house that never quite let either of you in. Nobody knows. Arthur
+  in a house that never quite let either of you in. Nobody knows. Douglas
   would have found it "touching," which is worse than disapproving.
+
+  The Almsburys were in service at the castle for three generations. Your
+  great-grandmother kept the linen and lies in the village churchyard under
+  a stone the Camerons paid for. In your first week you found her name in
+  the household accounts, in Silas's own hand, beside a wage of four
+  shillings. You took the job to catalogue the library. You stayed because
+  you can't stop reading the family's letters as if they were written to
+  you, and because at night, in Carlotta's silk, walking the long gallery,
+  you can almost pass for someone who was born here.
 
 relationships:
   - with: jimmy
@@ -65,7 +74,7 @@ knows:
   - At about **9:41** you saw Morgan come out of the library. She said she was looking for the restroom.
   - The restroom is nowhere near the library. Anyone who's been here an hour knows that.
   - Morgan looked flushed and was holding her folio tightly against her.
-  - Arthur's private letters, including some to Vivienne St. Clair that Lexi has never seen.
+  - Douglas's private letters, including some to Vivienne St. Clair that Lexi has never seen.
 
 secret: |
   You saw **Morgan come out of the library at 9:41**, and you're having a
@@ -80,12 +89,12 @@ blackmail:
 instructions:
   - Reveal the Morgan sighting in **Round Two**. In Round One, if paid and asked "did you see anyone near the library?", you must answer truthfully.
   - Never confirm the affair with James unless paid. You may blush.
-  - You may quote from Blackwood family letters at dramatic moments.
+  - You may quote from Cameron family letters at dramatic moments.
   - Be quiet until you aren't. When you speak, people should lean in.
 
 mission: |
   Find **someone who saw Morgan before you did** tonight. Learn where and
-  when, then report to Reggie.
+  when, then report to Roderick.
 
 rounds:
   1:

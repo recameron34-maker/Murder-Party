@@ -1,4 +1,4 @@
-# Murder at Blackwood Manor
+# Murder at Cameron Castle
 
 ![Test and deploy](https://github.com/recameron34-maker/Murder-Party/actions/workflows/deploy.yml/badge.svg)
 
@@ -11,9 +11,9 @@ A live-action murder mystery for ~25 guests, plus the website that runs it:
     evening, secret and mission.
   - **Envelopes**: Round 1–3 envelopes as you unlock them.
   - **Phone**: texts that arrive during the night.
-  - **Manor**: how the night works step by step, who's here (by public role
-    only), a plan of your flat showing which manor room each real room plays
-    and which are shut (it turns upright on phones), the Blackwood family
+  - **Castle**: how the night works step by step, who's here (by public role
+    only), a plan of your flat showing which castle room each real room plays
+    and which are shut (it turns upright on phones), the Cameron family
     tree, the legend, the Supper rules and Blackmail Cash.
 - **Host panel** (`/host`, password-protected), grouped into four menus:
   - **Tonight**: a dashboard that walks you through the night one step at a
@@ -66,7 +66,7 @@ Everything is plain text in `content/`. Change a file and refresh the page.
 | `content/roster.yaml` | Who plays whom and their status (confirmed / maybe / declined / spare) |
 | `content/texts.yaml` | Texts sent to everyone |
 | `content/guest-common.yaml` | Rules and lore shown on every guest page, including the step-by-step of the night, the family tree and the public room descriptions |
-| `content/venue.yaml` | Your flat as the venue: each real room's outline (traced from the floor plan), the manor room it plays, and which rooms are shut. Shown to guests, so no hiding spots here |
+| `content/venue.yaml` | Your flat as the venue: each real room's outline (traced from the floor plan), the castle room it plays, and which rooms are shut. Shown to guests, so no hiding spots here |
 | `content/portraits.yaml` | How each character's portrait is drawn: a silhouette cameo in a gilt oval with costume details and an emblem for their public role. Public-safe (portraits go on name badges) |
 | `content/lights.yaml` | The lighting plan for your smart bulbs: Alexa groups and one routine per scene (arrival, the rolling blackout, the flicker, the reveal). Run-of-show segments name their scene |
 | `content/suspicion.yaml` | The suspicion curve: who the room should suspect at each stage (drives the heat map) |
@@ -118,7 +118,35 @@ If Courtney's raven selfie comes out, you saw the raven back on the desk at 8:45
 
 The **Flex** page shows what's live versus falling back for the current roster.
 
+## Sending guests their characters
+
+`npm run guests` builds the pages you send when you tell people who they're
+playing: one self-contained page per cast guest (an invitation from Douglas,
+their sketch, their character, story, connections, evening, secret, and the
+castle with everyone's sketch and public role). Output, all git-ignored:
+
+- `guest-pages/upload/<slug>/index.html`: one per guest, at an unguessable
+  address. The folder's own `index.html` lists nothing.
+- `guest-pages/HOST-links.html`: who gets which link, with a message to
+  paste. **Host only; never upload it.**
+- `guest-pages/slugs.json`: keep it, so rebuilding after an edit keeps
+  every link the same.
+
+To send: drag `guest-pages/upload` onto <https://app.netlify.com/drop> (or
+any static host of its own), rebuild with
+`npm run guests -- --base https://your-site.netlify.app` for full links, and
+send each guest theirs. Or attach a guest's `index.html` to an email; it
+opens in any browser. **Never put these pages on the GitHub Pages preview**:
+that site is spoiler-full and its home page lists everything.
+
 ## Party night
+
+**Paper night (the current plan).** `content/party.yaml` has `phones: false`:
+guests read their pages *before* the party and keep their phones away on the
+night. Their pages never open a round. Every in-party message is printed
+inside the right round's envelope, and the texts to everyone appear on the
+Dashboard as lines to read aloud. The round buttons just move your own
+dashboard on. Set `phones: true` for the phone companion described below.
 
 1. **Before:** set the party date (Dashboard), check the Roster, print login
    cards or text each guest their link (the link pre-fills their passphrase),
@@ -131,6 +159,10 @@ The **Flex** page shows what's live versus falling back for the current roster.
 4. **Late guest?** Roster → pick a spare → type their name → `spare-assigned`
    → Save. A passphrase appears; give it to them.
 5. The host panel works on your phone, so keep it in a pocket.
+
+(With `phones: false`, steps 2 and 3 happen on paper: hand out the round's
+envelopes, read the announcements on the Dashboard, and leave the cue texts
+alone; they're already printed in the envelopes.)
 
 ## Branch previews on GitHub Pages (temporary)
 

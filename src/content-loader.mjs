@@ -95,7 +95,7 @@ export function loadContent(root = path.resolve('content')) {
   }
 
   // Display names for everyone who can be referenced: characters, NPCs, host.
-  const names = { arthur: 'Arthur Blackwood', reggie: `Reggie (${party.host_name || 'your host'})` };
+  const names = { douglas: 'Douglas Cameron', roderick: `Roderick (${party.host_name || 'your host'})` };
   for (const n of lore.npcs || []) names[n.id] = n.name;
   for (const id of characterOrder) names[id] = characters[id].name;
 

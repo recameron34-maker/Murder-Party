@@ -1,17 +1,25 @@
-# Murder at Blackwood Manor — Project Brief
+# Murder at Cameron Castle — Project Brief
 
-A live-action murder mystery party for ~25 guests, hosted by Ross (in character as Reggie Blackwood). This repo holds the game design and a website for (1) the host to plan and run the party and (2) guests to view their own characters.
+A live-action murder mystery party for ~25 guests, hosted by Ross (in character as Roderick Cameron). This repo holds the game design and a website for (1) the host to plan and run the party and (2) guests to view their own characters.
 
 ## Source material
 
 - `docs/source/part-one-host-script.md` — Ross's full host script (timeline, rounds, cues, rescues, reveal).
 - `docs/source/part-two-mystery-upgrades.md` — design upgrades: four false theories, Morgan evidence changes, Blackmail Cash, secret missions, physical evidence hunt, red folder, extra study visitors, suspicion curve.
 
+**Rebrand (Ross, October 2026):** the game is now **Murder at Cameron Castle**.
+The source docs and the two .docx files still use the old names: Blackwood
+Manor = Cameron Castle, Arthur Blackwood = **Douglas Cameron** (the victim),
+Reggie Blackwood (Arthur's nephew) = **Roderick Cameron** (Douglas's younger
+brother, played by Ross), Blackwood Legal Counsel (BLC) = Cameron Legal
+Counsel (CLC). Infrastructure names (the `blackwood-manor` worker, its state
+key, the npm package) were left alone on purpose.
+
 **Part Two supersedes Part One wherever they conflict.** Part One has not yet been revised to incorporate Part Two. Do not edit files in `docs/source/`; treat them as the original record and write revised material elsewhere.
 
 ## The solution (spoiler — host only)
 
-Morgan Leibold killed Arthur Blackwood at ~9:38 PM with the bronze raven, over $2.4M she stole through Blackwood Legal Counsel. She escaped via the hidden study-to-library passage. The 9:45 blackout was an unrelated tripped circuit; everyone wrongly assumes Arthur died in the dark.
+Morgan Leibold killed Douglas Cameron at ~9:38 PM with the bronze raven, over $2.4M she stole through Cameron Legal Counsel. She escaped via the hidden study-to-library passage. The 9:45 blackout was an unrelated tripped circuit; everyone wrongly assumes Douglas died in the dark.
 
 ## SPOILER SAFETY — the most important technical constraint
 
@@ -26,9 +34,9 @@ Guests will open this website. Nothing a guest can reach may reveal the solution
 
 ## Cast (as best reconstructed from the docs — needs confirmation from Ross)
 
-Host: Ross as Reginald "Reggie" Blackwood, Arthur's nephew. Victim: Arthur Blackwood (not played).
+Host: Ross as Roderick Cameron, Douglas's younger (half-)brother. Victim: Douglas Cameron (originally not played; Ross now plays him until the murder, see Build status).
 
-Carlotta "Carley" Blackwood (estranged daughter), Clara (Arthur's former fiancée), Lexi / Alexandra St. Clair (birthday), Maya Rose (birthday), Kush / "Kushington" (forensic accountant), Kevin Blackwood (disinherited relative), Jimmy / James (removed from will), Molly Monroe (sold fake painting), Martin (art expert), Hannah (charity), Annie / Antoinette (delivered Arthur's drink), Shea (medical/medication role), Noor / Dr. Beaumont (doctor), Joji / "the Professor" (architectural historian), Tim / Timothy, Malik (journalist / scheduled message), Morgan Leibold (Arthur's attorney — the killer), Alma, Maddie / Madeleine (necklace), Daniel, Kim (The Keyhole), Louis (snooping in walls), Lindsey Vale (private banker), Albie, Aalvia.
+Carlotta "Carley" Cameron (estranged daughter), Clara (Douglas's former fiancée), Lexi / Alexandra St. Clair (birthday), Maya Rose (birthday), Kush / "Kushington" (forensic accountant), Kevin Cameron (disinherited relative), Jimmy / James (removed from will), Molly Monroe (sold fake painting), Martin (art expert), Hannah (charity), Annie / Antoinette (delivered Douglas's drink), Shea (medical/medication role), Noor / Dr. Beaumont (doctor), Joji / "the Professor" (architectural historian), Tim / Timothy, Malik (journalist / scheduled message), Morgan Leibold (Douglas's attorney — the killer), Alma, Maddie / Madeleine (necklace), Daniel, Kim (The Keyhole), Louis (snooping in walls), Lindsey Vale (private banker), Albie, Aalvia.
 
 ## Known open issues to resolve with Ross before building content
 
@@ -36,7 +44,7 @@ Carlotta "Carley" Blackwood (estranged daughter), Clara (Arthur's former fiancé
 2. **Name collisions:** Part Two's secret missions list both "JIMMY" and "JIMMY FRIEDMAN" — one character or two? Part One calls both Noor ("Dr. Beaumont") and Joji ("Professor Beaumont") Beaumont. "Twenty-five people" in the reveal should match the final roster.
 3. **Roster gaps:** Aalvia has a mission but no script role; Albie has a script cue but no mission; Kim and Malik's roles (journalist? podcaster? The Keyhole?) and who Lindsey is dating are unclear.
 4. **Part One needs revising for Part Two:** replace "MORGAN. MIDNIGHT. DONE." with "LEGAL. $2.4M. MIDNIGHT." (Final Physical Evidence and Final Reveal); add counterweight lines; add Clara (9:33) and Shea (~9:40) hallway visits; add Morgan's self-defense email; add Kevin's "You're going to regret this."
-5. **Folder conflict:** Part One says Morgan escaped with Arthur's financial folder; Part Two's red folder is found later with only the legal page torn out. Reconcile (e.g. she took only the page).
+5. **Folder conflict:** Part One says Morgan escaped with Douglas's financial folder; Part Two's red folder is found later with only the legal page torn out. Reconcile (e.g. she took only the page).
 6. **Kevin's terrace-camera alibi** is referenced but no clue or envelope delivers it.
 7. **Timing of Annie's 9:32 sighting:** Part One puts it in Round 3; Part Two's counterweight example treats it earlier. Pick one.
 8. **"Shea" mission vs. role**, and whether the Part Two clue list (10 physical clues) maps cleanly onto the Part One end-of-round evidence beats (phone, Carlotta's note, Malik's draft, bank statement).
@@ -46,7 +54,7 @@ Carlotta "Carley" Blackwood (estranged daughter), Clara (Arthur's former fiancé
 The whole game should feel like *Saltburn* crossed with a gothic ghost story. Think old-money decadence going quietly rotten, beautiful people behaving badly at a candlelit party, and outsiders who desperately want in while insiders pretend they don't care. Obsession, envy, and class tension should show up everywhere. The house is a character in its own right: portraits that watch, rooms nobody uses, servants' passages, family legends. Add a thread of dread and dark comedy rather than gore. Keep it sensual and suggestive, not explicit; check with Ross on how racy to go.
 
 Apply this by layering, not rewriting. Possible threads to weave in:
-- A Blackwood family legend or curse attached to the bronze raven.
+- A Cameron family legend or curse attached to the bronze raven.
 - The Midnight Supper as a strange family ritual with rules of its own.
 - Guests who are outsiders angling for a place in the family or its money.
 - Staff who see everything.
@@ -94,14 +102,19 @@ The roster tracks each character's status: confirmed, maybe, spare-unassigned, o
 - Store game content as structured data (Markdown with frontmatter or YAML/JSON per character and per clue), not hard-coded in components, so the story can be edited without touching code.
 - Keep the canonical true timeline in one file and have other views reference it.
 - Ask Ross before changing anything about the solution, the culprit, or core clue logic.
-- Tone: theatrical, dry, funny, as in Reggie's voice in the host script, set inside the spooky Saltburn atmosphere described above. Evoke the vibe; don't copy the film's characters or plot.
+- Tone: theatrical, dry, funny, as in Roderick's voice in the host script, set inside the spooky Saltburn atmosphere described above. Evoke the vibe; don't copy the film's characters or plot.
 
 ## Build status and conventions (added October 2026)
 
 **Ross's decisions so far** (full log in `docs/decisions.md`): cards and
 envelopes are written from scratch; JIMMY and JIMMY FRIEDMAN are two guests;
 Albie and Aalvia are one guest; Savanah and Courtney are both theatrical;
-spice level is **saucy**. Every other open issue above has a documented
+spice level is **saucy**; Ross plays **Douglas** (tan suit, black silk tie,
+flat cap, wig) until the birthday cake, then changes in the study closet and
+comes out at the blackout as Douglas's younger brother **Roderick** (burgundy
+suit): "My brother has been murdered." Nobody acts out the murder. **No
+phones at the party** (`phones: false`): guest pages are for reading before
+the party; on the night envelopes and messages are paper. Every other open issue above has a documented
 default in `docs/decisions.md`. Treat those as resolved unless Ross says
 otherwise, and keep that file updated when he does.
 
@@ -141,13 +154,18 @@ that player. The spoiler rules above still apply and are enforced server-side
   `venue_passage` and must never appear in `venue.yaml` or any guest page.
 - `src/views/props.mjs` draws every piece of evidence (and the raven and
   guest book) as line art for the host pages and printed evidence cards;
-  `src/views/portraits.mjs` draws character portraits from
+  `src/views/portraits.mjs` draws character portraits and
+  `src/views/sketches.mjs` pen-and-ink sketches, both from
   `content/portraits.yaml`. Portraits are public (they go on name badges):
   emblems must fit the public role, and every portrait shares one shape.
 - The Map page replay walks everyone through the flat's doorways
   (`venueGraph` / `routeBetween` in visuals.mjs); keep `venue.yaml`'s
   openings and `doors` connected so every move has a route.
-- `test/`: spoiler-leak, Morgan-parity, auth and content tests.
+- `scripts/build-guest-pages.mjs` (`npm run guests`) builds the pages sent to
+  guests before the party: one self-contained page per cast guest at an
+  unguessable slug, in git-ignored `guest-pages/` (slugs are secret, like
+  passphrases). Never host them on the GitHub Pages preview.
+- `test/`: spoiler-leak, Morgan-parity, auth, content and guest-page tests.
 
 **Before committing:** run `npm run check` (zero errors) and `npm test` (all
 pass). Morgan's page must not be the longest; if you lengthen her file,

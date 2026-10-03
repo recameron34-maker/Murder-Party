@@ -2,18 +2,18 @@
 title: Final physical evidence
 round: 3
 kind: evidence
-changes: '"MORGAN. MIDNIGHT. DONE." replaced by "LEGAL. $2.4M. MIDNIGHT." (Part Two §2). Merged with Part Two Clue 10. Kevin found it in Arthur''s coat.'
+changes: '"MORGAN. MIDNIGHT. DONE." replaced by "LEGAL. $2.4M. MIDNIGHT." (Part Two §2). Merged with Part Two Clue 10. Kevin found it in Douglas''s coat.'
 clues: [bank-statement]
 ---
-Kevin gives you Arthur's folded bank statement. 🆕 *(He's been wearing Arthur's coat since 9:22 and finally checked the pockets.)*
+Kevin gives you Douglas's folded bank statement. 🆕 *(He's been wearing Douglas's coat since 9:22 and finally checked the pockets.)*
 
-*Hold it up.* "This was found inside Arthur's coat."
+*Hold it up.* "This was found inside Douglas's coat."
 
 *Open.* "It documents the same transfers Kushington discovered." "Total: $2.4 million."
 
-🆕 "Authorization origin: Blackwood Legal Counsel. Authorized user ID: M-L-zero-four-two-seven."
+🆕 "Authorization origin: Cameron Legal Counsel. Authorized user ID: M-L-zero-four-two-seven."
 
-*Turn page.* "Across the top, Arthur wrote three words."
+*Turn page.* "Across the top, Douglas wrote three words."
 
 *Pause.* Read: **LEGAL. $2.4M. MIDNIGHT.**
 

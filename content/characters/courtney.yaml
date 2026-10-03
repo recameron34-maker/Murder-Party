@@ -1,10 +1,10 @@
 id: courtney
-name: Lady Courtney
+name: Lady Courtney Fane-Whitlow
 written_for: Courtney (maybe RSVP)  # HOST
 tier: flex                      # HOST
 pronouns: she/her               # HOST
 role: Minor aristocrat (professional guest)
-public_role: "Lady Courtney Fane-Whitlow, an old friend of the family"   # what everyone at the party knows; shown on every guest's guest list
+public_role: "An old friend of the family, or so she says"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Your title is fake, your accent is fake, and you're the most convincing aristocrat in the room."
 
 costume: |
@@ -22,13 +22,21 @@ backstory: |
   You've been a viscount's widow, a Hungarian countess and, once, briefly,
   a minor Romanov. You're very good. Hannah pays you $500 a night to make
   the Wellington galas look like they have titled supporters, and she
-  brought you along tonight as "an old family friend of the Blackwoods."
+  brought you along tonight as "an old family friend of the Camerons."
 
-  You've made one mistake already. At **8:05**, while Arthur was greeting
+  You've made one mistake already. At **8:05**, while Douglas was greeting
   guests in the Front Hall, you slipped into his empty study and took a
   **selfie posing with the bronze raven** "for the grid." Then you put it
   back. You posted it. It has 214 likes. Your fingerprints are all over the
   murder weapon.
+
+  Your real name is Courtney. The rest is invented, and you're prouder of
+  the invention than most people are of their ancestors. You grew up above a
+  dry cleaner's, pressing rich people's evening clothes and learning exactly
+  how they were meant to hang. Fane-Whitlow came from two gravestones in a
+  churchyard you liked the look of. Tonight is the best house you've ever
+  worked: real portraits, a real raven, a real dead man. You keep catching
+  yourself wanting to belong here, which is deeply unprofessional.
 
 relationships:
   - with: hannah
@@ -38,13 +46,13 @@ relationships:
   - with: jimmy-friedman
     text: He's been trying to do a "deal" with you all night because you have a title. Possibly lucrative.
   - with: molly
-    text: You asked her whether the bird on Arthur's desk was "worth anything." She looked at you like a forgery. Rich, coming from her.
+    text: You asked her whether the bird on Douglas's desk was "worth anything." She looked at you like a forgery. Rich, coming from her.
   - with: carlotta
     text: Two years ago you swept into Carley's Berlin gallery opening as a Hungarian countess, drank the champagne and bought nothing. She knows exactly what you are. She hasn't said. Yet.
   - with: morgan
-    text: Morgan has hired you twice to play minor nobility at Blackwood Legal client dinners. She knows exactly what you are, and she pays in cash.
-  - with: reggie
-    text: You've worked rooms with Reggie before. He's the only Blackwood who finds your act funny, and the only one who knows your real surname.
+    text: Morgan has hired you twice to play minor nobility at Cameron Legal client dinners. She knows exactly what you are, and she pays in cash.
+  - with: roderick
+    text: You've worked rooms with Roderick before. He's the only Cameron who finds your act funny, and the only one who knows your real surname.
   - with: savanah
     if: savanah
     text: The "widow." You recognize a fellow performer. You've been turning the pages for her at the piano.
@@ -89,7 +97,7 @@ instructions:
 
 mission: |
   Get **someone to invite you to their country house** (any house, any
-  country). Report the invitation to Reggie.
+  country). Report the invitation to Roderick.
 
 rounds:
   1:
@@ -106,9 +114,9 @@ rounds:
 
       Your fingerprints are on the murder weapon. Panic. Then remember
       that Molly saw it back on the desk at 8:45, and that you were
-      conducting "Happy Birthday" while Arthur died.
+      conducting "Happy Birthday" while Douglas died.
     reveal:
-      - You posed with the bronze raven in Arthur's study at 8:05 and posted the photo.
+      - You posed with the bronze raven in Douglas's study at 8:05 and posted the photo.
   3:
     text: |
       If your cover is about to be blown, choose: confess you're a hired
@@ -121,7 +129,7 @@ texts:
     from: Hannah W.
     trigger: { history: true }
     stamp: "4:00 PM"
-    body: "Tonight you're 'an old family friend of the Blackwoods.' Do NOT do the Romanov thing again."
+    body: "Tonight you're 'an old family friend of the Camerons.' Do NOT do the Romanov thing again."
   - id: courtney-instagram-r1
     from: Instagram
     trigger: { round: 1, after: 10 }
@@ -135,7 +143,7 @@ fallback: |
 host_notes: |
   Real-life ties (Ross): Courtney knows Ross, Carley, Morgan and others. Her
   character is wired to Carley (Berlin), Morgan (hired her before) and
-  Reggie (in on the act). Add more ties when Ross remembers who else.
+  Roderick (in on the act). Add more ties when Ross remembers who else.
 
   Flex (maybe RSVP), theatrical. Zero solution-critical clues. Red herring:
   fingerprints on the weapon, resolved by Molly (raven on the desk at 8:45) and

@@ -3,8 +3,8 @@ name: Maya Rose
 written_for: Maya               # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
-role: Birthday guest; granddaughter of the manor's old cook
-public_role: "Birthday girl; granddaughter of the manor's old cook"   # what everyone at the party knows; shown on every guest's guest list
+role: Birthday guest; granddaughter of the castle's old cook
+public_role: "Birthday girl; granddaughter of the castle's old cook"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You grew up below stairs. Tonight you're the birthday girl at the top of them."
 
 costume: |
@@ -14,32 +14,41 @@ costume: |
 
 intro: |
   It's your birthday weekend, shared with Lexi St. Clair, who has never had to
-  share anything. Your grandmother, Nana Rose, was Blackwood Manor's cook
+  share anything. Your grandmother, Nana Rose, was Cameron Castle's cook
   for forty years. You learned to walk on the kitchen flagstones. Tonight
   you came in through the front door.
 
 backstory: |
-  Arthur adored Nana Rose more than most of his relatives, and when she died
+  Douglas adored Nana Rose more than most of his relatives, and when she died
   he paid for your schooling "because Rose would haunt me otherwise." You
   have always been half family, half staff, all outsider.
 
-  At the toast Arthur caught your hand and murmured: *"Come to the study at
+  At the toast Douglas caught your hand and murmured: *"Come to the study at
   twenty to ten. I've found something of your grandmother's."* You went a
   little early. You wish you hadn't.
 
-  Your other secret is **Kevin Blackwood**. The summer you were both
+  Your other secret is **Kevin Cameron**. The summer you were both
   fourteen, the visiting nephew and the cook's granddaughter, you taught him
   where the kitchen hid the good biscuits and he taught you to swim in the
   black lake below the house. Last spring you found each other again, and
-  you've been together ever since, quietly. Quietly because the Blackwoods
+  you've been together ever since, quietly. Quietly because the Camerons
   have always had opinions about "the help", and because Kevin's whole life
   runs on his uncle's money. He swore he'd stop hiding you tonight: at
   midnight, at the Supper, where what's said can't be unsaid.
 
+  Nana Rose ran the castle kitchens for forty years and raised you between
+  the bread ovens and the back stairs, where the family's children were
+  forbidden and therefore always were. You know the castle the way only
+  staff know it: which stair is quickest, which door sticks, which portrait
+  you're meant to curtsey to. Douglas sent you to the good school, and the
+  good school taught you that you'd never quite pass. Kevin is the only
+  Cameron who ever stood in the kitchen doorway and asked if he could come
+  in.
+
 relationships:
   - with: lexi
     text: Your co-birthday girl. Raised in silk while you were raised in flour. You're fond of her, mostly.
-  - with: arthur
+  - with: douglas
     text: The man who paid for your education and loved your grandmother. He was going to give you something of hers tonight.
   - with: kevin
     text: Your secret. The boy from the lake, grown into a man in a dinner jacket who checks you're all right from across every room. He promised to tell them all at midnight.
@@ -56,54 +65,54 @@ evening:
   - at: "9:25 PM"
     until: "9:35 PM"
     where: dining-room
-    text: 'Your cake comes out in the Dining Room: black icing, a sugar raven, your name and Lexi''s in silver. You blow out the candles and save Kevin a slice. Arthur said twenty to ten for your surprise. You can''t wait that long.'
+    text: 'Your cake comes out in the Dining Room: black icing, a sugar raven, your name and Lexi''s in silver. You blow out the candles and save Kevin a slice. Douglas said twenty to ten for your surprise. You can''t wait that long.'
   - at: "9:36 PM"
     until: "9:37 PM"
     where: east-corridor
-    text: 'You arrive at the study door early. Through the oak you hear Arthur, furious: **"If the money isn''t back by midnight, I''m going public."** Then a woman''s voice, low and desperate: **"You''ll destroy me."** You back away and leave.'
+    text: 'You arrive at the study door early. Through the oak you hear Douglas, furious: **"If the money isn''t back by midnight, I''m going public."** Then a woman''s voice, low and desperate: **"You''ll destroy me."** You back away and leave.'
   - at: "9:38 PM"
     until: "9:47 PM"
     where: dining-room
     text: Back at your own cake, pale, pretending nothing happened. You planned to go back at twenty to ten. Then the lights went out.
 
 knows:
-  - At about **9:36** you heard Arthur arguing in the study about money.
-  - 'Arthur''s exact words: "If the money isn''t back by midnight, I''m going public."'
+  - At about **9:36** you heard Douglas arguing in the study about money.
+  - 'Douglas''s exact words: "If the money isn''t back by midnight, I''m going public."'
   - 'The other voice was a **woman''s**. She said: "You''ll destroy me." You couldn''t tell whose voice it was through the door.'
-  - Arthur had a surprise for you, something of Nana Rose's.
+  - Douglas had a surprise for you, something of Nana Rose's.
   - Kevin stormed out to the terrace at 9:22. You let him go.
 
 secret: |
-  You were **outside Arthur's study at 9:36** and heard him arguing with a
+  You were **outside Douglas's study at 9:36** and heard him arguing with a
   woman about missing money, minutes before he died. And you're secretly
-  with Kevin Blackwood, the heir who stayed.
+  with Kevin Cameron, the heir who stayed.
 
 blackmail:
   - You were outside the study door at about 9:36.
-  - The voice arguing with Arthur was a woman's.
-  - You and Kevin Blackwood are secretly together.
+  - The voice arguing with Douglas was a woman's.
+  - You and Kevin Cameron are secretly together.
 
 instructions:
-  - Reveal Arthur's line about the money in **Round One**. Keep the woman's exact words, "You'll destroy me", for **Round Two**.
+  - Reveal Douglas's line about the money in **Round One**. Keep the woman's exact words, "You'll destroy me", for **Round Two**.
   - You honestly couldn't recognize the woman's voice. Never claim to.
   - You may cry, once, beautifully. It's your birthday.
   - Keep Kevin secret unless someone pays. Defend him if you like, without saying why.
 
 mission: |
-  Find out **which women were near Arthur's study** tonight. Names and times,
-  then report to Reggie.
+  Find out **which women were near Douglas's study** tonight. Names and times,
+  then report to Roderick.
 
 rounds:
   1:
     text: |
-      Tell the room what you heard at the study door around 9:36. Arthur
+      Tell the room what you heard at the study door around 9:36. Douglas
       said: **"If the money isn't back by midnight, I'm going public."** He
       was arguing with **a woman**.
 
-      Reggie will take it from there. ("Money. Finally. Something this family
+      Roderick will take it from there. ("Money. Finally. Something this family
       understands.")
     reveal:
-      - 'Arthur said "If the money isn''t back by midnight, I''m going public," arguing with a woman, around 9:36.'
+      - 'Douglas said "If the money isn''t back by midnight, I''m going public," arguing with a woman, around 9:36.'
   2:
     text: |
       Now give them the rest: the woman said **"You'll destroy me."**
@@ -115,17 +124,17 @@ rounds:
       - 'The woman said "You''ll destroy me."'
   3:
     text: |
-      If anyone asks why you were at the study: Arthur invited you at the
+      If anyone asks why you were at the study: Douglas invited you at the
       toast, for twenty to ten. He'd found **a portrait of Nana Rose** that
       he'd had restored for your birthday. You never got to see it.
 
       Stand by your timeline: 9:36 to 9:37, the argument, the woman, gone.
     reveal:
-      - Arthur had invited you to the study for a birthday gift, a portrait of your grandmother.
+      - Douglas had invited you to the study for a birthday gift, a portrait of your grandmother.
 
 texts:
-  - id: maya-arthur-history
-    from: Arthur Blackwood
+  - id: maya-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "7:55 PM"
     body: "Happy birthday, Maya. Study, twenty to ten. I've found something of Rose's. Don't tell Lexi, she'll want one too."
@@ -137,7 +146,7 @@ texts:
   - id: maya-kevin-r1
     from: K ♥
     trigger: { round: 1, after: 3 }
-    body: "I said something stupid to Arthur at 9:20. I was on the terrace after, the whole time. Don't look at me in there. Midnight still stands."
+    body: "I said something stupid to Douglas at 9:20. I was on the terrace after, the whole time. Don't look at me in there. Midnight still stands."
   - id: maya-unknown-r2
     from: Unknown number
     trigger: { round: 2, after: 2 }

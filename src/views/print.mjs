@@ -7,6 +7,7 @@ import { FONTS, PRINT_CSS } from './styles.mjs';
 import { gameLabel } from './visuals.mjs';
 import { prop } from './props.mjs';
 import { portrait } from './portraits.mjs';
+import { phonesOn, envelopeMessages } from '../lib/texts.mjs';
 
 const ROUND_WORDS = { 1: 'Round One', 2: 'Round Two', 3: 'Round Three' };
 
@@ -38,7 +39,7 @@ export function printView(ctx, kind, query) {
     case 'passphrases': {
       const ids = content.characterOrder.filter((id) => canLogin(id) && state.passphrases[id]);
       return printPage('Login cards', chunk(ids, 6).map((group) => html`<div class="page"><div class="cards">${group.map((id) => html`<div class="cardp">
-  <div class="stamp">BLACKWOOD MANOR</div>
+  <div class="stamp">CAMERON CASTLE</div>
   <p>For <b>${roster[id].player || ''}</b></p>
   <h2>${chars[id].name}</h2>
   <p>Go to <b>${ctx.origin}</b><br>and speak your passphrase:</p>
@@ -49,7 +50,7 @@ export function printView(ctx, kind, query) {
       return printPage('Character cards', liveIds.map((id) => {
         const c = chars[id];
         return html`<div class="page">
-  <div class="env-head"><span class="r">Blackwood Manor · Character</span><span>For ${roster[id].player || ''} only</span></div>
+  <div class="env-head"><span class="r">Cameron Castle · Character</span><span>For ${roster[id].player || ''} only</span></div>
   <div class="card-portrait">${portrait(id, c.name, content.portraits?.[id], 90)}</div>
   <h1>${c.name}</h1><p><i>${c.role}</i>: ${c.tagline}</p>
   ${M(c.intro)}<h3>Costume</h3>${M(c.costume)}<h3>Your story</h3>${M(c.backstory)}
@@ -66,11 +67,14 @@ export function printView(ctx, kind, query) {
       return printPage(`${ROUND_WORDS[n]} envelopes`, liveIds.map((id) => {
         const c = chars[id];
         const r = c.rounds[n];
+        // Paper night: the messages that would have reached their phone.
+        const msgs = phonesOn(content) ? [] : envelopeMessages(content, id, n);
         return html`<div class="page">
-  <div class="env-head"><span class="r">Blackwood Manor · ${ROUND_WORDS[n]}</span><span>${c.name}: for ${roster[id].player || ''} only</span></div>
+  <div class="env-head"><span class="r">Cameron Castle · ${ROUND_WORDS[n]}</span><span>${c.name}: for ${roster[id].player || ''} only</span></div>
   ${M(r.text)}
   <div class="reveal"><b>You must reveal this round:</b><ul>${r.reveal.map((x) => html`<li>${I(x)}</li>`)}</ul></div>
-  ${n === 1 ? html`<div class="reveal"><b>Secret mission ($1,000 from Reggie):</b> ${M(c.mission)}</div>` : ''}
+  ${n === 1 ? html`<div class="reveal"><b>Secret mission ($1,000 from Roderick):</b> ${M(c.mission)}</div>` : ''}
+  ${msgs.length ? html`<div class="reveal"><b>Messages</b> <span style="font-size:9pt">(the house has no signal tonight, so these reach you on paper)</span>${msgs.map((t) => html`<p style="margin:2mm 0"><b>${t.from}</b>${t.after ? html` <span style="font-size:9pt">· about ${t.after} minutes in</span>` : ''}<br>${t.body}</p>`)}</div>` : ''}
 </div>`;
       }));
     }
@@ -78,14 +82,14 @@ export function printView(ctx, kind, query) {
       const ids = content.clueOrder.filter((id) => content.clues[id].kind !== 'spoken' && content.clues[id].print);
       return printPage('Evidence cards', chunk(ids, 4).map((group) => html`<div class="page"><div class="cards">${group.map((id, i) => html`<div class="cardp">
   <div class="ev-art">${prop(id, { size: 96 })}</div>
-  <div class="stamp">BLACKWOOD EVIDENCE</div>
+  <div class="stamp">CAMERON CASTLE EVIDENCE</div>
   <div class="pre">${content.clues[id].print.trim()}</div>
   <div style="position:absolute;bottom:3mm;right:4mm;font-size:7pt;color:#777">R${content.clues[id].round} · ${id}</div></div>`)}</div></div>`));
     }
     case 'ballots':
       return printPage('Accusation ballots', chunk(Array.from({ length: Math.ceil(liveIds.length / 4) * 4 }), 4).map((g) => html`<div class="page"><div class="cards">${g.map(() => html`<div class="ballot">
   <div class="stamp">ACCUSATION</div>
-  <p><b>Who killed Arthur Blackwood?</b></p><div class="line"></div>
+  <p><b>Who killed Douglas Cameron?</b></p><div class="line"></div>
   <p><b>Why?</b></p><div class="line"></div>
   <p><b>How did they escape the study?</b></p><div class="line"></div>
   <p><b>Time of death (optional)</b></p><div class="line"></div>
@@ -94,7 +98,7 @@ export function printView(ctx, kind, query) {
       const count = liveIds.length * 3 + 30;
       return printPage('Blackmail Cash', chunk(Array.from({ length: count }), 8).map((g) => html`<div class="page"><div class="cards">${g.map(() => html`<div class="bill">
   <div style="display:flex;justify-content:space-between"><span class="amt">$1,000</span><span class="amt">✦</span></div>
-  <div class="mid">BLACKWOOD BLACKMAIL NOTE<br><span style="font-size:9pt;letter-spacing:.05em">"Information is the only currency more powerful than money." · A.B.</span></div>
+  <div class="mid">CAMERON BLACKMAIL NOTE<br><span style="font-size:9pt;letter-spacing:.05em">"Information is the only currency more powerful than money." · D.C.</span></div>
   <div style="display:flex;justify-content:space-between"><span style="font-size:9pt">Payable in truth</span><span class="amt">$1,000</span></div></div>`)}</div></div>`));
     }
     case 'hints':
@@ -103,19 +107,19 @@ export function printView(ctx, kind, query) {
   <div style="position:absolute;bottom:3mm;right:4mm;font-size:7pt;color:#777">from Round ${h.from_round}</div></div>`)}</div></div>`));
     case 'badges':
       // Name badges: name and public role only (what everyone knows).
-      return printPage('Name badges', chunk(liveIds, 8).map((group) => html`<div class="page"><div class="badges">${group.map((id) => html`<div class="badge"><div class="stamp">BLACKWOOD MANOR · MIDNIGHT SUPPER</div><div class="b-portrait">${portrait(id, chars[id].name, content.portraits?.[id], 64)}</div><div class="b-name">${chars[id].name}</div><div class="b-role">${chars[id].public_role}</div></div>`)}</div></div>`));
+      return printPage('Name badges', chunk(liveIds, 8).map((group) => html`<div class="page"><div class="badges">${group.map((id) => html`<div class="badge"><div class="stamp">CAMERON CASTLE · MIDNIGHT SUPPER</div><div class="b-portrait">${portrait(id, chars[id].name, content.portraits?.[id], 64)}</div><div class="b-name">${chars[id].name}</div><div class="b-role">${chars[id].public_role}</div></div>`)}</div></div>`));
     case 'awards': {
       const awards = content.party.awards || [];
-      return printPage('Award certificates', awards.map((a) => html`<div class="page sign certificate"><div class="stamp">BLACKWOOD MANOR · THE MIDNIGHT SUPPER</div><p class="sign-sub">The house is pleased to recognise</p><div class="cert-line"></div><h1>${a.title}</h1><p class="sign-line">${a.for}</p><p class="cert-foot">Signed at midnight, in the presence of the raven.<br>Reginald Blackwood, host</p></div>`));
+      return printPage('Award certificates', awards.map((a) => html`<div class="page sign certificate"><div class="stamp">CAMERON CASTLE · THE MIDNIGHT SUPPER</div><p class="sign-sub">The house is pleased to recognise</p><div class="cert-line"></div><h1>${a.title}</h1><p class="sign-line">${a.for}</p><p class="cert-foot">Signed at midnight, in the presence of the raven.<br>Roderick Cameron, host</p></div>`));
     }
     case 'signs': {
       const venue = content.venue || {};
       const gc = content.guestCommon || {};
-      const sign = (big, small, line) => html`<div class="page sign"><div class="stamp">BLACKWOOD MANOR</div><h1>${big}</h1><p class="sign-sub">${small}</p>${line ? html`<p class="sign-line">${I(line)}</p>` : ''}</div>`;
+      const sign = (big, small, line) => html`<div class="page sign"><div class="stamp">CAMERON CASTLE</div><h1>${big}</h1><p class="sign-sub">${small}</p>${line ? html`<p class="sign-line">${I(line)}</p>` : ''}</div>`;
       const games = [...(venue.areas || []).filter((a) => a.game).map((a) => a.game), ...(venue.spots || []).map((sp) => sp.game)];
       const shutDoors = (venue.areas || []).filter((a) => a.shut && !/closet/i.test(a.name));
       return printPage('Room signs', [
-        ...games.map((g) => sign(`THE ${gameLabel(g, content.lore.rooms).toUpperCase()}`, 'A room of Blackwood Manor', gc.rooms?.[g])),
+        ...games.map((g) => sign(`THE ${gameLabel(g, content.lore.rooms).toUpperCase()}`, 'A room of Cameron Castle', gc.rooms?.[g])),
         ...shutDoors.map((a) => sign('EAST WING · SHUT', a.name, 'The east wing stays dark. Nothing in here is part of the game.')),
       ]);
     }

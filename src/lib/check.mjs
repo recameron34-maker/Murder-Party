@@ -279,12 +279,12 @@ export function checkContent(content, state = {}) {
     if (areaById.has(a.id)) add('error', 'venue.yaml', a.id, 'Duplicate area id');
     areaById.set(a.id, a);
     if (!Array.isArray(a.shape) || a.shape.length < 3) add('error', 'venue.yaml', a.id, 'Area needs a shape of at least three points');
-    if (a.game && !rooms[a.game]) add('error', 'venue.yaml', a.id, `Unknown manor room "${a.game}"`);
+    if (a.game && !rooms[a.game]) add('error', 'venue.yaml', a.id, `Unknown castle room "${a.game}"`);
     if (a.game && a.shut) add('error', 'venue.yaml', a.id, 'A shut room cannot also be a game room');
-    if (a.story && !rooms[a.story]) add('error', 'venue.yaml', a.id, `Unknown manor room "${a.story}"`);
+    if (a.story && !rooms[a.story]) add('error', 'venue.yaml', a.id, `Unknown castle room "${a.story}"`);
   }
   for (const [rid, box] of Object.entries(venue.stage || {})) {
-    if (!rooms[rid]) add('error', 'venue.yaml', rid, `Stage box for unknown manor room "${rid}"`);
+    if (!rooms[rid]) add('error', 'venue.yaml', rid, `Stage box for unknown castle room "${rid}"`);
     if (!Array.isArray(box) || box.length !== 4) add('error', 'venue.yaml', rid, 'Stage box must be [x, y, width, height]');
   }
   if ((venue.areas || []).length) {
@@ -293,7 +293,7 @@ export function checkContent(content, state = {}) {
     for (const r of used) if (rooms[r] && !drawn.has(r)) add('warn', 'venue.yaml', r, `Someone's evening is in the ${r}, but no room of the flat plays it (the case map can't draw them)`);
   }
   for (const sp of venue.spots || []) {
-    if (!rooms[sp.game]) add('error', 'venue.yaml', sp.game, `Unknown manor room "${sp.game}"`);
+    if (!rooms[sp.game]) add('error', 'venue.yaml', sp.game, `Unknown castle room "${sp.game}"`);
     const a = areaById.get(sp.area);
     if (!a) add('error', 'venue.yaml', sp.game, `Spot is in unknown area "${sp.area}"`);
     else if (a.shut) add('error', 'venue.yaml', sp.game, `Spot is in a shut room (${sp.area})`);

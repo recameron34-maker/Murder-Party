@@ -5,7 +5,7 @@ kind: cue
 changes: Morgan's counterweight defense added (Part Two §9).
 clues: [carlotta-note]
 ---
-Carley will eventually read Arthur's note:
+Carley will eventually read Douglas's note:
 
 **Carlotta — you were right. Tonight I stop protecting the people who betrayed my trust. Whatever happens, know that none of this was your burden to carry. — Dad**
 
@@ -18,7 +18,7 @@ Let them reveal:
 - Morgan's office controlled authorization.
 - Lindsey independently confirms credentials. 🆕 (Lindsey's role flips: she wasn't hiding the theft; she *discovered* it.)
 
-Then: "So the stolen $2.4 million…" "…leads to Blackwood Legal Counsel." *Pause.* "Morgan's office."
+Then: "So the stolen $2.4 million…" "…leads to Cameron Legal Counsel." *Pause.* "Morgan's office."
 
 🆕 *Morgan will say:* "I'm his lawyer. Of course my office authorized legal transfers."
 

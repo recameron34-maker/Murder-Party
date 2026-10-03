@@ -1,10 +1,10 @@
 id: shea
-name: Shea
+name: Shea Sheridan
 written_for: Shea               # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
-role: Arthur's live-in private nurse
-public_role: "Arthur's live-in nurse"   # what everyone at the party knows; shown on every guest's guest list
+role: Douglas's live-in private nurse
+public_role: "Douglas's live-in nurse"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You know the body in this house better than anyone. Tonight that's not a comfort."
 
 costume: |
@@ -13,13 +13,13 @@ costume: |
   case of "medication" (mints), and the calm of someone who has seen a lot.
 
 intro: |
-  For two years you've lived at Blackwood Manor as Arthur's private nurse. You
-  dressed him for dinner tonight, tied his tie and fastened the cuffs of his
-  black velvet smoking jacket. You know exactly how sick he was. He told you
+  For two years you've lived at Cameron Castle as Douglas's private nurse. You
+  dressed him for dinner tonight: the tan suit, the black silk tie you tied
+  yourself, and the flat cap he insists on wearing indoors at his own Supper. You know exactly how sick he was. He told you
   things he told nobody else.
 
 backstory: |
-  Arthur's heart was failing. Only you and Dr. Noor Beaumont knew. Last week,
+  Douglas's heart was failing. Only you and Dr. Noor Beaumont knew. Last week,
   as you counted out his pills, he said something you haven't been able to
   forget: **"If something happens to me, don't assume it was natural."**
 
@@ -30,15 +30,23 @@ backstory: |
 
   Your other secret: a week ago, checking a noise in the east wing at
   midnight, you found **a man living in the walls**. Louis. Charming, filthy,
-  apologetic. You should have told Arthur. Instead you've been meeting him at
+  apologetic. You should have told Douglas. Instead you've been meeting him at
   midnight in a sealed-off maid's room. Saucy, dangerous, and not at all
   professional.
 
+  You trained on night shifts in a hospital that smelled of bleach and
+  despair, and you took the castle job because the advert said "live-in,
+  discreet, remote." It is all three. Your room is at the top of the back
+  stairs, with a window over the black lake and a door that locks from the
+  inside. You've nursed three rich men to the end and liked none of them
+  until Douglas, who called you "Sister" and asked about your life as if it
+  might be interesting. It is. You've just never told anyone here.
+
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your patient. Proud, scared, kind to you. You dressed him for his last evening.
   - with: noor
-    text: Arthur's doctor. You two shared the secret of his heart.
+    text: Douglas's doctor. You two shared the secret of his heart.
   - with: louis
     text: The man in the walls. Your midnight secret. You've been covering for him all week.
   - with: annie
@@ -47,19 +55,19 @@ relationships:
 evening:
   - at: "7:00 PM"
     where: upstairs
-    text: You help Arthur dress for the Supper. Black velvet smoking jacket. You fasten the cuffs yourself.
+    text: 'You help Douglas dress for the Supper: the tan suit, a black silk tie, and the flat cap he wears indoors because it''s his house. You tie the tie yourself.'
   - at: "8:00 PM"
     until: "9:24 PM"
     where: drawing-room
-    text: At the party, keeping an eye on Arthur's color whenever he passes. At 9:20 you hear Kevin shouting in the study.
+    text: At the party, keeping an eye on Douglas's color whenever he passes. At 9:20 you hear Kevin shouting in the study.
   - at: "9:25 PM"
     until: "9:37 PM"
     where: dining-room
-    text: At the birthday cake in the Dining Room. Arthur doesn't come out for it, and it's nearly time for his evening pills.
+    text: At the birthday cake in the Dining Room. Douglas doesn't come out for it, and it's nearly time for his evening pills.
   - at: "9:38 PM"
     until: "9:39 PM"
     where: upstairs
-    text: Up the back stairs to fetch Arthur's evening pills.
+    text: Up the back stairs to fetch Douglas's evening pills.
   - at: "9:40 PM"
     where: east-corridor
     text: You walk toward the study with the pills, but **before you reach it you hear voices** around the corner toward the Front Hall. You don't want to be seen with his medication. You turn back.
@@ -69,63 +77,63 @@ evening:
     text: Back at the cake, pills still in your pocket. The lights go out at 9:45.
 
 knows:
-  - 'Arthur said last week: "If something happens to me, don''t assume it was natural."'
-  - Arthur had severe heart disease. It was a secret.
+  - 'Douglas said last week: "If something happens to me, don''t assume it was natural."'
+  - Douglas had severe heart disease. It was a secret.
   - At about **9:40** you walked toward the study and turned back before reaching it.
-  - Arthur was wearing a **black velvet smoking jacket** tonight. You fastened the cuffs.
+  - Douglas was wearing a tan suit and a **black silk tie** tonight. You tied it.
 
 secret: |
-  You **walked toward the study at about 9:40** with Arthur's pills and turned
+  You **walked toward the study at about 9:40** with Douglas's pills and turned
   back, and you've been secretly meeting **Louis, the man in the walls**,
   every midnight this week.
 
 blackmail:
-  - Arthur told you, "If something happens to me, don't assume it was natural."
+  - Douglas told you, "If something happens to me, don't assume it was natural."
   - You walked toward the study around 9:40.
   - You know who has been living in the walls.
 
 instructions:
-  - Round One, Arthur's ominous words. Round Two, your 9:40 walk. Round Three, the thread and your question about the blackout.
+  - Round One, Douglas's ominous words. Round Two, your 9:40 walk. Round Three, the thread and your question about the blackout.
   - Protect Louis. Never reveal you know him unless paid.
   - You may take anyone's pulse at any moment and declare it "elevated."
   - You were near the study, and you're a woman. Don't deny it; just don't help them.
 
 mission: |
   Get someone to **voluntarily tell you their alibi**, without you asking
-  for it directly. Report it to Reggie.
+  for it directly. Report it to Roderick.
 
 rounds:
   1:
     text: |
-      When the room is unsure whether this is murder, tell them what Arthur
+      When the room is unsure whether this is murder, tell them what Douglas
       said to you last week:
 
       **"If something happens to me, don't assume it was natural."**
 
-      Reggie will turn to Dr. Beaumont from there.
+      Roderick will turn to Dr. Beaumont from there.
     reveal:
-      - 'Arthur told you: "If something happens to me, don''t assume it was natural."'
+      - 'Douglas told you: "If something happens to me, don''t assume it was natural."'
   2:
     text: |
-      Confess your walk: **at around 9:40 you were taking Arthur his
+      Confess your walk: **at around 9:40 you were taking Douglas his
       medication. Before you reached the study you heard voices and went back
       to the party.**
 
       You didn't see anyone. You didn't go in. Yes, you're one of the women who
       were near that door.
     reveal:
-      - Around 9:40 you walked toward the study with Arthur's medication, heard voices, and turned back.
+      - Around 9:40 you walked toward the study with Douglas's medication, heard voices, and turned back.
   3:
     text: |
       If the **black thread** found on the raven is still a mystery: it's
-      from **Arthur's own jacket.** Black velvet. You fastened his cuffs at 7.
-      It snagged when he fell.
+      from **Douglas's own tie.** Black silk. You tied it yourself at 7. It
+      snagged on the beak when he fell.
 
       Then ask the question that turns the room, out loud:
 
       **"Then why did we all assume he died during the blackout?"**
     reveal:
-      - The black thread is from Arthur's own velvet smoking jacket.
+      - The black thread is from Douglas's own black silk tie.
       - Ask "Then why did we all assume he died during the blackout?"
 
 texts:
@@ -134,8 +142,8 @@ texts:
     trigger: { history: true }
     stamp: "Last night 12:04 AM"
     body: "Same room tomorrow? Bring the good cheese. And a torch, the batteries in mine are dying. x"
-  - id: shea-arthur-history
-    from: Arthur Blackwood
+  - id: shea-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "6:58 PM"
     body: "Come up and do these damned cuffs. And bring the pills down later, before supper. Discreetly."
@@ -146,5 +154,5 @@ texts:
 
 host_notes: |
   Supporting. Part Two's third woman near the study (~9:40). Round Three:
-  resolves the black thread (Arthur's jacket; see docs/decisions.md) and
-  gives Reggie the blackout cue.
+  resolves the black thread (Douglas's own tie; see docs/decisions.md) and
+  gives Roderick the blackout cue.

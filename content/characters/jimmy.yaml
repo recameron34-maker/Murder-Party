@@ -3,8 +3,8 @@ name: James "Jimmy" Calloway
 written_for: Jimmy (not Jimmy Friedman)   # HOST
 tier: core                      # HOST
 pronouns: he/him                # HOST
-role: Arthur's ward, recently cut from the will
-public_role: "Arthur's ward, raised at Blackwood Manor"   # what everyone at the party knows; shown on every guest's guest list
+role: Douglas's ward, recently cut from the will
+public_role: "Douglas's ward, raised at Cameron Castle"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Raised in the house, never of it. As of last month, not even in the will."
 
 costume: |
@@ -14,24 +14,33 @@ costume: |
   be poor on purpose.
 
 intro: |
-  You're the cuckoo in the Blackwood nest. Arthur took you in at nine when
+  You're the cuckoo in the Cameron nest. Douglas took you in at nine when
   your father, his partner Teddy Calloway, died. You grew up in this house,
-  in the will, in the family photographs. Then last month Arthur cut you out.
+  in the will, in the family photographs. Then last month Douglas cut you out.
 
 backstory: |
   You've spent your life performing gratitude. Boarding school, the good
-  university, the summers at the manor. You were the Blackwood boy without
-  the Blackwood name, and you were always going to be "taken care of."
+  university, the summers at the castle. You were the Cameron boy without
+  the Cameron name, and you were always going to be "taken care of."
 
   Then you did something stupid. You borrowed **$300,000 from Jimmy
-  Friedman** against your expected inheritance. Arthur found out and called
+  Friedman** against your expected inheritance. Douglas found out and called
   you into the study: *"I will not have my estate used as collateral by
   sharks."* You were out of the will by Monday.
 
   At least there's Alma. Nobody knows about you and Alma.
 
+  Your father, Teddy, built the business with Douglas and died when you were
+  nine. Douglas came to the funeral in a black coat worth more than your
+  house and took you home with him that afternoon. You had a room at the top
+  of the north tower and a portrait painted at twelve that still hangs at
+  the foot of the Gallery stairs, slightly apart from the family. Every
+  Christmas you were given the same presents as Carlotta, a little smaller.
+  You've spent twenty years trying to decide whether that was love or
+  bookkeeping.
+
 relationships:
-  - with: arthur
+  - with: douglas
     text: Guardian, benefactor, judge. You loved him and you're furious with him and now he's dead.
   - with: jimmy-friedman
     text: The other Jimmy. You owe him $300,000 that you no longer have any way to repay. He's been smiling at you all night.
@@ -41,7 +50,7 @@ relationships:
     text: Practically a sister. She left; you stayed. She got the name; you got the bills.
   - with: savanah
     if: savanah
-    text: Arthur's 2019 Las Vegas bride. You were his minder that weekend and his best man at 3 a.m. in a borrowed bow tie. You also know about the annulment two weeks later. She's been texting you all week.
+    text: Douglas's 2019 Las Vegas bride. You were his minder that weekend and his best man at 3 a.m. in a borrowed bow tie. You also know about the annulment two weeks later. She's been texting you all week.
   - with: kevin
     text: Fellow disappointed heir. You'd love three people to agree he had the bigger motive.
 
@@ -49,7 +58,7 @@ evening:
   - at: "8:50 PM"
     until: "8:58 PM"
     where: study
-    text: You confront Arthur about the will. He doesn't raise his voice. He says, "Tonight isn't about you, James." It's worse than shouting.
+    text: You confront Douglas about the will. He doesn't raise his voice. He says, "Tonight isn't about you, James." It's worse than shouting.
   - at: "9:00 PM"
     until: "9:38 PM"
     where: billiard-room
@@ -66,40 +75,40 @@ evening:
     text: Still arguing with your lawyer's voicemail when the lights go out.
 
 knows:
-  - Arthur cut you out of the will last month because you borrowed against your inheritance from Jimmy Friedman.
+  - Douglas cut you out of the will last month because you borrowed against your inheritance from Jimmy Friedman.
   - At about **9:40** you saw Morgan in the library, near the corridor.
-  - Arthur told you at 8:50, "Tonight isn't about you." You didn't know what he meant.
-  - Kevin also had a terrible argument with Arthur tonight.
+  - Douglas told you at 8:50, "Tonight isn't about you." You didn't know what he meant.
+  - Kevin also had a terrible argument with Douglas tonight.
 
 secret: |
   You saw **Morgan near the library at 9:40**, you owe Jimmy Friedman
   $300,000, and you've been sleeping with Alma, the archivist.
 
 blackmail:
-  - You were removed from Arthur's will last month.
+  - You were removed from Douglas's will last month.
   - You saw Morgan in the library at about 9:40.
   - You owe Jimmy Friedman $300,000.
 
 instructions:
   - Admit early that you were cut from the will. Everyone will find out anyway.
-  - Reveal the Morgan sighting in **Round Two**. If Reggie asks "James, didn't you say you walked through that hallway?", that's your cue.
+  - Reveal the Morgan sighting in **Round Two**. If Roderick asks "James, didn't you say you walked through that hallway?", that's your cue.
   - Deflect onto Kevin whenever you can.
   - Never confirm the affair with Alma unless paid.
 
 mission: |
   Get **three people to agree that Kevin had the strongest inheritance
-  motive.** Report the three names to Reggie.
+  motive.** Report the three names to Roderick.
 
 rounds:
   1:
     text: |
-      Admit it before someone else does: **Arthur removed you from his will.**
+      Admit it before someone else does: **Douglas removed you from his will.**
       You confronted him about it at 8:50. Yes, you were angry. No, you didn't
       kill him. You were losing at cards from 9:00.
 
       Then pivot hard to Kevin. *Kevin* expected the whole house.
     reveal:
-      - Arthur removed you from his will, and you confronted him at 8:50.
+      - Douglas removed you from his will, and you confronted him at 8:50.
   2:
     text: |
       Now say it: **around 9:40 you left the card game to make a phone call
@@ -110,20 +119,20 @@ rounds:
       - You saw Morgan near/in the library at about 9:40.
   3:
     text: |
-      Someone will ask why Arthur cut you out. Tell the truth, with as much
+      Someone will ask why Douglas cut you out. Tell the truth, with as much
       dignity as you can manage: you borrowed **$300,000 from Jimmy
-      Friedman** against your inheritance, and Arthur would not have his
+      Friedman** against your inheritance, and Douglas would not have his
       estate "used as collateral by sharks."
 
       It's humiliating. It isn't murder.
 
       [[if:savanah]]
       And if Savanah is still calling herself the widow, you were best man at
-      that wedding, and you were there when Reggie and the lawyers flew out
+      that wedding, and you were there when Roderick and the lawyers flew out
       two weeks later with the annulment. Say so, kindly.
       [[/if]]
     reveal:
-      - Arthur cut you out because you borrowed $300,000 against your inheritance from Jimmy Friedman.
+      - Douglas cut you out because you borrowed $300,000 against your inheritance from Jimmy Friedman.
 
 texts:
   - id: jimmy-friedman-history
@@ -143,4 +152,4 @@ texts:
 host_notes: |
   Core. The Morgan library sighting at 9:40 (Round Two) is solution-critical.
   The "why was James cut from the will" scandal resolves in Round Three. Don't
-  confuse him with Jimmy Friedman; Reggie calls this one "James."
+  confuse him with Jimmy Friedman; Roderick calls this one "James."

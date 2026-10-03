@@ -1,13 +1,13 @@
-# Ross's flat as Blackwood Manor: "the house tonight".
+# Ross's flat as Cameron Castle: "the house tonight".
 #
-# GUEST-SAFE. Every guest page draws this plan (Manor tab) so people can find
+# GUEST-SAFE. Every guest page draws this plan (Castle tab) so people can find
 # the study, the library and the rest on the night. Never put hiding spots,
 # the passage or anyone's whereabouts here. Hiding spots live in
 # content/clues/*.yaml; host-only setup notes live in lore.yaml (venue_setup).
 # The host case map (Map page) draws the story on this same plan.
 #
 # Coordinates trace Ross's floor plan (image pixels, about 1206 × 647).
-#   game        the manor room this real room plays (room id from lore.yaml)
+#   game        the castle room this real room plays (room id from lore.yaml)
 #   shut        off-limits tonight ("the East Wing stays dark"); never a game area
 #   story       a shut room's part in the story (case map only; nobody goes in)
 #   aka         how guest pages name the room ("Tonight: the …")
@@ -15,8 +15,8 @@
 #   label_at    optional: where the room's label sits (default: the middle)
 #   label       false to leave a room unlabelled
 #   pins_at     optional: where the host map starts its row of evidence pins
-#   spots       manor rooms that are just a corner of a real room
-#   stage       where each manor room's people stand on the case map replay,
+#   spots       castle rooms that are just a corner of a real room
+#   stage       where each castle room's people stand on the case map replay,
 #               as [x, y, width, height]
 #
 # Why this layout: the study (the Side Room, labelled "Room" on the floor
@@ -143,7 +143,7 @@ areas:
     pins_at: [1004, 470]
     shape: [[934, 345], [1130, 345], [1130, 487], [986, 487], [986, 404], [934, 404]]
 
-# Manor rooms that are one corner of a real room.
+# Castle rooms that are one corner of a real room.
 spots:
   - { game: front-hall, area: living-room, at: [896, 286], label: "by the coat rack" }
   - { game: library-corridor, area: living-room, at: [774, 308], label: "at the front door" }
@@ -175,7 +175,7 @@ doors:
 entrances:
   - { label: "Stairs up", at: [855, 487], dir: [0, -1] }
 
-# Case map only: where people stand in each manor room, [x, y, w, h].
+# Case map only: where people stand in each castle room, [x, y, w, h].
 stage:
   drawing-room: [716, 194, 150, 96]
   front-hall: [866, 302, 56, 34]

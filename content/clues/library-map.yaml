@@ -5,10 +5,10 @@ source: part-two
 round: 2
 timing: early
 carrier: joji
-delivery: Reggie gives it to Joji at the start of Round Two (or put it in Joji's Round Two envelope).
+delivery: Roderick gives it to Joji at the start of Round Two (or put it in Joji's Round Two envelope).
 hide: Joji's Round Two envelope.
 print: |
-  BLACKWOOD MANOR — GROUND FLOOR — S. BLACKWOOD, 1891
+  CAMERON CASTLE — GROUND FLOOR — S. CAMERON, 1891
 
   [old-looking plan; mark STUDY and LIBRARY on either side of one wall,
   with a faint dotted line between them. Do NOT label it "secret passage".]
@@ -17,11 +17,11 @@ print: |
   RECEIVED · B.L.C. · 14 AUG
 truth: >
   The faint line is the Raven's Walk passage, study to library. The stamp is
-  Blackwood Legal Counsel's filing stamp from the landmark application, a
+  Cameron Legal Counsel's filing stamp from the landmark application, a
   disguised hint that Morgan's office had the plans and could know about the
   passage. Never point it out; let a sharp guest notice that "B.L.C." matches
-  the ledger's "AUTHORIZED: BLC".
+  the ledger's "AUTHORIZED: CLC".
 points_to: []
 critical: true
 refs: [joji]
-fallback: If Joji is somehow absent, Reggie produces it and asks Tim what he makes of it.
+fallback: If Joji is somehow absent, Roderick produces it and asks Tim what he makes of it.

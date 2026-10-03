@@ -7,13 +7,13 @@ timing: early
 carrier: found
 delivery: Players find it during the evidence hunt. Kevin must recognize it.
 hide: On the study floor, half under the desk chair or the edge of the rug. Hide before guests arrive.
-room: study            # where it is found in the manor (for the host map)
+room: study            # where it is found in the castle (for the host map)
 print: |
-  BLACKWOOD EVIDENCE: A gold cufflink, engraved with a raven and the
+  CAMERON CASTLE EVIDENCE: A gold cufflink, engraved with a raven and the
   letter K, found on the study floor.
-truth: Kevin lost it at about 3 PM helping Reggie move furniture into the study. Reggie confirms in Round Two, after Kevin has panicked.
+truth: Kevin lost it at about 3 PM helping Roderick move furniture into the study. Roderick confirms in Round Two, after Kevin has panicked.
 points_to: [kevin]
 critical: false
-refs: [kevin, reggie]
+refs: [kevin, roderick]
 times: ["3:00 PM"]
 prop_needed: Any men's cufflink (ideally a raven or initial K).

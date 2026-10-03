@@ -1,4 +1,4 @@
-// Visuals: portrait crests, the manor map, timeline charts, relationship
+// Visuals: portrait crests, the castle map, timeline charts, relationship
 // webs, the family tree, the suspicion heat map and the round stepper.
 // Everything is server-rendered inline SVG/HTML, so it works in the Worker,
 // in local dev and in the static preview with no client libraries.
@@ -58,7 +58,7 @@ const labelOf = (content, id) => shortNames(content.names || {})[id] || shortNam
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
 // ---------------------------------------------------------------- crest (portrait medallion)
-export const crestColor = (id) => (id === 'arthur' ? '#1a1214' : CREST_COLORS[hash(id) % CREST_COLORS.length]);
+export const crestColor = (id) => (id === 'douglas' ? '#1a1214' : CREST_COLORS[hash(id) % CREST_COLORS.length]);
 
 export function crestSvg(id, name, size = 56) {
   const color = crestColor(id);
@@ -73,8 +73,8 @@ export function roundStepper(live, { labels = ['Before', 'Round One', 'Round Two
   return html`<ol class="stepper${compact ? ' compact' : ''}" aria-label="Progress through the night">${labels.map((label, i) => html`<li class="${i < live ? 'done' : i === live ? 'now' : ''}"><span class="dot">${i < live ? '✓' : i === 0 ? '✦' : ['', 'I', 'II', 'III', '★'][i]}</span><span class="lbl">${label}</span></li>`)}</ol>`;
 }
 
-// ---------------------------------------------------------------- manor room labels
-// Short names for the manor's rooms (lore.yaml has the long ones).
+// ---------------------------------------------------------------- castle room labels
+// Short names for the castle's rooms (lore.yaml has the long ones).
 export const ROOM_LABELS = {
   study: 'Study',
   'east-corridor': 'East Corridor',
@@ -124,7 +124,7 @@ export function venueSpot(venue, gameId) {
   return a ? { kind: 'area', area: a.id, box: bbox(a.shape) } : null;
 }
 
-// Where n people stand in a manor room on the case map, in plan coordinates:
+// Where n people stand in a castle room on the case map, in plan coordinates:
 // a grid inside the room's stage box (or the room that plays it).
 export function stageSlots(venue, roomId, n, size = 24) {
   let box = venue.stage?.[roomId];
@@ -138,7 +138,7 @@ export function stageSlots(venue, roomId, n, size = 24) {
   return Array.from({ length: n }, (_, i) => [x + size / 2 + (i % cols) * size, y + size / 2 + Math.floor(i / cols) * size]);
 }
 
-// "the Living Room, by the front door": where a manor room is tonight.
+// "the Living Room, by the front door": where a castle room is tonight.
 export function venueWhere(venue, gameId) {
   const sp = (venue.spots || []).find((x) => x.game === gameId);
   const a = (venue.areas || []).find((x) => x.id === (sp ? sp.area : (venue.areas || []).find((y) => y.game === gameId)?.id));
@@ -221,7 +221,7 @@ export function venueAreaName(venue, gameId) {
 }
 
 // Evidence pins for the host setup map: beside the spot's marker, or along
-// the bottom of the room that plays the manor room. Positions are worked out
+// the bottom of the room that plays the castle room. Positions are worked out
 // per orientation in venueSvg.
 export function venuePins(venue, items) {
   const counts = new Map();
@@ -360,7 +360,7 @@ function venueSvg(venue, { host, kase, rooms, pins, linkRooms, tall, secret }) {
   if (kase) parts.push('<g class="m-dots"></g>');
   const body = (parts.join('') + text.join('')).replace(/url\(#v-(hatch|rain)\)/g, (_, n) => `url(#v-${n}${tall ? '-t' : ''})`);
   const data = kase ? ` data-case="1" data-tall="${tall ? 1 : 0}" data-vx="${vx}" data-vy="${vy}" data-vh="${vh}"` : '';
-  return `<svg class="venue-map${tall ? ' venue-tall' : ' venue-wide'}" viewBox="0 0 ${W} ${H}"${data} role="img" aria-label="Plan of the flat, with the manor room each room plays tonight">${defs}${body}</svg>`;
+  return `<svg class="venue-map${tall ? ' venue-tall' : ' venue-wide'}" viewBox="0 0 ${W} ${H}"${data} role="img" aria-label="Plan of the flat, with the castle room each room plays tonight">${defs}${body}</svg>`;
 }
 
 // mode: 'guest' (rooms only), 'host' (Setup: + hiding spots and the hidden
@@ -370,7 +370,7 @@ export function venueMap(venue, { mode = 'guest', rooms = {}, pins = [], linkRoo
   const host = mode === 'host' || kase;
   const opts = { host, kase, rooms, pins: host ? pins : [], linkRooms, secret: host ? secret : null };
   const style = `<style>.v-game{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#efe2c8;paint-order:stroke;stroke:#120d14;stroke-width:4px;stroke-linejoin:round}.v-real,.v-spotname,.v-story{paint-order:stroke;stroke:#120d14;stroke-width:3px;stroke-linejoin:round}.v-real{font-family:system-ui,sans-serif;fill:#a8988a}.v-shut{font-family:Georgia,serif;font-style:italic;fill:#6f6176}.v-shutnote{font-family:system-ui,sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;fill:#6f6176}.v-plain{font-family:system-ui,sans-serif;fill:#a8988a}.v-spotname{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#e3c788}.v-entry{font-family:system-ui,sans-serif;font-weight:600;fill:#e3c788}.v-game-area:hover text{fill:#fff}${host ? ".v-pinnum{font:700 12px system-ui,sans-serif;fill:#fff}.v-secretlabel{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#ff9fac}.v-story{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;fill:#b9a7c4}" : ''}</style>`;
-  const legend = kase ? '' : `<div class="legend"><span class="lg"><i style="background:#211825;border:1px solid #7a6683"></i>Game room: search here</span><span class="lg"><i style="background:repeating-linear-gradient(45deg,#151018 0 3px,#2a2030 3px 6px);border:1px solid #7a6683"></i>Shut tonight: keep out</span><span class="lg"><i style="background:#c9a45c;transform:rotate(45deg);width:10px;height:10px;border-radius:1px"></i>A manor room in one corner</span></div>`;
+  const legend = kase ? '' : `<div class="legend"><span class="lg"><i style="background:#211825;border:1px solid #7a6683"></i>Game room: search here</span><span class="lg"><i style="background:repeating-linear-gradient(45deg,#151018 0 3px,#2a2030 3px 6px);border:1px solid #7a6683"></i>Shut tonight: keep out</span><span class="lg"><i style="background:#c9a45c;transform:rotate(45deg);width:10px;height:10px;border-radius:1px"></i>A castle room in one corner</span></div>`;
   return raw(`<div class="map-wrap venue-wrap">${style}${venueSvg(venue, { ...opts, tall: false })}${venueSvg(venue, { ...opts, tall: true })}</div>${legend}`);
 }
 
@@ -509,7 +509,7 @@ export function webGraph(content, ids) {
     const ang = -Math.PI / 2 + (i * 2 * Math.PI) / ids.length;
     pos[id] = { x: c0 + R * Math.cos(ang), y: c0 + R * Math.sin(ang), ang };
   });
-  pos.arthur = { x: c0, y: c0, ang: 0 };
+  pos.douglas = { x: c0, y: c0, ang: 0 };
   const seen = new Map();
   for (const id of ids) {
     for (const r of content.characters[id].relationships || []) {
@@ -525,8 +525,8 @@ export function webGraph(content, ids) {
     const my = (A.y + B.y) / 2;
     const qx = mx + (c0 - mx) * 0.55;
     const qy = my + (c0 - my) * 0.55;
-    const d = e.b === 'arthur' || e.a === 'arthur' ? `M${A.x},${A.y} L${B.x},${B.y}` : `M${A.x},${A.y} Q${qx},${qy} ${B.x},${B.y}`;
-    return `<path class="edge k-${e.kind}${e.b === 'arthur' || e.a === 'arthur' ? ' to-arthur' : ''}" data-a="${e.a}" data-b="${e.b}" d="${d}" stroke="${KIND_COLORS[e.kind]}"${e.cond ? ' stroke-dasharray="5 4"' : ''}/>`;
+    const d = e.b === 'douglas' || e.a === 'douglas' ? `M${A.x},${A.y} L${B.x},${B.y}` : `M${A.x},${A.y} Q${qx},${qy} ${B.x},${B.y}`;
+    return `<path class="edge k-${e.kind}${e.b === 'douglas' || e.a === 'douglas' ? ' to-douglas' : ''}" data-a="${e.a}" data-b="${e.b}" d="${d}" stroke="${KIND_COLORS[e.kind]}"${e.cond ? ' stroke-dasharray="5 4"' : ''}/>`;
   });
   const nodes = ids.map((id) => {
     const p = pos[id];
@@ -536,8 +536,8 @@ export function webGraph(content, ids) {
     const anchor = Math.abs(Math.cos(p.ang)) < 0.2 ? 'middle' : Math.cos(p.ang) > 0 ? 'start' : 'end';
     return `<g class="node t-${c.tier}" data-id="${id}" tabindex="0" role="button" aria-label="${esc(c.name)}"><g transform="translate(${p.x - 18},${p.y - 18})">${crestSvg(id, c.name, 36)}</g><text x="${lx}" y="${ly + 5}" text-anchor="${anchor}" class="n-label">${esc(labelOf(content, id))}</text></g>`;
   });
-  const arthur = `<g class="node" data-id="arthur"><g transform="translate(${c0 - 26},${c0 - 26})">${crestSvg('arthur', 'Arthur Blackwood', 52)}</g><text x="${c0}" y="${c0 + 44}" text-anchor="middle" class="n-label n-arthur">Arthur</text></g>`;
-  return raw(`<div class="chart-scroll"><svg id="webgraph" class="web-graph" viewBox="0 0 ${S} ${S}" style="min-width:640px" role="img" aria-label="Who is connected to whom"><style>.edge{fill:none;stroke-width:2;stroke-opacity:.45}.edge.to-arthur{stroke-opacity:.12}.n-label{font:600 14px 'Cormorant Garamond',Georgia,serif;fill:#e9dcc6;cursor:pointer}.n-arthur{fill:#e3c788}.t-flex .n-label{fill:#9fb9cf}.node{cursor:pointer}#webgraph.focus .edge{stroke-opacity:.05}#webgraph.focus .edge.on{stroke-opacity:.95;stroke-width:3.5}#webgraph.focus .node{opacity:.35}#webgraph.focus .node.on{opacity:1}</style>${edges.join('')}${arthur}${nodes.join('')}</svg></div><div class="legend">${legendHtml()}<span class="lg"><i style="background:repeating-linear-gradient(90deg,#9a8ca5 0 5px,transparent 5px 9px)"></i>Only if the flex character is cast</span></div>`);
+  const douglas = `<g class="node" data-id="douglas"><g transform="translate(${c0 - 26},${c0 - 26})">${crestSvg('douglas', 'Douglas Cameron', 52)}</g><text x="${c0}" y="${c0 + 44}" text-anchor="middle" class="n-label n-douglas">Douglas</text></g>`;
+  return raw(`<div class="chart-scroll"><svg id="webgraph" class="web-graph" viewBox="0 0 ${S} ${S}" style="min-width:640px" role="img" aria-label="Who is connected to whom"><style>.edge{fill:none;stroke-width:2;stroke-opacity:.45}.edge.to-douglas{stroke-opacity:.12}.n-label{font:600 14px 'Cormorant Garamond',Georgia,serif;fill:#e9dcc6;cursor:pointer}.n-douglas{fill:#e3c788}.t-flex .n-label{fill:#9fb9cf}.node{cursor:pointer}#webgraph.focus .edge{stroke-opacity:.05}#webgraph.focus .edge.on{stroke-opacity:.95;stroke-width:3.5}#webgraph.focus .node{opacity:.35}#webgraph.focus .node.on{opacity:1}</style>${edges.join('')}${douglas}${nodes.join('')}</svg></div><div class="legend">${legendHtml()}<span class="lg"><i style="background:repeating-linear-gradient(90deg,#9a8ca5 0 5px,transparent 5px 9px)"></i>Only if the flex character is cast</span></div>`);
 }
 
 // ---------------------------------------------------------------- family tree (public lore)
@@ -572,16 +572,16 @@ export function familyTree(tree) {
       const x2 = X(k) + boxW / 2;
       const y2 = Y(k);
       const ym = (y1 + y2) / 2;
-      out.push(`<path d="M${x1},${y1} V${ym} H${x2} V${y2}" fill="none" stroke="#8a7350" stroke-width="1.6"${k.ward ? ' stroke-dasharray="5 4"' : ''}/>`);
+      out.push(`<path d="M${x1},${y1} V${ym} H${x2} V${y2}" fill="none" stroke="#8a7350" stroke-width="1.6"${k.ward || k.half ? ' stroke-dasharray="5 4"' : ''}/>`);
     }
   }
   for (const f of Object.values(byId)) {
     const tip = [f.name, f.years, f.spouse ? `m. ${f.spouse}` : '', f.note].filter(Boolean).join('\n');
-    const isArthur = f.id === 'arthur';
-    out.push(`<g><title>${esc(tip)}</title><rect x="${X(f)}" y="${Y(f)}" width="${boxW}" height="${boxH}" rx="6" fill="${isArthur ? '#2a1519' : '#1f1722'}" stroke="${isArthur ? '#c0495a' : '#c9a45c'}" stroke-width="${isArthur ? 2 : 1.2}"/><text x="${X(f) + boxW / 2}" y="${Y(f) + 24}" text-anchor="middle" class="f-name">${esc(f.name)}</text><text x="${X(f) + boxW / 2}" y="${Y(f) + 44}" text-anchor="middle" class="f-yrs">${esc(f.ward ? 'ward' : f.years || '')}</text></g>`);
+    const isDouglas = f.id === 'douglas';
+    out.push(`<g><title>${esc(tip)}</title><rect x="${X(f)}" y="${Y(f)}" width="${boxW}" height="${boxH}" rx="6" fill="${isDouglas ? '#2a1519' : '#1f1722'}" stroke="${isDouglas ? '#c0495a' : '#c9a45c'}" stroke-width="${isDouglas ? 2 : 1.2}"/><text x="${X(f) + boxW / 2}" y="${Y(f) + 24}" text-anchor="middle" class="f-name">${esc(f.name)}</text><text x="${X(f) + boxW / 2}" y="${Y(f) + 44}" text-anchor="middle" class="f-yrs">${esc(f.ward ? 'ward' : f.half ? 'half-brother' : f.years || '')}</text></g>`);
   }
   const notes = tree.filter((f) => f.note || f.spouse).map((f) => `<li><b>${esc(f.name)}</b>${f.years ? ` <span class="muted">(${esc(f.years)})</span>` : ''}${f.spouse ? `, m. ${esc(f.spouse)}` : ''}. ${esc(f.note || '')}</li>`).join('');
-  return raw(`<div class="chart-scroll"><svg class="family-tree" viewBox="0 0 ${W} ${H}" style="min-width:${Math.min(W, 640)}px" role="img" aria-label="The Blackwood family tree"><style>.f-name{font:700 16px 'Cormorant Garamond',Georgia,serif;fill:#efe5d3}.f-yrs{font:12px system-ui,sans-serif;fill:#ad9f8b}</style>${out.join('')}</svg></div><ul class="family-notes">${notes}</ul>`);
+  return raw(`<div class="chart-scroll"><svg class="family-tree" viewBox="0 0 ${W} ${H}" style="min-width:${Math.min(W, 640)}px" role="img" aria-label="The Cameron family tree"><style>.f-name{font:700 16px 'Cormorant Garamond',Georgia,serif;fill:#efe5d3}.f-yrs{font:12px system-ui,sans-serif;fill:#ad9f8b}</style>${out.join('')}</svg></div><ul class="family-notes">${notes}</ul>`);
 }
 
 // ---------------------------------------------------------------- suspicion heat map (HOST)

@@ -2,40 +2,36 @@
 title: Formal opening
 round: 0
 kind: speech
-changes: Added the raven legend and the Midnight Supper rules (atmosphere only).
+changes: Douglas gives the welcome now, with the raven legend and the Supper rules. The old Roderick version is in git history.
 ---
-Gather everyone. Wait until reasonably quiet. Then:
+Gather everyone. Wait until reasonably quiet. You're Douglas. Take the cap off for this, then put it back on.
 
-"Ladies and gentlemen… Welcome to Blackwood Manor."
+"Ladies and gentlemen… Welcome to Cameron Castle."
 
-"My name is Reginald Blackwood."
-
-"Reggie, unless you're a creditor."
+"My name is Douglas Cameron. Most of you know that. Several of you are counting on it."
 
 *Pause.*
 
-"My uncle, Arthur Blackwood, has hosted the Midnight Supper for nearly thirty years."
+"I have hosted the Midnight Supper for nearly thirty years. My father before me, my mother before him, and Silas Cameron before all of us, in 1891, in this house."
 
-"Some of you are family." *Gesture toward Carlotta/Kevin.* "Some are friends." "Some are business associates."
+"Some of you are family." *Gesture toward Carlotta and Kevin.* "Some are friends." "Some are business associates."
 
 *Look around.*
 
-"And based on this guest list, several of you are people Arthur absolutely should not have invited into the same house."
+"And some of you are people I should never have invited into the same house. I invited you anyway. I wanted to see your faces."
 
 *Pause for laugh.*
 
-"Every person here received the same invitation." *Hold up card.* "'Come to Blackwood Manor. At midnight, everything changes.'"
+"Every one of you received the same card." *Hold it up.* "'Come to Cameron Castle. At midnight, everything changes.'"
 
-"Arthur has refused to tell me what that means."
-
-"He has, however, assured me that his announcement will be…" *Look at card.* "…'impossible to ignore.'"
+"You've all been wondering what that means. Good. Keep wondering."
 
 🆕 "My family collects people. Wards. Goddaughters. Protégés. The odd podcaster." *Look slowly around the room.* "Tonight, you're the collection. Do try to look valuable."
 
-🆕 "You'll find the rules of the Supper on your cards. No one leaves before midnight. One chair stays empty for the last Blackwood to die. And whatever is said at midnight cannot be unsaid."
+🆕 "The rules of the Supper are on your cards. No one leaves before midnight. One chair stays empty for the last Cameron to die." *Beat.* "It's been empty a long time. I'm sure it'll keep." "And whatever is said at midnight cannot be unsaid."
 
-🆕 "And please, nobody say the bird's name at the table. The raven on Arthur's desk is a hundred and thirty years old and, according to family legend, *extremely* sensitive."
+🆕 "And nobody says the bird's name at the table. The raven on my desk is a hundred and thirty years old and, I'm told, extremely sensitive. It keeps the family's secrets." *Beat.* "So do I. Until midnight."
 
-"So drink. Talk. Lie about your net worth. And enjoy yourselves."
+"So drink. Talk. Lie about your net worth. Sign the book."
 
-"At midnight, apparently, everything changes."
+"At midnight, everything changes."

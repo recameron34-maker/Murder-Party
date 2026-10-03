@@ -1,5 +1,5 @@
 id: morgan-email
-title: Arthur's email to Morgan
+title: Douglas's email to Morgan
 kind: prop
 source: part-two
 round: 2
@@ -8,7 +8,7 @@ carrier: morgan
 delivery: Morgan produces it herself from her Round Two envelope.
 hide: Morgan's Round Two envelope.
 print: |
-  From: Arthur Blackwood
+  From: Douglas Cameron
   To: Morgan Leibold
   Sent: Thursday
 
@@ -17,7 +17,7 @@ print: |
   I need you to review the Wellington, Monroe and Vale matters before
   midnight. There are too many loose ends.
 
-  — Arthur
+  — Douglas
 truth: Genuine. Wellington is Hannah's gift, Monroe is Molly's painting, Vale is Lindsey's banking. It gives Morgan a legitimate reason to be everywhere in the evidence.
 points_to: []
 critical: false

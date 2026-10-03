@@ -7,13 +7,13 @@ timing: mid
 carrier: found
 delivery: Let it breathe. Do NOT immediately clear Lindsey.
 hide: In the pocket of the prop overcoat on the coat rack by the front door (never a guest's coat). Slip it in mid Round Two.
-room: front-hall            # where it is found in the manor (for the host map)
+room: front-hall            # where it is found in the castle (for the host map)
 print: |
   L.V.
 
   We need to discuss the transfers before midnight.
   Come prepared to explain everything.
-truth: Arthur was asking Lindsey to walk him through the banking evidence she'd found. She was helping him, not accused.
+truth: Douglas was asking Lindsey to walk him through the banking evidence she'd found. She was helping him, not accused.
 points_to: [lindsey]
 critical: false
-refs: [lindsey, arthur]
+refs: [lindsey, douglas]

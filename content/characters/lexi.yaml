@@ -3,8 +3,8 @@ name: Alexandra "Lexi" St. Clair
 written_for: Lexi               # HOST
 tier: supporting                # HOST
 pronouns: she/her               # HOST
-role: Birthday guest, Arthur's goddaughter
-public_role: "Birthday girl; Arthur's goddaughter"   # what everyone at the party knows; shown on every guest's guest list
+role: Birthday guest, Douglas's goddaughter
+public_role: "Birthday girl; Douglas's goddaughter"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Born into the right family. Just not, you've always suspected, this one."
 
 costume: |
@@ -15,35 +15,43 @@ costume: |
 
 intro: |
   It's your birthday weekend, shared with Maya Rose, which you're being
-  extremely gracious about. Arthur is your godfather. Your late mother,
+  extremely gracious about. Douglas is your godfather. Your late mother,
   Vivienne St. Clair, was the great love of his life, before Clara and
   before everyone.
 
 backstory: |
-  Everyone has always whispered that you might be Arthur's daughter. You've
+  Everyone has always whispered that you might be Douglas's daughter. You've
   heard it at boarding school, at weddings, at your mother's funeral. Last
-  year, privately, you took a DNA test with a hair from Arthur's brush. **You
+  year, privately, you took a DNA test with a hair from Douglas's brush. **You
   are not his daughter.** You cried for a week. You wanted so badly to be a
-  Blackwood.
+  Cameron.
 
-  Arthur promised you a birthday surprise. On Wednesday Morgan's office
+  Douglas promised you a birthday surprise. On Wednesday Morgan's office
   couriered you papers to "keep safe until midnight": a deed establishing
   **the Vivienne Fund**, a trust of half a million dollars in your name, to
-  be signed at the announcement. With Arthur dead before midnight, it's
+  be signed at the announcement. With Douglas dead before midnight, it's
   never been signed.
 
   Also, Jimmy Friedman has been sending you flowers. Lovely, persistent
   flowers.
 
+  Your mother, Vivienne, was the great love of Douglas's life, or so people
+  say when they think you can't hear. She was a singer with a voice like
+  smoke and no money at all, and the Camerons forgave her for neither. You
+  grew up in the castle's orbit: christened in its chapel, photographed on
+  its terrace, invited to every Supper and never once seated near the head
+  of the table. You learned to be charming before you learned to read. It's
+  the only inheritance anyone has ever been able to prove.
+
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your godfather. He looked at you as if he were seeing someone else. Now you know who.
   - with: maya
     text: Your birthday twin. You're fond of her. You'd be fonder if she stopped looking at your diamonds.
   - with: jimmy-friedman
     text: Sends you flowers every Friday. You suspect he likes your connections more than you. You haven't decided whether you mind.
   - with: alma
-    text: The archivist hinted she's read your mother's letters to Arthur. You want them. Badly.
+    text: The archivist hinted she's read your mother's letters to Douglas. You want them. Badly.
   - with: courtney
     if: courtney
     text: '"Lady" Courtney claims you were at school together. You were not. You''d remember.'
@@ -66,30 +74,30 @@ evening:
     text: You notice Maya come back to the cake from somewhere, looking white as a sheet.
 
 knows:
-  - Arthur had arranged a $500,000 trust for you, to be signed at midnight. It now never will be.
-  - Everyone thinks you might be Arthur's secret daughter. You're not. You have proof.
+  - Douglas had arranged a $500,000 trust for you, to be signed at midnight. It now never will be.
+  - Everyone thinks you might be Douglas's secret daughter. You're not. You have proof.
   - Maya came back to the cake at about 9:38 looking shaken.
   - You were in the drawing room from 9:00, then at your birthday cake in the Dining Room from 9:25 to the blackout.
 
 secret: |
-  You **know you are not Arthur's daughter**, from a DNA test you took
-  secretly. And Arthur's death *cost* you $500,000: the Vivienne Fund was
+  You **know you are not Douglas's daughter**, from a DNA test you took
+  secretly. And Douglas's death *cost* you $500,000: the Vivienne Fund was
   never signed.
 
 blackmail:
-  - Morgan's office sent you trust papers for $500,000 from Arthur.
-  - You secretly took a DNA test. You are not Arthur's daughter.
+  - Morgan's office sent you trust papers for $500,000 from Douglas.
+  - You secretly took a DNA test. You are not Douglas's daughter.
   - Jimmy Friedman has been courting you.
 
 instructions:
   - Your surprise inheritance papers are a **red herring** about you. Reveal them in Round Two and enjoy the scandal.
-  - Let people believe you might be Arthur's daughter for as long as you like. Only admit the DNA test if paid.
+  - Let people believe you might be Douglas's daughter for as long as you like. Only admit the DNA test if paid.
   - You may refer to anyone below the rank of baronet as "sweet."
   - Jimmy Friedman orders two bouquets every Friday. If you find out who the second is for, decide out loud whether that's adorable or a red flag.
 
 mission: |
-  Find out **what Arthur intended to announce before midnight.** Piece it
-  together and tell Reggie.
+  Find out **what Douglas intended to announce before midnight.** Piece it
+  together and tell Roderick.
 
 rounds:
   1:
@@ -100,20 +108,20 @@ rounds:
       can be helpful: Maya came back around 9:38 looking like she'd seen a
       ghost.
 
-      Start working on your mission. Somebody here knows what Arthur meant
+      Start working on your mission. Somebody here knows what Douglas meant
       by "everything changes."
     reveal:
       - Maya returned to the cake around 9:38 looking shaken.
   2:
     text: |
-      Produce your "surprise": **papers from Arthur establishing the Vivienne
+      Produce your "surprise": **papers from Douglas establishing the Vivienne
       Fund, $500,000 in trust for you, to be signed at midnight.**
 
       The room will gasp. Is Lexi his secret daughter? Did she know? Let them
-      run with it. Then point out sweetly that Arthur's death *before*
+      run with it. Then point out sweetly that Douglas's death *before*
       midnight means you get nothing.
     reveal:
-      - Reveal Arthur's $500,000 Vivienne Fund papers, unsigned because he died before midnight.
+      - Reveal Douglas's $500,000 Vivienne Fund papers, unsigned because he died before midnight.
   3:
     text: |
       If the "secret daughter" rumor is still alive, kill it, if you feel
@@ -124,14 +132,14 @@ rounds:
       the DNA test settles it. Say so, loudly.
       [[/if]]
 
-      Share whatever you've learned about Arthur's midnight announcement.
+      Share whatever you've learned about Douglas's midnight announcement.
       You've earned it.
     reveal:
-      - Share what you've learned about Arthur's planned announcement.
+      - Share what you've learned about Douglas's planned announcement.
 
 texts:
-  - id: lexi-arthur-history
-    from: Uncle Arthur
+  - id: lexi-douglas-history
+    from: Uncle Douglas
     trigger: { history: true }
     stamp: "This morning"
     body: "Happy birthday, darling girl. Your mother would have hated this party and loved you in it. Midnight, something for you."

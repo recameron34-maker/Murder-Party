@@ -161,6 +161,71 @@ body.tabbed section.panel.active{display:block;animation:fade .25s ease}
 .flow{display:flex;list-style:none;padding:0;gap:6px;flex-wrap:wrap;margin:0 0 8px}
 .flow li{flex:1;min-width:120px;background:rgba(201,164,92,.08);border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center;font-size:.95rem}
 .flow li b{display:block;color:var(--gold2)}
+
+/* ---- the dossier: invitation, sketch, practical page (Cameron Castle) */
+header.cover{padding-top:22px}
+.invite{position:relative;max-width:520px;margin:16px auto 22px;padding:26px 22px 20px;text-align:center;color:#2b1d14;background:radial-gradient(ellipse at 50% 30%,#f7eedb 0%,#efe2c4 70%,#e3d1a9 100%);border-radius:6px;box-shadow:0 18px 40px rgba(0,0,0,.55),inset 0 0 0 1px rgba(122,90,42,.35)}
+.invite::before{content:"";position:absolute;inset:8px;border:1.5px double rgba(122,90,42,.55);border-radius:3px;pointer-events:none}
+.invite::after{content:"";position:absolute;inset:13px;border:1px solid rgba(122,90,42,.25);border-radius:2px;pointer-events:none}
+.inv-raven{color:#5a3f22;margin:-4px auto 2px;width:64px}
+.inv-raven .prop-art{width:64px;height:auto}
+.inv-from{font:italic 1.05rem/1.45 'EB Garamond',Georgia,serif;margin:.2em 0}
+.inv-event{font:700 2rem/1.1 'Cormorant Garamond',Georgia,serif;letter-spacing:.06em;margin:.25em 0;color:#5a1622}
+.inv-when{font:600 .82rem 'Cormorant Garamond',Georgia,serif;letter-spacing:.22em;text-transform:uppercase;color:#5a3f22;margin:.6em 0 .2em}
+.inv-motto{font:italic .95rem 'EB Garamond',Georgia,serif;color:#7a5a2a;margin:.6em 0 0}
+.dossier{display:flex;gap:22px;align-items:center;justify-content:center;flex-wrap:wrap;margin:10px 0 4px}
+.dossier .who{flex:1;min-width:240px;max-width:380px;text-align:left}
+.dossier .as{font:italic 1rem 'EB Garamond',Georgia,serif;color:var(--muted);margin:0}
+.dossier h1{font-size:2.5rem;margin:.1em 0 .1em}
+.dossier .role{color:var(--gold);font-variant:small-caps;letter-spacing:.08em}
+.dossier .tag{font-style:italic;color:var(--muted);margin:.5em 0 0}
+.sketch-frame{position:relative;margin:8px 0;transform:rotate(-2.4deg);border-radius:3px;box-shadow:0 16px 34px rgba(0,0,0,.6);line-height:0;animation:none}
+.sketch-frame::before{content:"";position:absolute;top:-11px;left:50%;width:78px;height:22px;transform:translateX(-50%) rotate(3deg);background:rgba(236,222,190,.6);box-shadow:0 1px 3px rgba(0,0,0,.25);z-index:1}
+.sketch{display:block;max-width:100%;height:auto;border-radius:3px}
+@media (max-width:560px){.dossier{flex-direction:column}.dossier .who{text-align:center}.dossier h1{font-size:2.1rem}}
+.card.lede>p:first-child::first-letter,.card.lede>*:first-child>p:first-child::first-letter{float:left;font:700 3.2em/.82 'Cormorant Garamond',Georgia,serif;color:var(--gold2);padding:.06em .1em 0 0}
+.card.costume{padding-left:72px;min-height:64px}
+.card.costume .hanger{position:absolute;left:16px;top:16px;color:var(--gold);opacity:.8}
+.card.story p{text-indent:1.2em}.card.story p:first-child{text-indent:0}
+.rel li{display:flex;gap:12px;align-items:flex-start}
+.rel-face{flex:none;line-height:0;transform:rotate(-2deg);box-shadow:0 4px 10px rgba(0,0,0,.45);border-radius:2px}
+.rel-face .crest{width:42px;height:42px}
+.known{list-style:none;padding:0}
+.known li{position:relative;padding:6px 0 6px 26px;border-bottom:1px solid var(--line)}
+.known li:last-child{border-bottom:0}
+.known li::before{content:"✦";position:absolute;left:4px;top:7px;color:var(--gold);font-size:.85rem}
+.seal.small{display:inline-grid;width:26px;height:26px;margin:0 6px 0 0;font-size:.8rem;vertical-align:middle}
+details.secret[open] summary{margin-bottom:8px}
+.night{background:linear-gradient(180deg,rgba(201,164,92,.1),rgba(201,164,92,.03)),linear-gradient(180deg,var(--panel2),var(--panel))}
+.night-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:4px 0 12px}
+.night-facts div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:rgba(0,0,0,.18)}
+.night-facts .k{display:block;font:600 .7rem system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.night-facts .v{display:block;font:600 1.08rem 'Cormorant Garamond',Georgia,serif}
+.night-notes{padding-left:1.1em}
+.night-notes li{margin:.45em 0}
+.env-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.env-row .envelope.sealed{margin:0;background:linear-gradient(180deg,#2a2018,#1d1612);border-color:#4a3a28;overflow:hidden;padding-top:44px}
+.env-flap{position:absolute;top:0;left:0;right:0;height:56px;background:linear-gradient(180deg,#3a2c1f,#2a2018);clip-path:polygon(0 0,100% 0,50% 100%);opacity:.9}
+.env-row .seal{position:relative;margin-top:-6px}
+.guest-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.guest-list li{flex-direction:column;align-items:center;text-align:center;background:transparent;border:0;padding:0}
+.guest-list li.me .g-sketch{box-shadow:0 0 0 3px var(--gold),0 10px 24px rgba(0,0,0,.55)}
+.g-sketch{line-height:0;border-radius:3px;box-shadow:0 10px 24px rgba(0,0,0,.55);transform:rotate(-1.6deg);transition:transform .2s}
+.guest-list li:nth-child(3n+2) .g-sketch{transform:rotate(1.4deg)}
+.guest-list li:nth-child(3n) .g-sketch{transform:rotate(-.6deg)}
+.guest-list li:hover .g-sketch{transform:rotate(0) scale(1.03)}
+.g-sketch .sketch{width:132px;height:auto}
+.g-who{display:block;margin-top:8px}
+.g-who b{font:600 1.05rem 'Cormorant Garamond',Georgia,serif;color:var(--ink)}
+.legend-card{overflow:hidden}
+.legend-raven{float:right;color:var(--gold);margin:0 0 6px 12px;opacity:.9}
+.legend-raven .prop-art{width:110px;height:auto}
+.rules-card{border-color:rgba(201,164,92,.5);background:radial-gradient(ellipse at 50% 0%,rgba(201,164,92,.12),transparent 70%),linear-gradient(180deg,var(--panel2),var(--panel))}
+.rules-card::before{border-color:rgba(201,164,92,.28)}
+.rules{list-style:none;padding:0;margin:4px 0}
+.rules li{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px dashed rgba(201,164,92,.2)}
+.rules li:last-child{border-bottom:0}
+.rules .rn{font:700 1.05rem 'Cormorant Garamond',Georgia,serif;color:var(--gold);text-align:right}
 `;
 
 export const HOST_CSS = `${BASE}
@@ -290,7 +355,7 @@ h2[id],.card[id],section[id]{scroll-margin-top:96px}
 .web-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
 .web-panel{position:sticky;top:64px;max-height:calc(100vh - 80px);overflow:auto}
 @media (max-width:900px){.web-layout{grid-template-columns:1fr}.web-panel{position:static;max-height:none}}
-#webgraph.hide-romance .k-romance,#webgraph.hide-money .k-money,#webgraph.hide-family .k-family,#webgraph.hide-rivalry .k-rivalry,#webgraph.hide-ties .k-ties,#webgraph.hide-arthur .to-arthur{display:none}
+#webgraph.hide-romance .k-romance,#webgraph.hide-money .k-money,#webgraph.hide-family .k-family,#webgraph.hide-rivalry .k-rivalry,#webgraph.hide-ties .k-ties,#webgraph.hide-douglas .to-douglas{display:none}
 table{width:100%;border-collapse:collapse;font-size:.92rem}
 th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
 th{color:var(--gold);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}

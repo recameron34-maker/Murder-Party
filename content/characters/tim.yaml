@@ -1,5 +1,5 @@
 id: tim
-name: Timothy "Tim"
+name: Timothy "Tim" Tilbury
 written_for: Tim                # HOST
 tier: core                      # HOST
 pronouns: he/him                # HOST
@@ -19,16 +19,24 @@ intro: |
   bothered to visit.
 
 backstory: |
-  Arthur hired you for the Supper photograph and gave you the run of the
+  Douglas hired you for the Supper photograph and gave you the run of the
   house. The house is a gift: candlelight, rot, beautiful people behaving
   badly.
 
   Your secret income comes from **The Keyhole**, the anonymous society
   column. For two years you've sold it candid photos through an anonymous
   email address. You have no idea who's behind it. Tonight's haul is
-  already spectacular: **Clara leaving Arthur's study at 8:44 with her
+  already spectacular: **Clara leaving Douglas's study at 8:44 with her
   lipstick freshly redone**, and Maddie wearing a necklace that very much
   belongs to the family trust.
+
+  You shot weddings for ten years before you learned that the best pictures
+  are the ones nobody agreed to. The Camerons hired you because you made
+  last year's Supper look like a Renaissance painting with better lighting.
+  You've had the run of the castle all week: the tower roof at dawn, the
+  black lake at dusk, the Gallery by candlelight with every portrait staring
+  back. You'd sell your soul for one perfect frame of this house. You've
+  been offered the deal a few times. So far the price hasn't been right.
 
 relationships:
   - with: joji
@@ -76,7 +84,7 @@ secret: |
 
 blackmail:
   - You sell photographs to The Keyhole.
-  - You photographed Clara leaving Arthur's study at 8:44.
+  - You photographed Clara leaving Douglas's study at 8:44.
   - Louis was in the library tapping the walls at 9:00.
 
 instructions:
@@ -87,12 +95,12 @@ instructions:
 
 mission: |
   Find **someone who knows something about the strange library door**.
-  Report who and what to Reggie.
+  Report who and what to Roderick.
 
 rounds:
   1:
     text: |
-      Reggie may ask whether you noticed anything unusual. You did: at about
+      Roderick may ask whether you noticed anything unusual. You did: at about
       9:00, in the library, **one bookcase didn't sit flush against the wall
       and there was a cold draft behind it.** Like a door, almost.
 
@@ -135,5 +143,5 @@ texts:
 
 host_notes: |
   Core. Round One: strange library door. Round Two: the Tim to Joji cue.
-  Round Three: blackout origin (supports Reggie's reveal). Rescue: "Timothy,
+  Round Three: blackout origin (supports Roderick's reveal). Rescue: "Timothy,
   you've been wandering around this house all evening. Anything unusual?"

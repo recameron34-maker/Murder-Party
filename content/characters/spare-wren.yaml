@@ -16,19 +16,27 @@ costume: |
 intro: |
   You hunt heirs. When a fortune is in doubt you find the cousin nobody knew
   about, prove the connection and take thirty percent. Tonight you've come
-  to Blackwood Manor with a bombshell: **you've found a secret Blackwood
+  to Cameron Castle with a bombshell: **you've found a secret Cameron
   heir, and they're in this room.**
 
 backstory: |
   Your evidence: a 1990s christening record from a village church with the
-  godfather listed as "A. Blackwood," a photo of Arthur with Vivienne St.
+  godfather listed as "D. Cameron," a photo of Douglas with Vivienne St.
   Clair, and a lot of intuition. Your conclusion: **Lexi St. Clair is
-  Arthur's secret daughter**, and with the will destroyed she could claim the
+  Douglas's secret daughter**, and with the will destroyed she could claim the
   lot. You've drafted the contract for your thirty percent.
 
-  Your secret: the christening record proves Arthur was her **godfather**.
+  Your secret: the christening record proves Douglas was her **godfather**.
   That's all. You've been reading it very creatively. And you need this win.
   Your last three "heirs" were frauds.
+
+  You hunt heirs for a living: the lost grandson, the forgotten cousin, the
+  child with a claim. It's a trade built on other people's longing, and
+  you've never found an heir for yourself; you were adopted, and the records
+  are sealed. Houses like this make you hungry in a way you'd rather not
+  examine. Walking the Gallery tonight you caught yourself looking for your
+  own face among the portraits, which is ridiculous, and which you will be
+  doing again before midnight.
 
 relationships:
   - with: lexi
@@ -44,23 +52,23 @@ evening:
   - at: "8:00 PM"
     until: "9:15 PM"
     where: drawing-room
-    text: Studying Lexi's profile against Arthur's portrait. Muttering "the jawline."
+    text: Studying Lexi's profile against Douglas's portrait. Muttering "the jawline."
   - at: "9:15 PM"
     until: "9:45 PM"
     where: dining-room
     text: Trying to persuade Alma to fetch the family Bible, then copying names off the place cards with Tim watching. When Alma leaves at 9:39 you stay, reading place cards until the lights go out.
 
 knows:
-  - Arthur was Lexi's godfather (christening record).
+  - Douglas was Lexi's godfather (christening record).
   - You've been presenting it as proof he was her father. It isn't.
   - You were in the dining room from 9:15 until the blackout with Tim (and Alma until 9:39).
 
 secret: |
-  Your "proof" that **Lexi is Arthur's secret heir** only proves he was her
+  Your "proof" that **Lexi is Douglas's secret heir** only proves he was her
   godfather. You're bluffing for a thirty-percent fee.
 
 blackmail:
-  - Your christening record only proves Arthur was Lexi's godfather.
+  - Your christening record only proves Douglas was Lexi's godfather.
   - You take thirty percent of whatever your "heirs" inherit.
   - Your last three heirs were frauds.
 
@@ -68,22 +76,22 @@ instructions:
   - High effort. Make the accusation loudly, with documents, in Round One.
   - Pursue Lexi all night with your contract.
   - Admit the record only says "godfather" if paid, or if Lexi proves otherwise.
-  - You may "recognize the Blackwood jawline" on any guest you like.
+  - You may "recognize the Cameron jawline" on any guest you like.
 
 mission: |
   Get **any guest to sign your "heir-finding contract"** (a napkin will do).
-  Show Reggie.
+  Show Roderick.
 
 rounds:
   1:
     text: |
-      Make your announcement: **there is a secret Blackwood heir in this
+      Make your announcement: **there is a secret Cameron heir in this
       room.** Then turn, slowly, to Lexi.
     reveal:
-      - Announce that Lexi St. Clair is Arthur's secret heir.
+      - Announce that Lexi St. Clair is Douglas's secret heir.
   2:
     text: |
-      Produce your "evidence": a christening record with "A. Blackwood," the
+      Produce your "evidence": a christening record with "D. Cameron," the
       photo with Vivienne, the jawline. Push Lexi to sign. Push Carlotta's
       buttons.
     reveal:
@@ -94,14 +102,14 @@ rounds:
       properly), fold: **"godfather" is what it says.** Gracefully, or
       not.
     reveal:
-      - Admit your record only proves Arthur was Lexi's godfather.
+      - Admit your record only proves Douglas was Lexi's godfather.
 
 texts:
   - id: wren-office-history
     from: Wren & Associates
     trigger: { history: true }
     stamp: "3:00 PM"
-    body: "Reminder: the landlord wants October's rent. Please tell me this Blackwood thing is real."
+    body: "Reminder: the landlord wants October's rent. Please tell me this Cameron thing is real."
   - id: wren-unknown-r2
     from: Unknown number
     trigger: { round: 2, after: 9 }

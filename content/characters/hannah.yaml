@@ -15,11 +15,11 @@ costume: |
 intro: |
   You run the **Wellington Foundation**, your grandmother's charity, which
   funds children's hospitals and the arts and, recently, your entire life.
-  For a year you've been courting Arthur Blackwood's money. Tonight, at
+  For a year you've been courting Douglas Cameron's money. Tonight, at
   midnight, he was going to give you nearly all of it.
 
 backstory: |
-  Arthur told you privately last month that he was preparing an **enormous
+  Douglas told you privately last month that he was preparing an **enormous
   charitable transfer** to the foundation, "most of what I own." His
   lawyers, Morgan's office, have had "the Wellington paperwork" for weeks.
   It was meant to be signed at the midnight announcement.
@@ -29,21 +29,29 @@ backstory: |
   technically "for visiting donors." If the gift doesn't land, you're fired,
   or worse.
 
-  Arthur's death before midnight means the gift is **unsigned**. Whatever
+  Douglas's death before midnight means the gift is **unsigned**. Whatever
   people think, you needed him alive.
 
-  And Kushington, the forensic accountant Arthur sent to audit your books,
+  And Kushington, the forensic accountant Douglas sent to audit your books,
   has been auditing more than your books.
 
+  The Wellington Foundation was your grandfather's guilt, carved in marble:
+  a hospital wing for every mine he closed. You inherited the guilt and the
+  board, and you've turned charity into the best party in the county. You
+  understand the Camerons perfectly because you're the same species: people
+  who give money away in public and keep the receipts. Douglas was the first
+  donor who ever made you nervous. He watched you work a room the way a cat
+  watches a fountain.
+
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your great white whale of a donor. You liked him, too, which is unprofessional.
   - with: kush
     text: The forensic accountant who audited the foundation. Then stayed late. Then stayed later.
   - with: morgan
-    text: Arthur's lawyer, sitting on "the Wellington paperwork." She keeps telling you it's "nearly there."
+    text: Douglas's lawyer, sitting on "the Wellington paperwork." She keeps telling you it's "nearly there."
   - with: martin
-    text: The art expert. You suspect he knows something about Arthur's collection that you'd very much like to know.
+    text: The art expert. You suspect he knows something about Douglas's collection that you'd very much like to know.
   - with: courtney
     if: courtney
     text: You hired her, a "professional guest" who poses as minor nobility, to make your galas look grander. You did not expect her to turn up here.
@@ -55,7 +63,7 @@ evening:
     text: Working the room. Three pledges, one marriage proposal (declined), one phone number (accepted).
   - at: "9:20 PM"
     where: front-hall
-    text: Passing through the Front Hall you hear Kevin shout at Arthur, "You're going to regret this!" The whole corridor heard.
+    text: Passing through the Front Hall you hear Kevin shout at Douglas, "You're going to regret this!" The whole corridor heard.
   - at: "9:21 PM"
     until: "9:24 PM"
     where: drawing-room
@@ -66,51 +74,51 @@ evening:
     text: The birthday cake comes out and you follow it with Noor and Joji. The three of you hold the dining-room fireplace until the lights go out. Kushington is across the cake from you and keeps losing his place mid-sentence.
 
 knows:
-  - Arthur was preparing an enormous charitable transfer to your foundation at midnight.
-  - The gift was never signed. Arthur's death cost you everything.
+  - Douglas was preparing an enormous charitable transfer to your foundation at midnight.
+  - The gift was never signed. Douglas's death cost you everything.
   - You heard Kevin shout "You're going to regret this" at 9:20.
   - Morgan's office handled "the Wellington paperwork."
 
 secret: |
   You've **already spent money from a gift that was never signed**, and
-  you're having a fling with the man Arthur sent to audit you.
+  you're having a fling with the man Douglas sent to audit you.
 
 blackmail:
-  - Arthur was giving most of his fortune to your foundation at midnight.
+  - Douglas was giving most of his fortune to your foundation at midnight.
   - You've already spent money the foundation doesn't have yet.
   - You're involved with Kushington.
 
 instructions:
-  - Reveal in Round One that Arthur was considering giving his fortune away, to you.
+  - Reveal in Round One that Douglas was considering giving his fortune away, to you.
   - You may solicit "donations" of Blackmail Cash for the foundation at any time.
   - Never admit the Paris flat unless paid.
   - Defend Kush's honor loudly. Too loudly.
 
 mission: |
-  Discover **who believes Arthur was changing his will.** Names, then report
-  to Reggie.
+  Discover **who believes Douglas was changing his will.** Names, then report
+  to Roderick.
 
 rounds:
   1:
     text: |
-      Carlotta will say Arthur told her he was "giving it all away." **Confirm
-      it**: Arthur was preparing an **enormous charitable transfer** to the
+      Carlotta will say Douglas told her he was "giving it all away." **Confirm
+      it**: Douglas was preparing an **enormous charitable transfer** to the
       Wellington Foundation, to be announced at midnight.
 
       You'll look like you had a motive. You didn't, and in Round Two you'll
       find out why that's obvious.
     reveal:
-      - Arthur was preparing an enormous charitable transfer to your foundation at midnight.
+      - Douglas was preparing an enormous charitable transfer to your foundation at midnight.
   2:
     text: |
       Point out what nobody has realized: **the gift was never signed.**
-      Arthur dying *before* midnight means the foundation gets nothing. You
+      Douglas dying *before* midnight means the foundation gets nothing. You
       needed him alive more than anyone.
 
       If Morgan's email mentions "the Wellington matter," that's your
       paperwork. Ask her why it took so long.
     reveal:
-      - The gift was unsigned; Arthur's death before midnight cost the foundation everything.
+      - The gift was unsigned; Douglas's death before midnight cost the foundation everything.
   3:
     text: |
       If anyone's still on Kevin, confirm you heard him shout at 9:20, and
@@ -128,7 +136,7 @@ texts:
     from: Board Chair
     trigger: { history: true }
     stamp: "5:01 PM"
-    body: "Hannah, the board expects the Blackwood gift CONFIRMED by Monday. No more 'nearly there.'"
+    body: "Hannah, the board expects the Cameron gift CONFIRMED by Monday. No more 'nearly there.'"
   - id: hannah-kush-r1
     from: K.
     trigger: { round: 1, after: 9 }

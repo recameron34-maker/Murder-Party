@@ -7,7 +7,7 @@ const FAVICON = "data:image/svg+xml," + encodeURIComponent(
 
 export const RAVEN_SVG = '<svg class="raven" viewBox="0 0 64 64" width="44" height="44" aria-hidden="true"><path fill="#c9a45c" d="M8 44c7-15 20-24 36-24-3 3-5 6-5 10 5 0 9 2 12 6-7 0-12 2-16 7l-6 12-4-9c-6 0-12 0-17-2z"/><circle cx="44" cy="27" r="1.6" fill="#0d090f"/></svg>';
 
-export function page({ title = 'Blackwood Manor', css, body, bodyAttrs = '', script = '' }) {
+export function page({ title = 'Cameron Castle', css, body, bodyAttrs = '', script = '' }) {
   return (
     '<!doctype html>' +
     toString(html`<html lang="en"><head>

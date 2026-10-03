@@ -10,17 +10,17 @@ tagline: "You're here to admire the art. You're here to find out who faked it."
 
 costume: |
   Moneyed but forgettable: a well-cut dark suit or dress, an expensive
-  watch, a catalog of the Blackwood collection under one arm, and a small
+  watch, a catalog of the Cameron collection under one arm, and a small
   notebook you think nobody sees. You're "[Name] Hollis."
 
 intro: |
   You've introduced yourself as a private collector. You are in fact an
-  **investigator for Arthur's insurers**, here about the $750,000 Lady
+  **investigator for Douglas's insurers**, here about the $750,000 Lady
   Evangeline claim. You know far more about forgery than a collector should.
 
 backstory: |
   Your firm has been chasing the forger **Lucien Vasse** across three
-  countries. Arthur came to you a month ago. You've concluded Molly Monroe
+  countries. Douglas came to you a month ago. You've concluded Molly Monroe
   was probably a dupe, but "probably" doesn't close a claim.
 
   At **9:05** in the Front Hall you took a call from your office and said,
@@ -29,11 +29,18 @@ backstory: |
   police were arresting in Marseille. Someone overheard. It sounded very
   bad.
 
+  Insurance work suits you, because nobody ever wants to talk to you, so
+  nobody watches what they say. You've spent your career in great houses on
+  the morning after the worst night of their lives: the burglary, the fire,
+  the forged Old Master. You can tell real money from the borrowed kind by
+  the state of the curtains. The Camerons' curtains are magnificent, and
+  mended in eleven places. You find that very moving.
+
 relationships:
   - with: molly
     text: The dealer who sold the fake. You believe she was conned, but you haven't told her that yet.
   - with: martin
-    text: Arthur's art expert. You've been comparing notes all month.
+    text: Douglas's art expert. You've been comparing notes all month.
   - with: jimmy-friedman
     text: He's tried to sell you a "Monet" twice tonight.
 
@@ -53,12 +60,12 @@ evening:
 knows:
   - Molly was very likely deceived by the forger Lucien Vasse.
   - Vasse was being arrested in Marseille tonight.
-  - Your 9:05 phone call sounded like a threat against Arthur. It wasn't.
+  - Your 9:05 phone call sounded like a threat against Douglas. It wasn't.
 
 secret: |
   You're an **insurance investigator**, not a collector, and your overheard
   phone call ("He won't be a problem after tonight") was about arresting
-  the forger, not about Arthur.
+  the forger, not about Douglas.
 
 blackmail:
   - You're an insurance investigator, not a collector.
@@ -73,7 +80,7 @@ instructions:
 
 mission: |
   Get Molly to **admit, in front of a witness, that she didn't know the
-  painting was fake.** Report it to Reggie.
+  painting was fake.** Report it to Roderick.
 
 rounds:
   1:

@@ -6,7 +6,7 @@ effort: high                    # HOST
 pronouns: any                   # HOST
 role: Former child star of "The Raven's Heir"
 public_role: "Former child star of the TV series The Raven's Heir"   # what everyone at the party knows; shown on every guest's guest list
-tagline: "At eleven you played young Arthur Blackwood on television. You never quite stopped."
+tagline: "At eleven you played young Douglas Cameron on television. You never quite stopped."
 
 costume: |
   Faded star: velvet everything, a cravat, dramatic eyeliner, a signed
@@ -14,8 +14,8 @@ costume: |
   their close-up. You're "[Name] Ellery."
 
 intro: |
-  In 2004 you played young Arthur in the TV miniseries **The Raven's Heir**,
-  a lurid, much-loved adaptation of the Blackwood family legend. Arthur
+  In 2004 you played young Douglas in the TV miniseries **The Raven's Heir**,
+  a lurid, much-loved adaptation of the Cameron family legend. Douglas
   consulted on it, hated it, and kept a signed photo of you in his study
   anyway. You've been invited to every Midnight Supper since.
 
@@ -28,9 +28,16 @@ backstory: |
   library where a **bookcase swings open into a secret corridor**. Everyone
   thought it was invented for TV.
 
-  Your secret: you've been quietly negotiating to **play Arthur again** in a
+  Your secret: you've been quietly negotiating to **play Douglas again** in a
   reboot, and the producers asked you to "get close to the family" for
   material. You've been taking notes all night.
+
+  The Raven's Heir filmed its exteriors here, at the real castle, which is
+  why you still dream about the drive. At eleven you spent a summer in a
+  caravan on the lawn, eating sandwiches the castle sent out on silver
+  trays, and Douglas told you, very gravely, that you made a better Cameron
+  than most of the Camerons. You had the line framed. You're back now, older
+  and broke, and quite certain that this house owes you a second act.
 
 relationships:
   - with: albie
@@ -56,15 +63,15 @@ evening:
 
 knows:
   - The Raven's Heir had a library bookcase that opened into a secret corridor, supposedly based on the real plans.
-  - You're in talks to play Arthur in a reboot and have been taking notes on everyone.
+  - You're in talks to play Douglas in a reboot and have been taking notes on everyone.
   - You were in full view from 8:00 until the blackout: the drawing room, then the Dining Room when the cake came out.
 
 secret: |
   You're **gathering material on everyone here** for a TV reboot of the
-  Blackwood story.
+  Cameron story.
 
 blackmail:
-  - You're secretly negotiating to play Arthur in a reboot.
+  - You're secretly negotiating to play Douglas in a reboot.
   - You've been taking notes on the guests for the producers.
   - The production designer claimed the sets were based on the real plans.
 
@@ -76,16 +83,16 @@ instructions:
 
 mission: |
   Perform a **30-second dramatic monologue to at least five people at once.**
-  Reggie must witness it.
+  Roderick must witness it.
 
 rounds:
   1:
     text: |
-      Arthur is dead. Treat it as the finale of a long-running series. Weep
-      in character as young Arthur. Offer your "insider" knowledge of the
+      Douglas is dead. Treat it as the finale of a long-running series. Weep
+      in character as young Douglas. Offer your "insider" knowledge of the
       legend.
     reveal:
-      - Reveal you played young Arthur in The Raven's Heir.
+      - Reveal you played young Douglas in The Raven's Heir.
   2:
     text: |
       *After* the Professor has talked about the passage, gasp and say: **"In

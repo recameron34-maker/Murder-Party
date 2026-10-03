@@ -13,16 +13,16 @@ costume: |
   sketches. Optional: a measuring tape you produce at inappropriate moments.
 
 intro: |
-  You've spent eight months studying Blackwood Manor for a book, *The Walls of
-  Blackwood*. You know this house better than the family does, and frankly
+  You've spent eight months studying Cameron Castle for a book, *The Walls of
+  Cameron*. You know this house better than the family does, and frankly
   you like it better than the family too. You're married to Dr. Noor Beaumont,
   who tolerates this.
 
 backstory: |
-  Arthur funds your research. In return you're writing the definitive history
-  of the manor and preparing its application for landmark status. The
+  Douglas funds your research. In return you're writing the definitive history
+  of the castle and preparing its application for landmark status. The
   paperwork went off in August with your full survey, including copies of
-  Silas Blackwood's original 1891 plans. The originals came back to you with
+  Silas Cameron's original 1891 plans. The originals came back to you with
   somebody's office stamp on them. You were annoyed about the ink.
 
   Those plans show what the family has forgotten. Silas hated seeing his
@@ -34,17 +34,25 @@ backstory: |
   the east wing, labeled *Study*. It's on your desk at home. You meant to
   give it back. You won't.
 
+  You fell for the castle before you fell for anything else: a postcard of
+  its black towers on your grandmother's fridge, and a library book that
+  called it "the most haunted private house in Scotland." Now you are the
+  world's leading authority on it, which is a small world, and you are its
+  king. You sleep badly here. Every time you stay you wake at three and hear
+  the house settling in places that shouldn't have room to settle. Noor says
+  it's the pipes. Noor is a doctor, and you adore her, and she is wrong.
+
 relationships:
   - with: noor
     text: Your wife, the doctor, who is expecting your first child. She's the only person who can make you stop talking about cornices. You have already designed the baby a library.
-  - with: arthur
+  - with: douglas
     text: Your patron. He loved the house's stories almost as much as you do, and he guarded some of them.
   - with: tim
     text: The photographer. He keeps asking good questions about the library. You like him.
   - with: louis
     text: He has been pestering you for weeks about the "Raven Room" and wants to see your plans. You have refused, on principle and because he smells faintly of dust.
   - with: alma
-    text: The archivist. She leaves notes in library books for you about the house's history, and lately about the walls. Between you, you know this house better than the Blackwoods do.
+    text: The archivist. She leaves notes in library books for you about the house's history, and lately about the walls. Between you, you know this house better than the Camerons do.
 
 evening:
   - at: "8:00 PM"
@@ -54,7 +62,7 @@ evening:
   - at: "8:40 PM"
     until: "9:15 PM"
     where: drawing-room
-    text: Holding court on the manor's "architectural secrets." People pretended to listen.
+    text: Holding court on the castle's "architectural secrets." People pretended to listen.
   - at: "9:15 PM"
     until: "9:24 PM"
     where: drawing-room
@@ -65,36 +73,36 @@ evening:
     text: The birthday cake comes out and the three of you follow it, then stay together by the dining-room fireplace until the lights go out. You knock on the panelling beside it to demonstrate a load-bearing wall. Something knocks back. Noor says pipes. Silas never put pipes there.
 
 knows:
-  - Silas Blackwood built **servants' passages** inside the walls in 1891. Most were sealed in the 1950s.
+  - Silas Cameron built **servants' passages** inside the walls in 1891. Most were sealed in the 1950s.
   - The 1891 plans show a faint line between the study and the library that you've never been able to explain.
   - The family legend of a hidden "Raven Room" that appears on no plan.
   - Copies of your survey and the plans went out with the landmark paperwork in August and came back stamped.
 
 secret: |
   You suspect, though you've never proven it, that **a passage connects
-  Arthur's study to the library**. Arthur forbade you to investigate the
+  Douglas's study to the library**. Douglas forbade you to investigate the
   study wall. Also, you stole a servants' bell.
 
 blackmail:
   - You suspected a passage between the study and the library before tonight.
-  - Arthur forbade you to investigate the study wall.
+  - Douglas forbade you to investigate the study wall.
   - You stole a brass servants' bell from the east wing.
 
 instructions:
   - In Round One, establish that the house has hidden passages. Don't say where they lead yet.
   - When Tim asks you about the strange library door in Round Two, **perform**. This is the moment you were born for.
   - You may "examine" walls, bookcases and frames dramatically at any time.
-  - If someone asks who else has seen the plans: Arthur, and whoever handled the landmark paperwork. You never asked who; you only noticed the stamp.
+  - If someone asks who else has seen the plans: Douglas, and whoever handled the landmark paperwork. You never asked who; you only noticed the stamp.
 
 mission: |
   Find **someone willing to help you investigate the architecture**. Recruit
-  an assistant, give them a task, report the partnership to Reggie.
+  an assistant, give them a task, report the partnership to Roderick.
 
 rounds:
   1:
     text: |
-      When the talk turns to how a killer could get in or out, or when Reggie
-      asks whether the house has secrets, tell everyone: **Blackwood Manor
+      When the talk turns to how a killer could get in or out, or when Roderick
+      asks whether the house has secrets, tell everyone: **Cameron Castle
       was built with servants' passages inside its walls.** Silas didn't
       like seeing his staff. Most were sealed. *Most.*
 
@@ -103,11 +111,11 @@ rounds:
       - The house has hidden servants' passages, some possibly unsealed.
   2:
     text: |
-      Reggie will give you an old floor plan (prop). Study it. It marks the
+      Roderick will give you an old floor plan (prop). Study it. It marks the
       **STUDY** and the **LIBRARY**, with a faint line between them.
 
       When Tim asks whether the strange library door could be a passage,
-      perform the realization: **the passage connects Arthur's study directly
+      perform the realization: **the passage connects Douglas's study directly
       to the library.** Someone could enter the study, leave through the
       wall, and come out among the books, never using the study door.
     reveal:
@@ -126,8 +134,8 @@ rounds:
       - The passage ends behind a bookcase in the library.
 
 texts:
-  - id: joji-arthur-history
-    from: Arthur Blackwood
+  - id: joji-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Last week"
     body: "The study wall stays as it is, Professor. Some of Silas's work should remain unpublished. Humor an old man."
@@ -145,6 +153,6 @@ host_notes: |
   library map prop and Tim's question). Round Three: where it ends. Disguised
   breadcrumb toward Morgan: the floor-plan prop carries a faded filing stamp,
   "RECEIVED · B.L.C.". It only means something to a guest who connects it
-  with the ledger's "AUTHORIZED: BLC" and Kush's Round Three reveal, i.e.
-  Blackwood Legal Counsel had the plans and could know about the passage.
+  with the ledger's "AUTHORIZED: CLC" and Kush's Round Three reveal, i.e.
+  Cameron Legal Counsel had the plans and could know about the passage.
   Joji only knows "somebody's office stamp". Never point it out.

@@ -1,5 +1,5 @@
 id: molly-cleared-note
-title: Arthur's note about the forger
+title: Douglas's note about the forger
 kind: prop
 source: new
 round: 3
@@ -13,9 +13,9 @@ print: |
   I've traced the Evangeline forgery to Lucien Vasse. Molly was taken in as
   badly as I was. I want him, not her.
 
-  — A.
-truth: Arthur concluded Molly was a victim, not a fraud. Fills the gap in Part Two's "another note establishes..."
+  — D.
+truth: Douglas concluded Molly was a victim, not a fraud. Fills the gap in Part Two's "another note establishes..."
 points_to: []
 critical: false
-refs: [martin, molly, arthur]
-fallback: If Martin isn't cast, Reggie "finds" it in the desk and reads it.
+refs: [martin, molly, douglas]
+fallback: If Martin isn't cast, Roderick "finds" it in the desk and reads it.

@@ -60,3 +60,39 @@ export function textSchedule(content, state, liveIds, now = new Date()) {
   for (const t of content.globalTexts || []) add(t, 'all');
   return rows;
 }
+
+// ---------------------------------------------------------------- paper night
+// party.phones: false means no phones at the party. Guests read their pages
+// before the night only: rounds never open on their phones and no in-party
+// text reaches them. Character messages are printed inside the envelopes;
+// texts to everyone become announcements the host reads aloud.
+export function phonesOn(content) {
+  return content.party?.phones !== false;
+}
+
+// The state a guest's page and /api/updates see.
+export function guestState(content, state) {
+  return phonesOn(content) ? state : { ...state, liveRound: 0, cueSent: {} };
+}
+
+// Which round a cue text belongs to: the round of the run-of-show step that
+// sends it.
+export function cueRound(content, id) {
+  return content.script.find((s) => s.send_texts.includes(id))?.round ?? null;
+}
+
+// A character's in-party messages for one round, for the printed envelope.
+export function envelopeMessages(content, charId, round) {
+  return (content.characters[charId]?.texts || [])
+    .filter((t) => (t.trigger?.round != null ? t.trigger.round === round : t.trigger?.cue ? cueRound(content, t.id) === round : false))
+    .sort((a, b) => (a.trigger.after ?? 99) - (b.trigger.after ?? 99))
+    .map((t) => ({ id: t.id, from: t.from, body: t.body, after: t.trigger.after ?? null }));
+}
+
+// Texts to everyone in one round: on paper night the host reads them aloud.
+export function announcements(content, round) {
+  return (content.globalTexts || [])
+    .filter((t) => t.trigger?.round === round)
+    .sort((a, b) => (a.trigger.after ?? 0) - (b.trigger.after ?? 0))
+    .map((t) => ({ id: t.id, from: t.from, body: t.body, after: t.trigger.after ?? 0 }));
+}

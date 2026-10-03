@@ -1,15 +1,15 @@
 # HOST ONLY. Never rendered on guest pages.
-# The world of Blackwood Manor: rooms, family legend, people who are talked
+# The world of Cameron Castle: rooms, family legend, people who are talked
 # about but not played. Guest-safe lore (the parts everybody at the party
 # would know) lives in guest-common.yaml.
 
 house:
-  name: Blackwood Manor
+  name: Cameron Castle
   built: 1891
-  builder: Silas Blackwood
+  builder: Silas Cameron
   summary: >
     A black-stone pile on a hill above a drowned valley, built by Silas
-    Blackwood with coal money and money nobody asks about. Thirty-one rooms
+    Cameron with coal money and money nobody asks about. Thirty-one rooms
     in use, a dozen more that aren't, and a web of servants' passages Silas
     had built so he would never have to see the staff. Most of the passages
     were bricked up in the 1950s. Not all of them.
@@ -18,7 +18,7 @@ house:
 #   murder-zone  = the study and the corridor outside it
 #   escape-zone  = where the hidden passage comes out
 rooms:
-  study:            { name: "Arthur's study", zone: murder-zone, game_area: "The Side Room off the Family Room (12'3\" × 8'8\"), at the dead end of the flat" }
+  study:            { name: "Douglas's study", zone: murder-zone, game_area: "The Side Room off the Family Room (12'3\" × 8'8\"), at the dead end of the flat" }
   east-corridor:    { name: "East Corridor (outside the study)", zone: murder-zone, game_area: "The Family Room: the way to the study door" }
   library:          { name: "Library", zone: escape-zone, game_area: "The landing at the top of the front stairs, with the movable bookshelf" }
   library-corridor: { name: "Library Corridor", zone: escape-zone, game_area: "The front door, between the Living Room and the landing" }
@@ -35,7 +35,7 @@ rooms:
   east-wing:        { name: "The shut-up East Wing and its walled passages", zone: private, game_area: "The small bedroom and every other shut room" }
   grounds:          { name: "Grounds, drive and ice house", zone: outside, game_area: "The front stairs, outside" }
 
-# How Ross's flat plays the manor tonight (HOST ONLY). Keys are area ids from
+# How Ross's flat plays the castle tonight (HOST ONLY). Keys are area ids from
 # venue.yaml, which holds the guest-safe plan. The host Setup page shows these
 # next to the plan, with the evidence to hide in each room by round.
 venue_setup:
@@ -47,20 +47,30 @@ venue_setup:
     reveal. The red folder goes on a shelf in Round Two, laid flat among the
     books, never behind them. Guests arrive through here, so it doubles as
     the way in.
+
+
+    The hidden door stays shut all night and opens only at the reveal. Test
+    it once beforehand from the landing side.
   room: >
-    Arthur's study. Clear the built-in desk except for the raven prop, a
+    Douglas's study. Clear the built-in desk except for the raven prop, a
     decanter and one glass, a desk blotter, a paperweight, a few books and a
-    wastebasket. Drape a black smoking jacket over the chair, or tape an
-    outline on the floor. One lamp, nothing brighter. Sign on the doorway:
-    THE STUDY. Round One evidence goes in before anyone arrives; rope off
-    the doorway with a ribbon until the lights come back and the body is
-    "found".
+    wastebasket. One lamp, nothing brighter. Sign on the doorway: THE STUDY.
+    Round One evidence goes in before anyone arrives; rope off the doorway
+    with a ribbon during arrivals (Douglas's private room).
+
+    Tonight you go in here as Douglas at the cake and change into Roderick in
+    the closet. The red leather folder, legal page already torn out, sits
+    open on the desk until then. The body is your Douglas costume: the tan
+    jacket, the black silk tie, the wig and the flat cap behind the desk,
+    the cap on the floor by the raven. Take the folder with you; it isn't
+    found until Round Two. (The costume replaces the old advice to drape a black smoking
+    jacket over the chair or tape an outline on the floor.)
   family-room: >
-    The East Corridor, Arthur's end of the house: a runner rug if you have
+    The East Corridor, Douglas's end of the house: a runner rug if you have
     one, two or three portraits, candles and nothing bright. Guests can
     still hang out here, but keep a clear path to the study doorway. In the
     story this room is empty at 9:31 to 9:41 except for the five people who
-    went to Arthur's door, and the Drawing Room next to it is nearly empty
+    went to Douglas's door, and the Drawing Room next to it is nearly empty
     too: everyone is at the cake.
   living-room: >
     The Drawing Room, where the party lives. By the front door, a coat rack
@@ -79,7 +89,7 @@ venue_setup:
   hall: >
     The Portrait Gallery. Hang or prop three or four framed pictures (old
     portraits from a thrift shop are perfect, and one should be "Lady
-    Evangeline"). Arthur's letter to Molly goes behind one of them in Round
+    Evangeline"). Douglas's letter to Molly goes behind one of them in Round
     One. Guests pass through on the way to the bathroom, so they will look.
   kitchen: >
     The Billiard Room: Jimmy Friedman's card game at the island. A green
@@ -91,19 +101,24 @@ venue_setup:
     a pan back here for the crash Tim hears.
   balcony: >
     The Terrace, where Kevin paces from 9:22. Tape a fake security camera
-    (or a phone on a stand) above the door. Reggie keeps the camera still.
+    (or a phone on a stand) above the door. Roderick keeps the camera still.
   back-hall: >
     The way to the terrace through the Laundry. Keep the laundry tidy and
     the back stairs door closed.
   primary-bedroom: >
     Shut. Coats can go on the bed, but sign the door EAST WING: KEEP OUT, so
     nobody searches it. In the story it's "upstairs", where Shea fetches
-    Arthur's medication at 9:38.
+    Douglas's medication at 9:38.
   bedroom: >
     Unlocked tonight as the Conservatory: every plant you own, candles, and
     a chair by the window for Carlotta. Put personal things away; nothing is
     hidden here (Part Two: nothing in bedrooms), it's just a room to be in.
     Keep its closet shut.
+  closet-right: >
+    The study's closet: your quick-change room. Hang Roderick's burgundy suit
+    in the order you put it on (trousers first), with a different tie and an
+    empty bag for the tan trousers and the red folder. Keep the door shut
+    all night; to the guests it's just a shut closet.
   bedroom-small: >
     Shut. EAST WING sign on the door. In the story it's where Louis is
     trapped in the walls from 9:25 until after the blackout.
@@ -117,8 +132,8 @@ venue_passage:
   label: "Raven's Walk"
   note: >
     The door between the study (Side Room) and the library (landing), behind
-    the movable bookshelf. It stays shut and hidden until the reveal, when
-    Reggie moves the shelf and walks through it.
+    the movable bookshelf. It stays shut and hidden all night, until the
+    reveal, when you move the shelf and walk through it.
 
 layout_notes: >
   The study is at the dead end of the East Corridor. The library looks like
@@ -143,16 +158,16 @@ layout_notes: >
 
 legend:
   raven: >
-    The Blackwood Raven is an eight-pound bronze raven Silas had cast in
+    The Cameron Raven is an eight-pound bronze raven Silas had cast in
     1891, supposedly from the melted bell of the village chapel he pulled
-    down to build the manor. It has always sat on the head of the family's
-    desk. Family saying: "The raven keeps the Blackwood secrets."
+    down to build the castle. It has always sat on the head of the family's
+    desk. Family saying: "The raven keeps the Cameron secrets."
   curse: >
-    Every Blackwood who has tried to give the fortune away has died before
-    the papers were signed. Edmund Blackwood (1923) meant to leave it to the
+    Every Cameron who has tried to give the fortune away has died before
+    the papers were signed. Edmund Cameron (1923) meant to leave it to the
     Church and fell down the cellar stairs the night before. Cordelia
-    Blackwood, Arthur's mother (1979), meant to give the manor to the nation
-    and died of a fever before midnight. Arthur announced he would give it
+    Cameron, Douglas's mother (1979), meant to give the castle to the nation
+    and died of a fever before midnight. Douglas announced he would give it
     all away at midnight tonight. Guests will whisper that the raven did it.
     It didn't. The curse is mood, never evidence.
   raven_room: >
@@ -172,22 +187,22 @@ legend:
 midnight_supper: >
   Silas held the first Midnight Supper in 1891 as an annual reckoning. On
   that night the head of the family makes one announcement at midnight that
-  cannot be taken back. Arthur has hosted it for nearly thirty years. The
+  cannot be taken back. Douglas has hosted it for nearly thirty years. The
   rules are printed in guest-common.yaml. The ritual drink, "the
   Reckoning," is a Sazerac poured by the house at half past nine and carried
   to the head of the family. Annie has carried it for eleven years.
 
-  Birthdays at Blackwood have a ritual too. The cake (always black icing,
+  Birthdays at Cameron have a ritual too. The cake (always black icing,
   always a sugar raven) is carried into the Dining Room at twenty-five past
   nine and cut under the portraits, and the head of the family never comes
-  out to see it. Silas's rule: "Blackwoods don't watch other people being
+  out to see it. Silas's rule: "Camerons don't watch other people being
   celebrated." Tonight that rule empties the east end of the house at the
   worst possible moment: from 9:25 almost everyone is round the cake in the
   Dining Room, deep in the flat, and the Drawing Room and the East Corridor
   are dark and quiet.
 
-arthur:
-  name: Arthur Blackwood
+douglas:
+  name: Douglas Cameron
   age: 71
   summary: >
     Patriarch, collector, terrible judge of character, excellent host. He was
@@ -201,59 +216,79 @@ arthur:
          grandmother's portrait.
       3. Release Carlotta from the "burden" of the estate. That is what the
          11:30 meeting and the note were for.
-    He tore up his old will himself that afternoon. Nobody killed Arthur for
+    He tore up his old will himself that afternoon. Nobody killed Douglas for
     the inheritance.
+  tonight: >
+    Ross plays Douglas from the first guest until the birthday cake: a tan
+    suit, a black silk tie (Shea tied it; it's the black thread on the
+    raven), the flat cap he wears indoors because it's his house, and silver
+    hair (a wig). He leaves at the cake, changes in the study closet, and
+    comes out as his younger brother Roderick in a dark burgundy suit when the
+    lights come back: "My brother has been murdered." Nobody acts out the
+    murder.
+
+roderick: >
+  Roderick Cameron, Douglas's half-brother and tonight's host,
+  thirty-five years younger: the late son of Montague's second marriage, to
+  a woman the family never forgave. Montague died when Roderick was seven and
+  Douglas raised him, more like a son than a brother. He has the Cameron
+  face: everyone says he is Douglas at forty, which Douglas hated. He spent
+  the afternoon hauling furniture into the study with Kevin; at seven Douglas
+  sent him down to the village for more champagne, and the lower road
+  flooded behind him. He gets back as the lights go out at 9:45, comes up
+  the back stairs to find his brother, and is standing in the study when
+  the lights return. He is not a suspect and never pretends to be.
 
 npcs:
   - id: silas
-    name: Silas Blackwood
-    note: Founder (d. 1919). Built the manor, the passages, and the Supper.
+    name: Silas Cameron
+    note: Founder (d. 1919). Built the castle, the passages, and the Supper.
   - id: edmund
-    name: Edmund Blackwood
+    name: Edmund Cameron
     note: Silas's son (1879–1923). Meant to leave the fortune to the Church; fell down the cellar stairs the night before.
   - id: montague
-    name: Montague Blackwood
-    note: Cordelia's widower. Hosted the Midnight Supper from her death in 1979 until his in 1997, when Arthur took over.
+    name: Montague Cameron
+    note: Cordelia's widower. Hosted the Midnight Supper from her death in 1979 until his in 1997, when Douglas took over. Married again late in life; their son is Roderick.
   - id: lionel
-    name: Lionel Blackwood
-    note: Arthur's younger brother, Reggie's father (1958–2011).
+    name: Lionel Cameron
+    note: Douglas's younger brother (1958–2011). Never married.
   - id: edgar
-    name: Edgar Blackwood
-    note: Arthur's youngest brother, Kevin's father (1961–2016).
+    name: Edgar Cameron
+    note: Douglas's youngest brother, Kevin's father (1961–2016).
   - id: cordelia
-    name: Cordelia Blackwood
-    note: Arthur's mother (d. 1979). The curse's most recent "victim."
+    name: Cordelia Cameron
+    note: Douglas's mother (d. 1979). The curse's most recent "victim."
   - id: helena
-    name: Helena Blackwood
-    note: Arthur's ex-wife and Carlotta's mother. Left when Carlotta was twelve and never came back. Lives in Lisbon. Not dead, just gone.
+    name: Helena Cameron
+    note: Douglas's ex-wife and Carlotta's mother. Left when Carlotta was twelve and never came back. Lives in Lisbon. Not dead, just gone.
   - id: vivienne
     name: Vivienne St. Clair
-    note: Lexi's late mother. Arthur's great love before Clara, though they never married. Arthur is Lexi's godfather.
+    note: Lexi's late mother. Douglas's great love before Clara, though they never married. Douglas is Lexi's godfather.
   - id: teddy
     name: Teddy Calloway
-    note: Arthur's late business partner and James's father. Died when James was nine; Arthur took James in.
+    note: Douglas's late business partner and James's father. Died when James was nine; Douglas took James in.
   - id: nana-rose
     name: Rosalind "Nana" Rose
-    note: Maya's grandmother. Blackwood Manor's cook for forty years. Arthur loved her more than most of his relatives.
+    note: Maya's grandmother. Cameron Castle's cook for forty years. Douglas loved her more than most of his relatives.
   - id: vasse
     name: Lucien Vasse
-    note: The forger. Painted the fake "Lady Evangeline" that Molly sold to Arthur in good faith. Currently in Marseille, probably.
+    note: The forger. Painted the fake "Lady Evangeline" that Molly sold to Douglas in good faith. Currently in Marseille, probably.
   - id: mrs-hale
     name: Mrs. Hale
     note: Current cook. Her warming ovens, plus the 1930s wiring, tripped the circuit at 9:45. She will tell anyone who listens that this house hates electricity.
   - id: evangeline
-    name: Lady Evangeline Blackwood
+    name: Lady Evangeline Cameron
     note: Silas's wife. Subject of the forged portrait. Her painted eyes follow you down the gallery. Everyone says so.
 
 money:
   theft_total: 2400000
   transfers: [300000, 450000, 275000, 600000, 375000, 400000]
   period: "Fourteen months"
-  authorized_by: "Blackwood Legal Counsel (BLC), user ID ML-0427"
+  authorized_by: "Cameron Legal Counsel (CLC), user ID ML-0427"
   destination: "Corvid Holdings Ltd, a shell company Morgan set up. Corvid means the crow family. She thought that was funny."
   how_found: >
-    Lindsey Vale (Arthur's private banker) flagged the transfer pattern six
-    weeks ago and told Arthur quietly. Arthur hired Kushington to trace it.
-    Kush traced the authorizations to BLC two days ago and the user ID this
-    week. Arthur spent the week asking Morgan "helpful" questions about the
+    Lindsey Vale (Douglas's private banker) flagged the transfer pattern six
+    weeks ago and told Douglas quietly. Douglas hired Kushington to trace it.
+    Kush traced the authorizations to CLC two days ago and the user ID this
+    week. Douglas spent the week asking Morgan "helpful" questions about the
     account, giving her the chance to come clean. She didn't.

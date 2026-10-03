@@ -1,10 +1,10 @@
 id: annie
-name: Antoinette "Annie"
+name: Antoinette "Annie" Annesley
 written_for: Annie              # HOST
 tier: core                      # HOST
 pronouns: she/her               # HOST
-role: House manager of Blackwood Manor
-public_role: "House manager of Blackwood Manor"   # what everyone at the party knows; shown on every guest's guest list
+role: House manager of Cameron Castle
+public_role: "House manager of Cameron Castle"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've poured every drink in this house for eleven years. You know who needs one."
 
 costume: |
@@ -13,8 +13,8 @@ costume: |
   you are never seen without. Staff, but the kind who outranks most guests.
 
 intro: |
-  You run Blackwood Manor: the cellar keys, the guest lists, the seating plan,
-  the lies. Every Midnight Supper for eleven years you have carried Arthur
+  You run Cameron Castle: the cellar keys, the guest lists, the seating plan,
+  the lies. Every Midnight Supper for eleven years you have carried Douglas
   the Reckoning, his 9:30 Sazerac. Tonight you carried it for the last time.
 
 backstory: |
@@ -22,9 +22,9 @@ backstory: |
   guest takes sugar, which takes a lover, and which takes the spoons home.
   The family treats you like furniture, which is how you hear everything.
 
-  Your sideline is that for three years you have quietly sold Arthur's lesser
+  Your sideline is that for three years you have quietly sold Douglas's lesser
   vintages to a London restaurateur and refilled the bottles with
-  supermarket claret. Arthur never noticed, which tells you everything you
+  supermarket claret. Douglas never noticed, which tells you everything you
   need to know about rich men's palates. You also slip a little gossip to
   Albie, the medium, before her "readings," for a cut.
 
@@ -32,36 +32,45 @@ backstory: |
   for nothing and got you the flat. You don't forget kindness. It's rare
   enough in this house.
 
+  Antoinette Annesley: your mother found the name in a magazine and hoped it
+  would buy you a better life than hers. You got thirty years of this one
+  instead. You keep the keys to every room except the east wing, which
+  Douglas keeps himself, and you know the castle's moods: which floorboards
+  report you, which portraits catch the candlelight, which kitchen door
+  won't latch in a storm. Once a year, after the Supper, Douglas pours you a
+  glass of the good vintage and toasts "the only Cameron worth the name."
+  You have never told him what's actually in the bottle.
+
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your employer for eleven years. Gruff, generous, impossible. You'll miss bringing him that drink more than you'll say.
   - with: morgan
-    text: She did your divorce for free. You'd walk into fire for her, or at least lie to Reggie.
+    text: She did your divorce for free. You'd walk into fire for her, or at least lie to Roderick.
   - with: albie
     text: You feed her gossip before her "readings." The spirits split the fee with you, fifty-fifty.
   - with: shea
     text: The nurse. You two run this house between you. You've noticed she's been taking extra food upstairs at night.
   - with: kevin
-    text: You watched him grab Arthur's coat off the hall hook at 9:22 and storm outside. Typical.
+    text: You watched him grab Douglas's coat off the hall hook at 9:22 and storm outside. Typical.
 
 evening:
   - at: "8:00 PM"
     until: "9:24 PM"
     where: drawing-room
-    text: Champagne, canapés, seating-plan diplomacy. Clara and Arthur disappeared into the study at 8:30; you noted the time and her lipstick.
+    text: Champagne, canapés, seating-plan diplomacy. Clara and Douglas disappeared into the study at 8:30; you noted the time and her lipstick.
   - at: "9:22 PM"
     where: front-hall
-    text: Kevin storms past you, takes the nearest coat off the hook (Arthur's, as it happens) and goes out onto the terrace.
+    text: Kevin storms past you, takes the nearest coat off the hook (Douglas's, as it happens) and goes out onto the terrace.
   - at: "9:25 PM"
     until: "9:29 PM"
     where: dining-room
-    text: 'You carry the birthday cake into the Dining Room: black icing, a sugar raven, the way Blackwood cakes have always looked. The whole party follows you in, singing. Arthur stays in his study. The head of the family never comes out for cake.'
+    text: 'You carry the birthday cake into the Dining Room: black icing, a sugar raven, the way Cameron cakes have always looked. The whole party follows you in, singing. Douglas stays in his study. The head of the family never comes out for cake.'
   - at: "9:30 PM"
     where: drawing-room
-    text: You mix the Reckoning at the bar, Arthur's Sazerac, as the Supper rules require. The drawing room is empty behind you; everyone is at the cake.
+    text: You mix the Reckoning at the bar, Douglas's Sazerac, as the Supper rules require. The drawing room is empty behind you; everyone is at the cake.
   - at: "9:31 PM"
     where: study
-    text: You carry it in. Arthur is **alive and alone** at his desk, writing, a red leather folder open in front of him. He says, "Last one, Annie." You thought he meant the drink.
+    text: You carry it in. Douglas is **alive and alone** at his desk, writing, a red leather folder open in front of him. He says, "Last one, Annie." You thought he meant the drink.
   - at: "9:32 PM"
     where: east-corridor
     text: Walking back down the East Corridor you pass **Morgan** heading toward the study. She smiles. You smile. She has a meeting; it's none of your business.
@@ -71,19 +80,19 @@ evening:
     text: Back to champagne duty at the cake. The lights go out at 9:45 with a crash from somewhere downstairs. You're holding a full tray in the dark.
 
 knows:
-  - You were the last person to see Arthur alive, at **9:31**. He was alone.
+  - You were the last person to see Douglas alive, at **9:31**. He was alone.
   - You passed Morgan in the East Corridor at 9:32, walking toward the study.
-  - Kevin left for the terrace at 9:22 wearing Arthur's coat.
+  - Kevin left for the terrace at 9:22 wearing Douglas's coat.
   - Someone has been raiding the larder at night. The staff say it's a ghost. You say it's Shea.
 
 secret: |
   You saw **Morgan heading to the study at 9:32** and you haven't told
-  anyone, out of loyalty. Separately, you've been selling Arthur's wine and
+  anyone, out of loyalty. Separately, you've been selling Douglas's wine and
   refilling the bottles, and you feed Albie gossip for her "visions."
 
 blackmail:
   - You saw Morgan in the East Corridor at 9:32.
-  - You've been selling Arthur's wine and refilling the bottles.
+  - You've been selling Douglas's wine and refilling the bottles.
   - Albie's "spirit messages" come from you.
 
 instructions:
@@ -94,28 +103,28 @@ instructions:
 
 mission: |
   Get someone to **reveal a scandal over champagne**. Pour, listen, report
-  the scandal to Reggie.
+  the scandal to Roderick.
 
 rounds:
   1:
     text: |
-      Someone will ask who saw Arthur last. It was you. Say so: **9:31, the
+      Someone will ask who saw Douglas last. It was you. Say so: **9:31, the
       Reckoning, alive and alone at his desk.**
 
       Don't mention the corridor. Morgan had a meeting; you don't gossip about
       the family's lawyer. (You gossip about everyone else.)
     reveal:
-      - You delivered Arthur's drink at 9:31 and he was alive and alone.
+      - You delivered Douglas's drink at 9:31 and he was alive and alone.
   2:
     text: |
-      If anyone asks: Arthur had a **red leather folder** open on his desk at
-      9:31. And Kevin took Arthur's coat off the hook at 9:22 and went
+      If anyone asks: Douglas had a **red leather folder** open on his desk at
+      9:31. And Kevin took Douglas's coat off the hook at 9:22 and went
       outside.
 
       You may start to feel uneasy. Morgan's name keeps coming up and you
       know something nobody else does. Stay loyal one more round.
     reveal:
-      - Arthur had the red leather folder open at 9:31.
+      - Douglas had the red leather folder open at 9:31.
   3:
     text: |
       You can't carry this any longer. Tell the room: **at 9:32, walking
@@ -136,7 +145,7 @@ texts:
   - id: annie-mrs-hale-r1
     from: Mrs. Hale (Kitchens)
     trigger: { round: 1, after: 8 }
-    body: "Is it true?? About Mr Arthur?? We heard the crash and then the lights. Something in this house wants us all in the dark"
+    body: "Is it true?? About Mr Douglas?? We heard the crash and then the lights. Something in this house wants us all in the dark"
   - id: annie-unknown-r2
     from: Unknown number
     trigger: { round: 2, after: 12 }
@@ -145,5 +154,5 @@ texts:
 host_notes: |
   Core. The 9:31 sighting (Round One) and the 9:32 Morgan sighting (Round
   Three) are both solution-critical. Ross rescue lines: "Antoinette, weren't
-  you one of the last people to see Arthur?" (R1) and "Annie, who did you
+  you one of the last people to see Douglas?" (R1) and "Annie, who did you
   pass?"

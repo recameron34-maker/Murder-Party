@@ -4,8 +4,8 @@ written_for: Spare, any late guest   # HOST
 tier: flex                      # HOST
 effort: high                    # HOST
 pronouns: any                   # HOST
-role: Arthur's "dear old friend from Monaco" (gatecrasher)
-public_role: "Arthur's old friend from Monaco"   # what everyone at the party knows; shown on every guest's guest list
+role: Douglas's "dear old friend from Monaco" (gatecrasher)
+public_role: "Douglas's old friend from Monaco"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "Nobody invited you. Nobody's going to ask you to leave. That's the whole trick."
 
 costume: |
@@ -15,9 +15,9 @@ costume: |
 
 intro: |
   You crash society parties for a living: weddings, galas, funerals with
-  open bars. Tonight you walked through the front door of Blackwood Manor
-  saying "Arthur, you old devil, I'm here!" and nobody stopped you. You've
-  claimed to be **Arthur's oldest friend from Monaco.** You've never met
+  open bars. Tonight you walked through the front door of Cameron Castle
+  saying "Douglas, you old devil, I'm here!" and nobody stopped you. You've
+  claimed to be **Douglas's oldest friend from Monaco.** You've never met
   him.
 
 backstory: |
@@ -30,13 +30,21 @@ backstory: |
   police are coming, the road's out, and you're trapped in a mansion full of
   people who'll eventually ask who you actually are.
 
+  Sterling is the name you chose after a fortnight in Monaco taught you that
+  confidence is a currency. You learned it from men like Douglas: the
+  half-smile, the bored hand, the way of saying "old friend" that makes
+  people agree you've met. You've walked into a hundred great houses on a
+  hundred invitations that weren't yours. This is the first one that seems
+  to know. The portraits look at you a beat too long, and something in the
+  corridors keeps moving your glass.
+
 relationships:
   - with: jimmy-friedman
     text: You sold him a share of a yacht in Saint-Tropez last summer. He's realizing tonight that the yacht doesn't exist.
   - with: hannah
     text: You've been dancing with her all night and pitching a "charity vineyard."
-  - with: reggie
-    text: You've told everyone Reggie personally invited you. You're hoping Reggie plays along.
+  - with: roderick
+    text: You've told everyone Roderick personally invited you. You're hoping Roderick plays along.
   - with: courtney
     if: courtney
     text: '"Lady" Courtney clocked you at the door and you clocked her. Professional courtesy: neither of you says a word.'
@@ -55,49 +63,49 @@ evening:
     text: You follow the cake into the Dining Room and sing louder than anyone, so everyone remembers you were there. You never left the crowd; you can't risk anyone checking a list.
 
 knows:
-  - You were never invited and you never met Arthur.
+  - You were never invited and you never met Douglas.
   - Jimmy Friedman bought a share of a yacht that doesn't exist.
   - You were with the crowd from 8:00 until the blackout: the drawing room, then the birthday cake in the Dining Room.
 
 secret: |
-  **You're a gatecrasher and a con artist.** You've never met Arthur and you
+  **You're a gatecrasher and a con artist.** You've never met Douglas and you
   owe a Monaco casino money.
 
 blackmail:
-  - You were never invited and never met Arthur.
+  - You were never invited and never met Douglas.
   - You sold Jimmy Friedman a share in a nonexistent yacht.
   - You owe a Monaco casino a significant sum.
 
 instructions:
-  - High effort. Tell rich, specific, completely invented stories about "dear Arthur."
+  - High effort. Tell rich, specific, completely invented stories about "dear Douglas."
   - Sell at least one "investment" for Blackmail Cash.
-  - If cornered, claim Reggie invited you. Make Reggie decide.
+  - If cornered, claim Roderick invited you. Make Roderick decide.
   - Your alibi is the crowd: the drawing room, then the cake. You were never out of sight.
 
 mission: |
   Get a guest to **give you Blackmail Cash for an "investment
-  opportunity"** (yacht, vineyard, horse). Report the sucker to Reggie.
+  opportunity"** (yacht, vineyard, horse). Report the sucker to Roderick.
 
 rounds:
   1:
     text: |
-      Grieve loudly for "dear Arthur." Share a vivid memory of the two of
+      Grieve loudly for "dear Douglas." Share a vivid memory of the two of
       you in Monaco. Make it specific. Make it a lie.
     reveal:
-      - Share a (fictional) Monaco memory of you and Arthur.
+      - Share a (fictional) Monaco memory of you and Douglas.
   2:
     text: |
-      Someone will start asking questions. Double down: Reggie invited you.
+      Someone will start asking questions. Double down: Roderick invited you.
       Pitch an investment to whoever's asking.
     reveal:
-      - Claim Reggie personally invited you.
+      - Claim Roderick personally invited you.
   3:
     text: |
       When the truth comes for you, confess with style: you never met
-      Arthur, you crashed his party, and frankly it was the best party you've
+      Douglas, you crashed his party, and frankly it was the best party you've
       ever crashed. Then try to sell someone a vineyard.
     reveal:
-      - Confess you're a gatecrasher who never met Arthur.
+      - Confess you're a gatecrasher who never met Douglas.
 
 texts:
   - id: sterling-casino-history

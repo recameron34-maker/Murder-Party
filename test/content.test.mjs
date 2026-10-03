@@ -12,8 +12,8 @@ test('the consistency checker finds no errors in the real content', () => {
 test('the solution is intact: core facts point at Morgan at the right times', () => {
   const ev = Object.fromEntries(content.timeline.events.map((e) => [e.id, e]));
   assert.equal(ev.murder.at, '9:38 PM');
-  assert.deepEqual(ev.murder.who, ['morgan', 'arthur']);
-  assert.equal(ev['arthur-texts-morgan'].at, '9:29 PM');
+  assert.deepEqual(ev.murder.who, ['morgan', 'douglas']);
+  assert.equal(ev['douglas-texts-morgan'].at, '9:29 PM');
   assert.equal(ev['annie-delivers-drink'].at, '9:31 PM');
   assert.equal(ev.blackout.at, '9:45 PM');
   assert.match(content.clues['bank-statement'].print, /LEGAL\. \$2\.4M\. MIDNIGHT\./);

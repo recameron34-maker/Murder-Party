@@ -7,7 +7,7 @@ kind: cue
 
 *Step forward.* "That's comforting."
 
-*Pause.* "Dr. Beaumont…" *Look at Noor.* "…perhaps we should establish whether Arthur's medical condition could have killed him."
+*Pause.* "Dr. Beaumont…" *Look at Noor.* "…perhaps we should establish whether Douglas's medical condition could have killed him."
 
 Let Noor reveal that his illness did NOT cause the death. Then: "So we are officially looking at murder."
 
@@ -17,6 +17,6 @@ Let Noor reveal that his illness did NOT cause the death. Then: "So we are offic
 
 "Money." *Look around.* "Finally. Something this family understands."
 
-Then: "Kushington. Arthur hired you for something. What was it?"
+Then: "Kushington. Douglas hired you for something. What was it?"
 
-Kush reveals Arthur suspected theft, but NOT the amount.
+Kush reveals Douglas suspected theft, but NOT the amount.

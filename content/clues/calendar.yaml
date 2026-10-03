@@ -1,5 +1,5 @@
 id: calendar
-title: Arthur's calendar
+title: Douglas's calendar
 kind: physical
 source: part-two
 round: 2
@@ -7,9 +7,9 @@ timing: early
 carrier: found
 delivery: Found on (or near) the desk in Round Two.
 hide: Out on the study desk under the paperweight. Put it there when Round Two opens.
-room: study            # where it is found in the manor (for the host map)
+room: study            # where it is found in the castle (for the host map)
 print: |
-  ARTHUR BLACKWOOD — SATURDAY
+  DOUGLAS CAMERON — SATURDAY
 
   8:30 — Clara
   8:50 — James

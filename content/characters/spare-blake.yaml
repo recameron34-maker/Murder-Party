@@ -4,8 +4,8 @@ written_for: Spare, any late guest   # HOST
 tier: flex                      # HOST
 effort: medium                  # HOST
 pronouns: any                   # HOST
-role: Fencing master to the Blackwoods
-public_role: "Fencing master to the Blackwoods"   # what everyone at the party knows; shown on every guest's guest list
+role: Fencing master to the Camerons
+public_role: "Fencing master to the Camerons"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You've taught half this family to hold a blade. The other half you've taught other things."
 
 costume: |
@@ -14,8 +14,8 @@ costume: |
   hand. You're "[Name] Blake."
 
 intro: |
-  You've been fencing master to Blackwood Manor for five years: Kevin
-  twice a week, Clara on Thursdays, and Arthur himself, gently, on doctor's
+  You've been fencing master to Cameron Castle for five years: Kevin
+  twice a week, Clara on Thursdays, and Douglas himself, gently, on doctor's
   orders. You're strong, graceful and rumored to be involved with at least two
   people in this room.
 
@@ -28,6 +28,15 @@ backstory: |
   The bandage on your hand comes from **sparring with Kevin at 6 PM**. He
   caught you with a careless riposte. It looks, tonight, like exactly the
   kind of injury someone gets swinging eight pounds of bronze.
+
+  You've taught the Camerons to fence for twenty years in the long gallery
+  upstairs, beneath the swords Silas hung there: Carlotta as a furious
+  teenager, Kevin as a careless young man who still drops his guard.
+  Douglas, already grey, came to the last lesson of every season just to
+  watch. You know this family by the way they hold a blade: Douglas to win,
+  Carlotta to hurt, Kevin to be seen. You've stayed long past the point of
+  being useful, because the castle is the last place on earth where your
+  sort of skill is still taken seriously.
 
 relationships:
   - with: kevin
@@ -72,7 +81,7 @@ instructions:
 
 mission: |
   Teach **three guests the fencing salute** ("en garde!") and get them to
-  perform it at Reggie. Report it.
+  perform it at Roderick. Report it.
 
 rounds:
   1:

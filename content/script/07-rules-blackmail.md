@@ -12,11 +12,11 @@ changes: Blackmail Cash introduced here, right after the murder (reconciles Part
 
 "And please… do not open future envelopes." *Look at Kush.* "I mean you, Kushington."
 
-🆕 **Blackmail Cash.** *Pull out a stack of Blackwood bills.*
+🆕 **Blackmail Cash.** *Pull out a stack of Cameron bills.*
 
-"One more thing. My uncle believed everyone had a price. He was usually right."
+"One more thing. My brother believed everyone had a price. He was usually right."
 
-"Each of you has three thousand dollars in Blackwood Cash."
+"Each of you has three thousand dollars in Cameron Cash."
 
 "At any point tonight, you may offer another guest one thousand dollars for an answer."
 
@@ -28,6 +28,6 @@ changes: Blackmail Cash introduced here, right after the murder (reconciles Part
 
 *(Unknown to everyone: Morgan is the only exception.)*
 
-🆕 **Evidence hunt.** "Evidence is hidden around the house tonight in envelopes marked BLACKWOOD EVIDENCE. Search only the game areas. Nothing is hidden inside personal belongings, bedrooms, drawers or cabinets. If it isn't obviously part of the game, leave it alone. Bring what you find to me. I pay a thousand dollars a find."
+🆕 **Evidence hunt.** "Evidence is hidden around the house tonight in envelopes marked CAMERON CASTLE EVIDENCE. Search only the game areas. Nothing is hidden inside personal belongings, bedrooms, drawers or cabinets. If it isn't obviously part of the game, leave it alone. Bring what you find to me. I pay a thousand dollars a find."
 
-🆕 *Then:* "The plan on your phone, under Manor, shows which of my rooms is which tonight. Anything marked shut is the East Wing, and the East Wing stays dark."
+🆕 *Then:* "The plan on your phone, under Castle, shows which of my rooms is which tonight. Anything marked shut is the East Wing, and the East Wing stays dark."

@@ -1,10 +1,10 @@
 id: albie
-name: Aalvia "Albie"
+name: Aalvia "Albie" Albemarle
 written_for: Albie / Aalvia (same guest)   # HOST
 tier: supporting                # HOST
 pronouns: confirm with Ross     # HOST
 role: Spirit medium engaged for the Midnight Supper
-public_role: "The medium engaged to channel Silas Blackwood at the Midnight Supper"   # what everyone at the party knows; shown on every guest's guest list
+public_role: "The medium engaged to channel Silas Cameron at the Midnight Supper"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "The dead talk to you. Mostly they repeat what Annie told you in the pantry."
 
 costume: |
@@ -13,32 +13,41 @@ costume: |
   rimmed in kohl. Speak slowly. Pause often.
 
 intro: |
-  Arthur engaged you to perform at the Midnight Supper. The tradition
-  says the founder, Silas Blackwood, speaks through a medium at the empty
+  Douglas engaged you to perform at the Midnight Supper. The tradition
+  says the founder, Silas Cameron, speaks through a medium at the empty
   chair. You are, it must be said, a fraud. A very good one.
 
 backstory: |
   You read people, not spirits. Your "visions" come from Annie, the house
   manager, who slips you gossip before every reading for half your fee.
 
-  Arthur knew you were a fraud. That's why he hired you. Last week, in the
+  Douglas knew you were a fraud. That's why he hired you. Last week, in the
   library, he gave you a script for midnight. When the lights dimmed at the
   empty chair, "Silas" was to say: ***"One among you has bled this house.
-  Tonight the raven names them."*** Then Arthur would make his announcement.
+  Tonight the raven names them."*** Then Douglas would make his announcement.
   He never told you who. "Better you don't know, my dear. You have an honest
   face, for a liar."
 
-  You and Arthur were secret allies. Nobody believes it.
+  You and Douglas were secret allies. Nobody believes it.
+
+  You were born Aalvia Albemarle in a seaside town where your mother read
+  palms on the pier, and you learned the trade at her elbow: watch the
+  hands, never the cards. You added "Madame" at twenty-two and the accent at
+  twenty-five. The Camerons have kept mediums for a century; there's a
+  cabinet of spirit photographs from Cordelia's séances in the Portrait
+  Gallery, and you've studied every one. Of all the houses you've worked,
+  this is the only one where you've felt something you didn't invent: a cold
+  patch on the gallery stairs that you will not stand in.
 
 relationships:
-  - with: arthur
+  - with: douglas
     text: Your secret ally. He hired a fraud to tell the truth at midnight. You liked him enormously.
   - with: annie
     text: Your source and business partner. Fifty-fifty on everything the spirits "know."
   - with: kim
-    text: The Keyhole's favorite target. Kim has called you "the Blackwood séance act" in print. Rude. Accurate.
+    text: The Keyhole's favorite target. Kim has called you "the Cameron séance act" in print. Rude. Accurate.
   - with: carlotta
-    text: Arthur's daughter. You "sensed her presence" at dinner. You'd simply seen her come in.
+    text: Douglas's daughter. You "sensed her presence" at dinner. You'd simply seen her come in.
 
 evening:
   - at: "8:00 PM"
@@ -58,18 +67,18 @@ evening:
     text: When the lights go out you scream, which is unprofessional but heartfelt.
 
 knows:
-  - Arthur hired you to "channel" Silas at midnight and announce that "one among you has bled this house."
-  - Arthur knew someone close to him had stolen from him. He never told you who.
+  - Douglas hired you to "channel" Silas at midnight and announce that "one among you has bled this house."
+  - Douglas knew someone close to him had stolen from him. He never told you who.
   - Your spirit messages come from Annie's gossip.
   - You were in front of everyone from 9:00 until the blackout: the drawing room, then the Dining Room when the cake came out.
 
 secret: |
-  You're a **fraud** who gets "visions" from Annie, and you and Arthur were
+  You're a **fraud** who gets "visions" from Annie, and you and Douglas were
   **secret allies**: he scripted your midnight séance to expose a thief.
 
 blackmail:
   - You're not really psychic. Annie feeds you information.
-  - Arthur scripted your midnight séance.
+  - Douglas scripted your midnight séance.
   - The séance line was "One among you has bled this house."
 
 instructions:
@@ -79,43 +88,43 @@ instructions:
   - You may lay hands on any guest and announce that they are "troubled."
 
 mission: |
-  Convince **one person that you and Arthur were secretly allies.** Report
-  the believer to Reggie.
+  Convince **one person that you and Douglas were secretly allies.** Report
+  the believer to Roderick.
 
 rounds:
   1:
     text: |
-      Announce, with a shiver, that you "felt Arthur leave" earlier than
+      Announce, with a shiver, that you "felt Douglas leave" earlier than
       anyone thinks: "Long before the dark, I felt a door close."
 
       That's mood, not evidence. Let them argue about it.
 
-      Then start your mission: Arthur trusted you. Find someone who'll
+      Then start your mission: Douglas trusted you. Find someone who'll
       believe it.
     reveal:
-      - Share your "feeling" that Arthur's spirit left before the dark.
+      - Share your "feeling" that Douglas's spirit left before the dark.
   2:
     text: |
-      Reveal what Arthur planned for midnight: **you were to "channel"
-      Silas Blackwood at the empty chair and say, "One among you has bled this
+      Reveal what Douglas planned for midnight: **you were to "channel"
+      Silas Cameron at the empty chair and say, "One among you has bled this
       house. Tonight the raven names them."**
 
-      Arthur wanted to expose someone. He never told you who.
+      Douglas wanted to expose someone. He never told you who.
     reveal:
-      - Arthur scripted a midnight séance to expose "one among you" who had "bled this house."
+      - Douglas scripted a midnight séance to expose "one among you" who had "bled this house."
   3:
     text: |
-      After Reggie explains the blackout, ask the room, slowly, looking at
+      After Roderick explains the blackout, ask the room, slowly, looking at
       no one:
 
-      **"So if Arthur was already dead… who benefits from us believing he
+      **"So if Douglas was already dead… who benefits from us believing he
       died in the dark?"**
     reveal:
-      - Ask "So if Arthur was already dead, who benefits from us believing he died in the dark?"
+      - Ask "So if Douglas was already dead, who benefits from us believing he died in the dark?"
 
 texts:
-  - id: albie-arthur-history
-    from: Arthur Blackwood
+  - id: albie-douglas-history
+    from: Douglas Cameron
     trigger: { history: true }
     stamp: "Last week"
     body: "Midnight. The empty chair. Say it exactly as written, my dear, and not a syllable more. Silas would approve."

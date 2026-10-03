@@ -1,11 +1,11 @@
 id: daniel
-name: Daniel
+name: Daniel Danforth
 written_for: Daniel             # HOST
 tier: supporting                # HOST
 pronouns: he/him                # HOST
 role: Maddie's fiancé, Carlotta's ex
 public_role: "Maddie's fiancé (and, once, Carley's)"   # what everyone at the party knows; shown on every guest's guest list
-tagline: "Two Blackwood women have broken your heart. Only one of them was born a Blackwood."
+tagline: "Two Cameron women have broken your heart. Only one of them was born a Cameron."
 
 costume: |
   Handsome and slightly hunted: a well-cut dinner jacket, a white rose in
@@ -13,7 +13,7 @@ costume: |
   man standing between two women and a fortune.
 
 intro: |
-  Eight years ago you were two weeks from marrying Carlotta Blackwood. She
+  Eight years ago you were two weeks from marrying Carlotta Cameron. She
   fled to Berlin. Now you're engaged to Maddie, who is wearing a necklace
   that isn't hers, and Carlotta is standing by the fireplace in black,
   looking at you.
@@ -28,6 +28,14 @@ backstory: |
   So this afternoon **you slid an anonymous note under her door: "Return what
   isn't yours before midnight."** You thought it would scare her into doing
   the right thing. Instead she's spent all night hunting the author.
+
+  The Danforths sell boats to people who already have boats. You were sent
+  to the castle every summer as a boy to make friends with "the right sort,"
+  and the right sort was Carlotta, barefoot on the terrace, daring you to
+  swim the black lake in the dark. You did. You nearly drowned. She laughed
+  and kissed you on the jetty, and you've measured every night of your life
+  against it since. You're engaged, sensible and kind, and you still can't
+  walk past the conservatory without your heart doing something undignified.
 
 relationships:
   - with: maddie
@@ -54,7 +62,7 @@ evening:
 
 knows:
   - You sent the anonymous note telling Maddie to return the necklace.
-  - The Raven's Tears belong to the Blackwood family trust.
+  - The Raven's Tears belong to the Cameron family trust.
   - You were at the card table from 9:00 to the blackout with Martin and Jimmy Friedman.
   - Carlotta still does the thing with her lighter when she's lying.
 
@@ -64,7 +72,7 @@ secret: |
 
 blackmail:
   - You sent the anonymous note about the necklace.
-  - You were once engaged to Carlotta Blackwood.
+  - You were once engaged to Carlotta Cameron.
   - You still have feelings for Carlotta.
 
 instructions:
@@ -75,7 +83,7 @@ instructions:
 
 mission: |
   Convince **Madeleine that returning the necklace is probably wise.** If she
-  agrees (even grudgingly), report it to Reggie.
+  agrees (even grudgingly), report it to Roderick.
 
 rounds:
   1:
@@ -89,12 +97,12 @@ rounds:
   2:
     text: |
       Bring it up, publicly: **the necklace belongs to the family trust**,
-      and with Arthur dead, people are going to notice it's around Maddie's
+      and with Douglas dead, people are going to notice it's around Maddie's
       neck.
 
       Have the fight. Lose it gracefully.
     reveal:
-      - Publicly raise that Maddie's necklace belongs to the Blackwood family trust.
+      - Publicly raise that Maddie's necklace belongs to the Cameron family trust.
   3:
     text: |
       If Maddie is still hunting the note's author, it's time. **Confess:

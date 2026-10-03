@@ -2,16 +2,17 @@
 # the hidden passage, or any one character's secrets.
 
 welcome: |
-  You have been invited to the **Midnight Supper** at Blackwood Manor. This
+  You have been invited to the **Midnight Supper** at Cameron Castle. This
   page is yours alone. Don't show it to anyone, don't forward the link, and
   don't let anyone read over your shoulder. Your secrets are worth real
   (fake) money tonight.
 
-  More of this page unlocks as the night goes on. When Reggie breaks the seal
-  on a new round, refresh and your next envelope will be waiting.
+  Read it all **before the party**: who you are, what you did tonight, who you
+  know and what they know about you. On the night, phones stay in your bag.
+  Your envelopes come on paper, one per round, from Roderick.
 
 house: |
-  **Blackwood Manor** was built in 1891 by Silas Blackwood out of black stone,
+  **Cameron Castle** was built in 1891 by Silas Cameron out of black stone,
   coal money and money nobody asks about. Thirty-one rooms in use, a dozen
   that aren't. The portraits in the gallery are said to watch you. The east
   wing has been shut for decades. The lights do strange things in a storm.
@@ -20,34 +21,45 @@ house: |
   **Front Hall**, the **Portrait Gallery**, the **Billiard Room**, the
   **Conservatory**, the **Dining Room** (set for the Supper), the
   **Terrace**, the **Library**, and at the end of the **East Corridor**,
-  **Arthur's study**.
+  **Douglas's study**.
+
+# The practical page of every guest's dossier ("The night" tab). Guest-safe:
+# the same for everyone, and nothing about the plot.
+the_night:
+  doors: "7:30 PM"
+  notes:
+    - "**Come in costume and in character.** Douglas Cameron will greet you at the top of the stairs himself."
+    - "**Phones stay in your bag.** Everything you need tonight comes on paper, one envelope per round, from Roderick."
+    - "**Keep your secrets.** Everyone can know your name and what's on your badge. Nobody needs to know the rest, unless they pay for it."
+    - "**You'll be handed $3,000 in Cameron Blackmail Notes.** Spend them on the truth; hoard them for the prize."
+    - "**Read this page before you come.** Your story, your evening and your connections are what you'll be playing from all night."
 
 # Shown above the plan of the flat on every guest page.
 house_tonight: |
-  Tonight the manor is laid over the flat. Each room you walk into is playing
-  a room of Blackwood Manor; the plan below says which. Tap a room for what
+  Tonight the castle is laid over the flat. Each room you walk into is playing
+  a room of Cameron Castle; the plan below says which. Tap a room for what
   it's like. Rooms marked **shut** are the East Wing, and the East Wing stays
   dark: nothing is hidden there, so don't go in.
 
 legend: |
-  On Arthur's desk sits the **Blackwood Raven**, eight pounds of bronze that
+  On Douglas's desk sits the **Cameron Raven**, eight pounds of bronze that
   Silas had cast, people say, from the melted bell of a chapel he tore down.
-  "The raven keeps the Blackwood secrets," the family says.
+  "The raven keeps the Cameron secrets," the family says.
 
-  There's a less polite saying too: *every Blackwood who has tried to give the
+  There's a less polite saying too: *every Cameron who has tried to give the
   fortune away has died before the papers were signed.* Edmund in 1923, down
   the cellar stairs. Cordelia in 1979, of a fever, an hour before midnight.
 
-  The Blackwoods **collect people**. A ward, a goddaughter, a cook's
+  The Camerons **collect people**. A ward, a goddaughter, a cook's
   granddaughter put through school, a nephew kept on an allowance, a
   photographer given the run of the house. They take you in, dress you up,
   let you sleep under the portraits, and make you feel, for one golden
   summer, that you belong. The family saying: *once you've slept at
-  Blackwood, you never really leave.* Nobody is sure it's meant kindly.
+  Cameron, you never really leave.* Nobody is sure it's meant kindly.
 
   Birthdays here have a ritual of their own. The cake (black icing, always a
   sugar raven) is carried into the Dining Room and cut under the portraits,
-  and the head of the family never comes out to watch. *Blackwoods don't
+  and the head of the family never comes out to watch. *Camerons don't
   watch other people being celebrated.*
 
   In the Front Hall lies **Silas's guest book**. Everyone who has sat at the
@@ -60,8 +72,8 @@ legend: |
   footsteps inside the walls and a larder that empties itself."*
 
 supper_rules:
-  - "No guest leaves Blackwood Manor before midnight."
-  - "One chair is left empty for the last Blackwood to die."
+  - "No guest leaves Cameron Castle before midnight."
+  - "One chair is left empty for the last Cameron to die."
   - "The host's midnight announcement is final. What is said at midnight cannot be unsaid."
   - "Every guest arrives with a secret."
   - "The east wing stays dark after eleven."
@@ -70,7 +82,7 @@ supper_rules:
   - "Every guest signs the book."
 
 blackmail_rules: |
-  Everyone starts with **$3,000 in Blackwood Blackmail Notes** (three
+  Everyone starts with **$3,000 in Cameron Blackmail Notes** (three
   $1,000 bills).
 
   - Offer another guest **$1,000** for **one question** about their
@@ -79,9 +91,9 @@ blackmail_rules: |
     They don't have to volunteer anything beyond the question.
   - They may **refuse**, or demand more ($2,000, $3,000…). Refusing costs
     nothing except everyone now *really* wants to know why.
-  - Reggie pays **$1,000** for excellent accusations, found evidence,
+  - Roderick pays **$1,000** for excellent accusations, found evidence,
     completed secret missions and committed performances.
-  - **$3,000** buys a private hint card from Reggie. Hints nudge; they never
+  - **$3,000** buys a private hint card from Roderick. Hints nudge; they never
     solve.
 
 how_to_play: |
@@ -90,7 +102,7 @@ how_to_play: |
   - If your envelope says something **must** come out, make sure it's public
     before the round ends.
   - Search only the designated game areas (the rooms on the plan in the
-    Manor tab that aren't marked shut). Nothing is hidden in personal
+    Castle tab that aren't marked shut). Nothing is hidden in personal
     belongings, bedrooms, drawers or cabinets, not even in the bedroom that
     is playing the Conservatory tonight.
   - Never open a future envelope early. (Kushington.)
@@ -104,41 +116,42 @@ rounds:
 # How the night runs, shown as a step-by-step on every guest page. `round`
 # links a step to the live round so the current step lights up.
 tonight_steps:
-  - { round: 0, title: "Arrive & mingle", text: "Get a drink. Be your character. Your phone already holds a few old messages; read them." }
-  - { round: 0, title: "The lights go out", text: "Something crashes in the dark. When the lights come back, Arthur Blackwood is dead in his study." }
-  - { round: 1, title: "Round One: Enemies", text: "Open your first envelope. Who hated Arthur enough? Everyone, apparently." }
+  - { round: 0, title: "Before the party", text: "Read this page. Plan your costume. Your messages tab holds a few old messages; read them too. Then put your phone away for the night." }
+  - { round: 0, title: "Arrive & mingle", text: "Get a drink. Be your character. Douglas Cameron greets you himself; his younger brother Roderick is, as usual, late." }
+  - { round: 0, title: "The lights go out", text: "Something crashes in the dark. When the lights come back, Douglas Cameron is dead in his study." }
+  - { round: 1, title: "Round One: Enemies", text: "Open your first envelope. Who hated Douglas enough? Everyone, apparently." }
   - { round: 2, title: "Round Two: Lies by Omission", text: "Second envelope. People admit what they left out. Evidence turns up around the house." }
   - { round: 3, title: "Round Three: Scandal or Murder", text: "Final envelope. Some of it clears people. Separate the scandal from the murder." }
   - { round: 4, title: "Accuse", text: "Write down who did it, why, and how they got out of the study. No conferring." }
-  - { round: 4, title: "The reveal", text: "Reggie names the killer. Awards for best detective, best liar, best dressed." }
+  - { round: 4, title: "The reveal", text: "Roderick names the killer. Awards for best detective, best liar, best dressed." }
 
-# The Blackwood family, as everyone in the house knows it. Drawn as a tree.
+# The Cameron family, as everyone in the house knows it. Drawn as a tree.
 # `parent` builds the tree; `ward: true` draws a dashed line (not by blood).
 family_tree:
-  - { id: silas, name: "Silas Blackwood", years: "1851–1919", spouse: "Lady Evangeline (the portrait in the gallery)", note: "Built the manor, the walls, and the Supper." }
+  - { id: silas, name: "Silas Cameron", years: "1851–1919", spouse: "Lady Evangeline (the portrait in the gallery)", note: "Built the castle, the walls, and the Supper." }
   - { id: edmund, name: "Edmund", years: "1879–1923", parent: silas, note: "Meant to leave it all to the Church. Fell down the cellar stairs the night before." }
-  - { id: cordelia, name: "Cordelia", years: "1921–1979", parent: edmund, spouse: "Montague (hosted the Supper 1979–1997)", note: "Meant to give the manor to the nation. A fever, an hour before midnight." }
-  - { id: arthur, name: "Arthur", years: "1955–tonight", parent: cordelia, spouse: "Helena (left; lives in Lisbon)", note: "Hosted the Supper for nearly thirty years. Promised to give it all away at midnight." }
+  - { id: cordelia, name: "Cordelia", years: "1921–1979", parent: edmund, spouse: "Montague (hosted the Supper 1979–1997)", note: "Meant to give the castle to the nation. A fever, an hour before midnight." }
+  - { id: douglas, name: "Douglas", years: "1955–tonight", parent: cordelia, spouse: "Helena (left; lives in Lisbon)", note: "Hosted the Supper for nearly thirty years. Promised to give it all away at midnight." }
   - { id: lionel, name: "Lionel", years: "1958–2011", parent: cordelia }
   - { id: edgar, name: "Edgar", years: "1961–2016", parent: cordelia }
-  - { id: carlotta, name: "Carlotta \"Carley\"", parent: arthur, note: "The heir who left." }
-  - { id: james, name: "James Calloway", parent: arthur, ward: true, note: "Arthur's ward since he was nine." }
-  - { id: reggie, name: "Reginald \"Reggie\"", parent: lionel, note: "Your host." }
+  - { id: carlotta, name: "Carlotta \"Carley\"", parent: douglas, note: "The heir who left." }
+  - { id: james, name: "James Calloway", parent: douglas, ward: true, note: "Douglas's ward since he was nine." }
+  - { id: roderick, name: "Roderick", parent: cordelia, half: true, note: "Your host. Douglas's half-brother, thirty-five years younger: Montague's late son by his second marriage. Douglas raised him. Has the Cameron face: everyone says he's Douglas at forty." }
   - { id: kevin, name: "Kevin", parent: edgar, note: "The heir who stayed." }
 
 # Rooms guests can see on the house plan (ids match lore.yaml). Never include
 # anything about hidden passages here.
 rooms:
   drawing-room: "The party. Candlelight, a fire that's never quite warm enough, and a piano someone will definitely play badly."
-  front-hall: "Black-and-white marble, a sweeping staircase, and a coat rack where everyone's coats are hanging. Arthur's too."
-  gallery: "Two centuries of Blackwoods in oil paint. Lady Evangeline's eyes follow you. Everyone says so."
+  front-hall: "Black-and-white marble, a sweeping staircase, and a coat rack where everyone's coats are hanging. Douglas's too."
+  gallery: "Two centuries of Camerons in oil paint. Lady Evangeline's eyes follow you. Everyone says so."
   billiard-room: "Green baize, cigar smoke, and Jimmy Friedman's card game. Bad decisions at reasonable stakes."
-  dining-room: "Set for the Midnight Supper: thirteen places and one chair left empty for the last Blackwood to die. Tonight it's also where the birthday cake is cut."
+  dining-room: "Set for the Midnight Supper: thirteen places and one chair left empty for the last Cameron to die. Tonight it's also where the birthday cake is cut."
   conservatory: "A glasshouse full of orchids and secrets. The storm sounds very loud in here."
   terrace: "Stone balustrade, rain, a security camera above the doors, and the best view of the drowned valley."
   library: "Floor-to-ceiling books, rolling ladders, and Alma's card catalogue, which she will not let you touch."
   library-corridor: "The quiet corridor to the library. The only spot in the house where phones get signal."
-  east-corridor: "A long panelled corridor that ends at one door: Arthur's study."
-  study: "Arthur's study. The desk, the decanter, the bronze raven. This is where he was found."
+  east-corridor: "A long panelled corridor that ends at one door: Douglas's study."
+  study: "Douglas's study. The desk, the decanter, the bronze raven. This is where he was found."
   kitchen: "Below stairs. Mrs. Hale's kingdom of warming ovens, copper pans, and 1930s wiring."
   east-wing: "Shut for decades. The lights stay off after eleven. Staff say they hear footsteps in the walls."
