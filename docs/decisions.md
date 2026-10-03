@@ -415,6 +415,32 @@ door all evening. Fixed with one new story beat rather than by moving rooms:
   flex characters gained no clues, and Morgan's is the same length as
   everyone else's.
 
+## The pages sent to guests (October 2026)
+
+Ross: "create the pages of what will be sent to the guests when we tell them
+who their characters are": web pages, with visuals, professional and
+complete, with sketches of the characters.
+
+- **Sketches** (`src/views/sketches.mjs`): a pen-and-ink head-and-shoulders
+  drawing for every character, on a scrap of paper, built from
+  `portraits.yaml` (hair and costume details, all public) with faces varied
+  by a seed from the character id, never by anything about the real player.
+  Same structure for everyone, Morgan included.
+- **The dossier** (the guest page, redesigned): an invitation card from
+  Douglas, the guest's taped-on sketch ("Maya, you will attend as…"), then
+  four tabs. *You*: who you are, costume, story, connections (with
+  sketches), your evening (timeline), what you know, your secret (sealed),
+  blackmail facts, private instructions, the mission (in the Round One
+  envelope). *The night*: where, when, doors 7:30, what to expect, how the
+  night runs, three sealed paper envelopes. *Messages*: the ones from
+  before tonight. *Castle*: welcome, every guest's sketch with their public
+  role, the house and the plan, the family tree, the raven legend, the
+  Supper rules, Blackmail Cash, how to play.
+- **Sending** (`npm run guests`): one self-contained page per guest at an
+  unguessable address, kept away from the spoiler-full GitHub Pages
+  preview. A test checks each page holds only its own guest's secrets and
+  nothing links back to the host material.
+
 ## Still worth confirming with Ross
 
 - Savanah's "Jimmy": James Calloway's player (assumed) or Jimmy Friedman?

@@ -118,6 +118,27 @@ If Courtney's raven selfie comes out, you saw the raven back on the desk at 8:45
 
 The **Flex** page shows what's live versus falling back for the current roster.
 
+## Sending guests their characters
+
+`npm run guests` builds the pages you send when you tell people who they're
+playing: one self-contained page per cast guest (an invitation from Douglas,
+their sketch, their character, story, connections, evening, secret, and the
+castle with everyone's sketch and public role). Output, all git-ignored:
+
+- `guest-pages/upload/<slug>/index.html`: one per guest, at an unguessable
+  address. The folder's own `index.html` lists nothing.
+- `guest-pages/HOST-links.html`: who gets which link, with a message to
+  paste. **Host only; never upload it.**
+- `guest-pages/slugs.json`: keep it, so rebuilding after an edit keeps
+  every link the same.
+
+To send: drag `guest-pages/upload` onto <https://app.netlify.com/drop> (or
+any static host of its own), rebuild with
+`npm run guests -- --base https://your-site.netlify.app` for full links, and
+send each guest theirs. Or attach a guest's `index.html` to an email; it
+opens in any browser. **Never put these pages on the GitHub Pages preview**:
+that site is spoiler-full and its home page lists everything.
+
 ## Party night
 
 **Paper night (the current plan).** `content/party.yaml` has `phones: false`:

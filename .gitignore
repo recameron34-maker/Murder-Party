@@ -6,3 +6,5 @@ dist/
 *.log
 .secrets.json
 site/
+# Guest pages to send (their links are secret, like passphrases)
+guest-pages/

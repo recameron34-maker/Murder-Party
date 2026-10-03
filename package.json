@@ -2,7 +2,7 @@
   "name": "blackwood-manor",
   "private": true,
   "version": "1.0.0",
-  "description": "Murder at Blackwood Manor: host planner and guest companion app",
+  "description": "Murder at Cameron Castle: host planner and guest pages",
   "type": "module",
   "engines": {
     "node": ">=20"
@@ -14,7 +14,8 @@
     "test": "node --test test/*.test.mjs",
     "deploy": "npm run build && wrangler deploy --env=\"\"",
     "deploy:preview": "npm run build && wrangler deploy --env preview",
-    "build:static": "node scripts/build-static.mjs"
+    "build:static": "node scripts/build-static.mjs",
+    "guests": "node scripts/build-guest-pages.mjs"
   },
   "dependencies": {
     "marked": "^15.0.0",

@@ -154,13 +154,18 @@ that player. The spoiler rules above still apply and are enforced server-side
   `venue_passage` and must never appear in `venue.yaml` or any guest page.
 - `src/views/props.mjs` draws every piece of evidence (and the raven and
   guest book) as line art for the host pages and printed evidence cards;
-  `src/views/portraits.mjs` draws character portraits from
+  `src/views/portraits.mjs` draws character portraits and
+  `src/views/sketches.mjs` pen-and-ink sketches, both from
   `content/portraits.yaml`. Portraits are public (they go on name badges):
   emblems must fit the public role, and every portrait shares one shape.
 - The Map page replay walks everyone through the flat's doorways
   (`venueGraph` / `routeBetween` in visuals.mjs); keep `venue.yaml`'s
   openings and `doors` connected so every move has a route.
-- `test/`: spoiler-leak, Morgan-parity, auth and content tests.
+- `scripts/build-guest-pages.mjs` (`npm run guests`) builds the pages sent to
+  guests before the party: one self-contained page per cast guest at an
+  unguessable slug, in git-ignored `guest-pages/` (slugs are secret, like
+  passphrases). Never host them on the GitHub Pages preview.
+- `test/`: spoiler-leak, Morgan-parity, auth, content and guest-page tests.
 
 **Before committing:** run `npm run check` (zero errors) and `npm test` (all
 pass). Morgan's page must not be the longest; if you lengthen her file,

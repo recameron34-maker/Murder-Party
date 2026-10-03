@@ -23,6 +23,17 @@ house: |
   **Terrace**, the **Library**, and at the end of the **East Corridor**,
   **Douglas's study**.
 
+# The practical page of every guest's dossier ("The night" tab). Guest-safe:
+# the same for everyone, and nothing about the plot.
+the_night:
+  doors: "7:30 PM"
+  notes:
+    - "**Come in costume and in character.** Douglas Cameron will greet you at the top of the stairs himself."
+    - "**Phones stay in your bag.** Everything you need tonight comes on paper, one envelope per round, from Roderick."
+    - "**Keep your secrets.** Everyone can know your name and what's on your badge. Nobody needs to know the rest, unless they pay for it."
+    - "**You'll be handed $3,000 in Cameron Blackmail Notes.** Spend them on the truth; hoard them for the prize."
+    - "**Read this page before you come.** Your story, your evening and your connections are what you'll be playing from all night."
+
 # Shown above the plan of the flat on every guest page.
 house_tonight: |
   Tonight the castle is laid over the flat. Each room you walk into is playing
