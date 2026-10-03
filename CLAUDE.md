@@ -102,11 +102,11 @@ The roster tracks each character's status: confirmed, maybe, spare-unassigned, o
 envelopes are written from scratch; JIMMY and JIMMY FRIEDMAN are two guests;
 Albie and Aalvia are one guest; Savanah and Courtney are both theatrical;
 spice level is **saucy**; Ross plays **Arthur** (tan suit, black silk tie,
-flat cap, wig) until the birthday cake, Morgan's player "kills" him live in
-the study and leaves through the real hidden door, and Ross follows her
-through it and walks in late as **Reggie** (burgundy suit). Morgan's
-briefing for that is host-only (run of show → The live murder) and given in
-person: never put it on her page or in her texts. Every other open issue above has a documented
+flat cap, wig) until the birthday cake, then changes in the study closet and
+comes out at the blackout as Arthur's younger brother **Reggie** (burgundy
+suit): "My brother has been murdered." Nobody acts out the murder. **No
+phones at the party** (`phones: false`): guest pages are for reading before
+the party; on the night envelopes and messages are paper. Every other open issue above has a documented
 default in `docs/decisions.md`. Treat those as resolved unless Ross says
 otherwise, and keep that file updated when he does.
 

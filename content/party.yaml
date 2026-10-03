@@ -8,20 +8,28 @@ host_character: Reginald "Reggie" Blackwood
 date: null
 timezone: America/Chicago
 
+# Phones at the party? Ross (October 2026): no. Guests read their pages
+# BEFORE the party (character, story, messages so far); on the night
+# everything is paper. With phones: false, guest pages never open a round,
+# in-party messages are printed inside the envelopes, and the texts to
+# everyone appear on the host dashboard to read aloud. Set true to bring
+# the phone companion back.
+phones: false
+
 # Suggested clock times, anchored to food the way most hosted mystery games
 # are (starters, main, dessert). `round` links each phase to the live round
 # so the dashboard can show where you are. Move the times; keep the order.
 schedule:
-  - { time: "7:30 PM", what: "Arrivals as Arthur, drinks, the guest book", food: "Champagne and canapés", round: 0 }
-  - { time: "8:00 PM", what: "Birthday toast and formal opening", food: "", round: 0 }
-  - { time: "8:15 PM", what: "Mingle in character", food: "Canapés keep coming", round: 0 }
-  - { time: "8:35 PM", what: "The birthday cake; Arthur retires to his study (the live murder)", food: "Birthday cake", round: 0 }
-  - { time: "8:50 PM", what: "The blackout; Reggie arrives late and finds the body", food: "", round: 0 }
-  - { time: "9:00 PM", what: "Rules, Blackmail Cash, Round One", food: "Starters / grazing board", round: 1 }
-  - { time: "9:40 PM", what: "Round Two", food: "Main course", round: 2 }
-  - { time: "10:30 PM", what: "Round Three", food: "Dessert", round: 3 }
-  - { time: "11:10 PM", what: "Accusations", food: "Coffee and the Reckoning (a Sazerac)", round: 3 }
-  - { time: "11:25 PM", what: "The reveal and the hidden door", food: "", round: 3 }
+  - { time: "7:30 PM", what: "Doors. Arrivals as Arthur, drinks, the guest book", food: "Champagne and canapés", round: 0 }
+  - { time: "7:50 PM", what: "Birthday toast and formal opening (Arthur)", food: "", round: 0 }
+  - { time: "8:00 PM", what: "Mingle in character", food: "Canapés keep coming", round: 0 }
+  - { time: "8:15 PM", what: "The birthday cake; Arthur retires to his study (change in the closet)", food: "Birthday cake", round: 0 }
+  - { time: "8:30 PM", what: "The blackout. \"My brother has been murdered.\"", food: "", round: 0 }
+  - { time: "8:40 PM", what: "Rules, Blackmail Cash, Round One envelopes", food: "Starters / grazing board", round: 1 }
+  - { time: "9:25 PM", what: "Round Two envelopes", food: "Main course", round: 2 }
+  - { time: "10:15 PM", what: "Round Three envelopes", food: "Dessert", round: 3 }
+  - { time: "10:55 PM", what: "Accusations", food: "Coffee and the Reckoning (a Sazerac)", round: 3 }
+  - { time: "11:10 PM", what: "The reveal and the hidden door", food: "", round: 3 }
   - { time: "11:50 PM", what: "Awards, the midnight photograph, the guest book", food: "Midnight snacks", round: 3 }
 
 # Awards, read out after the reveal (the run of show has the patter).

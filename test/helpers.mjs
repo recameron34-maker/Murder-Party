@@ -8,7 +8,10 @@ export const ORIGIN = 'https://manor.test';
 export const content = loadContent();
 
 // A fresh app with every login-able guest given a passphrase.
-export async function makeApp({ clock = new Date('2026-10-31T23:00:00Z'), roster = {} } = {}) {
+// phones: override party.phones (true = the phone companion during the party,
+// false = paper night). Default: whatever content/party.yaml says.
+export async function makeApp({ clock = new Date('2026-10-31T23:00:00Z'), roster = {}, phones } = {}) {
+  const c = phones === undefined ? content : { ...content, party: { ...content.party, phones } };
   const store = new MemoryStore();
   const env = { SESSION_SECRET: 'test-secret-that-is-long-enough', HOST_PASSWORD: 'host-pass' };
   const state = { liveRound: 0, roundUnlockedAt: {}, cueSent: {}, custom: [], roster, passphrases: {}, sessionVersion: {}, firstLogin: {}, prepDone: {}, partyDate: null };
@@ -32,7 +35,7 @@ export async function makeApp({ clock = new Date('2026-10-31T23:00:00Z'), roster
         body = new URLSearchParams(form).toString();
         h.set('content-type', 'application/x-www-form-urlencoded');
       }
-      return handle(new Request(ORIGIN + path, { method, headers: h, body }), { content, store, env, now: () => app.now });
+      return handle(new Request(ORIGIN + path, { method, headers: h, body }), { content: c, store, env, now: () => app.now });
     },
     async state() {
       return store.get('state');

@@ -7,6 +7,7 @@ import { FONTS, PRINT_CSS } from './styles.mjs';
 import { gameLabel } from './visuals.mjs';
 import { prop } from './props.mjs';
 import { portrait } from './portraits.mjs';
+import { phonesOn, envelopeMessages } from '../lib/texts.mjs';
 
 const ROUND_WORDS = { 1: 'Round One', 2: 'Round Two', 3: 'Round Three' };
 
@@ -66,11 +67,14 @@ export function printView(ctx, kind, query) {
       return printPage(`${ROUND_WORDS[n]} envelopes`, liveIds.map((id) => {
         const c = chars[id];
         const r = c.rounds[n];
+        // Paper night: the messages that would have reached their phone.
+        const msgs = phonesOn(content) ? [] : envelopeMessages(content, id, n);
         return html`<div class="page">
   <div class="env-head"><span class="r">Blackwood Manor · ${ROUND_WORDS[n]}</span><span>${c.name}: for ${roster[id].player || ''} only</span></div>
   ${M(r.text)}
   <div class="reveal"><b>You must reveal this round:</b><ul>${r.reveal.map((x) => html`<li>${I(x)}</li>`)}</ul></div>
   ${n === 1 ? html`<div class="reveal"><b>Secret mission ($1,000 from Reggie):</b> ${M(c.mission)}</div>` : ''}
+  ${msgs.length ? html`<div class="reveal"><b>Messages</b> <span style="font-size:9pt">(the house has no signal tonight, so these reach you on paper)</span>${msgs.map((t) => html`<p style="margin:2mm 0"><b>${t.from}</b>${t.after ? html` <span style="font-size:9pt">· about ${t.after} minutes in</span>` : ''}<br>${t.body}</p>`)}</div>` : ''}
 </div>`;
       }));
     }

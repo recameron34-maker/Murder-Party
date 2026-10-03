@@ -5,13 +5,18 @@ kind: reference
 ---
 🆕 From the first guest until the birthday cake, **you are Arthur
 Blackwood**: seventy-one, dying (only Noor and Shea know), and about to
-set everything right at midnight. Reggie is "late from the village".
+set everything right at midnight. Reggie, his much younger half-brother,
+is "late from the village".
 
 **The look.** Tan suit, black silk tie, the flat cap he wears indoors
 because it's his house, silver hair (a wig). The tie matters: it's the
 black thread found on the raven in Round Two, and Shea says so in Round
 Three. Wear it all evening so people remember it. Shoes that also work
 with Reggie's burgundy suit.
+
+**Leave early.** In the solution Arthur dies seven minutes before the
+blackout, so nobody may see him alive in the last stretch before the lights
+go. You leave at the cake, about fifteen minutes before.
 
 **How he plays.** Courteous, amused, unhurried, and cold underneath. He
 collects people and lets them know it. He never raises his voice except
@@ -36,5 +41,7 @@ money, never about Maya.
 **Your lines with each guest** are in **Arrivals**. The ones marked
 *quietly* are the exact words on their cards; say them and walk away.
 
-**When you leave.** At the cake you say the family rule, send the cue texts
-and go to your study. From there it's **The live murder**.
+**When you leave.** At the cake you say the family rule and go to your
+study, change into Reggie in the closet, and fire the blackout at about
+8:30 (**The birthday cake**, then **The blackout**). Nobody else acts
+anything out; the guests only have to solve it.

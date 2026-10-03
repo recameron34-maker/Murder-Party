@@ -14,7 +14,7 @@ changes: Blackmail Cash introduced here, right after the murder (reconciles Part
 
 🆕 **Blackmail Cash.** *Pull out a stack of Blackwood bills.*
 
-"One more thing. My uncle believed everyone had a price. He was usually right."
+"One more thing. My brother believed everyone had a price. He was usually right."
 
 "Each of you has three thousand dollars in Blackwood Cash."
 

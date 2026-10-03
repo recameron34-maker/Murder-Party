@@ -11,7 +11,7 @@
 // }
 import { loadState, updateState } from './lib/state.mjs';
 import { rosterHelpers, STATUSES } from './lib/roster.mjs';
-import { deliveredTexts } from './lib/texts.mjs';
+import { deliveredTexts, guestState } from './lib/texts.mjs';
 import {
   signToken,
   verifyToken,
@@ -132,8 +132,9 @@ async function route(request, deps) {
     const state = await loadState(store);
     const charId = await guestSession(state);
     if (!charId) return respond(JSON.stringify({ error: 'unauthorized' }), { status: 401, type: 'application/json' });
-    const texts = deliveredTexts(content, state, charId, now);
-    return respond(JSON.stringify({ round: state.liveRound, texts }), { type: 'application/json' });
+    const seen = guestState(content, state);
+    const texts = deliveredTexts(content, seen, charId, now);
+    return respond(JSON.stringify({ round: seen.liveRound, texts }), { type: 'application/json' });
   }
 
   // ---------------------------------------------------------------- host

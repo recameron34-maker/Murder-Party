@@ -55,11 +55,11 @@ scenes:
       - Study → 30%, warm white
   - id: blackout
     routine: "Blackwood blackout"
-    when: The blackout (you fire it from the landing, as Reggie)
+    when: The blackout (you fire it from the study, changed into Reggie)
     look: >
       Dining Room OFF, wait 1 second, Kitchens OFF, wait 1 second, every
       group OFF. Thunder. Wait 15 seconds. Then every group back to 25%, and
-      the Study a deep red at 20%. You're on the landing, so nobody drops a
+      the Study a deep red at 20%. You're in the study, so nobody drops a
       pan in the kitchen: if Alexa's sound library has a crash or breaking
       glass, add it straight after the thunder; if not, the thunder is
       enough.

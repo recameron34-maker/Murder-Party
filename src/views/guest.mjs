@@ -3,7 +3,7 @@
 // delivered. Every character's page has exactly the same sections.
 import { html, raw } from '../lib/html.mjs';
 import { md, mdInline, applyConditionals } from '../lib/markdown.mjs';
-import { deliveredTexts } from '../lib/texts.mjs';
+import { deliveredTexts, guestState, phonesOn } from '../lib/texts.mjs';
 import { formatTimeIn } from '../lib/time.mjs';
 import { rosterHelpers } from '../lib/roster.mjs';
 import { page, RAVEN_SVG } from './layout.mjs';
@@ -52,7 +52,8 @@ const ICONS = {
   manor: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/><path d="M12 3v-1"/></svg>',
 };
 
-function nowCard(live) {
+function nowCard(live, paper) {
+  if (paper) return html`<div class="now-card"><b>Read everything here before the party.</b> On the night, phones stay away: your envelopes come on paper, one per round, from Reggie.</div>`;
   if (live === 0) return html`<div class="now-card"><b>The Supper hasn't started.</b> Read your character, plan your costume, and check your phone. Envelopes arrive once the lights go out.</div>`;
   return html`<a class="now-card live" href="#envelopes"><b>Round ${ROUND_WORDS[live]} is open.</b> Read your envelope and make sure your reveals come out before the round ends. →</a>`;
 }
@@ -61,12 +62,16 @@ export function guestPage(content, state, charId, { round, preview = false, now 
   const c = content.characters[charId];
   const gc = content.guestCommon;
   const { isLive, liveIds, roster } = rosterHelpers(content, state);
-  const live = round ?? state.liveRound ?? 0;
+  // Paper night: a guest's own page never opens a round or shows an
+  // in-party text. (The host's preview still can, to read envelopes.)
+  const paper = !phonesOn(content);
+  const seen = preview ? state : guestState(content, state);
+  const live = preview ? round ?? state.liveRound ?? 0 : seen.liveRound ?? 0;
   const tz = content.party.timezone || 'UTC';
   const M = (text) => raw(md(text, isLive));
   const I = (text) => raw(mdInline(applyConditionals(text, isLive)));
   const name = (id) => content.names[id] || id;
-  const texts = deliveredTexts(content, { ...state, liveRound: live }, charId, now);
+  const texts = deliveredTexts(content, { ...seen, liveRound: live }, charId, now);
   const rels = (c.relationships || []).filter((r) => !r.if || isLive(r.if));
   const opened = [1, 2, 3].filter((n) => n <= live).length;
 
@@ -75,7 +80,7 @@ export function guestPage(content, state, charId, { round, preview = false, now 
       return html`<article class="card envelope sealed">
   <div class="seal">✦</div>
   <h3>Round ${ROUND_WORDS[n]}</h3>
-  <p>Sealed. Reggie will break the seal when the time comes.</p>
+  <p>${paper ? 'On paper, on the night. Reggie hands it to you.' : 'Sealed. Reggie will break the seal when the time comes.'}</p>
 </article>`;
     }
     const r = c.rounds[n];
@@ -108,12 +113,12 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
 <nav class="tabs" aria-label="Sections">
   <a href="#character">${raw(ICONS.you)}<span>You</span></a>
   <a href="#envelopes">${raw(ICONS.envelopes)}<span>Envelopes</span><span class="badge" id="sealed">${opened}/3</span></a>
-  <a href="#phone">${raw(ICONS.phone)}<span>Phone</span><span class="badge" id="unread" hidden>0</span></a>
+  <a href="#phone">${raw(ICONS.phone)}<span>${paper ? 'Messages' : 'Phone'}</span><span class="badge" id="unread" hidden>0</span></a>
   <a href="#manor">${raw(ICONS.manor)}<span>Manor</span></a>
 </nav>
 
 <section class="panel" id="character">
-  ${nowCard(live)}
+  ${nowCard(live, paper && !preview)}
   <h2>Who you are</h2>
   <div class="card">${M(c.intro)}</div>
   <h3>Your costume</h3>
@@ -133,18 +138,18 @@ ${preview ? html`<div class="preview-bar">Host preview of ${c.name} at Round ${l
   <h3>Private instructions</h3>
   <div class="card"><ul>${c.instructions.map((x) => html`<li>${I(x)}</li>`)}</ul></div>
   <h3>Secret mission <span class="small muted">· $1,000 from Reggie</span></h3>
-  ${live >= 1 ? html`<div class="card mission">${M(c.mission)}</div>` : html`<div class="card envelope sealed"><div class="seal">✦</div><p>Your mission arrives with Round One.</p></div>`}
+  ${live >= 1 ? html`<div class="card mission">${M(c.mission)}</div>` : html`<div class="card envelope sealed"><div class="seal">✦</div><p>${paper ? 'Your mission is in your Round One envelope.' : 'Your mission arrives with Round One.'}</p></div>`}
 </section>
 
 <section class="panel" id="envelopes">
   <h2>Envelopes</h2>
-  <p class="small muted">${opened} of 3 unsealed. New envelopes appear here the moment Reggie opens a round.</p>
+  <p class="small muted">${paper ? 'Tonight the envelopes are paper: one per round, handed to you by Reggie. Nothing new will appear here.' : `${opened} of 3 unsealed. New envelopes appear here the moment Reggie opens a round.`}</p>
   ${envelopes}
 </section>
 
 <section class="panel" id="phone">
-  <h2>Phone</h2>
-  <p class="small muted">Texts arrive here during the night. Keep this page open; your phone will buzz.
+  <h2>${paper ? 'Messages' : 'Phone'}</h2>
+  <p class="small muted">${paper ? 'Messages from before tonight. On the night your phone stays in your bag; anything new comes on paper, inside your envelopes.' : 'Texts arrive here during the night. Keep this page open; your phone will buzz.'}
   <button class="btn small ghost" type="button" id="alerts" hidden>Turn on alerts</button></p>
   <div class="phone" id="thread" data-known="${texts.map((t) => t.id).join(',')}" data-round="${live}" data-tz="${tz}">
     ${texts.length ? texts.map((t) => renderText(t, tz)) : html`<div class="empty" id="empty">No messages yet.</div>`}

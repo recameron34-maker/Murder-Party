@@ -129,10 +129,6 @@ rounds:
       - Ask "Then why did we all assume he died during the blackout?"
 
 texts:
-  - id: shea-pills
-    from: Alarm
-    trigger: { cue: "The birthday cake: send all as Arthur leaves for his study" }
-    body: "Arthur: evening pills."
   - id: shea-louis-history
     from: L.
     trigger: { history: true }

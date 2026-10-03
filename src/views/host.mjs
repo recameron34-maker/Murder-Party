@@ -2,7 +2,7 @@
 import { html, raw } from '../lib/html.mjs';
 import { md, mdInline, IF_BLOCK } from '../lib/markdown.mjs';
 import { rosterHelpers, STATUSES, numberWords } from '../lib/roster.mjs';
-import { textSchedule } from '../lib/texts.mjs';
+import { textSchedule, phonesOn, cueRound, announcements } from '../lib/texts.mjs';
 import { formatTimeIn, parseClock } from '../lib/time.mjs';
 import { checkContent, wordCount } from '../lib/check.mjs';
 import { flexCoverage } from '../lib/flex.mjs';
@@ -115,7 +115,7 @@ function nowNext(ctx) {
   <div class="ns-top"><span class="pill">${ROUND_LABEL[cur.round]}</span><span class="small muted">Step ${i + 1} of ${steps.length}</span><a class="small" href="/host/script#${cur.slug}">Open in run of show</a></div>
   <h2 class="h-card">${KIND_ICON[cur.kind] || ''} ${cur.title}</h2>
   ${lightsBox(scene, own)}
-  ${cur.round > state.liveRound && cur.round <= 3 ? html`<form method="post" action="/host/round" class="unlock"><input type="hidden" name="round" value="${cur.round}"><button class="btn" type="submit">Unlock ${ROUND_LABEL[cur.round]} on every phone</button></form>` : ''}
+  ${cur.round > state.liveRound && cur.round <= 3 ? html`<form method="post" action="/host/round" class="unlock"><input type="hidden" name="round" value="${cur.round}"><button class="btn" type="submit">${phonesOn(content) ? `Unlock ${ROUND_LABEL[cur.round]} on every phone` : `Start ${ROUND_LABEL[cur.round]}: hand out the envelopes`}</button></form>` : ''}
   ${cueButtons(ctx, cur.send_texts)}
   <div class="ns-body">${raw(md(substitute(cur.body, ctx), isLive))}</div>
   <div class="ns-nav">${prev ? move(prev, '◀ Back', 'ghost') : html`<span></span>`}${next ? move(next, html`Next: ${next.title} ▶`) : html`<span class="muted small">That's the night. Go to bed.</span>`}</div>
@@ -166,6 +166,13 @@ export function dashboardPage(ctx) {
   const segs = content.script.filter((s) => s.round === live);
   const aims = (content.suspicion?.stages || []).filter((st) => st.round === focusRound);
   const carrier = (c) => (c === 'host' ? 'Reggie' : c === 'found' ? 'hidden for the hunt' : shortNames(content.names)[c] || c);
+  // Paper night: the texts to everyone become lines you read aloud.
+  const announceList = (r) => {
+    const list = announcements(content, r);
+    return html`<h3 class="h-card">Read aloud ${live === 0 ? 'in Round One' : 'this round'}</h3>
+    ${list.length ? html`<ul class="small">${list.map((a) => html`<li><b>${a.after ? `About ${a.after} min in` : 'At the start'}</b> (${a.from}): "${a.body}"</li>`)}</ul>` : html`<p class="muted small">Nothing to announce this round.</p>`}
+    <p class="small muted">No phones tonight, so the house's messages to everyone are yours to read out. Each guest's own messages are printed in their envelopes.</p>`;
+  };
 
   return shell(ctx, '/host', 'Dashboard', html`
 ${live === 0 ? readyCard(ctx, { loginIds, missingPass, errors }) : ''}
@@ -173,7 +180,7 @@ ${nowNext(ctx)}
 <div class="card hero">
   ${roundStepper(live, { labels: ['Before', 'Round One', 'Round Two', 'Round Three', 'Reveal'] })}
   <div class="rounds">${[0, 1, 2, 3].map((n) => html`<form method="post" action="/host/round" onsubmit="return confirm('Set the live round to ${ROUND_LABEL[n]}?')"><input type="hidden" name="round" value="${n}"><button class="btn ${live === n ? 'on' : 'ghost'}" type="submit">${n === live ? '● ' : ''}${ROUND_LABEL[n]}</button></form>`)}</div>
-  <p class="small muted">Unlocking a round puts that envelope on every guest's phone within ~15 seconds and starts its timed texts. ${[1, 2, 3].map((n) => (state.roundUnlockedAt[n] ? `${ROUND_LABEL[n]} opened ${fmtTime(ctx, state.roundUnlockedAt[n])}. ` : ''))}</p>
+  <p class="small muted">${phonesOn(content) ? "Unlocking a round puts that envelope on every guest's phone within ~15 seconds and starts its timed texts. " : 'Phones are off tonight: starting a round just moves your dashboard on. The envelopes are paper, with each guest\'s messages printed inside. '}${[1, 2, 3].map((n) => (state.roundUnlockedAt[n] ? `${ROUND_LABEL[n]} opened ${fmtTime(ctx, state.roundUnlockedAt[n])}. ` : ''))}</p>
 </div>
 
 <div class="now-grid">
@@ -196,8 +203,8 @@ ${nowNext(ctx)}
     ${aims.length ? html`<h3>Suspicion target</h3>${aims.map((st) => html`<p class="small"><b>${st.title}:</b> ${st.aim}</p>`)}` : ''}
   </div>
   <div class="card">
-    <h3 class="h-card">Cue texts${live === 0 ? '' : ' this round'}</h3>
-    ${cueSegs.length ? cueSegs.map((s) => html`<p class="small"><b>${s.title}</b></p>${cueButtons(ctx, s.send_texts)}`) : html`<p class="muted small">None linked to ${ROUND_LABEL[live]}. All cue texts are on <a href="/host/texts">Texts</a>.</p>`}
+    ${phonesOn(content) ? html`<h3 class="h-card">Cue texts${live === 0 ? '' : ' this round'}</h3>
+    ${cueSegs.length ? cueSegs.map((s) => html`<p class="small"><b>${s.title}</b></p>${cueButtons(ctx, s.send_texts)}`) : html`<p class="muted small">None linked to ${ROUND_LABEL[live]}. All cue texts are on <a href="/host/texts">Texts</a>.</p>`}` : announceList(focusRound)}
     <h3>Run of show</h3>
     <ol class="mini-toc">${segs.map((s) => html`<li><a href="/host/script#${s.slug}">${s.title}</a></li>`)}</ol>
   </div>
@@ -225,10 +232,10 @@ ${scheduleCard(ctx)}
   ${suspicionHeatmap(content, { highlightRound: focusRound })}
 </div>
 
-<div class="card">
+${phonesOn(content) ? html`<div class="card">
   <h2 class="h-card">Coming up on guests' phones</h2>
   ${sched.length ? html`<table><tr><th>When</th><th>To</th><th>From</th><th>Text</th></tr>${sched.map((t) => html`<tr><td>${fmtTime(ctx, t.at)}</td><td>${t.to === 'all' ? 'Everyone' : content.names[t.to]}</td><td>${t.from}</td><td>${t.body}</td></tr>`)}</table>` : html`<p class="muted small">Nothing scheduled. Timed texts start when a round is unlocked.</p>`}
-</div>
+</div>` : ''}
 <div class="card" id="date">
   <h2 class="h-card">Party date</h2>
   <form method="post" action="/host/settings" class="inline-form">
@@ -246,8 +253,15 @@ function findText(content, id) {
 }
 
 // A step's cue texts, with one "Send all" button when there are several
-// still to send (the host may be busy, in costume, or dead).
+// still to send. On paper night they're printed in envelopes instead.
 function cueButtons(ctx, ids) {
+  if (!phonesOn(ctx.content)) {
+    return html`${ids.map((id) => {
+      const t = findText(ctx.content, id);
+      const r = cueRound(ctx.content, id);
+      return t ? html`<p class="small">📜 <b>${t.to === 'all' ? 'Everyone' : ctx.content.names[t.to]}</b>'s message is printed in their ${ROUND_LABEL[r] || ''} envelope.</p>` : '';
+    })}`;
+  }
   const unsent = ids.filter((id) => !ctx.state.cueSent[id] && findText(ctx.content, id));
   const all = ids.length > 1 && unsent.length > 1 ? postButton('/host/cue', { ids: unsent.join(','), back: ctx.path }, `Send all ${unsent.length} at once`, 'btn') : '';
   return html`${all}${ids.map((id) => cueButton(ctx, id))}`;
@@ -303,6 +317,7 @@ export function textsPage(ctx) {
   const timed = rows.filter((t) => t.trigger?.round != null || t.trigger?.time).sort((a, b) => (a.trigger.round ?? 0) - (b.trigger.round ?? 0) || (a.trigger.after ?? 0) - (b.trigger.after ?? 0));
   const loginIds = content.characterOrder.filter(canLogin);
   return shell(ctx, '/host/texts', 'Phone texts', html`
+${phonesOn(content) ? '' : html`<div class="card"><p><b>Phones are off tonight</b> (<code>phones: false</code> in party.yaml). Guests only read their pages before the party. Messages from before tonight still show there; every in-party message is printed in its round's envelope, and the texts to everyone are on your dashboard to read aloud. A text you send here reaches a guest's page only before the party.</p></div>`}
 <div class="card">
   <h2 style="margin-top:0">Send a text now</h2>
   <form method="post" action="/host/custom">
@@ -602,7 +617,7 @@ ${venueMap(venue, { mode: 'host', rooms: content.lore.rooms, pins, secret: conte
   <div class="card"><h3 class="h-card">Keep on you</h3><ul class="small">${kept.map((id) => html`<li><b>${content.clues[id].title}</b> <span class="muted">(${ROUND_LABEL[content.clues[id].round]})</span></li>`)}</ul>
   <h3>Shut tonight</h3><p class="small">${shut.map((a) => a.name).filter((n, i, all) => all.indexOf(n) === i).join(', ')}. Nothing is hidden in them; the rules say so, and the plan on every guest's phone marks them shut.</p>
   <h3>Signs</h3><p class="small">Print a sign for every game room and every shut door: <a href="/host/print/signs" target="_blank">Print → Room signs</a>.</p>
-  <h3>The passage</h3>${content.lore.venue_passage ? html`<p class="small">${content.lore.venue_passage.note} Guests' plans never show it. The normal way from the study to the library runs through the Family Room, the Living Room and the front door. Tonight Morgan and then you (as Reggie) really use it: see <a href="/host/script#00a-live-murder">The live murder</a>.</p>` : html`<p class="small">It lives only in the story (see the <a href="/host/map">Map</a>).</p>`}</div>
+  <h3>The passage</h3>${content.lore.venue_passage ? html`<p class="small">${content.lore.venue_passage.note} Guests' plans never show it. The normal way from the study to the library runs through the Family Room, the Living Room and the front door, past the party: that's why Morgan needed the wall.</p>` : html`<p class="small">It lives only in the story (see the <a href="/host/map">Map</a>).</p>`}</div>
 </div>
 ${lightsSection(content)}
 <h2>Room by room</h2>

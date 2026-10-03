@@ -572,13 +572,13 @@ export function familyTree(tree) {
       const x2 = X(k) + boxW / 2;
       const y2 = Y(k);
       const ym = (y1 + y2) / 2;
-      out.push(`<path d="M${x1},${y1} V${ym} H${x2} V${y2}" fill="none" stroke="#8a7350" stroke-width="1.6"${k.ward ? ' stroke-dasharray="5 4"' : ''}/>`);
+      out.push(`<path d="M${x1},${y1} V${ym} H${x2} V${y2}" fill="none" stroke="#8a7350" stroke-width="1.6"${k.ward || k.half ? ' stroke-dasharray="5 4"' : ''}/>`);
     }
   }
   for (const f of Object.values(byId)) {
     const tip = [f.name, f.years, f.spouse ? `m. ${f.spouse}` : '', f.note].filter(Boolean).join('\n');
     const isArthur = f.id === 'arthur';
-    out.push(`<g><title>${esc(tip)}</title><rect x="${X(f)}" y="${Y(f)}" width="${boxW}" height="${boxH}" rx="6" fill="${isArthur ? '#2a1519' : '#1f1722'}" stroke="${isArthur ? '#c0495a' : '#c9a45c'}" stroke-width="${isArthur ? 2 : 1.2}"/><text x="${X(f) + boxW / 2}" y="${Y(f) + 24}" text-anchor="middle" class="f-name">${esc(f.name)}</text><text x="${X(f) + boxW / 2}" y="${Y(f) + 44}" text-anchor="middle" class="f-yrs">${esc(f.ward ? 'ward' : f.years || '')}</text></g>`);
+    out.push(`<g><title>${esc(tip)}</title><rect x="${X(f)}" y="${Y(f)}" width="${boxW}" height="${boxH}" rx="6" fill="${isArthur ? '#2a1519' : '#1f1722'}" stroke="${isArthur ? '#c0495a' : '#c9a45c'}" stroke-width="${isArthur ? 2 : 1.2}"/><text x="${X(f) + boxW / 2}" y="${Y(f) + 24}" text-anchor="middle" class="f-name">${esc(f.name)}</text><text x="${X(f) + boxW / 2}" y="${Y(f) + 44}" text-anchor="middle" class="f-yrs">${esc(f.ward ? 'ward' : f.half ? 'half-brother' : f.years || '')}</text></g>`);
   }
   const notes = tree.filter((f) => f.note || f.spouse).map((f) => `<li><b>${esc(f.name)}</b>${f.years ? ` <span class="muted">(${esc(f.years)})</span>` : ''}${f.spouse ? `, m. ${esc(f.spouse)}` : ''}. ${esc(f.note || '')}</li>`).join('');
   return raw(`<div class="chart-scroll"><svg class="family-tree" viewBox="0 0 ${W} ${H}" style="min-width:${Math.min(W, 640)}px" role="img" aria-label="The Blackwood family tree"><style>.f-name{font:700 16px 'Cormorant Garamond',Georgia,serif;fill:#efe5d3}.f-yrs{font:12px system-ui,sans-serif;fill:#ad9f8b}</style>${out.join('')}</svg></div><ul class="family-notes">${notes}</ul>`);

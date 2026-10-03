@@ -47,7 +47,7 @@ cast:
   spare-rook:     { player: null, status: spare-unassigned }
   spare-quill:    { player: null, status: spare-unassigned }
   spare-hollis:   { player: null, status: spare-unassigned }
-  spare-vesper:   { player: null, status: spare-unassigned }
+  spare-vesper:   { player: Maggie Pancini, status: spare-assigned }   # new guest, October 2026
   spare-blake:    { player: null, status: spare-unassigned }
   spare-wren:     { player: null, status: spare-unassigned }
   spare-sterling: { player: null, status: spare-unassigned }

@@ -4,7 +4,7 @@ written_for: Kevin              # HOST
 tier: supporting                # HOST
 pronouns: he/him                # HOST
 role: Arthur's nephew, the heir who wasn't
-public_role: "Arthur's nephew, Reggie's cousin"   # what everyone at the party knows; shown on every guest's guest list
+public_role: "Arthur's nephew (and, technically, Reggie's)"   # what everyone at the party knows; shown on every guest's guest list
 tagline: "You're the Blackwood who stayed. Apparently that counts for nothing."
 
 costume: |
@@ -13,7 +13,8 @@ costume: |
   ring, and the air of a man who has never once paid for his own drink.
 
 intro: |
-  You're Arthur's nephew and Reggie's cousin, and for fifteen years you've
+  You're Arthur's nephew (and, absurdly, Reggie's: he's Arthur's little
+  brother and barely older than you), and for fifteen years you've
   been the dutiful Blackwood: shooting weekends, board seats, sucking up.
   Everyone, you especially, assumed you'd inherit the manor. At 9:20 tonight
   Arthur told you: **"You're getting nothing."**
@@ -48,7 +49,7 @@ relationships:
   - with: morgan
     text: Arthur's lawyer, who has handled your allowance for years. Always kind, always quick with a pen. You'd defend her to anyone.
   - with: reggie
-    text: Your cousin. You spent the afternoon helping him move furniture into the study. He owes you.
+    text: Your uncle, technically, though he's barely older than you. You spent the afternoon helping him move furniture into the study. He owes you.
   - with: carlotta
     text: Your cousin, the real heir, who walked away from everything you wanted. You resent her with your whole chest.
   - with: jimmy
@@ -135,10 +136,6 @@ rounds:
       - Hand Arthur's folded bank statement (from his coat) to Reggie.
 
 texts:
-  - id: kevin-row
-    from: Uncle Arthur
-    trigger: { cue: "Pre-murder mingle: the optional live row" }
-    body: "A word, Kevin. Now."
   - id: kevin-arthur-history
     from: Uncle Arthur
     trigger: { history: true }

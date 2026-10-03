@@ -127,10 +127,6 @@ rounds:
       - You've been living in the walls; during the murder you were trapped in an east-wing passage far from the study.
 
 texts:
-  - id: louis-reminder
-    from: Reminders
-    trigger: { cue: "The birthday cake: send all as Arthur leaves for his study" }
-    body: "Raven Room. Now, while they're all at the cake. When the lights die, find your way back."
   - id: louis-shea-history
     from: S.
     trigger: { history: true }

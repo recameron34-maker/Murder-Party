@@ -2,12 +2,12 @@
 title: Birthday toast
 round: 0
 kind: speech
-changes: Arthur gives the toast now; Reggie is "late". The old Reggie toast is in git history.
+changes: Arthur gives the toast now; Reggie, his younger brother, is "late". The old Reggie toast is in git history.
 lights: toast
 ---
 Once most people have drinks, tap a glass. You're Arthur.
 
-"My nephew Reginald was meant to do this."
+"My little brother Reginald was meant to do this."
 
 *Pause.*
 

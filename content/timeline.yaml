@@ -117,12 +117,13 @@ events:
     who: [reggie]
     where: grounds
     what: >
-      Arthur sends Reggie down to the village for more champagne. The lower
-      road floods behind him, and he spends the evening getting back. He
-      walks in at 9:47 as the lights return and finds the body. (Ross plays
-      Arthur until the cake, then returns as Reggie.)
+      Arthur sends Reggie, his younger half-brother, down to the village for
+      more champagne. The lower road floods behind him, and he spends the
+      evening getting back. He comes up the back stairs as the lights go out
+      at 9:45, goes to find his brother, and is in the study when they
+      return. (Ross plays Arthur until the cake, then Reggie.)
     source: new
-    learned: [{ round: 0, via: host, how: "Reggie arrives late, soaked, and says so" }]
+    learned: [{ round: 0, via: host, how: "Reggie comes out of the study: 'My brother has been murdered.'" }]
 
   - id: carlotta-giving-away
     at: "8:10 PM"

@@ -105,21 +105,36 @@ test('host Now / Next steps through the run of show and shows the lighting cue',
   assert.equal((await app.state()).segment, '06-blackout', 'unknown step ignored');
 });
 
-test('the cake step sends all its cue texts with one tap, each only to its recipient', async () => {
-  const app = await makeApp();
+test('Send all sends several cue texts in one tap (phone mode)', async () => {
+  const app = await makeApp({ phones: true });
   const h = await app.loginHost();
-  await app.fetch('/host/segment', { method: 'POST', form: { to: '05a-cake' }, cookie: h, headers: { origin: ORIGIN } });
-  const dash = await (await app.fetch('/host', { cookie: h })).text();
-  assert.match(dash, /Send all 5 at once/);
-  const ids = content.script.find((s) => s.slug === '05a-cake').send_texts;
+  const ids = ['kush-reggie-r2', 'malik-scheduled-r3'];
   const res = await app.fetch('/host/cue', { method: 'POST', form: { ids: ids.join(',') }, cookie: h, headers: { origin: ORIGIN } });
   assert.equal(res.status, 303);
   const sent = (await app.state()).cueSent;
   for (const id of ids) assert.ok(sent[id], `${id} sent`);
-  const annie = await (await app.fetch('/', { cookie: await app.loginGuest('annie') })).text();
-  assert.match(annie, /The Reckoning, Annie\. My study\./);
-  const morgan = await (await app.fetch('/', { cookie: await app.loginGuest('morgan') })).text();
-  assert.ok(!/The Reckoning, Annie/.test(morgan) && !/evening pills/.test(morgan), 'Morgan gets no cake cue');
+});
+
+test('paper night: guest pages stay pre-party, and envelopes carry the messages', async () => {
+  const app = await makeApp({ phones: false });
+  const h = await app.loginHost();
+  await app.setRound(h, 2);
+  await app.fetch('/host/cue', { method: 'POST', form: { ids: 'kush-reggie-r2,malik-scheduled-r3' }, cookie: h, headers: { origin: ORIGIN } });
+  for (const id of ['lindsey', 'kush', 'morgan']) {
+    const cookie = await app.loginGuest(id);
+    const page = await (await app.fetch('/', { cookie })).text();
+    assert.ok(!page.includes(content.characters[id].rounds[1].reveal[0].slice(0, 40)), `${id}: no Round One envelope on the page`);
+    for (const t of content.characters[id].texts || []) {
+      if (t.trigger.round != null || t.trigger.cue) assert.ok(!page.includes(t.body.slice(0, 30)), `${id}: in-party text ${t.id} not on the page`);
+    }
+    const upd = await (await app.fetch('/api/updates', { cookie })).json();
+    assert.equal(upd.round, 0);
+  }
+  const env = await (await app.fetch('/host/print/envelopes?round=2', { cookie: h })).text();
+  const credential = content.characters.lindsey.texts.find((t) => t.id === 'lindsey-bank-r2');
+  assert.ok(env.includes('ML-0427') && env.includes(credential.from.replace('&', '&amp;')), "Lindsey's Round Two message is printed in her envelope");
+  const dash = await (await app.fetch('/host', { cookie: h })).text();
+  assert.match(dash, /Read aloud/);
 });
 
 test('printed name badges carry public roles only', async () => {

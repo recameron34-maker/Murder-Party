@@ -128,10 +128,6 @@ rounds:
       - You passed Morgan heading toward the study at 9:32.
 
 texts:
-  - id: annie-reckoning
-    from: Arthur Blackwood
-    trigger: { cue: "The birthday cake: send all as Arthur leaves for his study" }
-    body: "The Reckoning, Annie. My study."
   - id: annie-albie-history
     from: Albie
     trigger: { history: true }

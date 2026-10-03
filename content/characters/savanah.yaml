@@ -41,7 +41,7 @@ relationships:
   - with: kim
     text: An old friend from the party circuit, and the only one here who calls you "Mrs. B" to your face. Kim always seems to know which of your stories are true.
   - with: reggie
-    text: Reggie flew out in 2019, paid your hotel bill and helped make the whole thing quietly disappear. You call him "nephew." He hasn't stopped you.
+    text: Reggie flew out in 2019, paid your hotel bill and helped make the whole thing quietly disappear. You call him "little brother." He hasn't stopped you.
   - with: clara
     text: The ex-fiancée whose exit sent Arthur to Vegas. She looks at you like something on her shoe. Mutual.
   - with: morgan
@@ -135,7 +135,7 @@ host_notes: |
   Real-life ties (Ross): Savanah knows Jimmy, Kim, Ross and Carley. Her
   character is built around them. "Jimmy" is assumed to be the player of
   James Calloway; if Ross meant Jimmy Friedman, move the best-man tie there.
-  Reggie is in on her backstory: play along when she calls you "nephew."
+  Reggie is in on her backstory: play along when she calls you "little brother."
 
   Flex (maybe RSVP), theatrical. Carries zero solution-critical clues. Her
   red herring ("the widow inherits") is resolved by Kim's 2019 Keyhole

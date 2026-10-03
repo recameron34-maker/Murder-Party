@@ -23,7 +23,7 @@ function privateSnippets(id) {
 }
 
 test('every guest page, at every round, contains only that guest\'s own unlocked content', async () => {
-  const app = await makeApp();
+  const app = await makeApp({ phones: true });
   const hostCookie = await app.loginHost();
   const cookies = {};
   for (const id of loginIds) cookies[id] = await app.loginGuest(id);
@@ -107,7 +107,7 @@ for (const [label, roster] of [
 });
 
 test('updates API returns only your own delivered texts, on schedule', async () => {
-  const app = await makeApp();
+  const app = await makeApp({ phones: true });
   const hostCookie = await app.loginHost();
   const maya = await app.loginGuest('maya');
   const kevin = await app.loginGuest('kevin');
@@ -134,7 +134,7 @@ test('updates API returns only your own delivered texts, on schedule', async () 
 });
 
 test('cue texts and host texts reach only their recipient', async () => {
-  const app = await makeApp();
+  const app = await makeApp({ phones: true });
   const hostCookie = await app.loginHost();
   const malik = await app.loginGuest('malik');
   const lindsey = await app.loginGuest('lindsey');
@@ -151,7 +151,7 @@ test('cue texts and host texts reach only their recipient', async () => {
 });
 
 test('flex lines appear on other pages only while that flex character is cast', async () => {
-  const app = await makeApp();
+  const app = await makeApp({ phones: true });
   const hostCookie = await app.loginHost();
   await app.setRound(hostCookie, 2);
   const molly = await app.loginGuest('molly');
